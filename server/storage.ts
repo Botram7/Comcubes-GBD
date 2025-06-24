@@ -1,5 +1,7 @@
 import { csvParser } from './services/csvParser';
-import type { Sector, Industry, Company } from '@shared/schema';
+import { db } from './db';
+import { sectors, industries, companies, type Sector, type Industry, type Company, type InsertSector, type InsertIndustry, type InsertCompany } from '@shared/schema';
+import { eq, ilike, or } from 'drizzle-orm';
 
 export interface IStorage {
   getSectors(): Promise<Sector[]>;
@@ -14,54 +16,92 @@ export interface IStorage {
   getAllCompanies(): Promise<Company[]>;
 }
 
-export class MemStorage implements IStorage {
-  private sectors: Sector[] = [];
-  private industries: Industry[] = [];
-  private companies: Company[] = [];
+export class DatabaseStorage implements IStorage {
   private initialized = false;
 
   private async initialize() {
     if (this.initialized) return;
     
     try {
-      this.sectors = await csvParser.loadSectors();
-      this.industries = await csvParser.loadIndustries();
-      this.companies = await csvParser.loadCompanies();
-      this.initialized = true;
+      // Check if data already exists
+      const existingSectors = await db.select().from(sectors).limit(1);
       
-      console.log(`Loaded ${this.sectors.length} sectors, ${this.industries.length} industries, ${this.companies.length} companies`);
+      if (existingSectors.length === 0) {
+        console.log('Loading data from CSV files into database...');
+        
+        // Load data from CSV files
+        const csvSectors = await csvParser.loadSectors();
+        const csvIndustries = await csvParser.loadIndustries();
+        const csvCompanies = await csvParser.loadCompanies();
+        
+        // Insert sectors
+        if (csvSectors.length > 0) {
+          const sectorInserts: InsertSector[] = csvSectors.map(sector => ({ name: sector.name }));
+          await db.insert(sectors).values(sectorInserts);
+        }
+        
+        // Insert industries
+        if (csvIndustries.length > 0) {
+          const industryInserts: InsertIndustry[] = csvIndustries.map(industry => ({
+            name: industry.name,
+            sectorName: industry.sectorName
+          }));
+          await db.insert(industries).values(industryInserts);
+        }
+        
+        // Insert companies in batches (to handle large dataset)
+        if (csvCompanies.length > 0) {
+          const batchSize = 1000;
+          for (let i = 0; i < csvCompanies.length; i += batchSize) {
+            const batch = csvCompanies.slice(i, i + batchSize);
+            const companyInserts: InsertCompany[] = batch.map(company => ({
+              name: company.name,
+              websiteUrl: company.websiteUrl,
+              industryName: company.industryName,
+              sectorName: company.sectorName
+            }));
+            await db.insert(companies).values(companyInserts);
+          }
+        }
+        
+        console.log(`Database initialized with ${csvSectors.length} sectors, ${csvIndustries.length} industries, ${csvCompanies.length} companies`);
+      } else {
+        console.log('Database already contains data');
+      }
+      
+      this.initialized = true;
     } catch (error) {
-      console.error('Error initializing storage:', error);
+      console.error('Error initializing database:', error);
     }
   }
 
   async getSectors(): Promise<Sector[]> {
     await this.initialize();
-    return this.sectors;
+    return await db.select().from(sectors).orderBy(sectors.name);
   }
 
   async getIndustriesBySector(sectorName: string): Promise<Industry[]> {
     await this.initialize();
-    return this.industries.filter(industry => 
-      industry.sectorName.toLowerCase() === sectorName.toLowerCase()
-    );
+    return await db.select().from(industries)
+      .where(eq(industries.sectorName, sectorName))
+      .orderBy(industries.name);
   }
 
   async getCompaniesByIndustry(industryName: string): Promise<Company[]> {
     await this.initialize();
-    return this.companies.filter(company => 
-      company.industryName.toLowerCase() === industryName.toLowerCase()
-    );
+    return await db.select().from(companies)
+      .where(eq(companies.industryName, industryName))
+      .orderBy(companies.name);
   }
 
   async getAllIndustries(): Promise<Industry[]> {
     await this.initialize();
-    return this.industries;
+    return await db.select().from(industries).orderBy(industries.name);
   }
 
   async getAllCompanies(): Promise<Company[]> {
     await this.initialize();
-    return this.companies;
+    return await db.select().from(companies).orderBy(companies.name);
   }
 
   async searchAll(query: string): Promise<{
@@ -70,23 +110,35 @@ export class MemStorage implements IStorage {
     companies: Company[];
   }> {
     await this.initialize();
-    const lowerQuery = query.toLowerCase();
+    const searchPattern = `%${query}%`;
+
+    const [sectorResults, industryResults, companyResults] = await Promise.all([
+      db.select().from(sectors)
+        .where(ilike(sectors.name, searchPattern))
+        .orderBy(sectors.name),
+      
+      db.select().from(industries)
+        .where(or(
+          ilike(industries.name, searchPattern),
+          ilike(industries.sectorName, searchPattern)
+        ))
+        .orderBy(industries.name),
+      
+      db.select().from(companies)
+        .where(or(
+          ilike(companies.name, searchPattern),
+          ilike(companies.industryName, searchPattern),
+          ilike(companies.sectorName, searchPattern)
+        ))
+        .orderBy(companies.name)
+    ]);
 
     return {
-      sectors: this.sectors.filter(sector =>
-        sector.name.toLowerCase().includes(lowerQuery)
-      ),
-      industries: this.industries.filter(industry =>
-        industry.name.toLowerCase().includes(lowerQuery) ||
-        industry.sectorName.toLowerCase().includes(lowerQuery)
-      ),
-      companies: this.companies.filter(company =>
-        company.name.toLowerCase().includes(lowerQuery) ||
-        company.industryName.toLowerCase().includes(lowerQuery) ||
-        company.sectorName.toLowerCase().includes(lowerQuery)
-      )
+      sectors: sectorResults,
+      industries: industryResults,
+      companies: companyResults
     };
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
