@@ -1,0 +1,397 @@
+Industry Name,Sector Name 
+Commercial Banking,Banking and Financial Services
+Investment Banking,Banking and Financial Services
+Asset Management,Banking and Financial Services
+Insurance Underwriting,Banking and Financial Services
+FinTech,Banking and Financial Services
+Stock Exchanges,Banking and Financial Services
+Private Equity,Banking and Financial Services
+Hedge Funds,Banking and Financial Services
+Consumer Finance,Banking and Financial Services
+Credit Cards,Banking and Financial Services
+Microfinance,Banking and Financial Services
+Cryptocurrency Exchanges,Banking and Financial Services
+Venture Capital,Banking and Financial Services
+Wealth Management,Banking and Financial Services
+Mortgage Lending,Banking and Financial Services
+Payment Processing,Banking and Financial Services
+Trade Finance,Banking and Financial Services
+Forex Services,Banking and Financial Services
+Pension Funds,Banking and Financial Services
+Credit Rating Agencies,Banking and Financial Services
+Passenger Vehicles,Automobile
+Electric Vehicles,Automobile
+Motorcycles,Automobile
+Commercial Trucks,Automobile
+Auto Parts Manufacturing,Automobile
+EV Batteries,Automobile
+Autonomous Driving Tech,Automobile
+Fleet Management,Automobile
+Car Rental Services,Automobile
+Luxury Vehicles,Automobile
+Off-Road Vehicles,Automobile
+Motorsports,Automobile
+Automotive Software,Automobile
+Tire Manufacturing,Automobile
+Charging Infrastructure,Automobile
+Vehicle Telematics,Automobile
+Automotive AI,Automobile
+Classic Car Restoration,Automobile
+Ride-Hailing Platforms,Automobile
+Car Subscription Services,Automobile
+Wireless Carriers,Telecommunications and ICT
+Fiber Optics,Telecommunications and ICT
+Satellite Communications,Telecommunications and ICT
+5G Infrastructure,Telecommunications and ICT
+IoT Solutions,Telecommunications and ICT
+Unified Communications,Telecommunications and ICT
+Data Centers,Telecommunications and ICT
+Network Security,Telecommunications and ICT
+Cloud Telephony,Telecommunications and ICT
+VoIP Services,Telecommunications and ICT
+Telecom Equipment,Telecommunications and ICT
+Broadband Providers,Telecommunications and ICT
+Mobile Virtual Networks,Telecommunications and ICT
+Telecom Consulting,Telecommunications and ICT
+Submarine Cables,Telecommunications and ICT
+Enterprise Networking,Telecommunications and ICT
+Contact Center Solutions,Telecommunications and ICT
+SIM Manufacturing,Telecommunications and ICT
+Rural Connectivity,Telecommunications and ICT
+Telecom Tower Management,Telecommunications and ICT
+Biopharmaceuticals,Healthcare and Pharmaceuticals
+Generic Drugs,Healthcare and Pharmaceuticals
+Medical Imaging,Healthcare and Pharmaceuticals
+Telehealth,Healthcare and Pharmaceuticals
+Surgical Instruments,Healthcare and Pharmaceuticals
+Health Insurance,Healthcare and Pharmaceuticals
+Clinical Research,Healthcare and Pharmaceuticals
+Hospital Management,Healthcare and Pharmaceuticals
+Diagnostic Labs,Healthcare and Pharmaceuticals
+Wearable Health Tech,Healthcare and Pharmaceuticals
+Vaccines,Healthcare and Pharmaceuticals
+Mental Health Apps,Healthcare and Pharmaceuticals
+Prosthetics,Healthcare and Pharmaceuticals
+Medical Robotics,Healthcare and Pharmaceuticals
+Genomics,Healthcare and Pharmaceuticals
+Elderly Care Tech,Healthcare and Pharmaceuticals
+Health Analytics,Healthcare and Pharmaceuticals
+Pharmacy Chains,Healthcare and Pharmaceuticals
+Medical Education,Healthcare and Pharmaceuticals
+Health Tourism,Healthcare and Pharmaceuticals
+E-commerce Marketplaces,Retail
+Department Stores,Retail
+Luxury Fashion,Retail
+Fast Fashion,Retail
+Consumer Electronics Retail,Retail
+Grocery Chains,Retail
+Discount Stores,Retail
+Beauty Retailers,Retail
+Furniture Outlets,Retail
+Sporting Goods,Retail
+Toy Stores,Retail
+Bookstores,Retail
+Jewelry Retail,Retail
+Automotive Parts Retail,Retail
+Pet Supplies,Retail
+Outlet Malls,Retail
+Vending Machines,Retail
+Duty-Free Shops,Retail
+Subscription Boxes,Retail
+Pop-Up Retail,Retail
+Oil Exploration,Energy and Utilities
+Renewable Energy,Energy and Utilities
+Nuclear Power,Energy and Utilities
+Electricity Distribution,Energy and Utilities
+Natural Gas,Energy and Utilities
+Water Utilities,Energy and Utilities
+Solar Panel Manufacturing,Energy and Utilities
+Wind Farm Operations,Energy and Utilities
+Battery Storage,Energy and Utilities
+Smart Grids,Energy and Utilities
+Offshore Drilling,Energy and Utilities
+Energy Trading,Energy and Utilities
+Carbon Capture,Energy and Utilities
+Geothermal Plants,Energy and Utilities
+Hydropower,Energy and Utilities
+Utility-Scale Storage,Energy and Utilities
+Energy Efficiency,Energy and Utilities
+LNG Terminals,Energy and Utilities
+Power Plant Engineering,Energy and Utilities
+Biofuels,Energy and Utilities
+Operating Systems,Technology
+Enterprise Software,Technology
+Semiconductors,Technology
+Gaming Consoles,Technology
+Computer Peripherals,Technology
+Data Analytics,Technology
+Quantum Computing,Technology
+Robotics,Technology
+AR/VR Hardware,Technology
+Open-Source Platforms,Technology
+Supercomputing,Technology
+Wearable Tech,Technology
+3D Printing,Technology
+IoT Devices,Technology
+Biometric Systems,Technology
+Edge Computing,Technology
+Mainframe Systems,Technology
+Tech Repair Services,Technology
+Blockchain Hardware,Technology
+Satellite Tech,Technology
+Life Insurance,Insurance
+Property Insurance,Insurance
+Auto Insurance,Insurance
+Reinsurance,Insurance
+Travel Insurance,Insurance
+Cyber Insurance,Insurance
+Pet Insurance,Insurance
+Crop Insurance,Insurance
+Marine Insurance,Insurance
+Liability Insurance,Insurance
+Disability Insurance,Insurance
+Annuities,Insurance
+InsurTech Platforms,Insurance
+Brokerage Networks,Insurance
+Claims Management,Insurance
+Catastrophe Bonds,Insurance
+Microinsurance,Insurance
+Title Insurance,Insurance
+Parametric Insurance,Insurance
+Residential Development,Real Estate
+Commercial Property,Real Estate
+REITs,Real Estate
+Property Management,Real Estate
+Real Estate Tech,Real Estate
+Brokerage Services,Real Estate
+Vacation Rentals,Real Estate
+Industrial Warehousing,Real Estate
+Sustainable Buildings,Real Estate
+Real Estate Crowdfunding,Real Estate
+Luxury Estates,Real Estate
+Senior Living Facilities,Real Estate
+Smart Home Tech,Real Estate
+Property Valuation,Real Estate
+Mortgage Brokering,Real Estate
+Co-Working Spaces,Real Estate
+Land Acquisition,Real Estate
+Real Estate Law,Real Estate
+Facility Management,Real Estate
+Mixed-Use Projects,Real Estate
+Air Cargo,Transportation and Logistics
+Marine Shipping,Transportation and Logistics
+Rail Freight,Transportation and Logistics
+Courier & Express Delivery,Transportation and Logistics
+Trucking & Road Freight,Transportation and Logistics
+Third-Party Logistics (3PL),Transportation and Logistics
+Freight Forwarding,Transportation and Logistics
+Warehousing & Distribution,Transportation and Logistics
+Port Operations,Transportation and Logistics
+Airport Operations,Transportation and Logistics
+Public Bus Transport,Transportation and Logistics
+Vehicle Leasing & Rental,Transportation and Logistics
+Ride-Hailing & Taxi,Transportation and Logistics
+Pipeline Transport,Transportation and Logistics
+Rail Passenger Transport,Transportation and Logistics
+Airline Passenger Services,Transportation and Logistics
+Maritime Passenger Services,Transportation and Logistics
+Bicycle & Micromobility Sharing,Transportation and Logistics
+E-commerce Logistics,Transportation and Logistics
+Supply Chain Tech & Software,Transportation and Logistics
+Automotive Manufacturing,Manufacturing
+Aerospace & Defense Manufacturing,Manufacturing
+Electronics Manufacturing,Manufacturing
+Industrial Machinery,Manufacturing
+Chemical Manufacturing,Manufacturing
+Pharmaceutical Manufacturing,Manufacturing
+Food Processing,Manufacturing
+Beverage Production,Manufacturing
+Textile Manufacturing,Manufacturing
+Apparel & Footwear,Manufacturing
+Furniture Manufacturing,Manufacturing
+Paper & Pulp,Manufacturing
+Steel & Metal Products,Manufacturing
+Plastic & Rubber Products,Manufacturing
+Semiconductor Manufacturing,Manufacturing
+Medical Devices,Manufacturing
+Building Materials,Manufacturing
+Consumer Goods,Manufacturing
+Shipbuilding,Manufacturing
+Renewable Energy Equipment,Manufacturing
+Meat Processing,Food and Beverage
+Dairy Products,Food and Beverage
+Bakery & Confectionery,Food and Beverage
+Fruit & Vegetable Processing,Food and Beverage
+Oils & Fats,Food and Beverage
+Frozen Foods,Food and Beverage
+Snack Foods,Food and Beverage
+Soft Drinks,Food and Beverage
+Alcoholic Beverages,Food and Beverage
+Coffee & Tea,Food and Beverage
+Water & Beverages,Food and Beverage
+Food Service & Restaurants,Food and Beverage
+Seafood Processing,Food and Beverage
+Grain & Cereal Products,Food and Beverage
+Sugar & Sweeteners,Food and Beverage
+Pet Food,Food and Beverage
+Baby Food,Food and Beverage
+Condiments & Sauces,Food and Beverage
+Health & Functional Foods,Food and Beverage
+Animal Feed,Food and Beverage
+Film Production,Media and Entertainment
+Television Broadcasting,Media and Entertainment
+Music Labels,Media and Entertainment
+Video Streaming,Media and Entertainment
+Video Games,Media and Entertainment
+Publishing,Media and Entertainment
+Social Media,Media and Entertainment
+Advertising & Marketing,Media and Entertainment
+News Agencies,Media and Entertainment
+Animation & VFX,Media and Entertainment
+Talent Agencies,Media and Entertainment
+Theme Parks,Media and Entertainment
+Radio Broadcasting,Media and Entertainment
+Podcasting,Media and Entertainment
+Online Content,Media and Entertainment
+Media Conglomerates,Media and Entertainment
+Live Events,Media and Entertainment
+Sports Leagues,Media and Entertainment
+Sports Leagles,Media and Entertainment
+Residential Construction,Construction and Engineering
+Commercial Construction,Construction and Engineering
+Civil Engineering,Construction and Engineering
+Industrial Construction,Construction and Engineering
+Construction Materials,Construction and Engineering
+Heavy Equipment,Construction and Engineering
+Construction Services,Construction and Engineering
+Infrastructure Development,Construction and Engineering
+Engineering Design,Construction and Engineering
+Building Maintenance,Construction and Engineering
+Demolition & Decommissioning,Construction and Engineering
+Environmental Engineering,Construction and Engineering
+Architectural Services,Construction and Engineering
+Project Management,Construction and Engineering
+Real Estate Development,Construction and Engineering
+Specialty Contracting,Construction and Engineering
+Surveying & Mapping,Construction and Engineering
+Urban Planning,Construction and Engineering
+Construction Software,Construction and Engineering
+Green Building Consulting,Construction and Engineering
+Higher Education (Universities),Education
+K-12 Education (Private Schools),Education
+Online Learning Platforms,Education
+Educational Publishing,Education
+Test Preparation Services,Education
+Early Childhood Education,Education
+Vocational Training,Education
+Language Learning,Education
+STEM Education,Education
+Corporate Training,Education
+Tutoring Services,Education
+Learning Management Systems,Education
+EdTech Hardware & Software,Education
+Special Education Services,Education
+Educational Toys & Games,Education
+School Management Software,Education
+Study Abroad Services,Education
+Educational Consulting,Education
+Open Courseware Providers,Education
+Educational Nonprofits,Education
+Airlines,Travel and Tourism
+Hotels & Resorts,Travel and Tourism
+Online Travel Agencies,Travel and Tourism
+Cruise Lines,Travel and Tourism
+Tour Operators,Travel and Tourism
+Railway Operators,Travel and Tourism
+Airport Operators,Travel and Tourism
+Travel Insurance Providers,Travel and Tourism
+Adventure Tourism,Travel and Tourism
+Event Tourism,Travel and Tourism
+Luxury Travel,Travel and Tourism
+Travel Technology,Travel and Tourism
+Tourism Boards,Travel and Tourism
+Hospitality Management,Travel and Tourism
+Restaurant Chains (Tourist-Focused),Travel and Tourism
+Travel Media & Publishing,Travel and Tourism
+Transportation Services (Buses/Shuttles),Travel and Tourism
+Transportation Services (Buses/Shuttles,Travel and Tourism
+Crop Production,Agriculture
+Livestock Production,Agriculture
+Dairy Farming,Agriculture
+Aquaculture,Agriculture
+Agricultural Equipment,Agriculture
+Seeds & Genetics,Agriculture
+Fertilizers & Nutrients,Agriculture
+Pesticides & Herbicides,Agriculture
+Irrigation Systems,Agriculture
+Agricultural Biotechnology,Agriculture
+Organic Farming,Agriculture
+Agribusiness & Commodity Trading,Agriculture
+Agricultural Cooperatives,Agriculture
+Food Processing (Agricultural Output),Agriculture
+Agricultural Real Estate,Agriculture
+Farm Management Software,Agriculture
+Agricultural Finance & Insurance,Agriculture
+Sustainable Agriculture,Agriculture
+Agricultural Research,Agriculture
+Agricultural Logistics & Storage,Agriculture
+Industrial Gases,Chemicals
+Petrochemicals,Chemicals
+Specialty Chemicals,Chemicals
+Fertilizers & Agrochemicals,Chemicals
+Paints & Coatings,Chemicals
+Adhesives & Sealants,Chemicals
+Synthetic Rubber,Chemicals
+Plastic Resins,Chemicals
+Dyes & Pigments,Chemicals
+Industrial Cleaners,Chemicals
+Water Treatment Chemicals,Chemicals
+Textile Chemicals,Chemicals
+Food Additives,Chemicals
+Cosmetic Chemicals,Chemicals
+Pharmaceutical Chemicals,Chemicals
+Electronic Chemicals,Chemicals
+Construction Chemicals,Chemicals
+Lubricants & Greases,Chemicals
+Explosives & Pyrotechnics,Chemicals
+Chemical Distribution,Chemicals
+Commercial Aircraft Manufacturing,Aerospace and Defense
+Military Aircraft Manufacturing,Aerospace and Defense
+Spacecraft & Satellite Manufacturing,Aerospace and Defense
+Defense Electronics,Aerospace and Defense
+Missile & Defense Systems,Aerospace and Defense
+Military Vehicles & Tanks,Aerospace and Defense
+Naval Systems & Shipbuilding,Aerospace and Defense
+Unmanned Aerial Vehicles (UAVs),Aerospace and Defense
+Aircraft Engines & Components,Aerospace and Defense
+Avionics Systems,Aerospace and Defense
+Defense IT & Cybersecurity,Aerospace and Defense
+Aerospace Structures & Composites,Aerospace and Defense
+Training & Simulation Systems,Aerospace and Defense
+MRO Services,Aerospace and Defense
+Airport Infrastructure & Services,Aerospace and Defense
+Air Traffic Management Systems,Aerospace and Defense
+Space Launch Services,Aerospace and Defense
+Satellite Services,Aerospace and Defense
+Defense Logistics & Support,Aerospace and Defense
+Weapons & Ammunition,Aerospace and Defense
+Management Consulting,Professional Services
+IT Consulting,Professional Services
+Accounting & Audit,Professional Services
+Legal Services,Professional Services
+Human Resources Consulting,Professional Services
+Marketing & Advertising,Professional Services
+Engineering Consulting,Professional Services
+Environmental Consulting,Professional Services
+Risk & Compliance Consulting,Professional Services
+Economic Consulting,Professional Services
+Real Estate Consulting,Professional Services
+Healthcare Consulting,Professional Services
+Education Consulting,Professional Services
+Logistics & Supply Chain Consulting,Professional Services
+Executive Search,Professional Services
+Market Research,Professional Services
+Public Relations,Professional Services
+Architecture & Design Services,Professional Services
+Event Management,Professional Services
+Outsourcing & Staffing,Professional Services

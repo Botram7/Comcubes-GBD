@@ -1,0 +1,101 @@
+Company Name	Website URL	Industry Name	Sector Name
+JPMorgan Chase & Co.	https://www.jpmorganchase.com	Commercial Banking	Banking and Financial Services
+Industrial and Commercial Bank of China	https://www.icbc-ltd.com	Commercial Banking	Banking and Financial Services
+Bank of America	https://www.bankofamerica.com	Commercial Banking	Banking and Financial Services
+HSBC Holdings	https://www.hsbc.com	Commercial Banking	Banking and Financial Services
+BNP Paribas	https://www.bnpparibas.com	Commercial Banking	Banking and Financial Services
+Mitsubishi UFJ Financial Group	https://www.mufg.jp	Commercial Banking	Banking and Financial Services
+Citigroup	https://www.citigroup.com	Commercial Banking	Banking and Financial Services
+Wells Fargo	https://www.wellsfargo.com	Commercial Banking	Banking and Financial Services
+Santander Group	https://www.santander.com	Commercial Banking	Banking and Financial Services
+Barclays	https://www.barclays.com	Commercial Banking	Banking and Financial Services
+Deutsche Bank	https://www.db.com	Commercial Banking	Banking and Financial Services
+TD Bank Group	https://www.td.com	Commercial Banking	Banking and Financial Services
+Commonwealth Bank	https://www.commbank.com.au	Commercial Banking	Banking and Financial Services
+UBS Group	https://www.ubs.com	Commercial Banking	Banking and Financial Services
+Crédit Agricole	https://www.credit-agricole.com	Commercial Banking	Banking and Financial Services
+ING Group	https://www.ing.com	Commercial Banking	Banking and Financial Services
+Société Générale	https://www.societegenerale.com	Commercial Banking	Banking and Financial Services
+Standard Chartered	https://www.sc.com	Commercial Banking	Banking and Financial Services
+UniCredit	https://www.unicreditgroup.eu	Commercial Banking	Banking and Financial Services
+Scotiabank	https://www.scotiabank.com	Commercial Banking	Banking and Financial Services
+Goldman Sachs	https://www.goldmansachs.com	Investment Banking	Banking and Financial Services
+Morgan Stanley	https://www.morganstanley.com	Investment Banking	Banking and Financial Services
+Lazard	https://www.lazard.com	Investment Banking	Banking and Financial Services
+Jefferies Financial Group	https://www.jefferies.com	Investment Banking	Banking and Financial Services
+Rothschild & Co	https://www.rothschildandco.com	Investment Banking	Banking and Financial Services
+Moelis & Company	https://www.moelis.com	Investment Banking	Banking and Financial Services
+PJT Partners	https://www.pjtpartners.com	Investment Banking	Banking and Financial Services
+Evercore	https://www.evercore.com	Investment Banking	Banking and Financial Services
+Centerview Partners	https://www.centerviewpartners.com	Investment Banking	Banking and Financial Services
+Perella Weinberg Partners	https://www.pwpartners.com	Investment Banking	Banking and Financial Services
+Greenhill & Co.	https://www.greenhill.com	Investment Banking	Banking and Financial Services
+Houlihan Lokey	https://www.hl.com	Investment Banking	Banking and Financial Services
+Guggenheim Partners	https://www.guggenheimpartners.com	Investment Banking	Banking and Financial Services
+Cowen Inc.	https://www.cowen.com	Investment Banking	Banking and Financial Services
+Piper Sandler	https://www.pipersandler.com	Investment Banking	Banking and Financial Services
+William Blair	https://www.williamblair.com	Investment Banking	Banking and Financial Services
+Stifel Financial	https://www.stifel.com	Investment Banking	Banking and Financial Services
+Raymond James	https://www.raymondjames.com	Investment Banking	Banking and Financial Services
+Canaccord Genuity	https://www.canaccordgenuity.com	Investment Banking	Banking and Financial Services
+BlackRock	https://www.blackrock.com	Asset Management	Banking and Financial Services
+Vanguard Group	https://www.vanguard.com	Asset Management	Banking and Financial Services
+Fidelity Investments	https://www.fidelity.com	Asset Management	Banking and Financial Services
+State Street Global Advisors	https://www.ssga.com	Asset Management	Banking and Financial Services
+PIMCO	https://www.pimco.com	Asset Management	Banking and Financial Services
+Capital Group	https://www.capitalgroup.com	Asset Management	Banking and Financial Services
+Franklin Templeton	https://www.franklintempleton.com	Asset Management	Banking and Financial Services
+T. Rowe Price	https://www.troweprice.com	Asset Management	Banking and Financial Services
+Amundi	https://www.amundi.com	Asset Management	Banking and Financial Services
+Nuveen	https://www.nuveen.com	Asset Management	Banking and Financial Services
+Invesco	https://www.invesco.com	Asset Management	Banking and Financial Services
+Schroders	https://www.schroders.com	Asset Management	Banking and Financial Services
+AXA Investment Managers	https://www.axa-im.com	Asset Management	Banking and Financial Services
+Nomura Asset Management	https://www.nomura.com	Asset Management	Banking and Financial Services
+AllianceBernstein	https://www.alliancebernstein.com	Asset Management	Banking and Financial Services
+Legg Mason	https://www.leggmason.com	Asset Management	Banking and Financial Services
+Man Group	https://www.man.com	Asset Management	Banking and Financial Services
+DWS Group	https://www.dws.com	Asset Management	Banking and Financial Services
+Janus Henderson	https://www.janushenderson.com	Asset Management	Banking and Financial Services
+Allianz	https://www.allianz.com	Insurance Underwriting	Banking and Financial Services
+AXA	https://www.axa.com	Insurance Underwriting	Banking and Financial Services
+Ping An Insurance	https://www.pingan.com	Insurance Underwriting	Banking and Financial Services
+Prudential Financial	https://www.prudential.com	Insurance Underwriting	Banking and Financial Services
+MetLife	https://www.metlife.com	Insurance Underwriting	Banking and Financial Services
+China Life Insurance	https://www.chinalife.com.cn	Insurance Underwriting	Banking and Financial Services
+Munich Re	https://www.munichre.com	Insurance Underwriting	Banking and Financial Services
+Zurich Insurance Group	https://www.zurich.com	Insurance Underwriting	Banking and Financial Services
+Generali Group	https://www.generali.com	Insurance Underwriting	Banking and Financial Services
+AIA Group	https://www.aia.com	Insurance Underwriting	Banking and Financial Services
+Aviva	https://www.aviva.com	Insurance Underwriting	Banking and Financial Services
+Prudential plc	https://www.prudentialplc.com	Insurance Underwriting	Banking and Financial Services
+New York Life	https://www.newyorklife.com	Insurance Underwriting	Banking and Financial Services
+Swiss Re	https://www.swissre.com	Insurance Underwriting	Banking and Financial Services
+Tokio Marine	https://www.tokiomarinehd.com	Insurance Underwriting	Banking and Financial Services
+Legal & General	https://www.legalandgeneral.com	Insurance Underwriting	Banking and Financial Services
+Nippon Life	https://www.nissay.co.jp	Insurance Underwriting	Banking and Financial Services
+Manulife	https://www.manulife.com	Insurance Underwriting	Banking and Financial Services
+Stripe	https://stripe.com	FinTech	Banking and Financial Services
+Square	https://squareup.com	FinTech	Banking and Financial Services
+Adyen	https://www.adyen.com	FinTech	Banking and Financial Services
+PayPal	https://www.paypal.com	FinTech	Banking and Financial Services
+Ant Group	https://www.antgroup.com	FinTech	Banking and Financial Services
+Klarna	https://www.klarna.com	FinTech	Banking and Financial Services
+Robinhood	https://robinhood.com	FinTech	Banking and Financial Services
+Revolut	https://www.revolut.com	FinTech	Banking and Financial Services
+Chime	https://www.chime.com	FinTech	Banking and Financial Services
+Plaid	https://plaid.com	FinTech	Banking and Financial Services
+SoFi	https://www.sofi.com	FinTech	Banking and Financial Services
+TransferWise (Wise)	https://wise.com	FinTech	Banking and Financial Services
+Blockchain.com	https://www.blockchain.com	FinTech	Banking and Financial Services
+Coinbase	https://www.coinbase.com	FinTech	Banking and Financial Services
+Nubank	https://nubank.com.br	FinTech	Banking and Financial Services
+Ripple	https://ripple.com	FinTech	Banking and Financial Services
+Affirm	https://www.affirm.com	FinTech	Banking and Financial Services
+Marqeta	https://www.marqeta.com	FinTech	Banking and Financial Services
+NYSE (Intercontinental Exchange)	https://www.nyse.com	Stock Exchanges	Banking and Financial Services
+Nasdaq	https://www.nasdaq.com	Stock Exchanges	Banking and Financial Services
+London Stock Exchange Group	https://www.lseg.com	Stock Exchanges	Banking and Financial Services
+Japan Exchange Group	https://www.jpx.co.jp	Stock Exchanges	Banking and Financial Services
+Shanghai Stock Exchange	https://english.sse.com.cn	Stock Exchanges	Banking and Financial Services
+Hong Kong Exchanges	https://www.hkex.com.hk	Stock Exchanges	Banking and Financial Services
