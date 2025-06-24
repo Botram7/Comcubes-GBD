@@ -17,7 +17,7 @@ export default function SectorPage() {
   const decodedSectorName = decodeURIComponent(sectorName || "");
 
   const { data: industries, isLoading, error } = useQuery({
-    queryKey: ["/api/sectors", decodedSectorName, "industries"],
+    queryKey: [`/api/sectors/${encodeURIComponent(decodedSectorName)}/industries`],
     enabled: !!sectorName,
     staleTime: Infinity,
   });

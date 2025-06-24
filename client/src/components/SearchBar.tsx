@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, X } from "lucide-react";
@@ -23,12 +23,7 @@ export function SearchBar({ onSearchResults }: SearchBarProps) {
     setSearchQuery(query);
     setIsSearchActive(query.length >= 2);
     
-    if (query.length >= 2) {
-      // Results will be automatically fetched via useQuery
-      if (searchResults) {
-        onSearchResults(searchResults);
-      }
-    } else {
+    if (query.length < 2) {
       onSearchResults(null);
     }
   };
@@ -40,9 +35,13 @@ export function SearchBar({ onSearchResults }: SearchBarProps) {
   };
 
   // Update search results when data changes
-  if (isSearchActive && searchResults) {
-    onSearchResults(searchResults);
-  }
+  useEffect(() => {
+    if (isSearchActive && searchResults) {
+      onSearchResults(searchResults);
+    } else if (!isSearchActive) {
+      onSearchResults(null);
+    }
+  }, [searchResults, isSearchActive, onSearchResults]);
 
   return (
     <div className="flex-1 max-w-lg mx-8">

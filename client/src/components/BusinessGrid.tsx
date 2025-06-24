@@ -10,7 +10,7 @@ interface BusinessGridProps {
 
 export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
   // Ensure exactly 20 items for 5x4 grid
-  const gridItems = [...items];
+  const gridItems = items ? [...items] : [];
   while (gridItems.length < 20) {
     gridItems.push({
       id: -1,
