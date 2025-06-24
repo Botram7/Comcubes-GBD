@@ -15,7 +15,7 @@ export default function CompanyPage() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const { data: companyData, isLoading, error } = useQuery({
-    queryKey: ["/api/companies", currentPage],
+    queryKey: [`/api/companies?page=${currentPage}&limit=20`],
     staleTime: 30000,
   });
 

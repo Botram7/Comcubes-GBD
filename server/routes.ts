@@ -20,6 +20,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const industries = await storage.getIndustriesBySector(decodeURIComponent(sectorName));
       res.json(industries);
     } catch (error) {
+      console.error("Error loading industries:", error);
       res.status(500).json({ error: "Failed to load industries" });
     }
   });
@@ -85,9 +86,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.json({ sectors: [], industries: [], companies: [] });
       }
       
+      console.log(`Searching for: "${query}"`);
       const results = await storage.searchAll(query);
+      console.log(`Search results: ${results.sectors.length} sectors, ${results.industries.length} industries, ${results.companies.length} companies`);
       res.json(results);
     } catch (error) {
+      console.error("Search error:", error);
       res.status(500).json({ error: "Search failed" });
     }
   });
