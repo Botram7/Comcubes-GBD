@@ -7,12 +7,17 @@ import { Pagination } from "@/components/Pagination";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
 import type { Company, SearchResults } from "@/lib/types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function CompanyPage() {
   const [, setLocation] = useLocation();
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+
+  // Scroll to top when component mounts or page changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
   const { data: companyData, isLoading, error } = useQuery({
     queryKey: [`/api/companies?page=${currentPage}&limit=20`],

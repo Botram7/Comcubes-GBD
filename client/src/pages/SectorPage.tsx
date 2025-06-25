@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
 import type { Industry, SearchResults } from "@/lib/types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function SectorPage() {
   const { sectorName } = useParams();
@@ -15,6 +15,11 @@ export default function SectorPage() {
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
 
   const decodedSectorName = decodeURIComponent(sectorName || "");
+
+  // Scroll to top when component mounts or sector changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [sectorName]);
 
   const { data: industries, isLoading, error } = useQuery({
     queryKey: [`/api/sectors/${encodeURIComponent(decodedSectorName)}/industries`],

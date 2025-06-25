@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
 import type { Company, SearchResults } from "@/lib/types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function IndustryPage() {
   const { industryName } = useParams();
@@ -15,6 +15,11 @@ export default function IndustryPage() {
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
 
   const decodedIndustryName = decodeURIComponent(industryName || "");
+
+  // Scroll to top when component mounts or industry changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [industryName]);
 
   const { data: companies, isLoading, error } = useQuery({
     queryKey: [`/api/industries/${encodeURIComponent(decodedIndustryName)}/companies`],
