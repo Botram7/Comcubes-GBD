@@ -38,12 +38,16 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
               backgroundImage: `url('${getImageForEntity(item.name, type)}')`
             }}
           >
-            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
-              <div className="text-center text-white p-4">
-                <h3 className="text-lg font-semibold mb-2 leading-tight">
+            {/* Gradient overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+            
+            {/* Text positioned at center-bottom */}
+            <div className="absolute inset-0 flex items-end justify-center">
+              <div className="text-center text-white p-4 pb-6">
+                <h3 className="text-lg font-bold mb-2 leading-tight drop-shadow-lg">
                   {item.name}
                 </h3>
-                <p className="text-sm opacity-90">
+                <p className="text-sm opacity-90 font-medium">
                   {type === 'company' && (item as Company).websiteUrl && item.id !== -1
                     ? 'Visit Website'
                     : type === 'industry' 
@@ -54,7 +58,7 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
                   }
                 </p>
                 {type === 'company' && (item as Company).websiteUrl && item.id !== -1 && (
-                  <div className="mt-2 text-xs opacity-75">External Link</div>
+                  <div className="mt-1 text-xs opacity-75">External Link</div>
                 )}
               </div>
             </div>
