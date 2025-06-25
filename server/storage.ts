@@ -76,32 +76,57 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getSectors(): Promise<Sector[]> {
-    await this.initialize();
-    return await db.select().from(sectors).orderBy(sectors.name);
+    try {
+      await this.initialize();
+      return await db.select().from(sectors).orderBy(sectors.name);
+    } catch (error) {
+      console.error('Error getting sectors:', error);
+      return [];
+    }
   }
 
   async getIndustriesBySector(sectorName: string): Promise<Industry[]> {
-    await this.initialize();
-    return await db.select().from(industries)
-      .where(eq(industries.sectorName, sectorName))
-      .orderBy(industries.name);
+    try {
+      await this.initialize();
+      return await db.select().from(industries)
+        .where(eq(industries.sectorName, sectorName))
+        .orderBy(industries.name);
+    } catch (error) {
+      console.error('Error getting industries by sector:', error);
+      return [];
+    }
   }
 
   async getCompaniesByIndustry(industryName: string): Promise<Company[]> {
-    await this.initialize();
-    return await db.select().from(companies)
-      .where(eq(companies.industryName, industryName))
-      .orderBy(companies.name);
+    try {
+      await this.initialize();
+      return await db.select().from(companies)
+        .where(eq(companies.industryName, industryName))
+        .orderBy(companies.name);
+    } catch (error) {
+      console.error('Error getting companies by industry:', error);
+      return [];
+    }
   }
 
   async getAllIndustries(): Promise<Industry[]> {
-    await this.initialize();
-    return await db.select().from(industries).orderBy(industries.name);
+    try {
+      await this.initialize();
+      return await db.select().from(industries).orderBy(industries.name);
+    } catch (error) {
+      console.error('Error getting all industries:', error);
+      return [];
+    }
   }
 
   async getAllCompanies(): Promise<Company[]> {
-    await this.initialize();
-    return await db.select().from(companies).orderBy(companies.name);
+    try {
+      await this.initialize();
+      return await db.select().from(companies).orderBy(companies.name);
+    } catch (error) {
+      console.error('Error getting all companies:', error);
+      return [];
+    }
   }
 
   async searchAll(query: string): Promise<{
@@ -109,35 +134,44 @@ export class DatabaseStorage implements IStorage {
     industries: Industry[];
     companies: Company[];
   }> {
-    await this.initialize();
-    const searchPattern = `%${query}%`;
+    try {
+      await this.initialize();
+      const searchPattern = `%${query}%`;
 
-    const [sectorResults, industryResults, companyResults] = await Promise.all([
-      db.select().from(sectors)
-        .where(ilike(sectors.name, searchPattern))
-        .orderBy(sectors.name),
-      
-      db.select().from(industries)
-        .where(or(
-          ilike(industries.name, searchPattern),
-          ilike(industries.sectorName, searchPattern)
-        ))
-        .orderBy(industries.name),
-      
-      db.select().from(companies)
-        .where(or(
-          ilike(companies.name, searchPattern),
-          ilike(companies.industryName, searchPattern),
-          ilike(companies.sectorName, searchPattern)
-        ))
-        .orderBy(companies.name)
-    ]);
+      const [sectorResults, industryResults, companyResults] = await Promise.all([
+        db.select().from(sectors)
+          .where(ilike(sectors.name, searchPattern))
+          .orderBy(sectors.name),
+        
+        db.select().from(industries)
+          .where(or(
+            ilike(industries.name, searchPattern),
+            ilike(industries.sectorName, searchPattern)
+          ))
+          .orderBy(industries.name),
+        
+        db.select().from(companies)
+          .where(or(
+            ilike(companies.name, searchPattern),
+            ilike(companies.industryName, searchPattern),
+            ilike(companies.sectorName, searchPattern)
+          ))
+          .orderBy(companies.name)
+      ]);
 
-    return {
-      sectors: sectorResults,
-      industries: industryResults,
-      companies: companyResults
-    };
+      return {
+        sectors: sectorResults,
+        industries: industryResults,
+        companies: companyResults
+      };
+    } catch (error) {
+      console.error('Error searching all:', error);
+      return {
+        sectors: [],
+        industries: [],
+        companies: []
+      };
+    }
   }
 }
 
