@@ -6,11 +6,16 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
 import type { Sector, SearchResults } from "@/lib/types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function HomePage() {
   const [, setLocation] = useLocation();
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const { data: sectors, isLoading, error } = useQuery({
     queryKey: ["/api/sectors"],
