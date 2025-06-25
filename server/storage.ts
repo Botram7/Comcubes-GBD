@@ -23,6 +23,12 @@ export class DatabaseStorage implements IStorage {
     if (this.initialized) return;
     
     try {
+      console.log('Checking database connection...');
+      
+      // Test database connection first
+      await db.select().from(sectors).limit(1);
+      console.log('Database connection successful');
+      
       // Check if data already exists
       const existingSectors = await db.select().from(sectors).limit(1);
       
@@ -34,10 +40,13 @@ export class DatabaseStorage implements IStorage {
         const csvIndustries = await csvParser.loadIndustries();
         const csvCompanies = await csvParser.loadCompanies();
         
+        console.log(`Loaded ${csvSectors.length} sectors, ${csvIndustries.length} industries, ${csvCompanies.length} companies from CSV`);
+        
         // Insert sectors
         if (csvSectors.length > 0) {
           const sectorInserts: InsertSector[] = csvSectors.map(sector => ({ name: sector.name }));
           await db.insert(sectors).values(sectorInserts);
+          console.log(`Inserted ${sectorInserts.length} sectors`);
         }
         
         // Insert industries
@@ -47,11 +56,14 @@ export class DatabaseStorage implements IStorage {
             sectorName: industry.sectorName
           }));
           await db.insert(industries).values(industryInserts);
+          console.log(`Inserted ${industryInserts.length} industries`);
         }
         
         // Insert companies in batches (to handle large dataset)
         if (csvCompanies.length > 0) {
-          const batchSize = 1000;
+          const batchSize = 500; // Smaller batch size for better reliability
+          let totalInserted = 0;
+          
           for (let i = 0; i < csvCompanies.length; i += batchSize) {
             const batch = csvCompanies.slice(i, i + batchSize);
             const companyInserts: InsertCompany[] = batch.map(company => ({
@@ -60,18 +72,23 @@ export class DatabaseStorage implements IStorage {
               industryName: company.industryName,
               sectorName: company.sectorName
             }));
+            
             await db.insert(companies).values(companyInserts);
+            totalInserted += companyInserts.length;
+            console.log(`Inserted batch ${Math.floor(i/batchSize) + 1}, total: ${totalInserted}/${csvCompanies.length} companies`);
           }
         }
         
-        console.log(`Database initialized with ${csvSectors.length} sectors, ${csvIndustries.length} industries, ${csvCompanies.length} companies`);
+        console.log(`Database initialized successfully with ${csvSectors.length} sectors, ${csvIndustries.length} industries, ${csvCompanies.length} companies`);
       } else {
-        console.log('Database already contains data');
+        console.log('Database already contains data, skipping initialization');
       }
       
       this.initialized = true;
     } catch (error) {
       console.error('Error initializing database:', error);
+      // Don't throw error - allow app to continue with empty data
+      this.initialized = true;
     }
   }
 

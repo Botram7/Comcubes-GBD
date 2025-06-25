@@ -28,12 +28,13 @@ export class CSVParser {
   async loadSectors(): Promise<Sector[]> {
     try {
       const filePath = path.resolve(import.meta.dirname, '../../attached_assets/SECTOR_1750802785300.csv');
+      console.log('Loading sectors from:', filePath);
       const content = await fs.promises.readFile(filePath, 'utf-8');
       const lines = content.split('\n').filter(line => line.trim());
       
       const sectors: Sector[] = [];
       for (let i = 1; i < lines.length; i++) { // Skip header
-        const sectorName = lines[i].trim();
+        const sectorName = lines[i].trim().replace(/"/g, '');
         if (sectorName && sectorName !== '') {
           sectors.push({
             id: i,
@@ -42,6 +43,7 @@ export class CSVParser {
         }
       }
       
+      console.log(`Loaded ${sectors.length} sectors from CSV`);
       return sectors;
     } catch (error) {
       console.error('Error loading sectors:', error);
@@ -52,6 +54,7 @@ export class CSVParser {
   async loadIndustries(): Promise<Industry[]> {
     try {
       const filePath = path.resolve(import.meta.dirname, '../../attached_assets/INDUSTRY_1750802785299.csv');
+      console.log('Loading industries from:', filePath);
       const content = await fs.promises.readFile(filePath, 'utf-8');
       const lines = content.split('\n').filter(line => line.trim());
       
@@ -61,12 +64,13 @@ export class CSVParser {
         if (columns.length >= 2 && columns[0] && columns[1]) {
           industries.push({
             id: i,
-            name: columns[0].trim(),
-            sectorName: columns[1].trim()
+            name: columns[0].trim().replace(/"/g, ''),
+            sectorName: columns[1].trim().replace(/"/g, '')
           });
         }
       }
       
+      console.log(`Loaded ${industries.length} industries from CSV`);
       return industries;
     } catch (error) {
       console.error('Error loading industries:', error);
@@ -77,6 +81,7 @@ export class CSVParser {
   async loadCompanies(): Promise<Company[]> {
     try {
       const filePath = path.resolve(import.meta.dirname, '../../attached_assets/COMPANY_1750803462655.csv');
+      console.log('Loading companies from:', filePath);
       const content = await fs.promises.readFile(filePath, 'utf-8');
       const lines = content.split('\n').filter(line => line.trim());
       
@@ -86,14 +91,15 @@ export class CSVParser {
         if (columns.length >= 4 && columns[0] && columns[2] && columns[3]) {
           companies.push({
             id: i,
-            name: columns[0].trim(),
-            websiteUrl: columns[1] ? columns[1].trim() : null,
-            industryName: columns[2].trim(),
-            sectorName: columns[3].trim()
+            name: columns[0].trim().replace(/"/g, ''),
+            websiteUrl: columns[1] && columns[1].trim() !== '' ? columns[1].trim().replace(/"/g, '') : null,
+            industryName: columns[2].trim().replace(/"/g, ''),
+            sectorName: columns[3].trim().replace(/"/g, '')
           });
         }
       }
       
+      console.log(`Loaded ${companies.length} companies from CSV`);
       return companies;
     } catch (error) {
       console.error('Error loading companies:', error);
