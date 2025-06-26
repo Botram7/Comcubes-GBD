@@ -43,7 +43,7 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
   while (gridItems.length < 20) {
     gridItems.push({
       id: -1,
-      name: 'Coming Soon',
+      name: 'Available Slot',
       ...(type === 'industry' && { sectorName: '' }),
       ...(type === 'company' && { industryName: '', sectorName: '', websiteUrl: null })
     } as any);
@@ -71,9 +71,12 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
                   <p className="text-sm opacity-90 font-medium">
                     {(item as Company).websiteUrl && item.id !== -1
                       ? 'Visit Website'
-                      : 'More data coming soon'
+                      : 'Get Listed'
                     }
                   </p>
+                  {item.id === -1 && (
+                    <div className="mt-1 text-xs opacity-75">Reach out to us now</div>
+                  )}
                   {(item as Company).websiteUrl && item.id !== -1 && (
                     <div className="mt-1 text-xs opacity-75">External Link</div>
                   )}
@@ -98,11 +101,16 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
                     {item.name}
                   </h3>
                   <p className="text-sm opacity-90 font-medium">
-                    {type === 'industry' 
+                    {item.id === -1 
+                      ? 'Get Listed'
+                      : type === 'industry' 
                       ? 'View Companies'
                       : 'View Industries'
                     }
                   </p>
+                  {item.id === -1 && (
+                    <div className="mt-1 text-xs opacity-75">Reach out to us now</div>
+                  )}
                 </div>
               </div>
             </div>
