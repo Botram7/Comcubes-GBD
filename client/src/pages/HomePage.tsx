@@ -155,18 +155,8 @@ export default function HomePage() {
           </div>
         ) : (
           <>
-            <div className="mb-6 text-center">
-              <div className="flex flex-col items-center mb-4">
-                <img 
-                  src="/attached_assets/Snip2_1750895648773.png" 
-                  alt="COMCUBES - Commercial Cubes" 
-                  className="h-16 w-auto mb-3"
-                />
-                <h1 className="text-4xl font-bold text-gray-900 mb-2">COMCUBES</h1>
-                <p className="text-lg text-gray-700 mb-1">Everything and Anything Business</p>
-                <p className="text-sm text-gray-500 uppercase tracking-wide">Global Business Directory</p>
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900 mt-6">Business Sectors</h2>
+            <div className="mb-6">
+              <h2 className="text-3xl font-bold text-gray-900">Business Sectors</h2>
               <p className="text-gray-600 mt-2">
                 Explore {sectors?.length || 0} major business sectors across global industries
               </p>
@@ -180,8 +170,8 @@ export default function HomePage() {
       <footer className="bg-white border-t border-gray-200 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-gray-600">
-            <p>&copy; 2024 COMCUBES - Global Business Directory. Professional business data across 421 pages.</p>
-            <p className="mt-2 text-sm">Everything and Anything Business - Featuring 22 sectors, 398 industries, and 7,400+ companies worldwide.</p>
+            <p>&copy; 2024 Global Business Directory. Professional business data across 421 pages.</p>
+            <p className="mt-2 text-sm">Featuring 22 sectors, 398 industries, and 7,400+ companies worldwide.</p>
           </div>
         </div>
       </footer>
