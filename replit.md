@@ -1,8 +1,8 @@
-# Global Business Directory
+# COMCUBES (Commercial Cubes) - Global Business Directory
 
 ## Overview
 
-This is a full-stack web application that provides a hierarchical business directory system organized by sectors, industries, and companies. Users can browse through business sectors, drill down into specific industries, and view companies within those industries. The application features a clean, modern interface with search functionality and responsive design.
+COMCUBES (Commercial Cubes) is a full-stack web application that provides a hierarchical business directory system organized by sectors, industries, and companies. With the slogan "Everything and Anything Business", it serves as a comprehensive global business directory where users can browse through business sectors, drill down into specific industries, and view companies within those industries. The application features a clean, modern interface with the COMCUBES branding, search functionality, and responsive design.
 
 ## System Architecture
 
@@ -100,6 +100,13 @@ The application is configured for deployment on Replit with the following setup:
 
 ```
 Recent Changes:
+- June 26, 2025: Implemented COMCUBES branding and enhanced visual system
+  * Integrated COMCUBES logo and branding throughout the application
+  * Updated site title, meta tags, and SEO optimization for "COMCUBES - Global Business Directory"
+  * Retained "Global Business Directory" caption for SEO while highlighting "Everything and Anything Business" slogan
+  * Enhanced Media and Entertainment + Professional Services sector images
+  * Created comprehensive breadcrumb system with compact COMCUBES header for internal pages
+
 - June 25, 2025: Fixed critical application startup issues & Enhanced visual design
   * Resolved BusinessGrid component error with undefined items array
   * Added proper error handling to all database storage methods  
@@ -107,7 +114,7 @@ Recent Changes:
   * Successfully loaded data from CSV files: 22 sectors, 398+ industries, 7400+ companies
   * API endpoints now fully functional and serving real data
   * Implemented comprehensive image system with 20+ sector-specific images
-  * Added 100+ industry-specific high-quality professional images from Unsplash
+  * Added 150+ industry-specific high-quality professional images with unique mapping
   * Repositioned card text to center-bottom with gradient overlay for better readability
   * Enhanced image matching algorithm with keyword-based intelligent mapping
   * Improved visual hierarchy with drop shadows and better typography
