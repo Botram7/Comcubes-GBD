@@ -9,6 +9,33 @@ interface BusinessGridProps {
 }
 
 export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
+  // Function to get colorful gradient for company cards
+  const getCompanyCardGradient = (index: number): string => {
+    const gradients = [
+      'bg-gradient-to-br from-blue-500 to-blue-700',
+      'bg-gradient-to-br from-purple-500 to-purple-700',
+      'bg-gradient-to-br from-green-500 to-green-700',
+      'bg-gradient-to-br from-orange-500 to-orange-700',
+      'bg-gradient-to-br from-red-500 to-red-700',
+      'bg-gradient-to-br from-teal-500 to-teal-700',
+      'bg-gradient-to-br from-pink-500 to-pink-700',
+      'bg-gradient-to-br from-indigo-500 to-indigo-700',
+      'bg-gradient-to-br from-yellow-500 to-yellow-600',
+      'bg-gradient-to-br from-cyan-500 to-cyan-700',
+      'bg-gradient-to-br from-emerald-500 to-emerald-700',
+      'bg-gradient-to-br from-violet-500 to-violet-700',
+      'bg-gradient-to-br from-rose-500 to-rose-700',
+      'bg-gradient-to-br from-sky-500 to-sky-700',
+      'bg-gradient-to-br from-amber-500 to-amber-700',
+      'bg-gradient-to-br from-lime-500 to-lime-700',
+      'bg-gradient-to-br from-fuchsia-500 to-fuchsia-700',
+      'bg-gradient-to-br from-slate-500 to-slate-700',
+      'bg-gradient-to-br from-zinc-500 to-zinc-700',
+      'bg-gradient-to-br from-stone-500 to-stone-700'
+    ];
+    
+    return gradients[index % gradients.length];
+  };
   // Ensure items is always an array and exactly 20 items for 5x4 grid
   const validItems = Array.isArray(items) ? items : [];
   const gridItems = [...validItems];
@@ -33,12 +60,12 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
           onClick={() => item.id !== -1 && onItemClick(item)}
         >
           {type === 'company' ? (
-            /* Plain colored card for companies */
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600">
+            /* Colorful gradient cards for companies */
+            <div className={`absolute inset-0 ${getCompanyCardGradient(index)}`}>
               {/* Text positioned at center */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white p-4">
-                  <h3 className="text-lg font-bold mb-2 leading-tight">
+                  <h3 className="text-lg font-bold mb-2 leading-tight drop-shadow-md">
                     {item.name}
                   </h3>
                   <p className="text-sm opacity-90 font-medium">
