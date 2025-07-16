@@ -122,16 +122,7 @@ export default function HomePage() {
               <span className="text-xl font-bold text-gray-900">COMCUBES</span>
             </div>
             
-            <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-600 hover:text-gray-900">Home</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">About</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">Services</a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">Contact</a>
-            </nav>
-
-            <Button variant="outline" size="sm">
-              Sign In
-            </Button>
+            <div className="flex-1"></div>
           </div>
         </div>
       </header>

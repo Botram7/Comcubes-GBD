@@ -106,7 +106,8 @@ export default function SectorPage() {
 
       <Breadcrumbs 
         items={[
-          { label: "Home", href: "/" },
+          { label: "Home", onClick: () => setLocation("/") },
+          { label: "Business Sectors", onClick: () => setLocation("/sectors") },
           { label: decodedSectorName }
         ]} 
       />

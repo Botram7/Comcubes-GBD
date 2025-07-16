@@ -113,7 +113,8 @@ export default function CompanyPage() {
 
       <Breadcrumbs 
         items={[
-          { label: "Home", href: "/" },
+          { label: "Home", onClick: () => setLocation("/") },
+          { label: "Business Sectors", onClick: () => setLocation("/sectors") },
           { label: "All Companies" }
         ]} 
       />
