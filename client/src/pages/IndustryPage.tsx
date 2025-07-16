@@ -111,8 +111,9 @@ export default function IndustryPage() {
 
       <Breadcrumbs 
         items={[
-          { label: "Home", href: "/" },
-          { label: sectorName, href: `/sector/${encodeURIComponent(sectorName)}` },
+          { label: "Home", onClick: () => setLocation("/") },
+          { label: "Business Sectors", onClick: () => setLocation("/sectors") },
+          { label: sectorName, onClick: () => setLocation(`/sector/${encodeURIComponent(sectorName)}`) },
           { label: decodedIndustryName }
         ]} 
       />
