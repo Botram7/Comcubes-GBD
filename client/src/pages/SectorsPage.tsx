@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
+import comcubesIcon from "@assets/default icon_1752718398420.png";
 import type { Sector, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -42,8 +43,8 @@ export default function SectorsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-blue-600 rounded mr-3 flex items-center justify-center">
-                  <Building2 className="h-5 w-5 text-white" />
+                <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
                 </div>
                 <span className="text-xl font-bold text-gray-900">COMCUBES</span>
               </div>
@@ -69,8 +70,8 @@ export default function SectorsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-blue-600 rounded mr-3 flex items-center justify-center">
-                  <Building2 className="h-5 w-5 text-white" />
+                <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
                 </div>
                 <span className="text-xl font-bold text-gray-900">COMCUBES</span>
               </div>
@@ -102,8 +103,8 @@ export default function SectorsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <div className="w-[100px] h-[100px] bg-blue-600 rounded mr-3 flex items-center justify-center">
-                <Building2 className="h-12 w-12 text-white" />
+              <div className="w-[100px] h-[100px] mr-3 flex items-center justify-center">
+                <img src={comcubesIcon} alt="COMCUBES" className="w-full h-full" />
               </div>
               <span className="text-xl font-bold text-gray-900">COMCUBES</span>
             </div>
