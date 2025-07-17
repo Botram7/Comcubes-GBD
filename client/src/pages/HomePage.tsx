@@ -21,7 +21,7 @@ import { useState, useEffect } from "react";
 import { getImageForEntity } from "@/lib/constants";
 import comcubesLogo from "@assets/default_1752716413946.png";
 import comcubesMonochrome from "@assets/default-monochrome_1752717527516.png";
-import comcubesIcon from "@assets/default icon_1752718398420.png";
+import comcubesIcon from "@assets/2de77b64-4c39-4ddb-aa7a-0afd37edfe34_1752720571406.png";
 
 export default function HomePage() {
   const [, setLocation] = useLocation();
@@ -131,7 +131,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 600 }}>
             Global Business Directory
           </h1>
           
@@ -346,7 +346,7 @@ export default function HomePage() {
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
                 </div>
-                <span className="text-xl font-bold">COMCUBES GBD</span>
+                <span className="text-xl font-bold" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES GBD</span>
               </div>
               <p className="text-gray-400 text-sm">
                 Global Business Directory for comprehensive business intelligence.

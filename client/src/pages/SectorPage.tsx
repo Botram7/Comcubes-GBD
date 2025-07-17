@@ -6,7 +6,7 @@ import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
-import comcubesIcon from "@assets/default icon_1752718398420.png";
+import comcubesIcon from "@assets/2de77b64-4c39-4ddb-aa7a-0afd37edfe34_1752720571406.png";
 import type { Industry, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -68,7 +68,7 @@ export default function SectorPage() {
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
                 </div>
-                <h1 className="text-2xl font-bold text-primary">COMCUBES</h1>
+                <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
               <SearchBar onSearchResults={handleSearchResults} />
               <span className="text-sm text-gray-600">Error</span>
