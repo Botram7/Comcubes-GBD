@@ -8,7 +8,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
-import comcubesDefaultLogo from "@/assets/comcubes-default.png";
 
 export default function CompanyPage() {
   const [, setLocation] = useLocation();
@@ -45,11 +44,7 @@ export default function CompanyPage() {
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <img 
-                src={comcubesDefaultLogo} 
-                alt="COMCUBES Global Business Directory" 
-                className="h-8 w-auto"
-              />
+              <h1 className="text-2xl font-bold text-primary">Global Business Directory</h1>
               <SearchBar onSearchResults={handleSearchResults} />
               <span className="text-sm text-gray-600">Loading...</span>
             </div>
@@ -71,11 +66,7 @@ export default function CompanyPage() {
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <img 
-                src={comcubesDefaultLogo} 
-                alt="COMCUBES Global Business Directory" 
-                className="h-8 w-auto"
-              />
+              <h1 className="text-2xl font-bold text-primary">Global Business Directory</h1>
               <SearchBar onSearchResults={handleSearchResults} />
               <span className="text-sm text-gray-600">Error</span>
             </div>
@@ -106,11 +97,7 @@ export default function CompanyPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <img 
-                src={comcubesDefaultLogo} 
-                alt="COMCUBES Global Business Directory" 
-                className="h-8 w-auto"
-              />
+              <h1 className="text-2xl font-bold text-primary">Global Business Directory</h1>
             </div>
             
             <SearchBar onSearchResults={handleSearchResults} />

@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
 import type { Sector, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
-import comcubesDefaultLogo from "@/assets/comcubes-default.png";
 
 export default function SectorsPage() {
   const [, setLocation] = useLocation();
@@ -42,11 +41,12 @@ export default function SectorsPage() {
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <img 
-                src={comcubesDefaultLogo} 
-                alt="COMCUBES Global Business Directory" 
-                className="h-8 w-auto"
-              />
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-blue-600 rounded mr-3 flex items-center justify-center">
+                  <Building2 className="h-5 w-5 text-white" />
+                </div>
+                <span className="text-xl font-bold text-gray-900">COMCUBES</span>
+              </div>
               <SearchBar onSearchResults={handleSearchResults} />
               <span className="text-sm text-gray-600">Loading...</span>
             </div>
@@ -68,11 +68,12 @@ export default function SectorsPage() {
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <img 
-                src={comcubesDefaultLogo} 
-                alt="COMCUBES Global Business Directory" 
-                className="h-8 w-auto"
-              />
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-blue-600 rounded mr-3 flex items-center justify-center">
+                  <Building2 className="h-5 w-5 text-white" />
+                </div>
+                <span className="text-xl font-bold text-gray-900">COMCUBES</span>
+              </div>
               <SearchBar onSearchResults={handleSearchResults} />
               <span className="text-sm text-gray-600">Error</span>
             </div>
@@ -100,11 +101,12 @@ export default function SectorsPage() {
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <img 
-              src={comcubesDefaultLogo} 
-              alt="COMCUBES Global Business Directory" 
-              className="h-8 w-auto"
-            />
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-blue-600 rounded mr-3 flex items-center justify-center">
+                <Building2 className="h-5 w-5 text-white" />
+              </div>
+              <span className="text-xl font-bold text-gray-900">COMCUBES</span>
+            </div>
             
             <SearchBar onSearchResults={handleSearchResults} />
 
