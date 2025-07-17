@@ -117,13 +117,12 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <div className="mb-8">
-            <div className="w-full h-32 bg-white rounded-lg shadow-lg mb-4 flex items-center justify-center p-4">
-              <img 
-                src={comcubesLogo} 
-                alt="COMCUBES Global Business Directory" 
-                className="w-full h-full object-contain"
-              />
-            </div>
+            <img 
+              src={comcubesLogo} 
+              alt="COMCUBES Global Business Directory" 
+              className="w-full h-48 object-contain mx-auto"
+              style={{ transform: 'scale(1.5)' }}
+            />
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
