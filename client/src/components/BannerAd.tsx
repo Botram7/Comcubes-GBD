@@ -73,7 +73,7 @@ export function BannerAd({ position, className = "" }: BannerAdProps) {
       ))}
       
       {/* Extended tall banner space that matches grid height */}
-      <Card className="bg-gray-100 border-2 border-dashed border-gray-300 p-6 text-center h-64">
+      <Card className="bg-gray-100 border-2 border-dashed border-gray-300 p-6 text-center h-96">
         <div className="text-gray-500 h-full flex flex-col justify-center">
           <div className="text-sm font-medium mb-2">Advertisement Space</div>
           <div className="text-sm opacity-75 mb-4">Available for Rent</div>
