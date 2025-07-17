@@ -120,8 +120,7 @@ export default function HomePage() {
             <img 
               src={comcubesLogo} 
               alt="COMCUBES Global Business Directory" 
-              className="w-full h-48 object-contain mx-auto"
-              style={{ transform: 'scale(1.5)' }}
+              className="w-full h-32 object-contain mx-auto"
             />
           </div>
 
