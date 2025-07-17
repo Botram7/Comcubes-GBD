@@ -68,7 +68,7 @@ export default function IndustryPage() {
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <h1 className="text-2xl font-bold text-primary">Global Business Directory</h1>
+              <h1 className="text-2xl font-bold text-primary">COMCUBES</h1>
               <SearchBar onSearchResults={handleSearchResults} />
               <span className="text-sm text-gray-600">Error</span>
             </div>
@@ -97,7 +97,7 @@ export default function IndustryPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-primary">Global Business Directory</h1>
+              <h1 className="text-2xl font-bold text-primary">COMCUBES</h1>
             </div>
             
             <SearchBar onSearchResults={handleSearchResults} />
