@@ -52,11 +52,11 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
   const displayItems = gridItems.slice(0, 20);
 
   return (
-    <div className="grid grid-cols-5 grid-rows-4 gap-4 w-full">
+    <div className="grid grid-cols-5 grid-rows-4 gap-3 w-full max-w-4xl mx-auto">
       {displayItems.map((item, index) => (
         <Card
           key={`${type}-${item.id}-${index}`}
-          className="relative overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl aspect-[1/1.125] group"
+          className="relative overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl aspect-square group"
           onClick={() => item.id !== -1 && onItemClick(item)}
         >
           {type === 'company' ? (
@@ -64,11 +64,11 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
             <div className={`absolute inset-0 ${getCompanyCardGradient(index)}`}>
               {/* Text positioned at center */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white p-4">
-                  <h3 className="text-lg font-bold mb-2 leading-tight drop-shadow-md">
+                <div className="text-center text-white p-3">
+                  <h3 className="text-sm font-bold mb-1 leading-tight drop-shadow-md">
                     {item.name}
                   </h3>
-                  <p className="text-sm opacity-90 font-medium">
+                  <p className="text-xs opacity-90 font-medium">
                     {(item as Company).websiteUrl && item.id !== -1
                       ? 'Visit Website'
                       : 'Get Listed'
@@ -96,11 +96,11 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
               
               {/* Text positioned at center-bottom */}
               <div className="absolute inset-0 flex items-end justify-center">
-                <div className="text-center text-white p-4 pb-6">
-                  <h3 className="text-lg font-bold mb-2 leading-tight drop-shadow-lg">
+                <div className="text-center text-white p-3 pb-4">
+                  <h3 className="text-sm font-bold mb-1 leading-tight drop-shadow-lg">
                     {item.name}
                   </h3>
-                  <p className="text-sm opacity-90 font-medium">
+                  <p className="text-xs opacity-90 font-medium">
                     {item.id === -1 
                       ? 'Get Listed'
                       : type === 'industry' 
