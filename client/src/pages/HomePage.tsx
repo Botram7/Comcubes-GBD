@@ -19,6 +19,7 @@ import {
 import type { Sector, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 import { getImageForEntity } from "@/lib/constants";
+import comcubesLogo from "@assets/default_1752716413946.png";
 
 export default function HomePage() {
   const [, setLocation] = useLocation();
@@ -116,10 +117,12 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <div className="mb-8">
-            <div className="w-full h-32 bg-white rounded-lg shadow-lg mb-4 flex items-center justify-center">
-              <div className="w-full h-full bg-blue-600 rounded flex items-center justify-center">
-                <Building2 className="h-16 w-16 text-white" />
-              </div>
+            <div className="w-full h-32 bg-white rounded-lg shadow-lg mb-4 flex items-center justify-center p-4">
+              <img 
+                src={comcubesLogo} 
+                alt="COMCUBES Global Business Directory" 
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
 
