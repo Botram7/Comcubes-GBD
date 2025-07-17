@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
 import comcubesIcon from "@assets/2de77b64-4c39-4ddb-aa7a-0afd37edfe34_1752720571406.png";
 import { Pagination } from "@/components/Pagination";
+import { BannerAd } from "@/components/BannerAd";
 import type { Industry, SearchResults, PaginatedResponse } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -146,8 +147,16 @@ export default function IndustriesPage() {
       />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {searchResults ? (
-          <div className="space-y-8">
+        <div className="flex gap-6">
+          {/* Left Banner Ads */}
+          <div className="hidden lg:block w-48 flex-shrink-0">
+            <BannerAd position="left" />
+          </div>
+
+          {/* Main Content */}
+          <div className="flex-1">
+            {searchResults ? (
+              <div className="space-y-8">
             <div className="mb-6">
               <h2 className="text-3xl font-bold text-gray-900">Search Results</h2>
               <p className="text-gray-600 mt-2">
@@ -225,6 +234,13 @@ export default function IndustriesPage() {
             </div>
           </>
         )}
+          </div>
+
+          {/* Right Banner Ads */}
+          <div className="hidden lg:block w-48 flex-shrink-0">
+            <BannerAd position="right" />
+          </div>
+        </div>
       </main>
 
       <footer className="bg-white border-t border-gray-200 mt-16">
