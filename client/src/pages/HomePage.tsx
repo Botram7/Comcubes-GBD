@@ -117,10 +117,9 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <div className="mb-8">
-            <img 
-              src={comcubesLogo} 
-              alt="COMCUBES Global Business Directory" 
-              className="w-full h-32 object-contain mx-auto"
+            <div 
+              className="w-full h-32 mx-auto rounded-lg"
+              style={{ backgroundColor: '#1e3a8a' }}
             />
           </div>
 
