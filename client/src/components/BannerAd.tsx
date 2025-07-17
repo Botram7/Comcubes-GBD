@@ -6,79 +6,41 @@ interface BannerAdProps {
 }
 
 export function BannerAd({ position, className = "" }: BannerAdProps) {
-  const adContent = {
-    left: [
-      {
-        title: "Boost Your Business",
-        subtitle: "Reach 10,000+ daily visitors",
-        bgColor: "bg-gradient-to-br from-blue-600 to-blue-800",
-        cta: "Advertise Here"
-      },
-      {
-        title: "Global Exposure",
-        subtitle: "Connect with industry leaders",
-        bgColor: "bg-gradient-to-br from-green-600 to-green-800",
-        cta: "Get Started"
-      },
-      {
-        title: "Premium Placement",
-        subtitle: "Maximize your visibility",
-        bgColor: "bg-gradient-to-br from-purple-600 to-purple-800",
-        cta: "Learn More"
-      }
-    ],
-    right: [
-      {
-        title: "Featured Services",
-        subtitle: "Professional business solutions",
-        bgColor: "bg-gradient-to-br from-orange-600 to-orange-800",
-        cta: "Explore Now"
-      },
-      {
-        title: "Industry Insights",
-        subtitle: "Access market intelligence",
-        bgColor: "bg-gradient-to-br from-teal-600 to-teal-800",
-        cta: "Subscribe"
-      },
-      {
-        title: "Partner Network",
-        subtitle: "Join our business ecosystem",
-        bgColor: "bg-gradient-to-br from-indigo-600 to-indigo-800",
-        cta: "Join Today"
-      }
-    ]
-  };
-
-  const ads = adContent[position];
+  const gradientClass = position === 'left' 
+    ? 'bg-gradient-to-b from-blue-500 to-purple-600' 
+    : 'bg-gradient-to-b from-green-500 to-teal-600';
 
   return (
-    <div className={`space-y-4 ${className}`}>
-      {ads.map((ad, index) => (
-        <Card
-          key={`${position}-ad-${index}`}
-          className={`${ad.bgColor} text-white p-4 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg border-0`}
-        >
-          <div className="text-center">
-            <h3 className="font-bold text-sm mb-1 leading-tight">
-              {ad.title}
-            </h3>
-            <p className="text-xs opacity-90 mb-3 leading-relaxed">
-              {ad.subtitle}
-            </p>
-            <div className="bg-white bg-opacity-20 rounded px-3 py-1 text-xs font-medium">
-              {ad.cta}
+    <div className={`w-full h-full ${className}`}>
+      {/* Main tall banner that matches grid height */}
+      <Card className={`${gradientClass} text-white h-full flex flex-col justify-between p-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg border-0`}>
+        {/* Top section */}
+        <div className="text-center">
+          <h3 className="font-bold text-lg mb-2 leading-tight">
+            {position === 'left' ? 'Premium Advertisement' : 'Featured Services'}
+          </h3>
+          <p className="text-sm opacity-90 mb-4 leading-relaxed">
+            {position === 'left' 
+              ? 'Reach 10,000+ daily business professionals' 
+              : 'Connect with industry leaders worldwide'}
+          </p>
+        </div>
+
+        {/* Middle section */}
+        <div className="text-center flex-1 flex items-center justify-center">
+          <div className="bg-white bg-opacity-20 rounded-lg p-4 w-full">
+            <div className="text-sm font-medium mb-2">Advertisement Space</div>
+            <div className="text-sm opacity-90 mb-3">Available for Rent</div>
+            <div className="bg-white bg-opacity-30 rounded px-4 py-2 text-sm font-bold">
+              Contact Us
             </div>
           </div>
-        </Card>
-      ))}
-      
-      {/* Additional banner space */}
-      <Card className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 text-center">
-        <div className="text-gray-500">
-          <div className="text-xs font-medium mb-1">Advertisement Space</div>
-          <div className="text-xs opacity-75">Available for Rent</div>
-          <div className="mt-2 bg-gray-200 rounded px-2 py-1 text-xs">
-            Contact Us
+        </div>
+
+        {/* Bottom section */}
+        <div className="text-center">
+          <div className="bg-white bg-opacity-20 rounded px-4 py-2 text-sm font-medium">
+            {position === 'left' ? 'Boost Your Business' : 'Get Started Today'}
           </div>
         </div>
       </Card>
