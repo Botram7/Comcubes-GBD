@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Pagination } from "@/components/Pagination";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
+import comcubesIcon from "@assets/default icon_1752718398420.png";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -44,7 +45,12 @@ export default function CompanyPage() {
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <h1 className="text-2xl font-bold text-primary">Global Business Directory</h1>
+              <div className="flex items-center">
+                <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
+                </div>
+                <h1 className="text-2xl font-bold text-primary">COMCUBES</h1>
+              </div>
               <SearchBar onSearchResults={handleSearchResults} />
               <span className="text-sm text-gray-600">Loading...</span>
             </div>
@@ -66,7 +72,12 @@ export default function CompanyPage() {
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <h1 className="text-2xl font-bold text-primary">COMCUBES</h1>
+              <div className="flex items-center">
+                <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
+                </div>
+                <h1 className="text-2xl font-bold text-primary">COMCUBES</h1>
+              </div>
               <SearchBar onSearchResults={handleSearchResults} />
               <span className="text-sm text-gray-600">Error</span>
             </div>
@@ -97,6 +108,9 @@ export default function CompanyPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
+              <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
+              </div>
               <h1 className="text-2xl font-bold text-primary">COMCUBES</h1>
             </div>
             
