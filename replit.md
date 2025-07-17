@@ -115,6 +115,9 @@ Recent Changes:
   * Fixed breadcrumb navigation hierarchy to show proper path: Home > Business Sectors > Sector > Industry
   * Removed top navigation menu from homepage (Home, About, Services, Contact, Sign In) as requested
   * Enhanced user experience with proper back-navigation through breadcrumb system
+  * Updated COMCUBES branding across all pages with 100x100 pixel logos in headers and hero section
+  * Removed "GBD" text beneath logos for cleaner presentation
+  * Standardized header branding to show "COMCUBES" instead of "Global Business Directory"
 
 - June 26, 2025: Implemented COMCUBES branding and enhanced visual system
   * Integrated COMCUBES logo and branding throughout the application
