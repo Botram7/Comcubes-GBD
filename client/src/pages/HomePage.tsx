@@ -111,33 +111,16 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
-              <div className="w-[100px] h-[100px] bg-blue-600 rounded mr-3 flex items-center justify-center">
-                <Building2 className="h-12 w-12 text-white" />
-              </div>
-              <span className="text-xl font-bold text-gray-900">COMCUBES</span>
-            </div>
-            
-            <div className="flex-1"></div>
-          </div>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <div className="mb-8">
-            <div className="inline-flex items-center justify-center w-[100px] h-[100px] bg-white rounded-lg shadow-lg mb-4">
-              <div className="w-16 h-16 bg-blue-600 rounded flex items-center justify-center">
-                <Building2 className="h-8 w-8 text-white" />
+            <div className="w-full h-32 bg-white rounded-lg shadow-lg mb-4 flex items-center justify-center">
+              <div className="w-full h-full bg-blue-600 rounded flex items-center justify-center">
+                <Building2 className="h-16 w-16 text-white" />
               </div>
             </div>
-            <div className="text-sm text-blue-600 font-medium">COMCUBES</div>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
