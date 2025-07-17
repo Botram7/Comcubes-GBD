@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
-import comcubesIcon from "@assets/default icon_1752718398420.png";
+import comcubesIcon from "@assets/2de77b64-4c39-4ddb-aa7a-0afd37edfe34_1752720571406.png";
 import { Pagination } from "@/components/Pagination";
 import type { Industry, SearchResults, PaginatedResponse } from "@/lib/types";
 import { useState, useEffect } from "react";
@@ -52,7 +52,7 @@ export default function IndustriesPage() {
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
                 </div>
-                <span className="text-xl font-bold text-gray-900">COMCUBES</span>
+                <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
               <SearchBar onSearchResults={handleSearchResults} />
               <span className="text-sm text-gray-600">Loading...</span>
@@ -79,7 +79,7 @@ export default function IndustriesPage() {
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
                 </div>
-                <span className="text-xl font-bold text-gray-900">COMCUBES</span>
+                <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
               <SearchBar onSearchResults={handleSearchResults} />
               <span className="text-sm text-gray-600">Error</span>
@@ -114,10 +114,10 @@ export default function IndustriesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <div className="w-[100px] h-[100px] mr-3 flex items-center justify-center">
-                <img src={comcubesIcon} alt="COMCUBES" className="w-full h-full" />
+              <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
               </div>
-              <span className="text-xl font-bold text-gray-900">COMCUBES</span>
+              <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
             
             <SearchBar onSearchResults={handleSearchResults} />
