@@ -121,8 +121,8 @@ export default function HomePage() {
           {/* Logo */}
           <div className="mb-8 flex justify-center">
             <div 
-              className="w-96 h-32 rounded-lg flex items-center justify-center p-4"
-              style={{ backgroundColor: '#1e3a8a' }}
+              className="w-96 h-32 rounded-lg flex items-center justify-center p-2"
+              style={{ backgroundColor: '#2563eb' }}
             >
               <img 
                 src={newComcubesLogo} 
