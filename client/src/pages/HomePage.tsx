@@ -282,9 +282,6 @@ export default function HomePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3">
-                    <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center mb-2">
-                      <Building2 className="h-4 w-4 text-white" />
-                    </div>
                     <div className="text-white font-medium text-sm leading-tight">
                       {sector.name}
                     </div>
