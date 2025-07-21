@@ -120,14 +120,33 @@ export default function HomePage() {
           {/* Logo */}
           <div className="mb-8 flex justify-center">
             <div 
-              className="w-96 h-32 rounded-lg flex items-center justify-center p-4"
+              className="w-96 h-40 rounded-lg flex items-center justify-center p-6 relative"
               style={{ backgroundColor: '#1e3a8a' }}
             >
-              <img 
-                src={comcubesMonochrome} 
-                alt="COMCUBES Global Business Directory" 
-                className="w-full h-full object-contain"
-              />
+              {/* Logo Icon positioned to extend above and below the text */}
+              <div className="absolute left-6 top-1/2 transform -translate-y-1/2">
+                <img 
+                  src={comcubesMonochrome} 
+                  alt="COMCUBES Logo" 
+                  className="w-16 h-24 object-contain"
+                />
+              </div>
+              
+              {/* Text Content - centered with proper spacing */}
+              <div className="flex-1 text-center text-white ml-24 flex flex-col justify-center">
+                <div 
+                  className="text-2xl font-bold tracking-wide mb-3"
+                  style={{ fontFamily: 'IBM Plex Serif', fontWeight: 700 }}
+                >
+                  COMCUBES
+                </div>
+                <div 
+                  className="text-xs font-medium tracking-wider opacity-90 text-center"
+                  style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}
+                >
+                  EVERYTHING AND ANYTHING BUSINESS!
+                </div>
+              </div>
             </div>
           </div>
 
