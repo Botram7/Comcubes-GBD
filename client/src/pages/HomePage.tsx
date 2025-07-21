@@ -121,7 +121,7 @@ export default function HomePage() {
           {/* Logo */}
           <div className="mb-8 flex justify-center">
             <div 
-              className="w-96 h-32 rounded-lg flex items-center justify-center p-2"
+              className="w-96 h-32 rounded-lg flex items-center justify-center p-1"
               style={{ backgroundColor: '#2563eb' }}
             >
               <img 
