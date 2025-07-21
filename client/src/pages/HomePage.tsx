@@ -281,8 +281,8 @@ export default function HomePage() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <div className="text-white font-medium text-sm leading-tight">
+                  <div className="absolute bottom-3 left-3 right-3 text-center">
+                    <div className="text-white font-medium text-xs leading-tight">
                       {sector.name}
                     </div>
                   </div>
