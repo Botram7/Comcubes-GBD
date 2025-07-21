@@ -314,7 +314,7 @@ export default function HomePage() {
             Ready to Explore the Global Business Ecosystem?
           </h2>
           <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of professionals who rely on Comcubes GBD for comprehensive
+            Join thousands of professionals who rely on COMCUBES for comprehensive
             business intelligence and industry insights.
           </p>
           
@@ -328,9 +328,9 @@ export default function HomePage() {
             </Button>
             <Button 
               onClick={handleDiscoverCompanies}
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3"
+              className="bg-blue-800 text-white border-2 border-white hover:bg-blue-700 hover:border-blue-100 px-8 py-3"
             >
+              <Search className="mr-2 h-4 w-4" />
               Discover Companies
             </Button>
           </div>
