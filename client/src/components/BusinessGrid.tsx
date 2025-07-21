@@ -62,10 +62,10 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
           {type === 'company' ? (
             /* Colorful gradient cards for companies */
             <div className={`absolute inset-0 ${getCompanyCardGradient(index)}`}>
-              {/* Text positioned at center */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white p-3">
-                  <h3 className="text-sm font-bold mb-1 leading-tight drop-shadow-md">
+              {/* Text positioned at bottom center */}
+              <div className="absolute inset-0 flex items-end justify-center">
+                <div className="text-center text-white p-3 pb-4">
+                  <h3 className="text-xs font-bold mb-1 leading-tight drop-shadow-md">
                     {item.name}
                   </h3>
                   <p className="text-xs opacity-90 font-medium">
@@ -97,7 +97,7 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
               {/* Text positioned at center-bottom */}
               <div className="absolute inset-0 flex items-end justify-center">
                 <div className="text-center text-white p-3 pb-4">
-                  <h3 className="text-sm font-bold mb-1 leading-tight drop-shadow-lg">
+                  <h3 className="text-xs font-bold mb-1 leading-tight drop-shadow-lg">
                     {item.name}
                   </h3>
                   <p className="text-xs opacity-90 font-medium">
