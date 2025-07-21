@@ -354,7 +354,7 @@ export default function HomePage() {
             <div>
               <h3 className="font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
+                <li><button onClick={() => setLocation('/privacy-policy')} className="hover:text-white text-left">Privacy Policy</button></li>
                 <li><a href="#" className="hover:text-white">Terms of Service</a></li>
                 <li><a href="#" className="hover:text-white">Disclaimer</a></li>
               </ul>
