@@ -346,7 +346,7 @@ export default function HomePage() {
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
                 </div>
-                <span className="text-xl font-bold" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES GBD</span>
+                <span className="text-xl font-bold" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</span>
               </div>
               <p className="text-gray-400 text-sm">
                 Global Business Directory for comprehensive business intelligence.
@@ -383,7 +383,7 @@ export default function HomePage() {
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
             <p className="text-gray-400 text-sm">
-              © 2024 COMCUBES GBD. All rights reserved.
+              © 2024 COMCUBES. All rights reserved.
             </p>
           </div>
         </div>
