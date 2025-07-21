@@ -22,6 +22,7 @@ import { getImageForEntity } from "@/lib/constants";
 import comcubesLogo from "@assets/default_1752716413946.png";
 import comcubesMonochrome from "@assets/default-monochrome_1752717527516.png";
 import comcubesIcon from "@assets/2de77b64-4c39-4ddb-aa7a-0afd37edfe34_1752720571406.png";
+import newComcubesLogo from "@assets/Artboard 5_1753135425496.png";
 
 export default function HomePage() {
   const [, setLocation] = useLocation();
@@ -124,7 +125,7 @@ export default function HomePage() {
               style={{ backgroundColor: '#1e3a8a' }}
             >
               <img 
-                src={comcubesMonochrome} 
+                src={newComcubesLogo} 
                 alt="COMCUBES Global Business Directory" 
                 className="w-full h-full object-contain"
               />
