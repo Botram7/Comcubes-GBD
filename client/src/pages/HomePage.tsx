@@ -356,7 +356,7 @@ export default function HomePage() {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><button onClick={() => setLocation('/privacy-policy')} className="hover:text-white text-left">Privacy Policy</button></li>
                 <li><button onClick={() => setLocation('/terms-of-service')} className="hover:text-white text-left">Terms of Service</button></li>
-                <li><a href="#" className="hover:text-white">Disclaimer</a></li>
+                <li><button onClick={() => setLocation('/disclaimer')} className="hover:text-white text-left">Disclaimer</button></li>
               </ul>
             </div>
             
