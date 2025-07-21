@@ -9,6 +9,7 @@ import IndustriesPage from "@/pages/IndustriesPage";
 import SectorPage from "@/pages/SectorPage";
 import IndustryPage from "@/pages/IndustryPage";
 import CompanyPage from "@/pages/CompanyPage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/sector/:sectorName" component={SectorPage} />
       <Route path="/industry/:industryName" component={IndustryPage} />
       <Route path="/companies" component={CompanyPage} />
+      <Route path="/privacy-policy" component={PrivacyPolicyPage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -1,0 +1,72 @@
+1) Privacy Policy
+Privacy Policy for Comcubes Global Business Directory
+
+Last Updated: July 21, 2025
+
+Welcome to Comcubes Global Business Directory ("Comcubes GBD," "we," "us," or "our"). This Privacy Policy outlines how we collect, use, and protect information when you visit our website, located at https://www.comcubes.com.
+
+1. Information We Collect
+
+We are committed to maintaining your privacy. Currently, Comcubes GBD does not directly collect any personal identifying information from our users (such as names, email addresses, or contact details) through user accounts, registration forms, contact forms, or newsletter subscriptions.
+
+However, like most websites, we automatically collect certain non-personal information about your visit for analytical purposes and to improve our services. This may include:
+
+Usage Data: Information about how you interact with our website, such as the pages you visit, the time spent on those pages, clicks on links (including affiliate links), search queries, and general Browse patterns.
+
+Technical Data: Information about your device and internet connection, such as your IP address, browser type and version, operating system, referral source, and device identifiers.
+
+2. How We Collect Information
+
+We collect the non-personal information mentioned above through:
+
+Cookies and Similar Technologies: We may use cookies, web beacons, and other tracking technologies to enhance your Browse experience, analyze site traffic, and understand user behavior. Cookies are small data files stored on your device that help us remember your preferences and recognize you on repeat visits.
+
+Third-Party Analytics Services: We use third-party analytics services (e.g., Google Analytics) to help us understand website traffic and usage trends. These services may collect and process data as described in their own privacy policies.
+
+Affiliate Tracking: When you click on an affiliate link on our website, a cookie may be placed on your browser by the affiliate partner to track your referral and attribute any subsequent purchase to Comcubes GBD. This is typically done without collecting your personal identifying information but tracks the referral source.
+
+3. How We Use Your Information
+
+The non-personal information we collect is used solely for the following purposes:
+
+To Operate and Maintain Our Website: Ensuring our directory functions correctly and is accessible to you.
+
+To Improve Our Services: Understanding how users interact with our site allows us to enhance content, layout, and functionality.
+
+To Analyze Website Performance: Monitoring traffic patterns, popular content, and the effectiveness of our listings and affiliate links.
+
+For Affiliate Program Compliance: To track and attribute referrals made through our affiliate links, which allows us to earn commissions from our partners.
+
+4. Sharing Your Information
+
+We do not sell, trade, or otherwise transfer your personal identifying information to outside parties.
+
+We may share aggregated or anonymized non-personal data with third-party service providers (e.g., analytics providers) for the purposes outlined in Section 3. This data cannot be used to personally identify you.
+
+Information collected via affiliate tracking cookies is shared directly with the respective affiliate program providers, as necessary for tracking and commission purposes. This data typically includes non-personal identifiers and details about the referral event.
+
+5. Third-Party Links
+
+Our website contains links to third-party websites, including the official websites of companies listed in our directory and those of our affiliate partners. These third-party sites have their own independent privacy policies. We have no responsibility or liability for the content and activities of these linked sites. We encourage you to review the privacy policies of any third-party sites you visit.
+
+6. Cookies
+
+You can choose to disable cookies through your individual browser options. However, doing so may affect your ability to interact with certain features on our website or other websites. Please refer to your browser's documentation for more information on how to manage cookies.
+
+7. Data Security
+
+We implement reasonable security measures to protect the non-personal information we collect. However, no method of transmission over the Internet or method of electronic storage is 100% secure. Therefore, while we strive to use commercially acceptable means to protect your information, we cannot guarantee its absolute security.
+
+8. Children's Privacy
+
+Our website is not intended for children under the age of 13. We do not knowingly collect any personal identifying information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.
+
+9. Changes to This Privacy Policy
+
+We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.
+
+10. Contact Us
+
+If you have any questions about this Privacy Policy, please contact us at:
+
+contact-cgbd@comcubes.com
