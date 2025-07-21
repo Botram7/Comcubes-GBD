@@ -11,6 +11,7 @@ import IndustryPage from "@/pages/IndustryPage";
 import CompanyPage from "@/pages/CompanyPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsOfServicePage from "@/pages/TermsOfServicePage";
+import DisclaimerPage from "@/pages/DisclaimerPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/companies" component={CompanyPage} />
       <Route path="/privacy-policy" component={PrivacyPolicyPage} />
       <Route path="/terms-of-service" component={TermsOfServicePage} />
+      <Route path="/disclaimer" component={DisclaimerPage} />
       <Route component={NotFound} />
     </Switch>
   );
