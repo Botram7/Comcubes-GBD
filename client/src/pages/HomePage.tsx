@@ -282,7 +282,7 @@ export default function HomePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 text-center">
-                    <div className="text-white font-medium text-xs leading-tight">
+                    <div className="text-white font-medium text-sm leading-tight">
                       {sector.name}
                     </div>
                   </div>
