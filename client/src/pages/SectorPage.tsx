@@ -5,7 +5,8 @@ import { BusinessGrid } from "@/components/BusinessGrid";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { AlertCircle, Building2 } from "lucide-react";
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
 import type { Industry, SearchResults } from "@/lib/types";
@@ -43,8 +44,26 @@ export default function SectorPage() {
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <h1 className="text-2xl font-bold text-primary">Global Business Directory</h1>
-              <SearchBar onSearchResults={handleSearchResults} />
+              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
+                <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
+                </div>
+                <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <SearchBar onSearchResults={handleSearchResults} />
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setLocation('/search')}
+                  className="flex items-center gap-2"
+                >
+                  <Building2 className="h-4 w-4" />
+                  Advanced Search
+                </Button>
+              </div>
+              
               <span className="text-sm text-gray-600">Loading...</span>
             </div>
           </div>
@@ -65,13 +84,26 @@ export default function SectorPage() {
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
-              <SearchBar onSearchResults={handleSearchResults} />
+              
+              <div className="flex items-center space-x-3">
+                <SearchBar onSearchResults={handleSearchResults} />
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setLocation('/search')}
+                  className="flex items-center gap-2"
+                >
+                  <Building2 className="h-4 w-4" />
+                  Advanced Search
+                </Button>
+              </div>
+              
               <span className="text-sm text-gray-600">Error</span>
             </div>
           </div>
@@ -98,16 +130,31 @@ export default function SectorPage() {
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
+            <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0" onClick={() => setLocation('/')}>
               <div className="w-8 h-8 mr-3 flex items-center justify-center">
                 <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
               </div>
-              <h1 className="text-2xl font-bold text-primary">COMCUBES</h1>
+              <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
             
-            <SearchBar onSearchResults={handleSearchResults} />
+            <div className="flex-1 flex justify-center mx-8">
+              <div className="flex items-center space-x-4 max-w-2xl w-full">
+                <div className="flex-1">
+                  <SearchBar onSearchResults={handleSearchResults} />
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setLocation('/search')}
+                  className="flex items-center gap-2 flex-shrink-0"
+                >
+                  <Building2 className="h-4 w-4" />
+                  Advanced Search
+                </Button>
+              </div>
+            </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 flex-shrink-0">
               <span className="text-sm text-gray-600">Industries in {decodedSectorName}</span>
             </div>
           </div>
