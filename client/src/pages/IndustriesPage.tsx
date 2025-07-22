@@ -137,15 +137,15 @@ export default function IndustriesPage() {
   const total = paginatedData?.total || 0;
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter">
-      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 font-inter transition-colors duration-300">
+      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center py-4">
             <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0" onClick={() => setLocation('/')}>
               <div className="w-8 h-8 mr-3 flex items-center justify-center">
                 <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
               </div>
-              <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+              <h1 className="text-2xl font-bold text-primary dark:text-blue-400" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
             
             <div className="flex-1 flex justify-center mx-8">
@@ -166,6 +166,7 @@ export default function IndustriesPage() {
             </div>
 
             <div className="flex items-center space-x-4">
+              <ThemeToggle />
               <Button
                 variant="ghost"
                 size="sm"
@@ -175,7 +176,7 @@ export default function IndustriesPage() {
                 <ArrowLeft className="h-4 w-4" />
                 Home
               </Button>
-              <span className="text-sm text-gray-600">Page {currentPage + 1} of 421</span>
+              <span className="text-sm text-gray-600 dark:text-gray-300">Page {currentPage + 1} of 421</span>
             </div>
           </div>
         </div>
