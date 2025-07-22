@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { googleSearchService } from "./services/googleSearchService";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Get all sectors
@@ -78,7 +79,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Search all entities
+  // Search all entities (local database)
   app.get("/api/search", async (req, res) => {
     try {
       const query = req.query.q as string;
@@ -93,6 +94,50 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Search error:", error);
       res.status(500).json({ error: "Search failed" });
+    }
+  });
+
+  // Global business search using Google Custom Search API
+  app.get("/api/search/global", async (req, res) => {
+    try {
+      const query = req.query.q as string;
+      const maxResults = parseInt(req.query.max as string) || 20;
+      
+      if (!query || query.length < 3) {
+        return res.json({ 
+          businesses: [], 
+          source: 'google',
+          attribution: 'Powered by Google Custom Search',
+          total: 0
+        });
+      }
+      
+      console.log(`Global business search for: "${query}"`);
+      
+      // Search both local database and Google
+      const [localResults, googleResults] = await Promise.all([
+        storage.searchAll(query),
+        googleSearchService.searchBusinesses(query, maxResults)
+      ]);
+      
+      // Combine and format results
+      const combinedResults = {
+        local: {
+          sectors: localResults.sectors,
+          industries: localResults.industries,
+          companies: localResults.companies
+        },
+        external: googleResults,
+        attribution: 'Local data from COMCUBES database. External results powered by Google Custom Search.',
+        totalLocal: localResults.companies.length,
+        totalExternal: googleResults.length
+      };
+      
+      console.log(`Global search results: ${localResults.companies.length} local companies, ${googleResults.length} external companies`);
+      res.json(combinedResults);
+    } catch (error) {
+      console.error("Global search error:", error);
+      res.status(500).json({ error: "Global search failed" });
     }
   });
 
