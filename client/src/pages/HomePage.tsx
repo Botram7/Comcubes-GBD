@@ -138,7 +138,7 @@ export default function HomePage() {
           
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Navigate the world's most comprehensive business ecosystem. Discover 20 major business sectors,
-            explore 400 specialized industries, and connect with 8,000 leading global companies—all organized
+            explore 400+ specialized industries, and connect with 8,000+ leading global companies—all organized
             in an intuitive hierarchical structure designed for business professionals.
           </p>
 
@@ -180,7 +180,7 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Target className="h-6 w-6 text-purple-600" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{industryCount}</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">400+</div>
               <div className="text-gray-600 font-medium mb-1">Specialized Industries</div>
               <div className="text-sm text-gray-500">Detailed industry classifications</div>
             </Card>
@@ -189,7 +189,7 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="h-6 w-6 text-green-600" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{companyCount.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">8,000+</div>
               <div className="text-gray-600 font-medium mb-1">Global Companies</div>
               <div className="text-sm text-gray-500">Leading organizations worldwide</div>
             </Card>
