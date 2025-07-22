@@ -35,7 +35,28 @@ export class GoogleSearchService {
 
   constructor() {
     this.apiKey = process.env.GOOGLE_CUSTOM_SEARCH_API_KEY || '';
-    this.searchEngineId = process.env.GOOGLE_CUSTOM_SEARCH_ENGINE_ID || '';
+    
+    // Extract the actual search engine ID from the environment variable
+    // Handle both formats: clean ID or HTML embed code
+    const rawSearchEngineId = process.env.GOOGLE_CUSTOM_SEARCH_ENGINE_ID || '';
+    this.searchEngineId = this.extractSearchEngineId(rawSearchEngineId);
+  }
+
+  private extractSearchEngineId(rawId: string): string {
+    // If it's already a clean ID (alphanumeric string), use it
+    if (/^[a-zA-Z0-9]+$/.test(rawId.trim())) {
+      return rawId.trim();
+    }
+
+    // Extract from HTML embed code format: cx=XXXXX
+    const match = rawId.match(/cx=([a-zA-Z0-9]+)/);
+    if (match && match[1]) {
+      console.log(`Extracted search engine ID: ${match[1]}`);
+      return match[1];
+    }
+
+    console.warn('Could not extract search engine ID from:', rawId.substring(0, 50));
+    return rawId;
   }
 
   async searchBusinesses(query: string, maxResults: number = 20): Promise<BusinessSearchResult[]> {
@@ -53,8 +74,9 @@ export class GoogleSearchService {
       searchUrl.searchParams.append('cx', this.searchEngineId);
       searchUrl.searchParams.append('q', businessQuery);
       searchUrl.searchParams.append('num', Math.min(maxResults, 10).toString()); // Google max is 10 per request
-      searchUrl.searchParams.append('gl', 'us'); // Geographic location
-      searchUrl.searchParams.append('lr', 'lang_en'); // Language restriction
+      // Remove geographic and language restrictions that might cause 404
+      // searchUrl.searchParams.append('gl', 'us'); // Geographic location
+      // searchUrl.searchParams.append('lr', 'lang_en'); // Language restriction
 
       console.log(`Searching Google for businesses: "${businessQuery}"`);
       
