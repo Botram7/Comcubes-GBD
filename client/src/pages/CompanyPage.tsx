@@ -7,6 +7,7 @@ import { Pagination } from "@/components/Pagination";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2 } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
 import type { Company, SearchResults } from "@/lib/types";
@@ -131,15 +132,15 @@ export default function CompanyPage() {
   const totalPages = Math.ceil((companyData.total || 0) / 20);
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter">
-      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 font-inter transition-colors duration-300">
+      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-16">
             <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0" onClick={() => setLocation('/')}>
               <div className="w-8 h-8 mr-3 flex items-center justify-center">
                 <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
               </div>
-              <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+              <h1 className="text-2xl font-bold text-primary dark:text-blue-400" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
             
             <div className="flex-1 flex justify-center mx-8">
@@ -160,7 +161,8 @@ export default function CompanyPage() {
             </div>
 
             <div className="flex items-center space-x-4 flex-shrink-0">
-              <span className="text-sm text-gray-600">
+              <ThemeToggle />
+              <span className="text-sm text-gray-600 dark:text-gray-300">
                 Page {currentPage} of 421
               </span>
             </div>
