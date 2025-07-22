@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
 import type { Sector, SearchResults } from "@/lib/types";
@@ -99,8 +100,8 @@ export default function SectorsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter">
-      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 font-inter transition-colors duration-300">
+      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center py-4">
             <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0" onClick={() => setLocation('/')}>
@@ -128,6 +129,7 @@ export default function SectorsPage() {
             </div>
 
             <div className="flex items-center space-x-4 flex-shrink-0">
+              <ThemeToggle />
               <Button
                 variant="ghost"
                 size="sm"
@@ -137,7 +139,7 @@ export default function SectorsPage() {
                 <ArrowLeft className="h-4 w-4" />
                 Home
               </Button>
-              <span className="text-sm text-gray-600">Page 1 of 421</span>
+              <span className="text-sm text-gray-600 dark:text-gray-300">Page 1 of 421</span>
             </div>
           </div>
         </div>
