@@ -81,7 +81,7 @@ export function EnhancedSearch() {
   const companies = (companiesData as any)?.companies || [];
 
   // Enhanced search functionality
-  const performSearch = () => {
+  const performSearch = async () => {
     if (!searchQuery.trim()) {
       setSearchResults([]);
       return;
@@ -89,7 +89,64 @@ export function EnhancedSearch() {
 
     setIsSearching(true);
     
-    const query = searchQuery.toLowerCase();
+    try {
+      const query = searchQuery.toLowerCase();
+      let allResults: SearchResult[] = [];
+
+      if (filters.searchScope === 'local') {
+        // Local search only
+        allResults = performLocalSearch(query);
+      } else {
+        // Global search using both local and external sources
+        const response = await fetch(`/api/search/global?q=${encodeURIComponent(searchQuery)}&max=20`);
+        const globalData = await response.json();
+        
+        // Combine local and external results
+        const localResults = performLocalSearch(query);
+        
+        // Add external Google results
+        const externalResults: SearchResult[] = globalData.external?.map((business: any, index: number) => ({
+          id: business.id,
+          name: business.name,
+          type: 'company' as const,
+          website: business.website,
+          description: business.description,
+          country: business.country,
+          region: business.region,
+          sector: 'External Business', // Will be categorized later
+          industry: 'Various Industries'
+        })) || [];
+        
+        allResults = [...localResults, ...externalResults];
+      }
+
+      // Sort results by relevance
+      const sortedResults = allResults.sort((a, b) => {
+        const aExact = a.name.toLowerCase() === query;
+        const bExact = b.name.toLowerCase() === query;
+        if (aExact && !bExact) return -1;
+        if (!aExact && bExact) return 1;
+        
+        const aStarts = a.name.toLowerCase().startsWith(query);
+        const bStarts = b.name.toLowerCase().startsWith(query);
+        if (aStarts && !bStarts) return -1;
+        if (!aStarts && bStarts) return 1;
+        
+        return a.name.localeCompare(b.name);
+      });
+
+      setSearchResults(sortedResults.slice(0, 50)); // Limit to 50 results
+    } catch (error) {
+      console.error('Search error:', error);
+      // Fallback to local search
+      const localResults = performLocalSearch(searchQuery.toLowerCase());
+      setSearchResults(localResults.slice(0, 50));
+    }
+    
+    setIsSearching(false);
+  };
+
+  const performLocalSearch = (query: string): SearchResult[] => {
     const results: SearchResult[] = [];
 
     // Search sectors
@@ -162,23 +219,7 @@ export function EnhancedSearch() {
       }
     });
 
-    // Sort results by relevance
-    const sortedResults = results.sort((a, b) => {
-      const aExact = a.name.toLowerCase() === query;
-      const bExact = b.name.toLowerCase() === query;
-      if (aExact && !bExact) return -1;
-      if (!aExact && bExact) return 1;
-      
-      const aStarts = a.name.toLowerCase().startsWith(query);
-      const bStarts = b.name.toLowerCase().startsWith(query);
-      if (aStarts && !bStarts) return -1;
-      if (!aStarts && bStarts) return 1;
-      
-      return a.name.localeCompare(b.name);
-    });
-
-    setSearchResults(sortedResults.slice(0, 50)); // Limit to 50 results
-    setIsSearching(false);
+    return results;
   };
 
   useEffect(() => {
@@ -305,7 +346,7 @@ export function EnhancedSearch() {
                       <SelectItem value="global">
                         <div className="flex items-center space-x-2">
                           <Globe className="h-4 w-4" />
-                          <span>Global Search (Coming Soon)</span>
+                          <span>Global Search (Google-powered)</span>
                         </div>
                       </SelectItem>
                     </SelectContent>
@@ -425,13 +466,18 @@ export function EnhancedSearch() {
                       </div>
                     </div>
                     
-                    {result.website && (
-                      <div className="ml-4">
+                    <div className="ml-4 flex flex-col items-end space-y-1">
+                      {result.website && (
                         <Badge variant="outline" className="text-xs">
                           Visit Website
                         </Badge>
-                      </div>
-                    )}
+                      )}
+                      {result.id.toString().startsWith('google_') && (
+                        <Badge variant="secondary" className="text-xs bg-blue-50 text-blue-700">
+                          via Google
+                        </Badge>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -450,11 +496,25 @@ export function EnhancedSearch() {
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
           <h3 className="font-medium text-blue-900 mb-2">Enhanced Search Features</h3>
           <ul className="text-sm text-blue-800 space-y-1">
-            <li>• Search across 20 sectors, 400+ industries, and 8,000+ companies</li>
+            <li>• <strong>Local:</strong> Search 20 sectors, 400+ industries, and 8,000+ companies</li>
+            <li>• <strong>Global:</strong> Discover businesses worldwide via Google Custom Search</li>
             <li>• Filter by geographic regions and company size</li>
             <li>• Real-time search suggestions and autocomplete</li>
-            <li>• Global business discovery (coming soon with free APIs)</li>
           </ul>
+          <div className="mt-3 pt-2 border-t border-blue-200">
+            <p className="text-xs text-blue-600">
+              Global search powered by Google Custom Search API with proper attribution
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Search Results Attribution */}
+      {searchQuery && searchResults.length > 0 && filters.searchScope === 'global' && (
+        <div className="text-center">
+          <p className="text-xs text-gray-500">
+            Results include both local directory data and global businesses discovered via Google Custom Search
+          </p>
         </div>
       )}
     </div>
