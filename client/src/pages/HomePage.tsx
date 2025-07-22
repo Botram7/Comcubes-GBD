@@ -357,6 +357,7 @@ export default function HomePage() {
                 <li><button onClick={() => setLocation('/privacy-policy')} className="hover:text-white text-left">Privacy Policy</button></li>
                 <li><button onClick={() => setLocation('/terms-of-service')} className="hover:text-white text-left">Terms of Service</button></li>
                 <li><button onClick={() => setLocation('/disclaimer')} className="hover:text-white text-left">Disclaimer</button></li>
+                <li><button onClick={() => setLocation('/affiliate-disclosure')} className="hover:text-white text-left">Affiliate Disclosure</button></li>
               </ul>
             </div>
             
