@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2 } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
 import type { Industry, SearchResults } from "@/lib/types";
@@ -155,7 +156,8 @@ export default function SectorPage() {
             </div>
 
             <div className="flex items-center space-x-4 flex-shrink-0">
-              <span className="text-sm text-gray-600">Industries in {decodedSectorName}</span>
+              <ThemeToggle />
+              <span className="text-sm text-gray-600 dark:text-gray-300">Industries in {decodedSectorName}</span>
             </div>
           </div>
         </div>
