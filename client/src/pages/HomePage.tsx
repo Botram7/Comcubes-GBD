@@ -151,15 +151,14 @@ export default function HomePage() {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             
-            <div className="flex items-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-lg">
-              <Search className="h-4 w-4 text-gray-400" />
-              <input 
-                type="text" 
-                placeholder="Discover Industries"
-                className="bg-transparent border-none outline-none text-gray-600 flex-1"
-                onClick={handleDiscoverIndustries}
-              />
-            </div>
+            <Button 
+              onClick={() => setLocation('/search')}
+              variant="outline"
+              className="px-8 py-3 rounded-lg font-medium border-2 hover:bg-gray-50"
+            >
+              <Search className="mr-2 h-4 w-4" />
+              Advanced Search
+            </Button>
           </div>
         </div>
       </section>
