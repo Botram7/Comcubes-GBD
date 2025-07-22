@@ -61,7 +61,10 @@ export class GoogleSearchService {
       const response = await fetch(searchUrl.toString());
       
       if (!response.ok) {
+        const errorText = await response.text();
         console.error(`Google Search API error: ${response.status} ${response.statusText}`);
+        console.error('Response body:', errorText);
+        console.error('Request URL:', searchUrl.toString());
         return [];
       }
 
