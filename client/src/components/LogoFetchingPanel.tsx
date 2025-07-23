@@ -23,6 +23,8 @@ export function LogoFetchingPanel() {
     isLoadingStats,
     startFetching,
     isFetching,
+    startImageFetching,
+    isImageFetching,
     startAudit,
     isAuditing,
     takedownLogo,
@@ -149,23 +151,44 @@ export function LogoFetchingPanel() {
                 Number of companies to process per batch (1-50)
               </p>
             </div>
-            <Button
-              onClick={() => startFetching(batchSize)}
-              disabled={isFetching}
-              className="px-6"
-            >
-              {isFetching ? (
-                <>
-                  <Loader className="h-4 w-4 mr-2 animate-spin" />
-                  Fetching...
-                </>
-              ) : (
-                <>
-                  <Download className="h-4 w-4 mr-2" />
-                  Start Fetching
-                </>
-              )}
-            </Button>
+            <div className="flex space-x-2">
+              <Button
+                onClick={() => startFetching(batchSize)}
+                disabled={isFetching}
+                className="px-6"
+              >
+                {isFetching ? (
+                  <>
+                    <Loader className="h-4 w-4 mr-2 animate-spin" />
+                    Fetching Logos...
+                  </>
+                ) : (
+                  <>
+                    <Download className="h-4 w-4 mr-2" />
+                    Fetch Logos
+                  </>
+                )}
+              </Button>
+              
+              <Button
+                onClick={() => startImageFetching(batchSize)}
+                disabled={isImageFetching}
+                variant="outline"
+                className="px-6"
+              >
+                {isImageFetching ? (
+                  <>
+                    <Loader className="h-4 w-4 mr-2 animate-spin" />
+                    Getting Images...
+                  </>
+                ) : (
+                  <>
+                    <Download className="h-4 w-4 mr-2" />
+                    Fetch Website Images
+                  </>
+                )}
+              </Button>
+            </div>
           </div>
 
           {/* Quality Audit */}
@@ -248,12 +271,13 @@ export function LogoFetchingPanel() {
           </div>
 
           {/* Status Messages */}
-          {(isFetching || isAuditing) && (
+          {(isFetching || isImageFetching || isAuditing) && (
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
               <div className="flex items-center space-x-2">
                 <Loader className="h-4 w-4 animate-spin text-blue-600" />
                 <span className="text-blue-800">
                   {isFetching && "Logo fetching is in progress..."}
+                  {isImageFetching && "Website image fetching is in progress..."}
                   {isAuditing && "Quality audit is running..."}
                 </span>
               </div>

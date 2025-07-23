@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { logoFetchingService } from '../services/logoFetcher';
+import { websiteImageService } from '../services/websiteScreenshots';
 import { db } from '../db';
 import { companies } from '@shared/schema';
 import { eq } from 'drizzle-orm';
@@ -19,17 +20,41 @@ router.post('/fetch-logos', async (req, res) => {
       message: `Logo fetching started for batch size ${batchSize}` 
     });
   } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
+    res.status(500).json({ success: false, error: (error as Error).message });
+  }
+});
+
+// Start website image processing (screenshots + favicons)
+router.post('/fetch-images', async (req, res) => {
+  try {
+    const { batchSize = 20 } = req.body;
+    
+    // Start the image processing (non-blocking)
+    websiteImageService.processCompanyImages(batchSize).catch(console.error);
+    
+    res.json({ 
+      success: true, 
+      message: `Website image processing started for batch size ${batchSize}` 
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, error: (error as Error).message });
   }
 });
 
 // Get logo fetching statistics
 router.get('/stats', async (req, res) => {
   try {
-    const stats = await logoFetchingService.getLogoStats();
-    res.json(stats);
+    const logoStats = await logoFetchingService.getLogoStats();
+    const imageStats = await websiteImageService.getImageStats();
+    
+    res.json({
+      ...logoStats,
+      screenshots: imageStats.screenshots,
+      favicons: imageStats.favicons,
+      source: 'combined_stats'
+    });
   } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
+    res.status(500).json({ success: false, error: (error as Error).message });
   }
 });
 
@@ -66,7 +91,7 @@ router.post('/takedown/:companyId', async (req, res) => {
       });
     }
   } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
+    res.status(500).json({ success: false, error: (error as Error).message });
   }
 });
 
@@ -81,7 +106,7 @@ router.post('/audit', async (req, res) => {
       message: 'Logo quality audit started' 
     });
   } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
+    res.status(500).json({ success: false, error: (error as Error).message });
   }
 });
 
@@ -108,7 +133,7 @@ router.get('/company/:companyId', async (req, res) => {
     
     res.json(company);
   } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
+    res.status(500).json({ success: false, error: (error as Error).message });
   }
 });
 
