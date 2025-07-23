@@ -190,15 +190,15 @@ export default function CompanyPage() {
             {searchResults ? (
               <div className="space-y-8">
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900">Search Results</h2>
-              <p className="text-gray-600 mt-2">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Search Results</h2>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">
                 Found {searchResults.sectors.length + searchResults.industries.length + searchResults.companies.length} results
               </p>
             </div>
 
             {searchResults.sectors.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold mb-4">Sectors</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Sectors</h3>
                 <BusinessGrid 
                   items={searchResults.sectors} 
                   type="sector" 
@@ -209,7 +209,7 @@ export default function CompanyPage() {
 
             {searchResults.industries.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold mb-4">Industries</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Industries</h3>
                 <BusinessGrid 
                   items={searchResults.industries} 
                   type="industry" 
@@ -220,7 +220,7 @@ export default function CompanyPage() {
 
             {searchResults.companies.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold mb-4">Companies</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Companies</h3>
                 <BusinessGrid 
                   items={searchResults.companies} 
                   type="company" 
@@ -232,8 +232,8 @@ export default function CompanyPage() {
         ) : (
           <>
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900">All Companies</h2>
-              <p className="text-gray-600 mt-2">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">All Companies</h2>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">
                 Browse {companyData.total} companies across all industries and sectors locally, or discover millions more worldwide via our Advanced Search feature powered by Google Custom Search
               </p>
             </div>
@@ -256,16 +256,16 @@ export default function CompanyPage() {
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-200 mt-16">
+      <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center text-gray-600">
+          <div className="text-center text-gray-600 dark:text-gray-300">
             <p>&copy; 2024 COMCUBES Global Business Directory. Professional business data across 421 pages.</p>
             <p className="mt-2 text-sm">Featuring 20 sectors, 400+ industries, and 8,000+ companies worldwide.</p>
             <div className="mt-4 flex justify-center space-x-6 text-xs">
-              <button onClick={() => setLocation('/privacy-policy')} className="hover:text-gray-900 underline">Privacy Policy</button>
-              <button onClick={() => setLocation('/terms-of-service')} className="hover:text-gray-900 underline">Terms of Service</button>
-              <button onClick={() => setLocation('/disclaimer')} className="hover:text-gray-900 underline">Disclaimer</button>
-              <button onClick={() => setLocation('/affiliate-disclosure')} className="hover:text-gray-900 underline">Affiliate Disclosure</button>
+              <button onClick={() => setLocation('/privacy-policy')} className="hover:text-gray-900 dark:hover:text-white underline">Privacy Policy</button>
+              <button onClick={() => setLocation('/terms-of-service')} className="hover:text-gray-900 dark:hover:text-white underline">Terms of Service</button>
+              <button onClick={() => setLocation('/disclaimer')} className="hover:text-gray-900 dark:hover:text-white underline">Disclaimer</button>
+              <button onClick={() => setLocation('/affiliate-disclosure')} className="hover:text-gray-900 dark:hover:text-white underline">Affiliate Disclosure</button>
             </div>
           </div>
         </div>
