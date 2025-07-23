@@ -1,4 +1,4 @@
-import { pgTable, text, serial, integer } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, timestamp } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -19,6 +19,10 @@ export const companies = pgTable("companies", {
   websiteUrl: text("website_url"),
   industryName: text("industry_name").notNull(),
   sectorName: text("sector_name").notNull(),
+  logoUrl: text("logo_url"),
+  logoStatus: text("logo_status").default("pending"), // pending, fetched, failed, removed
+  logoFetchedAt: timestamp("logo_fetched_at"),
+  logoQuality: text("logo_quality"), // high, medium, low
 });
 
 export const insertSectorSchema = createInsertSchema(sectors).omit({ id: true });
