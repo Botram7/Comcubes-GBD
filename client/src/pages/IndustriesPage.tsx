@@ -201,15 +201,15 @@ export default function IndustriesPage() {
             {searchResults ? (
               <div className="space-y-8">
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900">Search Results</h2>
-              <p className="text-gray-600 mt-2">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Search Results</h2>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">
                 Found {searchResults.sectors.length + searchResults.industries.length + searchResults.companies.length} results
               </p>
             </div>
 
             {searchResults.sectors.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold mb-4">Sectors</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Sectors</h3>
                 <BusinessGrid 
                   items={searchResults.sectors} 
                   type="sector" 
@@ -220,7 +220,7 @@ export default function IndustriesPage() {
 
             {searchResults.industries.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold mb-4">Industries</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Industries</h3>
                 <BusinessGrid 
                   items={searchResults.industries} 
                   type="industry" 
@@ -231,7 +231,7 @@ export default function IndustriesPage() {
 
             {searchResults.companies.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold mb-4">Companies</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Companies</h3>
                 <BusinessGrid 
                   items={searchResults.companies} 
                   type="company" 
@@ -247,8 +247,8 @@ export default function IndustriesPage() {
         ) : (
           <>
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900">All Industries</h2>
-              <p className="text-gray-600 mt-2">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">All Industries</h2>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">
                 Browse {total} specialized industries across all business sectors. Click on any industry to view its top companies.
               </p>
             </div>
@@ -266,9 +266,9 @@ export default function IndustriesPage() {
             )}
 
             <div className="mt-12 text-center">
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">Navigation Guide</h3>
-                <p className="text-blue-700 text-sm">
+              <div className="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-2">Navigation Guide</h3>
+                <p className="text-blue-700 dark:text-blue-200 text-sm">
                   • Click on any industry above to view its top 20 companies<br/>
                   • Use the search bar to find specific industries or companies<br/>
                   • Visit company websites by clicking on company names
@@ -286,16 +286,16 @@ export default function IndustriesPage() {
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-200 mt-16">
+      <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center text-gray-600">
+          <div className="text-center text-gray-600 dark:text-gray-300">
             <p>&copy; 2024 COMCUBES Global Business Directory. Professional business data across 421 pages.</p>
             <p className="mt-2 text-sm">Featuring 20 sectors, {total}+ industries, and 8,000+ companies worldwide.</p>
             <div className="mt-4 flex justify-center space-x-6 text-xs">
-              <button onClick={() => setLocation('/privacy-policy')} className="hover:text-gray-900 underline">Privacy Policy</button>
-              <button onClick={() => setLocation('/terms-of-service')} className="hover:text-gray-900 underline">Terms of Service</button>
-              <button onClick={() => setLocation('/disclaimer')} className="hover:text-gray-900 underline">Disclaimer</button>
-              <button onClick={() => setLocation('/affiliate-disclosure')} className="hover:text-gray-900 underline">Affiliate Disclosure</button>
+              <button onClick={() => setLocation('/privacy-policy')} className="hover:text-gray-900 dark:hover:text-white underline">Privacy Policy</button>
+              <button onClick={() => setLocation('/terms-of-service')} className="hover:text-gray-900 dark:hover:text-white underline">Terms of Service</button>
+              <button onClick={() => setLocation('/disclaimer')} className="hover:text-gray-900 dark:hover:text-white underline">Disclaimer</button>
+              <button onClick={() => setLocation('/affiliate-disclosure')} className="hover:text-gray-900 dark:hover:text-white underline">Affiliate Disclosure</button>
             </div>
           </div>
         </div>
