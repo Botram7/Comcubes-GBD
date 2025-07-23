@@ -142,6 +142,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
 
+  // Add logo routes
+  const logoRoutes = (await import('./routes/logo')).default;
+  app.use('/api/logo', logoRoutes);
+
   const httpServer = createServer(app);
   return httpServer;
 }
