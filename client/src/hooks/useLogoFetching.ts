@@ -16,6 +16,8 @@ interface LogoFetchingHook {
   isLoadingStats: boolean;
   startFetching: (batchSize?: number) => void;
   isFetching: boolean;
+  startImageFetching: (batchSize?: number) => void;
+  isImageFetching: boolean;
   startAudit: () => void;
   isAuditing: boolean;
   takedownLogo: (companyId: number, reason?: string) => void;
@@ -25,6 +27,7 @@ interface LogoFetchingHook {
 export function useLogoFetching(): LogoFetchingHook {
   const queryClient = useQueryClient();
   const [isFetching, setIsFetching] = useState(false);
+  const [isImageFetching, setIsImageFetching] = useState(false);
   const [isAuditing, setIsAuditing] = useState(false);
   const [isTakingDown, setIsTakingDown] = useState(false);
 
@@ -101,11 +104,36 @@ export function useLogoFetching(): LogoFetchingHook {
     },
   });
 
+  // Start image fetching mutation
+  const startImageFetchingMutation = useMutation({
+    mutationFn: async (batchSize: number = 20) => {
+      const response = await fetch('/api/logo/fetch-images', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ batchSize }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to start image fetching');
+      }
+      
+      return response.json();
+    },
+    onSuccess: () => {
+      setIsImageFetching(true);
+      // Stop image fetching indicator after 45 seconds
+      setTimeout(() => setIsImageFetching(false), 45000);
+      queryClient.invalidateQueries({ queryKey: ['/api/logo/stats'] });
+    },
+  });
+
   return {
     stats,
     isLoadingStats,
     startFetching: (batchSize = 10) => startFetchingMutation.mutate(batchSize),
     isFetching: isFetching || startFetchingMutation.isPending,
+    startImageFetching: (batchSize = 20) => startImageFetchingMutation.mutate(batchSize),
+    isImageFetching: isImageFetching || startImageFetchingMutation.isPending,
     startAudit: () => startAuditMutation.mutate(),
     isAuditing: isAuditing || startAuditMutation.isPending,
     takedownLogo: (companyId: number, reason?: string) => 
