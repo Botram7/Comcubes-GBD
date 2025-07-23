@@ -7,7 +7,7 @@ import { Pagination } from "@/components/Pagination";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2 } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
 import type { Company, SearchResults } from "@/lib/types";
@@ -44,15 +44,15 @@ export default function CompanyPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-        <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+      <div className="min-h-screen bg-gray-50">
+        <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
                 </div>
-                <h1 className="text-2xl font-bold text-primary dark:text-blue-400" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+                <h1 className="text-2xl font-bold text-primary " style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
               
               <div className="flex items-center space-x-3">
@@ -69,8 +69,8 @@ export default function CompanyPage() {
               </div>
               
               <div className="flex items-center space-x-3">
-                <ThemeToggle />
-                <span className="text-sm text-gray-600 dark:text-gray-300">Loading...</span>
+                
+                <span className="text-sm text-gray-600 ">Loading...</span>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function CompanyPage() {
         <div className="flex items-center justify-center min-h-96">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600 dark:text-gray-300">Loading companies...</p>
+            <p className="mt-4 text-gray-600 ">Loading companies...</p>
           </div>
         </div>
       </div>
@@ -87,8 +87,8 @@ export default function CompanyPage() {
 
   if (error || !companyData) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-        <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+      <div className="min-h-screen bg-gray-50">
+        <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
@@ -135,15 +135,15 @@ export default function CompanyPage() {
   const totalPages = Math.ceil((companyData.total || 0) / 20);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+    <div className="min-h-screen bg-gray-50">
+      <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-16">
             <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0" onClick={() => setLocation('/')}>
               <div className="w-8 h-8 mr-3 flex items-center justify-center">
                 <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
               </div>
-              <h1 className="text-2xl font-bold text-primary dark:text-blue-400" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+              <h1 className="text-2xl font-bold text-primary " style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
             
             <div className="flex-1 flex justify-center mx-8">
@@ -164,8 +164,8 @@ export default function CompanyPage() {
             </div>
 
             <div className="flex items-center space-x-4 flex-shrink-0">
-              <ThemeToggle />
-              <span className="text-sm text-gray-600 dark:text-gray-300">
+              
+              <span className="text-sm text-gray-600 ">
                 Page {currentPage} of 421
               </span>
             </div>
@@ -193,15 +193,15 @@ export default function CompanyPage() {
             {searchResults ? (
               <div className="space-y-8">
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Search Results</h2>
-              <p className="text-gray-600 dark:text-gray-300 mt-2">
+              <h2 className="text-3xl font-bold text-gray-900 ">Search Results</h2>
+              <p className="text-gray-600  mt-2">
                 Found {searchResults.sectors.length + searchResults.industries.length + searchResults.companies.length} results
               </p>
             </div>
 
             {searchResults.sectors.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Sectors</h3>
+                <h3 className="text-xl font-semibold text-gray-900  mb-4">Sectors</h3>
                 <BusinessGrid 
                   items={searchResults.sectors} 
                   type="sector" 
@@ -212,7 +212,7 @@ export default function CompanyPage() {
 
             {searchResults.industries.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Industries</h3>
+                <h3 className="text-xl font-semibold text-gray-900  mb-4">Industries</h3>
                 <BusinessGrid 
                   items={searchResults.industries} 
                   type="industry" 
@@ -223,7 +223,7 @@ export default function CompanyPage() {
 
             {searchResults.companies.length > 0 && (
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Companies</h3>
+                <h3 className="text-xl font-semibold text-gray-900  mb-4">Companies</h3>
                 <BusinessGrid 
                   items={searchResults.companies} 
                   type="company" 
@@ -235,8 +235,8 @@ export default function CompanyPage() {
         ) : (
           <>
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">All Companies</h2>
-              <p className="text-gray-600 dark:text-gray-300 mt-2">
+              <h2 className="text-3xl font-bold text-gray-900 ">All Companies</h2>
+              <p className="text-gray-600  mt-2">
                 Browse {companyData.total} companies across all industries and sectors locally, or discover millions more worldwide via our Advanced Search feature powered by Google Custom Search
               </p>
             </div>
@@ -259,16 +259,16 @@ export default function CompanyPage() {
         </div>
       </main>
 
-      <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
+      <footer className="bg-white  border-t border-gray-200  mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center text-gray-600 dark:text-gray-300">
+          <div className="text-center text-gray-600 ">
             <p>&copy; 2024 COMCUBES Global Business Directory. Professional business data across 421 pages.</p>
             <p className="mt-2 text-sm">Featuring 20 sectors, 400+ industries, and 8,000+ companies worldwide.</p>
             <div className="mt-4 flex justify-center space-x-6 text-xs">
-              <button onClick={() => setLocation('/privacy-policy')} className="hover:text-gray-900 dark:hover:text-white underline">Privacy Policy</button>
-              <button onClick={() => setLocation('/terms-of-service')} className="hover:text-gray-900 dark:hover:text-white underline">Terms of Service</button>
-              <button onClick={() => setLocation('/disclaimer')} className="hover:text-gray-900 dark:hover:text-white underline">Disclaimer</button>
-              <button onClick={() => setLocation('/affiliate-disclosure')} className="hover:text-gray-900 dark:hover:text-white underline">Affiliate Disclosure</button>
+              <button onClick={() => setLocation('/privacy-policy')} className="hover:text-gray-900 underline">Privacy Policy</button>
+              <button onClick={() => setLocation('/terms-of-service')} className="hover:text-gray-900 underline">Terms of Service</button>
+              <button onClick={() => setLocation('/disclaimer')} className="hover:text-gray-900 underline">Disclaimer</button>
+              <button onClick={() => setLocation('/affiliate-disclosure')} className="hover:text-gray-900 underline">Affiliate Disclosure</button>
             </div>
           </div>
         </div>
