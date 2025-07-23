@@ -46,15 +46,15 @@ export default function IndustriesPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 font-inter transition-colors duration-300">
+        <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
                 </div>
-                <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+                <h1 className="text-2xl font-bold text-primary dark:text-blue-400" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
               
               <div className="flex items-center space-x-3">
@@ -70,14 +70,17 @@ export default function IndustriesPage() {
                 </Button>
               </div>
               
-              <span className="text-sm text-gray-600">Loading...</span>
+              <div className="flex items-center space-x-3">
+                <ThemeToggle />
+                <span className="text-sm text-gray-600 dark:text-gray-300">Loading...</span>
+              </div>
             </div>
           </div>
         </header>
         <div className="flex items-center justify-center min-h-96">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Loading industries...</p>
+            <p className="mt-4 text-gray-600 dark:text-gray-300">Loading industries...</p>
           </div>
         </div>
       </div>
@@ -86,8 +89,8 @@ export default function IndustriesPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 font-inter transition-colors duration-300">
+        <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
