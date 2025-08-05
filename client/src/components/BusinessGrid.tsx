@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { getImageForEntity } from "@/lib/constants";
-import { generateFallbackIcon } from "@/utils/fallbackIcon";
 import type { Sector, Industry, Company } from "@/lib/types";
 
 interface BusinessGridProps {
@@ -61,34 +60,25 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
           onClick={() => item.id !== -1 && onItemClick(item)}
         >
           {type === 'company' ? (
-            /* Company cards with fallback icons */
-            <div className="absolute inset-0 bg-white flex flex-col items-center justify-center p-2">
-              {item.id !== -1 ? (
-                <>
-                  {/* Company Icon with Name */}
-                  <div className="mb-2">
-                    <img
-                      src={generateFallbackIcon(item.name, { size: 60, fontSize: 8 })}
-                      alt={`${item.name} icon`}
-                      className="w-15 h-15"
-                    />
-                  </div>
-                  {/* Visit Website Text */}
-                  <div className="text-xs text-gray-700 text-center font-medium">
-                    Click to Visit
-                  </div>
-
-                </>
-              ) : (
-                /* Available slot styling */
-                <div className="text-center text-gray-400">
-                  <div className="w-15 h-15 bg-gray-100 rounded-lg flex items-center justify-center mb-2">
-                    <span className="text-2xl">+</span>
-                  </div>
-                  <h3 className="text-xs font-medium">Available Slot</h3>
-                  <p className="text-xs">Get Listed</p>
+            /* Colorful gradient cards for companies */
+            <div className={`absolute inset-0 ${getCompanyCardGradient(index)}`}>
+              {/* Text positioned at bottom center */}
+              <div className="absolute inset-0 flex items-end justify-center">
+                <div className="text-center text-white p-3 pb-4">
+                  <h3 className="text-xs font-bold mb-1 leading-tight drop-shadow-md">
+                    {item.name}
+                  </h3>
+                  <p className="text-xs opacity-90 font-medium">
+                    {(item as Company).websiteUrl && item.id !== -1
+                      ? 'Visit Website'
+                      : 'Get Listed'
+                    }
+                  </p>
+                  {item.id === -1 && (
+                    <div className="mt-1 text-xs opacity-75">Reach out to us now</div>
+                  )}
                 </div>
-              )}
+              </div>
             </div>
           ) : (
             /* Image background for sectors and industries */
