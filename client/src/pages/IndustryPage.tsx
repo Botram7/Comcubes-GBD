@@ -32,9 +32,8 @@ export default function IndustryPage() {
   });
 
   const handleCompanyClick = (company: Company) => {
-    if (company.websiteUrl) {
-      window.open(company.websiteUrl, '_blank');
-    }
+    // Navigate to company profile page
+    setLocation(`/company/${company.id}`);
   };
 
   const handleSearchResults = (results: SearchResults | null) => {
