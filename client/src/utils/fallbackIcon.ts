@@ -77,24 +77,87 @@ export function getBrandColor(companyName: string): string {
   return BRAND_COLORS[index];
 }
 
-// Generate fallback icon as SVG data URL
+// Generate fallback icon with company name as SVG data URL
 export function generateFallbackIcon(
   companyName: string, 
   options: FallbackIconOptions = {}
 ): string {
   const {
     size = 120,
-    fontSize = 48,
+    fontSize = 10,
     fontWeight = '600',
     fontFamily = 'Inter, system-ui, sans-serif'
   } = options;
   
-  const initials = getCompanyInitials(companyName);
   const brandColor = getBrandColor(companyName);
   
   // Create gradient background for more visual appeal
   const lightColor = adjustColorBrightness(brandColor, 20);
   const darkColor = adjustColorBrightness(brandColor, -10);
+  
+  // Smart text sizing based on company name length
+  const nameLength = companyName.length;
+  let adjustedFontSize = fontSize;
+  let lineHeight = fontSize * 1.2;
+  
+  if (nameLength > 25) {
+    adjustedFontSize = fontSize * 0.7;
+    lineHeight = adjustedFontSize * 1.1;
+  } else if (nameLength > 18) {
+    adjustedFontSize = fontSize * 0.8;
+    lineHeight = adjustedFontSize * 1.15;
+  }
+  
+  // Split company name into lines for better readability
+  const words = companyName.split(' ');
+  let lines: string[] = [];
+  
+  if (words.length <= 2) {
+    lines = words;
+  } else if (words.length === 3) {
+    lines = [words[0], words.slice(1).join(' ')];
+  } else {
+    // For longer names, try to balance lines
+    const midPoint = Math.ceil(words.length / 2);
+    lines = [
+      words.slice(0, midPoint).join(' '),
+      words.slice(midPoint).join(' ')
+    ];
+  }
+  
+  // Ensure no more than 2 lines and truncate if necessary
+  if (lines.length > 2) {
+    lines = lines.slice(0, 2);
+  }
+  
+  // Truncate lines if too long
+  lines = lines.map(line => {
+    if (line.length > 20) {
+      return line.substring(0, 17) + '...';
+    }
+    return line;
+  });
+  
+  const textElements = lines.map((line, index) => {
+    const yPosition = lines.length === 1 
+      ? '50%' 
+      : index === 0 
+        ? `${50 - (lineHeight / 2)}%` 
+        : `${50 + (lineHeight / 2)}%`;
+    
+    return `
+      <text x="50%" y="${yPosition}" 
+            font-family="${fontFamily}" 
+            font-size="${adjustedFontSize}" 
+            font-weight="${fontWeight}" 
+            fill="white" 
+            text-anchor="middle" 
+            dominant-baseline="central"
+            style="user-select: none;">
+        ${line}
+      </text>
+    `;
+  }).join('');
   
   const svg = `
     <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
@@ -105,16 +168,7 @@ export function generateFallbackIcon(
         </linearGradient>
       </defs>
       <rect width="${size}" height="${size}" rx="${size * 0.1}" fill="url(#gradient-${Math.abs(companyName.length)})" />
-      <text x="50%" y="50%" 
-            font-family="${fontFamily}" 
-            font-size="${fontSize}" 
-            font-weight="${fontWeight}" 
-            fill="white" 
-            text-anchor="middle" 
-            dominant-baseline="central"
-            style="user-select: none;">
-        ${initials}
-      </text>
+      ${textElements}
     </svg>
   `.trim();
   

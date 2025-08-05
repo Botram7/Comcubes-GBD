@@ -65,22 +65,19 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
             <div className="absolute inset-0 bg-white flex flex-col items-center justify-center p-2">
               {item.id !== -1 ? (
                 <>
-                  {/* Fallback Icon */}
+                  {/* Company Icon with Name */}
                   <div className="mb-2">
                     <img
-                      src={generateFallbackIcon(item.name, { size: 60, fontSize: 24 })}
+                      src={generateFallbackIcon(item.name, { size: 60, fontSize: 8 })}
                       alt={`${item.name} icon`}
                       className="w-15 h-15"
                     />
                   </div>
-                  {/* Company Name */}
-                  <h3 className="text-xs font-bold text-center text-gray-900 leading-tight mb-1">
-                    {item.name}
-                  </h3>
-                  {/* Action Text */}
-                  <p className="text-xs text-gray-600 text-center">
-                    {(item as Company).websiteUrl ? 'Visit Website' : 'Get Listed'}
-                  </p>
+                  {/* Visit Website Text */}
+                  <div className="text-xs text-gray-700 text-center font-medium">
+                    Click to Visit
+                  </div>
+
                 </>
               ) : (
                 /* Available slot styling */
