@@ -2,10 +2,24 @@ import { Link } from 'wouter';
 import { ArrowLeft, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LogoFetchingPanel } from '@/components/LogoFetchingPanel';
+import { FallbackIconPreview } from '@/components/FallbackIconPreview';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { useQuery } from "@tanstack/react-query";
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 
 export default function LogoManagementPage() {
+  // Get sample company names for fallback icon preview
+  const { data: companyData } = useQuery({
+    queryKey: ['/api/companies?page=1&limit=30'],
+    staleTime: 30000,
+  });
+
+  const sampleCompanyNames = companyData?.companies?.map((c: any) => c.name) || [
+    'Apple Inc.', 'Microsoft Corporation', 'Google LLC', 'Amazon.com Inc.', 
+    'Tesla Inc.', 'Meta Platforms', 'Netflix Inc.', 'Adobe Systems',
+    'Salesforce Inc.', 'Oracle Corporation', 'IBM Corporation', 'Spotify Technology'
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -91,6 +105,9 @@ export default function LogoManagementPage() {
 
         {/* Logo Fetching Panel */}
         <LogoFetchingPanel />
+
+        {/* Fallback Icon Preview */}
+        <FallbackIconPreview companyNames={sampleCompanyNames} />
 
         {/* Usage Guidelines */}
         <div className="mt-8 bg-gray-50 border border-gray-200 rounded-lg p-6">
