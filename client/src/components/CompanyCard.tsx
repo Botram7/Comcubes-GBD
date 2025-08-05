@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Building2, Globe, AlertCircle } from 'lucide-react';
 import type { Company } from '@shared/schema';
+import { generateFallbackIcon } from '@/utils/fallbackIcon';
 
 interface CompanyCardProps {
   company: Company;
@@ -12,6 +13,9 @@ interface CompanyCardProps {
 export function CompanyCard({ company, onClick }: CompanyCardProps) {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
+  
+  // Generate fallback icon for companies without logos
+  const fallbackIcon = generateFallbackIcon(company.name, { size: 120, fontSize: 48 });
 
   const handleImageLoad = () => {
     setImageLoading(false);
@@ -39,14 +43,16 @@ export function CompanyCard({ company, onClick }: CompanyCardProps) {
     >
       <CardContent className="p-0">
         {/* Logo/Image Section */}
-        <div className="relative h-32 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden rounded-t-lg">
+        <div className="relative h-32 bg-white flex items-center justify-center overflow-hidden rounded-t-lg">
           {company.logoUrl && !imageError ? (
             <>
               {imageLoading && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="animate-pulse">
-                    <Building2 className="h-8 w-8 text-gray-400" />
-                  </div>
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
+                  <img
+                    src={fallbackIcon}
+                    alt={`${company.name} initial`}
+                    className="w-20 h-20 opacity-50 animate-pulse"
+                  />
                 </div>
               )}
               <img
@@ -61,28 +67,38 @@ export function CompanyCard({ company, onClick }: CompanyCardProps) {
               />
             </>
           ) : (
-            <div className="flex flex-col items-center justify-center text-gray-400">
-              <Building2 className="h-8 w-8 mb-2" />
-              <span className="text-xs text-center px-2 font-medium">
-                {company.name.length > 20 
-                  ? `${company.name.substring(0, 20)}...` 
-                  : company.name
-                }
-              </span>
+            <div className="flex items-center justify-center w-full h-full">
+              <img
+                src={fallbackIcon}
+                alt={`${company.name} initial`}
+                className="w-20 h-20 transition-transform duration-200 group-hover:scale-110"
+              />
             </div>
           )}
           
           {/* Logo Quality Badge */}
-          {company.logoQuality && company.logoUrl && !imageError && (
+          {company.logoUrl && !imageError && (
             <div className="absolute top-2 right-2">
               <Badge 
                 variant={
                   company.logoQuality === 'high' ? 'default' :
                   company.logoQuality === 'medium' ? 'secondary' : 'outline'
                 }
-                className="text-xs"
+                className="text-xs bg-white/90 backdrop-blur-sm"
               >
-                {company.logoQuality}
+                {company.logoQuality || 'logo'}
+              </Badge>
+            </div>
+          )}
+          
+          {/* Fallback Icon Indicator */}
+          {(!company.logoUrl || imageError) && (
+            <div className="absolute top-2 right-2">
+              <Badge 
+                variant="outline" 
+                className="text-xs bg-white/90 backdrop-blur-sm border-gray-300"
+              >
+                icon
               </Badge>
             </div>
           )}
