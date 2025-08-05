@@ -141,6 +141,50 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get specific company by ID
+  app.get('/api/companies/:id', async (req, res) => {
+    try {
+      const companyId = parseInt(req.params.id);
+      if (isNaN(companyId)) {
+        return res.status(400).json({ error: 'Invalid company ID' });
+      }
+
+      const company = await storage.getCompanyById(companyId);
+      if (!company) {
+        return res.status(404).json({ error: 'Company not found' });
+      }
+
+      res.json(company);
+    } catch (error) {
+      console.error('Error fetching company:', error);
+      res.status(500).json({ error: 'Failed to fetch company' });
+    }
+  });
+
+  // Get related companies (same industry)
+  app.get('/api/companies/:id/related', async (req, res) => {
+    try {
+      const companyId = parseInt(req.params.id);
+      if (isNaN(companyId)) {
+        return res.status(400).json({ error: 'Invalid company ID' });
+      }
+
+      const company = await storage.getCompanyById(companyId);
+      if (!company) {
+        return res.status(404).json({ error: 'Company not found' });
+      }
+
+      const relatedCompanies = await storage.getCompaniesByIndustry(company.industryName);
+      // Filter out the current company and limit to 12 related companies
+      const filtered = relatedCompanies.filter(c => c.id !== companyId).slice(0, 12);
+      
+      res.json(filtered);
+    } catch (error) {
+      console.error('Error fetching related companies:', error);
+      res.status(500).json({ error: 'Failed to fetch related companies' });
+    }
+  });
+
 
   // Add logo routes
   const logoRoutes = (await import('./routes/logo')).default;

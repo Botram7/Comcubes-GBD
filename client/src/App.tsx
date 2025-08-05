@@ -10,6 +10,7 @@ import IndustriesPage from "@/pages/IndustriesPage";
 import SectorPage from "@/pages/SectorPage";
 import IndustryPage from "@/pages/IndustryPage";
 import CompanyPage from "@/pages/CompanyPage";
+import CompanyProfilePage from "@/pages/CompanyProfilePage";
 import SearchPage from "@/pages/SearchPage";
 // LogoManagementPage removed - using fallback icons only
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/sector/:sectorName" component={SectorPage} />
       <Route path="/industry/:industryName" component={IndustryPage} />
       <Route path="/companies" component={CompanyPage} />
+      <Route path="/company/:companyId" component={CompanyProfilePage} />
       <Route path="/search" component={SearchPage} />
 {/* Logo management removed - using fallback icons only */}
       <Route path="/privacy-policy" component={PrivacyPolicyPage} />

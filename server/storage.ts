@@ -14,6 +14,7 @@ export interface IStorage {
   }>;
   getAllIndustries(): Promise<Industry[]>;
   getAllCompanies(): Promise<Company[]>;
+  getCompanyById(id: number): Promise<Company | undefined>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -144,6 +145,19 @@ export class DatabaseStorage implements IStorage {
     } catch (error) {
       console.error('Error getting all companies:', error);
       return [];
+    }
+  }
+
+  async getCompanyById(id: number): Promise<Company | undefined> {
+    try {
+      await this.initialize();
+      const [company] = await db.select().from(companies)
+        .where(eq(companies.id, id))
+        .limit(1);
+      return company || undefined;
+    } catch (error) {
+      console.error('Error getting company by ID:', error);
+      return undefined;
     }
   }
 
