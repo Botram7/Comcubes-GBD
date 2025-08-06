@@ -24,6 +24,7 @@ import {
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
+import { generateCompanyDescription } from "@/utils/companyDescriptionGenerator";
 
 export default function CompanyProfilePage() {
   const { companyId } = useParams();
@@ -255,9 +256,7 @@ export default function CompanyProfilePage() {
                 <div className="mb-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">About {company.name}</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    {company.name} is a leading company in the {company.industryName} industry, operating within the {company.sectorName} sector. 
-                    As a established business entity, they provide comprehensive services and solutions to their clients and customers. 
-                    The company maintains a strong market presence and continues to adapt to industry trends and customer needs.
+                    {generateCompanyDescription(company)}
                   </p>
                 </div>
 

@@ -2,6 +2,7 @@ import { csvParser } from './services/csvParser';
 import { db } from './db';
 import { sectors, industries, companies, type Sector, type Industry, type Company, type InsertSector, type InsertIndustry, type InsertCompany } from '@shared/schema';
 import { eq, ilike, or } from 'drizzle-orm';
+import { generateCompanyDescription } from './services/companyDescriptionGenerator';
 
 export interface IStorage {
   getSectors(): Promise<Sector[]>;
