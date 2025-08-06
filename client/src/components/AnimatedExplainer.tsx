@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Building2, Factory, Building, ChevronRight, Play, Pause } from "lucide-react";
@@ -58,6 +59,7 @@ const getBorderColorClass = (colorClass: string) => {
 };
 
 export function AnimatedExplainer() {
+  const [, setLocation] = useLocation();
   const [currentStep, setCurrentStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [showExample, setShowExample] = useState(false);
@@ -94,6 +96,38 @@ export function AnimatedExplainer() {
   const goToStep = (stepIndex: number) => {
     setCurrentStep(stepIndex);
     setIsPlaying(false);
+  };
+
+  const navigateToPage = (stepIndex: number) => {
+    switch (stepIndex) {
+      case 0:
+        setLocation('/sectors');
+        break;
+      case 1:
+        setLocation('/industries');
+        break;
+      case 2:
+        setLocation('/companies');
+        break;
+      default:
+        setLocation('/sectors');
+    }
+  };
+
+  const navigateToSpecificExample = (stepIndex: number) => {
+    switch (stepIndex) {
+      case 0:
+        setLocation('/sector/Banking and Financial Services');
+        break;
+      case 1:
+        setLocation('/industry/Consumer Finance');
+        break;
+      case 2:
+        setLocation('/company/151'); // American Express ID
+        break;
+      default:
+        setLocation('/sectors');
+    }
   };
 
   const currentStepData = explainerSteps[currentStep];
@@ -153,7 +187,8 @@ export function AnimatedExplainer() {
                         : 'bg-white border-gray-300 hover:border-gray-400'
                     }
                   `}
-                  onClick={() => goToStep(index)}
+                  onClick={() => navigateToPage(index)}
+                  title={`Navigate to ${step.title}`}
                 >
                   <div className="absolute inset-0 flex items-center justify-center">
                     <IconComponent 
@@ -211,15 +246,20 @@ export function AnimatedExplainer() {
 
               {/* Example Animation */}
               <div className="relative">
-                <div className={`
-                  inline-flex items-center gap-3 px-6 py-3 rounded-lg border-2 transition-all duration-500 transform
-                  ${showExample ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}
-                  ${currentStepData.bgColor} ${getBorderColorClass(currentStepData.color)}
-                `}>
+                <div 
+                  className={`
+                    inline-flex items-center gap-3 px-6 py-3 rounded-lg border-2 transition-all duration-500 transform cursor-pointer hover:shadow-md
+                    ${showExample ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}
+                    ${currentStepData.bgColor} ${getBorderColorClass(currentStepData.color)}
+                  `}
+                  onClick={() => navigateToSpecificExample(currentStep)}
+                  title={`View ${currentStepData.example}`}
+                >
                   <currentStepData.icon className={`h-5 w-5 ${currentStepData.color}`} />
                   <span className="font-semibold text-gray-800">
                     Example: {currentStepData.example}
                   </span>
+                  <ArrowRight className="h-4 w-4 text-gray-500 ml-2" />
                 </div>
 
                 {/* Highlight effect */}
@@ -241,12 +281,14 @@ export function AnimatedExplainer() {
               cursor-pointer transition-all duration-300 hover:shadow-md
               ${index === currentStep ? 'ring-2 ring-blue-500 shadow-md' : 'hover:shadow-lg'}
             `}
-            onClick={() => goToStep(index)}
+            onClick={() => navigateToPage(index)}
+            title={`Navigate to ${step.title}`}
           >
             <CardContent className="p-4 text-center">
               <step.icon className={`h-6 w-6 mx-auto mb-2 ${step.color}`} />
               <h4 className="font-semibold text-sm text-gray-800">{step.title}</h4>
               <p className="text-xs text-gray-600 mt-1">{step.example}</p>
+              <ArrowRight className="h-3 w-3 mx-auto mt-2 text-gray-400" />
             </CardContent>
           </Card>
         ))}
