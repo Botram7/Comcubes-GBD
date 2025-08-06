@@ -201,7 +201,7 @@ export default function CompanyProfilePage() {
           </div>
 
           {/* Main Content */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-2 space-y-6">
             {/* Company Header */}
             <Card>
               <CardContent className="p-6">
@@ -347,7 +347,9 @@ export default function CompanyProfilePage() {
             </Card>
           </div>
 
-            {/* Related Companies Section */}
+          {/* Right Sidebar */}
+          <div className="lg:col-span-1 space-y-6">
+            {/* Related Companies */}
             {relatedCompanies && relatedCompanies.length > 0 && (
               <Card>
                 <CardHeader>
@@ -355,14 +357,14 @@ export default function CompanyProfilePage() {
                   <p className="text-sm text-gray-600">Other companies in {company.industryName}</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {relatedCompanies.slice(0, 6).map((relatedCompany: Company) => (
+                  <div className="space-y-3">
+                    {relatedCompanies.slice(0, 8).map((relatedCompany: Company) => (
                       <div 
                         key={relatedCompany.id}
-                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors border"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
                         onClick={() => handleRelatedCompanyClick(relatedCompany)}
                       >
-                        <div className="w-10 h-10 bg-gradient-to-br from-gray-400 to-gray-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-10 h-10 bg-gradient-to-br from-gray-400 to-gray-600 rounded-lg flex items-center justify-center">
                           <Building2 className="h-5 w-5 text-white" />
                         </div>
                         <div className="flex-1 min-w-0">
@@ -370,17 +372,18 @@ export default function CompanyProfilePage() {
                             {relatedCompany.name}
                           </p>
                           <p className="text-xs text-gray-500 truncate">
-                            Click to visit
+                            {relatedCompany.industryName}
                           </p>
                         </div>
+                        <ExternalLink className="h-4 w-4 text-gray-400" />
                       </div>
                     ))}
                   </div>
                   
-                  {relatedCompanies.length > 6 && (
+                  {relatedCompanies.length > 8 && (
                     <div className="mt-4 pt-3 border-t">
                       <Button 
-                        variant="outline" 
+                        variant="ghost" 
                         size="sm" 
                         className="w-full text-xs px-2 py-1 h-8"
                         onClick={() => setLocation(`/industry/${encodeURIComponent(company.industryName)}`)}
@@ -392,6 +395,7 @@ export default function CompanyProfilePage() {
                 </CardContent>
               </Card>
             )}
+          </div>
         </div>
 
         {/* Back to Industry Button */}
