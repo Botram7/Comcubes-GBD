@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SearchBar } from "@/components/SearchBar";
+import { AnimatedExplainer } from "@/components/AnimatedExplainer";
 import { 
   BarChart3, 
   Users, 
@@ -169,8 +170,15 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Animated Explainer Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedExplainer />
+        </div>
+      </section>
+
       {/* Statistics Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="text-center p-8 bg-white  shadow-sm border border-gray-100 ">
