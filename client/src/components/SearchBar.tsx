@@ -44,17 +44,17 @@ export function SearchBar({ onSearchResults }: SearchBarProps) {
   }, [searchResults, isSearchActive, onSearchResults]);
 
   return (
-    <div className="flex-1 max-w-md">
+    <div className="flex-1 max-w-lg mx-8">
       <div className="relative">
         <Input
           type="text"
           placeholder="Search sectors, industries, companies..."
           value={searchQuery}
           onChange={(e) => handleSearch(e.target.value)}
-          className="w-full pl-10 pr-10 text-sm bg-white"
+          className="w-full pl-10 pr-10"
         />
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <Search className="h-4 w-4 text-gray-400" />
+          <Search className="h-5 w-5 text-gray-400" />
         </div>
         {isSearchActive && (
           <Button
