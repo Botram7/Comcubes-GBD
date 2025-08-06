@@ -161,13 +161,13 @@ export default function CompanyProfilePage() {
               <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
             
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center gap-4">
               <SearchBar onSearchResults={handleSearchResults} />
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setLocation('/search')}
-                className="flex items-center gap-2"
+                className="flex items-center gap-1 px-3 py-2 text-sm whitespace-nowrap"
               >
                 <Building2 className="h-4 w-4" />
                 Advanced Search
@@ -385,10 +385,19 @@ export default function CompanyProfilePage() {
                       <Button 
                         variant="ghost" 
                         size="sm" 
-                        className="w-full text-xs px-2 py-1 h-8"
+                        className="w-full px-1 py-1 h-auto min-h-[32px] leading-tight"
                         onClick={() => setLocation(`/industry/${encodeURIComponent(company.industryName)}`)}
                       >
-                        <span className="truncate">View All in {company.industryName}</span>
+                        <span 
+                          className="block w-full text-center break-words hyphens-auto"
+                          style={{
+                            fontSize: company.industryName.length > 25 ? '10px' : 
+                                     company.industryName.length > 20 ? '11px' : '12px',
+                            lineHeight: '1.2'
+                          }}
+                        >
+                          View All in {company.industryName}
+                        </span>
                       </Button>
                     </div>
                   )}
