@@ -161,13 +161,13 @@ export default function CompanyProfilePage() {
               <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center space-x-3">
               <SearchBar onSearchResults={handleSearchResults} />
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setLocation('/search')}
-                className="flex items-center gap-1 px-3 py-2 text-sm whitespace-nowrap"
+                className="flex items-center gap-2"
               >
                 <Building2 className="h-4 w-4" />
                 Advanced Search
