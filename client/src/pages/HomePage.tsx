@@ -269,19 +269,19 @@ export default function HomePage() {
       </section>
 
       {/* Explore by Category Section */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Explore by Category
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-base md:text-lg text-gray-600">
               Start your journey through the global business landscape. Each sector contains 20
               specialized industries with leading companies in each field.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-6 md:mb-8">
             {Array.isArray(sectors) ? sectors.slice(0, 10).map((sector: Sector) => (
               <Card 
                 key={sector.id} 
@@ -319,12 +319,12 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="bg-blue-600 py-16">
+      <section className="bg-blue-600 py-12 md:py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             Ready to Explore the Global Business Ecosystem?
           </h2>
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-blue-100 mb-6 md:mb-8 max-w-2xl mx-auto">
             Join thousands of professionals who rely on COMCUBES for comprehensive
             business intelligence and industry insights.
           </p>
@@ -349,9 +349,9 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
             <div>
               <div className="flex items-center mb-4">
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
@@ -393,7 +393,7 @@ export default function HomePage() {
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+          <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center">
             <p className="text-gray-400 text-sm">
               © 2024 COMCUBES. All rights reserved.
             </p>
