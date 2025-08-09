@@ -141,8 +141,8 @@ export class DatabaseStorage implements IStorage {
   async getAllCompanies(): Promise<Company[]> {
     try {
       await this.initialize();
-      // Order by ID to show companies with logos first (they have lower IDs)
-      return await db.select().from(companies).orderBy(companies.id);
+      // Order by name for alphabetical sorting like sectors and industries
+      return await db.select().from(companies).orderBy(companies.name);
     } catch (error) {
       console.error('Error getting all companies:', error);
       return [];
