@@ -23,9 +23,21 @@ export default function IndustriesPage() {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
+  // Reset search results when page changes
+  useEffect(() => {
+    setSearchResults(null);
+  }, [currentPage]);
+
   const { data: industriesData, isLoading, error } = useQuery({
-    queryKey: ["/api/industries", { page: currentPage, limit: 20 }],
-    staleTime: Infinity,
+    queryKey: ["/api/industries", currentPage],
+    queryFn: async () => {
+      const response = await fetch(`/api/industries?page=${currentPage}&limit=20`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch industries');
+      }
+      return response.json();
+    },
+    staleTime: 0,
   });
 
   const handleIndustryClick = (industry: Industry) => {
