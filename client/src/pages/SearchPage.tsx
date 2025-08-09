@@ -243,23 +243,9 @@ export default function SearchPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600">
                   Powered by Google Custom Search API for authentic global business discovery with proper attribution.
                 </p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>Daily Searches:</span>
-                    <Badge variant="secondary">100 Free</Badge>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Extended Plan:</span>
-                    <Badge variant="outline">$5 per 1,000</Badge>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Attribution:</span>
-                    <Badge variant="outline" className="bg-blue-50 text-blue-700">via Google</Badge>
-                  </div>
-                </div>
               </CardContent>
             </Card>
           </div>
