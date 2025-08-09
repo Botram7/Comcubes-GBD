@@ -123,12 +123,12 @@ export default function HomePage() {
       </header>
       
       {/* Hero Section */}
-      <section className="bg-gray-50  py-20 ">
+      <section className="bg-gray-50 py-12 md:py-20">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <div className="mb-8 flex justify-center">
+          <div className="mb-6 md:mb-8 flex justify-center">
             <div 
-              className="w-96 h-32 rounded-lg flex items-center justify-center p-1"
+              className="w-64 h-20 md:w-96 md:h-32 rounded-lg flex items-center justify-center p-1"
               style={{ backgroundColor: '#2563eb' }}
             >
               <img 
@@ -139,11 +139,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900  mb-6" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 600 }}>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 600 }}>
             Global Business Directory
           </h1>
           
-          <p className="text-lg text-gray-600  mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
             Navigate the world's most comprehensive business ecosystem. Discover 20 major business sectors,
             explore 400+ specialized industries, and connect with 8,000+ leading global companies—all organized
             in an intuitive hierarchical structure designed for business professionals.
@@ -171,17 +171,17 @@ export default function HomePage() {
       </section>
 
       {/* Animated Explainer Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedExplainer />
         </div>
       </section>
 
       {/* Statistics Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center p-8 bg-white  shadow-sm border border-gray-100 ">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+            <Card className="text-center p-4 md:p-8 bg-white shadow-sm border border-gray-100">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <BarChart3 className="h-6 w-6 text-blue-600 " />
               </div>
@@ -190,7 +190,7 @@ export default function HomePage() {
               <div className="text-sm text-gray-500">Major global business categories</div>
             </Card>
 
-            <Card className="text-center p-8 bg-white  shadow-sm border border-gray-100 ">
+            <Card className="text-center p-4 md:p-8 bg-white shadow-sm border border-gray-100">
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Target className="h-6 w-6 text-purple-600" />
               </div>
@@ -199,7 +199,7 @@ export default function HomePage() {
               <div className="text-sm text-gray-500">Detailed industry classifications</div>
             </Card>
 
-            <Card className="text-center p-8 bg-white  shadow-sm border border-gray-100 ">
+            <Card className="text-center p-4 md:p-8 bg-white shadow-sm border border-gray-100">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="h-6 w-6 text-green-600" />
               </div>
@@ -212,20 +212,20 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-16 bg-gray-50 ">
+      <section className="py-12 md:py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900  mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Why Choose Comcubes GBD?
             </h2>
-            <p className="text-lg text-gray-600  max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
               The most organized and comprehensive business directory designed for professionals,
               researchers, and decision makers worldwide.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="p-6 bg-white">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <Card className="p-4 md:p-6 bg-gray-50 border-gray-100">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                 <Globe className="h-6 w-6 text-blue-600" />
               </div>
@@ -235,7 +235,7 @@ export default function HomePage() {
               </p>
             </Card>
 
-            <Card className="p-6 bg-white">
+            <Card className="p-4 md:p-6 bg-gray-50 border-gray-100">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                 <TrendingUp className="h-6 w-6 text-purple-600" />
               </div>
@@ -245,7 +245,7 @@ export default function HomePage() {
               </p>
             </Card>
 
-            <Card className="p-6 bg-white">
+            <Card className="p-4 md:p-6 bg-gray-50 border-gray-100">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="h-6 w-6 text-green-600" />
               </div>
@@ -255,7 +255,7 @@ export default function HomePage() {
               </p>
             </Card>
 
-            <Card className="p-6 bg-white">
+            <Card className="p-4 md:p-6 bg-gray-50 border-gray-100">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="h-6 w-6 text-orange-600" />
               </div>

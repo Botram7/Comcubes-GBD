@@ -163,8 +163,8 @@ export default function IndustriesPage() {
               <h1 className="text-2xl font-bold text-primary " style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
             
-            <div className="flex-1 flex justify-center mx-8">
-              <div className="flex items-center space-x-4 max-w-2xl w-full">
+            <div className="flex-1 flex justify-center mx-2 md:mx-8">
+              <div className="flex items-center space-x-2 md:space-x-4 max-w-2xl w-full">
                 <div className="flex-1">
                   <SearchBar onSearchResults={handleSearchResults} />
                 </div>
@@ -172,7 +172,7 @@ export default function IndustriesPage() {
                   variant="outline"
                   size="sm"
                   onClick={() => setLocation('/search')}
-                  className="flex items-center gap-2 flex-shrink-0"
+                  className="hidden sm:flex items-center gap-2 flex-shrink-0"
                 >
                   <Building2 className="h-4 w-4" />
                   Advanced Search
@@ -180,8 +180,7 @@ export default function IndustriesPage() {
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
-              
+            <div className="flex items-center space-x-2 md:space-x-4">
               <Button
                 variant="ghost"
                 size="sm"
@@ -189,9 +188,9 @@ export default function IndustriesPage() {
                 className="flex items-center gap-2"
               >
                 <ArrowLeft className="h-4 w-4" />
-                Home
+                <span className="hidden sm:inline">Home</span>
               </Button>
-              <span className="text-sm text-gray-600 ">Page {currentPage} of {totalPages}</span>
+              <span className="text-xs md:text-sm text-gray-600">Page {currentPage} of {totalPages}</span>
             </div>
           </div>
         </div>
