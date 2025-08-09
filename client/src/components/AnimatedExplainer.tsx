@@ -135,11 +135,11 @@ export function AnimatedExplainer() {
   return (
     <div className="relative">
       {/* Header */}
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+      <div className="text-center mb-6 md:mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
           How to Navigate COMCUBES
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
           Discover businesses through our structured approach: start broad with sectors, 
           narrow down to industries, then explore individual companies.
         </p>
@@ -179,7 +179,7 @@ export function AnimatedExplainer() {
                 {/* Step Circle */}
                 <div
                   className={`
-                    relative w-20 h-20 rounded-full border-4 cursor-pointer transition-all duration-500 transform
+                    relative w-16 h-16 md:w-20 md:h-20 rounded-full border-3 md:border-4 cursor-pointer transition-all duration-500 transform
                     ${isActive 
                       ? `${step.bgColor} ${getBorderClass(step.color)} scale-110 shadow-lg` 
                       : isCompleted 
@@ -192,7 +192,7 @@ export function AnimatedExplainer() {
                 >
                   <div className="absolute inset-0 flex items-center justify-center">
                     <IconComponent 
-                      className={`h-8 w-8 transition-colors duration-300 ${
+                      className={`h-6 w-6 md:h-8 md:w-8 transition-colors duration-300 ${
                         isActive ? step.color : isCompleted ? 'text-blue-600' : 'text-gray-400'
                       }`} 
                     />
