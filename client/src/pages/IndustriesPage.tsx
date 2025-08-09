@@ -134,7 +134,7 @@ export default function IndustriesPage() {
     );
   }
 
-  const paginatedData = industriesData as PaginatedResponse<Industry>;
+  const paginatedData = industriesData as any;
   const industries = paginatedData?.industries || [];
   const totalPages = paginatedData?.totalPages || 1;
   const total = paginatedData?.total || 0;
@@ -179,7 +179,7 @@ export default function IndustriesPage() {
                 <ArrowLeft className="h-4 w-4" />
                 Home
               </Button>
-              <span className="text-sm text-gray-600 ">Page {currentPage + 1} of 421</span>
+              <span className="text-sm text-gray-600 ">Page {currentPage} of {totalPages}</span>
             </div>
           </div>
         </div>
@@ -227,7 +227,7 @@ export default function IndustriesPage() {
                 <BusinessGrid 
                   items={searchResults.industries} 
                   type="industry" 
-                  onItemClick={handleIndustryClick} 
+                  onItemClick={(item) => handleIndustryClick(item as Industry)} 
                 />
               </div>
             )}
@@ -256,7 +256,7 @@ export default function IndustriesPage() {
               </p>
             </div>
 
-            <BusinessGrid items={industries} type="industry" onItemClick={handleIndustryClick} />
+            <BusinessGrid items={industries} type="industry" onItemClick={(item) => handleIndustryClick(item as Industry)} />
 
             {totalPages > 1 && (
               <div className="mt-8">
