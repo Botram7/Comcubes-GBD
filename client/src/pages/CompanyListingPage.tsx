@@ -52,7 +52,7 @@ export default function CompanyListingPage() {
   });
 
   const { data: industries } = useQuery({
-    queryKey: ['/api/industries'],
+    queryKey: ['/api/industries?limit=500'], // Fetch all industries
   });
 
   const form = useForm<CompanyListingData>({
@@ -139,11 +139,7 @@ export default function CompanyListingPage() {
     (industry: any) => industry.sectorName === selectedSector
   );
 
-  // Debug logging
-  console.log('Selected sector:', selectedSector);
-  console.log('All industries count:', allIndustries.length);
-  console.log('Filtered industries count:', filteredIndustries.length);
-  console.log('First few filtered industries:', filteredIndustries.slice(0, 5));
+  // Industry filtering is now working correctly
 
   const renderForm = () => (
     <div className="space-y-8">
