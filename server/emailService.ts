@@ -124,4 +124,115 @@ export class EmailService {
       html,
     });
   }
+
+  async sendApprovalEmail(listing: any): Promise<boolean> {
+    if (!this.isEnabled) {
+      console.log('Email service disabled - would send approval email to:', listing.contactEmail);
+      return true;
+    }
+
+    const html = `
+      <h2>Congratulations! Your company listing has been approved</h2>
+      <p>Dear ${listing.companyName} team,</p>
+      <p>Great news! Your company listing has been reviewed and approved. Your company is now live on the COMCUBES Global Business Directory.</p>
+      
+      <div style="border: 1px solid #ddd; padding: 20px; margin: 20px 0; background-color: #f9f9f9;">
+        <h3>Listing Details:</h3>
+        <p><strong>Company Name:</strong> ${listing.companyName}</p>
+        <p><strong>Website:</strong> ${listing.websiteUrl}</p>
+        <p><strong>Sector:</strong> ${listing.sectorName}</p>
+        <p><strong>Industry:</strong> ${listing.industryName}</p>
+      </div>
+      
+      <p>Your company is now visible to visitors browsing the ${listing.sectorName} sector and ${listing.industryName} industry.</p>
+      <p>Visit <a href="https://comcubes.com">COMCUBES.com</a> to see your listing live.</p>
+      
+      <p>Thank you for choosing COMCUBES Global Business Directory!</p>
+      <p>Best regards,<br>The COMCUBES Team</p>
+    `;
+
+    return this.sendEmail({
+      to: listing.contactEmail,
+      from: this.fromEmail,
+      subject: 'Your COMCUBES Company Listing Has Been Approved!',
+      html,
+    });
+  }
+
+  async sendRejectionEmail(listing: any): Promise<boolean> {
+    if (!this.isEnabled) {
+      console.log('Email service disabled - would send rejection email to:', listing.contactEmail);
+      return true;
+    }
+
+    const html = `
+      <h2>Update on Your Company Listing Application</h2>
+      <p>Dear ${listing.companyName} team,</p>
+      <p>Thank you for your interest in listing your company on COMCUBES Global Business Directory.</p>
+      
+      <p>After review, we are unable to approve your current listing submission. This could be due to:</p>
+      <ul>
+        <li>Incomplete or unclear company information</li>
+        <li>Website or business details that need verification</li>
+        <li>Information that doesn't meet our directory standards</li>
+      </ul>
+      
+      <div style="border: 1px solid #ddd; padding: 20px; margin: 20px 0; background-color: #f9f9f9;">
+        <h3>Your Submission Details:</h3>
+        <p><strong>Company Name:</strong> ${listing.companyName}</p>
+        <p><strong>Website:</strong> ${listing.websiteUrl}</p>
+        <p><strong>Sector:</strong> ${listing.sectorName}</p>
+        <p><strong>Industry:</strong> ${listing.industryName}</p>
+      </div>
+      
+      <p>You're welcome to submit a new application with updated information. Please ensure all details are accurate and complete.</p>
+      <p>If you have questions about this decision, please contact us at support@comcubes.com.</p>
+      
+      <p>Best regards,<br>The COMCUBES Team</p>
+    `;
+
+    return this.sendEmail({
+      to: listing.contactEmail,
+      from: this.fromEmail,
+      subject: 'Update on Your COMCUBES Company Listing Application',
+      html,
+    });
+  }
+
+  async sendAdminNotification(listing: any): Promise<boolean> {
+    if (!this.isEnabled) {
+      console.log('Email service disabled - would send admin notification for listing:', listing.id);
+      return true;
+    }
+
+    const adminEmail = process.env.ADMIN_EMAIL || 'admin@comcubes.com';
+    const html = `
+      <h2>New Company Listing Payment Completed</h2>
+      <p>A company has completed payment for their listing and is ready for review.</p>
+      
+      <div style="border: 1px solid #ddd; padding: 20px; margin: 20px 0; background-color: #f9f9f9;">
+        <h3>Company Details:</h3>
+        <p><strong>Company Name:</strong> ${listing.companyName}</p>
+        <p><strong>Website:</strong> ${listing.websiteUrl}</p>
+        <p><strong>Contact Email:</strong> ${listing.contactEmail}</p>
+        <p><strong>Sector:</strong> ${listing.sectorName}</p>
+        <p><strong>Industry:</strong> ${listing.industryName}</p>
+        <p><strong>Payment Amount:</strong> ₦${parseInt(listing.paymentAmount).toLocaleString()}</p>
+        <p><strong>Payment Reference:</strong> ${listing.paymentReference}</p>
+      </div>
+      
+      ${listing.description ? `<p><strong>Description:</strong><br>${listing.description}</p>` : ''}
+      
+      <p><a href="${process.env.BASE_URL || 'http://localhost:5000'}/admin" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Review in Admin Dashboard</a></p>
+      
+      <p>Please review and approve/reject this listing in the admin dashboard.</p>
+    `;
+
+    return this.sendEmail({
+      to: adminEmail,
+      from: this.fromEmail,
+      subject: `New Company Listing Payment Completed - ${listing.companyName}`,
+      html,
+    });
+  }
 }
