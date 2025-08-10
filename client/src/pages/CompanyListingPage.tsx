@@ -28,7 +28,7 @@ const companyListingSchema = z.object({
   industryName: z.string().min(1, 'Please select an industry'),
   description: z.string().optional(),
   logoUrl: z.string().optional(),
-  paymentAmount: z.number().min(1, 'Payment amount is required'),
+  paymentAmount: z.string().min(1, 'Payment amount is required'),
 });
 
 type CompanyListingData = z.infer<typeof companyListingSchema>;
@@ -65,7 +65,7 @@ export default function CompanyListingPage() {
       industryName: '',
       description: '',
       logoUrl: '',
-      paymentAmount: LISTING_PRICES.basic,
+      paymentAmount: LISTING_PRICES.basic.toString(),
     },
   });
 
@@ -118,8 +118,8 @@ export default function CompanyListingPage() {
   });
 
   const onSubmit = (data: CompanyListingData) => {
-    // Set the payment amount based on selected plan
-    data.paymentAmount = LISTING_PRICES[selectedPlan];
+    // Set the payment amount based on selected plan and convert to string
+    data.paymentAmount = LISTING_PRICES[selectedPlan].toString();
     listingMutation.mutate(data);
   };
 
