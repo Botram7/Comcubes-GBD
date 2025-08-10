@@ -133,9 +133,17 @@ export default function CompanyListingPage() {
   };
 
   // Filter industries based on selected sector
-  const filteredIndustries = industries?.industries?.filter(
-    (industry: any) => industry.sectorName === form.watch('sectorName')
-  ) || [];
+  const selectedSector = form.watch('sectorName');
+  const allIndustries = industries?.industries || [];
+  const filteredIndustries = allIndustries.filter(
+    (industry: any) => industry.sectorName === selectedSector
+  );
+
+  // Debug logging
+  console.log('Selected sector:', selectedSector);
+  console.log('All industries count:', allIndustries.length);
+  console.log('Filtered industries count:', filteredIndustries.length);
+  console.log('First few filtered industries:', filteredIndustries.slice(0, 5));
 
   const renderForm = () => (
     <div className="space-y-8">
@@ -269,7 +277,7 @@ export default function CompanyListingPage() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          {sectors?.map((sector: any) => (
+                          {(sectors || []).map((sector: any) => (
                             <SelectItem key={sector.id} value={sector.name}>
                               {sector.name}
                             </SelectItem>
