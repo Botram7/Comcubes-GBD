@@ -2,6 +2,9 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { googleSearchService } from "./services/googleSearchService";
+import { EmailService } from "./emailService";
+import { paystackService } from "./paystackService";
+import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Get all sectors
@@ -185,6 +188,148 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Contact form submission
+  app.post('/api/contact', async (req, res) => {
+    try {
+      const contactData = insertContactMessageSchema.parse(req.body);
+      
+      // Save to database
+      const savedMessage = await storage.createContactMessage(contactData);
+      
+      // Send emails (using your admin email - you can set this as environment variable)
+      const emailService = new EmailService();
+      const adminEmail = process.env.ADMIN_EMAIL || 'admin@comcubes.com'; // You'll need to set this
+      
+      await Promise.all([
+        emailService.sendContactNotification(contactData, adminEmail),
+        emailService.sendContactConfirmation(contactData)
+      ]);
+      
+      res.json({ 
+        success: true, 
+        message: 'Contact message sent successfully',
+        id: savedMessage.id 
+      });
+    } catch (error) {
+      console.error('Contact form error:', error);
+      res.status(400).json({ 
+        error: error instanceof Error ? error.message : 'Failed to send contact message' 
+      });
+    }
+  });
+
+  // Company listing submission (without payment)
+  app.post('/api/company-listing', async (req, res) => {
+    try {
+      const listingData = insertCompanyListingSchema.parse(req.body);
+      
+      // Save to database
+      const savedListing = await storage.createCompanyListing(listingData);
+      
+      res.json({ 
+        success: true, 
+        message: 'Company listing submitted successfully',
+        listingId: savedListing.id 
+      });
+    } catch (error) {
+      console.error('Company listing error:', error);
+      res.status(400).json({ 
+        error: error instanceof Error ? error.message : 'Failed to submit company listing' 
+      });
+    }
+  });
+
+  // Initialize payment for company listing
+  app.post('/api/payment/initialize', async (req, res) => {
+    try {
+      const { listingId, amount } = req.body;
+      
+      if (!listingId || !amount) {
+        return res.status(400).json({ error: 'Listing ID and amount are required' });
+      }
+
+      // Generate payment reference
+      const reference = paystackService.generateReference();
+      const amountInKobo = paystackService.convertToKobo(amount);
+      
+      // Get listing details for email
+      const listings = await storage.getCompanyListings();
+      const listing = listings.find(l => l.id === listingId);
+      
+      if (!listing) {
+        return res.status(404).json({ error: 'Listing not found' });
+      }
+
+      const paymentData = await paystackService.initializePayment({
+        email: listing.contactEmail,
+        amount: amountInKobo,
+        reference,
+        metadata: {
+          listingId,
+          companyName: listing.companyName,
+          purpose: 'COMCUBES Company Listing Fee'
+        }
+      });
+
+      res.json({
+        success: true,
+        authorization_url: paymentData.authorization_url,
+        access_code: paymentData.access_code,
+        reference: paymentData.reference
+      });
+    } catch (error) {
+      console.error('Payment initialization error:', error);
+      res.status(500).json({ error: 'Failed to initialize payment' });
+    }
+  });
+
+  // Verify payment
+  app.post('/api/payment/verify', async (req, res) => {
+    try {
+      const { reference } = req.body;
+      
+      if (!reference) {
+        return res.status(400).json({ error: 'Payment reference is required' });
+      }
+
+      const verification = await paystackService.verifyPayment(reference);
+      
+      if (verification.status === 'success') {
+        // Update listing with payment information
+        const { listingId } = verification.metadata;
+        const amount = paystackService.convertToNaira(verification.amount);
+        
+        await storage.updateCompanyListingPayment(listingId, reference, amount);
+        
+        // Send confirmation email
+        const listings = await storage.getCompanyListings();
+        const listing = listings.find(l => l.id === listingId);
+        
+        if (listing) {
+          const emailService = new EmailService();
+          await emailService.sendListingConfirmation({
+            companyName: listing.companyName,
+            contactEmail: listing.contactEmail,
+            paymentReference: reference
+          });
+        }
+        
+        res.json({ 
+          success: true, 
+          message: 'Payment verified successfully',
+          amount: amount 
+        });
+      } else {
+        res.status(400).json({ 
+          success: false, 
+          message: 'Payment verification failed' 
+        });
+      }
+    } catch (error) {
+      console.error('Payment verification error:', error);
+      res.status(500).json({ error: 'Failed to verify payment' });
+    }
+  });
 
   // Add logo routes
   const logoRoutes = (await import('./routes/logo')).default;

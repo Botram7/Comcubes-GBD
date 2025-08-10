@@ -13,6 +13,8 @@ import CompanyPage from "@/pages/CompanyPage";
 import CompanyProfilePage from "@/pages/CompanyProfilePage";
 import SearchPage from "@/pages/SearchPage";
 // LogoManagementPage removed - using fallback icons only
+import ContactPage from "@/pages/ContactPage";
+import CompanyListingPage from "@/pages/CompanyListingPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsOfServicePage from "@/pages/TermsOfServicePage";
 import DisclaimerPage from "@/pages/DisclaimerPage";
@@ -30,6 +32,8 @@ function Router() {
       <Route path="/companies" component={CompanyPage} />
       <Route path="/company/:companyId" component={CompanyProfilePage} />
       <Route path="/search" component={SearchPage} />
+      <Route path="/contact" component={ContactPage} />
+      <Route path="/company-listing" component={CompanyListingPage} />
 {/* Logo management removed - using fallback icons only */}
       <Route path="/privacy-policy" component={PrivacyPolicyPage} />
       <Route path="/terms-of-service" component={TermsOfServicePage} />

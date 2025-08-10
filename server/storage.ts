@@ -1,6 +1,6 @@
 import { csvParser } from './services/csvParser';
 import { db } from './db';
-import { sectors, industries, companies, type Sector, type Industry, type Company, type InsertSector, type InsertIndustry, type InsertCompany } from '@shared/schema';
+import { sectors, industries, companies, contactMessages, companyListings, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing } from '@shared/schema';
 import { eq, ilike, or } from 'drizzle-orm';
 import { generateCompanyDescription } from './services/companyDescriptionGenerator';
 
@@ -16,6 +16,15 @@ export interface IStorage {
   getAllIndustries(): Promise<Industry[]>;
   getAllCompanies(): Promise<Company[]>;
   getCompanyById(id: number): Promise<Company | undefined>;
+  
+  // Contact message operations
+  createContactMessage(message: InsertContactMessage): Promise<ContactMessage>;
+  getContactMessages(): Promise<ContactMessage[]>;
+  
+  // Company listing operations
+  createCompanyListing(listing: InsertCompanyListing): Promise<CompanyListing>;
+  getCompanyListings(): Promise<CompanyListing[]>;
+  updateCompanyListingPayment(id: number, paymentReference: string, paymentAmount: number): Promise<CompanyListing | undefined>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -204,6 +213,66 @@ export class DatabaseStorage implements IStorage {
         industries: [],
         companies: []
       };
+    }
+  }
+
+  async createContactMessage(message: InsertContactMessage): Promise<ContactMessage> {
+    try {
+      await this.initialize();
+      const [created] = await db.insert(contactMessages).values(message).returning();
+      return created;
+    } catch (error) {
+      console.error('Error creating contact message:', error);
+      throw new Error('Failed to create contact message');
+    }
+  }
+
+  async getContactMessages(): Promise<ContactMessage[]> {
+    try {
+      await this.initialize();
+      return await db.select().from(contactMessages).orderBy(contactMessages.createdAt);
+    } catch (error) {
+      console.error('Error getting contact messages:', error);
+      return [];
+    }
+  }
+
+  async createCompanyListing(listing: InsertCompanyListing): Promise<CompanyListing> {
+    try {
+      await this.initialize();
+      const [created] = await db.insert(companyListings).values(listing).returning();
+      return created;
+    } catch (error) {
+      console.error('Error creating company listing:', error);
+      throw new Error('Failed to create company listing');
+    }
+  }
+
+  async getCompanyListings(): Promise<CompanyListing[]> {
+    try {
+      await this.initialize();
+      return await db.select().from(companyListings).orderBy(companyListings.submittedAt);
+    } catch (error) {
+      console.error('Error getting company listings:', error);
+      return [];
+    }
+  }
+
+  async updateCompanyListingPayment(id: number, paymentReference: string, paymentAmount: number): Promise<CompanyListing | undefined> {
+    try {
+      await this.initialize();
+      const [updated] = await db.update(companyListings)
+        .set({ 
+          paymentReference, 
+          paymentAmount: paymentAmount.toString(),
+          paymentStatus: 'completed' 
+        })
+        .where(eq(companyListings.id, id))
+        .returning();
+      return updated;
+    } catch (error) {
+      console.error('Error updating company listing payment:', error);
+      throw new Error('Failed to update payment information');
     }
   }
 }
