@@ -283,6 +283,77 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Admin routes
+  app.get('/api/admin/company-listings', async (req, res) => {
+    try {
+      const listings = await storage.getCompanyListings();
+      res.json(listings);
+    } catch (error) {
+      console.error('Error fetching company listings:', error);
+      res.status(500).json({ error: 'Failed to fetch company listings' });
+    }
+  });
+
+  app.post('/api/admin/company-listings/:id/approve', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const listingId = parseInt(id);
+      
+      // Get the listing first
+      const listings = await storage.getCompanyListings();
+      const listing = listings.find(l => l.id === listingId);
+      
+      if (!listing) {
+        return res.status(404).json({ error: 'Listing not found' });
+      }
+
+      if (listing.paymentStatus !== 'completed') {
+        return res.status(400).json({ error: 'Cannot approve listing with incomplete payment' });
+      }
+
+      // Add company to the main companies table
+      await storage.createCompany({
+        name: listing.companyName,
+        websiteUrl: listing.websiteUrl,
+        industryName: listing.industryName,
+        sectorName: listing.sectorName,
+      });
+
+      // Send approval email
+      const emailService = new EmailService();
+      await emailService.sendApprovalEmail(listing);
+
+      res.json({ success: true, message: 'Company approved and added to directory' });
+    } catch (error) {
+      console.error('Error approving company listing:', error);
+      res.status(500).json({ error: 'Failed to approve company listing' });
+    }
+  });
+
+  app.post('/api/admin/company-listings/:id/reject', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const listingId = parseInt(id);
+      
+      // Get the listing first
+      const listings = await storage.getCompanyListings();
+      const listing = listings.find(l => l.id === listingId);
+      
+      if (!listing) {
+        return res.status(404).json({ error: 'Listing not found' });
+      }
+
+      // Send rejection email
+      const emailService = new EmailService();
+      await emailService.sendRejectionEmail(listing);
+
+      res.json({ success: true, message: 'Company listing rejected' });
+    } catch (error) {
+      console.error('Error rejecting company listing:', error);
+      res.status(500).json({ error: 'Failed to reject company listing' });
+    }
+  });
+
   // Verify payment
   app.post('/api/payment/verify', async (req, res) => {
     try {
@@ -301,9 +372,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
         
         await storage.updateCompanyListingPayment(listingId, reference, amount);
         
-        // Send confirmation email
+        // Send confirmation email and admin notification
         const listings = await storage.getCompanyListings();
         const listing = listings.find(l => l.id === listingId);
+        
+        if (listing) {
+          // Send notifications
+          const emailService = new EmailService();
+          await Promise.all([
+            emailService.sendListingConfirmation({
+              companyName: listing.companyName,
+              contactEmail: listing.contactEmail,
+              paymentReference: reference
+            }),
+            emailService.sendAdminNotification(listing)
+          ]);
+        }
         
         if (listing) {
           const emailService = new EmailService();
