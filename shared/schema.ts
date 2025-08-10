@@ -1,37 +1,75 @@
-import { pgTable, text, serial, integer, timestamp } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
-import { z } from "zod";
+import { pgTable, text, integer, timestamp, json, varchar, serial } from 'drizzle-orm/pg-core';
+import { createInsertSchema, createSelectSchema } from 'drizzle-zod';
+import { z } from 'zod';
 
-export const sectors = pgTable("sectors", {
-  id: serial("id").primaryKey(),
-  name: text("name").notNull().unique(),
+export const sectors = pgTable('sectors', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull().unique(),
 });
 
-export const industries = pgTable("industries", {
-  id: serial("id").primaryKey(),
-  name: text("name").notNull(),
-  sectorName: text("sector_name").notNull(),
+export const industries = pgTable('industries', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  sectorName: text('sector_name').notNull(),
 });
 
-export const companies = pgTable("companies", {
-  id: serial("id").primaryKey(),
-  name: text("name").notNull(),
-  websiteUrl: text("website_url"),
-  industryName: text("industry_name").notNull(),
-  sectorName: text("sector_name").notNull(),
-  logoUrl: text("logo_url"),
-  logoStatus: text("logo_status").default("pending"), // pending, fetched, failed, removed
-  logoFetchedAt: timestamp("logo_fetched_at"),
-  logoQuality: text("logo_quality"), // high, medium, low
+export const companies = pgTable('companies', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  websiteUrl: text('website_url'),
+  industryName: text('industry_name').notNull(),
+  sectorName: text('sector_name').notNull(),
 });
 
-export const insertSectorSchema = createInsertSchema(sectors).omit({ id: true });
-export const insertIndustrySchema = createInsertSchema(industries).omit({ id: true });
-export const insertCompanySchema = createInsertSchema(companies).omit({ id: true });
+// Contact Messages table
+export const contactMessages = pgTable('contact_messages', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  email: text('email').notNull(),
+  subject: text('subject').notNull(),
+  message: text('message').notNull(),
+  contactType: text('contact_type').notNull(), // 'general', 'technical', 'business', 'listing'
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+});
 
+// Company Listings table
+export const companyListings = pgTable('company_listings', {
+  id: serial('id').primaryKey(),
+  companyName: text('company_name').notNull(),
+  websiteUrl: text('website_url').notNull(),
+  contactEmail: text('contact_email').notNull(),
+  sectorName: text('sector_name').notNull(),
+  industryName: text('industry_name').notNull(),
+  description: text('description'),
+  logoUrl: text('logo_url'),
+  paymentAmount: text('payment_amount').notNull(), // Stored as string to preserve decimal precision
+  paymentStatus: text('payment_status').default('pending').notNull(), // 'pending', 'completed', 'failed'
+  paymentReference: text('payment_reference'),
+  submittedAt: timestamp('submitted_at').defaultNow().notNull(),
+});
+
+// Type exports
 export type Sector = typeof sectors.$inferSelect;
 export type Industry = typeof industries.$inferSelect;
 export type Company = typeof companies.$inferSelect;
-export type InsertSector = z.infer<typeof insertSectorSchema>;
-export type InsertIndustry = z.infer<typeof insertIndustrySchema>;
-export type InsertCompany = z.infer<typeof insertCompanySchema>;
+export type ContactMessage = typeof contactMessages.$inferSelect;
+export type CompanyListing = typeof companyListings.$inferSelect;
+
+export type InsertSector = typeof sectors.$inferInsert;
+export type InsertIndustry = typeof industries.$inferInsert;
+export type InsertCompany = typeof companies.$inferInsert;
+export type InsertContactMessage = typeof contactMessages.$inferInsert;
+export type InsertCompanyListing = typeof companyListings.$inferInsert;
+
+// Zod schemas for validation
+export const insertSectorSchema = createInsertSchema(sectors);
+export const insertIndustrySchema = createInsertSchema(industries);
+export const insertCompanySchema = createInsertSchema(companies);
+export const insertContactMessageSchema = createInsertSchema(contactMessages);
+export const insertCompanyListingSchema = createInsertSchema(companyListings);
+
+export const selectSectorSchema = createSelectSchema(sectors);
+export const selectIndustrySchema = createSelectSchema(industries);
+export const selectCompanySchema = createSelectSchema(companies);
+export const selectContactMessageSchema = createSelectSchema(contactMessages);
+export const selectCompanyListingSchema = createSelectSchema(companyListings);

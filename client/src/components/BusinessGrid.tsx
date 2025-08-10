@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { getImageForEntity } from "@/lib/constants";
+import { useLocation } from "wouter";
 import type { Sector, Industry, Company } from "@/lib/types";
 
 interface BusinessGridProps {
@@ -9,6 +10,7 @@ interface BusinessGridProps {
 }
 
 export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
+  const [, setLocation] = useLocation();
   // Function to get colorful gradient for company cards
   const getCompanyCardGradient = (index: number): string => {
     const gradients = [
@@ -57,7 +59,14 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
         <Card
           key={`${type}-${item.id}-${index}`}
           className="relative overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl aspect-square group"
-          onClick={() => item.id !== -1 && onItemClick(item)}
+          onClick={() => {
+            if (item.id === -1) {
+              // Navigate to company listing page for "Available Slot" items
+              setLocation('/company-listing');
+            } else {
+              onItemClick(item);
+            }
+          }}
         >
           {type === 'company' ? (
             /* Colorful gradient cards for companies */
