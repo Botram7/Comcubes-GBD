@@ -25,6 +25,9 @@ export interface IStorage {
   createCompanyListing(listing: InsertCompanyListing): Promise<CompanyListing>;
   getCompanyListings(): Promise<CompanyListing[]>;
   updateCompanyListingPayment(id: number, paymentReference: string, paymentAmount: number): Promise<CompanyListing | undefined>;
+  
+  // Company creation
+  createCompany(company: Omit<Company, 'id'>): Promise<Company>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -273,6 +276,17 @@ export class DatabaseStorage implements IStorage {
     } catch (error) {
       console.error('Error updating company listing payment:', error);
       throw new Error('Failed to update payment information');
+    }
+  }
+
+  async createCompany(company: Omit<Company, 'id'>): Promise<Company> {
+    try {
+      await this.initialize();
+      const [created] = await db.insert(companies).values(company).returning();
+      return created;
+    } catch (error) {
+      console.error('Error creating company:', error);
+      throw new Error('Failed to create company');
     }
   }
 }
