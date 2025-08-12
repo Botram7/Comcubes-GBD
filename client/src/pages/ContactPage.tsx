@@ -16,6 +16,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { BannerAd } from '@/components/BannerAd';
 import { apiRequest } from '@/lib/queryClient';
+import { SEOHead } from '@/components/SEOHead';
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 
 // Form validation schema
@@ -132,6 +133,52 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
+      <SEOHead
+        title="Contact COMCUBES | Get in Touch with Global Business Directory"
+        description="Contact COMCUBES Global Business Directory for business inquiries, technical support, partnerships, and company listings. Get expert assistance for your business directory needs."
+        keywords={[
+          'contact COMCUBES',
+          'business directory support',
+          'company listing contact',
+          'business partnership inquiry',
+          'technical support',
+          'global business directory contact',
+          'customer service',
+          'business inquiry',
+          'directory assistance',
+          'help center',
+          'support team',
+          'business services contact'
+        ]}
+        ogType="website"
+        canonicalUrl={`${window.location.origin}/contact`}
+        additionalMeta={[
+          { name: 'contact-type', content: 'business' },
+          { name: 'response-time', content: '24-48 hours' }
+        ]}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact COMCUBES",
+          "description": "Contact page for COMCUBES Global Business Directory",
+          "url": `${window.location.origin}/contact`,
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "COMCUBES Global Business Directory",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "availableLanguage": "English",
+              "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "17:00"
+              }
+            }
+          }
+        }}
+      />
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import { BusinessGrid } from "@/components/BusinessGrid";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { SEOHead, generateDirectoryStructuredData } from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
@@ -153,6 +154,40 @@ export default function IndustriesPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead
+        title={`Industries Directory (Page ${currentPage}) | Browse 400+ Global Industries - COMCUBES`}
+        description={`Browse page ${currentPage} of global industries in COMCUBES Directory. Find specialized industries across all business sectors including technology, healthcare, finance, manufacturing, and more.`}
+        keywords={[
+          'business industries',
+          'global industries directory',
+          'specialized industries',
+          'technology industry',
+          'healthcare industry',
+          'financial industry',
+          'manufacturing industry',
+          'retail industry',
+          'energy industry',
+          'automotive industry',
+          'telecommunications industry',
+          'construction industry',
+          'agriculture industry',
+          'entertainment industry',
+          'professional services',
+          'consulting industry',
+          'logistics industry',
+          'transportation industry',
+          'hospitality industry',
+          'education industry'
+        ]}
+        ogType="website"
+        jsonLd={generateDirectoryStructuredData('industries', Array.isArray(industries) ? industries : [])}
+        canonicalUrl={`${window.location.origin}/industries?page=${currentPage}`}
+        additionalMeta={[
+          { name: 'page', content: currentPage.toString() },
+          { name: 'total-pages', content: totalPages.toString() },
+          { name: 'total-items', content: total.toString() }
+        ]}
+      />
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center py-4">

@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { googleSearchService } from "./services/googleSearchService";
 import { EmailService } from "./emailService";
+import { registerSEORoutes } from "./seoRoutes";
 import { paystackService } from "./paystackService";
 import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/schema";
 
@@ -586,6 +587,9 @@ Please contact this potential advertiser within 24 hours.
   // Add logo routes
   const logoRoutes = (await import('./routes/logo')).default;
   app.use('/api/logo', logoRoutes);
+
+  // Register SEO routes (sitemap, robots.txt, etc.)
+  registerSEORoutes(app);
 
   const httpServer = createServer(app);
   return httpServer;
