@@ -16,7 +16,6 @@ import SearchPage from "@/pages/SearchPage";
 import ContactPage from "@/pages/ContactPage";
 import CompanyListingPage from "@/pages/CompanyListingPage";
 import ResumePaymentPage from "@/pages/ResumePaymentPage";
-import AdminDashboard from "@/pages/AdminDashboard";
 import ComprehensiveAdminDashboard from "@/pages/ComprehensiveAdminDashboard";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsOfServicePage from "@/pages/TermsOfServicePage";
@@ -38,8 +37,7 @@ function Router() {
       <Route path="/contact" component={ContactPage} />
       <Route path="/company-listing" component={CompanyListingPage} />
       <Route path="/resume-payment" component={ResumePaymentPage} />
-      <Route path="/admin" component={AdminDashboard} />
-      <Route path="/admin/comprehensive" component={ComprehensiveAdminDashboard} />
+      <Route path="/admin" component={ComprehensiveAdminDashboard} />
 {/* Logo management removed - using fallback icons only */}
       <Route path="/privacy-policy" component={PrivacyPolicyPage} />
       <Route path="/terms-of-service" component={TermsOfServicePage} />
