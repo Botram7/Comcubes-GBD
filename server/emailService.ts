@@ -14,7 +14,7 @@ if (emailEnabled && SENDGRID_API_KEY) {
 
 interface EmailParams {
   to: string;
-  from: string;
+  from?: string;
   subject: string;
   text?: string;
   html?: string;

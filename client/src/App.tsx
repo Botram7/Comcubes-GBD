@@ -14,6 +14,7 @@ import CompanyProfilePage from "@/pages/CompanyProfilePage";
 import SearchPage from "@/pages/SearchPage";
 // LogoManagementPage removed - using fallback icons only
 import ContactPage from "@/pages/ContactPage";
+import AdvertisePage from "@/pages/AdvertisePage";
 import CompanyListingPage from "@/pages/CompanyListingPage";
 import ResumePaymentPage from "@/pages/ResumePaymentPage";
 import ComprehensiveAdminDashboard from "@/pages/ComprehensiveAdminDashboard";
@@ -35,6 +36,7 @@ function Router() {
       <Route path="/company/:companyId" component={CompanyProfilePage} />
       <Route path="/search" component={SearchPage} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/advertise" component={AdvertisePage} />
       <Route path="/company-listing" component={CompanyListingPage} />
       <Route path="/resume-payment" component={ResumePaymentPage} />
       <Route path="/admin" component={ComprehensiveAdminDashboard} />

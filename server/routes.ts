@@ -189,6 +189,63 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Contact form submission
+  // Advertising inquiry endpoint
+  app.post('/api/advertise', async (req, res) => {
+    try {
+      const { companyName, email, phone, website, adType, budget, duration, message } = req.body;
+
+      // Send email to admin for advertising inquiries
+      const emailService = new EmailService();
+      const success = await emailService.sendEmail({
+        to: 'admin@comcubes.com',
+
+        subject: `New Advertising Inquiry - ${adType}`,
+        text: `
+New advertising inquiry received:
+
+Company: ${companyName}
+Email: ${email}
+Phone: ${phone}
+Website: ${website || 'Not provided'}
+Advertisement Type: ${adType}
+Budget Range: ${budget}
+Campaign Duration: ${duration}
+
+Message:
+${message}
+
+Please contact this potential advertiser within 24 hours.
+        `,
+        html: `
+          <h2>New Advertising Inquiry</h2>
+          <p><strong>Company:</strong> ${companyName}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Website:</strong> ${website || 'Not provided'}</p>
+          <p><strong>Advertisement Type:</strong> ${adType}</p>
+          <p><strong>Budget Range:</strong> ${budget}</p>
+          <p><strong>Campaign Duration:</strong> ${duration}</p>
+          <h3>Message:</h3>
+          <p>${message}</p>
+          <hr>
+          <p><em>Please contact this potential advertiser within 24 hours.</em></p>
+        `,
+      });
+
+      res.json({
+        success: true,
+        message: 'Advertising inquiry submitted successfully'
+      });
+
+    } catch (error) {
+      console.error('Error sending advertising inquiry:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Failed to submit advertising inquiry'
+      });
+    }
+  });
+
   app.post('/api/contact', async (req, res) => {
     try {
       const contactData = insertContactMessageSchema.parse(req.body);
