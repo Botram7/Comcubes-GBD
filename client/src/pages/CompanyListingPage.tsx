@@ -468,27 +468,43 @@ export default function CompanyListingPage() {
     </Card>
   );
 
-  const renderSuccess = () => (
-    <Card>
-      <CardContent className="p-12 text-center">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="h-8 w-8 text-green-600" />
-        </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Payment Successful!</h2>
-        <p className="text-gray-600 mb-8">
-          Thank you for listing your company with COMCUBES. Your listing is now under review and will be published within 2-3 business days.
-        </p>
-        <div className="flex gap-4 justify-center">
-          <Button onClick={() => setLocation('/')}>
-            Back to Home
-          </Button>
-          <Button variant="outline" onClick={() => setLocation('/contact')}>
-            Contact Support
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
-  );
+  const renderSuccess = () => {
+    // Check if this was a waitlisted submission based on whether we have a listingId
+    const isWaitlisted = !listingId;
+    
+    return (
+      <Card>
+        <CardContent className="p-12 text-center">
+          <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${
+            isWaitlisted ? 'bg-orange-100' : 'bg-green-100'
+          }`}>
+            {isWaitlisted ? (
+              <Clock className="h-8 w-8 text-orange-600" />
+            ) : (
+              <CheckCircle className="h-8 w-8 text-green-600" />
+            )}
+          </div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            {isWaitlisted ? "Added to Waitlist!" : "Payment Successful!"}
+          </h2>
+          <p className="text-gray-600 mb-8">
+            {isWaitlisted 
+              ? "Your company has been added to our waitlist. We'll contact you as soon as a slot becomes available in your selected industry."
+              : "Thank you for listing your company with COMCUBES. Your listing is now under review and will be published within 2-3 business days."
+            }
+          </p>
+          <div className="flex gap-4 justify-center">
+            <Button onClick={() => setLocation('/')}>
+              Back to Home
+            </Button>
+            <Button variant="outline" onClick={() => setLocation('/contact')}>
+              Contact Support
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
