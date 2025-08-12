@@ -218,18 +218,54 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Company listing submission (without payment)
+  // Check slot availability for an industry
+  app.get('/api/industries/:industryName/slot-availability', async (req, res) => {
+    try {
+      const { industryName } = req.params;
+      const availability = await storage.checkSlotAvailability(decodeURIComponent(industryName));
+      res.json(availability);
+    } catch (error) {
+      console.error('Error checking slot availability:', error);
+      res.status(500).json({ error: 'Failed to check slot availability' });
+    }
+  });
+
+  // Company listing submission with slot validation
   app.post('/api/company-listing', async (req, res) => {
     try {
       const listingData = insertCompanyListingSchema.parse(req.body);
       
-      // Save to database
+      // Check slot availability first
+      const availability = await storage.checkSlotAvailability(listingData.industryName);
+      
+      if (!availability.available) {
+        // Add to waitlist instead
+        const waitlistEntry = await storage.addToWaitlist({
+          companyName: listingData.companyName,
+          websiteUrl: listingData.websiteUrl,
+          contactEmail: listingData.contactEmail,
+          sectorName: listingData.sectorName,
+          industryName: listingData.industryName,
+          description: listingData.description,
+          logoUrl: listingData.logoUrl
+        });
+        
+        return res.json({
+          success: false,
+          isWaitlisted: true,
+          message: `All slots for ${listingData.industryName} are currently occupied (${availability.currentCount}/${availability.maxSlots}). Your company has been added to our waitlist and we'll contact you when a slot becomes available.`,
+          waitlistId: waitlistEntry.id
+        });
+      }
+      
+      // Save to database if slot is available
       const savedListing = await storage.createCompanyListing(listingData);
       
       res.json({ 
         success: true, 
-        message: 'Company listing submitted successfully',
-        listingId: savedListing.id 
+        message: 'Company listing submitted successfully. Proceed to payment to secure your slot.',
+        listingId: savedListing.id,
+        availableSlots: availability.maxSlots - availability.currentCount - 1 // Subtract 1 for this submission
       });
     } catch (error) {
       console.error('Company listing error:', error);
@@ -351,6 +387,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Error rejecting company listing:', error);
       res.status(500).json({ error: 'Failed to reject company listing' });
+    }
+  });
+
+  // Resume payment - get pending listings by email
+  app.get('/api/resume-payment/:email', async (req, res) => {
+    try {
+      const { email } = req.params;
+      const decodedEmail = decodeURIComponent(email);
+      
+      const listings = await storage.getCompanyListingByEmail(decodedEmail);
+      const pendingListings = listings.filter(l => l.paymentStatus === 'pending');
+      
+      res.json(pendingListings);
+    } catch (error) {
+      console.error('Error getting pending listings:', error);
+      res.status(500).json({ error: 'Failed to get pending listings' });
     }
   });
 
