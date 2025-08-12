@@ -1,9 +1,12 @@
-import * as sgMail from '@sendgrid/mail';
+import { MailService } from '@sendgrid/mail';
 
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 const emailEnabled = !!SENDGRID_API_KEY;
 
-if (emailEnabled) {
+let sgMail: MailService | null = null;
+
+if (emailEnabled && SENDGRID_API_KEY) {
+  sgMail = new MailService();
   sgMail.setApiKey(SENDGRID_API_KEY);
 } else {
   console.warn('SENDGRID_API_KEY not set - email functionality disabled');
@@ -20,12 +23,12 @@ interface EmailParams {
 export class EmailService {
   private readonly fromEmail: string;
 
-  constructor(fromEmail: string = 'noreply@comcubes.com') {
+  constructor(fromEmail: string = 'contact-cgbd@comcubes.com') {
     this.fromEmail = fromEmail;
   }
 
   async sendEmail(params: EmailParams): Promise<boolean> {
-    if (!emailEnabled) {
+    if (!emailEnabled || !sgMail) {
       console.log('Email would be sent to:', params.to, 'Subject:', params.subject);
       return true; // Return true for development purposes
     }
@@ -126,7 +129,7 @@ export class EmailService {
   }
 
   async sendApprovalEmail(listing: any): Promise<boolean> {
-    if (!this.isEnabled) {
+    if (!emailEnabled) {
       console.log('Email service disabled - would send approval email to:', listing.contactEmail);
       return true;
     }
@@ -160,7 +163,7 @@ export class EmailService {
   }
 
   async sendRejectionEmail(listing: any): Promise<boolean> {
-    if (!this.isEnabled) {
+    if (!emailEnabled) {
       console.log('Email service disabled - would send rejection email to:', listing.contactEmail);
       return true;
     }
@@ -200,12 +203,12 @@ export class EmailService {
   }
 
   async sendAdminNotification(listing: any): Promise<boolean> {
-    if (!this.isEnabled) {
+    if (!emailEnabled) {
       console.log('Email service disabled - would send admin notification for listing:', listing.id);
       return true;
     }
 
-    const adminEmail = process.env.ADMIN_EMAIL || 'admin@comcubes.com';
+    const adminEmail = 'admin@comcubes.com';
     const html = `
       <h2>New Company Listing Payment Completed</h2>
       <p>A company has completed payment for their listing and is ready for review.</p>
@@ -237,7 +240,7 @@ export class EmailService {
   }
 
   async sendWaitlistNotification(waitlistEntry: any): Promise<boolean> {
-    if (!this.isEnabled) {
+    if (!emailEnabled) {
       console.log('Email service disabled - would send waitlist notification to:', waitlistEntry.contactEmail);
       return true;
     }
