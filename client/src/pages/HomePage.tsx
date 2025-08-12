@@ -377,9 +377,14 @@ export default function HomePage() {
             <div>
               <h3 className="font-semibold mb-4">Contact</h3>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>Contact Us</li>
-                <li>Support</li>
-                <li>Feedback</li>
+                <li>
+                  <button 
+                    onClick={() => setLocation('/contact')} 
+                    className="hover:text-white text-left transition-colors"
+                  >
+                    Contact Us
+                  </button>
+                </li>
               </ul>
             </div>
             
