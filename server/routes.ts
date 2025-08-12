@@ -196,9 +196,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Save to database
       const savedMessage = await storage.createContactMessage(contactData);
       
-      // Send emails (using your admin email - you can set this as environment variable)
-      const emailService = new EmailService();
-      const adminEmail = process.env.ADMIN_EMAIL || 'admin@comcubes.com'; // You'll need to set this
+      // Send emails using your specified contact emails
+      const emailService = new EmailService('contact-cgbd@comcubes.com');
+      const adminEmail = 'admin@comcubes.com'; // Your specified admin email
       
       await Promise.all([
         emailService.sendContactNotification(contactData, adminEmail),
