@@ -81,7 +81,9 @@ export type InsertIndustryWaitlist = typeof industryWaitlist.$inferInsert;
 export const insertSectorSchema = createInsertSchema(sectors);
 export const insertIndustrySchema = createInsertSchema(industries);
 export const insertCompanySchema = createInsertSchema(companies);
-export const insertContactMessageSchema = createInsertSchema(contactMessages);
+export const insertContactMessageSchema = createInsertSchema(contactMessages).extend({
+  contactType: z.enum(['General Inquiry', 'Company Listing', 'Technical Support', 'Partnership']),
+});
 export const insertCompanyListingSchema = createInsertSchema(companyListings);
 export const insertIndustryWaitlistSchema = createInsertSchema(industryWaitlist);
 

@@ -24,7 +24,7 @@ const contactFormSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
   subject: z.string().min(5, 'Subject must be at least 5 characters'),
   message: z.string().min(20, 'Message must be at least 20 characters'),
-  contactType: z.enum(['general', 'technical', 'business', 'listing'], {
+  contactType: z.enum(['General Inquiry', 'Technical Support', 'Partnership', 'Company Listing'], {
     required_error: 'Please select a contact type',
   }),
 });
@@ -32,10 +32,10 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const contactTypes = [
-  { value: 'general', label: 'General Inquiry', icon: MessageSquare },
-  { value: 'technical', label: 'Technical Support', icon: HelpCircle },
-  { value: 'business', label: 'Business Partnership', icon: Building },
-  { value: 'listing', label: 'Company Listing', icon: Users },
+  { value: 'General Inquiry', label: 'General Inquiry', icon: MessageSquare },
+  { value: 'Technical Support', label: 'Technical Support', icon: HelpCircle },
+  { value: 'Partnership', label: 'Business Partnership', icon: Building },
+  { value: 'Company Listing', label: 'Company Listing', icon: Users },
 ];
 
 export default function ContactPage() {
