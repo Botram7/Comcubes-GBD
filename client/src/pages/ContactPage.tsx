@@ -162,35 +162,25 @@ export default function ContactPage() {
         ]} 
       />
 
-      {/* Three-column layout with sidebar banner ads */}
-      <div className="flex gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Left Sidebar - Banner Ad */}
-        <div className="hidden lg:block w-64">
-          <BannerAd 
-            position="left"
-            className="sticky top-24"
-          />
+      {/* Main Content - Full Width */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Hero Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact COMCUBES</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Get in touch with our team for support, partnerships, or general inquiries about the global business directory.
+          </p>
         </div>
 
-        {/* Main Content */}
-        <div className="flex-1">
-          {/* Hero Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact COMCUBES</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get in touch with our team for support, partnerships, or general inquiries about the global business directory.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Send us a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Send us a Message</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <FormField
                         control={form.control}
@@ -287,18 +277,18 @@ export default function ContactPage() {
                     >
                       {contactMutation.isPending ? 'Sending...' : 'Send Message'}
                     </Button>
-                  </form>
-                </Form>
-              </CardContent>
-            </Card>
+                </form>
+              </Form>
+            </CardContent>
+          </Card>
 
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Get in Touch</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
+          {/* Contact Information */}
+          <div className="space-y-8">
+            <Card>
+              <CardHeader>
+                <CardTitle>Get in Touch</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
                   <div className="flex items-start space-x-4">
                     <Mail className="h-5 w-5 text-blue-600 mt-1" />
                     <div>
@@ -325,15 +315,15 @@ export default function ContactPage() {
                       <p className="text-sm text-gray-500">Serving businesses worldwide</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+              </CardContent>
+            </Card>
 
-              {/* Contact Types */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>How Can We Help?</CardTitle>
-                </CardHeader>
-                <CardContent>
+            {/* Contact Types */}
+            <Card>
+              <CardHeader>
+                <CardTitle>How Can We Help?</CardTitle>
+              </CardHeader>
+              <CardContent>
                   <div className="space-y-4">
                     {contactTypes.map((type) => (
                       <div key={type.value} className="flex items-start space-x-3">
@@ -350,18 +340,9 @@ export default function ContactPage() {
                       </div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+              </CardContent>
+            </Card>
           </div>
-        </div>
-
-        {/* Right Sidebar - Banner Ad */}
-        <div className="hidden lg:block w-64">
-          <BannerAd 
-            position="right"
-            className="sticky top-24"
-          />
         </div>
       </div>
     </div>
