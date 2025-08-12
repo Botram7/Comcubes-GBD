@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useMutation } from '@tanstack/react-query';
-import { Mail, Phone, MapPin, Clock, ArrowLeft, MessageSquare, Building, Users, HelpCircle } from 'lucide-react';
+import { Mail, Clock, ArrowLeft, MessageSquare, Building, Users, HelpCircle } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 
 import { Button } from '@/components/ui/button';
@@ -307,14 +307,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4">
-                    <MapPin className="h-5 w-5 text-red-600 mt-1" />
-                    <div>
-                      <h3 className="font-medium text-gray-900">Location</h3>
-                      <p className="text-gray-600">Global Business Directory</p>
-                      <p className="text-sm text-gray-500">Serving businesses worldwide</p>
-                    </div>
-                  </div>
+
               </CardContent>
             </Card>
 
