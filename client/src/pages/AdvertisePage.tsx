@@ -15,6 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { apiRequest } from '@/lib/queryClient';
+import { SEOHead } from '@/components/SEOHead';
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 
 const advertiseFormSchema = z.object({
@@ -143,6 +144,82 @@ export default function AdvertisePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead
+        title="Advertise with COMCUBES | Business Directory Banner Advertising Opportunities"
+        description="Advertise your business on COMCUBES Global Directory. Three-tier advertising packages from $200-$500/month. Reach thousands of professionals searching for business services worldwide."
+        keywords={[
+          'business directory advertising',
+          'banner advertising opportunities',
+          'global business marketing',
+          'directory advertising packages',
+          'B2B advertising platform',
+          'business promotion services',
+          'corporate advertising solutions',
+          'industry-specific advertising',
+          'business visibility boost',
+          'professional advertising rates',
+          'digital marketing platform',
+          'business directory promotion'
+        ]}
+        ogType="website"
+        canonicalUrl={`${window.location.origin}/advertise`}
+        additionalMeta={[
+          { name: 'advertising-type', content: 'banner' },
+          { name: 'pricing-model', content: 'monthly' },
+          { name: 'target-audience', content: 'business professionals' }
+        ]}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Business Directory Advertising",
+          "description": "Banner advertising services on COMCUBES Global Business Directory",
+          "provider": {
+            "@type": "Organization",
+            "name": "COMCUBES Global Business Directory"
+          },
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Boost Your Business",
+              "description": "Small banner ads in left sidebar",
+              "price": "200",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "200",
+                "priceCurrency": "USD",
+                "billingDuration": "P1M"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Premium Placement",
+              "description": "Enhanced banners in right sidebar",
+              "price": "350",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "350",
+                "priceCurrency": "USD",
+                "billingDuration": "P1M"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Large Banner Space",
+              "description": "Maximum visibility with large ad space",
+              "price": "500",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "500",
+                "priceCurrency": "USD",
+                "billingDuration": "P1M"
+              }
+            }
+          ]
+        }}
+      />
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
