@@ -48,18 +48,34 @@ export const companyListings = pgTable('company_listings', {
   submittedAt: timestamp('submitted_at').defaultNow().notNull(),
 });
 
+// Waitlist for full industries
+export const industryWaitlist = pgTable('industry_waitlist', {
+  id: serial('id').primaryKey(),
+  companyName: text('company_name').notNull(),
+  websiteUrl: text('website_url').notNull(),
+  contactEmail: text('contact_email').notNull(),
+  sectorName: text('sector_name').notNull(),
+  industryName: text('industry_name').notNull(),
+  description: text('description'),
+  logoUrl: text('logo_url'),
+  submittedAt: timestamp('submitted_at').defaultNow().notNull(),
+  notified: timestamp('notified').default(null),
+});
+
 // Type exports
 export type Sector = typeof sectors.$inferSelect;
 export type Industry = typeof industries.$inferSelect;
 export type Company = typeof companies.$inferSelect;
 export type ContactMessage = typeof contactMessages.$inferSelect;
 export type CompanyListing = typeof companyListings.$inferSelect;
+export type IndustryWaitlist = typeof industryWaitlist.$inferSelect;
 
 export type InsertSector = typeof sectors.$inferInsert;
 export type InsertIndustry = typeof industries.$inferInsert;
 export type InsertCompany = typeof companies.$inferInsert;
 export type InsertContactMessage = typeof contactMessages.$inferInsert;
 export type InsertCompanyListing = typeof companyListings.$inferInsert;
+export type InsertIndustryWaitlist = typeof industryWaitlist.$inferInsert;
 
 // Zod schemas for validation
 export const insertSectorSchema = createInsertSchema(sectors);
@@ -67,9 +83,11 @@ export const insertIndustrySchema = createInsertSchema(industries);
 export const insertCompanySchema = createInsertSchema(companies);
 export const insertContactMessageSchema = createInsertSchema(contactMessages);
 export const insertCompanyListingSchema = createInsertSchema(companyListings);
+export const insertIndustryWaitlistSchema = createInsertSchema(industryWaitlist);
 
 export const selectSectorSchema = createSelectSchema(sectors);
 export const selectIndustrySchema = createSelectSchema(industries);
 export const selectCompanySchema = createSelectSchema(companies);
 export const selectContactMessageSchema = createSelectSchema(contactMessages);
 export const selectCompanyListingSchema = createSelectSchema(companyListings);
+export const selectIndustryWaitlistSchema = createSelectSchema(industryWaitlist);

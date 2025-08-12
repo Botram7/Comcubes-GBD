@@ -1,6 +1,6 @@
 import { csvParser } from './services/csvParser';
 import { db } from './db';
-import { sectors, industries, companies, contactMessages, companyListings, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing } from '@shared/schema';
+import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist } from '@shared/schema';
 import { eq, ilike, or } from 'drizzle-orm';
 import { generateCompanyDescription } from './services/companyDescriptionGenerator';
 
@@ -28,6 +28,14 @@ export interface IStorage {
   
   // Company creation
   createCompany(company: Omit<Company, 'id'>): Promise<Company>;
+  
+  // Slot availability and waitlist
+  checkSlotAvailability(industryName: string): Promise<{ available: boolean; currentCount: number; maxSlots: number }>;
+  addToWaitlist(waitlistEntry: InsertIndustryWaitlist): Promise<IndustryWaitlist>;
+  getWaitlistByIndustry(industryName: string): Promise<IndustryWaitlist[]>;
+  
+  // Resume payment functionality
+  getCompanyListingByEmail(email: string): Promise<CompanyListing[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -287,6 +295,61 @@ export class DatabaseStorage implements IStorage {
     } catch (error) {
       console.error('Error creating company:', error);
       throw new Error('Failed to create company');
+    }
+  }
+
+  async checkSlotAvailability(industryName: string): Promise<{ available: boolean; currentCount: number; maxSlots: number }> {
+    try {
+      await this.initialize();
+      const companiesInIndustry = await db.select().from(companies)
+        .where(eq(companies.industryName, industryName));
+      
+      const maxSlots = 20; // Each industry grid shows 20 companies (5x4 grid)
+      const currentCount = companiesInIndustry.length;
+      
+      return {
+        available: currentCount < maxSlots,
+        currentCount,
+        maxSlots
+      };
+    } catch (error) {
+      console.error('Error checking slot availability:', error);
+      return { available: false, currentCount: 0, maxSlots: 20 };
+    }
+  }
+
+  async addToWaitlist(waitlistEntry: InsertIndustryWaitlist): Promise<IndustryWaitlist> {
+    try {
+      await this.initialize();
+      const [created] = await db.insert(industryWaitlist).values(waitlistEntry).returning();
+      return created;
+    } catch (error) {
+      console.error('Error adding to waitlist:', error);
+      throw new Error('Failed to add to waitlist');
+    }
+  }
+
+  async getWaitlistByIndustry(industryName: string): Promise<IndustryWaitlist[]> {
+    try {
+      await this.initialize();
+      return await db.select().from(industryWaitlist)
+        .where(eq(industryWaitlist.industryName, industryName))
+        .orderBy(industryWaitlist.submittedAt);
+    } catch (error) {
+      console.error('Error getting waitlist:', error);
+      return [];
+    }
+  }
+
+  async getCompanyListingByEmail(email: string): Promise<CompanyListing[]> {
+    try {
+      await this.initialize();
+      return await db.select().from(companyListings)
+        .where(eq(companyListings.contactEmail, email))
+        .orderBy(companyListings.submittedAt);
+    } catch (error) {
+      console.error('Error getting company listings by email:', error);
+      return [];
     }
   }
 }

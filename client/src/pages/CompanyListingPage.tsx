@@ -55,6 +55,17 @@ export default function CompanyListingPage() {
     queryKey: ['/api/industries?limit=500'], // Fetch all industries
   });
 
+  // Get slot availability for selected industry
+  const selectedIndustry = form.watch('industryName');
+  const { data: slotAvailability } = useQuery({
+    queryKey: ['/api/industries/slot-availability', selectedIndustry],
+    enabled: !!selectedIndustry,
+    queryFn: async () => {
+      const response = await apiRequest('GET', `/api/industries/${encodeURIComponent(selectedIndustry)}/slot-availability`);
+      return response.json();
+    },
+  });
+
   const form = useForm<CompanyListingData>({
     resolver: zodResolver(companyListingSchema),
     defaultValues: {
@@ -75,12 +86,21 @@ export default function CompanyListingPage() {
       return response.json();
     },
     onSuccess: (result) => {
-      setListingId(result.listingId);
-      setStep('payment');
-      toast({
-        title: "Listing Submitted Successfully",
-        description: "Now proceed with payment to activate your listing.",
-      });
+      if (result.isWaitlisted) {
+        toast({
+          title: "Added to Waitlist",
+          description: result.message,
+          variant: "default",
+        });
+        setStep('success');
+      } else {
+        setListingId(result.listingId);
+        setStep('payment');
+        toast({
+          title: "Listing Submitted Successfully",
+          description: "Now proceed with payment to activate your listing.",
+        });
+      }
     },
     onError: (error) => {
       toast({
@@ -299,7 +319,9 @@ export default function CompanyListingPage() {
                         <SelectContent>
                           {filteredIndustries.map((industry: any) => (
                             <SelectItem key={industry.id} value={industry.name}>
-                              {industry.name}
+                              <div className="flex justify-between items-center w-full">
+                                <span>{industry.name}</span>
+                              </div>
                             </SelectItem>
                           ))}
                         </SelectContent>
@@ -309,6 +331,33 @@ export default function CompanyListingPage() {
                   )}
                 />
               </div>
+
+              {/* Industry Slot Availability Indicator */}
+              {selectedIndustry && slotAvailability && (
+                <div className="p-4 border rounded-lg bg-gray-50">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <Users className="h-4 w-4" />
+                      <span className="font-medium">Slot Availability for {selectedIndustry}</span>
+                    </div>
+                    <Badge variant={slotAvailability.available ? "default" : "destructive"}>
+                      {slotAvailability.currentCount}/{slotAvailability.maxSlots} slots filled
+                    </Badge>
+                  </div>
+                  {!slotAvailability.available && (
+                    <div className="mt-3 p-3 bg-orange-50 border border-orange-200 rounded">
+                      <div className="flex items-center gap-2 text-orange-800">
+                        <Clock className="h-4 w-4" />
+                        <span className="text-sm font-medium">Industry Full - Waitlist Available</span>
+                      </div>
+                      <p className="text-sm text-orange-700 mt-1">
+                        This industry currently has all {slotAvailability.maxSlots} slots occupied. 
+                        Your submission will be added to our waitlist and we'll contact you when a slot becomes available.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
 
               <FormField
                 control={form.control}
