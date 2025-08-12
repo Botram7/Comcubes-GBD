@@ -303,7 +303,7 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5 text-blue-600 mt-1" />
                     <div>
                       <h3 className="font-medium text-gray-900">Email</h3>
-                      <p className="text-gray-600">support@comcubes.com</p>
+                      <p className="text-gray-600">contact-cgbd@comcubes.com</p>
                       <p className="text-sm text-gray-500">We respond within 24-48 hours</p>
                     </div>
                   </div>
