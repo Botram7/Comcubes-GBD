@@ -235,4 +235,36 @@ export class EmailService {
       html,
     });
   }
+
+  async sendWaitlistNotification(waitlistEntry: any): Promise<boolean> {
+    if (!this.isEnabled) {
+      console.log('Email service disabled - would send waitlist notification to:', waitlistEntry.contactEmail);
+      return true;
+    }
+
+    const html = `
+      <h2>COMCUBES Waitlist Update</h2>
+      <p>Dear ${waitlistEntry.companyName} Team,</p>
+      <p>We're reaching out regarding your position on the COMCUBES waitlist for the <strong>${waitlistEntry.industryName}</strong> industry.</p>
+      <p>We're actively monitoring slot availability and will notify you immediately when a position opens up.</p>
+      
+      <div style="border: 1px solid #ddd; padding: 20px; margin: 20px 0; background-color: #f9f9f9;">
+        <h3>Your Waitlist Details:</h3>
+        <p><strong>Company:</strong> ${waitlistEntry.companyName}</p>
+        <p><strong>Industry:</strong> ${waitlistEntry.industryName}</p>
+        <p><strong>Sector:</strong> ${waitlistEntry.sectorName}</p>
+        <p><strong>Submitted:</strong> ${new Date(waitlistEntry.submittedAt).toLocaleDateString()}</p>
+      </div>
+      
+      <p>Thank you for your patience. We'll be in touch as soon as a slot becomes available.</p>
+      <p>Best regards,<br>The COMCUBES Team</p>
+    `;
+
+    return this.sendEmail({
+      to: waitlistEntry.contactEmail,
+      from: this.fromEmail,
+      subject: 'COMCUBES Waitlist Update - Slot Availability Check',
+      html,
+    });
+  }
 }

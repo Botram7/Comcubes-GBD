@@ -36,6 +36,12 @@ export interface IStorage {
   
   // Resume payment functionality
   getCompanyListingByEmail(email: string): Promise<CompanyListing[]>;
+  
+  // Admin dashboard methods
+  getAllWaitlistEntries(): Promise<IndustryWaitlist[]>;
+  getIndustryWaitlistStats(): Promise<any[]>;
+  getAdminStats(): Promise<any>;
+  getWaitlistEntryById(id: number): Promise<IndustryWaitlist | undefined>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -350,6 +356,119 @@ export class DatabaseStorage implements IStorage {
     } catch (error) {
       console.error('Error getting company listings by email:', error);
       return [];
+    }
+  }
+
+  async getAllWaitlistEntries(): Promise<IndustryWaitlist[]> {
+    try {
+      await this.initialize();
+      return await db.select().from(industryWaitlist)
+        .orderBy(industryWaitlist.submittedAt);
+    } catch (error) {
+      console.error('Error getting all waitlist entries:', error);
+      return [];
+    }
+  }
+
+  async getIndustryWaitlistStats(): Promise<any[]> {
+    try {
+      await this.initialize();
+      // Get all unique industry names from waitlist
+      const waitlistIndustries = await db.selectDistinct({ industryName: industryWaitlist.industryName })
+        .from(industryWaitlist);
+      
+      const stats = [];
+      
+      for (const industry of waitlistIndustries) {
+        const waitlistCount = await db.select()
+          .from(industryWaitlist)
+          .where(eq(industryWaitlist.industryName, industry.industryName));
+          
+        const currentCompanies = await db.select()
+          .from(companies)
+          .where(eq(companies.industryName, industry.industryName));
+        
+        stats.push({
+          industryName: industry.industryName,
+          waitlistCount: waitlistCount.length,
+          currentSlots: currentCompanies.length
+        });
+      }
+      
+      return stats.sort((a, b) => b.waitlistCount - a.waitlistCount);
+    } catch (error) {
+      console.error('Error getting industry waitlist stats:', error);
+      return [];
+    }
+  }
+
+  async getAdminStats(): Promise<any> {
+    try {
+      await this.initialize();
+      
+      const totalCompanies = await db.select().from(companies);
+      const allListings = await db.select().from(companyListings);
+      const allWaitlist = await db.select().from(industryWaitlist);
+      
+      const pendingListings = allListings.filter(l => l.paymentStatus === 'pending');
+      const completedPayments = allListings.filter(l => l.paymentStatus === 'completed');
+      
+      // Count industries at capacity (20 companies) using proper Drizzle syntax
+      const companiesGroupedByIndustry = await db.select({
+        industryName: companies.industryName,
+        count: companies.id
+      })
+      .from(companies)
+      .orderBy(companies.industryName);
+      
+      // Group by industry name and count
+      const industryMap = new Map();
+      companiesGroupedByIndustry.forEach(company => {
+        const count = industryMap.get(company.industryName) || 0;
+        industryMap.set(company.industryName, count + 1);
+      });
+      
+      // Count industries with 20 or more companies
+      const industriesAtCapacity = Array.from(industryMap.values()).filter(count => count >= 20).length;
+
+      const sevenDaysAgo = new Date();
+      sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+      
+      const recentSubmissions = allListings.filter(
+        l => new Date(l.submittedAt) >= sevenDaysAgo
+      ).length;
+
+      return {
+        totalCompanies: totalCompanies.length,
+        pendingListings: pendingListings.length,
+        totalWaitlistEntries: allWaitlist.length,
+        industriesAtCapacity: industriesAtCapacity,
+        recentSubmissions,
+        completedPayments: completedPayments.length
+      };
+    } catch (error) {
+      console.error('Error getting admin stats:', error);
+      return {
+        totalCompanies: 0,
+        pendingListings: 0,
+        totalWaitlistEntries: 0,
+        industriesAtCapacity: 0,
+        recentSubmissions: 0,
+        completedPayments: 0
+      };
+    }
+  }
+
+  async getWaitlistEntryById(id: number): Promise<IndustryWaitlist | undefined> {
+    try {
+      await this.initialize();
+      const [entry] = await db.select().from(industryWaitlist)
+        .where(eq(industryWaitlist.id, id))
+        .limit(1);
+      return entry || undefined;
+    } catch (error) {
+      console.error('Error getting waitlist entry by ID:', error);
+      return undefined;
     }
   }
 }
