@@ -196,12 +196,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Save to database
       const savedMessage = await storage.createContactMessage(contactData);
       
-      // Send emails using your specified contact emails
+      // Route emails based on contact type
       const emailService = new EmailService('contact-cgbd@comcubes.com');
-      const adminEmail = 'admin@comcubes.com'; // Your specified admin email
+      
+      // Company listing inquiries go to admin@comcubes.com
+      // General website inquiries go to contact-cgbd@comcubes.com
+      const targetEmail = contactData.contactType === 'Company Listing' 
+        ? 'admin@comcubes.com' 
+        : 'contact-cgbd@comcubes.com';
       
       await Promise.all([
-        emailService.sendContactNotification(contactData, adminEmail),
+        emailService.sendContactNotification(contactData, targetEmail),
         emailService.sendContactConfirmation(contactData)
       ]);
       
