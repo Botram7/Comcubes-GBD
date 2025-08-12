@@ -56,7 +56,7 @@ export default function CompanyListingPage() {
   });
 
   // Get slot availability for selected industry
-  const selectedIndustry = form.watch('industryName');
+  const [selectedIndustry, setSelectedIndustry] = useState<string>('');
   const { data: slotAvailability } = useQuery({
     queryKey: ['/api/industries/slot-availability', selectedIndustry],
     enabled: !!selectedIndustry,
@@ -153,7 +153,7 @@ export default function CompanyListingPage() {
   };
 
   // Filter industries based on selected sector
-  const selectedSector = form.watch('sectorName');
+  const [selectedSector, setSelectedSector] = useState<string>('');
   const allIndustries = industries?.industries || [];
   const filteredIndustries = allIndustries.filter(
     (industry: any) => industry.sectorName === selectedSector
@@ -284,8 +284,10 @@ export default function CompanyListingPage() {
                       <FormLabel>Business Sector *</FormLabel>
                       <Select onValueChange={(value) => {
                         field.onChange(value);
+                        setSelectedSector(value);
                         // Reset industry when sector changes
                         form.setValue('industryName', '');
+                        setSelectedIndustry('');
                       }} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger>
@@ -310,7 +312,10 @@ export default function CompanyListingPage() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Industry *</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <Select onValueChange={(value) => {
+                        field.onChange(value);
+                        setSelectedIndustry(value);
+                      }} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger>
                             <SelectValue placeholder="Select industry" />
