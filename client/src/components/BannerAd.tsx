@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { useLocation } from 'wouter';
 
 interface BannerAdProps {
   position: 'left' | 'right';
@@ -6,45 +7,25 @@ interface BannerAdProps {
 }
 
 export function BannerAd({ position, className = "" }: BannerAdProps) {
+  const [, setLocation] = useLocation();
+
   const adContent = {
     left: [
       {
         title: "Boost Your Business",
         subtitle: "Reach 10,000+ daily visitors",
         bgColor: "bg-gradient-to-br from-blue-600 to-blue-800",
-        cta: "Advertise Here"
-      },
-      {
-        title: "Global Exposure",
-        subtitle: "Connect with industry leaders",
-        bgColor: "bg-gradient-to-br from-green-600 to-green-800",
-        cta: "Get Started"
-      },
-      {
-        title: "Premium Placement",
-        subtitle: "Maximize your visibility",
-        bgColor: "bg-gradient-to-br from-purple-600 to-purple-800",
-        cta: "Learn More"
+        cta: "Advertise Here",
+        onClick: () => setLocation('/advertise')
       }
     ],
     right: [
       {
-        title: "Featured Services",
-        subtitle: "Professional business solutions",
-        bgColor: "bg-gradient-to-br from-orange-600 to-orange-800",
-        cta: "Explore Now"
-      },
-      {
-        title: "Industry Insights",
-        subtitle: "Access market intelligence",
-        bgColor: "bg-gradient-to-br from-teal-600 to-teal-800",
-        cta: "Subscribe"
-      },
-      {
-        title: "Partner Network",
-        subtitle: "Join our business ecosystem",
-        bgColor: "bg-gradient-to-br from-indigo-600 to-indigo-800",
-        cta: "Join Today"
+        title: "Premium Placement",
+        subtitle: "Maximize your visibility",
+        bgColor: "bg-gradient-to-br from-purple-600 to-purple-800",
+        cta: "Learn More",
+        onClick: () => setLocation('/advertise')
       }
     ]
   };
@@ -57,6 +38,7 @@ export function BannerAd({ position, className = "" }: BannerAdProps) {
         <Card
           key={`${position}-ad-${index}`}
           className={`${ad.bgColor} text-white p-4 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg border-0`}
+          onClick={ad.onClick}
         >
           <div className="text-center">
             <h3 className="font-bold text-sm mb-1 leading-tight">
@@ -73,7 +55,10 @@ export function BannerAd({ position, className = "" }: BannerAdProps) {
       ))}
       
       {/* Extended tall banner space that matches grid height */}
-      <Card className="bg-gray-100 border-2 border-dashed border-gray-300 p-6 text-center h-96">
+      <Card 
+        className="bg-gray-100 border-2 border-dashed border-gray-300 p-6 text-center h-96 cursor-pointer hover:bg-gray-200 transition-colors"
+        onClick={() => setLocation('/advertise')}
+      >
         <div className="text-gray-500 h-full flex flex-col justify-center">
           <div className="text-sm font-medium mb-2">Advertisement Space</div>
           <div className="text-sm opacity-75 mb-4">Available for Rent</div>
