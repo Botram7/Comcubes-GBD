@@ -22,7 +22,7 @@ const advertiseFormSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
   phone: z.string().min(10, 'Phone number must be at least 10 digits'),
   website: z.string().url('Please enter a valid website URL').optional().or(z.literal('')),
-  adType: z.enum(['boost_business', 'premium_placement'], {
+  adType: z.enum(['boost_business', 'premium_placement', 'large_banner'], {
     required_error: 'Please select an advertisement type',
   }),
   budget: z.enum(['under_500', '500_1000', '1000_5000', '5000_plus', 'custom'], {
@@ -37,8 +37,9 @@ const advertiseFormSchema = z.object({
 type AdvertiseFormData = z.infer<typeof advertiseFormSchema>;
 
 const adTypes = [
-  { value: 'boost_business', label: 'Boost Your Business', description: 'Reach 10,000+ daily visitors with banner ads' },
-  { value: 'premium_placement', label: 'Premium Placement', description: 'Maximize visibility with featured positioning' },
+  { value: 'boost_business', label: 'Boost Your Business', description: 'Small banner ads in left sidebar ($200/month)' },
+  { value: 'premium_placement', label: 'Premium Placement', description: 'Enhanced banners in right sidebar ($350/month)' },
+  { value: 'large_banner', label: 'Large Banner Space', description: 'Maximum visibility with large ad space ($500/month)' },
 ];
 
 const budgetRanges = [
@@ -176,6 +177,183 @@ export default function AdvertisePage() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Reach thousands of business professionals daily through our global business directory platform.
           </p>
+        </div>
+
+        {/* Advertisement Types Overview */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
+            Advertisement Opportunities
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* Small Banner Ads */}
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="text-center">
+                <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-4 rounded-lg mb-4 transform scale-90">
+                  <h3 className="font-bold text-sm mb-1">Boost Your Business</h3>
+                  <p className="text-xs opacity-90 mb-2">Reach 10,000+ daily visitors</p>
+                  <div className="bg-white bg-opacity-20 rounded px-3 py-1 text-xs font-medium">
+                    Advertise Here
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-blue-600">Small Banner Ads</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  Compact promotional banners in sidebar positions. Perfect for brand awareness and quick messaging.
+                </p>
+                <div className="space-y-2 text-xs text-gray-500">
+                  <div>• Size: 280×120px</div>
+                  <div>• Position: Left Sidebar</div>
+                  <div>• Visibility: Good</div>
+                </div>
+                <div className="text-lg font-bold text-blue-600 mt-4">
+                  From $200/month
+                </div>
+              </div>
+            </Card>
+
+            {/* Premium Placement */}
+            <Card className="p-6 border-2 border-purple-200 hover:shadow-lg transition-shadow relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
+                  MOST POPULAR
+                </span>
+              </div>
+              <div className="text-center">
+                <div className="bg-gradient-to-br from-purple-600 to-purple-800 text-white p-4 rounded-lg mb-4 transform scale-90">
+                  <h3 className="font-bold text-sm mb-1">Premium Placement</h3>
+                  <p className="text-xs opacity-90 mb-2">Maximize your visibility</p>
+                  <div className="bg-white bg-opacity-20 rounded px-3 py-1 text-xs font-medium">
+                    Learn More
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-purple-600">Premium Banner Ads</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  Enhanced sidebar banners with priority positioning and better visibility across all pages.
+                </p>
+                <div className="space-y-2 text-xs text-gray-500">
+                  <div>• Size: 280×120px</div>
+                  <div>• Position: Right Sidebar</div>
+                  <div>• Visibility: High Priority</div>
+                </div>
+                <div className="text-lg font-bold text-purple-600 mt-4">
+                  From $350/month
+                </div>
+              </div>
+            </Card>
+
+            {/* Large Banner Spaces */}
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="text-center">
+                <div className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 rounded-lg mb-4 transform scale-90">
+                  <div className="text-gray-500">
+                    <div className="text-xs font-medium mb-2">Advertisement Space</div>
+                    <div className="text-xs opacity-75 mb-2">Available for Rent</div>
+                    <div className="bg-gray-200 rounded px-3 py-1 text-xs font-medium">
+                      Contact Us
+                    </div>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-gray-700">Large Banner Spaces</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  Prominent advertisement spaces with maximum visibility. Ideal for detailed campaigns and major announcements.
+                </p>
+                <div className="space-y-2 text-xs text-gray-500">
+                  <div>• Size: 280×400px</div>
+                  <div>• Position: Below Small Banners</div>
+                  <div>• Visibility: Maximum</div>
+                </div>
+                <div className="text-lg font-bold text-gray-700 mt-4">
+                  From $500/month
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Detailed Comparison Table */}
+          <Card className="p-8 mb-8">
+            <h3 className="text-2xl font-bold mb-6 text-center">Feature Comparison</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-gray-200">
+                    <th className="text-left p-4 font-semibold text-gray-700">Feature</th>
+                    <th className="text-center p-4 font-semibold text-blue-600">Small Banner<br />($200/month)</th>
+                    <th className="text-center p-4 font-semibold text-purple-600">Premium Banner<br />($350/month)</th>
+                    <th className="text-center p-4 font-semibold text-gray-700">Large Banner<br />($500/month)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-medium">Advertisement Size</td>
+                    <td className="text-center p-4">280×120px</td>
+                    <td className="text-center p-4">280×120px</td>
+                    <td className="text-center p-4">280×400px</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-medium">Page Position</td>
+                    <td className="text-center p-4">Left Sidebar</td>
+                    <td className="text-center p-4">Right Sidebar</td>
+                    <td className="text-center p-4">Below Banner Ads</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-medium">Visibility Level</td>
+                    <td className="text-center p-4">Standard</td>
+                    <td className="text-center p-4">High Priority</td>
+                    <td className="text-center p-4">Maximum</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-medium">Content Format</td>
+                    <td className="text-center p-4">Title + Subtitle + CTA Button</td>
+                    <td className="text-center p-4">Title + Subtitle + CTA Button</td>
+                    <td className="text-center p-4">Custom Graphics & Content</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-medium">Pages Displayed</td>
+                    <td className="text-center p-4">All Directory Pages</td>
+                    <td className="text-center p-4">All Directory Pages</td>
+                    <td className="text-center p-4">All Directory Pages</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-medium">Click Tracking</td>
+                    <td className="text-center p-4">✓ Basic Analytics</td>
+                    <td className="text-center p-4">✓ Advanced Analytics</td>
+                    <td className="text-center p-4">✓ Detailed Analytics</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 font-medium">Best For</td>
+                    <td className="text-center p-4">Brand Awareness</td>
+                    <td className="text-center p-4">Lead Generation</td>
+                    <td className="text-center p-4">Product Launches</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-medium">Setup Time</td>
+                    <td className="text-center p-4">24-48 hours</td>
+                    <td className="text-center p-4">24-48 hours</td>
+                    <td className="text-center p-4">48-72 hours</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </Card>
+
+          {/* Key Benefits */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card className="p-6 text-center">
+              <Eye className="h-8 w-8 text-blue-600 mx-auto mb-4" />
+              <h3 className="font-bold text-lg mb-2">High Visibility</h3>
+              <p className="text-gray-600 text-sm">Your ads appear on every page of our directory, reaching thousands of daily visitors.</p>
+            </Card>
+            <Card className="p-6 text-center">
+              <TrendingUp className="h-8 w-8 text-green-600 mx-auto mb-4" />
+              <h3 className="font-bold text-lg mb-2">Targeted Audience</h3>
+              <p className="text-gray-600 text-sm">Connect with business professionals actively searching for products and services.</p>
+            </Card>
+            <Card className="p-6 text-center">
+              <Star className="h-8 w-8 text-gold-600 mx-auto mb-4" />
+              <h3 className="font-bold text-lg mb-2">Flexible Options</h3>
+              <p className="text-gray-600 text-sm">Choose from multiple ad formats and durations to match your marketing goals and budget.</p>
+            </Card>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
