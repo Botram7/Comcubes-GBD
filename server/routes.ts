@@ -390,6 +390,60 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Admin endpoint for waitlist management
+  app.get('/api/admin/waitlist', async (req, res) => {
+    try {
+      const waitlist = await storage.getAllWaitlistEntries();
+      res.json(waitlist);
+    } catch (error) {
+      console.error('Error fetching waitlist entries:', error);
+      res.status(500).json({ error: 'Failed to fetch waitlist entries' });
+    }
+  });
+
+  // Admin endpoint for industry statistics
+  app.get('/api/admin/industry-stats', async (req, res) => {
+    try {
+      const stats = await storage.getIndustryWaitlistStats();
+      res.json(stats);
+    } catch (error) {
+      console.error('Error fetching industry stats:', error);
+      res.status(500).json({ error: 'Failed to fetch industry statistics' });
+    }
+  });
+
+  // Admin endpoint for overall system statistics
+  app.get('/api/admin/stats', async (req, res) => {
+    try {
+      const stats = await storage.getAdminStats();
+      res.json(stats);
+    } catch (error) {
+      console.error('Error fetching admin stats:', error);
+      res.status(500).json({ error: 'Failed to fetch admin statistics' });
+    }
+  });
+
+  // Admin endpoint to contact waitlist entry
+  app.post('/api/admin/waitlist/:id/contact', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const waitlistEntry = await storage.getWaitlistEntryById(parseInt(id));
+      
+      if (!waitlistEntry) {
+        return res.status(404).json({ error: 'Waitlist entry not found' });
+      }
+
+      // Send notification email
+      const emailService = new EmailService();
+      await emailService.sendWaitlistNotification(waitlistEntry);
+
+      res.json({ success: true, message: 'Notification email sent successfully' });
+    } catch (error) {
+      console.error('Error contacting waitlist entry:', error);
+      res.status(500).json({ error: 'Failed to send notification email' });
+    }
+  });
+
   // Resume payment - get pending listings by email
   app.get('/api/resume-payment/:email', async (req, res) => {
     try {
