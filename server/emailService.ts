@@ -189,7 +189,7 @@ export class EmailService {
       </div>
       
       <p>You're welcome to submit a new application with updated information. Please ensure all details are accurate and complete.</p>
-      <p>If you have questions about this decision, please contact us at support@comcubes.com.</p>
+      <p>If you have questions about this decision, please contact us at contact-cgbd@comcubes.com.</p>
       
       <p>Best regards,<br>The COMCUBES Team</p>
     `;
