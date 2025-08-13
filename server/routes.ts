@@ -218,7 +218,44 @@ export async function registerRoutes(app: Express): Promise<Server> {
       );
       res.json(recentItems);
     } catch (error) {
+      console.error('Recently viewed error:', error);
       res.status(500).json({ message: "Failed to get recently viewed" });
+    }
+  });
+
+  // Check if item is favorited
+  app.get("/api/user/is-favorite/:entityType/:entityId", authenticateToken, async (req, res) => {
+    try {
+      const { entityType, entityId } = req.params;
+      const isFavorited = await UserService.isFavorited(
+        req.user!.userId,
+        entityType,
+        parseInt(entityId)
+      );
+      res.json(isFavorited);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to check favorite status" });
+    }
+  });
+
+  // Activity logging endpoint
+  app.post("/api/user/activity", authenticateToken, async (req, res) => {
+    try {
+      const { actionType, entityType, entityId, entityName, metadata } = req.body;
+      
+      const activity = await UserService.logActivity({
+        userId: req.user!.userId,
+        actionType,
+        entityType: entityType || null,
+        entityId: entityId || null,
+        entityName: entityName || null,
+        metadata: metadata ? JSON.stringify(metadata) : null,
+      });
+      
+      res.status(201).json(activity);
+    } catch (error) {
+      console.error('Activity logging error:', error);
+      res.status(500).json({ message: "Failed to log activity" });
     }
   });
   // Get all sectors
