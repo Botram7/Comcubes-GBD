@@ -26,6 +26,7 @@ import comcubesLogo from "@assets/default_1752716413946.png";
 import comcubesMonochrome from "@assets/default-monochrome_1752717527516.png";
 import comcubesIcon from "@assets/2de77b64-4c39-4ddb-aa7a-0afd37edfe34_1752720571406.png";
 import newComcubesLogo from "@assets/Artboard 5_1753135425496.png";
+import { AuthButton } from "@/components/AuthButton";
 
 export default function HomePage() {
   const [, setLocation] = useLocation();
@@ -155,9 +156,9 @@ export default function HomePage() {
         ]}
       />
       
-      {/* Header with Theme Toggle */}
+      {/* Header with Authentication */}
       <header className="absolute top-0 right-0 z-50 p-4">
-        
+        <AuthButton />
       </header>
       
       {/* Hero Section */}
