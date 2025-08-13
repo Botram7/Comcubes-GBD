@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Building2, Globe, AlertCircle } from 'lucide-react';
+import { FavoriteButton } from '@/components/FavoriteButton';
 import type { Company } from '@shared/schema';
 import { generateFallbackIcon } from '@/utils/fallbackIcon';
 
@@ -37,6 +38,15 @@ export function CompanyCard({ company, onClick }: CompanyCardProps) {
             alt={`${company.name} icon`}
             className="w-20 h-20 transition-transform duration-200 group-hover:scale-110"
           />
+          {/* Favorite Button */}
+          <div className="absolute top-2 right-2">
+            <FavoriteButton
+              entityType="company"
+              entityId={company.id}
+              entityName={company.name}
+              size="sm"
+            />
+          </div>
         </div>
 
         {/* Company Info Section */}
