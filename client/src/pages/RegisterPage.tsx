@@ -39,7 +39,7 @@ export default function RegisterPage() {
       const result = await register(formData);
       
       if (result.success) {
-        setLocation('/'); // Redirect to home page
+        setLocation('/dashboard'); // Redirect to dashboard
       } else {
         setError(result.message);
       }

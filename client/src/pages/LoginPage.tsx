@@ -29,7 +29,7 @@ export default function LoginPage() {
       const result = await login(formData.email, formData.password);
       
       if (result.success) {
-        setLocation('/'); // Redirect to home page
+        setLocation('/dashboard'); // Redirect to dashboard
       } else {
         setError(result.message);
       }
