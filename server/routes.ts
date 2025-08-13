@@ -5,9 +5,222 @@ import { googleSearchService } from "./services/googleSearchService";
 import { EmailService } from "./emailService";
 import { registerSEORoutes } from "./seoRoutes";
 import { paystackService } from "./paystackService";
-import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/schema";
+import { insertContactMessageSchema, insertCompanyListingSchema, registerUserSchema, loginUserSchema } from "@shared/schema";
+import { AuthService } from "./authService";
+import { UserService } from "./userService";
+import { authenticateToken, optionalAuth, sessionMiddleware } from "./middleware/auth";
+import session from "express-session";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Configure session middleware
+  app.use(session({
+    secret: process.env.SESSION_SECRET || 'dev-session-secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      secure: false, // Set to true in production with HTTPS
+      maxAge: 24 * 60 * 60 * 1000, // 24 hours
+    },
+  }));
+
+  // Add session middleware for anonymous user tracking
+  app.use(sessionMiddleware);
+  
+  // Authentication routes
+  app.post("/api/auth/register", async (req, res) => {
+    try {
+      const validatedData = registerUserSchema.parse(req.body);
+      const result = await AuthService.register(validatedData);
+      
+      if (result.success) {
+        res.status(201).json({
+          message: result.message,
+          user: result.user,
+          token: result.token,
+        });
+      } else {
+        res.status(400).json({ message: result.message });
+      }
+    } catch (error: any) {
+      res.status(400).json({ message: error.message || "Registration failed" });
+    }
+  });
+
+  app.post("/api/auth/login", async (req, res) => {
+    try {
+      const { email, password } = loginUserSchema.parse(req.body);
+      const result = await AuthService.login(email, password);
+      
+      if (result.success) {
+        res.json({
+          message: result.message,
+          user: result.user,
+          token: result.token,
+        });
+      } else {
+        res.status(401).json({ message: result.message });
+      }
+    } catch (error: any) {
+      res.status(400).json({ message: error.message || "Login failed" });
+    }
+  });
+
+  app.get("/api/auth/me", authenticateToken, async (req, res) => {
+    try {
+      const user = await AuthService.getUserById(req.user!.userId);
+      if (user) {
+        const stats = await UserService.getUserStats(user.id);
+        res.json({ ...user, ...stats });
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    } catch (error) {
+      res.status(500).json({ message: "Failed to get user data" });
+    }
+  });
+
+  // User favorites routes
+  app.post("/api/user/favorites", authenticateToken, async (req, res) => {
+    try {
+      const { entityType, entityId, entityName } = req.body;
+      const favorite = await UserService.addFavorite(
+        req.user!.userId,
+        entityType,
+        entityId,
+        entityName
+      );
+      
+      // Log activity
+      await UserService.logActivity({
+        userId: req.user!.userId,
+        sessionId: req.session.sessionId,
+        actionType: 'favorite_add',
+        entityType,
+        entityId,
+        entityName,
+        ipAddress: req.ip,
+        userAgent: req.get('user-agent'),
+      });
+      
+      res.status(201).json(favorite);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to add favorite" });
+    }
+  });
+
+  app.delete("/api/user/favorites/:entityType/:entityId", authenticateToken, async (req, res) => {
+    try {
+      const { entityType, entityId } = req.params;
+      const removed = await UserService.removeFavorite(
+        req.user!.userId,
+        entityType,
+        parseInt(entityId)
+      );
+      
+      if (removed) {
+        res.json({ message: "Favorite removed" });
+      } else {
+        res.status(404).json({ message: "Favorite not found" });
+      }
+    } catch (error) {
+      res.status(500).json({ message: "Failed to remove favorite" });
+    }
+  });
+
+  app.get("/api/user/favorites", authenticateToken, async (req, res) => {
+    try {
+      const entityType = req.query.type as string;
+      const favorites = await UserService.getUserFavorites(req.user!.userId, entityType);
+      res.json(favorites);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to get favorites" });
+    }
+  });
+
+  // Saved searches routes
+  app.post("/api/user/saved-searches", authenticateToken, async (req, res) => {
+    try {
+      const { searchQuery, searchType, resultCount } = req.body;
+      const savedSearch = await UserService.saveSearch(
+        req.user!.userId,
+        searchQuery,
+        searchType,
+        resultCount
+      );
+      res.status(201).json(savedSearch);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to save search" });
+    }
+  });
+
+  app.get("/api/user/saved-searches", authenticateToken, async (req, res) => {
+    try {
+      const savedSearches = await UserService.getUserSavedSearches(req.user!.userId);
+      res.json(savedSearches);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to get saved searches" });
+    }
+  });
+
+  app.delete("/api/user/saved-searches/:searchId", authenticateToken, async (req, res) => {
+    try {
+      const { searchId } = req.params;
+      const removed = await UserService.removeSavedSearch(
+        req.user!.userId,
+        parseInt(searchId)
+      );
+      
+      if (removed) {
+        res.json({ message: "Saved search removed" });
+      } else {
+        res.status(404).json({ message: "Saved search not found" });
+      }
+    } catch (error) {
+      res.status(500).json({ message: "Failed to remove saved search" });
+    }
+  });
+
+  // Recently viewed routes (works for both authenticated and anonymous users)
+  app.post("/api/user/recently-viewed", optionalAuth, async (req, res) => {
+    try {
+      const { entityType, entityId, entityName } = req.body;
+      const recentItem = await UserService.addRecentlyViewed(
+        req.user?.userId || null,
+        req.session.sessionId,
+        entityType,
+        entityId,
+        entityName
+      );
+      
+      // Log activity
+      await UserService.logActivity({
+        userId: req.user?.userId || null,
+        sessionId: req.session.sessionId,
+        actionType: 'page_view',
+        entityType,
+        entityId,
+        entityName,
+        ipAddress: req.ip,
+        userAgent: req.get('user-agent'),
+      });
+      
+      res.status(201).json(recentItem);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to track recently viewed" });
+    }
+  });
+
+  app.get("/api/user/recently-viewed", optionalAuth, async (req, res) => {
+    try {
+      const recentItems = await UserService.getRecentlyViewed(
+        req.user?.userId || null,
+        req.session.sessionId
+      );
+      res.json(recentItems);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to get recently viewed" });
+    }
+  });
   // Get all sectors
   app.get("/api/sectors", async (req, res) => {
     try {
