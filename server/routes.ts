@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { SitemapGenerator } from "./sitemapGenerator";
 import { googleSearchService } from "./services/googleSearchService";
 import { EmailService } from "./emailService";
 import { paystackService } from "./paystackService";
@@ -586,6 +587,55 @@ Please contact this potential advertiser within 24 hours.
   // Add logo routes
   const logoRoutes = (await import('./routes/logo')).default;
   app.use('/api/logo', logoRoutes);
+
+  // SEO: Sitemap endpoint
+  app.get("/sitemap.xml", async (req, res) => {
+    try {
+      const sitemapGenerator = new SitemapGenerator();
+      const sitemapXml = await sitemapGenerator.generateCompleteSitemap(storage);
+      
+      res.set({
+        'Content-Type': 'application/xml',
+        'Cache-Control': 'public, max-age=86400' // Cache for 24 hours
+      });
+      res.send(sitemapXml);
+    } catch (error) {
+      console.error('Error generating sitemap:', error);
+      res.status(500).send('Error generating sitemap');
+    }
+  });
+
+  // SEO: Generate Open Graph image dynamically
+  app.get("/api/og-image", async (req, res) => {
+    try {
+      // Simple text-based OG image response
+      const svg = `
+        <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1e40af"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+          <rect width="1200" height="630" fill="url(#bg)"/>
+          <text x="600" y="250" font-family="IBM Plex Serif, serif" font-size="72" font-weight="bold" text-anchor="middle" fill="white">COMCUBES</text>
+          <text x="600" y="320" font-family="IBM Plex Serif, serif" font-size="32" text-anchor="middle" fill="white" opacity="0.9">Global Business Directory</text>
+          <text x="600" y="380" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white" opacity="0.8">Everything and Anything Business</text>
+          <rect x="50" y="450" width="1100" height="2" fill="white" opacity="0.3"/>
+          <text x="600" y="500" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="white" opacity="0.7">Discover Companies • Explore Industries • Navigate Sectors</text>
+        </svg>
+      `;
+      
+      res.set({
+        'Content-Type': 'image/svg+xml',
+        'Cache-Control': 'public, max-age=604800' // Cache for 1 week
+      });
+      res.send(svg);
+    } catch (error) {
+      console.error('Error generating OG image:', error);
+      res.status(500).send('Error generating image');
+    }
+  });
 
   const httpServer = createServer(app);
   return httpServer;

@@ -1,0 +1,39 @@
+User-agent: *
+Allow: /
+
+# Priority pages for crawling
+Allow: /sectors
+Allow: /industries
+Allow: /companies
+Allow: /search
+Allow: /advertise
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /disclaimer
+Allow: /affiliate-disclosure
+
+# Allow search engines to access sitemap
+Sitemap: https://comcubes.com/sitemap.xml
+
+# Block admin areas
+Disallow: /admin
+Disallow: /dashboard
+
+# Allow all crawling with specific guidance
+Crawl-delay: 1
+
+# Google-specific settings
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing-specific settings  
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yandex-specific settings
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1

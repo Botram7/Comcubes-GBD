@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Search, TrendingUp, Globe, Building2, Users, ArrowLeft } from 'lucide-react';
+import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 
 import { Link, useLocation } from 'wouter';
 import { EnhancedSearch } from '@/components/EnhancedSearch';
