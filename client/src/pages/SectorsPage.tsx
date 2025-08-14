@@ -3,7 +3,6 @@ import { useLocation } from "wouter";
 import { BusinessGrid } from "@/components/BusinessGrid";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { SEOHead, generateDirectoryStructuredData } from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
@@ -102,34 +101,6 @@ export default function SectorsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50  font-inter ">
-      <SEOHead
-        title="Business Sectors Directory | Explore Global Industry Sectors - COMCUBES"
-        description={`Browse ${Array.isArray(sectors) ? sectors.length : 20} major business sectors in COMCUBES Global Directory. Discover aerospace, technology, healthcare, finance, and other key industry sectors worldwide.`}
-        keywords={[
-          'business sectors',
-          'industry sectors',
-          'global industries',
-          'aerospace industry',
-          'technology sector',
-          'healthcare sector',
-          'financial services',
-          'manufacturing industry',
-          'retail sector',
-          'energy sector',
-          'automotive industry',
-          'telecommunications',
-          'construction sector',
-          'agriculture industry',
-          'entertainment industry',
-          'business classification',
-          'industry directory',
-          'sector analysis',
-          'business categories'
-        ]}
-        ogType="website"
-        jsonLd={generateDirectoryStructuredData('sectors', Array.isArray(sectors) ? sectors : [])}
-        canonicalUrl={`${window.location.origin}/sectors`}
-      />
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center py-4">

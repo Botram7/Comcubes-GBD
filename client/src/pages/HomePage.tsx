@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SearchBar } from "@/components/SearchBar";
 import { AnimatedExplainer } from "@/components/AnimatedExplainer";
-import { SEOHead, generateWebsiteStructuredData, generateDirectoryStructuredData } from "@/components/SEOHead";
 import { 
   BarChart3, 
   Users, 
@@ -26,7 +25,6 @@ import comcubesLogo from "@assets/default_1752716413946.png";
 import comcubesMonochrome from "@assets/default-monochrome_1752717527516.png";
 import comcubesIcon from "@assets/2de77b64-4c39-4ddb-aa7a-0afd37edfe34_1752720571406.png";
 import newComcubesLogo from "@assets/Artboard 5_1753135425496.png";
-import { AuthButton } from "@/components/AuthButton";
 
 export default function HomePage() {
   const [, setLocation] = useLocation();
@@ -118,47 +116,10 @@ export default function HomePage() {
   const companyCount = (companiesData as any)?.total || 8000;
 
   return (
-    <div className="min-h-screen bg-white">
-      <SEOHead
-        title="COMCUBES - Global Business Directory | Find Companies, Industries & Business Sectors"
-        description="Discover over 2,000 companies across 180+ industries in COMCUBES Global Business Directory. Find businesses, explore industry sectors, and connect with companies worldwide. Everything and Anything Business."
-        keywords={[
-          'global business directory',
-          'business listings',
-          'company database',
-          'industry sectors',
-          'commercial directory',
-          'business search engine',
-          'corporate directory',
-          'business intelligence',
-          'company finder',
-          'industry database',
-          'business sectors worldwide',
-          'international companies',
-          'business directory search',
-          'global companies list',
-          'business networking',
-          'company information',
-          'industry analysis',
-          'business research',
-          'commercial database',
-          'worldwide business listings'
-        ]}
-        ogType="website"
-        jsonLd={generateWebsiteStructuredData()}
-        additionalMeta={[
-          { name: 'geo.region', content: 'Global' },
-          { name: 'geo.placename', content: 'Worldwide' },
-          { name: 'ICBM', content: '0.0000, 0.0000' },
-          { name: 'distribution', content: 'global' },
-          { name: 'rating', content: 'general' },
-          { name: 'referrer', content: 'origin-when-cross-origin' }
-        ]}
-      />
-      
-      {/* Header with Authentication */}
+    <div className="min-h-screen bg-white  ">
+      {/* Header with Theme Toggle */}
       <header className="absolute top-0 right-0 z-50 p-4">
-        <AuthButton />
+        
       </header>
       
       {/* Hero Section */}
