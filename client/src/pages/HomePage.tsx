@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { SearchBar } from "@/components/SearchBar";
 import { AnimatedExplainer } from "@/components/AnimatedExplainer";
 import { SEOHead, createBusinessDirectoryStructuredData } from "@/components/SEOHead";
+import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 import { 
   BarChart3, 
   Users, 
@@ -419,6 +420,9 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+      
+      {/* SEO Analyzer Component */}
+      <SEOAnalyzer />
     </div>
   );
 }

@@ -587,6 +587,9 @@ Please contact this potential advertiser within 24 hours.
   // Add logo routes
   const logoRoutes = (await import('./routes/logo')).default;
   app.use('/api/logo', logoRoutes);
+  
+  // Import SitemapGenerator
+  const { SitemapGenerator } = await import('./sitemapGenerator');
 
   // SEO: Sitemap endpoint
   app.get("/sitemap.xml", async (req, res) => {
