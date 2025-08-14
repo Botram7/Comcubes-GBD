@@ -6,6 +6,7 @@ import { useMutation } from '@tanstack/react-query';
 import { Mail, Clock, ArrowLeft, MessageSquare, Building, Users, HelpCircle } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -339,6 +340,9 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      
+      {/* SEO Analyzer Component */}
+      <SEOAnalyzer />
     </div>
   );
 }

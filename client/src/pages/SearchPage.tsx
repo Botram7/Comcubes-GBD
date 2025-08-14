@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Search, TrendingUp, Globe, Building2, Users, ArrowLeft } from 'lucide-react';
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 import { Link, useLocation } from 'wouter';
 import { EnhancedSearch } from '@/components/EnhancedSearch';
@@ -326,6 +327,9 @@ export default function SearchPage() {
           </div>
         </div>
       </footer>
+      
+      {/* SEO Analyzer Component */}
+      <SEOAnalyzer />
     </div>
   );
 }
