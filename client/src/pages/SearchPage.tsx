@@ -123,188 +123,250 @@ export default function SearchPage() {
             
             <div className="flex-1 flex justify-center mx-2 md:mx-8">
               <div className="flex items-center space-x-2 md:space-x-4 max-w-2xl w-full">
-                <div className="flex-1">
-                  <SearchBar onSearchResults={handleSearchResults} />
-                </div>
+                <SearchBar onSearchResults={handleSearchResults} />
               </div>
             </div>
-
-            <div className="flex items-center space-x-2 md:space-x-4 flex-shrink-0">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleBackToHome}
-                className="flex items-center gap-2"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                <span className="hidden sm:inline">Home</span>
-              </Button>
-            </div>
+            
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleBackToHome}
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-800"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span className="hidden md:inline">Home</span>
+            </Button>
           </div>
         </div>
       </header>
 
-      <Breadcrumbs 
-        items={[
-          { label: "Home", onClick: handleBackToHome },
-          { label: "Advanced Search" }
-        ]} 
-      />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* Breadcrumbs */}
+        <div className="mb-6">
+          <Breadcrumbs 
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Advanced Search', href: '' }
+            ]} 
+          />
+        </div>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Page Header */}
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Advanced Business Search</h2>
-          <p className="text-gray-600">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'IBM Plex Serif' }}>
+            Advanced Business Search
+          </h1>
+          <p className="text-lg text-gray-600 max-w-3xl">
             Search through our comprehensive database of business sectors, industries, and companies worldwide.
           </p>
         </div>
 
-        {/* Search Interface */}
+        {/* Search Form */}
         <Card className="mb-8">
           <CardContent className="p-6">
-            <div className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="search-input">Search Term</Label>
-                <div className="flex gap-4">
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="search-term" className="text-base font-medium">Search Term</Label>
+                <div className="flex gap-3 mt-2">
                   <Input
-                    id="search-input"
-                    type="text"
-                    placeholder="Enter company name, industry, or business sector..."
+                    id="search-term"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+                    placeholder="Enter company name, industry, or business sector..."
                     className="flex-1"
+                    onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
                   />
                   <Button 
-                    onClick={() => handleSearch()} 
-                    disabled={isLoading}
-                    className="flex items-center gap-2"
+                    onClick={() => handleSearch()}
+                    disabled={isLoading || !searchTerm.trim()}
+                    className="px-6"
                   >
-                    <Search className="h-4 w-4" />
+                    <Search className="h-4 w-4 mr-2" />
                     Search
                   </Button>
                 </div>
               </div>
 
-              {searchResults && (
-                <div className="space-y-2">
-                  <Label htmlFor="category-filter">Filter Results</Label>
-                  <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                    <SelectTrigger id="category-filter" className="w-48">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Results ({totalResults})</SelectItem>
-                      <SelectItem value="sectors">Sectors ({searchResults.sectors.length})</SelectItem>
-                      <SelectItem value="industries">Industries ({searchResults.industries.length})</SelectItem>
-                      <SelectItem value="companies">Companies ({searchResults.companies.length})</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              )}
+              <div className="flex items-center gap-4">
+                <Label className="text-sm font-medium text-gray-700">Filter by category:</Label>
+                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                  <SelectTrigger className="w-48">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Categories</SelectItem>
+                    <SelectItem value="sectors">Sectors Only</SelectItem>
+                    <SelectItem value="industries">Industries Only</SelectItem>
+                    <SelectItem value="companies">Companies Only</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Search Results */}
+        {/* Loading State */}
         {isLoading && (
-          <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">Searching...</p>
+          <div className="flex items-center justify-center py-12">
+            <div className="flex items-center space-x-3">
+              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+              <span className="text-gray-600">Searching...</span>
+            </div>
           </div>
         )}
 
-        {searchResults && !isLoading && (
-          <div className="space-y-8">
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold text-gray-900">Search Results</h3>
-              <p className="text-gray-600 mt-2">
-                Found {totalResults} results {searchTerm && `for "${searchTerm}"`}
-              </p>
+        {/* Search Results */}
+        {!isLoading && searchResults && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl font-semibold text-gray-900">
+                Search Results {totalResults > 0 && `(${totalResults} results)`}
+              </h2>
+              <div className="flex items-center gap-2">
+                <Filter className="h-4 w-4 text-gray-500" />
+                <span className="text-sm text-gray-500">
+                  Category: {selectedCategory === 'all' ? 'All' : selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}
+                </span>
+              </div>
             </div>
 
-            {filteredResults?.sectors.length > 0 && (
-              <div>
-                <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                  <Target className="h-5 w-5" />
-                  Business Sectors ({filteredResults.sectors.length})
-                </h4>
-                <BusinessGrid 
-                  items={filteredResults.sectors} 
-                  type="sector" 
-                  onItemClick={(sector) => setLocation(`/sector/${encodeURIComponent(sector.name)}`)} 
-                />
-              </div>
-            )}
+            {totalResults === 0 ? (
+              <Card>
+                <CardContent className="p-8 text-center">
+                  <Search className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">No results found</h3>
+                  <p className="text-gray-600 mb-6">
+                    Try adjusting your search terms or browse our directory by category.
+                  </p>
+                  <div className="flex justify-center gap-3">
+                    <Button variant="outline" onClick={() => setLocation('/')}>
+                      Browse Sectors
+                    </Button>
+                    <Button variant="outline" onClick={() => setLocation('/industries')}>
+                      Browse Industries
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ) : (
+              <div className="space-y-8">
+                {/* Sectors Results */}
+                {filteredResults && filteredResults.sectors.length > 0 && (
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <Target className="h-5 w-5 text-blue-600" />
+                      Business Sectors ({filteredResults.sectors.length})
+                    </h3>
+                    <BusinessGrid
+                      items={filteredResults.sectors.map(sector => ({
+                        id: sector.id,
+                        name: sector.name,
+                        href: `/sector/${encodeURIComponent(sector.name)}`,
+                        type: 'sector' as const,
+                        description: `Explore companies in ${sector.name}`,
+                        gradient: 'from-blue-500 to-blue-700'
+                      }))}
+                    />
+                  </div>
+                )}
 
-            {filteredResults?.industries.length > 0 && (
-              <div>
-                <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                  <Building2 className="h-5 w-5" />
-                  Industries ({filteredResults.industries.length})
-                </h4>
-                <BusinessGrid 
-                  items={filteredResults.industries} 
-                  type="industry" 
-                  onItemClick={(industry) => setLocation(`/industry/${encodeURIComponent(industry.name)}`)} 
-                />
-              </div>
-            )}
+                {/* Industries Results */}
+                {filteredResults && filteredResults.industries.length > 0 && (
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <Building2 className="h-5 w-5 text-green-600" />
+                      Industries ({filteredResults.industries.length})
+                    </h3>
+                    <BusinessGrid
+                      items={filteredResults.industries.map(industry => ({
+                        id: industry.id,
+                        name: industry.name,
+                        href: `/industry/${encodeURIComponent(industry.name)}`,
+                        type: 'industry' as const,
+                        description: industry.sectorName,
+                        gradient: 'from-green-500 to-green-700'
+                      }))}
+                    />
+                  </div>
+                )}
 
-            {filteredResults?.companies.length > 0 && (
-              <div>
-                <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                  <Globe className="h-5 w-5" />
-                  Companies ({filteredResults.companies.length})
-                </h4>
-                <BusinessGrid 
-                  items={filteredResults.companies} 
-                  type="company" 
-                  onItemClick={(company) => {
-                    if ((company as any).websiteUrl) {
-                      window.open((company as any).websiteUrl, '_blank');
-                    }
-                  }} 
-                />
-              </div>
-            )}
+                {/* Companies Results */}
+                {filteredResults && filteredResults.companies.length > 0 && (
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <Globe className="h-5 w-5 text-purple-600" />
+                      Companies ({filteredResults.companies.length})
+                    </h3>
+                    <BusinessGrid
+                      items={filteredResults.companies.map(company => ({
+                        id: company.id,
+                        name: company.name,
+                        href: `/company/${company.id}`,
+                        type: 'company' as const,
+                        description: `${company.industryName} • ${company.sectorName}`,
+                        gradient: 'from-purple-500 to-purple-700',
+                        websiteUrl: company.websiteUrl
+                      }))}
+                    />
+                  </div>
+                )}
 
-            {totalResults === 0 && (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Search className="h-8 w-8 text-gray-400" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">No Results Found</h3>
-                <p className="text-gray-600 mb-4">
-                  We couldn't find any matches for "{searchTerm}". Try different keywords or browse our directories.
-                </p>
-                <div className="flex justify-center space-x-4">
-                  <Button onClick={() => setLocation('/sectors')} variant="outline">
-                    Browse Sectors
-                  </Button>
-                  <Button onClick={() => setLocation('/industries')} variant="outline">
-                    Browse Industries
-                  </Button>
-                </div>
+                {/* Global Search Integration */}
+                <Card className="border-2 border-dashed border-blue-200 bg-blue-50">
+                  <CardContent className="p-6">
+                    <div className="text-center">
+                      <Globe className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                        Expand Your Search Globally
+                      </h3>
+                      <p className="text-gray-600 mb-4">
+                        Search beyond our directory to find businesses worldwide using Google Search.
+                      </p>
+                      <Button
+                        onClick={() => {
+                          const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchTerm + ' business company')}`;
+                          window.open(searchUrl, '_blank');
+                        }}
+                        className="bg-blue-600 hover:bg-blue-700"
+                        disabled={!searchTerm.trim()}
+                      >
+                        <Globe className="h-4 w-4 mr-2" />
+                        Search on Google
+                      </Button>
+                      <p className="text-xs text-gray-500 mt-2">
+                        Powered by Google Search
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             )}
           </div>
         )}
 
-        {!searchResults && !isLoading && (
+        {/* Initial State - No Search Yet */}
+        {!isLoading && !searchResults && (
           <div className="text-center py-12">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Search className="h-8 w-8 text-blue-600" />
-            </div>
+            <Search className="h-16 w-16 text-blue-600 mx-auto mb-6" />
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Start Your Business Search</h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
               Enter a search term above to find companies, industries, and business sectors in our global directory.
             </p>
-            <div className="flex justify-center space-x-4">
-              <Button onClick={() => setLocation('/sectors')} variant="outline">
+            <div className="flex justify-center gap-4">
+              <Button 
+                variant="outline" 
+                onClick={() => setLocation('/')}
+                className="flex items-center gap-2"
+              >
+                <Target className="h-4 w-4" />
                 Browse Sectors
               </Button>
-              <Button onClick={() => setLocation('/industries')} variant="outline">
+              <Button 
+                variant="outline" 
+                onClick={() => setLocation('/industries')}
+                className="flex items-center gap-2"
+              >
+                <Building2 className="h-4 w-4" />
                 Browse Industries
               </Button>
             </div>
@@ -312,12 +374,15 @@ export default function SearchPage() {
         )}
       </main>
 
-      <footer className="bg-white border-t border-gray-200 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center text-gray-600">
-            <p>&copy; 2024 COMCUBES Global Business Directory. Professional business search across 421 pages.</p>
-            <p className="mt-2 text-sm">Search through 20 sectors, 400+ industries, and 8,000+ companies worldwide.</p>
-          </div>
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 py-8 mt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm text-gray-600">
+            © 2024 COMCUBES Global Business Directory. Professional business search across 421 pages.
+          </p>
+          <p className="text-sm text-gray-500 mt-1">
+            Search through 20 sectors, 400+ industries, and 8,000+ companies worldwide.
+          </p>
         </div>
       </footer>
     </div>
