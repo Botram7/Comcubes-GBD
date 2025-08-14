@@ -25,6 +25,8 @@ import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 import { generateCompanyDescription } from "@/utils/companyDescriptionGenerator";
+import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 export default function CompanyProfilePage() {
   const { companyId } = useParams();
@@ -433,6 +435,9 @@ export default function CompanyProfilePage() {
           </div>
         </div>
       </footer>
+      
+      {/* SEO Analyzer Component */}
+      <SEOAnalyzer />
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function SectorsPage() {
     window.scrollTo(0, 0);
   }, []);
 
-  const { data: sectors, isLoading, error } = useQuery({
+  const { data: sectors, isLoading, error } = useQuery<Sector[]>({
     queryKey: ["/api/sectors"],
     staleTime: Infinity,
   });
