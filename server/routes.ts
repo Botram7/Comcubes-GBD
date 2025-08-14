@@ -184,6 +184,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/user/recently-viewed", optionalAuth, async (req, res) => {
     try {
       const { entityType, entityId, entityName } = req.body;
+      
+      // Create session ID if not exists
+      if (!req.session.sessionId) {
+        req.session.sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      }
+      
       const recentItem = await UserService.addRecentlyViewed(
         req.user?.userId || null,
         req.session.sessionId,
@@ -192,26 +198,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
         entityName
       );
       
-      // Log activity
-      await UserService.logActivity({
-        userId: req.user?.userId || null,
-        sessionId: req.session.sessionId,
-        actionType: 'page_view',
-        entityType,
-        entityId,
-        entityName,
-        ipAddress: req.ip,
-        userAgent: req.get('user-agent'),
-      });
+      // Log activity if user is authenticated
+      if (req.user?.userId) {
+        await UserService.logActivity({
+          userId: req.user.userId,
+          actionType: 'page_view',
+          entityType,
+          entityId,
+          entityName,
+          metadata: JSON.stringify({
+            ipAddress: req.ip,
+            userAgent: req.get('user-agent'),
+          }),
+        });
+      }
       
       res.status(201).json(recentItem);
     } catch (error) {
+      console.error('Recently viewed tracking error:', error);
       res.status(500).json({ message: "Failed to track recently viewed" });
     }
   });
 
   app.get("/api/user/recently-viewed", optionalAuth, async (req, res) => {
     try {
+      // Create session ID if not exists
+      if (!req.session.sessionId) {
+        req.session.sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      }
+      
       const recentItems = await UserService.getRecentlyViewed(
         req.user?.userId || null,
         req.session.sessionId

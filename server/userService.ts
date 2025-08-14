@@ -140,8 +140,7 @@ export class UserService {
       .select()
       .from(userSavedSearches)
       .where(eq(userSavedSearches.userId, userId))
-      .orderBy(desc(userSavedSearches.createdAt))
-      .execute();
+      .orderBy(desc(userSavedSearches.createdAt));
   }
 
   static async removeSavedSearch(userId: number, searchId: number): Promise<boolean> {
@@ -173,8 +172,7 @@ export class UserService {
       .from(userActivityLog)
       .where(eq(userActivityLog.userId, userId))
       .orderBy(desc(userActivityLog.createdAt))
-      .limit(limit)
-      .execute();
+      .limit(limit);
   }
 
   // Recently Viewed Management
@@ -254,16 +252,14 @@ export class UserService {
         .from(userRecentlyViewed)
         .where(eq(userRecentlyViewed.userId, userId))
         .orderBy(desc(userRecentlyViewed.viewedAt))
-        .limit(limit)
-        .execute();
+        .limit(limit);
     } else {
       return await db
         .select()
         .from(userRecentlyViewed)
         .where(eq(userRecentlyViewed.sessionId, sessionId))
         .orderBy(desc(userRecentlyViewed.viewedAt))
-        .limit(limit)
-        .execute();
+        .limit(limit);
     }
   }
 
