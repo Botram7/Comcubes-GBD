@@ -8,8 +8,6 @@ import { Separator } from "@/components/ui/separator";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BannerAd } from "@/components/BannerAd";
-import { FavoriteButton } from "@/components/FavoriteButton";
-import { useActivityTracker } from "@/hooks/useActivityTracker";
 import { 
   Building2, 
   Globe, 
@@ -43,16 +41,6 @@ export default function CompanyProfilePage() {
     enabled: !!companyId,
     staleTime: Infinity,
   });
-
-  // Track company page view activity
-  useActivityTracker(
-    company ? {
-      entityType: 'company',
-      entityId: company.id,
-      entityName: company.name
-    } : null,
-    'company_view'
-  );
 
   const { data: relatedCompanies, isLoading: relatedLoading } = useQuery<Company[]>({
     queryKey: [`/api/companies/${companyId}/related`],
