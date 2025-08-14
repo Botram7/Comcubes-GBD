@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SearchBar } from "@/components/SearchBar";
 import { AnimatedExplainer } from "@/components/AnimatedExplainer";
+import { SEOHead, createBusinessDirectoryStructuredData } from "@/components/SEOHead";
 import { 
   BarChart3, 
   Users, 
@@ -117,6 +118,19 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white  ">
+      <SEOHead 
+        title="COMCUBES - Global Business Directory | Find Companies, Industries & Business Sectors"
+        description="Discover thousands of companies across all business sectors and industries worldwide. COMCUBES is your comprehensive global business directory for everything and anything business."
+        keywords={[
+          'business directory', 'global companies', 'business sectors', 'industries', 
+          'company listings', 'business search', 'commercial directory', 'worldwide businesses', 
+          'corporate directory', 'industry directory', 'business database', 'company finder',
+          'business networking', 'B2B directory', 'commercial cubes', 'global business search',
+          'business intelligence', 'company profiles', 'industry analysis', 'business sectors list'
+        ]}
+        canonicalUrl={`${window.location.origin}/`}
+        structuredData={createBusinessDirectoryStructuredData()}
+      />
       {/* Header with Theme Toggle */}
       <header className="absolute top-0 right-0 z-50 p-4">
         

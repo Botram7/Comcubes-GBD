@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
+import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { Pagination } from "@/components/Pagination";

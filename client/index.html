@@ -3,6 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/src/index.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//www.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Default meta tags (will be updated by SEOHead component) -->
+    <title>COMCUBES - Global Business Directory | Find Companies, Industries & Business Sectors</title>
+    <meta name="description" content="Discover thousands of companies across all business sectors and industries worldwide. COMCUBES is your comprehensive global business directory for everything and anything business.">
+    <meta name="keywords" content="business directory, global companies, business sectors, industries, company listings, business search, commercial directory">
+    <meta name="author" content="COMCUBES Global Business Directory">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Open Graph default tags -->
+    <meta property="og:title" content="COMCUBES - Global Business Directory">
+    <meta property="og:description" content="Discover thousands of companies across all business sectors and industries worldwide.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="COMCUBES">
+    
+    <!-- Twitter Card default tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="COMCUBES - Global Business Directory">
+    <meta name="twitter:description" content="Discover thousands of companies across all business sectors and industries worldwide.">
+    
+    <!-- Additional SEO meta tags -->
+    <meta name="theme-color" content="#1e40af">
+    <meta name="msapplication-TileColor" content="#1e40af">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json" id="organization-data">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "COMCUBES",
+      "alternateName": "Commercial Cubes",
+      "url": "https://comcubes.com",
+      "description": "Global business directory platform connecting businesses worldwide",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contact-cgbd@comcubes.com"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
