@@ -62,6 +62,25 @@ export const industryWaitlist = pgTable('industry_waitlist', {
   notified: timestamp('notified').default(null),
 });
 
+// Company Claims table (for claiming existing company listings)
+export const companyClaims = pgTable('company_claims', {
+  id: serial('id').primaryKey(),
+  companyId: integer('company_id').notNull(), // Reference to existing company
+  companyName: text('company_name').notNull(),
+  contactName: text('contact_name').notNull(),
+  contactEmail: text('contact_email').notNull(),
+  contactPhone: text('contact_phone'),
+  websiteUrl: text('website_url'),
+  companyDescription: text('company_description').notNull(),
+  logoImagePath: text('logo_image_path'),
+  logoImageOriginalName: text('logo_image_original_name'),
+  plan: text('plan').notNull(), // 'basic', 'premium', 'enterprise'
+  status: text('status').default('pending').notNull(), // 'pending', 'approved', 'rejected', 'completed'
+  adminNotes: text('admin_notes'),
+  submittedAt: timestamp('submitted_at').defaultNow().notNull(),
+  processedAt: timestamp('processed_at'),
+});
+
 // Type exports
 export type Sector = typeof sectors.$inferSelect;
 export type Industry = typeof industries.$inferSelect;
@@ -69,6 +88,7 @@ export type Company = typeof companies.$inferSelect;
 export type ContactMessage = typeof contactMessages.$inferSelect;
 export type CompanyListing = typeof companyListings.$inferSelect;
 export type IndustryWaitlist = typeof industryWaitlist.$inferSelect;
+export type CompanyClaim = typeof companyClaims.$inferSelect;
 
 export type InsertSector = typeof sectors.$inferInsert;
 export type InsertIndustry = typeof industries.$inferInsert;
@@ -76,6 +96,7 @@ export type InsertCompany = typeof companies.$inferInsert;
 export type InsertContactMessage = typeof contactMessages.$inferInsert;
 export type InsertCompanyListing = typeof companyListings.$inferInsert;
 export type InsertIndustryWaitlist = typeof industryWaitlist.$inferInsert;
+export type InsertCompanyClaim = typeof companyClaims.$inferInsert;
 
 // Zod schemas for validation
 export const insertSectorSchema = createInsertSchema(sectors);
@@ -86,6 +107,7 @@ export const insertContactMessageSchema = createInsertSchema(contactMessages).ex
 });
 export const insertCompanyListingSchema = createInsertSchema(companyListings);
 export const insertIndustryWaitlistSchema = createInsertSchema(industryWaitlist);
+export const insertCompanyClaimSchema = createInsertSchema(companyClaims);
 
 export const selectSectorSchema = createSelectSchema(sectors);
 export const selectIndustrySchema = createSelectSchema(industries);
@@ -93,3 +115,4 @@ export const selectCompanySchema = createSelectSchema(companies);
 export const selectContactMessageSchema = createSelectSchema(contactMessages);
 export const selectCompanyListingSchema = createSelectSchema(companyListings);
 export const selectIndustryWaitlistSchema = createSelectSchema(industryWaitlist);
+export const selectCompanyClaimSchema = createSelectSchema(companyClaims);

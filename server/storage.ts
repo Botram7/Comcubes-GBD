@@ -1,6 +1,6 @@
 import { csvParser } from './services/csvParser';
 import { db } from './db';
-import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist } from '@shared/schema';
+import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, companyClaims, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type CompanyClaim, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist, type InsertCompanyClaim } from '@shared/schema';
 import { eq, ilike, or } from 'drizzle-orm';
 import { generateCompanyDescription } from './services/companyDescriptionGenerator';
 
@@ -42,6 +42,13 @@ export interface IStorage {
   getIndustryWaitlistStats(): Promise<any[]>;
   getAdminStats(): Promise<any>;
   getWaitlistEntryById(id: number): Promise<IndustryWaitlist | undefined>;
+  
+  // Company claim operations
+  createCompanyClaim(claim: InsertCompanyClaim): Promise<CompanyClaim>;
+  getCompanyClaim(id: number): Promise<CompanyClaim | undefined>;
+  getCompanyClaims(status?: string): Promise<CompanyClaim[]>;
+  updateCompanyClaimStatus(id: number, status: string, adminNotes?: string): Promise<CompanyClaim | undefined>;
+  getCompanyClaimStats(): Promise<any>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -470,6 +477,66 @@ export class DatabaseStorage implements IStorage {
       console.error('Error getting waitlist entry by ID:', error);
       return undefined;
     }
+  }
+
+  // Company claim operations
+  async createCompanyClaim(claim: InsertCompanyClaim): Promise<CompanyClaim> {
+    await this.initialize();
+    const [newClaim] = await db.insert(companyClaims).values(claim).returning();
+    return newClaim;
+  }
+
+  async getCompanyClaim(id: number): Promise<CompanyClaim | undefined> {
+    await this.initialize();
+    const [claim] = await db.select().from(companyClaims).where(eq(companyClaims.id, id));
+    return claim;
+  }
+
+  async getCompanyClaims(status?: string): Promise<CompanyClaim[]> {
+    await this.initialize();
+    if (status) {
+      return db.select().from(companyClaims).where(eq(companyClaims.status, status));
+    }
+    return db.select().from(companyClaims);
+  }
+
+  async updateCompanyClaimStatus(id: number, status: string, adminNotes?: string): Promise<CompanyClaim | undefined> {
+    await this.initialize();
+    const updateData: any = { status };
+    if (adminNotes) {
+      updateData.adminNotes = adminNotes;
+    }
+    if (status === 'approved' || status === 'completed') {
+      updateData.processedAt = new Date();
+    }
+    
+    const [updatedClaim] = await db.update(companyClaims)
+      .set(updateData)
+      .where(eq(companyClaims.id, id))
+      .returning();
+    return updatedClaim;
+  }
+
+  async getCompanyClaimStats(): Promise<any> {
+    await this.initialize();
+    // Get basic claim statistics
+    const allClaims = await db.select().from(companyClaims);
+    
+    const stats = {
+      total: allClaims.length,
+      pending: allClaims.filter(claim => claim.status === 'pending').length,
+      approved: allClaims.filter(claim => claim.status === 'approved').length,
+      rejected: allClaims.filter(claim => claim.status === 'rejected').length,
+      completed: allClaims.filter(claim => claim.status === 'completed').length,
+      recent: allClaims.filter(claim => {
+        const submittedDate = new Date(claim.submittedAt);
+        const sevenDaysAgo = new Date();
+        sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+        return submittedDate >= sevenDaysAgo;
+      }).length
+    };
+
+    return stats;
   }
 }
 

@@ -34,8 +34,9 @@ export default function IndustryPage() {
   });
 
   const handleCompanyClick = (company: Company) => {
-    // Navigate to company profile page
-    setLocation(`/company/${company.id}`);
+    if (company.websiteUrl) {
+      window.open(company.websiteUrl, '_blank');
+    }
   };
 
   const handleSearchResults = (results: SearchResults | null) => {
@@ -224,7 +225,8 @@ export default function IndustryPage() {
                 <BusinessGrid 
                   items={searchResults.companies} 
                   type="company" 
-                  onItemClick={handleCompanyClick} 
+                  onItemClick={handleCompanyClick}
+                  showClaimButtons={true}
                 />
               </div>
             )}
@@ -238,7 +240,7 @@ export default function IndustryPage() {
               </p>
             </div>
 
-            <BusinessGrid items={companies} type="company" onItemClick={handleCompanyClick} />
+            <BusinessGrid items={companies} type="company" onItemClick={handleCompanyClick} showClaimButtons={true} />
           </>
         )}
           </div>

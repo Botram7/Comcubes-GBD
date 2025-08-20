@@ -6,6 +6,7 @@ import { googleSearchService } from "./services/googleSearchService";
 import { EmailService } from "./emailService";
 import { paystackService } from "./paystackService";
 import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/schema";
+import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Get all sectors
@@ -639,6 +640,9 @@ Please contact this potential advertiser within 24 hours.
       res.status(500).send('Error generating image');
     }
   });
+
+  // Register company claim routes
+  registerCompanyClaimRoutes(app);
 
   const httpServer = createServer(app);
   return httpServer;

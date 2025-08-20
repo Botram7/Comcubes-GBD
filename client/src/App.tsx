@@ -22,6 +22,7 @@ import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import TermsOfServicePage from "@/pages/TermsOfServicePage";
 import DisclaimerPage from "@/pages/DisclaimerPage";
 import AffiliateDisclosurePage from "@/pages/AffiliateDisclosurePage";
+import ClaimCompanyPage from "@/pages/ClaimCompanyPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -39,6 +40,7 @@ function Router() {
       <Route path="/advertise" component={AdvertisePage} />
       <Route path="/company-listing" component={CompanyListingPage} />
       <Route path="/resume-payment" component={ResumePaymentPage} />
+      <Route path="/claim-company" component={ClaimCompanyPage} />
       <Route path="/admin" component={ComprehensiveAdminDashboard} />
 {/* Logo management removed - using fallback icons only */}
       <Route path="/privacy-policy" component={PrivacyPolicyPage} />
