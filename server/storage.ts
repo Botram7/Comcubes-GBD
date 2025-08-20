@@ -517,6 +517,33 @@ export class DatabaseStorage implements IStorage {
     return updatedClaim;
   }
 
+  async updateCompanyClaimEmailVerification(claimId: number, emailVerified: boolean): Promise<CompanyClaim | undefined> {
+    await this.initialize();
+    const [claim] = await db
+      .update(companyClaims)
+      .set({ 
+        emailVerified,
+        processedAt: emailVerified ? new Date() : null 
+      })
+      .where(eq(companyClaims.id, claimId))
+      .returning();
+    return claim;
+  }
+
+  async updateCompanyClaimVerificationCode(claimId: number, verificationCode: string, verificationExpiresAt: Date): Promise<CompanyClaim | undefined> {
+    await this.initialize();
+    const [claim] = await db
+      .update(companyClaims)
+      .set({ 
+        verificationCode,
+        verificationSentAt: new Date(),
+        verificationExpiresAt 
+      })
+      .where(eq(companyClaims.id, claimId))
+      .returning();
+    return claim;
+  }
+
   async getCompanyClaimStats(): Promise<any> {
     await this.initialize();
     // Get basic claim statistics
