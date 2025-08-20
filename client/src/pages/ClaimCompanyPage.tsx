@@ -140,11 +140,51 @@ export default function ClaimCompanyPage() {
     },
   });
 
+  // Domain validation helper functions
+  const getExpectedDomain = (websiteUrl: string): string | null => {
+    if (!websiteUrl) return null;
+    try {
+      const url = new URL(websiteUrl.startsWith('http') ? websiteUrl : `https://${websiteUrl}`);
+      let domain = url.hostname.toLowerCase();
+      // Remove www. prefix if present
+      if (domain.startsWith('www.')) {
+        domain = domain.substring(4);
+      }
+      return domain;
+    } catch {
+      return null;
+    }
+  };
+
+  const isValidBusinessEmail = (email: string, websiteUrl: string): boolean => {
+    if (!email || !websiteUrl) return false;
+    
+    const expectedDomain = getExpectedDomain(websiteUrl);
+    if (!expectedDomain) return false;
+    
+    const emailDomain = email.split('@')[1]?.toLowerCase();
+    if (!emailDomain) return false;
+    
+    // Allow exact domain match or subdomains
+    return emailDomain === expectedDomain || emailDomain.endsWith(`.${expectedDomain}`);
+  };
+
   const handleSubmit = () => {
     if (!formData.contactName || !formData.contactEmail || !formData.companyDescription) {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate business email domain
+    if (!isValidBusinessEmail(formData.contactEmail, formData.websiteUrl)) {
+      const expectedDomain = getExpectedDomain(formData.websiteUrl);
+      toast({
+        title: "Invalid Business Email",
+        description: `For security verification, your business email must use your company domain${expectedDomain ? ` (@${expectedDomain})` : ''}. This prevents unauthorized claims.`,
         variant: "destructive",
       });
       return;
@@ -344,8 +384,19 @@ export default function ClaimCompanyPage() {
                       type="email"
                       value={formData.contactEmail}
                       onChange={(e) => setFormData(prev => ({ ...prev, contactEmail: e.target.value }))}
-                      placeholder="your@company.com"
+                      placeholder="your.name@company.com"
+                      required
+                      className={!isValidBusinessEmail(formData.contactEmail, formData.websiteUrl) && formData.contactEmail ? 'border-red-500' : ''}
                     />
+                    {formData.contactEmail && !isValidBusinessEmail(formData.contactEmail, formData.websiteUrl) && (
+                      <p className="text-red-500 text-xs mt-1">
+                        For security, business email must match your company domain. 
+                        {getExpectedDomain(formData.websiteUrl) && ` Expected: @${getExpectedDomain(formData.websiteUrl)}`}
+                      </p>
+                    )}
+                    <p className="text-xs text-gray-500 mt-1">
+                      Security requirement: Your email domain must match your company website domain
+                    </p>
                   </div>
 
                   <div>
