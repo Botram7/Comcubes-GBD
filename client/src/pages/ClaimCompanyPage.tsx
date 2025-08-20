@@ -110,7 +110,17 @@ export default function ClaimCompanyPage() {
 
   const claimMutation = useMutation({
     mutationFn: async (data: ClaimFormData) => {
+      console.log("Data being sent to mutation:", data);
+      
       const formDataToSend = new FormData();
+      
+      // Debug: Log each field being appended
+      console.log("Appending fields:");
+      console.log("companyId:", data.companyId);
+      console.log("companyName:", data.companyName);
+      console.log("contactName:", data.contactName);
+      console.log("contactEmail:", data.contactEmail);
+      console.log("plan:", data.plan);
       
       // Append all required fields, even if empty (let backend validation handle it)
       formDataToSend.append('companyId', data.companyId || '');
@@ -124,6 +134,12 @@ export default function ClaimCompanyPage() {
       
       if (data.logoImage) {
         formDataToSend.append('logoImage', data.logoImage);
+      }
+
+      // Debug: Log FormData contents
+      console.log("FormData contents:");
+      for (let [key, value] of formDataToSend.entries()) {
+        console.log(key, value);
       }
 
       return apiRequest("POST", "/api/company-claims", formDataToSend);
@@ -177,6 +193,12 @@ export default function ClaimCompanyPage() {
   const handleSubmit = () => {
     // Debug log to see what data we're trying to submit
     console.log("Form data being submitted:", formData);
+    console.log("Individual fields:");
+    console.log("companyId:", formData.companyId);
+    console.log("companyName:", formData.companyName);
+    console.log("contactName:", formData.contactName);
+    console.log("contactEmail:", formData.contactEmail);
+    console.log("plan:", formData.plan);
 
     if (!formData.contactName || !formData.contactEmail || !formData.companyDescription) {
       toast({
