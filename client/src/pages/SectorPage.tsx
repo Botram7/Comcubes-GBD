@@ -41,6 +41,12 @@ export default function SectorPage() {
     setSearchResults(results);
   };
 
+  const handleCompanyClick = (company: any) => {
+    if (company.websiteUrl) {
+      window.open(company.websiteUrl, '_blank');
+    }
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50">
@@ -219,7 +225,8 @@ export default function SectorPage() {
                 <BusinessGrid 
                   items={searchResults.companies} 
                   type="company" 
-                  onItemClick={handleCompanyClick} 
+                  onItemClick={handleCompanyClick}
+                  showClaimButtons={true}
                 />
               </div>
             )}

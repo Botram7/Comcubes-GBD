@@ -1,16 +1,29 @@
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { getImageForEntity } from "@/lib/constants";
 import { useLocation } from "wouter";
+import { Crown, ExternalLink } from "lucide-react";
 import type { Sector, Industry, Company } from "@/lib/types";
 
 interface BusinessGridProps {
   items: (Sector | Industry | Company)[];
   type: 'sector' | 'industry' | 'company';
   onItemClick: (item: Sector | Industry | Company) => void;
+  showClaimButtons?: boolean;
 }
 
-export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
+export function BusinessGrid({ items, type, onItemClick, showClaimButtons = false }: BusinessGridProps) {
   const [, setLocation] = useLocation();
+
+  const handleClaimClick = (e: React.MouseEvent, company: Company) => {
+    e.stopPropagation();
+    const searchParams = new URLSearchParams({
+      companyId: company.id.toString(),
+      companyName: company.name,
+      industryName: company.industryName
+    });
+    setLocation(`/claim-company?${searchParams.toString()}`);
+  };
   // Function to get colorful gradient for company cards
   const getCompanyCardGradient = (index: number): string => {
     const gradients = [
@@ -71,6 +84,34 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
           {type === 'company' ? (
             /* Colorful gradient cards for companies */
             <div className={`absolute inset-0 ${getCompanyCardGradient(index)}`}>
+              {/* Claim button for existing companies */}
+              {showClaimButtons && item.id !== -1 && (
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  className="absolute top-2 right-2 z-10 h-6 px-2 text-xs bg-yellow-400 hover:bg-yellow-500 text-yellow-900 border border-yellow-500"
+                  onClick={(e) => handleClaimClick(e, item as Company)}
+                >
+                  <Crown className="h-3 w-3 mr-1" />
+                  Claim
+                </Button>
+              )}
+
+              {/* Website link for companies with URLs */}
+              {(item as Company).websiteUrl && item.id !== -1 && (
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  className="absolute top-2 left-2 z-10 h-6 px-2 text-xs bg-white/20 hover:bg-white/30 text-white border border-white/30"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open((item as Company).websiteUrl!, '_blank');
+                  }}
+                >
+                  <ExternalLink className="h-3 w-3" />
+                </Button>
+              )}
+
               {/* Text positioned at bottom center */}
               <div className="absolute inset-0 flex items-end justify-center">
                 <div className="text-center text-white p-3 pb-4">
@@ -78,9 +119,13 @@ export function BusinessGrid({ items, type, onItemClick }: BusinessGridProps) {
                     {item.name}
                   </h3>
                   <p className="text-xs opacity-90 font-medium">
-                    {(item as Company).websiteUrl && item.id !== -1
+                    {item.id === -1 
+                      ? 'Get Listed'
+                      : showClaimButtons
+                      ? 'Click to claim or visit'
+                      : (item as Company).websiteUrl
                       ? 'Visit Website'
-                      : 'Get Listed'
+                      : 'View Details'
                     }
                   </p>
                   {item.id === -1 && (
