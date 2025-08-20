@@ -1,4 +1,4 @@
-import { pgTable, text, integer, timestamp, json, varchar, serial } from 'drizzle-orm/pg-core';
+import { pgTable, text, integer, timestamp, json, varchar, serial, boolean } from 'drizzle-orm/pg-core';
 import { createInsertSchema, createSelectSchema } from 'drizzle-zod';
 import { z } from 'zod';
 
@@ -79,6 +79,10 @@ export const companyClaims = pgTable('company_claims', {
   adminNotes: text('admin_notes'),
   submittedAt: timestamp('submitted_at').defaultNow().notNull(),
   processedAt: timestamp('processed_at'),
+  emailVerified: boolean('email_verified').default(false).notNull(),
+  verificationCode: text('verification_code'),
+  verificationSentAt: timestamp('verification_sent_at'),
+  verificationExpiresAt: timestamp('verification_expires_at'),
 });
 
 // Type exports
