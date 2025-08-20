@@ -47,8 +47,10 @@ export interface IStorage {
   createCompanyClaim(claim: InsertCompanyClaim): Promise<CompanyClaim>;
   getCompanyClaim(id: number): Promise<CompanyClaim | undefined>;
   getCompanyClaims(status?: string): Promise<CompanyClaim[]>;
+  getAllCompanyClaims(): Promise<CompanyClaim[]>;
   updateCompanyClaimStatus(id: number, status: string, adminNotes?: string): Promise<CompanyClaim | undefined>;
   getCompanyClaimStats(): Promise<any>;
+  getPendingClaimsCount(): Promise<number>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -445,13 +447,16 @@ export class DatabaseStorage implements IStorage {
         l => new Date(l.submittedAt) >= sevenDaysAgo
       ).length;
 
+      const pendingClaims = await this.getPendingClaimsCount();
+
       return {
         totalCompanies: totalCompanies.length,
         pendingListings: pendingListings.length,
         totalWaitlistEntries: allWaitlist.length,
         industriesAtCapacity: industriesAtCapacity,
         recentSubmissions,
-        completedPayments: completedPayments.length
+        completedPayments: completedPayments.length,
+        pendingClaims
       };
     } catch (error) {
       console.error('Error getting admin stats:', error);
@@ -461,7 +466,8 @@ export class DatabaseStorage implements IStorage {
         totalWaitlistEntries: 0,
         industriesAtCapacity: 0,
         recentSubmissions: 0,
-        completedPayments: 0
+        completedPayments: 0,
+        pendingClaims: 0
       };
     }
   }
@@ -498,6 +504,17 @@ export class DatabaseStorage implements IStorage {
       return db.select().from(companyClaims).where(eq(companyClaims.status, status));
     }
     return db.select().from(companyClaims);
+  }
+
+  async getAllCompanyClaims(): Promise<CompanyClaim[]> {
+    await this.initialize();
+    return db.select().from(companyClaims);
+  }
+
+  async getPendingClaimsCount(): Promise<number> {
+    await this.initialize();
+    const pendingClaims = await db.select().from(companyClaims).where(eq(companyClaims.status, 'pending'));
+    return pendingClaims.length;
   }
 
   async updateCompanyClaimStatus(id: number, status: string, adminNotes?: string): Promise<CompanyClaim | undefined> {

@@ -487,6 +487,45 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
+  // Admin company claims endpoints
+  app.get('/api/admin/company-claims', async (req, res) => {
+    try {
+      const claims = await storage.getAllCompanyClaims();
+      res.json(claims);
+    } catch (error) {
+      console.error('Error fetching company claims:', error);
+      res.status(500).json({ error: 'Failed to fetch company claims' });
+    }
+  });
+
+  app.post('/api/admin/company-claims/:id/approve', async (req, res) => {
+    try {
+      const claimId = parseInt(req.params.id);
+      await storage.updateCompanyClaimStatus(claimId, 'approved');
+      
+      // TODO: Send payment instructions email
+      
+      res.json({ message: 'Company claim approved successfully' });
+    } catch (error) {
+      console.error('Error approving company claim:', error);
+      res.status(500).json({ error: 'Failed to approve company claim' });
+    }
+  });
+
+  app.post('/api/admin/company-claims/:id/reject', async (req, res) => {
+    try {
+      const claimId = parseInt(req.params.id);
+      await storage.updateCompanyClaimStatus(claimId, 'rejected');
+      
+      // TODO: Send rejection notification email
+      
+      res.json({ message: 'Company claim rejected successfully' });
+    } catch (error) {
+      console.error('Error rejecting company claim:', error);
+      res.status(500).json({ error: 'Failed to reject company claim' });
+    }
+  });
+
   // Admin endpoint to contact waitlist entry
   app.post('/api/admin/waitlist/:id/contact', async (req, res) => {
     try {

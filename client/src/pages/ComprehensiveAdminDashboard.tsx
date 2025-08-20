@@ -97,6 +97,26 @@ interface AdminStats {
   industriesAtCapacity: number;
   recentSubmissions: number;
   completedPayments: number;
+  pendingClaims?: number;
+}
+
+interface CompanyClaim {
+  id: number;
+  companyId: number;
+  companyName: string;
+  contactName: string;
+  contactEmail: string;
+  contactPhone: string;
+  websiteUrl: string;
+  companyDescription: string;
+  logoImagePath?: string;
+  logoImageOriginalName?: string;
+  plan: 'basic' | 'premium' | 'enterprise';
+  status: 'pending' | 'approved' | 'rejected' | 'completed';
+  emailVerified: boolean;
+  submittedAt: string;
+  processedAt?: string;
+  adminNotes?: string;
 }
 
 export default function ComprehensiveAdminDashboard() {
@@ -117,6 +137,59 @@ export default function ComprehensiveAdminDashboard() {
     queryFn: async () => {
       const response = await apiRequest('GET', '/api/admin/waitlist');
       return response.json();
+    },
+  });
+
+  const { data: companyClaims, isLoading: claimsLoading } = useQuery({
+    queryKey: ['/api/admin/company-claims'],
+    queryFn: async () => {
+      const response = await apiRequest('GET', '/api/admin/company-claims');
+      return response.json();
+    },
+  });
+
+  // Mutations for company claims
+  const approveClaimMutation = useMutation({
+    mutationFn: async (claimId: number) => {
+      const response = await apiRequest('POST', `/api/admin/company-claims/${claimId}/approve`);
+      return response.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/company-claims'] });
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/stats'] });
+      toast({
+        title: "Success",
+        description: "Company claim approved successfully",
+      });
+    },
+    onError: (error) => {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to approve claim",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const rejectClaimMutation = useMutation({
+    mutationFn: async (claimId: number) => {
+      const response = await apiRequest('POST', `/api/admin/company-claims/${claimId}/reject`);
+      return response.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/company-claims'] });
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/stats'] });
+      toast({
+        title: "Success",
+        description: "Company claim rejected successfully",
+      });
+    },
+    onError: (error) => {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to reject claim",
+        variant: "destructive",
+      });
     },
   });
 
@@ -266,13 +339,13 @@ export default function ComprehensiveAdminDashboard() {
 
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-sm font-medium">Pending Approvals</CardTitle>
+          <CardTitle className="text-sm font-medium">Pending Claims</CardTitle>
           <Clock className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">{adminStats?.pendingListings || 0}</div>
+          <div className="text-2xl font-bold">{adminStats?.pendingClaims || 0}</div>
           <p className="text-xs text-muted-foreground">
-            Awaiting review
+            Company claims awaiting review
           </p>
         </CardContent>
       </Card>
@@ -585,6 +658,210 @@ export default function ComprehensiveAdminDashboard() {
     </div>
   );
 
+  const renderCompanyClaimsTab = () => (
+    <div className="space-y-6">
+      {/* Search and Filters */}
+      <div className="flex gap-4 items-center">
+        <div className="flex-1">
+          <div className="relative">
+            <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+            <Input
+              placeholder="Search company names, contact emails..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-8"
+            />
+          </div>
+        </div>
+        
+        <Select value={statusFilter} onValueChange={setStatusFilter}>
+          <SelectTrigger className="w-[150px]">
+            <SelectValue placeholder="Claim Status" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Status</SelectItem>
+            <SelectItem value="pending">Pending</SelectItem>
+            <SelectItem value="approved">Approved</SelectItem>
+            <SelectItem value="rejected">Rejected</SelectItem>
+            <SelectItem value="completed">Completed</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* Claims Table */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Company Claims</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {claimsLoading ? (
+            <div className="flex items-center justify-center p-8">
+              <div className="animate-spin w-6 h-6 border-2 border-primary border-t-transparent rounded-full" />
+            </div>
+          ) : (
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Company</TableHead>
+                  <TableHead>Contact</TableHead>
+                  <TableHead>Plan</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Submitted</TableHead>
+                  <TableHead>Actions</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {(companyClaims || []).filter((claim: CompanyClaim) => {
+                  const matchesSearch = claim.companyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                       claim.contactEmail.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                       claim.contactName.toLowerCase().includes(searchTerm.toLowerCase());
+                  const matchesStatus = statusFilter === 'all' || claim.status === statusFilter;
+                  return matchesSearch && matchesStatus;
+                }).map((claim: CompanyClaim) => (
+                  <TableRow key={claim.id}>
+                    <TableCell>
+                      <div>
+                        <div className="font-medium">{claim.companyName}</div>
+                        <div className="text-sm text-muted-foreground">
+                          ID: {claim.companyId}
+                        </div>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div>
+                        <div className="font-medium">{claim.contactName}</div>
+                        <div className="text-sm text-muted-foreground">{claim.contactEmail}</div>
+                        {claim.contactPhone && (
+                          <div className="text-sm text-muted-foreground">{claim.contactPhone}</div>
+                        )}
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <Badge variant={claim.plan === 'premium' ? 'default' : 'secondary'}>
+                        {claim.plan.charAt(0).toUpperCase() + claim.plan.slice(1)}
+                      </Badge>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex flex-col gap-1">
+                        <Badge 
+                          variant={
+                            claim.status === 'approved' ? 'default' :
+                            claim.status === 'rejected' ? 'destructive' :
+                            claim.status === 'completed' ? 'default' :
+                            'secondary'
+                          }
+                        >
+                          {claim.status.charAt(0).toUpperCase() + claim.status.slice(1)}
+                        </Badge>
+                        {claim.emailVerified && (
+                          <Badge variant="outline" className="text-xs">
+                            ✓ Verified
+                          </Badge>
+                        )}
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="text-sm">
+                        {formatDate(claim.submittedAt)}
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex gap-2">
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button variant="outline" size="sm">
+                              <Eye className="h-4 w-4" />
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-2xl">
+                            <DialogHeader>
+                              <DialogTitle>Company Claim Details</DialogTitle>
+                            </DialogHeader>
+                            <div className="space-y-4">
+                              <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                  <strong>Company:</strong> {claim.companyName}
+                                </div>
+                                <div>
+                                  <strong>Plan:</strong> {claim.plan}
+                                </div>
+                                <div>
+                                  <strong>Contact:</strong> {claim.contactName}
+                                </div>
+                                <div>
+                                  <strong>Email:</strong> {claim.contactEmail}
+                                </div>
+                                <div>
+                                  <strong>Phone:</strong> {claim.contactPhone}
+                                </div>
+                                <div>
+                                  <strong>Website:</strong> 
+                                  <a href={claim.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">
+                                    {claim.websiteUrl} <ExternalLink className="h-3 w-3 inline" />
+                                  </a>
+                                </div>
+                              </div>
+                              <div>
+                                <strong>Description:</strong>
+                                <p className="mt-1 text-sm">{claim.companyDescription}</p>
+                              </div>
+                              {claim.logoImagePath && (
+                                <div>
+                                  <strong>Logo:</strong>
+                                  <img 
+                                    src={`/uploads/${claim.logoImagePath}`} 
+                                    alt="Company Logo"
+                                    className="mt-2 w-20 h-20 object-cover border rounded"
+                                  />
+                                </div>
+                              )}
+                              {claim.adminNotes && (
+                                <div>
+                                  <strong>Admin Notes:</strong>
+                                  <p className="mt-1 text-sm bg-gray-50 p-2 rounded">{claim.adminNotes}</p>
+                                </div>
+                              )}
+                            </div>
+                          </DialogContent>
+                        </Dialog>
+
+                        {claim.status === 'pending' && (
+                          <>
+                            <Button
+                              size="sm"
+                              onClick={() => approveClaimMutation.mutate(claim.id)}
+                              disabled={approveClaimMutation.isPending}
+                            >
+                              <Check className="h-4 w-4" />
+                            </Button>
+                            <Button
+                              size="sm"
+                              variant="destructive"
+                              onClick={() => rejectClaimMutation.mutate(claim.id)}
+                              disabled={rejectClaimMutation.isPending}
+                            >
+                              <X className="h-4 w-4" />
+                            </Button>
+                          </>
+                        )}
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          )}
+          
+          {!claimsLoading && (!companyClaims || companyClaims.length === 0) && (
+            <div className="text-center py-8 text-muted-foreground">
+              No company claims found.
+            </div>
+          )}
+        </CardContent>
+      </Card>
+    </div>
+  );
+
   const renderAnalyticsTab = () => (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -669,10 +946,19 @@ export default function ComprehensiveAdminDashboard() {
 
         {/* Main Content Tabs */}
         <Tabs defaultValue="listings" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="listings" className="flex items-center gap-2">
               <Building2 className="h-4 w-4" />
               Company Listings
+            </TabsTrigger>
+            <TabsTrigger value="claims" className="flex items-center gap-2">
+              <AlertCircle className="h-4 w-4" />
+              Company Claims
+              {(adminStats?.pendingClaims || 0) > 0 && (
+                <Badge variant="destructive" className="ml-1 text-xs px-1 py-0 h-4 w-4 rounded-full">
+                  {adminStats.pendingClaims}
+                </Badge>
+              )}
             </TabsTrigger>
             <TabsTrigger value="waitlist" className="flex items-center gap-2">
               <Users className="h-4 w-4" />
@@ -690,6 +976,10 @@ export default function ComprehensiveAdminDashboard() {
 
           <TabsContent value="listings">
             {renderCompanyListingsTab()}
+          </TabsContent>
+
+          <TabsContent value="claims">
+            {renderCompanyClaimsTab()}
           </TabsContent>
 
           <TabsContent value="waitlist">
