@@ -20,6 +20,35 @@ const upload = multer({
   }
 });
 
+// Domain validation helper functions
+function getExpectedDomain(websiteUrl: string): string | null {
+  if (!websiteUrl) return null;
+  try {
+    const url = new URL(websiteUrl.startsWith('http') ? websiteUrl : `https://${websiteUrl}`);
+    let domain = url.hostname.toLowerCase();
+    // Remove www. prefix if present
+    if (domain.startsWith('www.')) {
+      domain = domain.substring(4);
+    }
+    return domain;
+  } catch {
+    return null;
+  }
+}
+
+function isValidBusinessEmail(email: string, websiteUrl: string): boolean {
+  if (!email || !websiteUrl) return false;
+  
+  const expectedDomain = getExpectedDomain(websiteUrl);
+  if (!expectedDomain) return false;
+  
+  const emailDomain = email.split('@')[1]?.toLowerCase();
+  if (!emailDomain) return false;
+  
+  // Allow exact domain match or subdomains
+  return emailDomain === expectedDomain || emailDomain.endsWith(`.${expectedDomain}`);
+}
+
 const claimFormSchema = z.object({
   companyId: z.string(),
   companyName: z.string().min(1, "Company name is required"),
@@ -36,6 +65,14 @@ export function registerCompanyClaimRoutes(app: Express) {
   app.post("/api/company-claims", upload.single('logoImage'), async (req, res) => {
     try {
       const validatedData = claimFormSchema.parse(req.body);
+      
+      // Validate business email domain matches website domain for security
+      if (!isValidBusinessEmail(validatedData.contactEmail, validatedData.websiteUrl || '')) {
+        const expectedDomain = getExpectedDomain(validatedData.websiteUrl || '');
+        return res.status(400).json({
+          error: `For security verification, business email must use your company domain${expectedDomain ? ` (@${expectedDomain})` : ''}. This prevents unauthorized claims.`
+        });
+      }
       
       const claimData = {
         ...validatedData,

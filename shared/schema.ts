@@ -59,7 +59,7 @@ export const industryWaitlist = pgTable('industry_waitlist', {
   description: text('description'),
   logoUrl: text('logo_url'),
   submittedAt: timestamp('submitted_at').defaultNow().notNull(),
-  notified: timestamp('notified').default(null),
+  notified: timestamp('notified'),
 });
 
 // Company Claims table (for claiming existing company listings)
