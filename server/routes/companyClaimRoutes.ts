@@ -100,6 +100,10 @@ export function registerCompanyClaimRoutes(app: Express) {
   // Submit company claim
   app.post("/api/company-claims", upload.single('logoImage'), async (req, res) => {
     try {
+      console.log("Raw request body:", req.body);
+      console.log("Request headers:", req.headers);
+      console.log("File uploaded:", req.file);
+      
       const validatedData = claimFormSchema.parse(req.body);
       
       // Validate business email domain matches website domain for security
