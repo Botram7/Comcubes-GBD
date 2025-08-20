@@ -111,11 +111,16 @@ export default function ClaimCompanyPage() {
   const claimMutation = useMutation({
     mutationFn: async (data: ClaimFormData) => {
       const formDataToSend = new FormData();
-      Object.entries(data).forEach(([key, value]) => {
-        if (key !== 'logoImage' && value) {
-          formDataToSend.append(key, value.toString());
-        }
-      });
+      
+      // Append all required fields, even if empty (let backend validation handle it)
+      formDataToSend.append('companyId', data.companyId || '');
+      formDataToSend.append('companyName', data.companyName || '');
+      formDataToSend.append('contactName', data.contactName || '');
+      formDataToSend.append('contactEmail', data.contactEmail || '');
+      formDataToSend.append('contactPhone', data.contactPhone || '');
+      formDataToSend.append('websiteUrl', data.websiteUrl || '');
+      formDataToSend.append('companyDescription', data.companyDescription || '');
+      formDataToSend.append('plan', data.plan || '');
       
       if (data.logoImage) {
         formDataToSend.append('logoImage', data.logoImage);
@@ -170,6 +175,9 @@ export default function ClaimCompanyPage() {
   };
 
   const handleSubmit = () => {
+    // Debug log to see what data we're trying to submit
+    console.log("Form data being submitted:", formData);
+
     if (!formData.contactName || !formData.contactEmail || !formData.companyDescription) {
       toast({
         title: "Missing Information",
