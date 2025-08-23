@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { SearchBar } from '@/components/SearchBar';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { BannerAd } from '@/components/BannerAd';
+import { BusinessGrid } from '@/components/BusinessGrid';
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import type { SearchResults } from "@/lib/types";
 
@@ -119,20 +120,70 @@ export default function SearchPage() {
 
         {/* Main Content */}
         <div className="flex-1">
-          {/* Hero Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900  mb-4">
-              Advanced Business Search
-            </h1>
-            <p className="text-xl text-gray-600  mb-8 max-w-3xl mx-auto">
-              Discover companies, industries, and business sectors worldwide with our enhanced search capabilities. Search locally across 8,000+ companies or globally via Google Custom Search.
-            </p>
-            
-            {/* Enhanced Search Component */}
-            <EnhancedSearch />
-          </div>
+          {searchResults ? (
+            /* Search Results Display */
+            <div className="space-y-8">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-gray-900">Search Results</h2>
+                <p className="text-gray-600 mt-2">
+                  Found {searchResults.sectors.length + searchResults.industries.length + searchResults.companies.length} results
+                </p>
+              </div>
 
-          {/* Quick Search Options */}
+              {searchResults.sectors.length > 0 && (
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">Sectors</h3>
+                  <BusinessGrid 
+                    items={searchResults.sectors} 
+                    type="sector" 
+                    onItemClick={(sector) => setLocation(`/sector/${encodeURIComponent(sector.name)}`)} 
+                  />
+                </div>
+              )}
+
+              {searchResults.industries.length > 0 && (
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">Industries</h3>
+                  <BusinessGrid 
+                    items={searchResults.industries} 
+                    type="industry" 
+                    onItemClick={(industry) => setLocation(`/industry/${encodeURIComponent(industry.name)}`)} 
+                  />
+                </div>
+              )}
+
+              {searchResults.companies.length > 0 && (
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">Companies</h3>
+                  <BusinessGrid 
+                    items={searchResults.companies} 
+                    type="company" 
+                    onItemClick={(company) => {
+                      if ((company as any).websiteUrl) {
+                        window.open((company as any).websiteUrl, '_blank');
+                      }
+                    }} 
+                    showClaimButtons={true}
+                  />
+                </div>
+              )}
+            </div>
+          ) : (
+            <>
+              {/* Hero Section */}
+              <div className="text-center mb-12">
+                <h1 className="text-4xl font-bold text-gray-900  mb-4">
+                  Advanced Business Search
+                </h1>
+                <p className="text-xl text-gray-600  mb-8 max-w-3xl mx-auto">
+                  Discover companies, industries, and business sectors worldwide with our enhanced search capabilities. Search locally across 8,000+ companies or globally via Google Custom Search.
+                </p>
+                
+                {/* Enhanced Search Component */}
+                <EnhancedSearch />
+              </div>
+
+              {/* Quick Search Options */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Popular Searches */}
             <Card>
@@ -300,7 +351,9 @@ export default function SearchPage() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+              </Card>
+            </>
+          )}
         </div>
 
         {/* Right Sidebar - Banner Ad */}
