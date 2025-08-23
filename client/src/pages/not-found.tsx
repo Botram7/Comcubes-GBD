@@ -1,9 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
+      <SEOHead 
+        title="Page Not Found - COMCUBES Global Business Directory"
+        description="The page you're looking for doesn't exist. Return to COMCUBES global business directory to continue exploring companies, industries, and business sectors."
+        keywords={["404", "page not found", "error page", "missing page"]}
+        canonicalUrl={`${window.location.origin}/not-found`}
+      />
       <Card className="w-full max-w-md mx-4">
         <CardContent className="pt-6">
           <div className="flex mb-4 gap-2">

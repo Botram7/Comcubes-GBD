@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { LogoFetchingPanel } from '@/components/LogoFetchingPanel';
 import { FallbackIconPreview } from '@/components/FallbackIconPreview';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { SEOHead } from '@/components/SEOHead';
+import { SEOAnalyzer } from '@/components/SEOAnalyzer';
 import { useQuery } from "@tanstack/react-query";
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 
@@ -22,6 +24,16 @@ export default function LogoManagementPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead 
+        title="Logo Management System - COMCUBES Admin"
+        description="Manage company logos across the COMCUBES directory. Administrative system for logo fetching, trademark compliance, and visual brand management."
+        keywords={[
+          "logo management", "trademark management", "company logos", "brand management",
+          "admin system", "logo fetching", "brand compliance", "visual identity"
+        ]}
+        canonicalUrl={`${window.location.origin}/logo-management`}
+        ogType="website"
+      />
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

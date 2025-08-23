@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { AlertCircle, CreditCard, Clock, CheckCircle } from 'lucide-react';
+import { SEOHead } from '@/components/SEOHead';
+import { SEOAnalyzer } from '@/components/SEOAnalyzer';
 import { apiRequest } from '@/lib/queryClient';
 
 interface PendingListing {
@@ -57,6 +59,15 @@ export default function ResumePaymentPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
+      <SEOHead 
+        title="Resume Payment - COMCUBES Company Listing"
+        description="Complete your pending company listing payment. Secure and easy payment processing for your business directory submission on COMCUBES."
+        keywords={[
+          "resume payment", "complete payment", "company listing payment", "business directory payment",
+          "pending payment", "payment processing", "secure payment", "listing fee"
+        ]}
+        canonicalUrl={`${window.location.origin}/resume-payment`}
+      />
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Resume Your Payment</h1>

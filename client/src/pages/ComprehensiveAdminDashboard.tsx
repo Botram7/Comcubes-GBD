@@ -911,6 +911,17 @@ export default function ComprehensiveAdminDashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
+      <SEOHead 
+        title="Admin Dashboard - COMCUBES Management Portal"
+        description="Comprehensive administrative dashboard for managing COMCUBES global business directory. Monitor company listings, manage waitlists, and track industry statistics."
+        keywords={[
+          "admin dashboard", "management portal", "directory administration", "business management",
+          "company listings management", "administrative tools", "directory management",
+          "business analytics", "admin panel"
+        ]}
+        canonicalUrl={`${window.location.origin}/admin`}
+        ogType="website"
+      />
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

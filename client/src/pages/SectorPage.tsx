@@ -136,6 +136,21 @@ export default function SectorPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
+      <SEOHead 
+        title={`${decodedSectorName} Industries & Companies | COMCUBES Global Directory`}
+        description={`Explore specialized industries within ${decodedSectorName} sector. Discover top companies, industry leaders, and business opportunities in ${decodedSectorName}. Browse ${industries?.length || 20} industries now.`}
+        keywords={[
+          `${decodedSectorName.toLowerCase()} sector`, `${decodedSectorName.toLowerCase()} industries`, `${decodedSectorName.toLowerCase()} companies`,
+          `${decodedSectorName.toLowerCase()} business`, `${decodedSectorName.toLowerCase()} directory`, "sector industries",
+          "business sectors", "industry listings", "company directory", "business listings"
+        ]}
+        canonicalUrl={`${window.location.origin}/sector/${encodeURIComponent(decodedSectorName)}`}
+        structuredData={createBreadcrumbStructuredData([
+          { name: "Home", url: `${window.location.origin}/` },
+          { name: "Business Sectors", url: `${window.location.origin}/sectors` },
+          { name: decodedSectorName, url: `${window.location.origin}/sector/${encodeURIComponent(decodedSectorName)}` }
+        ])}
+      />
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">

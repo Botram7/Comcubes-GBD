@@ -5,6 +5,8 @@ import { z } from 'zod';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { Building, Upload, CreditCard, ArrowLeft, CheckCircle, Globe, Mail, Phone, Users, Clock } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
+import { SEOHead } from '@/components/SEOHead';
+import { SEOAnalyzer } from '@/components/SEOAnalyzer';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -508,6 +510,16 @@ export default function CompanyListingPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
+      <SEOHead 
+        title="List Your Company - COMCUBES Global Business Directory"
+        description="Submit your company for inclusion in COMCUBES global business directory. Reach thousands of potential customers and partners worldwide with our professional listing service."
+        keywords={[
+          "company listing", "business registration", "submit company", "business directory listing",
+          "company submission", "business promotion", "directory inclusion", "company marketing",
+          "business visibility", "company advertising"
+        ]}
+        canonicalUrl={`${window.location.origin}/company-listing`}
+      />
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
