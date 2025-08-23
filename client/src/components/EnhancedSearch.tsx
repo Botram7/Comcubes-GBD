@@ -73,159 +73,95 @@ export function EnhancedSearch() {
     queryKey: ['/api/industries'],
   });
 
-  const { data: companiesData } = useQuery({
-    queryKey: ['/api/companies'],
+  // Use the same API search as the working header SearchBar
+  const { data: apiSearchResults, isLoading: isApiSearching } = useQuery({
+    queryKey: ['/api/search', searchQuery],
+    enabled: searchQuery.length >= 2,
+    staleTime: 30000,
   });
 
   const industries = (industriesData as any)?.industries || [];
-  const companies = (companiesData as any)?.companies || [];
 
-  // Enhanced search functionality
-  const performSearch = async () => {
-    if (!searchQuery.trim()) {
+  // Process API search results and apply filters
+  useEffect(() => {
+    if (!searchQuery.trim() || searchQuery.length < 2) {
       setSearchResults([]);
+      setIsSearching(false);
       return;
     }
 
-    setIsSearching(true);
-    
-    try {
-      const query = searchQuery.toLowerCase();
-      let allResults: SearchResult[] = [];
+    setIsSearching(isApiSearching);
 
-      if (filters.searchScope === 'local') {
-        // Local search only
-        allResults = performLocalSearch(query);
-      } else {
-        // Global search using both local and external sources
-        const response = await fetch(`/api/search/global?q=${encodeURIComponent(searchQuery)}&max=20`);
-        const globalData = await response.json();
-        
-        // Combine local and external results
-        const localResults = performLocalSearch(query);
-        
-        // Add external Google results
-        const externalResults: SearchResult[] = globalData.external?.map((business: any, index: number) => ({
-          id: business.id,
-          name: business.name,
-          type: 'company' as const,
-          website: business.website,
-          description: business.description,
-          country: business.country,
-          region: business.region,
-          sector: 'External Business', // Will be categorized later
-          industry: 'Various Industries'
-        })) || [];
-        
-        allResults = [...localResults, ...externalResults];
-      }
-
-      // Sort results by relevance
-      const sortedResults = allResults.sort((a, b) => {
-        const aExact = a.name.toLowerCase() === query;
-        const bExact = b.name.toLowerCase() === query;
-        if (aExact && !bExact) return -1;
-        if (!aExact && bExact) return 1;
-        
-        const aStarts = a.name.toLowerCase().startsWith(query);
-        const bStarts = b.name.toLowerCase().startsWith(query);
-        if (aStarts && !bStarts) return -1;
-        if (!aStarts && bStarts) return 1;
-        
-        return a.name.localeCompare(b.name);
-      });
-
-      setSearchResults(sortedResults.slice(0, 50)); // Limit to 50 results
-    } catch (error) {
-      console.error('Search error:', error);
-      // Fallback to local search
-      const localResults = performLocalSearch(searchQuery.toLowerCase());
-      setSearchResults(localResults.slice(0, 50));
-    }
-    
-    setIsSearching(false);
-  };
-
-  const performLocalSearch = (query: string): SearchResult[] => {
-    const results: SearchResult[] = [];
-
-    // Search sectors
-    (sectors as any[]).forEach((sector: any) => {
-      if (sector.name.toLowerCase().includes(query)) {
-        results.push({
+    if (apiSearchResults) {
+      const allResults: SearchResult[] = [];
+      
+      // Add sectors
+      ((apiSearchResults as any)?.sectors || []).forEach((sector: any) => {
+        allResults.push({
           id: sector.id,
           name: sector.name,
           type: 'sector',
           sector: sector.name
         });
-      }
-    });
-
-    // Search industries
-    industries.forEach((industry: any) => {
-      if (industry.name.toLowerCase().includes(query)) {
-        // Apply sector filter if selected
-        if (filters.sectors.length === 0 || filters.sectors.includes(industry.sectorName)) {
-          results.push({
-            id: industry.id,
-            name: industry.name,
-            type: 'industry',
-            sector: industry.sectorName,
-            industry: industry.name
-          });
-        }
-      }
-    });
-
-    // Search companies
-    companies.forEach((company: any) => {
-      if (company.name.toLowerCase().includes(query) || 
-          (company.websiteUrl && company.websiteUrl.toLowerCase().includes(query))) {
-        // Apply filters
-        let includeResult = true;
-        
-        if (filters.sectors.length > 0 && !filters.sectors.includes(company.sectorName)) {
-          includeResult = false;
-        }
-        
-        if (filters.industries.length > 0 && !filters.industries.includes(company.industryName)) {
-          includeResult = false;
-        }
-
-        // Geographic filters (using estimated data)
-        const estimatedCountry = estimateCompanyCountry(company.websiteUrl);
-        const estimatedRegion = getRegionFromCountry(estimatedCountry);
-        
-        if (filters.countries.length > 0 && !filters.countries.includes(estimatedCountry)) {
-          includeResult = false;
+      });
+      
+      // Add industries
+      ((apiSearchResults as any)?.industries || []).forEach((industry: any) => {
+        allResults.push({
+          id: industry.id,
+          name: industry.name,
+          type: 'industry',
+          sector: industry.sectorName,
+          industry: industry.name
+        });
+      });
+      
+      // Add companies
+      ((apiSearchResults as any)?.companies || []).forEach((company: any) => {
+        allResults.push({
+          id: company.id,
+          name: company.name,
+          type: 'company',
+          sector: company.sectorName,
+          industry: company.industryName,
+          website: company.websiteUrl,
+          country: estimateCompanyCountry(company.websiteUrl),
+          region: getRegionFromCountry(estimateCompanyCountry(company.websiteUrl))
+        });
+      });
+      
+      // Apply filters
+      const filteredResults = allResults.filter(result => {
+        // Sector filter
+        if (filters.sectors.length > 0 && !filters.sectors.includes(result.sector || '')) {
+          return false;
         }
         
-        if (filters.regions.length > 0 && !filters.regions.includes(estimatedRegion)) {
-          includeResult = false;
+        // Industry filter
+        if (filters.industries.length > 0 && !filters.industries.includes(result.industry || '')) {
+          return false;
         }
-
-        if (includeResult) {
-          results.push({
-            id: company.id,
-            name: company.name,
-            type: 'company',
-            sector: company.sectorName,
-            industry: company.industryName,
-            website: company.websiteUrl,
-            country: estimatedCountry,
-            region: estimatedRegion
-          });
+        
+        // Country filter
+        if (filters.countries.length > 0 && !filters.countries.includes(result.country || '')) {
+          return false;
         }
-      }
-    });
+        
+        // Region filter
+        if (filters.regions.length > 0 && !filters.regions.includes(result.region || '')) {
+          return false;
+        }
+        
+        return true;
+      });
+      
+      setSearchResults(filteredResults.slice(0, 50));
+    }
+  }, [apiSearchResults, isApiSearching, searchQuery, filters]);
 
-    return results;
-  };
+  // Removed performLocalSearch function - now using API search directly
 
-  useEffect(() => {
-    const timeoutId = setTimeout(performSearch, 300);
-    return () => clearTimeout(timeoutId);
-  }, [searchQuery, sectors, industries, companies, filters]);
+  // No longer need the timeout-based search since we're using React Query
 
   // Helper functions
   const estimateCompanyCountry = (website: string): string => {
@@ -313,7 +249,7 @@ export function EnhancedSearch() {
                 )}
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-96 p-6" align="end" side="bottom" sideOffset={8} alignOffset={-50} avoidCollisions={true}>
+            <PopoverContent className="w-96 p-6" side="bottom" align="end" sideOffset={12} alignOffset={-100} avoidCollisions={true} collisionPadding={20}>
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h3 className="font-semibold">Search Filters</h3>
