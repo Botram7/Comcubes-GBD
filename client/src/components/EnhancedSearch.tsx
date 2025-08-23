@@ -249,7 +249,14 @@ export function EnhancedSearch() {
                 )}
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-96 p-6" side="bottom" align="end" sideOffset={12} alignOffset={-100} avoidCollisions={true} collisionPadding={20}>
+            <PopoverContent 
+              className="w-96 p-6" 
+              side="left" 
+              align="start" 
+              sideOffset={8}
+              avoidCollisions={true}
+              collisionPadding={20}
+            >
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h3 className="font-semibold">Search Filters</h3>
