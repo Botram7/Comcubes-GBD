@@ -165,12 +165,12 @@ export function EnhancedSearch() {
     industries.forEach((industry: any) => {
       if (industry.name.toLowerCase().includes(query)) {
         // Apply sector filter if selected
-        if (filters.sectors.length === 0 || filters.sectors.includes(industry.sector_name)) {
+        if (filters.sectors.length === 0 || filters.sectors.includes(industry.sectorName)) {
           results.push({
             id: industry.id,
             name: industry.name,
             type: 'industry',
-            sector: industry.sector_name,
+            sector: industry.sectorName,
             industry: industry.name
           });
         }
@@ -180,20 +180,20 @@ export function EnhancedSearch() {
     // Search companies
     companies.forEach((company: any) => {
       if (company.name.toLowerCase().includes(query) || 
-          (company.website && company.website.toLowerCase().includes(query))) {
+          (company.websiteUrl && company.websiteUrl.toLowerCase().includes(query))) {
         // Apply filters
         let includeResult = true;
         
-        if (filters.sectors.length > 0 && !filters.sectors.includes(company.sector_name)) {
+        if (filters.sectors.length > 0 && !filters.sectors.includes(company.sectorName)) {
           includeResult = false;
         }
         
-        if (filters.industries.length > 0 && !filters.industries.includes(company.industry_name)) {
+        if (filters.industries.length > 0 && !filters.industries.includes(company.industryName)) {
           includeResult = false;
         }
 
         // Geographic filters (using estimated data)
-        const estimatedCountry = estimateCompanyCountry(company.website);
+        const estimatedCountry = estimateCompanyCountry(company.websiteUrl);
         const estimatedRegion = getRegionFromCountry(estimatedCountry);
         
         if (filters.countries.length > 0 && !filters.countries.includes(estimatedCountry)) {
@@ -209,9 +209,9 @@ export function EnhancedSearch() {
             id: company.id,
             name: company.name,
             type: 'company',
-            sector: company.sector_name,
-            industry: company.industry_name,
-            website: company.website,
+            sector: company.sectorName,
+            industry: company.industryName,
+            website: company.websiteUrl,
             country: estimatedCountry,
             region: estimatedRegion
           });
@@ -313,7 +313,7 @@ export function EnhancedSearch() {
                 )}
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-96 p-6" align="end">
+            <PopoverContent className="w-96 p-6" align="end" side="bottom" sideOffset={8} alignOffset={-50} avoidCollisions={true}>
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h3 className="font-semibold">Search Filters</h3>
