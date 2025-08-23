@@ -228,6 +228,7 @@ export default function CompanyPage() {
                   items={searchResults.companies} 
                   type="company" 
                   onItemClick={handleCompanyClick} 
+                  showClaimButtons={true}
                 />
               </div>
             )}
@@ -241,7 +242,7 @@ export default function CompanyPage() {
               </p>
             </div>
 
-            <BusinessGrid items={companyData.companies || []} type="company" onItemClick={handleCompanyClick} />
+            <BusinessGrid items={companyData.companies || []} type="company" onItemClick={handleCompanyClick} showClaimButtons={true} />
 
             <Pagination 
               currentPage={currentPage}
