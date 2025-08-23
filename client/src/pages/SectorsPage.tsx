@@ -203,6 +203,7 @@ export default function SectorsPage() {
                           window.open((company as any).websiteUrl, '_blank');
                         }
                       }} 
+                      showClaimButtons={true}
                     />
                   </div>
                 )}
