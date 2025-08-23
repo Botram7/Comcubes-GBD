@@ -251,6 +251,7 @@ export default function IndustriesPage() {
                 <BusinessGrid 
                   items={searchResults.companies} 
                   type="company" 
+                  showClaimButtons={true}
                   onItemClick={(company) => {
                     if ((company as any).websiteUrl) {
                       window.open((company as any).websiteUrl, '_blank');
