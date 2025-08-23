@@ -75,6 +75,20 @@ export default function SearchPage() {
 
   return (
     <div className="min-h-screen bg-gray-50  font-inter ">
+      <SEOHead 
+        title="Advanced Business Search | Global Company & Industry Search | COMCUBES"
+        description="Search 8,000+ companies across 400+ industries with advanced filters. Find businesses by location, size, sector, and more with our global search technology."
+        keywords={[
+          "business search", "company search", "advanced search", "global business search",
+          "company finder", "business finder", "industry search", "company database search",
+          "business directory search", "enterprise search", "B2B search", "worldwide business search"
+        ]}
+        canonicalUrl={`${window.location.origin}/search`}
+        structuredData={createBreadcrumbStructuredData([
+          { name: "Home", url: `${window.location.origin}/` },
+          { name: "Advanced Search", url: `${window.location.origin}/search` }
+        ])}
+      />
       {/* Header - Consistent with other pages */}
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

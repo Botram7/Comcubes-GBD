@@ -103,6 +103,20 @@ export default function SectorsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50  font-inter ">
+      <SEOHead 
+        title="Business Sectors Directory | COMCUBES Global Business Directory"
+        description="Explore 20 major business sectors including Technology, Healthcare, Finance, Manufacturing, and more. Discover specialized industries within each sector worldwide."
+        keywords={[
+          "business sectors", "industry sectors", "business categories", "sector directory",
+          "technology sector", "healthcare sector", "finance sector", "manufacturing sector",
+          "business classification", "industry categories", "commercial sectors"
+        ]}
+        canonicalUrl={`${window.location.origin}/sectors`}
+        structuredData={createBreadcrumbStructuredData([
+          { name: "Home", url: `${window.location.origin}/` },
+          { name: "Business Sectors", url: `${window.location.origin}/sectors` }
+        ])}
+      />
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center py-4">

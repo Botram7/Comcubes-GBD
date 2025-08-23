@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Pagination } from "@/components/Pagination";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { SEOHead, createBusinessDirectoryStructuredData } from "@/components/SEOHead";
+import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 import { AlertCircle, Building2 } from "lucide-react";
 
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
@@ -136,6 +138,17 @@ export default function CompanyPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead 
+        title="Browse All Companies - COMCUBES Global Business Directory"
+        description="Explore thousands of companies from around the world. Search and discover businesses across all industries and sectors in our comprehensive global directory."
+        keywords={[
+          "companies directory", "global companies", "business listings", "company search",
+          "worldwide businesses", "corporate directory", "international companies",
+          "business database", "company finder", "enterprise directory"
+        ]}
+        canonicalUrl={`${window.location.origin}/companies`}
+        structuredData={createBusinessDirectoryStructuredData()}
+      />
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-16">

@@ -155,6 +155,20 @@ export default function IndustriesPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead 
+        title="Industries Directory | Browse 400+ Industries | COMCUBES"
+        description="Browse over 400 specialized industries across all business sectors. Each industry features the top 20 companies with detailed profiles and direct website access."
+        keywords={[
+          "industries directory", "business industries", "industry listings", "specialized industries",
+          "industry categories", "business specializations", "professional services", "industrial sectors",
+          "industry database", "commercial industries", "business verticals"
+        ]}
+        canonicalUrl={`${window.location.origin}/industries`}
+        structuredData={createBreadcrumbStructuredData([
+          { name: "Home", url: `${window.location.origin}/` },
+          { name: "All Industries", url: `${window.location.origin}/industries` }
+        ])}
+      />
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center py-4">

@@ -135,6 +135,22 @@ export default function IndustryPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
+      <SEOHead 
+        title={`${decodedIndustryName} Companies | Top ${decodedIndustryName} Directory | COMCUBES`}
+        description={`Find top companies in ${decodedIndustryName} industry. Browse ${companies?.length || 20} leading ${decodedIndustryName} businesses with direct access to company websites and contact information.`}
+        keywords={[
+          `${decodedIndustryName.toLowerCase()} companies`, `${decodedIndustryName.toLowerCase()} industry`, `${decodedIndustryName.toLowerCase()} business`,
+          `${decodedIndustryName.toLowerCase()} directory`, `${decodedIndustryName.toLowerCase()} firms`, "industry companies",
+          "business directory", "company listings", "industry leaders", "top companies"
+        ]}
+        canonicalUrl={`${window.location.origin}/industry/${encodeURIComponent(decodedIndustryName)}`}
+        structuredData={createBreadcrumbStructuredData([
+          { name: "Home", url: `${window.location.origin}/` },
+          { name: "Business Sectors", url: `${window.location.origin}/sectors` },
+          ...(sectorName ? [{ name: sectorName, url: `${window.location.origin}/sector/${encodeURIComponent(sectorName)}` }] : []),
+          { name: decodedIndustryName, url: `${window.location.origin}/industry/${encodeURIComponent(decodedIndustryName)}` }
+        ])}
+      />
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">

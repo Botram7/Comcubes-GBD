@@ -134,6 +134,20 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
+      <SEOHead 
+        title="Contact COMCUBES | Get Support & Business Partnership Inquiries"
+        description="Contact COMCUBES for general inquiries, technical support, business partnerships, or company listing assistance. We respond within 24-48 hours."
+        keywords={[
+          "contact comcubes", "customer support", "business partnership", "technical support",
+          "company listing help", "contact form", "business inquiry", "support ticket",
+          "help desk", "customer service", "business contact"
+        ]}
+        canonicalUrl={`${window.location.origin}/contact`}
+        structuredData={createBreadcrumbStructuredData([
+          { name: "Home", url: `${window.location.origin}/` },
+          { name: "Contact Us", url: `${window.location.origin}/contact` }
+        ])}
+      />
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -154,6 +154,23 @@ export default function CompanyProfilePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead 
+        title={`${company.name} - Company Profile | ${company.industryName} | COMCUBES`}
+        description={`Complete business profile for ${company.name} in ${company.industryName} industry. Find contact details, website, company information, and related businesses in ${company.sectorName} sector.`}
+        keywords={[
+          `${company.name}`, `${company.name.toLowerCase()}`, `${company.industryName.toLowerCase()}`,
+          `${company.sectorName.toLowerCase()}`, "company profile", "business information",
+          "company details", "business directory", "company contact", "business profile"
+        ]}
+        canonicalUrl={`${window.location.origin}/company/${company.id}`}
+        structuredData={createBreadcrumbStructuredData([
+          { name: "Home", url: `${window.location.origin}/` },
+          { name: "Business Sectors", url: `${window.location.origin}/sectors` },
+          { name: company.sectorName, url: `${window.location.origin}/sector/${encodeURIComponent(company.sectorName)}` },
+          { name: company.industryName, url: `${window.location.origin}/industry/${encodeURIComponent(company.industryName)}` },
+          { name: company.name, url: `${window.location.origin}/company/${company.id}` }
+        ])}
+      />
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
