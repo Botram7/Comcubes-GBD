@@ -29,8 +29,8 @@ export const SECTOR_IMAGES = {
 // Comprehensive industry-specific images with unique, befitting visuals for each category
 export const INDUSTRY_IMAGES = {
   // Technology Industries - Unique images for each tech sector
-  "3D Printing": "/attached_assets/generated_images/3D_printing_technology_workspace_f177a11e.png",
-  "AR/VR Hardware": "/attached_assets/generated_images/AR_VR_technology_experience_aa827d76.png",
+  "3D Printing": "/generated_images/3D_printing_technology_workspace_f177a11e.png",
+  "AR/VR Hardware": "/generated_images/AR_VR_technology_experience_aa827d76.png",
   "Artificial Intelligence": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Biometric Systems": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Blockchain Technology": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
@@ -93,7 +93,7 @@ export const INDUSTRY_IMAGES = {
   "Bicycle & Micromobility Sharing": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
 
   // Telecommunications - Communication technology
-  "5G Infrastructure": "/attached_assets/generated_images/5G_infrastructure_tower_4adf0d72.png",
+  "5G Infrastructure": "/generated_images/5G_infrastructure_tower_4adf0d72.png",
   "Broadband Providers": "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Data Centers": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Internet Service Providers": "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
@@ -116,7 +116,7 @@ export const INDUSTRY_IMAGES = {
 
   // Manufacturing - Industrial production
   "Automotive Manufacturing": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Aerospace & Defense Manufacturing": "/attached_assets/generated_images/Aerospace_defense_manufacturing_e4209b40.png",
+  "Aerospace & Defense Manufacturing": "/generated_images/Aerospace_defense_manufacturing_e4209b40.png",
   "Electronics Manufacturing": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Heavy Machinery": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Steel Production": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
@@ -136,16 +136,16 @@ export const INDUSTRY_IMAGES = {
   "Baby Food": "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
 
   // Agriculture - Farming and agricultural production
-  "Agricultural Equipment": "/attached_assets/generated_images/Agricultural_equipment_showroom_1ddad657.png",
+  "Agricultural Equipment": "/generated_images/Agricultural_equipment_showroom_1ddad657.png",
   "Aquaculture": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Crop Production": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Fertilizers": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Livestock": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Precision Agriculture": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Seeds & Genetics": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Agribusiness & Commodity Trading": "/attached_assets/generated_images/Agricultural_commodity_trading_ee255ae4.png",
-  "Agricultural Biotechnology": "/attached_assets/generated_images/Agricultural_biotechnology_lab_48861bf5.png",
-  "Agricultural Cooperatives": "/attached_assets/generated_images/Agricultural_cooperative_meeting_09fae9bd.png",
+  "Agribusiness & Commodity Trading": "/generated_images/Agricultural_commodity_trading_ee255ae4.png",
+  "Agricultural Biotechnology": "/generated_images/Agricultural_biotechnology_lab_48861bf5.png",
+  "Agricultural Cooperatives": "/generated_images/Agricultural_cooperative_meeting_09fae9bd.png",
   "Agricultural Finance & Insurance": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Agricultural Logistics & Storage": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Agricultural Real Estate": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
@@ -174,10 +174,10 @@ export const INDUSTRY_IMAGES = {
   "Music Industry": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Publishing & Content": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Streaming Services": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Advertising & Marketing": "/attached_assets/generated_images/Advertising_marketing_agency_31483aaa.png",
+  "Advertising & Marketing": "/generated_images/Advertising_marketing_agency_31483aaa.png",
 
   // Travel & Tourism - Travel and hospitality
-  "Adventure Tourism": "/attached_assets/generated_images/Adventure_tourism_mountain_climbing_b0d01d32.png",
+  "Adventure Tourism": "/generated_images/Adventure_tourism_mountain_climbing_b0d01d32.png",
   "Cruise Lines": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Hotels & Resorts": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Online Travel": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
@@ -185,7 +185,7 @@ export const INDUSTRY_IMAGES = {
   "Airport Operators": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
 
   // Professional Services - Business services
-  "Accounting & Audit": "/attached_assets/generated_images/Accounting_audit_office_a28a127b.png",
+  "Accounting & Audit": "/generated_images/Accounting_audit_office_a28a127b.png",
   "Management Consulting": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Legal Services": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Architecture & Design Services": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
@@ -196,7 +196,7 @@ export const INDUSTRY_IMAGES = {
   "Avionics Systems": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Defense Contractors": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Space Technology": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Aerospace Structures & Composites": "/attached_assets/generated_images/Aerospace_composite_structures_161bc808.png",
+  "Aerospace Structures & Composites": "/generated_images/Aerospace_composite_structures_161bc808.png",
   "Air Traffic Management Systems": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
 
   // Education - Learning and education
@@ -210,7 +210,7 @@ export const INDUSTRY_IMAGES = {
   "Industrial Chemicals": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Specialty Chemicals": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Petrochemicals": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Adhesives & Sealants": "/attached_assets/generated_images/Adhesives_sealants_laboratory_d3f9c2fa.png",
+  "Adhesives & Sealants": "/generated_images/Adhesives_sealants_laboratory_d3f9c2fa.png",
 
   // Insurance - Insurance services
   "Annuities": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
