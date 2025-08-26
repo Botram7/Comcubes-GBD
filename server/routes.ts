@@ -1,5 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
+import express from "express";
+import path from "path";
 import { storage } from "./storage";
 import { SitemapGenerator } from "./sitemapGenerator";
 import { googleSearchService } from "./services/googleSearchService";
@@ -9,6 +11,9 @@ import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/
 import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve static assets from attached_assets directory
+  app.use('/generated_images', express.static(path.resolve(import.meta.dirname, '..', 'attached_assets', 'generated_images')));
+  
   // Get all sectors
   app.get("/api/sectors", async (req, res) => {
     try {
