@@ -58,6 +58,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import comcubesIcon from '@assets/default_1752716413946.png';
+import { SEOHead } from '@/components/SEOHead';
 
 interface CompanyListing {
   id: number;
@@ -130,6 +131,10 @@ export default function ComprehensiveAdminDashboard() {
   // Data queries
   const { data: listings, isLoading: listingsLoading } = useQuery({
     queryKey: ['/api/admin/company-listings'],
+    queryFn: async () => {
+      const response = await apiRequest('GET', '/api/admin/company-listings');
+      return response.json();
+    },
   });
 
   const { data: waitlist, isLoading: waitlistLoading } = useQuery({
@@ -193,18 +198,18 @@ export default function ComprehensiveAdminDashboard() {
     },
   });
 
-  const { data: industryStats } = useQuery({
-    queryKey: ['/api/admin/industry-stats'],
-    queryFn: async () => {
-      const response = await apiRequest('GET', '/api/admin/industry-stats');
-      return response.json();
-    },
-  });
-
   const { data: adminStats } = useQuery({
     queryKey: ['/api/admin/stats'],
     queryFn: async () => {
       const response = await apiRequest('GET', '/api/admin/stats');
+      return response.json();
+    },
+  });
+
+  const { data: industryStats } = useQuery({
+    queryKey: ['/api/admin/industry-stats'],
+    queryFn: async () => {
+      const response = await apiRequest('GET', '/api/admin/industry-stats');
       return response.json();
     },
   });
@@ -275,8 +280,8 @@ export default function ComprehensiveAdminDashboard() {
     },
   });
 
-  // Filter functions
-  const filteredListings = listings?.filter((listing: CompanyListing) => {
+  // Filter functions  
+  const filteredListings = (listings || []).filter((listing: CompanyListing) => {
     const matchesSearch = listing.companyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          listing.contactEmail.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          listing.industryName.toLowerCase().includes(searchTerm.toLowerCase());
@@ -284,13 +289,13 @@ export default function ComprehensiveAdminDashboard() {
     const matchesIndustry = industryFilter === 'all' || listing.industryName === industryFilter;
     
     return matchesSearch && matchesStatus && matchesIndustry;
-  }) || [];
+  });
 
-  const filteredWaitlist = waitlist?.filter((entry: WaitlistEntry) => {
+  const filteredWaitlist = (waitlist || []).filter((entry: WaitlistEntry) => {
     return entry.companyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
            entry.contactEmail.toLowerCase().includes(searchTerm.toLowerCase()) ||
            entry.industryName.toLowerCase().includes(searchTerm.toLowerCase());
-  }) || [];
+  });
 
   // Get unique industries for filter dropdown
   const uniqueIndustries = Array.from(new Set([
