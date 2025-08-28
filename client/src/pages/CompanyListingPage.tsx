@@ -553,11 +553,8 @@ export default function CompanyListingPage() {
       {/* Three-column layout with sidebar banner ads */}
       <div className="flex gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Left Sidebar - Banner Ad */}
-        <div className="hidden lg:block w-64">
-          <BannerAd 
-            position="left"
-            className="sticky top-24"
-          />
+        <div className="hidden lg:block flex-shrink-0">
+          <BannerAd className="sticky top-24" />
         </div>
 
         {/* Main Content */}
@@ -602,12 +599,9 @@ export default function CompanyListingPage() {
           {step === 'success' && renderSuccess()}
         </div>
 
-        {/* Right Sidebar - Banner Ad */}
-        <div className="hidden lg:block w-64">
-          <BannerAd 
-            position="right"
-            className="sticky top-24"
-          />
+        {/* Right Sidebar - Advertisement Banner - 160x600 */}
+        <div className="hidden lg:block flex-shrink-0">
+          <BannerAd className="sticky top-24" />
         </div>
       </div>
     </div>
