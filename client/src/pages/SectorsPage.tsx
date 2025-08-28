@@ -168,9 +168,9 @@ export default function SectorsPage() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex gap-6">
-          {/* Left Banner Ads */}
-          <div className="hidden lg:block w-48 flex-shrink-0">
-            <BannerAd position="left" />
+          {/* Left Advertisement Banner - 160x600 */}
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd />
           </div>
 
           {/* Main Content */}
@@ -247,9 +247,9 @@ export default function SectorsPage() {
             )}
           </div>
 
-          {/* Right Banner Ads */}
-          <div className="hidden lg:block w-48 flex-shrink-0">
-            <BannerAd position="right" />
+          {/* Right Advertisement Banner - 160x600 */}
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd />
           </div>
         </div>
       </main>

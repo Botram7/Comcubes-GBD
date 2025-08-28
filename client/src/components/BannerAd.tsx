@@ -2,61 +2,18 @@ import { Card } from "@/components/ui/card";
 import { useLocation } from 'wouter';
 
 interface BannerAdProps {
-  position: 'left' | 'right';
   className?: string;
 }
 
-export function BannerAd({ position, className = "" }: BannerAdProps) {
+export function BannerAd({ className = "" }: BannerAdProps) {
   const [, setLocation] = useLocation();
 
-  const adContent = {
-    left: [
-      {
-        title: "Boost Your Business",
-        subtitle: "Reach 10,000+ daily visitors",
-        bgColor: "bg-gradient-to-br from-blue-600 to-blue-800",
-        cta: "Advertise Here",
-        onClick: () => setLocation('/advertise')
-      }
-    ],
-    right: [
-      {
-        title: "Premium Placement",
-        subtitle: "Maximize your visibility",
-        bgColor: "bg-gradient-to-br from-purple-600 to-purple-800",
-        cta: "Learn More",
-        onClick: () => setLocation('/advertise')
-      }
-    ]
-  };
-
-  const ads = adContent[position];
-
   return (
-    <div className={`space-y-4 ${className}`}>
-      {ads.map((ad, index) => (
-        <Card
-          key={`${position}-ad-${index}`}
-          className={`${ad.bgColor} text-white p-4 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg border-0`}
-          onClick={ad.onClick}
-        >
-          <div className="text-center">
-            <h3 className="font-bold text-sm mb-1 leading-tight">
-              {ad.title}
-            </h3>
-            <p className="text-xs opacity-90 mb-3 leading-relaxed">
-              {ad.subtitle}
-            </p>
-            <div className="bg-white bg-opacity-20 rounded px-3 py-1 text-xs font-medium">
-              {ad.cta}
-            </div>
-          </div>
-        </Card>
-      ))}
-      
-      {/* Extended tall banner space that matches grid height */}
+    <div className={`${className}`}>
+      {/* Advertisement Space - 160x600 dimensions */}
       <Card 
-        className="bg-gray-100 border-2 border-dashed border-gray-300 p-6 text-center h-96 cursor-pointer hover:bg-gray-200 transition-colors"
+        className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 text-center cursor-pointer hover:bg-gray-200 transition-colors"
+        style={{ width: '160px', height: '600px' }}
         onClick={() => setLocation('/advertise')}
       >
         <div className="text-gray-500 h-full flex flex-col justify-center">
