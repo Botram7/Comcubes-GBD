@@ -253,6 +253,35 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
+  // Company listing endpoint
+  app.post('/api/company-listing', async (req, res) => {
+    try {
+      const listingData = req.body;
+      
+      // In a real application, you would:
+      // 1. Validate the data
+      // 2. Store the listing request in the database
+      // 3. Send confirmation emails
+      // 4. Process payment if needed
+      
+      console.log('Company listing request received:', {
+        companyName: listingData.companyName,
+        email: listingData.email,
+        plan: listingData.listingPlan
+      });
+      
+      // Simulate successful submission
+      res.json({ 
+        success: true, 
+        message: 'Company listing request submitted successfully',
+        id: Math.random().toString(36).substr(2, 9)
+      });
+    } catch (error) {
+      console.error('Error processing company listing:', error);
+      res.status(500).json({ error: 'Failed to process listing request' });
+    }
+  });
+
   app.post('/api/contact', async (req, res) => {
     try {
       const contactData = insertContactMessageSchema.parse(req.body);

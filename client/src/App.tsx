@@ -16,6 +16,7 @@ import SearchPage from "@/pages/SearchPage";
 import ContactPage from "@/pages/ContactPage";
 import AdvertisePage from "@/pages/AdvertisePage";
 import CompanyListingPage from "@/pages/CompanyListingPage";
+import ListCompanyPage from "@/pages/ListCompanyPage";
 import ResumePaymentPage from "@/pages/ResumePaymentPage";
 import ComprehensiveAdminDashboard from "@/pages/ComprehensiveAdminDashboard";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
@@ -39,6 +40,7 @@ function Router() {
       <Route path="/contact" component={ContactPage} />
       <Route path="/advertise" component={AdvertisePage} />
       <Route path="/company-listing" component={CompanyListingPage} />
+      <Route path="/list-company" component={ListCompanyPage} />
       <Route path="/resume-payment" component={ResumePaymentPage} />
       <Route path="/claim-company" component={ClaimCompanyPage} />
       <Route path="/admin" component={ComprehensiveAdminDashboard} />
