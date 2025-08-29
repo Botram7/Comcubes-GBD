@@ -115,7 +115,7 @@ export default function HomePage() {
 
   const sectorCount = Array.isArray(sectors) ? sectors.length : 20;
   const industryCount = (industriesData as any)?.total || 400;
-  const companyCount = (companiesData as any)?.total || 8000;
+  const companyCount = (companiesData as any)?.total || 7400;
 
   return (
     <div className="min-h-screen bg-white  ">
@@ -160,7 +160,7 @@ export default function HomePage() {
           
           <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
             Navigate the world's most comprehensive business ecosystem. Discover 20 major business sectors,
-            explore 400+ specialized industries, and connect with 8,000+ leading global companies—all organized
+            explore 400+ specialized industries, and connect with 7,400+ leading global companies—all organized
             in an intuitive hierarchical structure designed for business professionals.
           </p>
 
@@ -218,7 +218,7 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="h-6 w-6 text-green-600" />
               </div>
-              <div className="text-3xl font-bold text-gray-900  mb-2">8,000+</div>
+              <div className="text-3xl font-bold text-gray-900  mb-2">7,400+</div>
               <div className="text-gray-600  font-medium mb-1">Global Companies</div>
               <div className="text-sm text-gray-500">Leading organizations worldwide</div>
             </Card>

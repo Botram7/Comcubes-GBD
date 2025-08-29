@@ -283,7 +283,7 @@ export function EnhancedSearch() {
                       <SelectItem value="local">
                         <div className="flex items-center space-x-2">
                           <Building2 className="h-4 w-4" />
-                          <span>Local Directory (8,000+ companies)</span>
+                          <span>Local Directory (7,400+ companies)</span>
                         </div>
                       </SelectItem>
                       <SelectItem value="global">
@@ -439,7 +439,7 @@ export function EnhancedSearch() {
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
           <h3 className="font-medium text-blue-900 mb-2">Enhanced Search Features</h3>
           <ul className="text-sm text-blue-800 space-y-1">
-            <li>• <strong>Local:</strong> Search 20 sectors, 400+ industries, and 8,000+ companies</li>
+            <li>• <strong>Local:</strong> Search 20 sectors, 400+ industries, and 7,400+ companies</li>
             <li>• <strong>Global:</strong> Discover businesses worldwide via Google Custom Search</li>
             <li>• Filter by geographic regions and company size</li>
             <li>• Real-time search suggestions and autocomplete</li>
