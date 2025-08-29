@@ -97,7 +97,7 @@ export default function ListCompanyPage() {
   
   // Fetch industries when sector is selected
   const { data: industriesData } = useQuery({
-    queryKey: ['/api/sectors', watchedSector, 'industries'],
+    queryKey: [`/api/sectors/${watchedSector}/industries`],
     enabled: !!watchedSector,
     staleTime: 300000, // 5 minutes
   });
