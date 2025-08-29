@@ -77,7 +77,7 @@ export default function SearchPage() {
     <div className="min-h-screen bg-gray-50  font-inter ">
       <SEOHead 
         title="Advanced Business Search | Global Company & Industry Search | COMCUBES"
-        description="Search 8,000+ companies across 400+ industries with advanced filters. Find businesses by location, size, sector, and more with our global search technology."
+        description="Search 7,400+ companies across 400+ industries with advanced filters. Find businesses by location, size, sector, and more with our global search technology."
         keywords={[
           "business search", "company search", "advanced search", "global business search",
           "company finder", "business finder", "industry search", "company database search",
@@ -187,7 +187,7 @@ export default function SearchPage() {
                   Advanced Business Search
                 </h1>
                 <p className="text-xl text-gray-600  mb-8 max-w-3xl mx-auto">
-                  Discover companies, industries, and business sectors worldwide with our enhanced search capabilities. Search locally across 8,000+ companies or globally via Google Custom Search.
+                  Discover companies, industries, and business sectors worldwide with our enhanced search capabilities. Search locally across 7,400+ companies or globally via Google Custom Search.
                 </p>
                 
                 {/* Enhanced Search Component */}
@@ -256,12 +256,12 @@ export default function SearchPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Access our comprehensive database of 8,000+ companies across 20 sectors and 400+ industries, plus discover businesses worldwide via Google Custom Search.
+                  Access our comprehensive database of 7,400+ companies across 20 sectors and 400+ industries, plus discover businesses worldwide via Google Custom Search.
                 </p>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span>Local Companies:</span>
-                    <Badge variant="secondary">8,000+</Badge>
+                    <Badge variant="secondary">7,400+</Badge>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span>Industries:</span>
@@ -348,7 +348,7 @@ export default function SearchPage() {
                 >
                   <Users className="h-6 w-6" />
                   <span>All Companies</span>
-                  <Badge variant="secondary">8,000+ companies</Badge>
+                  <Badge variant="secondary">7,400+ companies</Badge>
                 </Button>
                 
                 <Button 
@@ -378,7 +378,7 @@ export default function SearchPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-gray-600">
             <p>&copy; 2024 COMCUBES Global Business Directory. Professional business data across 421 pages.</p>
-            <p className="mt-2 text-sm">Featuring 20 sectors, 400+ industries, and 8,000+ companies worldwide with global search capabilities.</p>
+            <p className="mt-2 text-sm">Featuring 20 sectors, 400+ industries, and 7,400+ companies worldwide with global search capabilities.</p>
             <div className="mt-4 flex justify-center space-x-6 text-xs">
               <button onClick={() => setLocation('/privacy-policy')} className="hover:text-gray-900 underline">Privacy Policy</button>
               <button onClick={() => setLocation('/terms-of-service')} className="hover:text-gray-900 underline">Terms of Service</button>
