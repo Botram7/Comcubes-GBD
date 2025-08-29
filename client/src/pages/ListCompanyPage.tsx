@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { ArrowLeft, Building2, Star, Globe, MapPin, CheckCircle, ChevronRight, User } from 'lucide-react';
 import { useLocation } from 'wouter';
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
@@ -29,6 +29,7 @@ const companyListingSchema = z.object({
   businessSector: z.string().min(1, 'Please select a business sector'),
   industry: z.string().min(1, 'Please select an industry'),
   companyDescription: z.string().min(50, 'Company description must be at least 50 characters'),
+  companyLogo: z.string().optional(),
   listingPlan: z.enum(['basic', 'premium'], {
     required_error: 'Please select a listing plan',
   }),
@@ -43,18 +44,14 @@ const businessSectors = [
   "Real Estate", "Retail", "Technology", "Telecommunications", "Transportation", "Travel and Tourism"
 ];
 
-const industries = {
-  "Technology": ["Software Development", "AI and Machine Learning", "Cybersecurity", "Cloud Computing", "Data Analytics"],
-  "Healthcare": ["Medical Devices", "Pharmaceuticals", "Digital Health", "Healthcare Services", "Biotechnology"],
-  "Finance": ["Fintech", "Investment Banking", "Insurance Services", "Wealth Management", "Payment Processing"],
-  "Manufacturing": ["Industrial Equipment", "Consumer Electronics", "Automotive Parts", "Chemical Manufacturing", "Food Processing"]
-};
+// Remove hardcoded industries object - we'll fetch from API
 
 export default function ListCompanyPage() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<'basic' | 'premium' | null>(null);
+  const [selectedSector, setSelectedSector] = useState<string>('');
 
   const form = useForm<CompanyListingData>({
     resolver: zodResolver(companyListingSchema),
@@ -97,7 +94,22 @@ export default function ListCompanyPage() {
   };
 
   const watchedSector = form.watch('businessSector');
-  const availableIndustries = industries[watchedSector as keyof typeof industries] || [];
+  
+  // Fetch industries when sector is selected
+  const { data: industriesData } = useQuery({
+    queryKey: ['/api/sectors', watchedSector, 'industries'],
+    enabled: !!watchedSector,
+    staleTime: 300000, // 5 minutes
+  });
+  
+  const availableIndustries = industriesData || [];
+  
+  // Reset industry when sector changes
+  useEffect(() => {
+    if (watchedSector) {
+      form.setValue('industry', ''); // Reset industry selection
+    }
+  }, [watchedSector, form]);
 
   if (isSubmitted) {
     return (
@@ -219,7 +231,11 @@ export default function ListCompanyPage() {
                   </li>
                   <li className="flex items-center text-sm">
                     <CheckCircle className="h-4 w-4 text-green-600 mr-3 flex-shrink-0" />
-                    Company name, contact info & website link
+                    Company name, logo & contact info
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-600 mr-3 flex-shrink-0" />
+                    Company website link
                   </li>
                   <li className="flex items-center text-sm">
                     <CheckCircle className="h-4 w-4 text-green-600 mr-3 flex-shrink-0" />
@@ -396,6 +412,32 @@ export default function ListCompanyPage() {
                         )}
                       />
 
+                      <FormField
+                        control={form.control}
+                        name="companyLogo"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Company Logo (Optional)</FormLabel>
+                            <FormControl>
+                              <Input 
+                                type="file" 
+                                accept="image/*"
+                                onChange={(e) => {
+                                  const file = e.target.files?.[0];
+                                  if (file) {
+                                    // In a real implementation, you would upload the file
+                                    // For now, we'll just store the filename
+                                    field.onChange(file.name);
+                                  }
+                                }}
+                              />
+                            </FormControl>
+                            <p className="text-xs text-gray-500">Upload your company logo (PNG, JPG, GIF - Max 2MB)</p>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
                       <div className="grid sm:grid-cols-2 gap-4">
                         <FormField
                           control={form.control}
@@ -427,16 +469,16 @@ export default function ListCompanyPage() {
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Industry *</FormLabel>
-                              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <Select onValueChange={field.onChange} value={field.value}>
                                 <FormControl>
                                   <SelectTrigger>
-                                    <SelectValue placeholder="Select industry" />
+                                    <SelectValue placeholder={!watchedSector ? "First select a business sector" : "Select industry"} />
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                  {availableIndustries.map((industry) => (
-                                    <SelectItem key={industry} value={industry}>
-                                      {industry}
+                                  {availableIndustries.map((industry: any) => (
+                                    <SelectItem key={industry.id || industry.name} value={industry.name}>
+                                      {industry.name}
                                     </SelectItem>
                                   ))}
                                 </SelectContent>

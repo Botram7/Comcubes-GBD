@@ -253,6 +253,19 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
+  // Get industries by sector endpoint
+  app.get('/api/sectors/:sectorName/industries', async (req, res) => {
+    try {
+      const { sectorName } = req.params;
+      const decodedSectorName = decodeURIComponent(sectorName);
+      const industries = await storage.getIndustriesBySector(decodedSectorName);
+      res.json(industries);
+    } catch (error) {
+      console.error('Error fetching industries by sector:', error);
+      res.status(500).json({ error: 'Failed to fetch industries' });
+    }
+  });
+
   // Company listing endpoint
   app.post('/api/company-listing', async (req, res) => {
     try {
