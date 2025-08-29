@@ -170,7 +170,7 @@ export default function SectorsPage() {
         <div className="flex gap-6">
           {/* Left Advertisement Banner - 160x600 */}
           <div className="hidden lg:block flex-shrink-0">
-            <BannerAd />
+            <BannerAd className="sticky top-24" />
           </div>
 
           {/* Main Content */}
@@ -249,7 +249,7 @@ export default function SectorsPage() {
 
           {/* Right Advertisement Banner - 160x600 */}
           <div className="hidden lg:block flex-shrink-0">
-            <BannerAd />
+            <BannerAd className="sticky top-24" />
           </div>
         </div>
       </main>
