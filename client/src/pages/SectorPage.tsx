@@ -135,7 +135,7 @@ export default function SectorPage() {
   }
 
   return (
-    <div className="page-with-sticky-footer bg-gray-50 font-inter">
+    <div className="min-h-screen bg-gray-50 font-inter">
       <SEOHead 
         title={`${decodedSectorName} Industries & Companies | COMCUBES Global Directory`}
         description={`Explore specialized industries within ${decodedSectorName} sector. Discover top companies, industry leaders, and business opportunities in ${decodedSectorName}. Browse ${industries?.length || 20} industries now.`}
@@ -194,7 +194,7 @@ export default function SectorPage() {
         ]} 
       />
 
-      <main className="main-content-with-sticky-footer max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex gap-6">
           {/* Left Advertisement Banner - 160x600 */}
           <div className="hidden lg:block flex-shrink-0">
@@ -267,7 +267,7 @@ export default function SectorPage() {
         </div>
       </main>
 
-      <footer className="sticky-footer mt-16">
+      <footer className="bg-white border-t border-gray-200 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-gray-600">
             <p>&copy; 2024 COMCUBES Global Business Directory. Professional business data across 421 pages.</p>
