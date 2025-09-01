@@ -173,8 +173,7 @@ export default function SectorsPage() {
           <div className="hidden lg:block flex-shrink-0">
             <BannerAd 
               className="sticky top-24" 
-              images={getActiveBannerImages('left')}
-              clickUrl={getBannerClickUrl('left')}
+              position="left"
             />
           </div>
 
@@ -256,8 +255,7 @@ export default function SectorsPage() {
           <div className="hidden lg:block flex-shrink-0">
             <BannerAd 
               className="sticky top-24" 
-              images={getActiveBannerImages('right')}
-              clickUrl={getBannerClickUrl('right')}
+              position="right"
             />
           </div>
         </div>
