@@ -37,13 +37,13 @@ interface ClaimFormData {
   websiteUrl: string;
   companyDescription: string;
   logoImage?: File;
-  plan: 'basic' | 'premium' | 'enterprise';
+  plan: 'basic' | 'premium';
 }
 
 const CLAIM_PRICING = {
   basic: { 
-    price: 20, 
-    monthlyPrice: 20,
+    price: 30, 
+    monthlyPrice: 30,
     name: "Basic Claim", 
     features: [
       "Company logo upload", 
@@ -54,27 +54,15 @@ const CLAIM_PRICING = {
     ] 
   },
   premium: { 
-    price: 35, 
-    monthlyPrice: 35,
+    price: 50, 
+    monthlyPrice: 50,
     name: "Premium Claim", 
     features: [
       "Everything in Basic", 
       "Enhanced company description (up to 1000 words)", 
       "Priority placement within industry", 
       "Additional contact methods",
-      "Company size and founding year display"
-    ] 
-  },
-  enterprise: { 
-    price: 50, 
-    monthlyPrice: 50,
-    name: "Professional Claim", 
-    features: [
-      "Everything in Premium", 
-      "Top priority placement in industry", 
-      "Multiple office locations", 
-      "Detailed company profile",
-      "Direct inquiry form",
+      "Company size and founding year display",
       "Enhanced SEO visibility"
     ] 
   }
@@ -579,7 +567,7 @@ export default function ClaimCompanyPage() {
                 value={formData.plan}
                 onValueChange={(value) => setFormData(prev => ({ ...prev, plan: value as any }))}
               >
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                   {Object.entries(CLAIM_PRICING).map(([key, plan]) => (
                     <div key={key} className="relative">
                       <RadioGroupItem value={key} id={key} className="sr-only" />
@@ -616,7 +604,6 @@ export default function ClaimCompanyPage() {
                   <li>• We'll review your claim within 24-48 hours</li>
                   <li>• You'll receive payment instructions via email</li>
                   <li>• Once payment is confirmed, your enhanced listing goes live</li>
-                  <li>• You'll get admin access to manage your listing</li>
                 </ul>
               </div>
 
