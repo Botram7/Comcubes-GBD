@@ -477,6 +477,122 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
+  // Banner Ad Management Endpoints
+  app.get("/api/admin/banner-ads", async (req, res) => {
+    try {
+      const bannerAds = await storage.getBannerAds();
+      res.json(bannerAds);
+    } catch (error) {
+      console.error("Error fetching banner ads:", error);
+      res.status(500).json({ error: "Failed to fetch banner ads" });
+    }
+  });
+
+  app.post("/api/admin/banner-ads", async (req, res) => {
+    try {
+      const { position, images, clickUrl, isActive } = req.body;
+      const bannerAd = await storage.createBannerAd({
+        position,
+        images: images || [],
+        clickUrl,
+        isActive: isActive !== false
+      });
+      res.json(bannerAd);
+    } catch (error) {
+      console.error("Error creating banner ad:", error);
+      res.status(500).json({ error: "Failed to create banner ad" });
+    }
+  });
+
+  app.put("/api/admin/banner-ads/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { position, images, clickUrl, isActive } = req.body;
+      const bannerAd = await storage.updateBannerAd(parseInt(id), {
+        position,
+        images: images || [],
+        clickUrl,
+        isActive,
+        updatedAt: new Date()
+      });
+      if (!bannerAd) {
+        return res.status(404).json({ error: "Banner ad not found" });
+      }
+      res.json(bannerAd);
+    } catch (error) {
+      console.error("Error updating banner ad:", error);
+      res.status(500).json({ error: "Failed to update banner ad" });
+    }
+  });
+
+  app.delete("/api/admin/banner-ads/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const success = await storage.deleteBannerAd(parseInt(id));
+      if (!success) {
+        return res.status(404).json({ error: "Banner ad not found" });
+      }
+      res.json({ success: true });
+    } catch (error) {
+      console.error("Error deleting banner ad:", error);
+      res.status(500).json({ error: "Failed to delete banner ad" });
+    }
+  });
+
+  // Get active banner ads for the website
+  app.get("/api/banner-ads", async (req, res) => {
+    try {
+      const position = req.query.position as string;
+      const bannerAds = await storage.getActiveBannerAds(position);
+      res.json(bannerAds);
+    } catch (error) {
+      console.error("Error fetching active banner ads:", error);
+      res.status(500).json({ error: "Failed to fetch banner ads" });
+    }
+  });
+
+  // Initialize default banner ads (one-time setup)
+  app.post("/api/admin/banner-ads/initialize", async (req, res) => {
+    try {
+      // Check if banner ads already exist
+      const existingBanners = await storage.getBannerAds();
+      if (existingBanners.length > 0) {
+        return res.json({ message: "Banner ads already initialized" });
+      }
+
+      // Create default left banner
+      await storage.createBannerAd({
+        position: 'left',
+        images: [
+          'https://via.placeholder.com/160x600/FF6B6B/FFFFFF?text=Your+Ad+1',
+          'https://via.placeholder.com/160x600/4ECDC4/FFFFFF?text=Your+Ad+2',
+          'https://via.placeholder.com/160x600/45B7D1/FFFFFF?text=Your+Ad+3',
+          'https://via.placeholder.com/160x600/96CEB4/FFFFFF?text=Your+Ad+4',
+          'https://via.placeholder.com/160x600/FECA57/000000?text=Your+Ad+5'
+        ],
+        clickUrl: 'https://www.your-advertiser-website.com',
+        isActive: true
+      });
+
+      // Create default right banner
+      await storage.createBannerAd({
+        position: 'right',
+        images: [
+          'https://via.placeholder.com/160x600/8B5CF6/FFFFFF?text=Promo+A',
+          'https://via.placeholder.com/160x600/F59E0B/FFFFFF?text=Promo+B',
+          'https://via.placeholder.com/160x600/10B981/FFFFFF?text=Promo+C'
+        ],
+        clickUrl: 'https://www.your-business-partner.com',
+        isActive: true
+      });
+
+      res.json({ success: true, message: "Default banner ads initialized" });
+    } catch (error) {
+      console.error("Error initializing banner ads:", error);
+      res.status(500).json({ error: "Failed to initialize banner ads" });
+    }
+  });
+
   // Admin endpoint for waitlist management
   app.get('/api/admin/waitlist', async (req, res) => {
     try {
@@ -524,11 +640,33 @@ Please contact this potential advertiser within 24 hours.
   app.post('/api/admin/company-claims/:id/approve', async (req, res) => {
     try {
       const claimId = parseInt(req.params.id);
+      
+      // Get the claim details first
+      const allClaims = await storage.getAllCompanyClaims();
+      const claim = allClaims.find(c => c.id === claimId);
+      
+      if (!claim) {
+        return res.status(404).json({ error: 'Company claim not found' });
+      }
+      
+      // Update the claim status
       await storage.updateCompanyClaimStatus(claimId, 'approved');
       
-      // TODO: Send payment instructions email
+      // Update the company with the new owner information
+      if (claim.companyId) {
+        await storage.updateCompanyOwnership(claim.companyId, {
+          verifiedOwner: true,
+          ownerEmail: claim.claimantEmail,
+          ownerName: claim.claimantName,
+          verificationDate: new Date()
+        });
+      }
       
-      res.json({ message: 'Company claim approved successfully' });
+      // Send payment instructions email
+      const emailService = new EmailService();
+      await emailService.sendClaimApprovalEmail(claim);
+      
+      res.json({ message: 'Company claim approved successfully and company ownership updated' });
     } catch (error) {
       console.error('Error approving company claim:', error);
       res.status(500).json({ error: 'Failed to approve company claim' });
@@ -538,9 +676,20 @@ Please contact this potential advertiser within 24 hours.
   app.post('/api/admin/company-claims/:id/reject', async (req, res) => {
     try {
       const claimId = parseInt(req.params.id);
+      
+      // Get the claim details first
+      const allClaims = await storage.getAllCompanyClaims();
+      const claim = allClaims.find(c => c.id === claimId);
+      
+      if (!claim) {
+        return res.status(404).json({ error: 'Company claim not found' });
+      }
+      
       await storage.updateCompanyClaimStatus(claimId, 'rejected');
       
-      // TODO: Send rejection notification email
+      // Send rejection notification email
+      const emailService = new EmailService();
+      await emailService.sendClaimRejectionEmail(claim);
       
       res.json({ message: 'Company claim rejected successfully' });
     } catch (error) {

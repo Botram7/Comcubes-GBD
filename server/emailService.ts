@@ -1,4 +1,5 @@
 import { MailService } from '@sendgrid/mail';
+import { storage } from './storage';
 
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 const emailEnabled = !!SENDGRID_API_KEY;
@@ -34,13 +35,16 @@ export class EmailService {
     }
     
     try {
-      await sgMail.send({
+      const emailData: any = {
         to: params.to,
         from: params.from || this.fromEmail,
         subject: params.subject,
-        text: params.text,
-        html: params.html,
-      });
+      };
+      
+      if (params.text) emailData.text = params.text;
+      if (params.html) emailData.html = params.html;
+      
+      await sgMail.send(emailData);
       return true;
     } catch (error) {
       console.error('SendGrid email error:', error);
@@ -263,11 +267,132 @@ export class EmailService {
       <p>Best regards,<br>The COMCUBES Team</p>
     `;
 
-    return this.sendEmail({
+    const result = await this.sendEmail({
       to: waitlistEntry.contactEmail,
       from: this.fromEmail,
       subject: 'COMCUBES Waitlist Update - Slot Availability Check',
       html,
     });
+
+    // Log email to database for tracking
+    try {
+      await storage.logEmail({
+        emailType: 'waitlist_notification',
+        recipientEmail: waitlistEntry.contactEmail,
+        senderEmail: this.fromEmail,
+        subject: 'COMCUBES Waitlist Update - Slot Availability Check',
+        content: html,
+        relatedId: waitlistEntry.id,
+        deliveryStatus: result ? 'sent' : 'failed'
+      });
+    } catch (error) {
+      console.error('Failed to log waitlist email:', error);
+    }
+
+    return result;
+  }
+
+  async sendClaimApprovalEmail(claim: any): Promise<boolean> {
+    const html = `
+      <h2>🎉 Company Claim Approved - COMCUBES</h2>
+      <p>Dear ${claim.claimantName},</p>
+      <p>Great news! Your claim for <strong>${claim.companyName}</strong> has been approved.</p>
+      
+      <div style="border: 1px solid #10b981; padding: 20px; margin: 20px 0; background-color: #ecfdf5; border-radius: 8px;">
+        <h3 style="color: #059669; margin-top: 0;">✅ Claim Approved</h3>
+        <p><strong>Company:</strong> ${claim.companyName}</p>
+        <p><strong>Industry:</strong> ${claim.industryName}</p>
+        <p><strong>Status:</strong> Approved</p>
+      </div>
+      
+      <p>You now have verified ownership of your company listing on COMCUBES. You can manage your company information through our platform.</p>
+      
+      <p>Next steps:</p>
+      <ul>
+        <li>Update your company information</li>
+        <li>Add detailed business description</li>
+        <li>Upload company logo</li>
+        <li>Manage contact details</li>
+      </ul>
+      
+      <p>Thank you for choosing COMCUBES for your business listing.</p>
+      <p>Best regards,<br>The COMCUBES Team</p>
+    `;
+
+    const result = await this.sendEmail({
+      to: claim.claimantEmail,
+      from: this.fromEmail,
+      subject: '🎉 Company Claim Approved - COMCUBES',
+      html,
+    });
+
+    // Log email to database for tracking
+    try {
+      await storage.logEmail({
+        emailType: 'claim_approval',
+        recipientEmail: claim.claimantEmail,
+        senderEmail: this.fromEmail,
+        subject: '🎉 Company Claim Approved - COMCUBES',
+        content: html,
+        relatedId: claim.id,
+        deliveryStatus: result ? 'sent' : 'failed'
+      });
+    } catch (error) {
+      console.error('Failed to log claim approval email:', error);
+    }
+
+    return result;
+  }
+
+  async sendClaimRejectionEmail(claim: any): Promise<boolean> {
+    const html = `
+      <h2>Company Claim Update - COMCUBES</h2>
+      <p>Dear ${claim.claimantName},</p>
+      <p>Thank you for your interest in claiming <strong>${claim.companyName}</strong> on COMCUBES.</p>
+      
+      <div style="border: 1px solid #ef4444; padding: 20px; margin: 20px 0; background-color: #fef2f2; border-radius: 8px;">
+        <h3 style="color: #dc2626; margin-top: 0;">Claim Status Update</h3>
+        <p><strong>Company:</strong> ${claim.companyName}</p>
+        <p><strong>Industry:</strong> ${claim.industryName}</p>
+        <p><strong>Status:</strong> Not approved at this time</p>
+      </div>
+      
+      <p>After careful review, we were unable to verify your ownership of this company at this time. This could be due to:</p>
+      <ul>
+        <li>Insufficient documentation provided</li>
+        <li>Information mismatch with official records</li>
+        <li>Company may already have a verified owner</li>
+        <li>Additional verification required</li>
+      </ul>
+      
+      <p>If you believe this decision was made in error, or if you have additional documentation to support your claim, please feel free to contact our support team.</p>
+      
+      <p>Thank you for your understanding.</p>
+      <p>Best regards,<br>The COMCUBES Team</p>
+    `;
+
+    const result = await this.sendEmail({
+      to: claim.claimantEmail,
+      from: this.fromEmail,
+      subject: 'Company Claim Update - COMCUBES',
+      html,
+    });
+
+    // Log email to database for tracking
+    try {
+      await storage.logEmail({
+        emailType: 'claim_rejection',
+        recipientEmail: claim.claimantEmail,
+        senderEmail: this.fromEmail,
+        subject: 'Company Claim Update - COMCUBES',
+        content: html,
+        relatedId: claim.id,
+        deliveryStatus: result ? 'sent' : 'failed'
+      });
+    } catch (error) {
+      console.error('Failed to log claim rejection email:', error);
+    }
+
+    return result;
   }
 }
