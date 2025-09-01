@@ -18,6 +18,7 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { BannerAd } from '@/components/BannerAd';
+import { getActiveBannerImages, getBannerClickUrl } from '@/config/bannerAds';
 import { apiRequest } from '@/lib/queryClient';
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 
@@ -554,7 +555,11 @@ export default function CompanyListingPage() {
       <div className="flex gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Left Sidebar - Banner Ad */}
         <div className="hidden lg:block flex-shrink-0">
-          <BannerAd className="sticky top-24" />
+          <BannerAd 
+            className="sticky top-24" 
+            images={getActiveBannerImages('left')}
+            clickUrl={getBannerClickUrl('left')}
+          />
         </div>
 
         {/* Main Content */}
@@ -601,7 +606,11 @@ export default function CompanyListingPage() {
 
         {/* Right Sidebar - Advertisement Banner - 160x600 */}
         <div className="hidden lg:block flex-shrink-0">
-          <BannerAd className="sticky top-24" />
+          <BannerAd 
+            className="sticky top-24" 
+            images={getActiveBannerImages('right')}
+            clickUrl={getBannerClickUrl('right')}
+          />
         </div>
       </div>
     </div>
