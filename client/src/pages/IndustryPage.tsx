@@ -256,7 +256,14 @@ export default function IndustryPage() {
               </p>
             </div>
 
-            <BusinessGrid items={companies} type="company" onItemClick={handleCompanyClick} showClaimButtons={true} />
+            <BusinessGrid 
+              items={companies} 
+              type="company" 
+              onItemClick={handleCompanyClick} 
+              showClaimButtons={true}
+              currentSector={sectorName}
+              currentIndustry={decodedIndustryName}
+            />
           </>
         )}
           </div>

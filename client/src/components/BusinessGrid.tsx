@@ -10,9 +10,11 @@ interface BusinessGridProps {
   type: 'sector' | 'industry' | 'company';
   onItemClick: (item: Sector | Industry | Company) => void;
   showClaimButtons?: boolean;
+  currentSector?: string;
+  currentIndustry?: string;
 }
 
-export function BusinessGrid({ items, type, onItemClick, showClaimButtons = false }: BusinessGridProps) {
+export function BusinessGrid({ items, type, onItemClick, showClaimButtons = false, currentSector, currentIndustry }: BusinessGridProps) {
   const [, setLocation] = useLocation();
 
   const handleClaimClick = (e: React.MouseEvent, company: Company) => {
@@ -75,7 +77,13 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
           onClick={() => {
             if (item.id === -1) {
               // Navigate to company listing page for "Available Slot" items
-              setLocation('/company-listing');
+              // Navigate to list company page with pre-filled sector and industry
+              const params = new URLSearchParams();
+              if (currentSector) params.set('sector', currentSector);
+              if (currentIndustry) params.set('industry', currentIndustry);
+              const queryString = params.toString();
+              setLocation(`/list-company${queryString ? '?' + queryString : ''}`);
+              console.log('Navigating to list company with params:', { currentSector, currentIndustry });
             } else {
               onItemClick(item);
             }

@@ -50,6 +50,11 @@ export default function ListCompanyPage() {
   const [selectedPlan, setSelectedPlan] = useState<'basic' | 'premium' | null>(null);
   const [selectedSector, setSelectedSector] = useState<string>('');
   
+  // Get URL parameters for smart form population
+  const urlParams = new URLSearchParams(window.location.search);
+  const preSelectedSector = urlParams.get('sector') || '';
+  const preSelectedIndustry = urlParams.get('industry') || '';
+  
   // Fetch sectors from API
   const { data: sectors } = useQuery({
     queryKey: ['/api/sectors'],
@@ -64,11 +69,22 @@ export default function ListCompanyPage() {
       phone: '',
       website: '',
       contactPerson: '',
-      businessSector: '',
-      industry: '',
+      businessSector: preSelectedSector,
+      industry: preSelectedIndustry,
       companyDescription: '',
     },
   });
+  
+  // Auto-populate fields from URL parameters
+  useEffect(() => {
+    if (preSelectedSector) {
+      form.setValue('businessSector', preSelectedSector);
+      setSelectedSector(preSelectedSector);
+    }
+    if (preSelectedIndustry) {
+      form.setValue('industry', preSelectedIndustry);
+    }
+  }, [preSelectedSector, preSelectedIndustry, form]);
 
   const listingMutation = useMutation({
     mutationFn: async (data: CompanyListingData) => {
@@ -107,7 +123,7 @@ export default function ListCompanyPage() {
       return response.json();
     },
     onSuccess: (result) => {
-      if (result.success) {
+      if (result.authorization_url) {
         // Redirect to Paystack payment page
         window.location.href = result.authorization_url;
       } else {
@@ -128,9 +144,17 @@ export default function ListCompanyPage() {
   });
 
   const onSubmit = (data: CompanyListingData) => {
-    // Add the selected plan and pricing info
+    // Map form data to backend schema
     const submissionData = {
-      ...data,
+      companyName: data.companyName,
+      websiteUrl: data.website,
+      contactEmail: data.email,
+      sectorName: data.businessSector,
+      industryName: data.industry,
+      description: data.companyDescription,
+      logoUrl: data.companyLogo || '',
+      contactPerson: data.contactPerson,
+      phone: data.phone,
       listingPlan: selectedPlan!,
       paymentAmount: selectedPlan === 'basic' ? '20' : '30',
     };
