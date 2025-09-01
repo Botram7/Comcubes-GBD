@@ -12,6 +12,7 @@ import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
+import { getActiveBannerImages, getBannerClickUrl } from "@/config/bannerAds";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -201,12 +202,8 @@ export default function IndustryPage() {
           <div className="hidden lg:block flex-shrink-0">
             <BannerAd 
               className="sticky top-24" 
-              images={[
-                'https://via.placeholder.com/160x600/8B5CF6/FFFFFF?text=Promo+A',
-                'https://via.placeholder.com/160x600/F59E0B/FFFFFF?text=Promo+B',
-                'https://via.placeholder.com/160x600/10B981/FFFFFF?text=Promo+C'
-              ]}
-              clickUrl="https://www.business-ads.com"
+              images={getActiveBannerImages('left')}
+              clickUrl={getBannerClickUrl('left')}
             />
           </div>
 
@@ -280,12 +277,8 @@ export default function IndustryPage() {
           <div className="hidden lg:block flex-shrink-0">
             <BannerAd 
               className="sticky top-24" 
-              images={[
-                'https://via.placeholder.com/160x600/8B5CF6/FFFFFF?text=Promo+A',
-                'https://via.placeholder.com/160x600/F59E0B/FFFFFF?text=Promo+B',
-                'https://via.placeholder.com/160x600/10B981/FFFFFF?text=Promo+C'
-              ]}
-              clickUrl="https://www.business-ads.com"
+              images={getActiveBannerImages('right')}
+              clickUrl={getBannerClickUrl('right')}
             />
           </div>
         </div>

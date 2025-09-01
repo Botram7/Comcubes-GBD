@@ -19,12 +19,14 @@ import {
   Calendar,
   Search,
   Filter,
-  MoreHorizontal
+  MoreHorizontal,
+  ImageIcon
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
+import { BannerAdManager } from '@/components/BannerAdManager';
 import { apiRequest } from '@/lib/queryClient';
 import {
   Table,
@@ -984,6 +986,10 @@ export default function ComprehensiveAdminDashboard() {
               <BarChart3 className="h-4 w-4" />
               Analytics
             </TabsTrigger>
+            <TabsTrigger value="banners" className="flex items-center gap-2">
+              <ImageIcon className="h-4 w-4" />
+              Banner Ads
+            </TabsTrigger>
             <TabsTrigger value="settings" className="flex items-center gap-2">
               <Settings className="h-4 w-4" />
               System Settings
@@ -1004,6 +1010,10 @@ export default function ComprehensiveAdminDashboard() {
 
           <TabsContent value="analytics">
             {renderAnalyticsTab()}
+          </TabsContent>
+
+          <TabsContent value="banners">
+            <BannerAdManager />
           </TabsContent>
 
           <TabsContent value="settings">

@@ -12,6 +12,7 @@ import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
+import { getActiveBannerImages, getBannerClickUrl } from "@/config/bannerAds";
 import type { Industry, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -200,14 +201,8 @@ export default function SectorPage() {
           <div className="hidden lg:block flex-shrink-0">
             <BannerAd 
               className="sticky top-24" 
-              images={[
-                'https://via.placeholder.com/160x600/FF6B6B/FFFFFF?text=Ad+1',
-                'https://via.placeholder.com/160x600/4ECDC4/FFFFFF?text=Ad+2',
-                'https://via.placeholder.com/160x600/45B7D1/FFFFFF?text=Ad+3',
-                'https://via.placeholder.com/160x600/96CEB4/FFFFFF?text=Ad+4',
-                'https://via.placeholder.com/160x600/FECA57/000000?text=Ad+5'
-              ]}
-              clickUrl="https://www.example.com"
+              images={getActiveBannerImages('left')}
+              clickUrl={getBannerClickUrl('left')}
             />
           </div>
 
@@ -274,14 +269,8 @@ export default function SectorPage() {
           <div className="hidden lg:block flex-shrink-0">
             <BannerAd 
               className="sticky top-24" 
-              images={[
-                'https://via.placeholder.com/160x600/FF6B6B/FFFFFF?text=Ad+1',
-                'https://via.placeholder.com/160x600/4ECDC4/FFFFFF?text=Ad+2',
-                'https://via.placeholder.com/160x600/45B7D1/FFFFFF?text=Ad+3',
-                'https://via.placeholder.com/160x600/96CEB4/FFFFFF?text=Ad+4',
-                'https://via.placeholder.com/160x600/FECA57/000000?text=Ad+5'
-              ]}
-              clickUrl="https://www.example.com"
+              images={getActiveBannerImages('right')}
+              clickUrl={getBannerClickUrl('right')}
             />
           </div>
         </div>
