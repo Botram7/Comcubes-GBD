@@ -42,19 +42,41 @@ interface ClaimFormData {
 
 const CLAIM_PRICING = {
   basic: { 
-    price: 49, 
+    price: 20, 
+    monthlyPrice: 20,
     name: "Basic Claim", 
-    features: ["Company logo", "Website link", "Basic description", "Contact info"] 
+    features: [
+      "Company logo upload", 
+      "Website link (clickable)", 
+      "Company description (up to 500 words)", 
+      "Contact information display",
+      "Industry and sector placement"
+    ] 
   },
   premium: { 
-    price: 99, 
+    price: 35, 
+    monthlyPrice: 35,
     name: "Premium Claim", 
-    features: ["Everything in Basic", "Featured placement", "Rich description", "Social media links", "Analytics dashboard"] 
+    features: [
+      "Everything in Basic", 
+      "Enhanced company description (up to 1000 words)", 
+      "Priority placement within industry", 
+      "Additional contact methods",
+      "Company size and founding year display"
+    ] 
   },
   enterprise: { 
-    price: 199, 
-    name: "Enterprise Claim", 
-    features: ["Everything in Premium", "Priority support", "Custom branding", "Advanced analytics", "Dedicated account manager"] 
+    price: 50, 
+    monthlyPrice: 50,
+    name: "Professional Claim", 
+    features: [
+      "Everything in Premium", 
+      "Top priority placement in industry", 
+      "Multiple office locations", 
+      "Detailed company profile",
+      "Direct inquiry form",
+      "Enhanced SEO visibility"
+    ] 
   }
 };
 
@@ -571,8 +593,8 @@ export default function ClaimCompanyPage() {
                       >
                         <div className="text-center">
                           <h3 className="font-semibold text-lg">{plan.name}</h3>
-                          <p className="text-3xl font-bold text-blue-600 my-2">${plan.price}</p>
-                          <p className="text-sm text-gray-500 mb-4">one-time payment</p>
+                          <p className="text-3xl font-bold text-blue-600 my-2">${plan.monthlyPrice}</p>
+                          <p className="text-sm text-gray-500 mb-4">per month, billed annually (${plan.price * 12}/year)</p>
                           <ul className="text-left space-y-2">
                             {plan.features.map((feature, index) => (
                               <li key={index} className="flex items-start gap-2 text-sm">
@@ -607,7 +629,7 @@ export default function ClaimCompanyPage() {
                   disabled={claimMutation.isPending}
                   className="flex items-center gap-2"
                 >
-                  {claimMutation.isPending ? 'Submitting...' : `Submit Claim ($${CLAIM_PRICING[formData.plan].price})`}
+                  {claimMutation.isPending ? 'Submitting...' : `Submit Claim ($${CLAIM_PRICING[formData.plan].monthlyPrice}/month)`}
                 </Button>
               </div>
             </CardContent>
