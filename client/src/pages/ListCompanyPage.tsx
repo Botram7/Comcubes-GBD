@@ -37,12 +37,7 @@ const companyListingSchema = z.object({
 
 type CompanyListingData = z.infer<typeof companyListingSchema>;
 
-const businessSectors = [
-  "Aerospace and Defense", "Agriculture", "Automobile", "Banking and Finance", "Chemicals and Materials",
-  "Construction", "Consumer Goods", "Education", "Energy", "Entertainment and Media", "Food and Beverage",
-  "Government", "Healthcare", "Hospitality", "Insurance", "Manufacturing", "Mining and Metals",
-  "Real Estate", "Retail", "Technology", "Telecommunications", "Transportation", "Travel and Tourism"
-];
+// Fetch sectors from API instead of hardcoded list
 
 // Remove hardcoded industries object - we'll fetch from API
 
@@ -52,6 +47,12 @@ export default function ListCompanyPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<'basic' | 'premium' | null>(null);
   const [selectedSector, setSelectedSector] = useState<string>('');
+  
+  // Fetch sectors from API
+  const { data: sectors } = useQuery({
+    queryKey: ['/api/sectors'],
+    staleTime: 300000, // 5 minutes
+  });
 
   const form = useForm<CompanyListingData>({
     resolver: zodResolver(companyListingSchema),
@@ -445,16 +446,20 @@ export default function ListCompanyPage() {
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Business Sector *</FormLabel>
-                              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <Select onValueChange={(value) => {
+                                field.onChange(value);
+                                setSelectedSector(value);
+                                form.setValue('industry', ''); // Reset industry when sector changes
+                              }} value={field.value}>
                                 <FormControl>
                                   <SelectTrigger>
                                     <SelectValue placeholder="Select sector" />
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                  {businessSectors.map((sector) => (
-                                    <SelectItem key={sector} value={sector}>
-                                      {sector}
+                                  {(sectors || []).map((sector: any) => (
+                                    <SelectItem key={sector.id} value={sector.name}>
+                                      {sector.name}
                                     </SelectItem>
                                   ))}
                                 </SelectContent>
