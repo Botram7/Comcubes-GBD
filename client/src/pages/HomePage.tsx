@@ -181,15 +181,6 @@ export default function HomePage() {
               <Search className="mr-2 h-4 w-4" />
               Advanced Search
             </Button>
-            
-            <Button 
-              onClick={() => setLocation('/list-company')}
-              variant="outline"
-              className="px-8 py-3 rounded-lg font-medium border-2 hover:bg-gray-50 border-green-200 hover:bg-green-50 text-green-700 hover:text-green-800"
-            >
-              <Building2 className="mr-2 h-4 w-4" />
-              List Your Company
-            </Button>
           </div>
         </div>
       </section>
