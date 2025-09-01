@@ -1,19 +1,30 @@
 import { Card } from "@/components/ui/card";
 import { useLocation } from 'wouter';
 import { useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 interface BannerAdProps {
   className?: string;
-  images?: string[]; // Array of up to 10 image URLs
-  clickUrl?: string; // URL to navigate to when banner is clicked
+  position: 'left' | 'right'; // Position for fetching correct banner ads
 }
 
-export function BannerAd({ className = "", images = [], clickUrl }: BannerAdProps) {
+export function BannerAd({ className = "", position }: BannerAdProps) {
   const [, setLocation] = useLocation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  // Filter out empty/null images and ensure we have valid images
-  const validImages = images.filter(img => img && img.trim() !== '');
+  // Fetch banner ads from API
+  const { data: bannerAds, isLoading } = useQuery({
+    queryKey: ['/api/banner-ads'],
+    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
+  });
+
+  // Find the banner ad for this position
+  const bannerAd = Array.isArray(bannerAds) ? bannerAds.find((ad: any) => ad.position === position) : undefined;
+  const images = bannerAd?.images || [];
+  const clickUrl = bannerAd?.clickUrl;
+  
+  // Ensure images is always an array and filter out empty/null images
+  const validImages = Array.isArray(images) ? images.filter(img => img && img.trim() !== '') : [];
   
   // Rotate images every 7 seconds
   useEffect(() => {
@@ -36,6 +47,22 @@ export function BannerAd({ className = "", images = [], clickUrl }: BannerAdProp
     }
   };
   
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className={`${className}`}>
+        <Card 
+          className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 text-center animate-pulse"
+          style={{ width: '160px', height: '600px' }}
+        >
+          <div className="text-gray-400 h-full flex flex-col justify-center">
+            <div className="text-sm font-medium mb-2">Loading...</div>
+          </div>
+        </Card>
+      </div>
+    );
+  }
+
   // If no images are provided, show the default "Available for Rent" banner
   if (validImages.length === 0) {
     return (
