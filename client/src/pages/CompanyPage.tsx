@@ -12,6 +12,7 @@ import { AlertCircle, Building2 } from "lucide-react";
 
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
+import { getActiveBannerImages, getBannerClickUrl } from "@/config/bannerAds";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -198,7 +199,11 @@ export default function CompanyPage() {
         <div className="flex gap-6">
           {/* Left Advertisement Banner - 160x600 */}
           <div className="hidden lg:block flex-shrink-0">
-            <BannerAd className="sticky top-24" />
+            <BannerAd 
+              className="sticky top-24" 
+              images={getActiveBannerImages('left')}
+              clickUrl={getBannerClickUrl('left')}
+            />
           </div>
 
           {/* Main Content */}
@@ -268,7 +273,11 @@ export default function CompanyPage() {
 
           {/* Right Advertisement Banner - 160x600 */}
           <div className="hidden lg:block flex-shrink-0">
-            <BannerAd className="sticky top-24" />
+            <BannerAd 
+              className="sticky top-24" 
+              images={getActiveBannerImages('right')}
+              clickUrl={getBannerClickUrl('right')}
+            />
           </div>
         </div>
       </main>
