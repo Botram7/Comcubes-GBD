@@ -49,6 +49,7 @@ export default function ListCompanyPage() {
   const [listingId, setListingId] = useState<number | null>(null);
   const [selectedPlan, setSelectedPlan] = useState<'basic' | 'premium' | null>(null);
   const [selectedSector, setSelectedSector] = useState<string>('');
+  const [isWaitlisted, setIsWaitlisted] = useState(false);
   
   // Get URL parameters for smart form population
   const urlParams = new URLSearchParams(window.location.search);
@@ -84,6 +85,7 @@ export default function ListCompanyPage() {
     if (preSelectedIndustry) {
       form.setValue('industry', preSelectedIndustry);
     }
+    console.log('Smart autofill applied:', { preSelectedSector, preSelectedIndustry });
   }, [preSelectedSector, preSelectedIndustry, form]);
 
   const listingMutation = useMutation({
@@ -93,6 +95,7 @@ export default function ListCompanyPage() {
     },
     onSuccess: (result) => {
       if (result.isWaitlisted) {
+        setIsWaitlisted(true);
         toast({
           title: "Added to Waitlist",
           description: result.message,
@@ -100,6 +103,7 @@ export default function ListCompanyPage() {
         });
         setStep('success');
       } else {
+        setIsWaitlisted(false);
         setListingId(result.listingId);
         setStep('payment');
         toast({
@@ -182,12 +186,12 @@ export default function ListCompanyPage() {
   
   const availableIndustries = industriesData || [];
   
-  // Reset industry when sector changes
+  // Reset industry when sector changes (but not during initial URL parameter population)
   useEffect(() => {
-    if (watchedSector) {
-      form.setValue('industry', ''); // Reset industry selection
+    if (watchedSector && !preSelectedSector && !preSelectedIndustry) {
+      form.setValue('industry', ''); // Reset industry selection only if not from URL params
     }
-  }, [watchedSector, form]);
+  }, [watchedSector, form, preSelectedSector, preSelectedIndustry]);
 
   // Payment step component
   const renderPayment = () => (
@@ -285,9 +289,14 @@ export default function ListCompanyPage() {
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="h-8 w-8 text-green-600" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Application Submitted Successfully!</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              {isWaitlisted ? 'Added to Waitlist!' : 'Application Submitted Successfully!'}
+            </h2>
             <p className="text-gray-600 mb-8">
-              Thank you for choosing COMCUBES for your business listing. Our team will review your application and contact you within 48 hours with next steps and payment information.
+              {isWaitlisted 
+                ? 'Thank you for your interest in COMCUBES! All slots for this industry are currently occupied. You have been added to our waitlist and we will contact you as soon as a slot becomes available.'
+                : 'Thank you for choosing COMCUBES for your business listing. Our team will review your application and contact you within 48 hours with next steps and payment information.'
+              }
             </p>
             <Button onClick={() => setLocation('/')} size="lg">
               Return to Home
@@ -335,9 +344,14 @@ export default function ListCompanyPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-6" />
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Application Submitted Successfully!</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">
+              {isWaitlisted ? 'Added to Waitlist!' : 'Application Submitted Successfully!'}
+            </h1>
             <p className="text-lg text-gray-600 mb-8">
-              Thank you for choosing COMCUBES for your business listing. Our team will review your application and contact you within 48 hours with next steps and payment information.
+              {isWaitlisted 
+                ? 'Thank you for your interest in COMCUBES! All slots for this industry are currently occupied. You have been added to our waitlist and we will contact you as soon as a slot becomes available.'
+                : 'Thank you for choosing COMCUBES for your business listing. Our team will review your application and contact you within 48 hours with next steps and payment information.'
+              }
             </p>
             <Button onClick={() => setLocation('/')} size="lg">
               Return to Home
@@ -645,7 +659,10 @@ export default function ListCompanyPage() {
                               <Select onValueChange={(value) => {
                                 field.onChange(value);
                                 setSelectedSector(value);
-                                form.setValue('industry', ''); // Reset industry when sector changes
+                                // Only reset industry if not from URL parameters
+                                if (!preSelectedSector || !preSelectedIndustry) {
+                                  form.setValue('industry', '');
+                                }
                               }} value={field.value}>
                                 <FormControl>
                                   <SelectTrigger>
