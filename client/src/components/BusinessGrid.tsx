@@ -22,7 +22,8 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
     const searchParams = new URLSearchParams({
       companyId: company.id.toString(),
       companyName: company.name,
-      industryName: company.industryName
+      industryName: company.industryName || currentIndustry || '',
+      sectorName: company.sectorName || currentSector || ''
     });
     setLocation(`/claim-company?${searchParams.toString()}`);
   };
