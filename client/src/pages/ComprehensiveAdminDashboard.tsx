@@ -814,7 +814,7 @@ export default function ComprehensiveAdminDashboard() {
                                 <div>
                                   <strong>Logo:</strong>
                                   <img 
-                                    src={`/uploads/${claim.logoImagePath}`} 
+                                    src={claim.logoImagePath?.startsWith('uploads/') ? `/${claim.logoImagePath}` : `/uploads/${claim.logoImagePath}`} 
                                     alt="Company Logo"
                                     className="mt-2 w-20 h-20 object-cover border rounded"
                                   />

@@ -8,7 +8,7 @@ import { storage } from "../storage";
 
 // Configure multer for file uploads
 const upload = multer({
-  dest: 'uploads/',
+  dest: 'server/uploads/',
   limits: {
     fileSize: 2 * 1024 * 1024, // 2MB limit
   },
