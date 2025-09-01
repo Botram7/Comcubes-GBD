@@ -85,6 +85,29 @@ export const companyClaims = pgTable('company_claims', {
   verificationExpiresAt: timestamp('verification_expires_at'),
 });
 
+// Banner Ads table for persistent banner ad management
+export const bannerAds = pgTable('banner_ads', {
+  id: serial('id').primaryKey(),
+  position: text('position').notNull(), // 'left' or 'right'
+  images: json('images').$type<string[]>().default([]).notNull(), // Array of image URLs
+  clickUrl: text('click_url'),
+  isActive: boolean('is_active').default(true).notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+});
+
+// Email Logs table for tracking sent emails
+export const emailLogs = pgTable('email_logs', {
+  id: serial('id').primaryKey(),
+  recipientEmail: text('recipient_email').notNull(),
+  senderEmail: text('sender_email').notNull(),
+  subject: text('subject').notNull(),
+  content: text('content').notNull(),
+  emailType: text('email_type').notNull(), // 'waitlist_notification', 'claim_approval', etc.
+  relatedId: integer('related_id'), // Reference to related record (waitlist ID, claim ID, etc.)
+  sentAt: timestamp('sent_at').defaultNow().notNull(),
+  deliveryStatus: text('delivery_status').default('sent').notNull(), // 'sent', 'delivered', 'failed'
+});
+
 // Type exports
 export type Sector = typeof sectors.$inferSelect;
 export type Industry = typeof industries.$inferSelect;
@@ -93,6 +116,8 @@ export type ContactMessage = typeof contactMessages.$inferSelect;
 export type CompanyListing = typeof companyListings.$inferSelect;
 export type IndustryWaitlist = typeof industryWaitlist.$inferSelect;
 export type CompanyClaim = typeof companyClaims.$inferSelect;
+export type BannerAd = typeof bannerAds.$inferSelect;
+export type EmailLog = typeof emailLogs.$inferSelect;
 
 export type InsertSector = typeof sectors.$inferInsert;
 export type InsertIndustry = typeof industries.$inferInsert;
@@ -101,6 +126,8 @@ export type InsertContactMessage = typeof contactMessages.$inferInsert;
 export type InsertCompanyListing = typeof companyListings.$inferInsert;
 export type InsertIndustryWaitlist = typeof industryWaitlist.$inferInsert;
 export type InsertCompanyClaim = typeof companyClaims.$inferInsert;
+export type InsertBannerAd = typeof bannerAds.$inferInsert;
+export type InsertEmailLog = typeof emailLogs.$inferInsert;
 
 // Zod schemas for validation
 export const insertSectorSchema = createInsertSchema(sectors);
@@ -120,3 +147,7 @@ export const selectContactMessageSchema = createSelectSchema(contactMessages);
 export const selectCompanyListingSchema = createSelectSchema(companyListings);
 export const selectIndustryWaitlistSchema = createSelectSchema(industryWaitlist);
 export const selectCompanyClaimSchema = createSelectSchema(companyClaims);
+export const insertBannerAdSchema = createInsertSchema(bannerAds);
+export const selectBannerAdSchema = createSelectSchema(bannerAds);
+export const insertEmailLogSchema = createInsertSchema(emailLogs);
+export const selectEmailLogSchema = createSelectSchema(emailLogs);

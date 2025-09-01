@@ -56,18 +56,75 @@ export const RIGHT_BANNER_ADS: BannerAdConfig = {
   isActive: true
 };
 
-// HELPER FUNCTIONS
-export function getBannerConfig(position: 'left' | 'right'): BannerAdConfig {
-  return position === 'left' ? LEFT_BANNER_ADS : RIGHT_BANNER_ADS;
+// API-BASED HELPER FUNCTIONS
+// These functions now fetch data from the database via API calls
+let bannerCache: { [key: string]: BannerAdConfig } = {};
+let cacheExpiry: number = 0;
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
+async function fetchBannerAds(): Promise<void> {
+  const now = Date.now();
+  if (now < cacheExpiry) return; // Cache still valid
+
+  try {
+    const response = await fetch('/api/banner-ads');
+    if (!response.ok) throw new Error('Failed to fetch banner ads');
+    
+    const bannerAds = await response.json();
+    
+    // Reset cache
+    bannerCache = {};
+    
+    // Populate cache with API data
+    bannerAds.forEach((banner: any) => {
+      bannerCache[banner.position] = {
+        id: banner.id.toString(),
+        name: `${banner.position} Banner`,
+        images: banner.images || [],
+        clickUrl: banner.clickUrl,
+        isActive: banner.isActive
+      };
+    });
+    
+    cacheExpiry = now + CACHE_DURATION;
+  } catch (error) {
+    console.error('Failed to fetch banner ads, using fallback:', error);
+    // Fallback to static configuration if API fails
+    bannerCache = {
+      left: LEFT_BANNER_ADS,
+      right: RIGHT_BANNER_ADS
+    };
+    cacheExpiry = now + (30 * 1000); // Retry in 30 seconds
+  }
 }
 
-export function getActiveBannerImages(position: 'left' | 'right'): string[] {
-  const config = getBannerConfig(position);
+export async function getBannerConfig(position: 'left' | 'right'): Promise<BannerAdConfig> {
+  await fetchBannerAds();
+  return bannerCache[position] || (position === 'left' ? LEFT_BANNER_ADS : RIGHT_BANNER_ADS);
+}
+
+export async function getActiveBannerImages(position: 'left' | 'right'): Promise<string[]> {
+  const config = await getBannerConfig(position);
   return config.isActive ? config.images.filter(img => img && img.trim() !== '') : [];
 }
 
-export function getBannerClickUrl(position: 'left' | 'right'): string | undefined {
-  const config = getBannerConfig(position);
+export async function getBannerClickUrl(position: 'left' | 'right'): Promise<string | undefined> {
+  const config = await getBannerConfig(position);
+  return config.isActive ? config.clickUrl : undefined;
+}
+
+// LEGACY SYNCHRONOUS FUNCTIONS (for backward compatibility)
+export function getBannerConfigSync(position: 'left' | 'right'): BannerAdConfig {
+  return bannerCache[position] || (position === 'left' ? LEFT_BANNER_ADS : RIGHT_BANNER_ADS);
+}
+
+export function getActiveBannerImagesSync(position: 'left' | 'right'): string[] {
+  const config = getBannerConfigSync(position);
+  return config.isActive ? config.images.filter(img => img && img.trim() !== '') : [];
+}
+
+export function getBannerClickUrlSync(position: 'left' | 'right'): string | undefined {
+  const config = getBannerConfigSync(position);
   return config.isActive ? config.clickUrl : undefined;
 }
 

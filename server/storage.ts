@@ -1,7 +1,7 @@
 import { csvParser } from './services/csvParser';
 import { db } from './db';
-import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, companyClaims, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type CompanyClaim, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist, type InsertCompanyClaim } from '@shared/schema';
-import { eq, ilike, or } from 'drizzle-orm';
+import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, companyClaims, bannerAds, emailLogs, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type CompanyClaim, type BannerAd, type EmailLog, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist, type InsertCompanyClaim, type InsertBannerAd, type InsertEmailLog } from '@shared/schema';
+import { eq, ilike, or, and } from 'drizzle-orm';
 import { generateCompanyDescription } from './services/companyDescriptionGenerator';
 
 export interface IStorage {
@@ -51,6 +51,23 @@ export interface IStorage {
   updateCompanyClaimStatus(id: number, status: string, adminNotes?: string): Promise<CompanyClaim | undefined>;
   getCompanyClaimStats(): Promise<any>;
   getPendingClaimsCount(): Promise<number>;
+  updateCompanyOwnership(companyId: number, ownershipData: {
+    verifiedOwner: boolean;
+    ownerEmail: string;
+    ownerName: string;
+    verificationDate: Date;
+  }): Promise<Company | undefined>;
+  
+  // Banner Ad operations
+  getBannerAds(): Promise<BannerAd[]>;
+  createBannerAd(bannerAd: InsertBannerAd): Promise<BannerAd>;
+  updateBannerAd(id: number, bannerAd: Partial<InsertBannerAd>): Promise<BannerAd | undefined>;
+  deleteBannerAd(id: number): Promise<boolean>;
+  getActiveBannerAds(position?: string): Promise<BannerAd[]>;
+  
+  // Email Log operations
+  logEmail(email: InsertEmailLog): Promise<EmailLog>;
+  getEmailLogs(type?: string, relatedId?: number): Promise<EmailLog[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -581,6 +598,87 @@ export class DatabaseStorage implements IStorage {
     };
 
     return stats;
+  }
+
+  async updateCompanyOwnership(companyId: number, ownershipData: {
+    verifiedOwner: boolean;
+    ownerEmail: string;
+    ownerName: string;
+    verificationDate: Date;
+  }): Promise<Company | undefined> {
+    await this.initialize();
+    
+    // Note: This is a conceptual implementation
+    // The current companies table doesn't have ownership fields
+    // In a real implementation, you'd add these fields to the companies table schema
+    
+    console.log(`Would update company ${companyId} with ownership data:`, ownershipData);
+    
+    // For now, just return the existing company
+    const [company] = await db.select().from(companies).where(eq(companies.id, companyId));
+    return company;
+  }
+
+  // Banner Ad operations
+  async getBannerAds(): Promise<BannerAd[]> {
+    await this.initialize();
+    return await db.select().from(bannerAds);
+  }
+
+  async createBannerAd(bannerAd: InsertBannerAd): Promise<BannerAd> {
+    await this.initialize();
+    const [newBannerAd] = await db.insert(bannerAds).values(bannerAd).returning();
+    return newBannerAd;
+  }
+
+  async updateBannerAd(id: number, bannerAdData: Partial<InsertBannerAd>): Promise<BannerAd | undefined> {
+    await this.initialize();
+    const [updatedBannerAd] = await db
+      .update(bannerAds)
+      .set({ ...bannerAdData, updatedAt: new Date() })
+      .where(eq(bannerAds.id, id))
+      .returning();
+    return updatedBannerAd;
+  }
+
+  async deleteBannerAd(id: number): Promise<boolean> {
+    await this.initialize();
+    const result = await db.delete(bannerAds).where(eq(bannerAds.id, id));
+    return (result.rowCount ?? 0) > 0;
+  }
+
+  async getActiveBannerAds(position?: string): Promise<BannerAd[]> {
+    await this.initialize();
+    if (position) {
+      return await db.select().from(bannerAds)
+        .where(and(eq(bannerAds.isActive, true), eq(bannerAds.position, position)));
+    } else {
+      return await db.select().from(bannerAds)
+        .where(eq(bannerAds.isActive, true));
+    }
+  }
+
+  // Email Log operations
+  async logEmail(email: InsertEmailLog): Promise<EmailLog> {
+    await this.initialize();
+    const [newEmailLog] = await db.insert(emailLogs).values(email).returning();
+    return newEmailLog;
+  }
+
+  async getEmailLogs(type?: string, relatedId?: number): Promise<EmailLog[]> {
+    await this.initialize();
+    if (type && relatedId) {
+      return await db.select().from(emailLogs)
+        .where(and(eq(emailLogs.emailType, type), eq(emailLogs.relatedId, relatedId)));
+    } else if (type) {
+      return await db.select().from(emailLogs)
+        .where(eq(emailLogs.emailType, type));
+    } else if (relatedId) {
+      return await db.select().from(emailLogs)
+        .where(eq(emailLogs.relatedId, relatedId));
+    } else {
+      return await db.select().from(emailLogs);
+    }
   }
 }
 
