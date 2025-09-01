@@ -76,13 +76,53 @@ export default function ClaimCompanyPage() {
     plan: 'basic'
   });
 
-  // Scroll to top when component mounts
+  // Check for URL parameters and auto-populate form data
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const companyId = urlParams.get('companyId');
+    const companyName = urlParams.get('companyName');
+    const industryName = urlParams.get('industryName');
+    const sectorName = urlParams.get('sectorName');
+    
+    // If company details are provided via URL, skip search and go directly to form
+    if (companyId && companyName) {
+      setFormData(prev => ({
+        ...prev,
+        companyId: companyId,
+        companyName: companyName
+      }));
+      
+      // Create a mock company object for selected company state
+      const mockCompany: Company = {
+        id: parseInt(companyId),
+        name: companyName,
+        industryName: industryName || '',
+        websiteUrl: '',
+        sectorName: sectorName || ''
+      };
+      
+      setSelectedCompany(mockCompany);
+      setStep('form'); // Skip directly to form step
+      
+      // Show success message about auto-population
+      toast({
+        title: "Company Pre-selected",
+        description: `${companyName} has been automatically selected. You can edit any details below.`,
+      });
+    }
   }, []);
 
   const { data: sectors } = useQuery<Sector[]>({
     queryKey: ["/api/sectors"],
+    staleTime: Infinity,
+  });
+
+  // Fetch additional company details when company is pre-selected
+  const { data: companyDetails } = useQuery({
+    queryKey: ["/api/companies", formData.companyId],
+    enabled: !!formData.companyId && !!selectedCompany,
     staleTime: Infinity,
   });
 
@@ -275,7 +315,11 @@ export default function ClaimCompanyPage() {
             ].map((stepInfo, index) => {
               const Icon = stepInfo.icon;
               const isActive = step === stepInfo.key;
-              const isCompleted = ['search', 'select', 'form', 'payment'].indexOf(step) > ['search', 'select', 'form', 'payment'].indexOf(stepInfo.key);
+              // Mark search and select as completed when coming from URL parameters
+              const stepOrder = ['search', 'select', 'form', 'payment'];
+              const currentStepIndex = stepOrder.indexOf(step);
+              const stepIndex = stepOrder.indexOf(stepInfo.key);
+              const isCompleted = currentStepIndex > stepIndex || (selectedCompany && ['search', 'select'].includes(stepInfo.key));
               
               return (
                 <div key={stepInfo.key} className="flex items-center">
