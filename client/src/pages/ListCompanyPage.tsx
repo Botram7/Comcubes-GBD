@@ -33,6 +33,7 @@ const companyListingSchema = z.object({
   listingPlan: z.enum(['basic', 'premium'], {
     required_error: 'Please select a listing plan',
   }),
+  paymentAmount: z.string().optional(),
 });
 
 type CompanyListingData = z.infer<typeof companyListingSchema>;
@@ -44,7 +45,8 @@ type CompanyListingData = z.infer<typeof companyListingSchema>;
 export default function ListCompanyPage() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [step, setStep] = useState<'form' | 'payment' | 'success'>('form');
+  const [listingId, setListingId] = useState<number | null>(null);
   const [selectedPlan, setSelectedPlan] = useState<'basic' | 'premium' | null>(null);
   const [selectedSector, setSelectedSector] = useState<string>('');
   
@@ -71,27 +73,78 @@ export default function ListCompanyPage() {
   const listingMutation = useMutation({
     mutationFn: async (data: CompanyListingData) => {
       const response = await apiRequest('POST', '/api/company-listing', data);
-      return response;
+      return response.json();
     },
-    onSuccess: () => {
-      setIsSubmitted(true);
-      form.reset();
-      toast({
-        title: "Application Submitted!",
-        description: "We'll review your company listing request and contact you within 48 hours.",
-      });
+    onSuccess: (result) => {
+      if (result.isWaitlisted) {
+        toast({
+          title: "Added to Waitlist",
+          description: result.message,
+          variant: "default",
+        });
+        setStep('success');
+      } else {
+        setListingId(result.listingId);
+        setStep('payment');
+        toast({
+          title: "Listing Submitted Successfully",
+          description: "Now proceed with payment to activate your listing.",
+        });
+      }
     },
     onError: (error) => {
       toast({
-        title: "Error",
-        description: "Failed to submit listing request. Please try again.",
+        title: "Failed to Submit Application",
+        description: error.message || "Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const paymentMutation = useMutation({
+    mutationFn: async (data: { listingId: number; amount: number }) => {
+      const response = await apiRequest('POST', '/api/payment/initialize', data);
+      return response.json();
+    },
+    onSuccess: (result) => {
+      if (result.success) {
+        // Redirect to Paystack payment page
+        window.location.href = result.authorization_url;
+      } else {
+        toast({
+          title: "Payment Setup Failed",
+          description: "Could not initialize payment. Please try again.",
+          variant: "destructive",
+        });
+      }
+    },
+    onError: (error) => {
+      toast({
+        title: "Payment Failed",
+        description: error.message || "Please try again later.",
         variant: "destructive",
       });
     },
   });
 
   const onSubmit = (data: CompanyListingData) => {
-    listingMutation.mutate(data);
+    // Add the selected plan and pricing info
+    const submissionData = {
+      ...data,
+      listingPlan: selectedPlan!,
+      paymentAmount: selectedPlan === 'basic' ? '20' : '30',
+    };
+    listingMutation.mutate(submissionData);
+  };
+
+  const handlePayment = () => {
+    if (listingId && selectedPlan) {
+      const amount = selectedPlan === 'basic' ? 20 : 30;
+      paymentMutation.mutate({
+        listingId,
+        amount,
+      });
+    }
   };
 
   const watchedSector = form.watch('businessSector');
@@ -112,7 +165,126 @@ export default function ListCompanyPage() {
     }
   }, [watchedSector, form]);
 
-  if (isSubmitted) {
+  // Payment step component
+  const renderPayment = () => (
+    <div className="min-h-screen bg-gray-50">
+      <header className="bg-white shadow-sm border-b">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
+              <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
+              </div>
+              <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+            </div>
+            <Button 
+              variant="outline" 
+              onClick={() => setLocation('/')}
+              className="flex items-center space-x-2"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span>Back to Home</span>
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      <div className="max-w-2xl mx-auto px-4 py-12">
+        <Card>
+          <CardContent className="p-12 text-center">
+            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Building2 className="h-8 w-8 text-blue-600" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Complete Your Payment</h2>
+            <p className="text-gray-600 mb-8">
+              Your listing has been submitted. Complete the payment to activate your listing in the COMCUBES directory.
+            </p>
+            
+            <div className="bg-gray-50 rounded-lg p-6 mb-8">
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-medium">
+                  {selectedPlan === 'basic' ? 'Basic' : 'Premium'} Plan
+                </span>
+                <span className="text-2xl font-bold text-blue-600">
+                  ${selectedPlan === 'basic' ? '20' : '30'}/month
+                </span>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <Button 
+                onClick={handlePayment}
+                size="lg"
+                className="w-full"
+                disabled={paymentMutation.isPending}
+              >
+                {paymentMutation.isPending ? 'Processing...' : 'Pay with Paystack'}
+              </Button>
+              
+              <div className="text-sm text-gray-500">
+                Secure payment powered by Paystack. Supports cards, bank transfers, and mobile money.
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+
+  // Success step component  
+  const renderSuccess = () => (
+    <div className="min-h-screen bg-gray-50">
+      <header className="bg-white shadow-sm border-b">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
+              <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
+              </div>
+              <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+            </div>
+            <Button 
+              variant="outline" 
+              onClick={() => setLocation('/')}
+              className="flex items-center space-x-2"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span>Back to Home</span>
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      <div className="max-w-2xl mx-auto px-4 py-12">
+        <Card>
+          <CardContent className="p-12 text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="h-8 w-8 text-green-600" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Application Submitted Successfully!</h2>
+            <p className="text-gray-600 mb-8">
+              Thank you for choosing COMCUBES for your business listing. Our team will review your application and contact you within 48 hours with next steps and payment information.
+            </p>
+            <Button onClick={() => setLocation('/')} size="lg">
+              Return to Home
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+
+  // Render based on current step
+  if (step === 'payment') {
+    return renderPayment();
+  }
+  
+  if (step === 'success') {
+    return renderSuccess();
+  }
+
+  // Default form step
+  if (false) {
     return (
       <div className="min-h-screen bg-gray-50">
         <header className="bg-white shadow-sm border-b">
