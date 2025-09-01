@@ -198,7 +198,17 @@ export default function SectorPage() {
         <div className="flex gap-6">
           {/* Left Advertisement Banner - 160x600 */}
           <div className="hidden lg:block flex-shrink-0">
-            <BannerAd className="sticky top-24" />
+            <BannerAd 
+              className="sticky top-24" 
+              images={[
+                'https://via.placeholder.com/160x600/FF6B6B/FFFFFF?text=Ad+1',
+                'https://via.placeholder.com/160x600/4ECDC4/FFFFFF?text=Ad+2',
+                'https://via.placeholder.com/160x600/45B7D1/FFFFFF?text=Ad+3',
+                'https://via.placeholder.com/160x600/96CEB4/FFFFFF?text=Ad+4',
+                'https://via.placeholder.com/160x600/FECA57/000000?text=Ad+5'
+              ]}
+              clickUrl="https://www.example.com"
+            />
           </div>
 
           {/* Main Content */}
@@ -262,7 +272,17 @@ export default function SectorPage() {
 
           {/* Right Advertisement Banner - 160x600 */}
           <div className="hidden lg:block flex-shrink-0">
-            <BannerAd className="sticky top-24" />
+            <BannerAd 
+              className="sticky top-24" 
+              images={[
+                'https://via.placeholder.com/160x600/FF6B6B/FFFFFF?text=Ad+1',
+                'https://via.placeholder.com/160x600/4ECDC4/FFFFFF?text=Ad+2',
+                'https://via.placeholder.com/160x600/45B7D1/FFFFFF?text=Ad+3',
+                'https://via.placeholder.com/160x600/96CEB4/FFFFFF?text=Ad+4',
+                'https://via.placeholder.com/160x600/FECA57/000000?text=Ad+5'
+              ]}
+              clickUrl="https://www.example.com"
+            />
           </div>
         </div>
       </main>
