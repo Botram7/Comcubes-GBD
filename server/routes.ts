@@ -14,6 +14,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Serve static assets from attached_assets directory
   app.use('/generated_images', express.static(path.resolve(import.meta.dirname, '..', 'attached_assets', 'generated_images')));
   
+  // Serve uploaded files (logos, etc.)
+  app.use('/uploads', express.static(path.resolve(import.meta.dirname, 'uploads')));
+  
   // Get all sectors
   app.get("/api/sectors", async (req, res) => {
     try {
