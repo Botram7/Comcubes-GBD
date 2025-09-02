@@ -129,7 +129,6 @@ export default function SearchPage() {
           <BannerAd 
             className="sticky top-24" 
             position="left"
-            clickUrl={getBannerClickUrl('left')}
           />
         </div>
 
@@ -376,7 +375,6 @@ export default function SearchPage() {
           <BannerAd 
             className="sticky top-24" 
             position="right"
-            clickUrl={getBannerClickUrl('right')}
           />
         </div>
       </div>
