@@ -27,6 +27,7 @@ import { useState, useEffect } from "react";
 import { generateCompanyDescription } from "@/utils/companyDescriptionGenerator";
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 import { SEOAnalyzer } from "@/components/SEOAnalyzer";
+import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 
 export default function CompanyProfilePage() {
   const { companyId } = useParams();
@@ -154,6 +155,7 @@ export default function CompanyProfilePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <AffiliateDisclosureBanner />
       <SEOHead 
         title={`${company.name} - Company Profile | ${company.industryName} | COMCUBES`}
         description={`Complete business profile for ${company.name} in ${company.industryName} industry. Find contact details, website, company information, and related businesses in ${company.sectorName} sector.`}

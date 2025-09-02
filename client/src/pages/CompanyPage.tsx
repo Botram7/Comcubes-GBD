@@ -12,6 +12,7 @@ import { AlertCircle, Building2 } from "lucide-react";
 
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
+import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -138,6 +139,7 @@ export default function CompanyPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <AffiliateDisclosureBanner />
       <SEOHead 
         title="Browse All Companies - COMCUBES Global Business Directory"
         description="Explore thousands of companies from around the world. Search and discover businesses across all industries and sectors in our comprehensive global directory."
