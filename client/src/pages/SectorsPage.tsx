@@ -11,6 +11,7 @@ import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
+import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { getActiveBannerImages, getBannerClickUrl } from "@/config/bannerAds";
 import type { Sector, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
@@ -104,6 +105,7 @@ export default function SectorsPage() {
 
   return (
     <div className="page-with-sticky-footer bg-gray-50  font-inter ">
+      <AffiliateDisclosureBanner />
       <SEOHead 
         title="Business Sectors Directory | COMCUBES Global Business Directory"
         description="Explore 20 major business sectors including Technology, Healthcare, Finance, Manufacturing, and more. Discover specialized industries within each sector worldwide."
