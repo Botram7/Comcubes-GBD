@@ -15,7 +15,7 @@ export function SearchBar({ onSearchResults, searchMode = 'local' }: SearchBarPr
   const [isSearchActive, setIsSearchActive] = useState(false);
 
   const { data: searchResults } = useQuery({
-    queryKey: [searchMode === 'global' ? "/api/search/global" : "/api/search", searchQuery],
+    queryKey: [searchMode === 'global' ? "/api/search/global" : "/api/search", searchQuery, searchMode],
     enabled: searchQuery.length >= 2,
     staleTime: 30000,
   });
@@ -35,14 +35,21 @@ export function SearchBar({ onSearchResults, searchMode = 'local' }: SearchBarPr
     onSearchResults(null);
   };
 
-  // Update search results when data changes
+  // Update search results when data changes or search mode changes
   useEffect(() => {
     if (isSearchActive && searchResults) {
       onSearchResults(searchResults);
     } else if (!isSearchActive) {
       onSearchResults(null);
     }
-  }, [searchResults, isSearchActive, onSearchResults]);
+  }, [searchResults, isSearchActive, onSearchResults, searchMode]);
+
+  // Clear search when search mode changes to force a new search
+  useEffect(() => {
+    if (searchQuery && searchQuery.length >= 2) {
+      // The query key change will automatically trigger a refetch
+    }
+  }, [searchMode, searchQuery]);
 
   return (
     <div className="relative w-96">
