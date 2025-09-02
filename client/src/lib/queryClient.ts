@@ -45,7 +45,7 @@ export const getQueryFn: <T>(options: {
     let url = queryKey[0] as string;
     
     // Handle search queries with parameters
-    if (url === "/api/search" && queryKey[1]) {
+    if ((url === "/api/search" || url === "/api/search/global") && queryKey[1]) {
       url = `${url}?q=${encodeURIComponent(queryKey[1] as string)}`;
     }
     
