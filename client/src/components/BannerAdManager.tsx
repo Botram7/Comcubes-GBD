@@ -28,7 +28,9 @@ interface BannerAd {
   id: number;
   position: string;
   images: string[];
-  clickUrl?: string;
+  imageUrls: string[]; // Individual URLs for each image
+  clickUrl?: string; // Fallback URL
+  rotationInterval: number; // Rotation timing in milliseconds
   isActive: boolean;
 }
 
@@ -39,6 +41,7 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
   const [activeTab, setActiveTab] = useState<'left' | 'right'>('left');
   const [isDragOver, setIsDragOver] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
+  const [rotationInterval, setRotationInterval] = useState(7000); // Default 7 seconds
   const fileInputRef = useRef<HTMLInputElement>(null);
   
   // Fetch banner ads from database
@@ -170,7 +173,9 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
       updateBannerMutation.mutate({
         position: activeTab,
         images: updatedImages,
+        imageUrls: currentBanner?.imageUrls || [],
         clickUrl: currentBanner?.clickUrl,
+        rotationInterval: currentBanner?.rotationInterval || 7000,
         isActive: currentBanner?.isActive ?? true
       });
 
@@ -207,7 +212,9 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
       updateBannerMutation.mutate({
         position: activeTab,
         images: updatedImages,
+        imageUrls: currentBanner?.imageUrls || [],
         clickUrl: currentBanner?.clickUrl,
+        rotationInterval: currentBanner?.rotationInterval || 7000,
         isActive: currentBanner?.isActive ?? true
       });
 
@@ -245,7 +252,9 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
       updateBannerMutation.mutate({
         position: activeTab,
         images: updatedImages,
+        imageUrls: currentBanner?.imageUrls || [],
         clickUrl: currentBanner?.clickUrl,
+        rotationInterval: currentBanner?.rotationInterval || 7000,
         isActive: currentBanner?.isActive ?? true
       });
       setNewImageUrl("");
@@ -266,7 +275,38 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
     updateBannerMutation.mutate({
       position: activeTab,
       images: currentBanner?.images || [],
+      imageUrls: currentBanner?.imageUrls || [],
       clickUrl: url,
+      rotationInterval: currentBanner?.rotationInterval || 7000,
+      isActive: currentBanner?.isActive ?? true
+    });
+  };
+
+  const updateImageUrl = (imageIndex: number, url: string) => {
+    const updatedUrls = [...(currentBanner?.imageUrls || [])];
+    // Ensure array is long enough
+    while (updatedUrls.length <= imageIndex) {
+      updatedUrls.push('');
+    }
+    updatedUrls[imageIndex] = url;
+    
+    updateBannerMutation.mutate({
+      position: activeTab,
+      images: currentBanner?.images || [],
+      imageUrls: updatedUrls,
+      clickUrl: currentBanner?.clickUrl,
+      rotationInterval: currentBanner?.rotationInterval || 7000,
+      isActive: currentBanner?.isActive ?? true
+    });
+  };
+
+  const updateRotationInterval = (interval: number) => {
+    updateBannerMutation.mutate({
+      position: activeTab,
+      images: currentBanner?.images || [],
+      imageUrls: currentBanner?.imageUrls || [],
+      clickUrl: currentBanner?.clickUrl,
+      rotationInterval: interval,
       isActive: currentBanner?.isActive ?? true
     });
   };
@@ -338,7 +378,7 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
 
           {/* Click URL Configuration */}
           <div className="space-y-2">
-            <Label htmlFor="clickUrl">Click Destination URL</Label>
+            <Label htmlFor="clickUrl">Fallback Click Destination URL</Label>
             <Input
               id="clickUrl"
               type="url"
@@ -348,7 +388,44 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
               disabled={updateBannerMutation.isPending}
             />
             <p className="text-sm text-gray-500">
-              Where users go when they click the banner
+              Used when individual image URLs are not set
+            </p>
+          </div>
+
+          {/* Rotation Timing Configuration */}
+          <div className="space-y-2">
+            <Label htmlFor="rotationInterval">Image Rotation Timing</Label>
+            <div className="flex items-center space-x-2">
+              <Input
+                id="rotationInterval"
+                type="number"
+                min="1"
+                max="60"
+                placeholder="7"
+                value={Math.round((currentBanner?.rotationInterval || 7000) / 1000)}
+                onChange={(e) => {
+                  const seconds = parseInt(e.target.value) || 7;
+                  updateRotationInterval(seconds * 1000);
+                }}
+                disabled={updateBannerMutation.isPending}
+                className="w-20"
+              />
+              <span className="text-sm text-gray-600">seconds</span>
+              <Button
+                onClick={() => updateRotationInterval(0)}
+                variant="outline"
+                size="sm"
+                disabled={updateBannerMutation.isPending}
+                className="text-blue-600 hover:text-blue-700"
+              >
+                Static (No Rotation)
+              </Button>
+            </div>
+            <p className="text-sm text-gray-500">
+              {currentBanner?.rotationInterval === 0 ? 
+                '🔒 Images will not rotate automatically' : 
+                `🔄 Images rotate every ${Math.round((currentBanner?.rotationInterval || 7000) / 1000)} seconds`
+              }
             </p>
           </div>
 
@@ -422,32 +499,67 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
               </Button>
             </div>
 
-            {/* Image List */}
-            <div className="space-y-2 max-h-64 overflow-y-auto">
+            {/* Image List with Individual URLs */}
+            <div className="space-y-4 max-h-96 overflow-y-auto">
               {(currentBanner?.images || []).map((image: string, index: number) => (
-                <div key={index} className="flex items-center space-x-2 p-3 bg-gray-50 rounded-lg">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gray-200 rounded overflow-hidden">
-                    <img 
-                      src={image} 
-                      alt={`Banner ${index + 1}`}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNiAxMkMxNC44OTU0IDEyIDEyIDEyIDEyIDEyQzEyIDEyIDEyIDEzLjEwNDYgMTIgMTRDMTIgMTQuODk1NCAxMi44OTU0IDE2IDE0IDE2QzE1LjEwNDYgMTYgMTYgMTUuMTA0NiAxNiAxNEMxNiAxMy4xMDQ2IDE2IDEyIDE2IDEyWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNMTIgMjBIMjBMMTggMTZMMTYgMThMMTQgMTZMMTIgMjBaIiBmaWxsPSIjOUNBM0FGIi8+Cjwvc3ZnPgo=';
-                      }}
-                    />
+                <div key={index} className="p-4 bg-gray-50 rounded-lg border">
+                  <div className="flex items-start space-x-3">
+                    {/* Image Thumbnail */}
+                    <div className="flex-shrink-0 w-16 h-16 bg-gray-200 rounded overflow-hidden border">
+                      <img 
+                        src={image} 
+                        alt={`Banner ${index + 1}`}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNiAxMkMxNC44OTU0IDEyIDEyIDEyIDEyIDEyQzEyIDEyIDEyIDEzLjEwNDYgMTIgMTRDMTIgMTQuODk1NCAxMi44OTU0IDE2IDE0IDE2QzE1LjEwNDYgMTYgMTYgMTUuMTA0NiAxNiAxNEMxNiAxMy4xMDQ2IDE2IDEyIDE2IDEyWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNMTIgMjBIMjBMMTggMTZMMTYgMThMMTQgMTZMMTIgMjBaIiBmaWxsPSIjOUNBM0FGIi8+Cjwvc3ZnPgo=';
+                        }}
+                      />
+                    </div>
+                    
+                    {/* Image Details and URL Input */}
+                    <div className="flex-1 space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-gray-700">
+                          Image #{index + 1}
+                        </span>
+                        <Button
+                          onClick={() => removeImage(index)}
+                          variant="outline"
+                          size="sm"
+                          disabled={updateBannerMutation.isPending}
+                          className="text-red-600 hover:text-red-700"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </Button>
+                      </div>
+                      
+                      {/* Image URL (truncated display) */}
+                      <div className="text-xs text-gray-500 font-mono truncate bg-white px-2 py-1 rounded border">
+                        {image}
+                      </div>
+                      
+                      {/* Individual Destination URL Input */}
+                      <div className="space-y-1">
+                        <Label className="text-xs font-medium text-gray-600">
+                          Click Destination URL for this image:
+                        </Label>
+                        <Input
+                          type="url"
+                          placeholder="https://www.example.com (optional)"
+                          value={currentBanner?.imageUrls?.[index] || ''}
+                          onChange={(e) => updateImageUrl(index, e.target.value)}
+                          disabled={updateBannerMutation.isPending}
+                          className="text-sm"
+                        />
+                        {currentBanner?.imageUrls?.[index] && (
+                          <p className="text-xs text-green-600">
+                            ✓ Individual URL set
+                          </p>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                  <span className="text-sm font-mono flex-1 truncate">
-                    {index + 1}. {image}
-                  </span>
-                  <Button
-                    onClick={() => removeImage(index)}
-                    variant="outline"
-                    size="sm"
-                    disabled={updateBannerMutation.isPending}
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
                 </div>
               ))}
               

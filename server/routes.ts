@@ -495,11 +495,13 @@ Please contact this potential advertiser within 24 hours.
 
   app.post("/api/admin/banner-ads", async (req, res) => {
     try {
-      const { position, images, clickUrl, isActive } = req.body;
+      const { position, images, imageUrls, clickUrl, rotationInterval, isActive } = req.body;
       const bannerAd = await storage.createBannerAd({
         position,
         images: images || [],
+        imageUrls: imageUrls || [],
         clickUrl,
+        rotationInterval: rotationInterval !== undefined ? rotationInterval : 7000,
         isActive: isActive !== false
       });
       res.json(bannerAd);
@@ -512,11 +514,13 @@ Please contact this potential advertiser within 24 hours.
   app.put("/api/admin/banner-ads/:id", async (req, res) => {
     try {
       const { id } = req.params;
-      const { position, images, clickUrl, isActive } = req.body;
+      const { position, images, imageUrls, clickUrl, rotationInterval, isActive } = req.body;
       const bannerAd = await storage.updateBannerAd(parseInt(id), {
         position,
         images: images || [],
+        imageUrls: imageUrls || [],
         clickUrl,
+        rotationInterval: rotationInterval !== undefined ? rotationInterval : 7000,
         isActive,
         updatedAt: new Date()
       });
