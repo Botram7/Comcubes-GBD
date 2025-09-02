@@ -95,6 +95,31 @@ export const bannerAds = pgTable('banner_ads', {
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
+// Ad Performance Analytics table
+export const adAnalytics = pgTable('ad_analytics', {
+  id: serial('id').primaryKey(),
+  bannerId: integer('banner_id').notNull(), // Reference to banner_ads.id
+  eventType: text('event_type').notNull(), // 'view', 'click', 'impression'
+  imageUrl: text('image_url'), // Which specific image was interacted with
+  userAgent: text('user_agent'),
+  ipAddress: text('ip_address'),
+  referrerPage: text('referrer_page'), // Which page the user was on
+  timestamp: timestamp('timestamp').defaultNow().notNull(),
+});
+
+// Daily ad performance summary for efficient querying
+export const adPerformanceSummary = pgTable('ad_performance_summary', {
+  id: serial('id').primaryKey(),
+  bannerId: integer('banner_id').notNull(),
+  date: text('date').notNull(), // YYYY-MM-DD format
+  imageUrl: text('image_url'),
+  impressions: integer('impressions').default(0).notNull(),
+  views: integer('views').default(0).notNull(),
+  clicks: integer('clicks').default(0).notNull(),
+  clickThroughRate: text('click_through_rate'), // Stored as string for precision
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+});
+
 // Email Logs table for tracking sent emails
 export const emailLogs = pgTable('email_logs', {
   id: serial('id').primaryKey(),
@@ -117,6 +142,8 @@ export type CompanyListing = typeof companyListings.$inferSelect;
 export type IndustryWaitlist = typeof industryWaitlist.$inferSelect;
 export type CompanyClaim = typeof companyClaims.$inferSelect;
 export type BannerAd = typeof bannerAds.$inferSelect;
+export type AdAnalytics = typeof adAnalytics.$inferSelect;
+export type AdPerformanceSummary = typeof adPerformanceSummary.$inferSelect;
 export type EmailLog = typeof emailLogs.$inferSelect;
 
 export type InsertSector = typeof sectors.$inferInsert;
@@ -127,6 +154,8 @@ export type InsertCompanyListing = typeof companyListings.$inferInsert;
 export type InsertIndustryWaitlist = typeof industryWaitlist.$inferInsert;
 export type InsertCompanyClaim = typeof companyClaims.$inferInsert;
 export type InsertBannerAd = typeof bannerAds.$inferInsert;
+export type InsertAdAnalytics = typeof adAnalytics.$inferInsert;
+export type InsertAdPerformanceSummary = typeof adPerformanceSummary.$inferInsert;
 export type InsertEmailLog = typeof emailLogs.$inferInsert;
 
 // Zod schemas for validation

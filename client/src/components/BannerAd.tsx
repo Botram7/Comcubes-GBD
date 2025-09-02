@@ -1,16 +1,34 @@
 import { Card } from "@/components/ui/card";
 import { useLocation } from 'wouter';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { apiRequest } from '@/lib/queryClient';
 
 interface BannerAdProps {
   className?: string;
   position: 'left' | 'right'; // Position for fetching correct banner ads
 }
 
+// Analytics tracking function
+const trackAdEvent = async (bannerId: number, eventType: 'impression' | 'view' | 'click', imageUrl?: string) => {
+  try {
+    await apiRequest('POST', '/api/analytics/track', {
+      bannerId,
+      eventType,
+      imageUrl,
+      referrerPage: window.location.pathname,
+    });
+  } catch (error) {
+    console.warn('Failed to track ad event:', error);
+  }
+};
+
 export function BannerAd({ className = "", position }: BannerAdProps) {
   const [, setLocation] = useLocation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const adRef = useRef<HTMLDivElement>(null);
+  const impressionTracked = useRef(false);
+  const viewTracked = useRef(false);
   
   // Fetch banner ads from API
   const { data: bannerAds, isLoading } = useQuery({
@@ -22,24 +40,66 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
   const bannerAd = Array.isArray(bannerAds) ? bannerAds.find((ad: any) => ad.position === position) : undefined;
   const images = bannerAd?.images || [];
   const clickUrl = bannerAd?.clickUrl;
+  const bannerId = bannerAd?.id;
   
   // Ensure images is always an array and filter out empty/null images
   const validImages = Array.isArray(images) ? images.filter(img => img && img.trim() !== '') : [];
+  
+  // Track impression when banner loads
+  useEffect(() => {
+    if (bannerId && validImages.length > 0 && !impressionTracked.current) {
+      impressionTracked.current = true;
+      trackAdEvent(bannerId, 'impression', validImages[currentImageIndex]);
+    }
+  }, [bannerId, validImages.length, currentImageIndex]);
+
+  // Track view when banner comes into viewport
+  useEffect(() => {
+    if (!bannerId || validImages.length === 0 || viewTracked.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !viewTracked.current) {
+            viewTracked.current = true;
+            trackAdEvent(bannerId, 'view', validImages[currentImageIndex]);
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 50% of the ad is visible
+    );
+
+    if (adRef.current) {
+      observer.observe(adRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [bannerId, validImages, currentImageIndex]);
   
   // Rotate images every 7 seconds
   useEffect(() => {
     if (validImages.length <= 1) return; // No need to rotate if 0 or 1 image
     
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        (prevIndex + 1) % validImages.length
-      );
+      setCurrentImageIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % validImages.length;
+        // Track impression for new image
+        if (bannerId) {
+          trackAdEvent(bannerId, 'impression', validImages[newIndex]);
+        }
+        return newIndex;
+      });
     }, 7000); // 7 seconds
     
     return () => clearInterval(interval);
-  }, [validImages.length]);
+  }, [validImages.length, bannerId]);
   
-  const handleClick = () => {
+  const handleClick = async () => {
+    // Track click event
+    if (bannerId && validImages.length > 0) {
+      await trackAdEvent(bannerId, 'click', validImages[currentImageIndex]);
+    }
+    
     if (clickUrl) {
       window.open(clickUrl, '_blank', 'noopener,noreferrer');
     } else {
@@ -50,7 +110,7 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
   // Show loading state
   if (isLoading) {
     return (
-      <div className={`${className}`}>
+      <div className={`${className}`} ref={adRef}>
         <Card 
           className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 text-center animate-pulse"
           style={{ width: '160px', height: '600px' }}
@@ -66,7 +126,7 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
   // If no images are provided, show the default "Available for Rent" banner
   if (validImages.length === 0) {
     return (
-      <div className={`${className}`}>
+      <div className={`${className}`} ref={adRef}>
         {/* Advertisement Space - 160x600 dimensions */}
         <Card 
           className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 text-center cursor-pointer hover:bg-gray-200 transition-colors"
@@ -87,7 +147,7 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
   
   // Show rotating banner ads
   return (
-    <div className={`${className}`}>
+    <div className={`${className}`} ref={adRef}>
       <Card 
         className="overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300 group"
         style={{ width: '160px', height: '600px' }}

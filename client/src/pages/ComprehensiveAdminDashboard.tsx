@@ -27,6 +27,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { BannerAdManager } from '@/components/BannerAdManager';
+import { AdPerformanceDashboard } from '@/components/AdPerformanceDashboard';
 import { apiRequest } from '@/lib/queryClient';
 import {
   Table,
@@ -964,7 +965,7 @@ export default function ComprehensiveAdminDashboard() {
 
         {/* Main Content Tabs */}
         <Tabs defaultValue="listings" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5">
+          <TabsList className="grid w-full grid-cols-6">
             <TabsTrigger value="listings" className="flex items-center gap-2">
               <Building2 className="h-4 w-4" />
               Company Listings
@@ -985,6 +986,10 @@ export default function ComprehensiveAdminDashboard() {
             <TabsTrigger value="analytics" className="flex items-center gap-2">
               <BarChart3 className="h-4 w-4" />
               Analytics
+            </TabsTrigger>
+            <TabsTrigger value="ad-performance" className="flex items-center gap-2">
+              <TrendingUp className="h-4 w-4" />
+              Ad Performance
             </TabsTrigger>
             <TabsTrigger value="banners" className="flex items-center gap-2">
               <ImageIcon className="h-4 w-4" />
@@ -1010,6 +1015,10 @@ export default function ComprehensiveAdminDashboard() {
 
           <TabsContent value="analytics">
             {renderAnalyticsTab()}
+          </TabsContent>
+
+          <TabsContent value="ad-performance">
+            <AdPerformanceDashboard />
           </TabsContent>
 
           <TabsContent value="banners">
