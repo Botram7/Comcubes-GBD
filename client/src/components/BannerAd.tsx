@@ -170,8 +170,8 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
             }}
           />
           
-          {/* Image counter indicator */}
-          {validImages.length > 1 && (
+          {/* Image counter indicator - hidden as requested */}
+          {false && validImages.length > 1 && (
             <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-60 text-white text-xs px-2 py-1 rounded flex items-center space-x-1">
               <span>{currentImageIndex + 1} / {validImages.length}</span>
               {rotationInterval === 0 && (
