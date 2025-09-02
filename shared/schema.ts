@@ -90,7 +90,9 @@ export const bannerAds = pgTable('banner_ads', {
   id: serial('id').primaryKey(),
   position: text('position').notNull(), // 'left' or 'right'
   images: json('images').$type<string[]>().default([]).notNull(), // Array of image URLs
+  imageUrls: json('image_urls').$type<string[]>().default([]).notNull(), // Individual URLs for each image
   clickUrl: text('click_url'),
+  rotationInterval: integer('rotation_interval').default(7000).notNull(), // Milliseconds, default 7 seconds
   isActive: boolean('is_active').default(true).notNull(),
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });

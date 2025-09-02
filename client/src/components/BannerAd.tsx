@@ -39,7 +39,9 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
   // Find the banner ad for this position
   const bannerAd = Array.isArray(bannerAds) ? bannerAds.find((ad: any) => ad.position === position) : undefined;
   const images = bannerAd?.images || [];
+  const imageUrls = bannerAd?.imageUrls || [];
   const clickUrl = bannerAd?.clickUrl;
+  const rotationInterval = bannerAd?.rotationInterval || 7000;
   const bannerId = bannerAd?.id;
   
   // Ensure images is always an array and filter out empty/null images
@@ -76,9 +78,9 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
     return () => observer.disconnect();
   }, [bannerId, validImages, currentImageIndex]);
   
-  // Rotate images every 7 seconds
+  // Rotate images based on configured interval
   useEffect(() => {
-    if (validImages.length <= 1) return; // No need to rotate if 0 or 1 image
+    if (validImages.length <= 1 || rotationInterval === 0) return; // No rotation for single image or static setting
     
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => {
@@ -89,10 +91,10 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
         }
         return newIndex;
       });
-    }, 7000); // 7 seconds
+    }, rotationInterval);
     
     return () => clearInterval(interval);
-  }, [validImages.length, bannerId]);
+  }, [validImages.length, bannerId, rotationInterval]);
   
   const handleClick = async () => {
     // Track click event
@@ -100,8 +102,11 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
       await trackAdEvent(bannerId, 'click', validImages[currentImageIndex]);
     }
     
-    if (clickUrl) {
-      window.open(clickUrl, '_blank', 'noopener,noreferrer');
+    // Use individual image URL if available, otherwise fall back to general clickUrl
+    const targetUrl = imageUrls[currentImageIndex] || clickUrl;
+    
+    if (targetUrl) {
+      window.open(targetUrl, '_blank', 'noopener,noreferrer');
     } else {
       setLocation('/advertise');
     }
@@ -167,8 +172,11 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
           
           {/* Image counter indicator */}
           {validImages.length > 1 && (
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-60 text-white text-xs px-2 py-1 rounded">
-              {currentImageIndex + 1} / {validImages.length}
+            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-60 text-white text-xs px-2 py-1 rounded flex items-center space-x-1">
+              <span>{currentImageIndex + 1} / {validImages.length}</span>
+              {rotationInterval === 0 && (
+                <span title="Static mode - no auto rotation">🔒</span>
+              )}
             </div>
           )}
           
