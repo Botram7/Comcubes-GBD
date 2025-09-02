@@ -83,47 +83,36 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
   const uploadFile = useCallback(async (file: File): Promise<string> => {
     setIsUploading(true);
     try {
-      // Get upload URL from server
-      const uploadResponse = await apiRequest('POST', '/api/objects/upload');
-      const { uploadURL } = uploadResponse as { uploadURL: string };
+      // Create form data for multipart upload
+      const formData = new FormData();
+      formData.append('image', file);
       
-      // Upload the file to cloud storage
-      const fileUploadResponse = await fetch(uploadURL, {
-        method: 'PUT',
-        body: file,
-        headers: {
-          'Content-Type': file.type || 'application/octet-stream',
-        },
+      // Upload the file directly to server
+      const response = await fetch('/api/objects/upload', {
+        method: 'POST',
+        body: formData,
       });
 
-      if (!fileUploadResponse.ok) {
+      if (!response.ok) {
         throw new Error('Upload failed');
       }
 
-      // Extract object path from upload URL
-      const uploadUrl = fileUploadResponse.url;
-      const urlParts = uploadUrl.split('/');
-      const bucketIndex = urlParts.findIndex(part => part.includes('objstore'));
-      if (bucketIndex === -1) {
-        throw new Error('Invalid upload URL format');
+      const result = await response.json();
+      
+      if (!result.success || !result.imageUrl) {
+        throw new Error('Upload failed - no image URL returned');
       }
-      
-      const objectPath = '/' + urlParts.slice(bucketIndex).join('/').split('?')[0];
-      
-      // Update object ACL (make it public for banner ads)
-      await apiRequest('PUT', '/api/banner-images', {
-        bannerImageURL: uploadUrl
-      });
 
       toast({
         title: "Upload successful",
         description: `${file.name} uploaded successfully!`,
       });
 
-      return `/public-objects${objectPath.replace(`/${urlParts[bucketIndex]}`, '')}`;
+      return result.imageUrl;
     } catch (error) {
+      console.error('Upload error:', error);
       toast({
-        title: "Upload failed",
+        title: "Upload failed", 
         description: "Failed to upload image. Please try again.",
         variant: "destructive",
       });
