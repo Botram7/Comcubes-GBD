@@ -6,15 +6,16 @@ import { useQuery } from "@tanstack/react-query";
 import type { SearchResults } from "@/lib/types";
 
 interface SearchBarProps {
-  onSearchResults: (results: SearchResults | null) => void;
+  onSearchResults: (results: any) => void;
+  searchMode?: 'local' | 'global';
 }
 
-export function SearchBar({ onSearchResults }: SearchBarProps) {
+export function SearchBar({ onSearchResults, searchMode = 'local' }: SearchBarProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchActive, setIsSearchActive] = useState(false);
 
   const { data: searchResults } = useQuery({
-    queryKey: ["/api/search", searchQuery],
+    queryKey: [searchMode === 'global' ? "/api/search/global" : "/api/search", searchQuery],
     enabled: searchQuery.length >= 2,
     staleTime: 30000,
   });

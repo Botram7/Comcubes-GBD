@@ -43,13 +43,14 @@ const TRENDING_SEARCHES = [
 export default function SearchPage() {
   const [, setLocation] = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
+  const [searchResults, setSearchResults] = useState<any>(null);
+  const [searchMode, setSearchMode] = useState<'local' | 'global'>('local');
 
   const handleQuickSearch = (query: string) => {
     setSearchQuery(query);
   };
 
-  const handleSearchResults = (results: SearchResults | null) => {
+  const handleSearchResults = (results: any) => {
     setSearchResults(results);
   };
 
@@ -99,7 +100,7 @@ export default function SearchPage() {
               </div>
               <h1 className="text-2xl font-bold text-primary " style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
-            <SearchBar onSearchResults={handleSearchResults} />
+            <SearchBar onSearchResults={handleSearchResults} searchMode={searchMode} />
             <div className="flex items-center space-x-4">
               <Button 
                 variant="outline" 
@@ -122,6 +123,40 @@ export default function SearchPage() {
         ]} 
       />
 
+      {/* Search Mode Toggle */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="flex items-center justify-center space-x-4 bg-white rounded-lg border p-4">
+          <span className="text-sm font-medium text-gray-700">Search Mode:</span>
+          <div className="flex bg-gray-100 rounded-lg p-1">
+            <button
+              onClick={() => setSearchMode('local')}
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                searchMode === 'local' 
+                  ? 'bg-blue-600 text-white shadow-sm' 
+                  : 'text-gray-600 hover:text-blue-600'
+              }`}
+            >
+              <Building2 className="h-4 w-4 inline mr-1" />
+              Local Directory (7,400+ companies)
+            </button>
+            <button
+              onClick={() => setSearchMode('global')}
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                searchMode === 'global' 
+                  ? 'bg-green-600 text-white shadow-sm' 
+                  : 'text-gray-600 hover:text-green-600'
+              }`}
+            >
+              <Globe className="h-4 w-4 inline mr-1" />
+              Global Search (Worldwide via Google)
+            </button>
+          </div>
+          <Badge variant={searchMode === 'local' ? 'default' : 'secondary'} className="ml-2">
+            {searchMode === 'local' ? 'Local' : 'Global'} Mode Active
+          </Badge>
+        </div>
+      </div>
+
       {/* Three-column layout with sidebar banner ads */}
       <div className="flex gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Left Sidebar - Advertisement Banner - 160x600 */}
@@ -139,47 +174,116 @@ export default function SearchPage() {
             <div className="space-y-8">
               <div className="mb-6">
                 <h2 className="text-3xl font-bold text-gray-900">Search Results</h2>
-                <p className="text-gray-600 mt-2">
-                  Found {searchResults.sectors.length + searchResults.industries.length + searchResults.companies.length} results
-                </p>
+                {searchMode === 'local' ? (
+                  <p className="text-gray-600 mt-2">
+                    Found {(searchResults.sectors?.length || 0) + (searchResults.industries?.length || 0) + (searchResults.companies?.length || 0)} results in local directory
+                  </p>
+                ) : (
+                  <div className="mt-2 space-y-1">
+                    <p className="text-gray-600">
+                      Local: {(searchResults.local?.companies?.length || 0)} companies • 
+                      Global: {searchResults.totalExternal || 0} worldwide results
+                    </p>
+                    {searchResults.attribution && (
+                      <p className="text-xs text-gray-500">{searchResults.attribution}</p>
+                    )}
+                  </div>
+                )}
               </div>
 
-              {searchResults.sectors.length > 0 && (
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">Sectors</h3>
-                  <BusinessGrid 
-                    items={searchResults.sectors} 
-                    type="sector" 
-                    onItemClick={(sector) => setLocation(`/sector/${encodeURIComponent(sector.name)}`)} 
-                  />
-                </div>
-              )}
+              {/* Local Results */}
+              {searchMode === 'local' ? (
+                <>
+                  {searchResults.sectors?.length > 0 && (
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4">Sectors</h3>
+                      <BusinessGrid 
+                        items={searchResults.sectors} 
+                        type="sector" 
+                        onItemClick={(sector) => setLocation(`/sector/${encodeURIComponent(sector.name)}`)} 
+                      />
+                    </div>
+                  )}
 
-              {searchResults.industries.length > 0 && (
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">Industries</h3>
-                  <BusinessGrid 
-                    items={searchResults.industries} 
-                    type="industry" 
-                    onItemClick={(industry) => setLocation(`/industry/${encodeURIComponent(industry.name)}`)} 
-                  />
-                </div>
-              )}
+                  {searchResults.industries?.length > 0 && (
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4">Industries</h3>
+                      <BusinessGrid 
+                        items={searchResults.industries} 
+                        type="industry" 
+                        onItemClick={(industry) => setLocation(`/industry/${encodeURIComponent(industry.name)}`)} 
+                      />
+                    </div>
+                  )}
 
-              {searchResults.companies.length > 0 && (
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">Companies</h3>
-                  <BusinessGrid 
-                    items={searchResults.companies} 
-                    type="company" 
-                    onItemClick={(company) => {
-                      if ((company as any).websiteUrl) {
-                        window.open((company as any).websiteUrl, '_blank');
-                      }
-                    }} 
-                    showClaimButtons={true}
-                  />
-                </div>
+                  {searchResults.companies?.length > 0 && (
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4">Companies</h3>
+                      <BusinessGrid 
+                        items={searchResults.companies} 
+                        type="company" 
+                        onItemClick={(company) => {
+                          if ((company as any).websiteUrl) {
+                            window.open((company as any).websiteUrl, '_blank');
+                          }
+                        }} 
+                        showClaimButtons={true}
+                      />
+                    </div>
+                  )}
+                </>
+              ) : (
+                /* Global Results */
+                <>
+                  {/* Local Results Section */}
+                  {searchResults.local?.companies?.length > 0 && (
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4 flex items-center">
+                        <Building2 className="h-5 w-5 mr-2 text-blue-600" />
+                        Local Directory Results
+                      </h3>
+                      <BusinessGrid 
+                        items={searchResults.local.companies} 
+                        type="company" 
+                        onItemClick={(company) => {
+                          if ((company as any).websiteUrl) {
+                            window.open((company as any).websiteUrl, '_blank');
+                          }
+                        }} 
+                        showClaimButtons={true}
+                      />
+                    </div>
+                  )}
+                  
+                  {/* Global Results Section */}
+                  {searchResults.external?.length > 0 && (
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4 flex items-center">
+                        <Globe className="h-5 w-5 mr-2 text-green-600" />
+                        Worldwide Results
+                      </h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {searchResults.external.map((business: any, index: number) => (
+                          <Card key={business.id || index} className="hover:shadow-lg transition-shadow cursor-pointer"
+                                onClick={() => window.open(business.url, '_blank')}>
+                            <CardContent className="p-6">
+                              <h4 className="font-semibold text-lg mb-2 line-clamp-2">{business.name}</h4>
+                              <p className="text-gray-600 text-sm mb-3 line-clamp-3">{business.description}</p>
+                              <div className="flex items-center justify-between">
+                                <Badge variant="outline" className="text-xs">
+                                  {business.region || 'Global'}
+                                </Badge>
+                                <Badge variant="secondary" className="text-xs bg-green-50 text-green-700">
+                                  External
+                                </Badge>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </>
               )}
             </div>
           ) : (
