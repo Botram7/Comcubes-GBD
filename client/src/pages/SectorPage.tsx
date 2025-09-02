@@ -12,6 +12,7 @@ import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
+import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import type { Industry, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -136,6 +137,7 @@ export default function SectorPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
+      <AffiliateDisclosureBanner />
       <SEOHead 
         title={`${decodedSectorName} Industries & Companies | COMCUBES Global Directory`}
         description={`Explore specialized industries within ${decodedSectorName} sector. Discover top companies, industry leaders, and business opportunities in ${decodedSectorName}. Browse ${industries?.length || 20} industries now.`}

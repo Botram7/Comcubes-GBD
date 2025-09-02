@@ -12,6 +12,7 @@ import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { Pagination } from "@/components/Pagination";
 import { BannerAd } from "@/components/BannerAd";
+import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import type { Industry, SearchResults, PaginatedResponse } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -155,6 +156,7 @@ export default function IndustriesPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <AffiliateDisclosureBanner />
       <SEOHead 
         title="Industries Directory | Browse 400+ Industries | COMCUBES"
         description="Browse over 400 specialized industries across all business sectors. Each industry features the top 20 companies with detailed profiles and direct website access."

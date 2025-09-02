@@ -7,6 +7,7 @@ import { SearchBar } from "@/components/SearchBar";
 import { AnimatedExplainer } from "@/components/AnimatedExplainer";
 import { SEOHead, createBusinessDirectoryStructuredData } from "@/components/SEOHead";
 import { SEOAnalyzer } from "@/components/SEOAnalyzer";
+import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { 
   BarChart3, 
   Users, 
@@ -119,6 +120,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white  ">
+      <AffiliateDisclosureBanner />
       <SEOHead 
         title="COMCUBES - Global Business Directory | Find Companies, Industries & Business Sectors"
         description="Discover thousands of companies across all business sectors and industries worldwide. COMCUBES is your comprehensive global business directory for everything and anything business."
