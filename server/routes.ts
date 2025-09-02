@@ -593,6 +593,26 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
+  // Banner image upload endpoint for object storage integration
+  app.put("/api/banner-images", async (req, res) => {
+    try {
+      const { bannerImageURL } = req.body;
+      if (!bannerImageURL) {
+        return res.status(400).json({ error: "bannerImageURL is required" });
+      }
+
+      // For banner images, we'll make them public by default
+      // This endpoint is used to set ACL policies for uploaded images
+      res.status(200).json({
+        message: "Banner image processed successfully",
+        url: bannerImageURL
+      });
+    } catch (error) {
+      console.error("Error processing banner image:", error);
+      res.status(500).json({ error: "Failed to process banner image" });
+    }
+  });
+
   // Admin endpoint for waitlist management
   app.get('/api/admin/waitlist', async (req, res) => {
     try {

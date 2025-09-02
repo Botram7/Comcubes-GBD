@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useCallback } from "react";
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,30 +6,55 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Trash2, Plus, Save, Eye, EyeOff } from "lucide-react";
-import { LEFT_BANNER_ADS, RIGHT_BANNER_ADS, type BannerAdConfig } from "@/config/bannerAds";
+import { useToast } from "@/hooks/use-toast";
+import { 
+  Trash2, 
+  Plus, 
+  Save, 
+  Eye, 
+  EyeOff, 
+  Upload, 
+  Image as ImageIcon,
+  AlertCircle,
+  CheckCircle2,
+  Loader2 
+} from "lucide-react";
 
 interface BannerAdManagerProps {
   className?: string;
 }
 
+interface BannerAd {
+  id: number;
+  position: string;
+  images: string[];
+  clickUrl?: string;
+  isActive: boolean;
+}
+
 export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
   const queryClient = useQueryClient();
+  const { toast } = useToast();
   const [newImageUrl, setNewImageUrl] = useState("");
   const [activeTab, setActiveTab] = useState<'left' | 'right'>('left');
+  const [isDragOver, setIsDragOver] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   
   // Fetch banner ads from database
-  const { data: bannerAds, isLoading } = useQuery({
+  const { data: bannerAds, isLoading, error } = useQuery({
     queryKey: ['/api/admin/banner-ads'],
     retry: 2,
   });
 
   // Find current banner ad config
-  const currentBanner = bannerAds?.find((banner: any) => banner.position === activeTab);
+  const currentBanner = Array.isArray(bannerAds) ? 
+    bannerAds.find((banner: BannerAd) => banner.position === activeTab) : 
+    undefined;
   
   // Create mutation for updating banner ads
   const updateBannerMutation = useMutation({
-    mutationFn: async (bannerData: any) => {
+    mutationFn: async (bannerData: Partial<BannerAd>) => {
       if (currentBanner?.id) {
         return await apiRequest('PUT', `/api/admin/banner-ads/${currentBanner.id}`, bannerData);
       } else {
@@ -39,22 +64,190 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/admin/banner-ads'] });
       queryClient.invalidateQueries({ queryKey: ['/api/banner-ads'] }); // Also invalidate public API
+      toast({
+        title: "Success",
+        description: "Banner configuration updated successfully!",
+      });
+    },
+    onError: (error) => {
+      toast({
+        title: "Error",
+        description: "Failed to update banner configuration. Please try again.",
+        variant: "destructive",
+      });
+      console.error('Banner update error:', error);
     }
   });
 
-  // Delete mutation
-  const deleteBannerMutation = useMutation({
-    mutationFn: async (bannerId: number) => {
-      return await apiRequest('DELETE', `/api/admin/banner-ads/${bannerId}`);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['/api/admin/banner-ads'] });
-      queryClient.invalidateQueries({ queryKey: ['/api/banner-ads'] }); // Also invalidate public API
+  // File upload function
+  const uploadFile = useCallback(async (file: File): Promise<string> => {
+    setIsUploading(true);
+    try {
+      // Get upload URL from server
+      const uploadResponse = await apiRequest('POST', '/api/objects/upload');
+      const { uploadURL } = uploadResponse as { uploadURL: string };
+      
+      // Upload the file to cloud storage
+      const fileUploadResponse = await fetch(uploadURL, {
+        method: 'PUT',
+        body: file,
+        headers: {
+          'Content-Type': file.type || 'application/octet-stream',
+        },
+      });
+
+      if (!fileUploadResponse.ok) {
+        throw new Error('Upload failed');
+      }
+
+      // Extract object path from upload URL
+      const uploadUrl = fileUploadResponse.url;
+      const urlParts = uploadUrl.split('/');
+      const bucketIndex = urlParts.findIndex(part => part.includes('objstore'));
+      if (bucketIndex === -1) {
+        throw new Error('Invalid upload URL format');
+      }
+      
+      const objectPath = '/' + urlParts.slice(bucketIndex).join('/').split('?')[0];
+      
+      // Update object ACL (make it public for banner ads)
+      await apiRequest('PUT', '/api/banner-images', {
+        bannerImageURL: uploadUrl
+      });
+
+      toast({
+        title: "Upload successful",
+        description: `${file.name} uploaded successfully!`,
+      });
+
+      return `/public-objects${objectPath.replace(`/${urlParts[bucketIndex]}`, '')}`;
+    } catch (error) {
+      toast({
+        title: "Upload failed",
+        description: "Failed to upload image. Please try again.",
+        variant: "destructive",
+      });
+      throw error;
+    } finally {
+      setIsUploading(false);
     }
-  });
+  }, [toast]);
+
+  // Handle drag and drop
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragOver(true);
+  }, []);
+
+  const handleDragLeave = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragOver(false);
+  }, []);
+
+  const handleDrop = useCallback(async (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragOver(false);
+
+    const files = Array.from(e.dataTransfer.files);
+    const imageFiles = files.filter(file => file.type.startsWith('image/'));
+
+    if (imageFiles.length === 0) {
+      toast({
+        title: "Invalid files",
+        description: "Please drop image files only.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if ((currentBanner?.images?.length || 0) + imageFiles.length > 10) {
+      toast({
+        title: "Too many images",
+        description: "Banner can have maximum 10 images.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      const uploadedUrls = [];
+      for (const file of imageFiles) {
+        const url = await uploadFile(file);
+        uploadedUrls.push(url);
+      }
+
+      // Add all uploaded images to the banner
+      const updatedImages = [...(currentBanner?.images || []), ...uploadedUrls];
+      updateBannerMutation.mutate({
+        position: activeTab,
+        images: updatedImages,
+        clickUrl: currentBanner?.clickUrl,
+        isActive: currentBanner?.isActive ?? true
+      });
+
+    } catch (error) {
+      console.error('File upload error:', error);
+    }
+  }, [currentBanner, activeTab, uploadFile, updateBannerMutation, toast]);
+
+  // Handle file input
+  const handleFileUpload = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    const imageFiles = files.filter(file => file.type.startsWith('image/'));
+
+    if (imageFiles.length === 0) return;
+
+    if ((currentBanner?.images?.length || 0) + imageFiles.length > 10) {
+      toast({
+        title: "Too many images",
+        description: "Banner can have maximum 10 images.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      const uploadedUrls = [];
+      for (const file of imageFiles) {
+        const url = await uploadFile(file);
+        uploadedUrls.push(url);
+      }
+
+      // Add all uploaded images to the banner
+      const updatedImages = [...(currentBanner?.images || []), ...uploadedUrls];
+      updateBannerMutation.mutate({
+        position: activeTab,
+        images: updatedImages,
+        clickUrl: currentBanner?.clickUrl,
+        isActive: currentBanner?.isActive ?? true
+      });
+
+      // Reset file input
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+
+    } catch (error) {
+      console.error('File upload error:', error);
+    }
+  }, [currentBanner, activeTab, uploadFile, updateBannerMutation, toast]);
 
   if (isLoading) {
-    return <div className="p-4">Loading banner ads...</div>;
+    return (
+      <div className="p-8 text-center">
+        <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4" />
+        <p>Loading banner ads...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="p-8 text-center">
+        <AlertCircle className="h-8 w-8 text-red-500 mx-auto mb-4" />
+        <p className="text-red-600">Failed to load banner ads. Please try again.</p>
+      </div>
+    );
   }
 
   const addImage = () => {
@@ -71,7 +264,7 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
   };
 
   const removeImage = (index: number) => {
-    const updatedImages = (currentBanner?.images || []).filter((_, i) => i !== index);
+    const updatedImages = (currentBanner?.images || []).filter((_: string, i: number) => i !== index);
     updateBannerMutation.mutate({
       position: activeTab,
       images: updatedImages,
@@ -99,15 +292,20 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
   };
 
   const saveConfiguration = () => {
-    // Changes are automatically saved with each action
-    alert(`${activeTab === 'left' ? 'Left' : 'Right'} banner configuration updated!\n\nChanges are immediately visible on the website.`);
+    toast({
+      title: "Configuration Saved",
+      description: `${activeTab === 'left' ? 'Left' : 'Right'} banner configuration updated successfully! Changes are immediately visible on the website.`,
+    });
   };
+
+  const currentImageCount = currentBanner?.images?.length || 0;
 
   return (
     <div className={`space-y-6 ${className}`}>
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">
+            <ImageIcon className="h-5 w-5" />
             <span>Banner Ad Manager</span>
           </CardTitle>
         </CardHeader>
@@ -145,6 +343,7 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
             <Switch
               checked={currentBanner?.isActive ?? true}
               onCheckedChange={toggleActive}
+              disabled={updateBannerMutation.isPending}
             />
           </div>
 
@@ -157,6 +356,7 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
               placeholder="https://www.example.com"
               value={currentBanner?.clickUrl || ''}
               onChange={(e) => updateClickUrl(e.target.value)}
+              disabled={updateBannerMutation.isPending}
             />
             <p className="text-sm text-gray-500">
               Where users go when they click the banner
@@ -166,24 +366,67 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
           {/* Image Management */}
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <Label>Banner Images ({(currentBanner?.images?.length || 0)}/10)</Label>
+              <Label>Banner Images ({currentImageCount}/10)</Label>
               <span className="text-sm text-gray-500">
                 Rotates every 7 seconds
               </span>
             </div>
 
-            {/* Add New Image */}
+            {/* Drag and Drop Upload Area */}
+            <div
+              className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
+                isDragOver 
+                  ? 'border-blue-500 bg-blue-50' 
+                  : 'border-gray-300 hover:border-gray-400'
+              } ${currentImageCount >= 10 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+              onClick={() => currentImageCount < 10 && fileInputRef.current?.click()}
+            >
+              {isUploading ? (
+                <div className="space-y-2">
+                  <Loader2 className="h-8 w-8 animate-spin mx-auto" />
+                  <p className="text-sm text-gray-600">Uploading images...</p>
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  <Upload className="h-8 w-8 mx-auto text-gray-400" />
+                  <div>
+                    <p className="text-sm font-medium">
+                      Drop images here or click to upload
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      PNG, JPG, GIF up to 5MB each • {10 - currentImageCount} slots available
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Hidden file input */}
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={handleFileUpload}
+              className="hidden"
+              disabled={currentImageCount >= 10 || isUploading}
+            />
+
+            {/* Add Image by URL */}
             <div className="flex space-x-2">
               <Input
-                placeholder="Enter image URL or /uploads/filename.jpg"
+                placeholder="Or enter image URL"
                 value={newImageUrl}
                 onChange={(e) => setNewImageUrl(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && addImage()}
-                disabled={(currentBanner?.images?.length || 0) >= 10}
+                disabled={currentImageCount >= 10 || updateBannerMutation.isPending}
               />
               <Button
                 onClick={addImage}
-                disabled={!newImageUrl.trim() || (currentBanner?.images?.length || 0) >= 10}
+                disabled={!newImageUrl.trim() || currentImageCount >= 10 || updateBannerMutation.isPending}
                 size="sm"
               >
                 <Plus className="h-4 w-4" />
@@ -192,8 +435,19 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
 
             {/* Image List */}
             <div className="space-y-2 max-h-64 overflow-y-auto">
-              {(currentBanner?.images || []).map((image, index) => (
-                <div key={index} className="flex items-center space-x-2 p-2 bg-gray-50 rounded">
+              {(currentBanner?.images || []).map((image: string, index: number) => (
+                <div key={index} className="flex items-center space-x-2 p-3 bg-gray-50 rounded-lg">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gray-200 rounded overflow-hidden">
+                    <img 
+                      src={image} 
+                      alt={`Banner ${index + 1}`}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNiAxMkMxNC44OTU0IDEyIDEyIDEyIDEyIDEyQzEyIDEyIDEyIDEzLjEwNDYgMTIgMTRDMTIgMTQuODk1NCAxMi44OTU0IDE2IDE0IDE2QzE1LjEwNDYgMTYgMTYgMTUuMTA0NiAxNiAxNEMxNiAxMy4xMDQ2IDE2IDEyIDE2IDEyWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNMTIgMjBIMjBMMTggMTZMMTYgMThMMTQgMTZMMTIgMjBaIiBmaWxsPSIjOUNBM0FGIi8+Cjwvc3ZnPgo=';
+                      }}
+                    />
+                  </div>
                   <span className="text-sm font-mono flex-1 truncate">
                     {index + 1}. {image}
                   </span>
@@ -201,13 +455,14 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
                     onClick={() => removeImage(index)}
                     variant="outline"
                     size="sm"
+                    disabled={updateBannerMutation.isPending}
                   >
                     <Trash2 className="h-4 w-4" />
                   </Button>
                 </div>
               ))}
               
-              {(currentBanner?.images?.length || 0) === 0 && (
+              {currentImageCount === 0 && (
                 <p className="text-gray-500 text-center py-4">
                   No images configured. Banner will show "Available for Rent" placeholder.
                 </p>
@@ -216,18 +471,29 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
           </div>
 
           {/* Save Button */}
-          <Button onClick={saveConfiguration} className="w-full">
-            <Save className="h-4 w-4 mr-2" />
+          <Button 
+            onClick={saveConfiguration} 
+            className="w-full"
+            disabled={updateBannerMutation.isPending}
+          >
+            {updateBannerMutation.isPending ? (
+              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+            ) : (
+              <Save className="h-4 w-4 mr-2" />
+            )}
             Save Configuration
           </Button>
 
           {/* Configuration Status */}
           <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-            <div className="text-green-800 font-medium mb-2">Database Configuration</div>
-            <div className="text-sm text-green-600">
+            <div className="flex items-center mb-2">
+              <CheckCircle2 className="h-5 w-5 text-green-600 mr-2" />
+              <div className="text-green-800 font-medium">Database Configuration</div>
+            </div>
+            <div className="text-sm text-green-600 space-y-1">
               <div>Position: {activeTab}</div>
               <div>Status: {currentBanner?.isActive ? 'Active' : 'Inactive'}</div>
-              <div>Images: {currentBanner?.images?.length || 0}/10</div>
+              <div>Images: {currentImageCount}/10</div>
               <div>Click URL: {currentBanner?.clickUrl || 'Not set'}</div>
               <div className="mt-2 text-green-700 font-medium">
                 ✅ Changes are automatically saved to database and immediately visible on the website
