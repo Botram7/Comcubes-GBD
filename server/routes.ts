@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import express from "express";
 import path from "path";
+import fs from "fs";
 import { storage } from "./storage";
 import { SitemapGenerator } from "./sitemapGenerator";
 import { googleSearchService } from "./services/googleSearchService";
@@ -9,6 +10,7 @@ import { EmailService } from "./emailService";
 import { paystackService } from "./paystackService";
 import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/schema";
 import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
+import multer from 'multer';
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Serve static assets from attached_assets directory
@@ -16,6 +18,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   
   // Serve uploaded files (logos, etc.)
   app.use('/uploads', express.static(path.resolve(import.meta.dirname, 'uploads')));
+  
+  // Serve banner images
+  app.use('/banner-images', express.static(path.resolve(import.meta.dirname, 'banner-images')));
   
   // Get all sectors
   app.get("/api/sectors", async (req, res) => {
@@ -590,6 +595,57 @@ Please contact this potential advertiser within 24 hours.
     } catch (error) {
       console.error("Error initializing banner ads:", error);
       res.status(500).json({ error: "Failed to initialize banner ads" });
+    }
+  });
+
+  // Set up multer for file uploads
+  const bannerUploadDir = path.resolve(import.meta.dirname, 'banner-images');
+  if (!fs.existsSync(bannerUploadDir)) {
+    fs.mkdirSync(bannerUploadDir, { recursive: true });
+  }
+  
+  const bannerStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, bannerUploadDir);
+    },
+    filename: function (req, file, cb) {
+      const timestamp = Date.now();
+      const randomId = Math.random().toString(36).substring(2, 15);
+      const ext = path.extname(file.originalname);
+      cb(null, `banner-${timestamp}-${randomId}${ext}`);
+    }
+  });
+  
+  const uploadBanner = multer({ 
+    storage: bannerStorage,
+    limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
+    fileFilter: (req, file, cb) => {
+      if (file.mimetype.startsWith('image/')) {
+        cb(null, true);
+      } else {
+        cb(new Error('Only image files are allowed'));
+      }
+    }
+  });
+
+  // Direct file upload endpoint for banner images
+  app.post("/api/objects/upload", uploadBanner.single('image'), async (req, res) => {
+    try {
+      if (!req.file) {
+        return res.status(400).json({ error: "No image file uploaded" });
+      }
+      
+      const imageUrl = `/banner-images/${req.file.filename}`;
+      console.log('Banner image uploaded successfully:', imageUrl);
+      
+      res.json({ 
+        success: true,
+        imageUrl: imageUrl,
+        filename: req.file.filename
+      });
+    } catch (error) {
+      console.error("Error uploading banner image:", error);
+      res.status(500).json({ error: "Failed to upload banner image" });
     }
   });
 
