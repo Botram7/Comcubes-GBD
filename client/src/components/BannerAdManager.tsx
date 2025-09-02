@@ -434,7 +434,10 @@ export function BannerAdManager({ className = "" }: BannerAdManagerProps) {
             <div className="flex items-center justify-between">
               <Label>Banner Images ({currentImageCount}/10)</Label>
               <span className="text-sm text-gray-500">
-                Rotates every 7 seconds
+                {currentBanner?.rotationInterval === 0 ? 
+                  '🔒 Static (No rotation)' : 
+                  `🔄 Rotates every ${Math.round((currentBanner?.rotationInterval || 7000) / 1000)} seconds`
+                }
               </span>
             </div>
 
