@@ -11,7 +11,6 @@ import { Badge } from '@/components/ui/badge';
 import { SearchBar } from '@/components/SearchBar';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { BannerAd } from '@/components/BannerAd';
-import { getActiveBannerImages, getBannerClickUrl } from '@/config/bannerAds';
 import { BusinessGrid } from '@/components/BusinessGrid';
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import type { SearchResults } from "@/lib/types";
@@ -129,7 +128,7 @@ export default function SearchPage() {
         <div className="hidden lg:block flex-shrink-0">
           <BannerAd 
             className="sticky top-24" 
-            images={getActiveBannerImages('left')}
+            position="left"
             clickUrl={getBannerClickUrl('left')}
           />
         </div>
@@ -376,7 +375,7 @@ export default function SearchPage() {
         <div className="hidden lg:block flex-shrink-0">
           <BannerAd 
             className="sticky top-24" 
-            images={getActiveBannerImages('right')}
+            position="right"
             clickUrl={getBannerClickUrl('right')}
           />
         </div>

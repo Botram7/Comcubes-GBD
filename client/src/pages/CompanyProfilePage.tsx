@@ -8,7 +8,6 @@ import { Separator } from "@/components/ui/separator";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BannerAd } from "@/components/BannerAd";
-import { getActiveBannerImages, getBannerClickUrl } from "@/config/bannerAds";
 import { 
   Building2, 
   Globe, 
@@ -218,8 +217,7 @@ export default function CompanyProfilePage() {
           <div className="lg:col-span-1 space-y-4">
             <BannerAd 
               className="sticky top-24" 
-              images={getActiveBannerImages('left')}
-              clickUrl={getBannerClickUrl('left')}
+              position="left"
             />
           </div>
 
