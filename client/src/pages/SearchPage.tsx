@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { SearchBar } from '@/components/SearchBar';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { BannerAd } from '@/components/BannerAd';
+import { AffiliateDisclosureBanner } from '@/components/AffiliateDisclosureBanner';
 import { BusinessGrid } from '@/components/BusinessGrid';
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import type { SearchResults } from "@/lib/types";
@@ -76,6 +77,7 @@ export default function SearchPage() {
 
   return (
     <div className="min-h-screen bg-gray-50  font-inter ">
+      <AffiliateDisclosureBanner />
       <SEOHead 
         title="Advanced Business Search | Global Company & Industry Search | COMCUBES"
         description="Search 7,400+ companies across 400+ industries with advanced filters. Find businesses by location, size, sector, and more with our global search technology."

@@ -12,6 +12,7 @@ import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
+import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -135,6 +136,7 @@ export default function IndustryPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
+      <AffiliateDisclosureBanner />
       <SEOHead 
         title={`${decodedIndustryName} Companies | Top ${decodedIndustryName} Directory | COMCUBES`}
         description={`Find top companies in ${decodedIndustryName} industry. Browse ${companies?.length || 20} leading ${decodedIndustryName} businesses with direct access to company websites and contact information.`}
