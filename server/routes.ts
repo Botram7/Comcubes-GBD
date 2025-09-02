@@ -702,6 +702,69 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
+  // Ad Analytics endpoints
+  app.post('/api/analytics/track', async (req, res) => {
+    try {
+      const { bannerId, eventType, imageUrl, referrerPage } = req.body;
+      
+      if (!bannerId || !eventType) {
+        return res.status(400).json({ error: 'bannerId and eventType are required' });
+      }
+
+      // Get client info
+      const userAgent = req.get('User-Agent') || 'unknown';
+      const ipAddress = req.ip || req.connection.remoteAddress || 'unknown';
+
+      const analytics = await storage.recordAdEvent({
+        bannerId: parseInt(bannerId),
+        eventType,
+        imageUrl,
+        userAgent,
+        ipAddress,
+        referrerPage
+      });
+
+      res.json({ success: true, id: analytics.id });
+    } catch (error) {
+      console.error('Error tracking ad event:', error);
+      res.status(500).json({ error: 'Failed to track event' });
+    }
+  });
+
+  // Get ad performance statistics
+  app.get('/api/admin/ad-performance', async (req, res) => {
+    try {
+      const { bannerId } = req.query;
+      const bannerIdNum = bannerId ? parseInt(bannerId as string) : undefined;
+      
+      const stats = await storage.getAdPerformanceStats(bannerIdNum);
+      res.json(stats);
+    } catch (error) {
+      console.error('Error fetching ad performance:', error);
+      res.status(500).json({ error: 'Failed to fetch ad performance' });
+    }
+  });
+
+  // Get detailed ad analytics
+  app.get('/api/admin/ad-analytics', async (req, res) => {
+    try {
+      const { bannerId, eventType, startDate, endDate } = req.query;
+      const bannerIdNum = bannerId ? parseInt(bannerId as string) : undefined;
+      
+      const analytics = await storage.getAdAnalytics(
+        bannerIdNum, 
+        eventType as string, 
+        startDate as string, 
+        endDate as string
+      );
+      
+      res.json(analytics);
+    } catch (error) {
+      console.error('Error fetching ad analytics:', error);
+      res.status(500).json({ error: 'Failed to fetch ad analytics' });
+    }
+  });
+
   // Admin company claims endpoints
   app.get('/api/admin/company-claims', async (req, res) => {
     try {

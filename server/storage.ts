@@ -1,6 +1,6 @@
 import { csvParser } from './services/csvParser';
 import { db } from './db';
-import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, companyClaims, bannerAds, emailLogs, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type CompanyClaim, type BannerAd, type EmailLog, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist, type InsertCompanyClaim, type InsertBannerAd, type InsertEmailLog } from '@shared/schema';
+import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, companyClaims, bannerAds, adAnalytics, adPerformanceSummary, emailLogs, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type CompanyClaim, type BannerAd, type AdAnalytics, type AdPerformanceSummary, type EmailLog, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist, type InsertCompanyClaim, type InsertBannerAd, type InsertAdAnalytics, type InsertAdPerformanceSummary, type InsertEmailLog } from '@shared/schema';
 import { eq, ilike, or, and } from 'drizzle-orm';
 import { generateCompanyDescription } from './services/companyDescriptionGenerator';
 
@@ -68,6 +68,20 @@ export interface IStorage {
   // Email Log operations
   logEmail(email: InsertEmailLog): Promise<EmailLog>;
   getEmailLogs(type?: string, relatedId?: number): Promise<EmailLog[]>;
+  
+  // Ad Analytics operations
+  recordAdEvent(analytics: InsertAdAnalytics): Promise<AdAnalytics>;
+  getAdAnalytics(bannerId?: number, eventType?: string, startDate?: string, endDate?: string): Promise<AdAnalytics[]>;
+  getAdPerformanceSummary(bannerId?: number, dateRange?: { start: string; end: string }): Promise<AdPerformanceSummary[]>;
+  updateDailyAdPerformance(bannerId: number, date: string, imageUrl?: string): Promise<void>;
+  getAdPerformanceStats(bannerId?: number): Promise<{
+    totalImpressions: number;
+    totalViews: number;
+    totalClicks: number;
+    clickThroughRate: number;
+    topPerformingImages: { imageUrl: string; clicks: number; impressions: number }[];
+    dailyStats: { date: string; clicks: number; views: number; impressions: number }[];
+  }>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -679,6 +693,145 @@ export class DatabaseStorage implements IStorage {
     } else {
       return await db.select().from(emailLogs);
     }
+  }
+
+  // Ad Analytics operations
+  async recordAdEvent(analytics: InsertAdAnalytics): Promise<AdAnalytics> {
+    await this.initialize();
+    const [result] = await db.insert(adAnalytics).values(analytics).returning();
+    
+    // Update daily performance summary
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    await this.updateDailyAdPerformance(analytics.bannerId, today, analytics.imageUrl || undefined);
+    
+    return result;
+  }
+
+  async getAdAnalytics(bannerId?: number, eventType?: string, startDate?: string, endDate?: string): Promise<AdAnalytics[]> {
+    await this.initialize();
+    let query = db.select().from(adAnalytics);
+    
+    const conditions = [];
+    if (bannerId) conditions.push(eq(adAnalytics.bannerId, bannerId));
+    if (eventType) conditions.push(eq(adAnalytics.eventType, eventType));
+    
+    if (conditions.length > 0) {
+      query = query.where(and(...conditions));
+    }
+    
+    return await query.orderBy(adAnalytics.timestamp);
+  }
+
+  async getAdPerformanceSummary(bannerId?: number, dateRange?: { start: string; end: string }): Promise<AdPerformanceSummary[]> {
+    await this.initialize();
+    let query = db.select().from(adPerformanceSummary);
+    
+    if (bannerId) {
+      query = query.where(eq(adPerformanceSummary.bannerId, bannerId));
+    }
+    
+    return await query.orderBy(adPerformanceSummary.date);
+  }
+
+  async updateDailyAdPerformance(bannerId: number, date: string, imageUrl?: string): Promise<void> {
+    await this.initialize();
+    
+    // Check if summary exists for this banner and date
+    const [existingSummary] = await db.select()
+      .from(adPerformanceSummary)
+      .where(and(
+        eq(adPerformanceSummary.bannerId, bannerId),
+        eq(adPerformanceSummary.date, date)
+      ))
+      .limit(1);
+    
+    if (existingSummary) {
+      // Update existing summary - increment the appropriate counter
+      const updateData: any = { updatedAt: new Date() };
+      updateData.impressions = existingSummary.impressions + 1;
+      
+      await db.update(adPerformanceSummary)
+        .set(updateData)
+        .where(eq(adPerformanceSummary.id, existingSummary.id));
+    } else {
+      // Create new summary
+      await db.insert(adPerformanceSummary).values({
+        bannerId,
+        date,
+        imageUrl: imageUrl || null,
+        impressions: 1,
+        views: 0,
+        clicks: 0,
+        clickThroughRate: '0.00'
+      });
+    }
+  }
+
+  async getAdPerformanceStats(bannerId?: number): Promise<{
+    totalImpressions: number;
+    totalViews: number;
+    totalClicks: number;
+    clickThroughRate: number;
+    topPerformingImages: { imageUrl: string; clicks: number; impressions: number }[];
+    dailyStats: { date: string; clicks: number; views: number; impressions: number }[];
+  }> {
+    await this.initialize();
+    
+    // Get all performance summaries
+    let summaryQuery = db.select().from(adPerformanceSummary);
+    if (bannerId) {
+      summaryQuery = summaryQuery.where(eq(adPerformanceSummary.bannerId, bannerId));
+    }
+    
+    const summaries = await summaryQuery;
+    
+    // Calculate totals
+    const totalImpressions = summaries.reduce((sum, s) => sum + s.impressions, 0);
+    const totalViews = summaries.reduce((sum, s) => sum + s.views, 0);
+    const totalClicks = summaries.reduce((sum, s) => sum + s.clicks, 0);
+    const clickThroughRate = totalViews > 0 ? (totalClicks / totalViews) * 100 : 0;
+    
+    // Top performing images
+    const imageStats = new Map<string, { clicks: number; impressions: number }>();
+    summaries.forEach(summary => {
+      if (summary.imageUrl) {
+        const existing = imageStats.get(summary.imageUrl) || { clicks: 0, impressions: 0 };
+        imageStats.set(summary.imageUrl, {
+          clicks: existing.clicks + summary.clicks,
+          impressions: existing.impressions + summary.impressions
+        });
+      }
+    });
+    
+    const topPerformingImages = Array.from(imageStats.entries())
+      .map(([imageUrl, stats]) => ({ imageUrl, ...stats }))
+      .sort((a, b) => b.clicks - a.clicks)
+      .slice(0, 5);
+    
+    // Daily stats (last 30 days)
+    const dailyStatsMap = new Map<string, { clicks: number; views: number; impressions: number }>();
+    summaries.forEach(summary => {
+      const existing = dailyStatsMap.get(summary.date) || { clicks: 0, views: 0, impressions: 0 };
+      dailyStatsMap.set(summary.date, {
+        clicks: existing.clicks + summary.clicks,
+        views: existing.views + summary.views,
+        impressions: existing.impressions + summary.impressions
+      });
+    });
+    
+    const dailyStats = Array.from(dailyStatsMap.entries())
+      .map(([date, stats]) => ({ date, ...stats }))
+      .sort((a, b) => a.date.localeCompare(b.date))
+      .slice(-30); // Last 30 days
+    
+    return {
+      totalImpressions,
+      totalViews,
+      totalClicks,
+      clickThroughRate,
+      topPerformingImages,
+      dailyStats
+    };
   }
 }
 
