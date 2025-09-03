@@ -13,10 +13,12 @@ export const adminSessionConfig = session({
   secret: process.env.SESSION_SECRET!,
   resave: false,
   saveUninitialized: false,
+  name: 'comcubes_admin_session',
   cookie: {
     secure: false, // Set to true in production with HTTPS
     httpOnly: true,
     maxAge: 24 * 60 * 60 * 1000, // 24 hours
+    sameSite: 'lax'
   },
 });
 
@@ -40,10 +42,18 @@ export const validateAdminCredentials = (username: string, password: string): bo
   const adminUsername = process.env.ADMIN_USERNAME;
   const adminPassword = process.env.ADMIN_PASSWORD;
   
+  console.log('Validating credentials for username:', username);
+  console.log('Expected username:', adminUsername);
+  console.log('Username match:', username === adminUsername);
+  console.log('Password provided:', !!password);
+  console.log('Expected password exists:', !!adminPassword);
+  
   if (!adminUsername || !adminPassword) {
     console.error('Admin credentials not configured in environment variables');
     return false;
   }
   
-  return username === adminUsername && password === adminPassword;
+  const isValid = username === adminUsername && password === adminPassword;
+  console.log('Credentials valid:', isValid);
+  return isValid;
 };
