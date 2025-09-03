@@ -162,10 +162,16 @@ app.use((req, res, next) => {
   app.post('/admin/login', (req, res) => {
     const { username, password } = req.body;
     
+    console.log('Login attempt - Body:', req.body);
+    console.log('Login attempt - Username:', username);
+    console.log('Login attempt - Session before:', req.session?.isAdminAuthenticated);
+    
     if (validateAdminCredentials(username, password)) {
       req.session!.isAdminAuthenticated = true;
+      console.log('Login successful - Session after:', req.session?.isAdminAuthenticated);
       res.redirect('/admin/dashboard');
     } else {
+      console.log('Login failed - Invalid credentials');
       res.redirect('/admin/login?error=1');
     }
   });
