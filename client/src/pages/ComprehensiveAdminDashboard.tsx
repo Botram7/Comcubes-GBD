@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Link, useLocation } from 'wouter';
 import { 
@@ -130,6 +130,21 @@ export default function ComprehensiveAdminDashboard() {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [industryFilter, setIndustryFilter] = useState('all');
+
+  // Check authentication on mount
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        await apiRequest('GET', '/api/admin/stats');
+      } catch (error) {
+        // If we get a 401, redirect to login
+        if (error instanceof Error && error.message.includes('401')) {
+          window.location.href = '/admin/login';
+        }
+      }
+    };
+    checkAuth();
+  }, []);
 
   // Data queries
   const { data: listings, isLoading: listingsLoading } = useQuery({
@@ -451,7 +466,7 @@ export default function ComprehensiveAdminDashboard() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredListings.map((listing) => (
+                {filteredListings.map((listing: any) => (
                   <TableRow key={listing.id}>
                     <TableCell>
                       <div>
@@ -625,7 +640,7 @@ export default function ComprehensiveAdminDashboard() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredWaitlist.map((entry) => (
+                {filteredWaitlist.map((entry: any) => (
                   <TableRow key={entry.id}>
                     <TableCell>
                       <div>

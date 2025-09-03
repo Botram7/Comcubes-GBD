@@ -800,8 +800,8 @@ Please contact this potential advertiser within 24 hours.
       if (claim.companyId) {
         await storage.updateCompanyOwnership(claim.companyId, {
           verifiedOwner: true,
-          ownerEmail: claim.claimantEmail,
-          ownerName: claim.claimantName,
+          ownerEmail: claim.contactEmail,
+          ownerName: claim.contactName,
           verificationDate: new Date()
         });
       }
