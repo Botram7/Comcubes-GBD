@@ -41,6 +41,18 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // Debug endpoint to check environment variables (temporary)
+  app.get('/admin/debug-env', (req, res) => {
+    res.json({
+      hasAdminUsername: !!process.env.ADMIN_USERNAME,
+      adminUsernameLength: process.env.ADMIN_USERNAME?.length || 0,
+      adminUsername: process.env.ADMIN_USERNAME, // We'll show this temporarily for debugging
+      hasAdminPassword: !!process.env.ADMIN_PASSWORD,
+      adminPasswordLength: process.env.ADMIN_PASSWORD?.length || 0,
+      hasSessionSecret: !!process.env.SESSION_SECRET
+    });
+  });
+
   // Admin authentication routes
   app.get('/admin/login', (req, res) => {
     if (req.session?.isAdminAuthenticated) {
@@ -174,18 +186,6 @@ app.use((req, res, next) => {
       console.log('Login failed - Invalid credentials');
       res.redirect('/admin/login?error=1');
     }
-  });
-
-  // Debug endpoint to check environment variables (temporary)
-  app.get('/admin/debug-env', (req, res) => {
-    res.json({
-      hasAdminUsername: !!process.env.ADMIN_USERNAME,
-      adminUsernameLength: process.env.ADMIN_USERNAME?.length || 0,
-      adminUsername: process.env.ADMIN_USERNAME, // We'll show this temporarily for debugging
-      hasAdminPassword: !!process.env.ADMIN_PASSWORD,
-      adminPasswordLength: process.env.ADMIN_PASSWORD?.length || 0,
-      hasSessionSecret: !!process.env.SESSION_SECRET
-    });
   });
 
   app.get('/admin/logout', (req, res) => {
