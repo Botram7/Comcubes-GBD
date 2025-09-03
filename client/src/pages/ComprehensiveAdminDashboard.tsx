@@ -956,14 +956,23 @@ export default function ComprehensiveAdminDashboard() {
               <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               <Badge variant="secondary" className="ml-2">Admin</Badge>
             </div>
-            <Button 
-              variant="outline" 
-              onClick={() => setLocation('/')}
-              className="flex items-center space-x-2"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              <span>Back to Home</span>
-            </Button>
+            <div className="flex items-center space-x-3">
+              <Button 
+                variant="outline" 
+                onClick={() => setLocation('/')}
+                className="flex items-center space-x-2"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                <span>Back to Home</span>
+              </Button>
+              <Button 
+                variant="destructive" 
+                onClick={() => window.location.href = '/admin/logout'}
+                className="flex items-center space-x-2"
+              >
+                <span>Logout</span>
+              </Button>
+            </div>
           </div>
         </div>
       </header>
