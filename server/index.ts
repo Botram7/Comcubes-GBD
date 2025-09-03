@@ -41,6 +41,13 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // Log the environment variables for debugging
+  console.log('=== ADMIN CREDENTIALS DEBUG ===');
+  console.log('ADMIN_USERNAME:', process.env.ADMIN_USERNAME);
+  console.log('ADMIN_PASSWORD length:', process.env.ADMIN_PASSWORD?.length);
+  console.log('SESSION_SECRET exists:', !!process.env.SESSION_SECRET);
+  console.log('===============================');
+
   // Admin authentication routes
   app.get('/admin/login', (req, res) => {
     if (req.session?.isAdminAuthenticated) {
