@@ -44,7 +44,7 @@ app.use((req, res, next) => {
   // Admin authentication routes
   app.get('/admin/login', (req, res) => {
     if (req.session?.isAdminAuthenticated) {
-      return res.redirect('/admin/dashboard');
+      return res.redirect('/admin');
     }
     
     res.send(`
@@ -169,7 +169,7 @@ app.use((req, res, next) => {
     if (validateAdminCredentials(username, password)) {
       req.session!.isAdminAuthenticated = true;
       console.log('Login successful - Session after:', req.session?.isAdminAuthenticated);
-      res.redirect('/admin/dashboard');
+      res.redirect('/admin');
     } else {
       console.log('Login failed - Invalid credentials');
       res.redirect('/admin/login?error=1');
@@ -185,124 +185,7 @@ app.use((req, res, next) => {
     });
   });
 
-  app.get('/admin/dashboard', requireAdminAuth, (req, res) => {
-    res.send(`
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Admin Dashboard - COMCUBES</title>
-        <style>
-          body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: #f5f7fa;
-          }
-          .header {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          }
-          .header h1 {
-            color: #333;
-            margin: 0;
-          }
-          .logout-btn {
-            background: #dc3545;
-            color: white;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-          }
-          .logout-btn:hover {
-            background: #c82333;
-          }
-          .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-          }
-          .dashboard-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-          }
-          .dashboard-card h3 {
-            color: #333;
-            margin-top: 0;
-          }
-          .api-link {
-            color: #007bff;
-            text-decoration: none;
-            font-family: monospace;
-            background: #f8f9fa;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: block;
-            margin: 5px 0;
-          }
-          .api-link:hover {
-            background: #e9ecef;
-          }
-        </style>
-      </head>
-      <body>
-        <div class="header">
-          <h1>COMCUBES Admin Dashboard</h1>
-          <a href="/admin/logout" class="logout-btn">Logout</a>
-        </div>
-        
-        <div class="dashboard-grid">
-          <div class="dashboard-card">
-            <h3>Company Management</h3>
-            <a href="/api/admin/company-claims" class="api-link" target="_blank">GET /api/admin/company-claims</a>
-            <p>View and manage company claims</p>
-          </div>
-          
-          <div class="dashboard-card">
-            <h3>Waitlist Management</h3>
-            <a href="/api/admin/waitlist" class="api-link" target="_blank">GET /api/admin/waitlist</a>
-            <p>View waitlist entries and industry statistics</p>
-          </div>
-          
-          <div class="dashboard-card">
-            <h3>Banner Ads</h3>
-            <a href="/api/admin/banner-ads" class="api-link" target="_blank">GET /api/admin/banner-ads</a>
-            <p>Manage banner advertisements</p>
-          </div>
-          
-          <div class="dashboard-card">
-            <h3>System Statistics</h3>
-            <a href="/api/admin/stats" class="api-link" target="_blank">GET /api/admin/stats</a>
-            <p>View overall system statistics</p>
-          </div>
-          
-          <div class="dashboard-card">
-            <h3>Ad Performance</h3>
-            <a href="/api/admin/ad-performance" class="api-link" target="_blank">GET /api/admin/ad-performance</a>
-            <p>View banner ad analytics and performance</p>
-          </div>
-          
-          <div class="dashboard-card">
-            <h3>Industry Stats</h3>
-            <a href="/api/admin/industry-stats" class="api-link" target="_blank">GET /api/admin/industry-stats</a>
-            <p>View industry-specific statistics</p>
-          </div>
-        </div>
-      </body>
-      </html>
-    `);
-  });
+  // Admin dashboard is now handled by React at /admin route
 
   const server = await registerRoutes(app);
 
