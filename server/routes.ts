@@ -14,18 +14,6 @@ import multer from 'multer';
 import { requireAdminAuth } from "./adminAuth";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Debug endpoint to check environment variables (temporary)
-  app.get('/admin/debug-env', (req, res) => {
-    res.json({
-      hasAdminUsername: !!process.env.ADMIN_USERNAME,
-      adminUsernameLength: process.env.ADMIN_USERNAME?.length || 0,
-      adminUsername: process.env.ADMIN_USERNAME, // We'll show this temporarily for debugging
-      hasAdminPassword: !!process.env.ADMIN_PASSWORD,
-      adminPasswordLength: process.env.ADMIN_PASSWORD?.length || 0,
-      hasSessionSecret: !!process.env.SESSION_SECRET
-    });
-  });
-
   // Serve static assets from attached_assets directory
   app.use('/generated_images', express.static(path.resolve(import.meta.dirname, '..', 'attached_assets', 'generated_images')));
   
