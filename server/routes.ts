@@ -11,6 +11,7 @@ import { paystackService } from "./paystackService";
 import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/schema";
 import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
 import multer from 'multer';
+import { requireAdminAuth } from "./adminAuth";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Serve static assets from attached_assets directory
@@ -412,7 +413,7 @@ Please contact this potential advertiser within 24 hours.
   });
 
   // Admin routes
-  app.get('/api/admin/company-listings', async (req, res) => {
+  app.get('/api/admin/company-listings', requireAdminAuth, async (req, res) => {
     try {
       const listings = await storage.getCompanyListings();
       res.json(listings);
@@ -422,7 +423,7 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
-  app.post('/api/admin/company-listings/:id/approve', async (req, res) => {
+  app.post('/api/admin/company-listings/:id/approve', requireAdminAuth, async (req, res) => {
     try {
       const { id } = req.params;
       const listingId = parseInt(id);
@@ -458,7 +459,7 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
-  app.post('/api/admin/company-listings/:id/reject', async (req, res) => {
+  app.post('/api/admin/company-listings/:id/reject', requireAdminAuth, async (req, res) => {
     try {
       const { id } = req.params;
       const listingId = parseInt(id);
@@ -483,7 +484,7 @@ Please contact this potential advertiser within 24 hours.
   });
 
   // Banner Ad Management Endpoints
-  app.get("/api/admin/banner-ads", async (req, res) => {
+  app.get("/api/admin/banner-ads", requireAdminAuth, async (req, res) => {
     try {
       const bannerAds = await storage.getBannerAds();
       res.json(bannerAds);
@@ -493,7 +494,7 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
-  app.post("/api/admin/banner-ads", async (req, res) => {
+  app.post("/api/admin/banner-ads", requireAdminAuth, async (req, res) => {
     try {
       const { position, images, imageUrls, clickUrl, rotationInterval, isActive } = req.body;
       const bannerAd = await storage.createBannerAd({
@@ -511,7 +512,7 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
-  app.put("/api/admin/banner-ads/:id", async (req, res) => {
+  app.put("/api/admin/banner-ads/:id", requireAdminAuth, async (req, res) => {
     try {
       const { id } = req.params;
       const { position, images, imageUrls, clickUrl, rotationInterval, isActive } = req.body;
@@ -534,7 +535,7 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
-  app.delete("/api/admin/banner-ads/:id", async (req, res) => {
+  app.delete("/api/admin/banner-ads/:id", requireAdminAuth, async (req, res) => {
     try {
       const { id } = req.params;
       const success = await storage.deleteBannerAd(parseInt(id));
@@ -561,7 +562,7 @@ Please contact this potential advertiser within 24 hours.
   });
 
   // Initialize default banner ads (one-time setup)
-  app.post("/api/admin/banner-ads/initialize", async (req, res) => {
+  app.post("/api/admin/banner-ads/initialize", requireAdminAuth, async (req, res) => {
     try {
       // Check if banner ads already exist
       const existingBanners = await storage.getBannerAds();
@@ -674,7 +675,7 @@ Please contact this potential advertiser within 24 hours.
   });
 
   // Admin endpoint for waitlist management
-  app.get('/api/admin/waitlist', async (req, res) => {
+  app.get('/api/admin/waitlist', requireAdminAuth, async (req, res) => {
     try {
       const waitlist = await storage.getAllWaitlistEntries();
       res.json(waitlist);
@@ -685,7 +686,7 @@ Please contact this potential advertiser within 24 hours.
   });
 
   // Admin endpoint for industry statistics
-  app.get('/api/admin/industry-stats', async (req, res) => {
+  app.get('/api/admin/industry-stats', requireAdminAuth, async (req, res) => {
     try {
       const stats = await storage.getIndustryWaitlistStats();
       res.json(stats);
@@ -696,7 +697,7 @@ Please contact this potential advertiser within 24 hours.
   });
 
   // Admin endpoint for overall system statistics
-  app.get('/api/admin/stats', async (req, res) => {
+  app.get('/api/admin/stats', requireAdminAuth, async (req, res) => {
     try {
       const stats = await storage.getAdminStats();
       res.json(stats);
@@ -736,7 +737,7 @@ Please contact this potential advertiser within 24 hours.
   });
 
   // Get ad performance statistics
-  app.get('/api/admin/ad-performance', async (req, res) => {
+  app.get('/api/admin/ad-performance', requireAdminAuth, async (req, res) => {
     try {
       const { bannerId } = req.query;
       const bannerIdNum = bannerId ? parseInt(bannerId as string) : undefined;
@@ -750,7 +751,7 @@ Please contact this potential advertiser within 24 hours.
   });
 
   // Get detailed ad analytics
-  app.get('/api/admin/ad-analytics', async (req, res) => {
+  app.get('/api/admin/ad-analytics', requireAdminAuth, async (req, res) => {
     try {
       const { bannerId, eventType, startDate, endDate } = req.query;
       const bannerIdNum = bannerId ? parseInt(bannerId as string) : undefined;
@@ -770,7 +771,7 @@ Please contact this potential advertiser within 24 hours.
   });
 
   // Admin company claims endpoints
-  app.get('/api/admin/company-claims', async (req, res) => {
+  app.get('/api/admin/company-claims', requireAdminAuth, async (req, res) => {
     try {
       const claims = await storage.getAllCompanyClaims();
       res.json(claims);
@@ -780,7 +781,7 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
-  app.post('/api/admin/company-claims/:id/approve', async (req, res) => {
+  app.post('/api/admin/company-claims/:id/approve', requireAdminAuth, async (req, res) => {
     try {
       const claimId = parseInt(req.params.id);
       
@@ -816,7 +817,7 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
-  app.post('/api/admin/company-claims/:id/reject', async (req, res) => {
+  app.post('/api/admin/company-claims/:id/reject', requireAdminAuth, async (req, res) => {
     try {
       const claimId = parseInt(req.params.id);
       
@@ -842,7 +843,7 @@ Please contact this potential advertiser within 24 hours.
   });
 
   // Admin endpoint to contact waitlist entry
-  app.post('/api/admin/waitlist/:id/contact', async (req, res) => {
+  app.post('/api/admin/waitlist/:id/contact', requireAdminAuth, async (req, res) => {
     try {
       const { id } = req.params;
       const waitlistEntry = await storage.getWaitlistEntryById(parseInt(id));
