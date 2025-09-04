@@ -41,36 +41,40 @@ app.use(helmet({
 // Rate limiting for DDoS protection with proper trust proxy configuration
 const generalLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
+  max: 200, // Increased limit to prevent legitimate usage issues
   message: 'Too many requests from this IP, please try again later.',
   standardHeaders: true,
   legacyHeaders: false,
-  trustProxy: false, // Disable trust proxy warnings for general routes
 });
 
 const adminLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 20, // Stricter limit for admin routes
+  max: 200, // High limit for admin routes to prevent lockout
   message: 'Too many admin requests from this IP, please try again later.',
   standardHeaders: true,
   legacyHeaders: false,
-  trustProxy: false, // Disable trust proxy warnings for admin routes
   skip: (req) => req.session?.isAdminAuthenticated === true, // Skip rate limiting for authenticated admin
 });
 
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // Very strict limit for authentication attempts
+  max: 10, // Reasonable limit for authentication attempts
   message: 'Too many authentication attempts, please try again later.',
   standardHeaders: true,
   legacyHeaders: false,
-  trustProxy: false, // Disable trust proxy warnings for auth routes
 });
 
-// Apply rate limiting
+// Apply rate limiting with admin dashboard exclusion
 app.use('/api/admin', adminLimiter);
 app.use(['/admin/login', '/api/auth'], authLimiter);
-app.use(generalLimiter);
+// Exclude admin dashboard from general rate limiting
+app.use((req, res, next) => {
+  if (req.path === '/admin' || (req.path.startsWith('/admin/') && !req.path.startsWith('/admin/login'))) {
+    // Skip general rate limiting for admin dashboard pages
+    return next();
+  }
+  return generalLimiter(req, res, next);
+});
 
 app.use(express.json({ limit: '10mb' })); // Limit request body size
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
