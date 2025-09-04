@@ -1,4 +1,5 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
+import { addCSRFHeaders } from "./csrf";
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
@@ -25,9 +26,21 @@ export async function apiRequest(
     }
   }
   
+  // Prepare headers with CSRF protection for state-changing requests
+  let headers: Record<string, string> = {};
+  
+  if (!isFormData && data) {
+    headers["Content-Type"] = "application/json";
+  }
+  
+  // Add CSRF protection for POST, PUT, PATCH, DELETE requests
+  if (method.toUpperCase() !== "GET") {
+    headers = addCSRFHeaders(headers);
+  }
+  
   const res = await fetch(url, {
     method,
-    headers: !isFormData && data ? { "Content-Type": "application/json" } : {},
+    headers,
     body: data ? (isFormData ? data as FormData : JSON.stringify(data)) : undefined,
     credentials: "include",
   });
