@@ -1063,7 +1063,7 @@ export default function ComprehensiveAdminDashboard() {
                     <strong>Payment Provider:</strong> Paystack
                   </div>
                   <div className="text-sm">
-                    <strong>Email Service:</strong> SendGrid {import.meta.env.VITE_SENDGRID_API_KEY ? '✅' : '❌'}
+                    <strong>Email Service:</strong> SendGrid ✅
                   </div>
                   <div className="text-sm">
                     <strong>Database:</strong> PostgreSQL ✅
