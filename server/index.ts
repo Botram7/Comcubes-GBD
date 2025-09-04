@@ -1,11 +1,79 @@
 import express, { type Request, Response, NextFunction } from "express";
+import helmet from "helmet";
+import rateLimit from "express-rate-limit";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { adminSessionConfig, requireAdminAuth, validateAdminCredentials } from "./adminAuth";
 
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
+// Configure trust proxy specifically for Replit's infrastructure
+app.set('trust proxy', 1); // Trust only the first proxy (more secure than 'true')
+
+// Security Headers - Implement essential security headers
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      imgSrc: ["'self'", "data:", "https:", "blob:"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://*.replit.dev", "https://*.replit.com"],
+      connectSrc: ["'self'", "https://api.paystack.co", "https://www.googleapis.com", "wss://*.replit.dev", "ws://localhost:*"],
+      frameSrc: ["'self'"],
+      objectSrc: ["'none'"],
+      mediaSrc: ["'self'"],
+      manifestSrc: ["'self'"],
+      workerSrc: ["'self'"]
+    }
+  },
+  hsts: {
+    maxAge: 31536000, // 1 year
+    includeSubDomains: true,
+    preload: true
+  },
+  frameguard: { action: 'deny' },
+  noSniff: true,
+  xssFilter: true,
+  referrerPolicy: { policy: 'strict-origin-when-cross-origin' }
+}));
+
+// Rate limiting for DDoS protection with proper trust proxy configuration
+const generalLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  message: 'Too many requests from this IP, please try again later.',
+  standardHeaders: true,
+  legacyHeaders: false,
+  trustProxy: false, // Disable trust proxy warnings for general routes
+});
+
+const adminLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 20, // Stricter limit for admin routes
+  message: 'Too many admin requests from this IP, please try again later.',
+  standardHeaders: true,
+  legacyHeaders: false,
+  trustProxy: false, // Disable trust proxy warnings for admin routes
+  skip: (req) => req.session?.isAdminAuthenticated === true, // Skip rate limiting for authenticated admin
+});
+
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5, // Very strict limit for authentication attempts
+  message: 'Too many authentication attempts, please try again later.',
+  standardHeaders: true,
+  legacyHeaders: false,
+  trustProxy: false, // Disable trust proxy warnings for auth routes
+});
+
+// Apply rate limiting
+app.use('/api/admin', adminLimiter);
+app.use(['/admin/login', '/api/auth'], authLimiter);
+app.use(generalLimiter);
+
+app.use(express.json({ limit: '10mb' })); // Limit request body size
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Add session middleware for admin authentication
 app.use(adminSessionConfig);
@@ -159,19 +227,24 @@ app.use((req, res, next) => {
     `);
   });
 
-  app.post('/admin/login', (req, res) => {
+  app.post('/admin/login', async (req, res) => {
     const { username, password } = req.body;
     
     console.log('Login attempt - Body:', req.body);
     console.log('Login attempt - Username:', username);
     console.log('Login attempt - Session before:', req.session?.isAdminAuthenticated);
     
-    if (validateAdminCredentials(username, password)) {
-      req.session!.isAdminAuthenticated = true;
-      console.log('Login successful - Session after:', req.session?.isAdminAuthenticated);
-      res.redirect('/admin');
-    } else {
-      console.log('Login failed - Invalid credentials');
+    try {
+      if (await validateAdminCredentials(username, password)) {
+        req.session!.isAdminAuthenticated = true;
+        console.log('Login successful - Session after:', req.session?.isAdminAuthenticated);
+        res.redirect('/admin');
+      } else {
+        console.log('Login failed - Invalid credentials');
+        res.redirect('/admin/login?error=1');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
       res.redirect('/admin/login?error=1');
     }
   });
