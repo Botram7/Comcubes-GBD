@@ -244,7 +244,6 @@ export const INDUSTRY_IMAGES = {
   "Dyes & Pigments": "/generated_images/Dyes_pigments_manufacturing_59fcf722.png",
   "Electronic Chemicals": "/generated_images/Electronic_chemicals_cleanroom_f6f6f967.png",
   "Explosives & Pyrotechnics": "/generated_images/Explosives_pyrotechnics_manufacturing_2aa95900.png",
-  "Fertilizers & Agrochemicals": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Food Additives": "/generated_images/Food_additives_production_e7a609d9.png",
   "Industrial Cleaners": "/generated_images/Industrial_cleaners_manufacturing_2fc341da.png",
   "Industrial Gases": "/generated_images/Industrial_gases_production_cb3b9326.png",
