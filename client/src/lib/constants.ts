@@ -68,12 +68,27 @@ export const INDUSTRY_IMAGES = {
   "Venture Capital": "/generated_images/Venture_capital_investment_meeting_a9a8d24c.png",
   "Wealth Management": "/generated_images/Wealth_management_private_banking_a9f8a9eb.png",
 
-  // Healthcare - Medical and pharmaceutical imagery
-  "Biotechnology": "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Digital Health": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Medical Devices": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Pharmaceuticals": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Telemedicine": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
+  // Healthcare & Pharmaceuticals - All 20 healthcare industries with unique custom images
+  "Biopharmaceuticals": "/generated_images/Biopharmaceutical_research_lab_1c0b75ef.png",
+  "Clinical Research": "/generated_images/Clinical_research_trial_47cc54cb.png",
+  "Diagnostic Labs": "/generated_images/Diagnostic_lab_testing_8025885e.png",
+  "Elderly Care Tech": "/generated_images/Elderly_care_technology_37000ae4.png",
+  "Generic Drugs": "/generated_images/Generic_drugs_pharmacy_827bd1c3.png",
+  "Genomics": "/generated_images/Genomics_DNA_research_c7ed4078.png",
+  "Health Analytics": "/generated_images/Health_analytics_dashboard_2abcea05.png",
+  "Health Insurance": "/generated_images/Health_insurance_consultation_aa4d424c.png",
+  "Health Tourism": "/generated_images/Health_tourism_facility_f4436672.png",
+  "Hospital Management": "/generated_images/Hospital_management_center_e1d3365c.png",
+  "Medical Education": "/generated_images/Medical_education_classroom_5324654b.png",
+  "Medical Imaging": "/generated_images/Medical_imaging_MRI_b1238992.png",
+  "Medical Robotics": "/generated_images/Medical_robotics_surgery_170c1fb9.png",
+  "Mental Health Apps": "/generated_images/Mental_health_app_7ad88615.png",
+  "Pharmacy Chains": "/generated_images/Pharmacy_chain_store_f4a765f1.png",
+  "Prosthetics": "/generated_images/Prosthetics_fitting_center_cb1d9dc3.png",
+  "Surgical Instruments": "/generated_images/Surgical_instruments_room_a893b674.png",
+  "Telehealth": "/generated_images/Telehealth_video_consultation_d01a1875.png",
+  "Vaccines": "/generated_images/Vaccines_immunization_clinic_dc15a4a4.png",
+  "Wearable Health Tech": "/generated_images/Wearable_health_technology_aba1f886.png",
 
   // Energy & Utilities - All 20 energy industries with unique custom images
   "Battery Storage": "/generated_images/Battery_storage_facility_3252e72c.png",
