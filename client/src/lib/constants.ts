@@ -80,7 +80,6 @@ export const INDUSTRY_IMAGES = {
   "Airport Operations": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Autonomous Vehicles": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Cargo Shipping": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Electric Vehicles": "https://images.unsplash.com/photo-1593941707882-a5bac6861d75?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Freight Rail": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Last-Mile Delivery": "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Public Transportation": "https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
@@ -235,11 +234,27 @@ export const INDUSTRY_IMAGES = {
   "Annuities": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Auto Insurance": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
 
-  // Automotive specific industries
-  "Auto Parts Manufacturing": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Automotive AI": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Automotive Software": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Autonomous Driving Tech": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900"
+  // Automobile - All 20 automotive industries with unique images
+  "Auto Parts Manufacturing": "/generated_images/Auto_parts_manufacturing_facility_18136f2b.png",
+  "Automotive AI": "/generated_images/Automotive_AI_research_laboratory_67a999b7.png",
+  "Automotive Software": "/generated_images/Automotive_software_development_center_699d78c0.png",
+  "Autonomous Driving Tech": "/generated_images/Autonomous_driving_technology_8ca631b1.png",
+  "Car Rental Services": "/generated_images/Car_rental_services_facility_cdd39508.png",
+  "Car Subscription Services": "/generated_images/Car_subscription_services_facility_f1b175fb.png",
+  "Charging Infrastructure": "/generated_images/Charging_infrastructure_network_2b5aa385.png",
+  "Classic Car Restoration": "/generated_images/Classic_car_restoration_workshop_b9c40529.png",
+  "Commercial Trucks": "/generated_images/Commercial_trucks_logistics_depot_e94f0148.png",
+  "EV Batteries": "/generated_images/EV_batteries_manufacturing_facility_6fd6f539.png",
+  "Electric Vehicles": "/generated_images/Electric_vehicles_charging_station_7e5d3a4f.png",
+  "Fleet Management": "/generated_images/Fleet_management_control_center_cf8ebede.png",
+  "Luxury Vehicles": "/generated_images/Luxury_vehicles_premium_showroom_909f7a25.png",
+  "Motorcycles": "/generated_images/Motorcycles_showroom_display_d2af3865.png",
+  "Motorsports": "/generated_images/Motorsports_racing_circuit_493335a5.png",
+  "Off-Road Vehicles": "/generated_images/Off-road_vehicles_terrain_cfbb5639.png",
+  "Passenger Vehicles": "/generated_images/Passenger_vehicles_automotive_manufacturing_7d2e4604.png",
+  "Ride-Hailing Platforms": "/generated_images/Ride-hailing_platform_operations_7dd6e9f7.png",
+  "Tire Manufacturing": "/generated_images/Tire_manufacturing_plant_automation_ee401bd9.png",
+  "Vehicle Telematics": "/generated_images/Vehicle_telematics_control_room_4916d4fa.png"
 };
 
 export const getImageForEntity = (name: string, type: 'sector' | 'industry' | 'company'): string => {
