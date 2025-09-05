@@ -323,9 +323,27 @@ export const INDUSTRY_IMAGES = {
   "Textile Chemicals": "/generated_images/Textile_dyeing_facility_dbaeb68d.png",
   "Water Treatment Chemicals": "/generated_images/Water_treatment_chemicals_0db1953b.png",
 
-  // Insurance - Insurance services
-  "Annuities": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Auto Insurance": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
+  // Insurance - All 20 insurance industries with unique custom images
+  "Annuities": "/generated_images/Annuities_retirement_planning_fe0e6074.png",
+  "Auto Insurance": "/generated_images/Auto_insurance_claim_b15ea2b5.png",
+  "Brokerage Networks": "/generated_images/Insurance_brokerage_network_2d6e8e23.png",
+  "Catastrophe Bonds": "/generated_images/Catastrophe_bonds_trading_e7cfe309.png",
+  "Claims Management": "/generated_images/Claims_management_office_b2d1a6ba.png",
+  "Crop Insurance": "/generated_images/Crop_insurance_farm_8684e4d5.png",
+  "Cyber Insurance": "/generated_images/Cyber_insurance_consultation_6c4dc5f7.png",
+  "Disability Insurance": "/generated_images/Disability_insurance_meeting_7c3f3437.png",
+  "Workers Compensation": "/generated_images/Health_insurance_family_6e070996.png",
+  "InsurTech Platforms": "/generated_images/InsurTech_platform_development_ede87bc8.png",
+  "Liability Insurance": "/generated_images/Liability_insurance_legal_92ef2247.png",
+  "Life Insurance": "/generated_images/Life_insurance_family_a7a7cc93.png",
+  "Marine Insurance": "/generated_images/Marine_insurance_port_8760d327.png",
+  "Microinsurance": "/generated_images/Microinsurance_village_community_3484e67c.png",
+  "Parametric Insurance": "/generated_images/Parametric_insurance_weather_6ce4e8e6.png",
+  "Pet Insurance": "/generated_images/Pet_insurance_veterinary_3103228c.png",
+  "Property Insurance": "/generated_images/Property_insurance_home_8e73309c.png",
+  "Reinsurance": "/generated_images/Reinsurance_corporate_headquarters_d60f65a3.png",
+  "Title Insurance": "/generated_images/Title_insurance_closing_d4470a84.png",
+  "Travel Insurance": "/generated_images/Travel_insurance_airport_643b42dc.png",
 
   // Automobile - All 20 automotive industries with unique images
   "Auto Parts Manufacturing": "/generated_images/Auto_parts_manufacturing_facility_18136f2b.png",
