@@ -236,11 +236,25 @@ export const INDUSTRY_IMAGES = {
   "Online Education": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Training & Development": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
 
-  // Chemicals - Chemical and materials industry
-  "Industrial Chemicals": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Specialty Chemicals": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Petrochemicals": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Adhesives & Sealants": "/generated_images/Adhesives_sealants_laboratory_d3f9c2fa.png",
+  // Chemicals - All 18 chemical industries with unique images (excluding Adhesives & Sealants and Fertilizers & Agrochemicals)
+  "Chemical Distribution": "/generated_images/Chemical_distribution_warehouse_4f443682.png",
+  "Construction Chemicals": "/generated_images/Construction_chemicals_manufacturing_d87fdd12.png",
+  "Cosmetic Chemicals": "/generated_images/Cosmetic_chemicals_laboratory_3346ba82.png",
+  "Dyes & Pigments": "/generated_images/Dyes_pigments_manufacturing_59fcf722.png",
+  "Electronic Chemicals": "/generated_images/Electronic_chemicals_cleanroom_f6f6f967.png",
+  "Explosives & Pyrotechnics": "/generated_images/Explosives_pyrotechnics_manufacturing_2aa95900.png",
+  "Food Additives": "/generated_images/Food_additives_production_e7a609d9.png",
+  "Industrial Cleaners": "/generated_images/Industrial_cleaners_manufacturing_2fc341da.png",
+  "Industrial Gases": "/generated_images/Industrial_gases_production_cb3b9326.png",
+  "Lubricants & Greases": "/generated_images/Lubricants_greases_manufacturing_c0186060.png",
+  "Paints & Coatings": "/generated_images/Paints_coatings_manufacturing_35bf5117.png",
+  "Petrochemicals": "/generated_images/Petrochemicals_refinery_complex_b5bcdb34.png",
+  "Pharmaceutical Chemicals": "/generated_images/Pharmaceutical_chemicals_manufacturing_c7b2ea8c.png",
+  "Plastic Resins": "/generated_images/Plastic_resins_production_c9c5eb53.png",
+  "Specialty Chemicals": "/generated_images/Specialty_chemicals_laboratory_dd542fe8.png",
+  "Synthetic Rubber": "/generated_images/Synthetic_rubber_manufacturing_a144165f.png",
+  "Textile Chemicals": "/generated_images/Textile_chemicals_processing_709ace99.png",
+  "Water Treatment Chemicals": "/generated_images/Water_treatment_chemicals_0db1953b.png",
 
   // Insurance - Insurance services
   "Annuities": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
