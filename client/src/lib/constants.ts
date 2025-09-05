@@ -28,22 +28,27 @@ export const SECTOR_IMAGES = {
 
 // Comprehensive industry-specific images with unique, befitting visuals for each category
 export const INDUSTRY_IMAGES = {
-  // Technology Industries - Unique images for each tech sector
-  "3D Printing": "/generated_images/3D_printing_technology_workspace_f177a11e.png",
-  "AR/VR Hardware": "/generated_images/AR_VR_technology_experience_aa827d76.png",
-  "Artificial Intelligence": "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Biometric Systems": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Blockchain Technology": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Cloud Computing": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Cybersecurity": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Data Analytics": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Enterprise Software": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Internet of Things": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "IoT Solutions": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Mobile Apps": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Quantum Computing": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Robotics": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Semiconductors": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
+  // Technology - All 20 technology industries with unique custom images
+  "3D Printing": "/generated_images/3D_printing_technology_workspace_3c9f4c86.png",
+  "AR/VR Hardware": "/generated_images/AR_VR_hardware_development_12200d27.png",
+  "Biometric Systems": "/generated_images/Biometric_systems_security_d05d6b3b.png",
+  "Blockchain Hardware": "/generated_images/Blockchain_hardware_mining_04e5a248.png",
+  "Computer Peripherals": "/generated_images/Computer_peripherals_store_b4a3aa65.png",
+  "Data Analytics": "/generated_images/Data_analytics_center_96673068.png",
+  "Edge Computing": "/generated_images/Edge_computing_infrastructure_60794558.png",
+  "Enterprise Software": "/generated_images/Enterprise_software_development_9b68b3dc.png",
+  "Gaming Consoles": "/generated_images/Gaming_consoles_manufacturing_80987219.png",
+  "IoT Devices": "/generated_images/IoT_devices_smart_home_b2ee25e4.png",
+  "Mainframe Systems": "/generated_images/Mainframe_systems_data_center_99eaaae0.png",
+  "Open-Source Platforms": "/generated_images/Open-source_platforms_development_fc21caca.png",
+  "Operating Systems": "/generated_images/Operating_systems_development_35ba5919.png",
+  "Quantum Computing": "/generated_images/Quantum_computing_research_05ad935f.png",
+  "Robotics": "/generated_images/Robotics_engineering_workshop_373ac4be.png",
+  "Satellite Tech": "/generated_images/Satellite_technology_space_facility_e5b3858b.png",
+  "Semiconductors": "/generated_images/Semiconductors_manufacturing_clean_room_93f149b2.png",
+  "Supercomputing": "/generated_images/Supercomputing_center_74f8872f.png",
+  "Tech Repair Services": "/generated_images/Tech_repair_services_workshop_efc441e8.png",
+  "Wearable Tech": "/generated_images/Wearable_technology_lab_fe015cb8.png",
   "Software Development": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
 
   // Banking and Financial Services - All 20 industries with unique images
