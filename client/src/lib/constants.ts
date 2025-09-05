@@ -171,16 +171,30 @@ export const INDUSTRY_IMAGES = {
   // Real Estate - Property and construction
   "Commercial Real Estate": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Property Management": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Real Estate Development": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Residential Real Estate": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Real Estate Investment": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
 
-  // Construction & Engineering - Building and infrastructure
-  "Construction Services": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Engineering Services": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Infrastructure Development": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Building Materials": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Architectural Services": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
+  // Construction & Engineering - All 20 industries with unique custom images
+  "Architectural Services": "/generated_images/Architectural_design_studio_97a8fdd4.png",
+  "Building Maintenance": "/generated_images/Building_maintenance_facility_369d178d.png",
+  "Civil Engineering": "/generated_images/Civil_engineering_construction_site_50a914a6.png",
+  "Commercial Construction": "/generated_images/Commercial_building_construction_0b76025a.png",
+  "Construction Materials": "/generated_images/Construction_materials_warehouse_a3b4bedf.png",
+  "Construction Services": "/generated_images/Construction_services_center_d4d1b1d4.png",
+  "Construction Software": "/generated_images/Construction_software_development_be29b0d5.png",
+  "Demolition & Decommissioning": "/generated_images/Demolition_decommissioning_site_1fed63e5.png",
+  "Engineering Design": "/generated_images/Engineering_design_laboratory_9168b1ee.png",
+  "Environmental Engineering": "/generated_images/Environmental_engineering_facility_93742017.png",
+  "Green Building Consulting": "/generated_images/Green_building_consulting_office_c5ed123a.png",
+  "Heavy Equipment": "/generated_images/Heavy_equipment_yard_c144e655.png",
+  "Industrial Construction": "/generated_images/Industrial_construction_site_8144692f.png",
+  "Infrastructure Development": "/generated_images/Infrastructure_development_project_a42f27d2.png",
+  "Project Management": "/generated_images/Project_management_center_679f9286.png",
+  "Real Estate Development": "/generated_images/Real_estate_development_showcase_eda79b3c.png",
+  "Residential Construction": "/generated_images/Residential_construction_neighborhood_684d0828.png",
+  "Specialty Contracting": "/generated_images/Specialty_contracting_workshop_05be3f40.png",
+  "Surveying & Mapping": "/generated_images/Surveying_mapping_operation_9b2a8841.png",
+  "Urban Planning": "/generated_images/Urban_planning_office_622b269b.png",
 
   // Media & Entertainment - Creative and entertainment industry
   "Animation & VFX": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
