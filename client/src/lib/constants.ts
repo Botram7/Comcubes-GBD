@@ -155,7 +155,7 @@ export const INDUSTRY_IMAGES = {
   "Condiments & Sauces": "/generated_images/Artisan_sauce_making_8f316aad.png",
   "Dairy Products": "/generated_images/Dairy_products_assortment_436102ac.png",
   "Food Service & Restaurants": "/generated_images/Restaurant_food_service_535da111.png",
-  "Frozen Foods": "/generated_images/Frozen_treats_scene_65290786.png",
+  "Frozen Foods": "/generated_images/Freezer_with_frozen_foods_c24d2ea1.png",
   "Fruit & Vegetable Processing": "/generated_images/Farm_fruit_processing_808f18a4.png",
   "Grain & Cereal Products": "/generated_images/Grain_cereal_products_88983c6b.png",
   "Health & Functional Foods": "/generated_images/Health_functional_foods_436073d7.png",
@@ -164,7 +164,7 @@ export const INDUSTRY_IMAGES = {
   "Pet Food": "/generated_images/Pet_enjoying_food_42090b0c.png",
   "Seafood Processing": "/generated_images/Seafood_products_variety_cdc23f67.png",
   "Snack Foods": "/generated_images/Snack_foods_variety_ff13dea9.png",
-  "Soft Drinks": "/generated_images/Beach_soft_drinks_f967ddf0.png",
+  "Soft Drinks": "/generated_images/Soft_drink_cans_bottles_4092f82c.png",
   "Sugar & Sweeteners": "/generated_images/Sugar_sweeteners_variety_b232ccbe.png",
   "Water & Beverages": "/generated_images/Water_beverages_variety_5c424bda.png",
 
