@@ -155,7 +155,7 @@ export const INDUSTRY_IMAGES = {
   "Grocery Chains": "/generated_images/Grocery_chains_supermarket_33dae756.png",
   "Jewelry Retail": "/generated_images/Jewelry_retail_store_47a72ceb.png",
   "Luxury Fashion": "/generated_images/Luxury_fashion_boutique_46a3aeaf.png",
-  "Outlet Malls": "/generated_images/Outlet_malls_shopping_center_a3d615dd.png",
+  "Outlet Malls": "/generated_images/Outlet_shopping_center_generic_ceaaf7e7.png",
   "Pet Supplies": "/generated_images/Pet_supplies_store_24a96380.png",
   "Pop-Up Retail": "/generated_images/Pop-up_retail_temporary_store_7bd8110b.png",
   "Sporting Goods": "/generated_images/Sporting_goods_store_d4dca529.png",
