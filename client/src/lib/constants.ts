@@ -243,12 +243,27 @@ export const INDUSTRY_IMAGES = {
   "Defense Logistics & Support": "/generated_images/Defense_logistics_and_support_eabbf86f.png",
   "Weapons & Ammunition": "/generated_images/Weapons_and_ammunition_4c049d5e.png",
 
-  // Education - Learning and education
-  "E-learning": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Educational Technology": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Higher Education": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Online Education": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Training & Development": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
+  // Education - All 20 education industries with unique custom images
+  "Corporate Training": "/generated_images/Corporate_training_boardroom_bca73650.png",
+  "Early Childhood Education": "/generated_images/Early_childhood_education_classroom_c289f6e3.png",
+  "EdTech Hardware & Software": "/generated_images/EdTech_development_lab_cdc6f741.png",
+  "Educational Consulting": "/generated_images/Educational_consulting_office_0e9f2eac.png",
+  "Educational Nonprofits": "/generated_images/Educational_nonprofit_center_88e699e6.png",
+  "Educational Publishing": "/generated_images/Educational_publishing_house_8904b184.png",
+  "Educational Toys & Games": "/generated_images/Educational_toys_showroom_93b32b28.png",
+  "Higher Education (Universities)": "/generated_images/University_campus_5879abc9.png",
+  "K-12 Education (Private Schools)": "/generated_images/Private_school_hallway_a23fb013.png",
+  "Language Learning": "/generated_images/Language_learning_center_bfde599d.png",
+  "Learning Management Systems": "/generated_images/Learning_management_dashboard_fcad89f3.png",
+  "Online Learning Platforms": "/generated_images/Online_learning_studio_ca5f899d.png",
+  "Open Courseware Providers": "/generated_images/Open_courseware_library_3ef30c07.png",
+  "School Management Software": "/generated_images/School_management_office_c59acd2e.png",
+  "Special Education Services": "/generated_images/Special_education_classroom_b5c091b8.png",
+  "STEM Education": "/generated_images/STEM_education_laboratory_e3f57360.png",
+  "Study Abroad Services": "/generated_images/Study_abroad_office_8b835fca.png",
+  "Test Preparation Services": "/generated_images/Test_preparation_center_4c1df447.png",
+  "Tutoring Services": "/generated_images/Tutoring_services_center_e74ad3cd.png",
+  "Vocational Training": "/generated_images/Vocational_training_workshop_3e3bf1b0.png",
 
   // Chemicals - All 18 chemical industries with unique images (excluding Fertilizers & Agrochemicals)
   "Adhesives & Sealants": "/generated_images/Adhesives_sealants_laboratory_d3f9c2fa.png",
