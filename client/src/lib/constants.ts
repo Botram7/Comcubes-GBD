@@ -275,11 +275,27 @@ export const INDUSTRY_IMAGES = {
   "Travel Agencies": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Airport Operators": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
 
-  // Professional Services - Business services
-  "Accounting & Audit": "/generated_images/Accounting_audit_office_a28a127b.png",
-  "Management Consulting": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Legal Services": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Architecture & Design Services": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
+  // Professional Services - All 20 professional services industries with unique custom images
+  "Accounting & Audit": "/generated_images/Accounting_audit_office_01e19558.png",
+  "Architecture & Design Services": "/generated_images/Architecture_design_studio_66d33453.png",
+  "Economic Consulting": "/generated_images/Economic_consulting_firm_bc989585.png",
+  "Education Consulting": "/generated_images/Education_consulting_meeting_80a88521.png",
+  "Engineering Consulting": "/generated_images/Engineering_consulting_office_29436d1e.png",
+  "Environmental Consulting": "/generated_images/Environmental_consulting_team_2307cfab.png",
+  "Event Management": "/generated_images/Event_management_coordination_228c6b8b.png",
+  "Executive Search": "/generated_images/Executive_search_recruitment_994b2ca8.png",
+  "Healthcare Consulting": "/generated_images/Healthcare_consulting_meeting_cf06c904.png",
+  "Human Resources Consulting": "/generated_images/HR_consulting_office_3dad4442.png",
+  "IT Consulting": "/generated_images/IT_consulting_office_a763277e.png",
+  "Legal Services": "/generated_images/Legal_services_firm_090530d4.png",
+  "Logistics & Supply Chain Consulting": "/generated_images/Logistics_consulting_622ce0d8.png",
+  "Management Consulting": "/generated_images/Management_consulting_boardroom_67f907cc.png",
+  "Marketing & Advertising": "/generated_images/Marketing_advertising_agency_da0a8c3b.png",
+  "Market Research": "/generated_images/Market_research_analysts_c7a9953d.png",
+  "Outsourcing & Staffing": "/generated_images/Outsourcing_staffing_agency_dbd7a0a0.png",
+  "Public Relations": "/generated_images/Public_relations_firm_a6d02399.png",
+  "Real Estate Consulting": "/generated_images/Real_estate_consulting_d7d478fd.png",
+  "Risk & Compliance Consulting": "/generated_images/Risk_compliance_consulting_ab5e1c32.png",
 
   // Aerospace & Defense - Aviation and defense (Updated with unique, befitting images)
   "Commercial Aircraft Manufacturing": "/generated_images/Commercial_aircraft_manufacturing_facility_4f27f6c2.png",
