@@ -217,11 +217,27 @@ export const INDUSTRY_IMAGES = {
   "Seeds & Genetics": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
   "Sustainable Agriculture": "/generated_images/Sustainable_agriculture_environmental_farming_573fde1c.png",
 
-  // Real Estate - Property and construction
-  "Commercial Real Estate": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Property Management": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Residential Real Estate": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Real Estate Investment": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
+  // Real Estate - All 20 real estate industries with unique custom images
+  "Brokerage Services": "/generated_images/Real_estate_brokerage_office_d16ecdef.png",
+  "Commercial Property": "/generated_images/Commercial_property_skyline_61ba0738.png",
+  "Co-Working Spaces": "/generated_images/Co-working_spaces_ea011a28.png",
+  "Facility Management": "/generated_images/Facility_management_team_50b139f6.png",
+  "Industrial Warehousing": "/generated_images/Industrial_warehousing_facility_c779503f.png",
+  "Land Acquisition": "/generated_images/Land_acquisition_surveying_ae4bf21f.png",
+  "Luxury Estates": "/generated_images/Luxury_estates_mansion_c3b30f43.png",
+  "Mixed-Use Projects": "/generated_images/Mixed-use_projects_development_8eb35eab.png",
+  "Mortgage Brokering": "/generated_images/Mortgage_brokering_office_9a1eeacf.png",
+  "Property Management": "/generated_images/Property_management_team_71183781.png",
+  "Property Valuation": "/generated_images/Property_valuation_appraiser_2d0bd9af.png",
+  "Real Estate Crowdfunding": "/generated_images/Real_estate_crowdfunding_platform_eeda06d0.png",
+  "Real Estate Law": "/generated_images/Real_estate_law_firm_91d1506d.png",
+  "Real Estate Tech": "/generated_images/Real_estate_tech_startup_bb55f152.png",
+  "REITs": "/generated_images/REITs_investment_office_254592b5.png",
+  "Residential Development": "/generated_images/Residential_development_construction_1d0c2057.png",
+  "Senior Living Facilities": "/generated_images/Senior_living_facilities_f4ee1dd4.png",
+  "Smart Home Tech": "/generated_images/Smart_home_tech_installation_274ef7ee.png",
+  "Sustainable Buildings": "/generated_images/Sustainable_buildings_fdcf8477.png",
+  "Vacation Rentals": "/generated_images/Vacation_rentals_beachfront_5a8ce879.png",
 
   // Construction & Engineering - All 20 industries with unique custom images
   "Architectural Services": "/generated_images/Architectural_design_studio_97a8fdd4.png",
