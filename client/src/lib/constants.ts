@@ -239,6 +239,11 @@ export const INDUSTRY_IMAGES = {
 export const getImageForEntity = (name: string, type: 'sector' | 'industry' | 'company'): string => {
   const normalizedName = name.toLowerCase().replace(/[&\s]+/g, ' ').trim();
   
+  // Debug logging for aerospace industries
+  if (name.includes('Aircraft') || name.includes('Defense') || name.includes('Aerospace') || name.includes('Military') || name.includes('Space')) {
+    console.log(`🔍 Looking for image for "${name}" (type: ${type})`);
+  }
+  
   // For sectors, check exact match first, then partial match
   if (type === 'sector') {
     if (SECTOR_IMAGES[name as keyof typeof SECTOR_IMAGES]) {
@@ -254,17 +259,32 @@ export const getImageForEntity = (name: string, type: 'sector' | 'industry' | 'c
     }
   }
   
+  // EXACT MATCH FIRST - Check if the industry name exists exactly in INDUSTRY_IMAGES
+  if (INDUSTRY_IMAGES[name as keyof typeof INDUSTRY_IMAGES]) {
+    const exactImage = INDUSTRY_IMAGES[name as keyof typeof INDUSTRY_IMAGES];
+    if (name.includes('Aircraft') || name.includes('Defense') || name.includes('Aerospace') || name.includes('Military') || name.includes('Space')) {
+      console.log(`✅ Found exact match for "${name}": ${exactImage}`);
+    }
+    return exactImage;
+  }
+  
   // Enhanced industry matching with priority for exact and strong partial matches
   for (const [key, image] of Object.entries(INDUSTRY_IMAGES)) {
     const normalizedKey = key.toLowerCase().replace(/[&\s]+/g, ' ').trim();
     
     // Exact match - highest priority
     if (normalizedName === normalizedKey) {
+      if (name.includes('Aircraft') || name.includes('Defense') || name.includes('Aerospace') || name.includes('Military') || name.includes('Space')) {
+        console.log(`✅ Found normalized match for "${name}": ${image}`);
+      }
       return image;
     }
     
     // Strong partial matches - key phrases
     if (normalizedName.includes(normalizedKey) || normalizedKey.includes(normalizedName)) {
+      if (name.includes('Aircraft') || name.includes('Defense') || name.includes('Aerospace') || name.includes('Military') || name.includes('Space')) {
+        console.log(`✅ Found partial match for "${name}": ${image}`);
+      }
       return image;
     }
     
@@ -275,6 +295,9 @@ export const getImageForEntity = (name: string, type: 'sector' | 'industry' | 'c
     // Check if any significant words match
     if (nameWords.some(word => keyWords.includes(word)) || 
         keyWords.some(word => nameWords.includes(word))) {
+      if (name.includes('Aircraft') || name.includes('Defense') || name.includes('Aerospace') || name.includes('Military') || name.includes('Space')) {
+        console.log(`✅ Found keyword match for "${name}": ${image}`);
+      }
       return image;
     }
   }
