@@ -108,7 +108,8 @@ export class GoogleSearchService {
   }
 
   private enhanceBusinessQuery(query: string): string {
-    // Add business-specific terms to improve search results
+    // For very specific company names (like "Chivita"), don't over-enhance
+    // Only add minimal enhancement if needed
     const businessTerms = [
       'company',
       'business',
@@ -116,7 +117,7 @@ export class GoogleSearchService {
       'inc',
       'ltd',
       'llc',
-      'official website'
+      'limited'
     ];
 
     // Check if query already contains business terms
@@ -124,10 +125,12 @@ export class GoogleSearchService {
       query.toLowerCase().includes(term)
     );
 
-    if (!hasBusinessTerm) {
-      return `${query} company business official website`;
+    // If it's a short, specific query (likely a company name), just add "company"
+    if (!hasBusinessTerm && query.trim().length <= 20) {
+      return `${query} company`;
     }
 
+    // For longer queries, return as-is to maintain specificity
     return query;
   }
 
@@ -158,21 +161,20 @@ export class GoogleSearchService {
     const snippet = item.snippet.toLowerCase();
     const link = item.link.toLowerCase();
 
-    // Filter out non-business results
+    // Only filter out clearly non-business results - be more permissive
     const excludePatterns = [
-      'wikipedia',
-      'linkedin.com/in/', // Personal LinkedIn profiles
+      'wikipedia.org',
+      'linkedin.com/in/', // Personal LinkedIn profiles only, not company pages
       'facebook.com/profile',
-      'twitter.com',
-      'instagram.com',
+      'twitter.com/i/',
+      'instagram.com/p/',
       'youtube.com/watch',
-      'reddit.com',
-      'quora.com',
-      'blog',
-      'news',
-      'article'
+      'reddit.com/r/',
+      'quora.com/What-',
+      'pinterest.com'
     ];
 
+    // More inclusive patterns - include if it has business indicators
     const includePatterns = [
       'company',
       'corporation',
@@ -180,23 +182,48 @@ export class GoogleSearchService {
       'inc',
       'ltd',
       'llc',
+      'limited',
       'official',
       'website',
       'contact',
-      'about us',
+      'about',
       'services',
-      'products'
+      'products',
+      'homepage',
+      'welcome',
+      'group',
+      'enterprises',
+      'industries'
     ];
 
+    // Check if URL is clearly a personal profile or forum post
     const hasExcludePattern = excludePatterns.some(pattern => 
-      title.includes(pattern) || snippet.includes(pattern) || link.includes(pattern)
+      link.includes(pattern)
     );
 
+    // Be very inclusive - if it's not clearly excluded, include it
     const hasIncludePattern = includePatterns.some(pattern => 
       title.includes(pattern) || snippet.includes(pattern)
-    );
+    ) || this.hasBusinessDomain(link);
 
-    return !hasExcludePattern && (hasIncludePattern || this.hasBusinessDomain(link));
+    // Default to including results unless clearly excluded
+    return !hasExcludePattern && (hasIncludePattern || !this.isPersonalContent(title, snippet));
+  }
+
+  private isPersonalContent(title: string, snippet: string): boolean {
+    const personalIndicators = [
+      'my blog',
+      'personal website',
+      'portfolio',
+      'resume',
+      'cv of',
+      'diary',
+      'personal thoughts'
+    ];
+    
+    return personalIndicators.some(indicator => 
+      title.includes(indicator) || snippet.includes(indicator)
+    );
   }
 
   private hasBusinessDomain(url: string): boolean {
@@ -261,7 +288,26 @@ export class GoogleSearchService {
       '.no': 'Norway',
       '.dk': 'Denmark',
       '.fi': 'Finland',
-      '.ch': 'Switzerland'
+      '.ch': 'Switzerland',
+      // African countries
+      '.ng': 'Nigeria',
+      '.co.za': 'South Africa',
+      '.za': 'South Africa',
+      '.eg': 'Egypt',
+      '.ma': 'Morocco',
+      '.ke': 'Kenya',
+      '.tn': 'Tunisia',
+      '.dz': 'Algeria',
+      // Middle East
+      '.ae': 'United Arab Emirates',
+      '.sa': 'Saudi Arabia',
+      '.il': 'Israel',
+      // More countries
+      '.mx': 'Mexico',
+      '.ar': 'Argentina',
+      '.cl': 'Chile',
+      '.co': 'Colombia',
+      '.pe': 'Peru'
     };
 
     for (const [tld, country] of Object.entries(countryDomains)) {
@@ -297,7 +343,20 @@ export class GoogleSearchService {
       'South Korea': 'Asia Pacific',
       'Brazil': 'Latin America',
       'Argentina': 'Latin America',
-      'Chile': 'Latin America'
+      'Chile': 'Latin America',
+      'Colombia': 'Latin America',
+      'Peru': 'Latin America',
+      // Middle East & Africa
+      'Nigeria': 'Middle East & Africa',
+      'South Africa': 'Middle East & Africa',
+      'Egypt': 'Middle East & Africa',
+      'Morocco': 'Middle East & Africa',
+      'Kenya': 'Middle East & Africa',
+      'Tunisia': 'Middle East & Africa',
+      'Algeria': 'Middle East & Africa',
+      'United Arab Emirates': 'Middle East & Africa',
+      'Saudi Arabia': 'Middle East & Africa',
+      'Israel': 'Middle East & Africa'
     };
 
     return regionMap[country] || 'Global';
