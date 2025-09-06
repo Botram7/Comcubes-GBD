@@ -19,9 +19,9 @@ interface SearchFilters {
 }
 
 interface SearchResult {
-  id: number;
+  id: number | string;
   name: string;
-  type: 'sector' | 'industry' | 'company';
+  type: 'sector' | 'industry' | 'company' | 'external_company';
   sector?: string;
   industry?: string;
   country?: string;
@@ -29,6 +29,7 @@ interface SearchResult {
   employeeCount?: number;
   website?: string;
   description?: string;
+  source?: string;
 }
 
 // Geographic data for country/region categorization
@@ -73,9 +74,10 @@ export function EnhancedSearch() {
     queryKey: ['/api/industries'],
   });
 
-  // Use the same API search as the working header SearchBar
+  // Use dynamic API search based on search scope
+  const searchEndpoint = filters.searchScope === 'global' ? '/api/search/global' : '/api/search';
   const { data: apiSearchResults, isLoading: isApiSearching } = useQuery({
-    queryKey: ['/api/search', searchQuery],
+    queryKey: [searchEndpoint, searchQuery, filters.searchScope],
     enabled: searchQuery.length >= 2,
     staleTime: 30000,
   });
@@ -95,40 +97,98 @@ export function EnhancedSearch() {
     if (apiSearchResults) {
       const allResults: SearchResult[] = [];
       
-      // Add sectors
-      ((apiSearchResults as any)?.sectors || []).forEach((sector: any) => {
-        allResults.push({
-          id: sector.id,
-          name: sector.name,
-          type: 'sector',
-          sector: sector.name
+      if (filters.searchScope === 'global') {
+        // Handle global search results
+        const globalData = apiSearchResults as any;
+        
+        // Add local results from global search
+        if (globalData.local) {
+          // Add local sectors
+          (globalData.local.sectors || []).forEach((sector: any) => {
+            allResults.push({
+              id: sector.id,
+              name: sector.name,
+              type: 'sector',
+              sector: sector.name
+            });
+          });
+          
+          // Add local industries
+          (globalData.local.industries || []).forEach((industry: any) => {
+            allResults.push({
+              id: industry.id,
+              name: industry.name,
+              type: 'industry',
+              sector: industry.sectorName,
+              industry: industry.name
+            });
+          });
+          
+          // Add local companies
+          (globalData.local.companies || []).forEach((company: any) => {
+            allResults.push({
+              id: company.id,
+              name: company.name,
+              type: 'company',
+              sector: company.sectorName,
+              industry: company.industryName,
+              website: company.websiteUrl,
+              country: estimateCompanyCountry(company.websiteUrl),
+              region: getRegionFromCountry(estimateCompanyCountry(company.websiteUrl))
+            });
+          });
+        }
+        
+        // Add external results from global search
+        (globalData.external || []).forEach((company: any) => {
+          allResults.push({
+            id: company.id,
+            name: company.name,
+            type: company.type || 'external_company',
+            website: company.website,
+            description: company.description,
+            country: company.country || 'Unknown',
+            region: company.region || 'Unknown',
+            source: company.source || 'google'
+          });
         });
-      });
-      
-      // Add industries
-      ((apiSearchResults as any)?.industries || []).forEach((industry: any) => {
-        allResults.push({
-          id: industry.id,
-          name: industry.name,
-          type: 'industry',
-          sector: industry.sectorName,
-          industry: industry.name
+      } else {
+        // Handle local search results (original logic)
+        // Add sectors
+        ((apiSearchResults as any)?.sectors || []).forEach((sector: any) => {
+          allResults.push({
+            id: sector.id,
+            name: sector.name,
+            type: 'sector',
+            sector: sector.name
+          });
         });
-      });
-      
-      // Add companies
-      ((apiSearchResults as any)?.companies || []).forEach((company: any) => {
-        allResults.push({
-          id: company.id,
-          name: company.name,
-          type: 'company',
-          sector: company.sectorName,
-          industry: company.industryName,
-          website: company.websiteUrl,
-          country: estimateCompanyCountry(company.websiteUrl),
-          region: getRegionFromCountry(estimateCompanyCountry(company.websiteUrl))
+        
+        // Add industries
+        ((apiSearchResults as any)?.industries || []).forEach((industry: any) => {
+          allResults.push({
+            id: industry.id,
+            name: industry.name,
+            type: 'industry',
+            sector: industry.sectorName,
+            industry: industry.name
+          });
         });
-      });
+        
+        // Add companies
+        ((apiSearchResults as any)?.companies || []).forEach((company: any) => {
+          allResults.push({
+            id: company.id,
+            name: company.name,
+            type: 'company',
+            sector: company.sectorName,
+            industry: company.industryName,
+            website: company.websiteUrl,
+            country: estimateCompanyCountry(company.websiteUrl),
+            region: getRegionFromCountry(estimateCompanyCountry(company.websiteUrl))
+          });
+        });
+      }
       
       // Apply filters
       const filteredResults = allResults.filter(result => {
