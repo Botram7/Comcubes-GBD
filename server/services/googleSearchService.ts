@@ -157,6 +157,10 @@ export class GoogleSearchService {
   }
 
   private isLikelyBusinessResult(item: GoogleSearchResult): boolean {
+    if (!item || !item.title || !item.snippet || !item.link) {
+      return false;
+    }
+    
     const title = item.title.toLowerCase();
     const snippet = item.snippet.toLowerCase();
     const link = item.link.toLowerCase();
