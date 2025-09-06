@@ -4,26 +4,26 @@ export const GRID_ROWS = 4;
 
 // Business Sector Images - Unique, high-quality images for each sector
 export const SECTOR_IMAGES = {
-  "Aerospace and Defense": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Agriculture": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Automobile": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Banking and Financial Services": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Chemicals": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Construction and Engineering": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Education": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Energy and Utilities": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Food and Beverage": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Healthcare and Pharmaceuticals": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Insurance": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Manufacturing": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Media and Entertainment": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Professional Services": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Real Estate": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Retail": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Technology": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Telecommunications and ICT": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Transportation and Logistics": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900",
-  "Travel and Tourism": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900"
+  "Aerospace and Defense": "/generated_images/Aerospace_Defense_sector_overview_24365181.png",
+  "Agriculture": "/generated_images/Agriculture_sector_panoramic_view_abf19cdd.png",
+  "Automobile": "/generated_images/Automobile_sector_assembly_line_c78f0c4d.png",
+  "Banking and Financial Services": "/generated_images/Banking_Financial_Services_boardroom_6293f271.png",
+  "Chemicals": "/generated_images/Chemicals_sector_advanced_laboratory_d0904032.png",
+  "Construction and Engineering": "/generated_images/Construction_Engineering_infrastructure_project_df22cd7c.png",
+  "Education": "/generated_images/Education_sector_university_campus_f0da26ef.png",
+  "Energy and Utilities": "/generated_images/Energy_Utilities_renewable_landscape_6d2836ac.png",
+  "Food and Beverage": "/generated_images/Food_Beverage_culinary_showcase_add3f59d.png",
+  "Healthcare and Pharmaceuticals": "/generated_images/Healthcare_Pharmaceuticals_medical_facility_0d059a85.png",
+  "Insurance": "/generated_images/Insurance_sector_corporate_headquarters_ad88fb75.png",
+  "Manufacturing": "/generated_images/Manufacturing_sector_automated_factory_e22aa024.png",
+  "Media and Entertainment": "/generated_images/Media_Entertainment_production_studio_0fbe7ef3.png",
+  "Professional Services": "/generated_images/Professional_Services_law_firm_945fe1be.png",
+  "Real Estate": "/generated_images/Real_Estate_luxury_development_de2f47ba.png",
+  "Retail": "/generated_images/Retail_sector_shopping_center_cb686d7f.png",
+  "Technology": "/generated_images/Technology_sector_innovation_hub_fcfa8709.png",
+  "Telecommunications and ICT": "/generated_images/Telecommunications_ICT_network_infrastructure_96ee01c3.png",
+  "Transportation and Logistics": "/generated_images/Transportation_Logistics_transport_hub_02b63cfa.png",
+  "Travel and Tourism": "/generated_images/Travel_Tourism_destination_resort_c1cce6a8.png"
 };
 
 // Comprehensive industry-specific images with unique, befitting visuals for each category
