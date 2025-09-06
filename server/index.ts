@@ -41,7 +41,7 @@ app.use(helmet({
 // Rate limiting for DDoS protection with proper trust proxy configuration
 const generalLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 200, // Increased limit to prevent legitimate usage issues
+  max: 2000, // Much higher limit for normal browsing with analytics tracking
   message: 'Too many requests from this IP, please try again later.',
   standardHeaders: true,
   legacyHeaders: false,
@@ -49,7 +49,7 @@ const generalLimiter = rateLimit({
 
 const adminLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 200, // High limit for admin routes to prevent lockout
+  max: 1000, // High limit for admin routes to prevent lockout
   message: 'Too many admin requests from this IP, please try again later.',
   standardHeaders: true,
   legacyHeaders: false,
