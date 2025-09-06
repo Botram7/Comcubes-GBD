@@ -187,6 +187,56 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Explore by Category Section */}
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Explore by Category
+            </h2>
+            <p className="text-base md:text-lg text-gray-600">
+              Start your journey through the global business landscape. Each sector contains 20
+              specialized industries with leading companies in each field.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-6 md:mb-8">
+            {Array.isArray(sectors) ? sectors.slice(0, 10).map((sector: Sector) => (
+              <Card 
+                key={sector.id} 
+                className="group cursor-pointer hover:shadow-lg transition-all duration-200 bg-white overflow-hidden"
+                onClick={() => handleSectorClick(sector)}
+              >
+                <div className="aspect-square relative">
+                  <img 
+                    src={getImageForEntity(sector.name, 'sector')}
+                    alt={sector.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 text-center">
+                    <div className="text-white font-medium text-sm leading-tight">
+                      {sector.name}
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            )) : null}
+          </div>
+
+          <div className="text-center">
+            <Button 
+              onClick={handleViewAllSectors}
+              variant="outline" 
+              className="px-8 py-3"
+            >
+              View All 20 Sectors
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Animated Explainer Section */}
       <section className="py-12 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -285,55 +335,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Explore by Category Section */}
-      <section className="py-12 md:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Explore by Category
-            </h2>
-            <p className="text-base md:text-lg text-gray-600">
-              Start your journey through the global business landscape. Each sector contains 20
-              specialized industries with leading companies in each field.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-6 md:mb-8">
-            {Array.isArray(sectors) ? sectors.slice(0, 10).map((sector: Sector) => (
-              <Card 
-                key={sector.id} 
-                className="group cursor-pointer hover:shadow-lg transition-all duration-200 bg-white overflow-hidden"
-                onClick={() => handleSectorClick(sector)}
-              >
-                <div className="aspect-square relative">
-                  <img 
-                    src={getImageForEntity(sector.name, 'sector')}
-                    alt={sector.name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-3 left-3 right-3 text-center">
-                    <div className="text-white font-medium text-sm leading-tight">
-                      {sector.name}
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            )) : null}
-          </div>
-
-          <div className="text-center">
-            <Button 
-              onClick={handleViewAllSectors}
-              variant="outline" 
-              className="px-8 py-3"
-            >
-              View All 20 Sectors
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Call to Action Section */}
       <section className="bg-blue-600 py-12 md:py-16">
