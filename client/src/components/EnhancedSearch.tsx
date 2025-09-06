@@ -193,35 +193,35 @@ export function EnhancedSearch() {
         });
       }
       
-      // Apply filters
+      // Apply filters - but for global search, be more lenient with external results
       const filteredResults = allResults.filter(result => {
-        // Debug log for global search filtering
-        if (filters.searchScope === 'global' && filters.regions.length > 0) {
-          console.log('Filtering result:', {
-            name: result.name,
-            country: result.country,
-            region: result.region,
-            selectedRegions: filters.regions,
-            matches: filters.regions.includes(result.region || '')
-          });
+        // For external companies from Google, don't apply geographic filters unless we're confident about the location
+        if (filters.searchScope === 'global' && result.source === 'google') {
+          // Only apply sector and industry filters to external results, not geographic ones
+          // since Google results may not have reliable country/region data
+          if (filters.sectors.length > 0 && result.sector && !filters.sectors.includes(result.sector)) {
+            return false;
+          }
+          if (filters.industries.length > 0 && result.industry && !filters.industries.includes(result.industry)) {
+            return false;
+          }
+          // Skip geographic filters for Google results
+          return true;
         }
         
-        // Sector filter
+        // For local results, apply all filters normally
         if (filters.sectors.length > 0 && !filters.sectors.includes(result.sector || '')) {
           return false;
         }
         
-        // Industry filter
         if (filters.industries.length > 0 && !filters.industries.includes(result.industry || '')) {
           return false;
         }
         
-        // Country filter
         if (filters.countries.length > 0 && !filters.countries.includes(result.country || '')) {
           return false;
         }
         
-        // Region filter
         if (filters.regions.length > 0 && !filters.regions.includes(result.region || '')) {
           return false;
         }
