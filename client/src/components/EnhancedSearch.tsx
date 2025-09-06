@@ -38,7 +38,7 @@ const GEOGRAPHIC_DATA = {
   'Europe': ['United Kingdom', 'Germany', 'France', 'Italy', 'Spain', 'Netherlands', 'Switzerland', 'Sweden', 'Norway', 'Denmark'],
   'Asia Pacific': ['China', 'Japan', 'India', 'Australia', 'Singapore', 'South Korea', 'Thailand', 'Malaysia'],
   'Latin America': ['Brazil', 'Argentina', 'Chile', 'Colombia', 'Peru'],
-  'Middle East & Africa': ['United Arab Emirates', 'Saudi Arabia', 'South Africa', 'Israel', 'Egypt'],
+  'Middle East & Africa': ['United Arab Emirates', 'Saudi Arabia', 'South Africa', 'Israel', 'Egypt', 'Nigeria', 'Kenya', 'Morocco', 'Tunisia', 'Algeria'],
 };
 
 const EMPLOYEE_RANGES = [
@@ -141,14 +141,17 @@ export function EnhancedSearch() {
         
         // Add external results from global search
         (globalData.external || []).forEach((company: any) => {
+          const detectedCountry = company.country || estimateCompanyCountry(company.website || '');
+          const detectedRegion = company.region || getRegionFromCountry(detectedCountry);
+          
           allResults.push({
             id: company.id,
             name: company.name,
             type: company.type || 'external_company',
             website: company.website,
             description: company.description,
-            country: company.country || 'Unknown',
-            region: company.region || 'Unknown',
+            country: detectedCountry,
+            region: detectedRegion,
             source: company.source || 'google'
           });
         });
@@ -192,6 +195,17 @@ export function EnhancedSearch() {
       
       // Apply filters
       const filteredResults = allResults.filter(result => {
+        // Debug log for global search filtering
+        if (filters.searchScope === 'global' && filters.regions.length > 0) {
+          console.log('Filtering result:', {
+            name: result.name,
+            country: result.country,
+            region: result.region,
+            selectedRegions: filters.regions,
+            matches: filters.regions.includes(result.region || '')
+          });
+        }
+        
         // Sector filter
         if (filters.sectors.length > 0 && !filters.sectors.includes(result.sector || '')) {
           return false;
@@ -228,16 +242,52 @@ export function EnhancedSearch() {
     if (!website) return 'Unknown';
     
     const domain = website.toLowerCase();
+    
+    // North America
     if (domain.includes('.com') || domain.includes('.us')) return 'United States';
+    if (domain.includes('.ca')) return 'Canada';
+    if (domain.includes('.mx')) return 'Mexico';
+    
+    // Europe
     if (domain.includes('.co.uk') || domain.includes('.uk')) return 'United Kingdom';
     if (domain.includes('.de')) return 'Germany';
     if (domain.includes('.fr')) return 'France';
-    if (domain.includes('.ca')) return 'Canada';
-    if (domain.includes('.au')) return 'Australia';
-    if (domain.includes('.jp')) return 'Japan';
+    if (domain.includes('.it')) return 'Italy';
+    if (domain.includes('.es')) return 'Spain';
+    if (domain.includes('.nl')) return 'Netherlands';
+    if (domain.includes('.ch')) return 'Switzerland';
+    if (domain.includes('.se')) return 'Sweden';
+    if (domain.includes('.no')) return 'Norway';
+    if (domain.includes('.dk')) return 'Denmark';
+    
+    // Asia Pacific
     if (domain.includes('.cn')) return 'China';
+    if (domain.includes('.jp')) return 'Japan';
     if (domain.includes('.in')) return 'India';
+    if (domain.includes('.au')) return 'Australia';
+    if (domain.includes('.sg')) return 'Singapore';
+    if (domain.includes('.kr')) return 'South Korea';
+    if (domain.includes('.th')) return 'Thailand';
+    if (domain.includes('.my')) return 'Malaysia';
+    
+    // Latin America
     if (domain.includes('.br')) return 'Brazil';
+    if (domain.includes('.ar')) return 'Argentina';
+    if (domain.includes('.cl')) return 'Chile';
+    if (domain.includes('.co')) return 'Colombia';
+    if (domain.includes('.pe')) return 'Peru';
+    
+    // Middle East & Africa
+    if (domain.includes('.ae')) return 'United Arab Emirates';
+    if (domain.includes('.sa')) return 'Saudi Arabia';
+    if (domain.includes('.za')) return 'South Africa';
+    if (domain.includes('.il')) return 'Israel';
+    if (domain.includes('.eg')) return 'Egypt';
+    if (domain.includes('.ng')) return 'Nigeria';
+    if (domain.includes('.ke')) return 'Kenya';
+    if (domain.includes('.ma')) return 'Morocco';
+    if (domain.includes('.tn')) return 'Tunisia';
+    if (domain.includes('.dz')) return 'Algeria';
     
     return 'Global';
   };
