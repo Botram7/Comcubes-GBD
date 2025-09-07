@@ -12,10 +12,14 @@ import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/
 import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
 import multer from 'multer';
 import { requireAdminAuth } from "./adminAuth";
+import { objectStorageService } from "./objectStorageService.js";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Serve static assets from attached_assets directory
-  app.use('/generated_images', express.static(path.resolve(import.meta.dirname, '..', 'attached_assets', 'generated_images')));
+  // Serve generated images from Object Storage
+  app.get('/generated_images/:filename', async (req, res) => {
+    const { filename } = req.params;
+    await objectStorageService.streamFile(filename, res);
+  });
   
   // Serve uploaded files (logos, etc.)
   app.use('/uploads', express.static(path.resolve(import.meta.dirname, 'uploads')));
