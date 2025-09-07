@@ -12,7 +12,7 @@ import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/
 import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
 import multer from 'multer';
 import { requireAdminAuth } from "./adminAuth";
-import { objectStorageService } from "./objectStorageService.js";
+import { objectStorageService } from "./objectStorageService";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Serve generated images from Object Storage
