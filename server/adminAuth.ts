@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import session from 'express-session';
 import bcrypt from 'bcrypt';
+import connectPg from 'connect-pg-simple';
 
 // Extend the session interface to include isAdminAuthenticated
 declare module 'express-session' {
@@ -15,12 +16,19 @@ declare module 'express-session' {
  */
 const getSecureSessionConfig = () => {
   const isProduction = process.env.NODE_ENV === 'production';
+  const pgStore = connectPg(session);
   
   return {
     secret: process.env.SESSION_SECRET!,
     resave: false,
     saveUninitialized: false,
     name: 'comcubes_admin_session',
+    store: new pgStore({
+      conString: process.env.DATABASE_URL,
+      createTableIfMissing: true,
+      ttl: 24 * 60 * 60, // 24 hours in seconds
+      tableName: 'admin_sessions',
+    }),
     cookie: {
       secure: isProduction, // Only use HTTPS in production
       httpOnly: true, // Prevent XSS attacks
