@@ -1,0 +1,100 @@
+Time
+Deployment
+Source
+Log
+2025-09-09 00:12:48.08
+926adefb
+System
+starting up user application
+2025-09-09 00:18:54.53
+33358620
+User
+code: 'ENOENT',
+2025-09-09 00:18:54.53
+33358620
+User
+syscall: 'open',
+2025-09-09 00:18:54.53
+33358620
+User
+path: '/home/runner/workspace/data/INDUSTRY_1750802785299.csv'
+2025-09-09 00:18:54.53
+33358620
+User
+}
+2025-09-09 00:18:54.53
+33358620
+User
+Error loading companies: Error: ENOENT: no such file or directory, open '/home/runner/workspace/data/COMPANY_1750803462655.csv'
+2025-09-09 00:18:54.53
+33358620
+User
+at async open (node:internal/fs/promises:639:25)
+2025-09-09 00:18:54.53
+33358620
+User
+at async Object.readFile (node:internal/fs/promises:1246:14)
+2025-09-09 00:18:54.53
+33358620
+User
+at async CSVParser.loadCompanies (file:///home/runner/workspace/dist/index.js:1077:23)
+2025-09-09 00:18:54.53
+33358620
+User
+at async DatabaseStorage.initialize (file:///home/runner/workspace/dist/index.js:1119:30)
+2025-09-09 00:18:54.53
+33358620
+User
+at async DatabaseStorage.getSectors (file:///home/runner/workspace/dist/index.js:1162:7)
+2025-09-09 00:18:54.53
+33358620
+User
+at async file:///home/runner/workspace/dist/index.js:2746:24 {
+2025-09-09 00:18:54.53
+33358620
+User
+errno: -2,
+2025-09-09 00:18:54.53
+33358620
+User
+code: 'ENOENT',
+2025-09-09 00:18:54.53
+33358620
+User
+syscall: 'open',
+2025-09-09 00:18:54.53
+33358620
+User
+path: '/home/runner/workspace/data/COMPANY_1750803462655.csv'
+2025-09-09 00:18:54.53
+33358620
+User
+}
+2025-09-09 00:18:54.53
+33358620
+User
+Loading industries from: /home/runner/workspace/data/INDUSTRY_1750802785299.csv
+2025-09-09 00:18:54.53
+33358620
+User
+Loading companies from: /home/runner/workspace/data/COMPANY_1750803462655.csv
+2025-09-09 00:18:54.53
+33358620
+User
+Loaded 0 sectors, 0 industries, 0 companies from CSV
+2025-09-09 00:18:54.53
+33358620
+User
+Database initialized successfully with 0 sectors, 0 industries, 0 companies
+2025-09-09 00:18:54.57
+33358620
+User
+11:18:54 PM [express] GET /api/sectors 304 in 1373ms :: []
+2025-09-09 00:19:00.28
+33358620
+User
+11:19:00 PM [express] GET /api/banner-ads 304 in 53ms :: []
+2025-09-09 00:19:07.18
+926adefb
+System
+system: received signal terminated
