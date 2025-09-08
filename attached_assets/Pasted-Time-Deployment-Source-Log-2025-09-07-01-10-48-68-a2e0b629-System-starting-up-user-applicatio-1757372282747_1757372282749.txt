@@ -1,0 +1,140 @@
+Time
+Deployment
+Source
+Log
+2025-09-07 01:10:48.68
+a2e0b629
+System
+starting up user application
+2025-09-07 01:10:48.88
+a2e0b629
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-09-07 01:10:50.08
+a2e0b629
+User
+> rest-express@1.0.0 start
+2025-09-07 01:10:50.08
+a2e0b629
+User
+> NODE_ENV=production node dist/index.js
+2025-09-07 01:10:51.12
+a2e0b629
+User
+Warning: connect.session() MemoryStore is not
+2025-09-07 01:10:51.12
+a2e0b629
+User
+designed for a production environment, as it will leak
+2025-09-07 01:10:51.12
+a2e0b629
+User
+memory, and will not scale past a single process.
+2025-09-07 01:10:51.20
+a2e0b629
+User
+12:10:51 AM [express] serving on port 5000
+2025-09-07 01:12:48.87
+a2e0b629
+User
+Loading data from CSV files into database...
+2025-09-07 01:12:48.87
+a2e0b629
+User
+Loading sectors from: /home/runner/attached_assets/SECTOR_1750802785300.csv
+2025-09-07 01:12:48.87
+a2e0b629
+User
+Loading industries from: /home/runner/attached_assets/INDUSTRY_1750802785299.csv
+2025-09-07 01:12:48.87
+a2e0b629
+User
+Loading companies from: /home/runner/attached_assets/COMPANY_1750803462655.csv
+2025-09-07 01:12:48.87
+a2e0b629
+User
+Loaded 0 sectors, 0 industries, 0 companies from CSV
+2025-09-07 01:12:48.87
+a2e0b629
+User
+Database initialized successfully with 0 sectors, 0 industries, 0 companies
+2025-09-07 01:12:48.94
+a2e0b629
+User
+12:12:48 AM [express] GET /api/companies 200 in 783ms :: {"companies":[],"total":0,"page":1,"totalPag…
+2025-09-07 01:12:49.45
+a2e0b629
+User
+Database connection successful
+2025-09-07 01:12:49.45
+a2e0b629
+User
+Database connection successful
+2025-09-07 01:12:49.48
+a2e0b629
+User
+Loading data from CSV files into database...
+2025-09-07 01:12:49.48
+a2e0b629
+User
+Loading sectors from: /home/runner/attached_assets/SECTOR_1750802785300.csv
+2025-09-07 01:12:49.48
+a2e0b629
+User
+syscall: 'open',
+2025-09-07 01:12:49.48
+a2e0b629
+User
+path: '/home/runner/attached_assets/SECTOR_1750802785300.csv'
+2025-09-07 01:12:49.48
+a2e0b629
+User
+}
+2025-09-07 01:12:49.48
+a2e0b629
+User
+Error loading industries: Error: ENOENT: no such file or directory, open '/home/runner/attached_assets/INDUSTRY_1750802785299.csv'
+2025-09-07 01:12:49.48
+a2e0b629
+User
+at async open (node:internal/fs/promises:639:25)
+2025-09-07 01:12:49.48
+a2e0b629
+User
+at async Object.readFile (node:internal/fs/promises:1246:14)
+2025-09-07 01:12:49.48
+a2e0b629
+User
+at async CSVParser.loadIndustries (file:///home/runner/workspace/dist/index.js:1053:23)
+2025-09-07 01:12:49.48
+a2e0b629
+User
+at async DatabaseStorage.initialize (file:///home/runner/workspace/dist/index.js:1118:31)
+2025-09-07 01:12:49.48
+a2e0b629
+User
+at async DatabaseStorage.getSectors (file:///home/runner/workspace/dist/index.js:1162:7)
+2025-09-07 01:12:49.48
+a2e0b629
+User
+at async file:///home/runner/workspace/dist/index.js:2663:24 {
+2025-09-07 01:12:49.48
+a2e0b629
+User
+errno: -2,
+2025-09-07 01:12:49.48
+a2e0b629
+User
+code: 'ENOENT',
+2025-09-07 01:12:49.48
+a2e0b629
+User
+syscall: 'open',
+2025-09-07 01:12:49.48
+a2e0b629
+User
+path: '/home/runner/attached_assets/INDUSTRY_1750802785299.csv'
+2025-09-07 01:12:49.48
+a2e0b629
+User
+}

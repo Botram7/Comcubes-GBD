@@ -27,7 +27,7 @@ export class CSVParser {
 
   async loadSectors(): Promise<Sector[]> {
     try {
-      const filePath = path.resolve(import.meta.dirname, '../../attached_assets/SECTOR_1750802785300.csv');
+      const filePath = path.resolve(import.meta.dirname, '../data/SECTOR_1750802785300.csv');
       console.log('Loading sectors from:', filePath);
       const content = await fs.promises.readFile(filePath, 'utf-8');
       const lines = content.split('\n').filter(line => line.trim());
@@ -53,7 +53,7 @@ export class CSVParser {
 
   async loadIndustries(): Promise<Industry[]> {
     try {
-      const filePath = path.resolve(import.meta.dirname, '../../attached_assets/INDUSTRY_1750802785299.csv');
+      const filePath = path.resolve(import.meta.dirname, '../data/INDUSTRY_1750802785299.csv');
       console.log('Loading industries from:', filePath);
       const content = await fs.promises.readFile(filePath, 'utf-8');
       const lines = content.split('\n').filter(line => line.trim());
@@ -80,7 +80,7 @@ export class CSVParser {
 
   async loadCompanies(): Promise<Company[]> {
     try {
-      const filePath = path.resolve(import.meta.dirname, '../../attached_assets/COMPANY_1750803462655.csv');
+      const filePath = path.resolve(import.meta.dirname, '../data/COMPANY_1750803462655.csv');
       console.log('Loading companies from:', filePath);
       const content = await fs.promises.readFile(filePath, 'utf-8');
       const lines = content.split('\n').filter(line => line.trim());
