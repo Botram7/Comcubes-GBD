@@ -147,9 +147,79 @@ export class DatabaseStorage implements IStorage {
           }
         }
         
+        // Initialize default banner ads if none exist
+        const existingBanners = await this.getBannerAds();
+        if (existingBanners.length === 0) {
+          console.log('Initializing default banner ads...');
+          
+          // Create default left banner
+          await this.createBannerAd({
+            position: 'left',
+            images: [
+              '/banner-images/banner-1756772869185-e7zf3gbm5oh.jpg',
+              '/banner-images/banner-1756772896318-fdn74xfwtbp.jpg',
+              '/banner-images/banner-1756772918354-nhg6ydt1x5.jpg'
+            ],
+            imageUrls: [
+              'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
+              'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
+              'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/'
+            ],
+            clickUrl: 'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
+            rotationInterval: 10000,
+            isActive: true
+          });
+
+          // Create default right banner
+          await this.createBannerAd({
+            position: 'right',
+            images: ['/banner-images/banner-1756772583342-9ixfpj72x7t.jpg'],
+            imageUrls: ['https://rzekl.com/g/1e8d114494305e38d9b416525dc3e8/'],
+            clickUrl: 'https://rzekl.com/g/1e8d114494305e38d9b416525dc3e8/',
+            rotationInterval: 7000,
+            isActive: true
+          });
+          
+          console.log('Default banner ads initialized');
+        }
+        
         console.log(`Database initialized successfully with ${csvSectors.length} sectors, ${csvIndustries.length} industries, ${csvCompanies.length} companies`);
       } else {
         console.log('Database already contains data, skipping initialization');
+        
+        // Check and initialize banner ads even if main data exists
+        const existingBanners = await this.getBannerAds();
+        if (existingBanners.length === 0) {
+          console.log('Initializing missing banner ads...');
+          
+          await this.createBannerAd({
+            position: 'left',
+            images: [
+              '/banner-images/banner-1756772869185-e7zf3gbm5oh.jpg',
+              '/banner-images/banner-1756772896318-fdn74xfwtbp.jpg',
+              '/banner-images/banner-1756772918354-nhg6ydt1x5.jpg'
+            ],
+            imageUrls: [
+              'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
+              'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
+              'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/'
+            ],
+            clickUrl: 'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
+            rotationInterval: 10000,
+            isActive: true
+          });
+
+          await this.createBannerAd({
+            position: 'right',
+            images: ['/banner-images/banner-1756772583342-9ixfpj72x7t.jpg'],
+            imageUrls: ['https://rzekl.com/g/1e8d114494305e38d9b46a95c12d58/'],
+            clickUrl: 'https://rzekl.com/g/1e8d114494305e38d9b46a95c12d58/',
+            rotationInterval: 7000,
+            isActive: true
+          });
+          
+          console.log('Banner ads initialized');
+        }
       }
       
       this.initialized = true;
