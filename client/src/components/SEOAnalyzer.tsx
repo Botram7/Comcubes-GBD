@@ -263,7 +263,8 @@ export function SEOAnalyzer({ isVisible = false }: { isVisible?: boolean }) {
     }
   }, [showAnalyzer]);
 
-  if (!showAnalyzer) {
+  // Only show SEO Score button in development environment
+  if (!showAnalyzer && import.meta.env.DEV) {
     return (
       <div className="fixed bottom-4 right-4 z-50">
         <Button
