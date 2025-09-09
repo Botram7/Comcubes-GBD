@@ -87,7 +87,7 @@ export default function SectorPage() {
     );
   }
 
-  if (error || (!industries || industries.length === 0)) {
+  if (error || !Array.isArray(industries) || industries.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50">
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
@@ -139,7 +139,7 @@ export default function SectorPage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title={`${decodedSectorName} Industries & Companies | COMCUBES Global Directory`}
-        description={`Explore specialized industries within ${decodedSectorName} sector. Discover top companies, industry leaders, and business opportunities in ${decodedSectorName}. Browse ${industries?.length || 20} industries now.`}
+        description={`Explore specialized industries within ${decodedSectorName} sector. Discover top companies, industry leaders, and business opportunities in ${decodedSectorName}. Browse ${Array.isArray(industries) ? industries.length : 20} industries now.`}
         keywords={[
           `${decodedSectorName.toLowerCase()} sector`, `${decodedSectorName.toLowerCase()} industries`, `${decodedSectorName.toLowerCase()} companies`,
           `${decodedSectorName.toLowerCase()} business`, `${decodedSectorName.toLowerCase()} directory`, "sector industries",
@@ -255,7 +255,7 @@ export default function SectorPage() {
             <div className="mb-6">
               <h2 className="text-3xl font-bold text-gray-900">{decodedSectorName}</h2>
               <p className="text-gray-600 mt-2">
-                Industries within {decodedSectorName} sector ({industries.length} industries)
+                Industries within {decodedSectorName} sector ({Array.isArray(industries) ? industries.length : 0} industries)
               </p>
             </div>
 

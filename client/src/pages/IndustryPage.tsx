@@ -44,7 +44,7 @@ export default function IndustryPage() {
   };
 
   // Get sector name from first company for breadcrumbs
-  const sectorName = companies && companies.length > 0 ? companies[0].sectorName : "";
+  const sectorName = Array.isArray(companies) && companies.length > 0 ? companies[0]?.sectorName || "" : "";
 
   if (isLoading) {
     return (
@@ -86,7 +86,7 @@ export default function IndustryPage() {
     );
   }
 
-  if (error || (!companies || companies.length === 0)) {
+  if (error || !Array.isArray(companies) || companies.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50">
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
