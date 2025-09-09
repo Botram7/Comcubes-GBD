@@ -81,6 +81,8 @@ export default function HomePage() {
     setLocation('/sectors');
   };
 
+  console.log('HomePage Debug:', { sectors, isLoading, error, sectorsType: typeof sectors, isArray: Array.isArray(sectors) });
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50">
