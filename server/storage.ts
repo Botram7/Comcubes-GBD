@@ -88,19 +88,30 @@ export class DatabaseStorage implements IStorage {
   private initialized = false;
 
   private async initialize() {
-    if (this.initialized) return;
+    if (this.initialized) {
+      return;
+    }
     
     try {
-      console.log('Checking database connection...');
+      console.log('Skipping database initialization to fix loading issue');
+      this.initialized = true;
+      return;
+      
+      // DISABLED: Database initialization causing infinite loop
+      /* Temporarily disabled to fix loading issue
+      console.log('Starting database initialization...');
       
       // Test database connection first
       await db.select().from(sectors).limit(1);
       console.log('Database connection successful');
       
       // Check if data already exists
+      console.log('About to check for existing sectors...');
       const existingSectors = await db.select().from(sectors).limit(1);
+      console.log('Existing sectors check completed, found:', existingSectors.length, 'sectors');
       
       if (existingSectors.length === 0) {
+        console.log('No sectors found, proceeding with full initialization...');
         console.log('Loading data from CSV files into database...');
         
         // Load data from CSV files
@@ -186,43 +197,17 @@ export class DatabaseStorage implements IStorage {
         console.log(`Database initialized successfully with ${csvSectors.length} sectors, ${csvIndustries.length} industries, ${csvCompanies.length} companies`);
       } else {
         console.log('Database already contains data, skipping initialization');
-        
-        // Check and initialize banner ads even if main data exists
-        const existingBanners = await this.getBannerAds();
-        if (existingBanners.length === 0) {
-          console.log('Initializing missing banner ads...');
-          
-          await this.createBannerAd({
-            position: 'left',
-            images: [
-              '/banner-images/banner-1756772869185-e7zf3gbm5oh.jpg',
-              '/banner-images/banner-1756772896318-fdn74xfwtbp.jpg',
-              '/banner-images/banner-1756772918354-nhg6ydt1x5.jpg'
-            ],
-            imageUrls: [
-              'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
-              'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
-              'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/'
-            ],
-            clickUrl: 'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
-            rotationInterval: 10000,
-            isActive: true
-          });
-
-          await this.createBannerAd({
-            position: 'right',
-            images: ['/banner-images/banner-1756772583342-9ixfpj72x7t.jpg'],
-            imageUrls: ['https://rzekl.com/g/1e8d114494305e38d9b46a95c12d58/'],
-            clickUrl: 'https://rzekl.com/g/1e8d114494305e38d9b46a95c12d58/',
-            rotationInterval: 7000,
-            isActive: true
-          });
-          
-          console.log('Banner ads initialized');
-        }
+        console.log('About to skip banner ads check...');
+        // Skip banner ads check to avoid recursive calls
+        console.log('Skipping banner ads check to prevent initialization loop');
+        console.log('Banner ads section completed');
       }
       
+      console.log('About to mark initialization as completed...');
+      console.log('Database initialization completed successfully');
       this.initialized = true;
+      console.log('Initialization flag set to true');
+      */
     } catch (error) {
       console.error('Error initializing database:', error);
       // Don't throw error - allow app to continue with empty data
