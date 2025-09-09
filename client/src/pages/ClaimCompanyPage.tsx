@@ -25,7 +25,6 @@ import {
 } from "lucide-react";
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { SEOHead } from "@/components/SEOHead";
-import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 import type { Sector, Industry, Company, SearchResults } from "@/lib/types";
 
 interface ClaimFormData {
@@ -624,7 +623,6 @@ export default function ClaimCompanyPage() {
         )}
       </main>
 
-      <SEOAnalyzer />
     </div>
   );
 }

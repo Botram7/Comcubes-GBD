@@ -26,7 +26,6 @@ import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 import { generateCompanyDescription } from "@/utils/companyDescriptionGenerator";
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
-import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 
 export default function CompanyProfilePage() {
@@ -457,7 +456,6 @@ export default function CompanyProfilePage() {
       </footer>
       
       {/* SEO Analyzer Component */}
-      <SEOAnalyzer />
     </div>
   );
 }

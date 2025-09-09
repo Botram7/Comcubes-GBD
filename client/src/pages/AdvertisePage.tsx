@@ -6,7 +6,6 @@ import { useMutation } from '@tanstack/react-query';
 import { ArrowLeft, TrendingUp, Eye, Star, CheckCircle } from 'lucide-react';
 import { useLocation } from 'wouter';
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
-import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -488,7 +487,6 @@ export default function AdvertisePage() {
       </div>
       
       {/* SEO Analyzer Component */}
-      <SEOAnalyzer />
     </div>
   );
 }

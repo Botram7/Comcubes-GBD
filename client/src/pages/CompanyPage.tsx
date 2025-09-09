@@ -7,7 +7,6 @@ import { Pagination } from "@/components/Pagination";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { SEOHead, createBusinessDirectoryStructuredData } from "@/components/SEOHead";
-import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 import { AlertCircle, Building2 } from "lucide-react";
 
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
