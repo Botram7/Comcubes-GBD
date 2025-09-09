@@ -196,12 +196,11 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-6 md:mb-8">
-            {Array.isArray(sectors) ? sectors.slice(0, 10).map((sector: Sector) => (
+            {Array.isArray(sectors) && sectors.length > 0 ? sectors.slice(0, 10).map((sector: Sector) => (
               <Card 
                 key={sector.id} 
-                className="group cursor-pointer hover:shadow-lg transition-all duration-200 bg-white border-2 border-blue-200 overflow-hidden min-h-[200px] relative"
+                className="group cursor-pointer hover:shadow-lg transition-all duration-200 bg-white overflow-hidden"
                 onClick={() => handleSectorClick(sector)}
-                style={{ backgroundColor: 'white', border: '2px solid #3b82f6' }}
               >
                 <div className="aspect-square relative">
                   <img 
