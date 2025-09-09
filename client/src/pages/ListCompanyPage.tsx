@@ -6,7 +6,6 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import { ArrowLeft, Building2, Star, Globe, MapPin, CheckCircle, ChevronRight, User } from 'lucide-react';
 import { useLocation } from 'wouter';
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
-import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -815,7 +814,6 @@ export default function ListCompanyPage() {
         )}
       </div>
       
-      <SEOAnalyzer />
     </div>
   );
 }

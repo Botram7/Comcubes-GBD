@@ -5,7 +5,6 @@ import { ArrowLeft, ExternalLink, AlertTriangle } from "lucide-react";
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { useEffect } from "react";
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
-import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 export default function DisclaimerPage() {
   const [, setLocation] = useLocation();
@@ -143,7 +142,6 @@ export default function DisclaimerPage() {
       </main>
       
       {/* SEO Analyzer Component */}
-      <SEOAnalyzer />
     </div>
   );
 }

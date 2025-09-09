@@ -5,7 +5,6 @@ import { ArrowLeft, Mail, HelpCircle, DollarSign, Shield } from "lucide-react";
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { useEffect } from "react";
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
-import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 export default function AffiliateDisclosurePage() {
   const [, setLocation] = useLocation();
@@ -204,7 +203,6 @@ export default function AffiliateDisclosurePage() {
       </main>
       
       {/* SEO Analyzer Component */}
-      <SEOAnalyzer />
     </div>
   );
 }

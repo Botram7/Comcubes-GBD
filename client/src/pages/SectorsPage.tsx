@@ -7,7 +7,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
-import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { BannerAd } from "@/components/BannerAd";
@@ -278,8 +277,6 @@ export default function SectorsPage() {
         </div>
       </footer>
       
-      {/* SEO Analyzer Component */}
-      <SEOAnalyzer />
     </div>
   );
 }

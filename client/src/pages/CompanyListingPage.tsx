@@ -6,7 +6,6 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import { Building, Upload, CreditCard, ArrowLeft, CheckCircle, Globe, Mail, Phone, Users, Clock } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import { SEOHead } from '@/components/SEOHead';
-import { SEOAnalyzer } from '@/components/SEOAnalyzer';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';

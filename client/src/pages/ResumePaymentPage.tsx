@@ -7,7 +7,6 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { AlertCircle, CreditCard, Clock, CheckCircle } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
-import { SEOAnalyzer } from '@/components/SEOAnalyzer';
 import { apiRequest } from '@/lib/queryClient';
 
 interface PendingListing {
