@@ -27,6 +27,7 @@ import comcubesLogo from "@assets/default_1752716413946.png";
 import comcubesMonochrome from "@assets/default-monochrome_1752717527516.png";
 import comcubesIcon from "@assets/2de77b64-4c39-4ddb-aa7a-0afd37edfe34_1752720571406.png";
 import newComcubesLogo from "@assets/Artboard 5_1753135425496.png";
+import heroLogo from "@assets/comcubes-hero-logo.png";
 
 export default function HomePage() {
   const [, setLocation] = useLocation();
@@ -143,16 +144,11 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <div className="mb-6 md:mb-8 flex justify-center">
-            <div 
-              className="w-64 h-20 md:w-96 md:h-32 rounded-lg flex items-center justify-center p-1"
-              style={{ backgroundColor: '#2563eb' }}
-            >
-              <img 
-                src={newComcubesLogo} 
-                alt="COMCUBES Global Business Directory" 
-                className="w-full h-full object-contain"
-              />
-            </div>
+            <img 
+              src={heroLogo} 
+              alt="COMCUBES Global Business Directory" 
+              className="w-64 h-20 md:w-96 md:h-32 object-contain"
+            />
           </div>
 
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 600 }}>
