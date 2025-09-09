@@ -93,12 +93,17 @@ export class DatabaseStorage implements IStorage {
     }
     
     try {
-      console.log('Skipping database initialization to fix loading issue');
-      this.initialized = true;
-      return;
+      // Check if we're in development environment before initializing
+      const isDevelopment = process.env.NODE_ENV === 'development';
+      if (!isDevelopment) {
+        console.log('Production environment detected - skipping database initialization to prevent data loss');
+        this.initialized = true;
+        return;
+      }
       
-      // DISABLED: Database initialization causing infinite loop
-      /* Temporarily disabled to fix loading issue
+      console.log('Development environment - proceeding with database initialization check');
+      
+      // Re-enable database initialization for development environment
       console.log('Starting database initialization...');
       
       // Test database connection first
@@ -207,7 +212,6 @@ export class DatabaseStorage implements IStorage {
       console.log('Database initialization completed successfully');
       this.initialized = true;
       console.log('Initialization flag set to true');
-      */
     } catch (error) {
       console.error('Error initializing database:', error);
       // Don't throw error - allow app to continue with empty data
