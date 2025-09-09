@@ -8,6 +8,7 @@ import { AnimatedExplainer } from "@/components/AnimatedExplainer";
 import { SEOHead, createBusinessDirectoryStructuredData } from "@/components/SEOHead";
 import { SEOAnalyzer } from "@/components/SEOAnalyzer";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
+import { BannerAd } from "@/components/BannerAd";
 import { 
   BarChart3, 
   Users, 
@@ -187,9 +188,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Explore by Category Section */}
-      <section className="py-12 md:py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Main Content with Sidebars */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex gap-6">
+          {/* Left Advertisement Banner - 160x600 */}
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd 
+              className="sticky top-24" 
+              position="left"
+            />
+          </div>
+
+          {/* Main Content */}
+          <div className="flex-1">
+            {/* Explore by Category Section */}
+            <section className="py-12 md:py-16 bg-gray-50">
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Explore by Category
@@ -424,6 +438,18 @@ export default function HomePage() {
         </div>
       </footer>
       
+          </div>
+
+          {/* Right Advertisement Banner - 160x600 */}
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd 
+              className="sticky top-24" 
+              position="right"
+            />
+          </div>
+        </div>
+      </main>
+
       {/* SEO Analyzer Component */}
       <SEOAnalyzer />
     </div>
