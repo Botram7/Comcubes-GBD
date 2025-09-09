@@ -33,9 +33,9 @@ export default function IndustryPage() {
     staleTime: Infinity,
   });
 
-  const handleCompanyClick = (company: Company) => {
-    if (company.websiteUrl) {
-      window.open(company.websiteUrl, '_blank');
+  const handleCompanyClick = (item: any) => {
+    if (item.websiteUrl) {
+      window.open(item.websiteUrl, '_blank');
     }
   };
 
@@ -86,7 +86,7 @@ export default function IndustryPage() {
     );
   }
 
-  if (error || !companies) {
+  if (error || (!companies || companies.length === 0)) {
     return (
       <div className="min-h-screen bg-gray-50">
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
