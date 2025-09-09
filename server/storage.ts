@@ -93,15 +93,15 @@ export class DatabaseStorage implements IStorage {
     }
     
     try {
-      // Check if we're in development environment before initializing
-      const isDevelopment = process.env.NODE_ENV === 'development';
-      if (!isDevelopment) {
+      // Check if we're in actual production environment before initializing
+      const isProduction = process.env.NODE_ENV === 'production' || process.env.REPL_DEPLOYMENT === 'production';
+      if (isProduction) {
         console.log('Production environment detected - skipping database initialization to prevent data loss');
         this.initialized = true;
         return;
       }
       
-      console.log('Development environment - proceeding with database initialization check');
+      console.log('Development/Preview environment - proceeding with database initialization check');
       
       // Re-enable database initialization for development environment
       console.log('Starting database initialization...');
