@@ -1,0 +1,92 @@
+2025-09-09 00:50:36.01
+7ca40f2d
+User
+11:50:36 PM [express] GET /api/search/global 200 in 462ms :: {"local":{"sectors":[],"industries":[],"…
+2025-09-09 00:50:36.10
+7ca40f2d
+User
+Global business search for: "Lizlu Nigeria Limite"
+2025-09-09 00:50:36.10
+7ca40f2d
+User
+Searching Google for businesses: "Lizlu Nigeria Limite company"
+2025-09-09 00:50:36.18
+7ca40f2d
+User
+Found 2 business results from Google
+2025-09-09 00:50:36.18
+7ca40f2d
+User
+Global search results: 0 local companies, 2 external companies
+2025-09-09 00:50:36.18
+7ca40f2d
+User
+11:50:36 PM [express] GET /api/search/global 200 in 203ms :: {"local":{"sectors":[],"industries":[],"…
+2025-09-09 00:50:36.28
+7ca40f2d
+User
+Found 3 business results from Google
+2025-09-09 00:50:36.28
+7ca40f2d
+User
+Global search results: 0 local companies, 3 external companies
+2025-09-09 00:50:36.28
+7ca40f2d
+User
+11:50:36 PM [express] GET /api/search/global 200 in 179ms :: {"local":{"sectors":[],"industries":[],"…
+2025-09-09 00:50:36.32
+7ca40f2d
+User
+Global business search for: "Lizlu Nigeria Limited"
+2025-09-09 00:50:36.32
+7ca40f2d
+User
+Searching Google for businesses: "Lizlu Nigeria Limited"
+2025-09-09 00:50:36.51
+7ca40f2d
+User
+Found 3 business results from Google
+2025-09-09 00:50:36.51
+7ca40f2d
+User
+Global search results: 0 local companies, 3 external companies
+2025-09-09 00:50:36.51
+7ca40f2d
+User
+11:50:36 PM [express] GET /api/search/global 200 in 187ms :: {"local":{"sectors":[],"industries":[],"…
+2025-09-09 00:51:21.78
+7ca40f2d
+User
+11:51:21 PM [express] GET /api/banner-ads 304 in 308ms :: []
+2025-09-09 00:51:35.28
+7ca40f2d
+User
+11:51:35 PM [express] GET /api/sectors/Food%20and%20Beverage/industries 200 in 34ms :: [{"id":228,"na…
+2025-09-09 00:51:55.24
+7ca40f2d
+User
+11:51:55 PM [express] GET /api/sectors/Food%20and%20Beverage/industries 304 in 33ms :: [{"id":228,"na…
+2025-09-09 00:51:55.53
+7ca40f2d
+User
+11:51:55 PM [express] GET /api/banner-ads 304 in 32ms :: []
+2025-09-09 00:52:03.02
+7ca40f2d
+User
+11:52:03 PM [express] GET /api/sectors 304 in 34ms :: [{"id":19,"name":"Aerospace and Defense"},{"id"…
+2025-09-09 00:52:03.24
+7ca40f2d
+User
+11:52:03 PM [express] GET /api/industries 304 in 235ms :: {"industries":[{"id":133,"name":"3D Printin…
+2025-09-09 00:52:03.39
+7ca40f2d
+User
+11:52:03 PM [express] GET /api/companies 200 in 395ms :: {"companies":[{"id":1389,"name":"10x Genomic…
+2025-09-09 01:01:05.65
+7ca40f2d
+User
+12:01:05 AM [express] GET /api/banner-ads 304 in 636ms :: []
+2025-09-09 01:02:22.69
+7ca40f2d
+User
+12:02:22 AM [express] GET /api/sectors/Agriculture/industries 200 in 3623ms :: [{"id":328,"name":"Agr…
