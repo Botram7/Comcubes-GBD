@@ -779,28 +779,30 @@ export class DatabaseStorage implements IStorage {
 
   async getAdAnalytics(bannerId?: number, eventType?: string, startDate?: string, endDate?: string): Promise<AdAnalytics[]> {
     await this.initialize();
-    let query = db.select().from(adAnalytics);
     
     const conditions = [];
     if (bannerId) conditions.push(eq(adAnalytics.bannerId, bannerId));
     if (eventType) conditions.push(eq(adAnalytics.eventType, eventType));
     
     if (conditions.length > 0) {
-      query = query.where(and(...conditions));
+      return await db.select().from(adAnalytics)
+        .where(and(...conditions))
+        .orderBy(adAnalytics.timestamp);
     }
     
-    return await query.orderBy(adAnalytics.timestamp);
+    return await db.select().from(adAnalytics).orderBy(adAnalytics.timestamp);
   }
 
   async getAdPerformanceSummary(bannerId?: number, dateRange?: { start: string; end: string }): Promise<AdPerformanceSummary[]> {
     await this.initialize();
-    let query = db.select().from(adPerformanceSummary);
     
     if (bannerId) {
-      query = query.where(eq(adPerformanceSummary.bannerId, bannerId));
+      return await db.select().from(adPerformanceSummary)
+        .where(eq(adPerformanceSummary.bannerId, bannerId))
+        .orderBy(adPerformanceSummary.date);
     }
     
-    return await query.orderBy(adPerformanceSummary.date);
+    return await db.select().from(adPerformanceSummary).orderBy(adPerformanceSummary.date);
   }
 
   async updateDailyAdPerformance(bannerId: number, date: string, imageUrl?: string): Promise<void> {
@@ -848,12 +850,9 @@ export class DatabaseStorage implements IStorage {
     await this.initialize();
     
     // Get all performance summaries
-    let summaryQuery = db.select().from(adPerformanceSummary);
-    if (bannerId) {
-      summaryQuery = summaryQuery.where(eq(adPerformanceSummary.bannerId, bannerId));
-    }
-    
-    const summaries = await summaryQuery;
+    const summaries = bannerId 
+      ? await db.select().from(adPerformanceSummary).where(eq(adPerformanceSummary.bannerId, bannerId))
+      : await db.select().from(adPerformanceSummary);
     
     // Calculate totals
     const totalImpressions = summaries.reduce((sum, s) => sum + s.impressions, 0);
