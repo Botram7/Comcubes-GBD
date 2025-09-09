@@ -81,8 +81,6 @@ export default function HomePage() {
     setLocation('/sectors');
   };
 
-  console.log('HomePage Debug:', { sectors, isLoading, error, sectorsType: typeof sectors, isArray: Array.isArray(sectors) });
-
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50">
@@ -201,8 +199,9 @@ export default function HomePage() {
             {Array.isArray(sectors) ? sectors.slice(0, 10).map((sector: Sector) => (
               <Card 
                 key={sector.id} 
-                className="group cursor-pointer hover:shadow-lg transition-all duration-200 bg-white overflow-hidden"
+                className="group cursor-pointer hover:shadow-lg transition-all duration-200 bg-white border-2 border-blue-200 overflow-hidden min-h-[200px] relative"
                 onClick={() => handleSectorClick(sector)}
+                style={{ backgroundColor: 'white', border: '2px solid #3b82f6' }}
               >
                 <div className="aspect-square relative">
                   <img 
