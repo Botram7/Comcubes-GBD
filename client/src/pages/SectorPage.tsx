@@ -27,7 +27,7 @@ export default function SectorPage() {
     window.scrollTo(0, 0);
   }, [sectorName]);
 
-  const { data: industries, isLoading, error } = useQuery({
+  const { data: industries = [], isLoading, error } = useQuery({
     queryKey: [`/api/sectors/${encodeURIComponent(decodedSectorName)}/industries`],
     enabled: !!sectorName,
     staleTime: Infinity,
