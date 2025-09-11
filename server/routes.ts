@@ -24,8 +24,64 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Serve uploaded files (logos, etc.)
   app.use('/uploads', express.static(path.resolve(import.meta.dirname, 'uploads')));
   
-  // Serve banner images
-  app.use('/banner-images', express.static(path.resolve(import.meta.dirname, 'banner-images')));
+  // Serve banner images from Object Storage (like generated images)
+  app.get('/banner-images/:filename', async (req, res) => {
+    const { filename } = req.params;
+    try {
+      const { Storage } = await import('@google-cloud/storage');
+      const storage = new Storage({
+        credentials: {
+          type: 'external_account',
+          audience: 'replit',
+          subject_token_type: 'access_token',
+          token_url: 'http://127.0.0.1:1106/token',
+          credential_source: {
+            url: 'http://127.0.0.1:1106/credential',
+            format: {
+              type: 'json',
+              subject_token_field_name: 'access_token'
+            }
+          },
+          universe_domain: 'googleapis.com'
+        },
+        projectId: ''
+      });
+      const bucketName = process.env.DEFAULT_OBJECT_STORAGE_BUCKET_ID;
+      if (!bucketName) {
+        return res.status(500).send('Object storage not configured');
+      }
+      const bucket = storage.bucket(bucketName);
+      const file = bucket.file(`public/banner-images/${filename}`);
+      const [exists] = await file.exists();
+      
+      if (!exists) {
+        return res.status(404).send('Banner image not found');
+      }
+
+      const [metadata] = await file.getMetadata();
+      
+      res.set({
+        'Content-Type': metadata.contentType || 'image/jpeg',
+        'Content-Length': metadata.size,
+        'Cache-Control': 'public, max-age=86400' // 24 hours cache
+      });
+
+      const stream = file.createReadStream();
+      stream.on('error', (err) => {
+        console.error('Banner stream error:', err);
+        if (!res.headersSent) {
+          res.status(500).send('Error streaming banner image');
+        }
+      });
+
+      stream.pipe(res);
+    } catch (error) {
+      console.error('Error serving banner image:', error);
+      if (!res.headersSent) {
+        res.status(500).send('Internal server error');
+      }
+    }
+  });
   
   // Get all sectors
   app.get("/api/sectors", async (req, res) => {
@@ -607,26 +663,9 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
-  // Set up multer for file uploads
-  const bannerUploadDir = path.resolve(import.meta.dirname, 'banner-images');
-  if (!fs.existsSync(bannerUploadDir)) {
-    fs.mkdirSync(bannerUploadDir, { recursive: true });
-  }
-  
-  const bannerStorage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, bannerUploadDir);
-    },
-    filename: function (req, file, cb) {
-      const timestamp = Date.now();
-      const randomId = Math.random().toString(36).substring(2, 15);
-      const ext = path.extname(file.originalname);
-      cb(null, `banner-${timestamp}-${randomId}${ext}`);
-    }
-  });
-  
+  // Set up multer for file uploads (Object Storage)
   const uploadBanner = multer({ 
-    storage: bannerStorage,
+    storage: multer.memoryStorage(), // Use memory storage for Object Storage upload
     limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
     fileFilter: (req, file, cb) => {
       if (file.mimetype.startsWith('image/')) {
@@ -637,23 +676,64 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
-  // Direct file upload endpoint for banner images
-  app.post("/api/objects/upload", uploadBanner.single('image'), async (req, res) => {
+  // Direct file upload endpoint for banner images (Object Storage + Admin Auth)
+  app.post("/api/objects/upload", requireAdminAuth, uploadBanner.single('image'), async (req, res) => {
     try {
       if (!req.file) {
         return res.status(400).json({ error: "No image file uploaded" });
       }
       
-      const imageUrl = `/banner-images/${req.file.filename}`;
-      console.log('Banner image uploaded successfully:', imageUrl);
+      // Generate unique filename
+      const timestamp = Date.now();
+      const randomId = Math.random().toString(36).substring(2, 15);
+      const ext = path.extname(req.file.originalname);
+      const filename = `banner-${timestamp}-${randomId}${ext}`;
+      
+      // Upload to Object Storage
+      const { Storage } = await import('@google-cloud/storage');
+      const storage = new Storage({
+        credentials: {
+          type: 'external_account',
+          audience: 'replit',
+          subject_token_type: 'access_token',
+          token_url: 'http://127.0.0.1:1106/token',
+          credential_source: {
+            url: 'http://127.0.0.1:1106/credential',
+            format: {
+              type: 'json',
+              subject_token_field_name: 'access_token'
+            }
+          },
+          universe_domain: 'googleapis.com'
+        },
+        projectId: ''
+      });
+      
+      const bucketName = process.env.DEFAULT_OBJECT_STORAGE_BUCKET_ID;
+      if (!bucketName) {
+        return res.status(500).json({ error: 'Object storage not configured' });
+      }
+      
+      const bucket = storage.bucket(bucketName);
+      const file = bucket.file(`public/banner-images/${filename}`);
+      
+      await file.save(req.file.buffer, {
+        metadata: {
+          contentType: req.file.mimetype,
+          cacheControl: 'public, max-age=86400'
+        }
+      });
+      
+      const imageUrl = `/banner-images/${filename}`;
+      console.log('Banner image uploaded successfully to Object Storage:', imageUrl);
       
       res.json({ 
         success: true,
         imageUrl: imageUrl,
-        filename: req.file.filename
+        filename: filename
       });
     } catch (error) {
-      console.error("Error uploading banner image:", error);
+      console.error("Error uploading banner image to Object Storage:", error);
       res.status(500).json({ error: "Failed to upload banner image" });
     }
   });
