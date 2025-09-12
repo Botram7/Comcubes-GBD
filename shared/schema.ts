@@ -135,6 +135,15 @@ export const emailLogs = pgTable('email_logs', {
   deliveryStatus: text('delivery_status').default('sent').notNull(), // 'sent', 'delivered', 'failed'
 });
 
+// App Initialization Metadata - for tracking database initialization state
+export const appInitMeta = pgTable('app_init_meta', {
+  id: serial('id').primaryKey(),
+  key: text('key').notNull().unique(), // e.g., 'init_lock', 'core_data_seeded', 'banners_seeded_v1'
+  value: text('value'), // optional value for the key
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+});
+
 // Type exports
 export type Sector = typeof sectors.$inferSelect;
 export type Industry = typeof industries.$inferSelect;
@@ -147,6 +156,7 @@ export type BannerAd = typeof bannerAds.$inferSelect;
 export type AdAnalytics = typeof adAnalytics.$inferSelect;
 export type AdPerformanceSummary = typeof adPerformanceSummary.$inferSelect;
 export type EmailLog = typeof emailLogs.$inferSelect;
+export type AppInitMeta = typeof appInitMeta.$inferSelect;
 
 export type InsertSector = typeof sectors.$inferInsert;
 export type InsertIndustry = typeof industries.$inferInsert;
@@ -159,6 +169,7 @@ export type InsertBannerAd = typeof bannerAds.$inferInsert;
 export type InsertAdAnalytics = typeof adAnalytics.$inferInsert;
 export type InsertAdPerformanceSummary = typeof adPerformanceSummary.$inferInsert;
 export type InsertEmailLog = typeof emailLogs.$inferInsert;
+export type InsertAppInitMeta = typeof appInitMeta.$inferInsert;
 
 // Zod schemas for validation
 export const insertSectorSchema = createInsertSchema(sectors);
@@ -182,3 +193,5 @@ export const insertBannerAdSchema = createInsertSchema(bannerAds);
 export const selectBannerAdSchema = createSelectSchema(bannerAds);
 export const insertEmailLogSchema = createInsertSchema(emailLogs);
 export const selectEmailLogSchema = createSelectSchema(emailLogs);
+export const insertAppInitMetaSchema = createInsertSchema(appInitMeta);
+export const selectAppInitMetaSchema = createSelectSchema(appInitMeta);
