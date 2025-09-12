@@ -31,6 +31,22 @@ export class PaystackService {
     const preferredCurrency = data.currency || 'USD';
     
     try {
+      const payload = {
+        email: data.email,
+        amount: data.amount,
+        currency: preferredCurrency,
+        reference: data.reference,
+        metadata: data.metadata,
+      };
+      
+      console.log('=== Paystack Request Debug ===');
+      console.log('Payload being sent to Paystack:', JSON.stringify(payload, null, 2));
+      console.log('Amount type:', typeof payload.amount);
+      console.log('Amount value:', payload.amount);
+      console.log('Currency:', payload.currency);
+      console.log('Email:', payload.email);
+      console.log('===============================');
+      
       // First, try with the preferred currency (USD)
       const response = await fetch(`${this.baseUrl}/transaction/initialize`, {
         method: 'POST',
@@ -38,22 +54,23 @@ export class PaystackService {
           Authorization: `Bearer ${this.secretKey}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          email: data.email,
-          amount: data.amount,
-          currency: preferredCurrency,
-          reference: data.reference,
-          metadata: data.metadata,
-        }),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
+        const errorText = await response.text();
+        console.error('=== Paystack Error Response ===');
+        console.error('Status:', response.status);
+        console.error('Status Text:', response.statusText);
+        console.error('Error Body:', errorText);
+        console.error('===============================');
+        
         // If 403 error and we tried USD, fallback to NGN
         if (response.status === 403 && preferredCurrency === 'USD') {
           console.warn('USD not supported by this Paystack account, falling back to NGN...');
           return await this.initializePaymentNGN(data);
         }
-        throw new Error(`Paystack API error: ${response.status}`);
+        throw new Error(`Paystack API error: ${response.status} - ${errorText}`);
       }
 
       const result = await response.json();
