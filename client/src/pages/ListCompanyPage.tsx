@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { ArrowLeft, Building2, Star, Globe, MapPin, CheckCircle, ChevronRight, User } from 'lucide-react';
+import { ArrowLeft, Building2, Star, Globe, MapPin, CheckCircle, ChevronRight, User, ExternalLink, AlertCircle } from 'lucide-react';
 import { useLocation } from 'wouter';
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 
@@ -18,12 +18,22 @@ import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { apiRequest } from '@/lib/queryClient';
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
+import { normalizeUrl } from '@/lib/urlUtils';
 
 const companyListingSchema = z.object({
   companyName: z.string().min(2, 'Company name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
   phone: z.string().min(10, 'Phone number must be at least 10 digits'),
-  website: z.string().url('Please enter a valid website URL'),
+  website: z.string()
+    .min(1, 'Website is required')
+    .transform((value) => {
+      const result = normalizeUrl(value);
+      return result.normalizedUrl;
+    })
+    .refine((value) => {
+      const result = normalizeUrl(value);
+      return result.isValid;
+    }, 'Please enter a valid website URL'),
   contactPerson: z.string().min(2, 'Contact person name must be at least 2 characters'),
   businessSector: z.string().min(1, 'Please select a business sector'),
   industry: z.string().min(1, 'Please select an industry'),
@@ -50,6 +60,10 @@ export default function ListCompanyPage() {
   const [selectedSector, setSelectedSector] = useState<string>('');
   const [isWaitlisted, setIsWaitlisted] = useState(false);
   
+  // URL validation state
+  const [urlToCheck, setUrlToCheck] = useState<string>('');
+  const [urlCheckDebounceTimer, setUrlCheckDebounceTimer] = useState<NodeJS.Timeout | null>(null);
+  
   // Get URL parameters for smart form population
   const urlParams = new URLSearchParams(window.location.search);
   const preSelectedSector = urlParams.get('sector') || '';
@@ -75,6 +89,48 @@ export default function ListCompanyPage() {
     },
   });
   
+  // URL checking functionality
+  const { data: urlCheckResult, isLoading: isCheckingUrl } = useQuery({
+    queryKey: ['/api/url-check', urlToCheck],
+    queryFn: async ({ queryKey }) => {
+      const [, url] = queryKey;
+      if (!url) return null;
+      const response = await fetch(`/api/url-check?u=${encodeURIComponent(url as string)}`);
+      return response.json();
+    },
+    enabled: !!urlToCheck,
+    staleTime: 300000, // 5 minutes
+    retry: false
+  });
+
+  // Debounced URL handler
+  const handleUrlChange = useCallback((value: string) => {
+    // Clear existing timer
+    if (urlCheckDebounceTimer) {
+      clearTimeout(urlCheckDebounceTimer);
+    }
+    
+    // Don't check empty values
+    if (!value.trim()) {
+      setUrlToCheck('');
+      return;
+    }
+
+    // Normalize the URL first to check what we'll actually be validating
+    const normalizedResult = normalizeUrl(value);
+    if (!normalizedResult.isValid) {
+      setUrlToCheck('');
+      return;
+    }
+
+    // Set up new debounced check
+    const timer = setTimeout(() => {
+      setUrlToCheck(normalizedResult.normalizedUrl);
+    }, 600); // 600ms debounce
+    
+    setUrlCheckDebounceTimer(timer);
+  }, [urlCheckDebounceTimer]);
+
   // Auto-populate fields from URL parameters
   useEffect(() => {
     if (preSelectedSector) {
@@ -611,15 +667,100 @@ export default function ListCompanyPage() {
                       <FormField
                         control={form.control}
                         name="website"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Company Website *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="https://yourcompany.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
+                        render={({ field }) => {
+                          const currentValue = field.value || '';
+                          const normalizedResult = normalizeUrl(currentValue);
+                          
+                          // Get URL check status
+                          const getUrlStatus = () => {
+                            if (!currentValue.trim()) return null;
+                            if (!normalizedResult.isValid) return 'invalid';
+                            if (isCheckingUrl) return 'checking';
+                            if (urlCheckResult === null) return null;
+                            return urlCheckResult?.ok ? 'valid' : 'unreachable';
+                          };
+
+                          const urlStatus = getUrlStatus();
+
+                          return (
+                            <FormItem>
+                              <FormLabel>Company Website *</FormLabel>
+                              <FormControl>
+                                <Input 
+                                  placeholder="yourcompany.com or https://yourcompany.com" 
+                                  {...field}
+                                  onChange={(e) => {
+                                    field.onChange(e);
+                                    handleUrlChange(e.target.value);
+                                  }}
+                                  onBlur={(e) => {
+                                    field.onBlur();
+                                    // Normalize URL on blur to show final format
+                                    if (e.target.value && normalizedResult.isValid) {
+                                      field.onChange(normalizedResult.normalizedUrl);
+                                    }
+                                  }}
+                                  data-testid="input-website"
+                                />
+                              </FormControl>
+                              
+                              {/* URL Status Indicator */}
+                              {currentValue.trim() && (
+                                <div 
+                                  className="flex items-center text-xs mt-1" 
+                                  aria-live="polite"
+                                  data-testid="status-website-check"
+                                >
+                                  {urlStatus === 'checking' && (
+                                    <span className="text-blue-600 flex items-center">
+                                      <div className="animate-spin rounded-full h-3 w-3 border-b border-blue-600 mr-1"></div>
+                                      Checking website...
+                                    </span>
+                                  )}
+                                  
+                                  {urlStatus === 'valid' && (
+                                    <span className="text-green-600 flex items-center">
+                                      <CheckCircle className="h-3 w-3 mr-1" />
+                                      Website looks good!
+                                      {urlCheckResult?.finalUrl && urlCheckResult.finalUrl !== currentValue && (
+                                        <span className="ml-1 text-gray-500">
+                                          → {urlCheckResult.finalUrl}
+                                        </span>
+                                      )}
+                                    </span>
+                                  )}
+                                  
+                                  {urlStatus === 'unreachable' && (
+                                    <span className="text-amber-600 flex items-center">
+                                      <AlertCircle className="h-3 w-3 mr-1" />
+                                      We couldn't confirm this website is reachable. You can still submit your listing.
+                                      {urlCheckResult?.reason && (
+                                        <span className="ml-1 text-gray-500 text-xs">
+                                          ({urlCheckResult.reason})
+                                        </span>
+                                      )}
+                                    </span>
+                                  )}
+                                  
+                                  {urlStatus === 'invalid' && normalizedResult.error && (
+                                    <span className="text-red-500 flex items-center">
+                                      <AlertCircle className="h-3 w-3 mr-1" />
+                                      {normalizedResult.error}
+                                    </span>
+                                  )}
+                                  
+                                  {normalizedResult.isValid && normalizedResult.normalizedUrl !== currentValue && urlStatus !== 'checking' && (
+                                    <span className="text-gray-500 ml-auto">
+                                      Will be saved as: {normalizedResult.normalizedUrl}
+                                    </span>
+                                  )}
+                                </div>
+                              )}
+                              
+                              <FormMessage />
+                            </FormItem>
+                          );
+                        }}
                       />
 
                       <FormField
