@@ -486,8 +486,8 @@ export default function ListCompanyPage() {
             }}>
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-2xl mb-2">Basic</CardTitle>
-                <div className="text-3xl font-bold text-gray-900">$0.10<span className="text-lg text-gray-600">/month</span></div>
-                <div className="text-sm text-gray-600">Billed quarterly ($0.30)</div>
+                <div className="text-3xl font-bold text-gray-900">$1.00<span className="text-lg text-gray-600">/month</span></div>
+                <div className="text-sm text-gray-600">Billed quarterly ($3.00)</div>
               </CardHeader>
               <CardContent className="pt-4">
                 <ul className="space-y-3">
@@ -536,8 +536,8 @@ export default function ListCompanyPage() {
               </div>
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-2xl mb-2">Premium</CardTitle>
-                <div className="text-3xl font-bold text-gray-900">$0.20<span className="text-lg text-gray-600">/month</span></div>
-                <div className="text-sm text-gray-600">Billed quarterly ($0.60)</div>
+                <div className="text-3xl font-bold text-gray-900">$2.00<span className="text-lg text-gray-600">/month</span></div>
+                <div className="text-sm text-gray-600">Billed quarterly ($6.00)</div>
               </CardHeader>
               <CardContent className="pt-4">
                 <ul className="space-y-3">
