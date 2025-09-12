@@ -85,147 +85,10 @@ export interface IStorage {
 }
 
 export class DatabaseStorage implements IStorage {
-  private initialized = false;
-  private initializing = false;
-
-  private async initialize() {
-    if (this.initialized || this.initializing) {
-      return;
-    }
-    
-    this.initializing = true;
-    
-    try {
-      // Check if we're in actual production environment before initializing
-      const isProduction = process.env.NODE_ENV === 'production' || process.env.REPL_DEPLOYMENT === 'production';
-      if (isProduction) {
-        console.log('Production environment detected - skipping database initialization to prevent data loss');
-        this.initialized = true;
-        return;
-      }
-      
-      console.log('Development/Preview environment - proceeding with database initialization check');
-      
-      // Re-enable database initialization for development environment
-      console.log('Starting database initialization...');
-      
-      // Test database connection first
-      await db.select().from(sectors).limit(1);
-      console.log('Database connection successful');
-      
-      // Check if data already exists
-      console.log('About to check for existing sectors...');
-      const existingSectors = await db.select().from(sectors).limit(1);
-      console.log('Existing sectors check completed, found:', existingSectors.length, 'sectors');
-      
-      if (existingSectors.length === 0) {
-        console.log('No sectors found, proceeding with full initialization...');
-        console.log('Loading data from CSV files into database...');
-        
-        // Load data from CSV files
-        const csvSectors = await csvParser.loadSectors();
-        const csvIndustries = await csvParser.loadIndustries();
-        const csvCompanies = await csvParser.loadCompanies();
-        
-        console.log(`Loaded ${csvSectors.length} sectors, ${csvIndustries.length} industries, ${csvCompanies.length} companies from CSV`);
-        
-        // Insert sectors
-        if (csvSectors.length > 0) {
-          const sectorInserts: InsertSector[] = csvSectors.map(sector => ({ name: sector.name }));
-          await db.insert(sectors).values(sectorInserts);
-          console.log(`Inserted ${sectorInserts.length} sectors`);
-        }
-        
-        // Insert industries
-        if (csvIndustries.length > 0) {
-          const industryInserts: InsertIndustry[] = csvIndustries.map(industry => ({
-            name: industry.name,
-            sectorName: industry.sectorName
-          }));
-          await db.insert(industries).values(industryInserts);
-          console.log(`Inserted ${industryInserts.length} industries`);
-        }
-        
-        // Insert companies in batches (to handle large dataset)
-        if (csvCompanies.length > 0) {
-          const batchSize = 500; // Smaller batch size for better reliability
-          let totalInserted = 0;
-          
-          for (let i = 0; i < csvCompanies.length; i += batchSize) {
-            const batch = csvCompanies.slice(i, i + batchSize);
-            const companyInserts: InsertCompany[] = batch.map(company => ({
-              name: company.name,
-              websiteUrl: company.websiteUrl,
-              industryName: company.industryName,
-              sectorName: company.sectorName
-            }));
-            
-            await db.insert(companies).values(companyInserts);
-            totalInserted += companyInserts.length;
-            console.log(`Inserted batch ${Math.floor(i/batchSize) + 1}, total: ${totalInserted}/${csvCompanies.length} companies`);
-          }
-        }
-        
-        console.log(`Database initialized successfully with ${csvSectors.length} sectors, ${csvIndustries.length} industries, ${csvCompanies.length} companies`);
-      } else {
-        console.log('Database already contains data, skipping core data initialization');
-      }
-      
-      // Initialize default banner ads independently of core data (always check)
-      console.log('Checking banner ads initialization...');
-      // Use direct database query to avoid recursive initialization call
-      const existingBanners = await db.select().from(bannerAds);
-      if (existingBanners.length === 0) {
-        console.log('No banner ads found, initializing default banner ads...');
-        
-        // Create default banners using direct database inserts to avoid recursive initialization
-        await db.insert(bannerAds).values({
-          position: 'left',
-          images: [
-            '/banner-images/banner-1756772869185-e7zf3gbm5oh.jpg',
-            '/banner-images/banner-1756772896318-fdn74xfwtbp.jpg',
-            '/banner-images/banner-1756772918354-nhg6ydt1x5.jpg'
-          ],
-          imageUrls: [
-            'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
-            'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
-            'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/'
-          ],
-          clickUrl: 'https://rzekl.com/g/pzwp2neyhy305e38d9b46a95c12d58/',
-          rotationInterval: 10000,
-          isActive: true
-        });
-
-        await db.insert(bannerAds).values({
-          position: 'right',
-          images: ['/banner-images/banner-1756772583342-9ixfpj72x7t.jpg'],
-          imageUrls: ['https://rzekl.com/g/1e8d114494305e38d9b416525dc3e8/'],
-          clickUrl: 'https://rzekl.com/g/1e8d114494305e38d9b416525dc3e8/',
-          rotationInterval: 7000,
-          isActive: true
-        });
-        
-        console.log('Default banner ads initialized successfully');
-      } else {
-        console.log(`Banner ads already exist (${existingBanners.length} found), skipping banner initialization`);
-      }
-      
-      console.log('About to mark initialization as completed...');
-      console.log('Database initialization completed successfully');
-      this.initialized = true;
-      console.log('Initialization flag set to true');
-    } catch (error) {
-      console.error('Error initializing database:', error);
-      // Don't throw error - allow app to continue with empty data
-      this.initialized = true;
-    } finally {
-      this.initializing = false;
-    }
-  }
 
   async getSectors(): Promise<Sector[]> {
     try {
-      await this.initialize();
+
       return await db.select().from(sectors).orderBy(sectors.name);
     } catch (error) {
       console.error('Error getting sectors:', error);
@@ -235,7 +98,7 @@ export class DatabaseStorage implements IStorage {
 
   async getIndustriesBySector(sectorName: string): Promise<Industry[]> {
     try {
-      await this.initialize();
+
       return await db.select().from(industries)
         .where(eq(industries.sectorName, sectorName))
         .orderBy(industries.name);
@@ -247,7 +110,7 @@ export class DatabaseStorage implements IStorage {
 
   async getCompaniesByIndustry(industryName: string): Promise<Company[]> {
     try {
-      await this.initialize();
+
       return await db.select().from(companies)
         .where(eq(companies.industryName, industryName))
         .orderBy(companies.name);
@@ -259,7 +122,7 @@ export class DatabaseStorage implements IStorage {
 
   async getAllIndustries(): Promise<Industry[]> {
     try {
-      await this.initialize();
+
       return await db.select().from(industries).orderBy(industries.name);
     } catch (error) {
       console.error('Error getting all industries:', error);
@@ -269,7 +132,7 @@ export class DatabaseStorage implements IStorage {
 
   async getAllCompanies(): Promise<Company[]> {
     try {
-      await this.initialize();
+
       // Order by name for alphabetical sorting like sectors and industries
       return await db.select().from(companies).orderBy(companies.name);
     } catch (error) {
@@ -280,7 +143,7 @@ export class DatabaseStorage implements IStorage {
 
   async getCompanyById(id: number): Promise<Company | undefined> {
     try {
-      await this.initialize();
+
       const [company] = await db.select().from(companies)
         .where(eq(companies.id, id))
         .limit(1);
@@ -297,7 +160,7 @@ export class DatabaseStorage implements IStorage {
     companies: Company[];
   }> {
     try {
-      await this.initialize();
+
       const searchPattern = `%${query}%`;
 
       const [sectorResults, industryResults, companyResults] = await Promise.all([
@@ -338,7 +201,7 @@ export class DatabaseStorage implements IStorage {
 
   async createContactMessage(message: InsertContactMessage): Promise<ContactMessage> {
     try {
-      await this.initialize();
+
       const [created] = await db.insert(contactMessages).values(message).returning();
       return created;
     } catch (error) {
@@ -349,7 +212,7 @@ export class DatabaseStorage implements IStorage {
 
   async getContactMessages(): Promise<ContactMessage[]> {
     try {
-      await this.initialize();
+
       return await db.select().from(contactMessages).orderBy(contactMessages.createdAt);
     } catch (error) {
       console.error('Error getting contact messages:', error);
@@ -359,7 +222,7 @@ export class DatabaseStorage implements IStorage {
 
   async createCompanyListing(listing: InsertCompanyListing): Promise<CompanyListing> {
     try {
-      await this.initialize();
+
       const [created] = await db.insert(companyListings).values(listing).returning();
       return created;
     } catch (error) {
@@ -370,7 +233,7 @@ export class DatabaseStorage implements IStorage {
 
   async getCompanyListings(): Promise<CompanyListing[]> {
     try {
-      await this.initialize();
+
       return await db.select().from(companyListings).orderBy(companyListings.submittedAt);
     } catch (error) {
       console.error('Error getting company listings:', error);
@@ -380,7 +243,7 @@ export class DatabaseStorage implements IStorage {
 
   async updateCompanyListingPayment(id: number, paymentReference: string, paymentAmount: number): Promise<CompanyListing | undefined> {
     try {
-      await this.initialize();
+
       const [updated] = await db.update(companyListings)
         .set({ 
           paymentReference, 
@@ -398,7 +261,7 @@ export class DatabaseStorage implements IStorage {
 
   async createCompany(company: Omit<Company, 'id'>): Promise<Company> {
     try {
-      await this.initialize();
+
       const [created] = await db.insert(companies).values(company).returning();
       return created;
     } catch (error) {
@@ -409,7 +272,7 @@ export class DatabaseStorage implements IStorage {
 
   async checkSlotAvailability(industryName: string): Promise<{ available: boolean; currentCount: number; maxSlots: number }> {
     try {
-      await this.initialize();
+
       const companiesInIndustry = await db.select().from(companies)
         .where(eq(companies.industryName, industryName));
       
@@ -429,7 +292,7 @@ export class DatabaseStorage implements IStorage {
 
   async addToWaitlist(waitlistEntry: InsertIndustryWaitlist): Promise<IndustryWaitlist> {
     try {
-      await this.initialize();
+
       const [created] = await db.insert(industryWaitlist).values(waitlistEntry).returning();
       return created;
     } catch (error) {
@@ -440,7 +303,7 @@ export class DatabaseStorage implements IStorage {
 
   async getWaitlistByIndustry(industryName: string): Promise<IndustryWaitlist[]> {
     try {
-      await this.initialize();
+
       return await db.select().from(industryWaitlist)
         .where(eq(industryWaitlist.industryName, industryName))
         .orderBy(industryWaitlist.submittedAt);
@@ -452,7 +315,7 @@ export class DatabaseStorage implements IStorage {
 
   async getCompanyListingByEmail(email: string): Promise<CompanyListing[]> {
     try {
-      await this.initialize();
+
       return await db.select().from(companyListings)
         .where(eq(companyListings.contactEmail, email))
         .orderBy(companyListings.submittedAt);
@@ -464,7 +327,7 @@ export class DatabaseStorage implements IStorage {
 
   async getAllWaitlistEntries(): Promise<IndustryWaitlist[]> {
     try {
-      await this.initialize();
+
       return await db.select().from(industryWaitlist)
         .orderBy(industryWaitlist.submittedAt);
     } catch (error) {
@@ -475,7 +338,7 @@ export class DatabaseStorage implements IStorage {
 
   async getIndustryWaitlistStats(): Promise<any[]> {
     try {
-      await this.initialize();
+
       // Get all unique industry names from waitlist
       const waitlistIndustries = await db.selectDistinct({ industryName: industryWaitlist.industryName })
         .from(industryWaitlist);
@@ -507,7 +370,7 @@ export class DatabaseStorage implements IStorage {
 
   async getAdminStats(): Promise<any> {
     try {
-      await this.initialize();
+
       
       const totalCompanies = await db.select().from(companies);
       const allListings = await db.select().from(companyListings);
@@ -568,7 +431,7 @@ export class DatabaseStorage implements IStorage {
 
   async getWaitlistEntryById(id: number): Promise<IndustryWaitlist | undefined> {
     try {
-      await this.initialize();
+
       const [entry] = await db.select().from(industryWaitlist)
         .where(eq(industryWaitlist.id, id))
         .limit(1);
@@ -581,19 +444,19 @@ export class DatabaseStorage implements IStorage {
 
   // Company claim operations
   async createCompanyClaim(claim: InsertCompanyClaim): Promise<CompanyClaim> {
-    await this.initialize();
+
     const [newClaim] = await db.insert(companyClaims).values(claim).returning();
     return newClaim;
   }
 
   async getCompanyClaim(id: number): Promise<CompanyClaim | undefined> {
-    await this.initialize();
+
     const [claim] = await db.select().from(companyClaims).where(eq(companyClaims.id, id));
     return claim;
   }
 
   async getCompanyClaims(status?: string): Promise<CompanyClaim[]> {
-    await this.initialize();
+
     if (status) {
       return db.select().from(companyClaims).where(eq(companyClaims.status, status));
     }
@@ -601,18 +464,18 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getAllCompanyClaims(): Promise<CompanyClaim[]> {
-    await this.initialize();
+
     return db.select().from(companyClaims);
   }
 
   async getPendingClaimsCount(): Promise<number> {
-    await this.initialize();
+
     const pendingClaims = await db.select().from(companyClaims).where(eq(companyClaims.status, 'pending'));
     return pendingClaims.length;
   }
 
   async updateCompanyClaimStatus(id: number, status: string, adminNotes?: string): Promise<CompanyClaim | undefined> {
-    await this.initialize();
+
     const updateData: any = { status };
     if (adminNotes) {
       updateData.adminNotes = adminNotes;
@@ -629,7 +492,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async updateCompanyClaimEmailVerification(claimId: number, emailVerified: boolean): Promise<CompanyClaim | undefined> {
-    await this.initialize();
+
     const [claim] = await db
       .update(companyClaims)
       .set({ 
@@ -642,7 +505,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async updateCompanyClaimVerificationCode(claimId: number, verificationCode: string, verificationExpiresAt: Date): Promise<CompanyClaim | undefined> {
-    await this.initialize();
+
     const [claim] = await db
       .update(companyClaims)
       .set({ 
@@ -656,7 +519,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getCompanyClaimStats(): Promise<any> {
-    await this.initialize();
+
     // Get basic claim statistics
     const allClaims = await db.select().from(companyClaims);
     
@@ -683,7 +546,7 @@ export class DatabaseStorage implements IStorage {
     ownerName: string;
     verificationDate: Date;
   }): Promise<Company | undefined> {
-    await this.initialize();
+
     
     // Note: This is a conceptual implementation
     // The current companies table doesn't have ownership fields
@@ -698,18 +561,18 @@ export class DatabaseStorage implements IStorage {
 
   // Banner Ad operations
   async getBannerAds(): Promise<BannerAd[]> {
-    await this.initialize();
+
     return await db.select().from(bannerAds);
   }
 
   async createBannerAd(bannerAd: InsertBannerAd): Promise<BannerAd> {
-    await this.initialize();
+
     const [newBannerAd] = await db.insert(bannerAds).values(bannerAd).returning();
     return newBannerAd;
   }
 
   async updateBannerAd(id: number, bannerAdData: Partial<InsertBannerAd>): Promise<BannerAd | undefined> {
-    await this.initialize();
+
     const [updatedBannerAd] = await db
       .update(bannerAds)
       .set({ ...bannerAdData, updatedAt: new Date() })
@@ -719,13 +582,13 @@ export class DatabaseStorage implements IStorage {
   }
 
   async deleteBannerAd(id: number): Promise<boolean> {
-    await this.initialize();
+
     const result = await db.delete(bannerAds).where(eq(bannerAds.id, id));
     return (result.rowCount ?? 0) > 0;
   }
 
   async getActiveBannerAds(position?: string): Promise<BannerAd[]> {
-    await this.initialize();
+
     if (position) {
       return await db.select().from(bannerAds)
         .where(and(eq(bannerAds.isActive, true), eq(bannerAds.position, position)));
@@ -737,13 +600,13 @@ export class DatabaseStorage implements IStorage {
 
   // Email Log operations
   async logEmail(email: InsertEmailLog): Promise<EmailLog> {
-    await this.initialize();
+
     const [newEmailLog] = await db.insert(emailLogs).values(email).returning();
     return newEmailLog;
   }
 
   async getEmailLogs(type?: string, relatedId?: number): Promise<EmailLog[]> {
-    await this.initialize();
+
     if (type && relatedId) {
       return await db.select().from(emailLogs)
         .where(and(eq(emailLogs.emailType, type), eq(emailLogs.relatedId, relatedId)));
@@ -760,7 +623,7 @@ export class DatabaseStorage implements IStorage {
 
   // Ad Analytics operations
   async recordAdEvent(analytics: InsertAdAnalytics): Promise<AdAnalytics> {
-    await this.initialize();
+
     const [result] = await db.insert(adAnalytics).values(analytics).returning();
     
     // Update daily performance summary
@@ -771,7 +634,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getAdAnalytics(bannerId?: number, eventType?: string, startDate?: string, endDate?: string): Promise<AdAnalytics[]> {
-    await this.initialize();
+
     
     const conditions = [];
     if (bannerId) conditions.push(eq(adAnalytics.bannerId, bannerId));
@@ -787,7 +650,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getAdPerformanceSummary(bannerId?: number, dateRange?: { start: string; end: string }): Promise<AdPerformanceSummary[]> {
-    await this.initialize();
+
     
     if (bannerId) {
       return await db.select().from(adPerformanceSummary)
@@ -799,7 +662,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async updateDailyAdPerformance(bannerId: number, date: string, imageUrl?: string): Promise<void> {
-    await this.initialize();
+
     
     // Check if summary exists for this banner and date
     const [existingSummary] = await db.select()
@@ -840,7 +703,7 @@ export class DatabaseStorage implements IStorage {
     topPerformingImages: { imageUrl: string; clicks: number; impressions: number }[];
     dailyStats: { date: string; clicks: number; views: number; impressions: number }[];
   }> {
-    await this.initialize();
+
     
     // Get all performance summaries
     const summaries = bannerId 
