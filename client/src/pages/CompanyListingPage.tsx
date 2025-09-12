@@ -35,9 +35,9 @@ const companyListingSchema = z.object({
 type CompanyListingData = z.infer<typeof companyListingSchema>;
 
 const LISTING_PRICES = {
-  basic: 50, // $50 USD equivalent in Naira (approximately ₦75,000)
-  premium: 100, // $100 USD equivalent in Naira (approximately ₦150,000)
-  featured: 200, // $200 USD equivalent in Naira (approximately ₦300,000)
+  basic: import.meta.env.MODE === 'development' ? 0.1 : 20, // $0.1 for dev testing, $20 for production
+  premium: import.meta.env.MODE === 'development' ? 0.2 : 30, // $0.2 for dev testing, $30 for production
+  featured: import.meta.env.MODE === 'development' ? 0.3 : 50, // $0.3 for dev testing, $50 for production
 };
 
 export default function CompanyListingPage() {
