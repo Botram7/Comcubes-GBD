@@ -176,6 +176,282 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // URL reachability checker - SECURE VERSION
+  app.get("/api/url-check", async (req, res) => {
+    try {
+      const url = req.query.u as string;
+      
+      if (!url) {
+        return res.json({ ok: false, reason: 'No URL provided' });
+      }
+
+      // Basic URL validation
+      let targetUrl: URL;
+      try {
+        targetUrl = new URL(url);
+      } catch (error) {
+        return res.json({ ok: false, reason: 'Invalid URL format' });
+      }
+
+      // Security: Only allow http/https protocols
+      if (!['http:', 'https:'].includes(targetUrl.protocol)) {
+        return res.json({ ok: false, reason: 'Only http and https URLs are allowed' });
+      }
+
+      // Helper function to check if IP is private/local/reserved
+      const isPrivateOrReservedIP = (ip: string): boolean => {
+        // IPv4 checks
+        if (ip.includes('.')) {
+          // Localhost
+          if (ip === '127.0.0.1' || ip.startsWith('127.')) return true;
+          
+          // Private ranges (RFC1918)
+          if (ip.startsWith('10.')) return true;
+          if (ip.match(/^172\.(1[6-9]|2[0-9]|3[0-1])\./)) return true;
+          if (ip.startsWith('192.168.')) return true;
+          
+          // Link-local (RFC3927)
+          if (ip.startsWith('169.254.')) return true;
+          
+          // Multicast (Class D)
+          if (ip.match(/^22[4-9]\.|^23[0-9]\./)) return true;
+          
+          // Reserved ranges
+          if (ip.startsWith('0.')) return true; // This network
+          if (ip === '255.255.255.255') return true; // Broadcast
+          if (ip.match(/^24[0-9]\./)) return true; // Class E reserved
+          
+          return false;
+        }
+        
+        // IPv6 checks  
+        if (ip.includes(':')) {
+          const ipLower = ip.toLowerCase();
+          
+          // Localhost
+          if (ipLower === '::1') return true;
+          
+          // Link-local
+          if (ipLower.startsWith('fe80:')) return true;
+          if (ipLower.startsWith('fe90:')) return true;
+          if (ipLower.startsWith('fea0:')) return true;
+          if (ipLower.startsWith('feb0:')) return true;
+          
+          // Unique local (RFC4193)
+          if (ipLower.startsWith('fc00:')) return true;
+          if (ipLower.startsWith('fd00:')) return true;
+          
+          // Multicast
+          if (ipLower.startsWith('ff00:')) return true;
+          
+          // IPv4-mapped IPv6
+          if (ipLower.startsWith('::ffff:')) {
+            const ipv4Part = ip.split('::ffff:')[1];
+            if (ipv4Part) return isPrivateOrReservedIP(ipv4Part);
+          }
+          
+          return false;
+        }
+        
+        return true; // Unknown format, be safe
+      };
+
+      // Helper function to resolve hostname and validate all IPs
+      const validateHostname = async (hostname: string): Promise<{ valid: boolean; reason?: string }> => {
+        // Direct IP address check
+        if (isPrivateOrReservedIP(hostname)) {
+          return { valid: false, reason: 'Private/local addresses are not allowed' };
+        }
+        
+        // Blocked hostnames
+        const blockedHosts = ['localhost', 'broadcasthost'];
+        if (blockedHosts.includes(hostname.toLowerCase())) {
+          return { valid: false, reason: 'Blocked hostname' };
+        }
+        
+        // DNS resolution with timeout
+        const dns = await import('dns');
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 second DNS timeout
+        
+        try {
+          // Resolve both IPv4 and IPv6
+          const resolvePromises = [];
+          
+          // IPv4 resolution
+          resolvePromises.push(
+            dns.promises.resolve4(hostname).catch(() => [])
+          );
+          
+          // IPv6 resolution  
+          resolvePromises.push(
+            dns.promises.resolve6(hostname).catch(() => [])
+          );
+          
+          const [ipv4Addresses, ipv6Addresses] = await Promise.all(resolvePromises);
+          const allIPs = [...ipv4Addresses, ...ipv6Addresses];
+          
+          clearTimeout(timeoutId);
+          
+          if (allIPs.length === 0) {
+            return { valid: false, reason: 'Cannot resolve hostname' };
+          }
+          
+          // Check all resolved IPs
+          for (const ip of allIPs) {
+            if (isPrivateOrReservedIP(ip)) {
+              return { valid: false, reason: `Resolved to private/local address: ${ip}` };
+            }
+          }
+          
+          return { valid: true };
+          
+        } catch (error) {
+          clearTimeout(timeoutId);
+          if (error && typeof error === 'object' && 'name' in error && error.name === 'AbortError') {
+            return { valid: false, reason: 'DNS resolution timed out' };
+          }
+          return { valid: false, reason: 'DNS resolution failed' };
+        }
+      };
+
+      // Helper function to safely fetch with redirect validation
+      const safeFetch = async (url: string, maxRedirects = 3): Promise<{
+        ok: boolean;
+        status?: number;
+        finalUrl?: string;
+        reason?: string;
+      }> => {
+        let currentUrl = url;
+        let redirectCount = 0;
+        const maxDownloadSize = 1024 * 1024; // 1MB limit
+        
+        while (redirectCount <= maxRedirects) {
+          const parsedUrl = new URL(currentUrl);
+          
+          // Validate current URL's hostname
+          const validation = await validateHostname(parsedUrl.hostname);
+          if (!validation.valid) {
+            return { ok: false, reason: validation.reason };
+          }
+          
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 5000);
+          
+          try {
+            // First try HEAD request
+            let response;
+            try {
+              response = await fetch(currentUrl, {
+                method: 'HEAD',
+                signal: controller.signal,
+                redirect: 'manual', // Handle redirects manually
+                headers: {
+                  'User-Agent': 'COMCUBES-URL-Checker/1.0'
+                }
+              });
+            } catch (headError) {
+              // If HEAD fails, try GET with size limit
+              response = await fetch(currentUrl, {
+                method: 'GET',
+                signal: controller.signal,
+                redirect: 'manual',
+                headers: {
+                  'User-Agent': 'COMCUBES-URL-Checker/1.0'
+                }
+              });
+              
+              // Check response size for GET requests
+              const contentLength = response.headers.get('content-length');
+              if (contentLength && parseInt(contentLength) > maxDownloadSize) {
+                clearTimeout(timeoutId);
+                return { ok: false, reason: 'Response too large' };
+              }
+              
+              // If no content-length header, consume response with size limit
+              if (!contentLength && response.body) {
+                const reader = response.body.getReader();
+                let totalSize = 0;
+                try {
+                  while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    totalSize += value.length;
+                    if (totalSize > maxDownloadSize) {
+                      reader.releaseLock();
+                      clearTimeout(timeoutId);
+                      return { ok: false, reason: 'Response too large' };
+                    }
+                  }
+                } finally {
+                  reader.releaseLock();
+                }
+              }
+            }
+            
+            clearTimeout(timeoutId);
+            
+            // Handle redirects
+            if (response.status >= 300 && response.status < 400) {
+              const location = response.headers.get('location');
+              if (!location) {
+                return { ok: false, reason: 'Redirect without location header' };
+              }
+              
+              if (redirectCount >= maxRedirects) {
+                return { ok: false, reason: 'Too many redirects' };
+              }
+              
+              // Resolve relative redirects
+              try {
+                currentUrl = new URL(location, currentUrl).toString();
+              } catch (error) {
+                return { ok: false, reason: 'Invalid redirect URL' };
+              }
+              
+              redirectCount++;
+              continue;
+            }
+            
+            // Success response
+            if (response.ok || (response.status >= 200 && response.status < 400)) {
+              return {
+                ok: true,
+                status: response.status,
+                finalUrl: currentUrl
+              };
+            } else {
+              return {
+                ok: false,
+                status: response.status,
+                reason: `Server returned status ${response.status}`
+              };
+            }
+            
+          } catch (fetchError: any) {
+            clearTimeout(timeoutId);
+            
+            if (fetchError.name === 'AbortError') {
+              return { ok: false, reason: 'Request timed out' };
+            }
+            
+            return { ok: false, reason: 'Unable to reach website' };
+          }
+        }
+        
+        return { ok: false, reason: 'Redirect loop detected' };
+      };
+
+      // Perform the safe fetch
+      const result = await safeFetch(targetUrl.toString());
+      res.json(result);
+
+    } catch (error) {
+      console.error("URL check error:", error);
+      res.status(500).json({ ok: false, reason: 'Server error during URL check' });
+    }
+  });
+
   // Global business search using Google Custom Search API
   app.get("/api/search/global", async (req, res) => {
     try {
