@@ -715,7 +715,7 @@ Please contact this potential advertiser within 24 hours.
 
       // Generate payment reference
       const reference = paystackService.generateReference();
-      const amountInCents = paystackService.convertToCents(amount);
+      const amountInCents = amount; // Frontend now sends cents directly
       
       // Get listing details for email
       const listings = await storage.getCompanyListings();

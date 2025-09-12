@@ -215,14 +215,14 @@ export default function ListCompanyPage() {
       contactPerson: data.contactPerson,
       phone: data.phone,
       listingPlan: selectedPlan!,
-      paymentAmount: selectedPlan === 'basic' ? '0.1' : '0.2',
+      paymentAmount: selectedPlan === 'basic' ? '10' : '20',
     };
     listingMutation.mutate(submissionData);
   };
 
   const handlePayment = () => {
     if (listingId && selectedPlan) {
-      const amount = selectedPlan === 'basic' ? 0.1 : 0.2;
+      const amount = selectedPlan === 'basic' ? 10 : 20;
       paymentMutation.mutate({
         listingId,
         amount,
@@ -895,7 +895,7 @@ export default function ListCompanyPage() {
                           <div>
                             <h4 className="font-semibold text-gray-900">Selected Plan:</h4>
                             <p className="text-sm text-gray-600 capitalize">
-                              {selectedPlan} - ${selectedPlan === 'basic' ? '20' : '30'}/month (${selectedPlan === 'basic' ? '60' : '90'} quarterly)
+                              {selectedPlan} - ${selectedPlan === 'basic' ? '0.10' : '0.20'}/month (${selectedPlan === 'basic' ? '0.30' : '0.60'} quarterly)
                             </p>
                           </div>
                           <Badge variant={selectedPlan === 'premium' ? 'default' : 'secondary'}>
