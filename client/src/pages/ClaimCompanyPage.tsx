@@ -302,7 +302,7 @@ export default function ClaimCompanyPage() {
 
     // Check minimum lengths
     const isContactNameValid = formData.contactName?.trim().length >= 2;
-    const isDescriptionValid = formData.companyDescription?.trim().length >= 10;
+    const isDescriptionValid = (formData.companyDescription?.length || 0) >= 50;
 
     // If website URL is provided, validate business email against domain
     let isBusinessEmailValid = true;
@@ -331,7 +331,7 @@ export default function ClaimCompanyPage() {
     }
     
     if (!formData.companyDescription?.trim()) return 'Company Description is required';
-    if (formData.companyDescription?.trim().length < 10) return 'Company Description must be at least 10 characters';
+    if ((formData.companyDescription?.length || 0) < 50) return 'Company Description must be at least 50 characters';
     
     return '';
   };
@@ -346,10 +346,11 @@ export default function ClaimCompanyPage() {
     console.log("contactEmail:", formData.contactEmail);
     console.log("plan:", formData.plan);
 
-    if (!formData.contactName || !formData.contactEmail || !formData.companyDescription) {
+    // Enforce form validation before submission
+    if (!isFormValid()) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
+        title: "Validation Error",
+        description: getValidationMessage(),
         variant: "destructive",
       });
       return;
@@ -702,9 +703,37 @@ export default function ClaimCompanyPage() {
                       id="companyDescription"
                       value={formData.companyDescription}
                       onChange={(e) => setFormData(prev => ({ ...prev, companyDescription: e.target.value }))}
-                      placeholder="Describe your company, products, and services..."
+                      placeholder="Tell us about your company, services, and what makes you unique..."
+                      className="min-h-[120px] resize-y"
                       rows={6}
                     />
+                    {(() => {
+                      const currentLength = formData.companyDescription?.length || 0;
+                      const minLength = 50;
+                      const remaining = Math.max(0, minLength - currentLength);
+                      const isMinimumMet = currentLength >= minLength;
+                      
+                      return (
+                        <div className="flex justify-between items-center text-xs mt-1">
+                          <span className={isMinimumMet ? 'text-green-600' : 'text-gray-500'}>
+                            {currentLength} characters
+                            {!isMinimumMet && remaining > 0 && (
+                              <span className="text-orange-600 ml-1">
+                                ({remaining} more needed)
+                              </span>
+                            )}
+                            {isMinimumMet && (
+                              <span className="text-green-600 ml-1">
+                                ✓ Minimum reached
+                              </span>
+                            )}
+                          </span>
+                          <span className="text-gray-400">
+                            Minimum: {minLength} characters
+                          </span>
+                        </div>
+                      );
+                    })()}
                   </div>
 
                   <div>
