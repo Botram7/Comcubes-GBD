@@ -709,19 +709,44 @@ export default function ListCompanyPage() {
                       <FormField
                         control={form.control}
                         name="companyDescription"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Company Description *</FormLabel>
-                            <FormControl>
-                              <Textarea
-                                placeholder="Tell us about your company, services, and what makes you unique..."
-                                className="min-h-[120px] resize-y"
-                                {...field}
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
+                        render={({ field }) => {
+                          const currentLength = field.value?.length || 0;
+                          const minLength = 50;
+                          const remaining = Math.max(0, minLength - currentLength);
+                          const isMinimumMet = currentLength >= minLength;
+                          
+                          return (
+                            <FormItem>
+                              <FormLabel>Company Description *</FormLabel>
+                              <FormControl>
+                                <Textarea
+                                  placeholder="Tell us about your company, services, and what makes you unique..."
+                                  className="min-h-[120px] resize-y"
+                                  {...field}
+                                />
+                              </FormControl>
+                              <div className="flex justify-between items-center text-xs mt-1">
+                                <span className={`${isMinimumMet ? 'text-green-600' : 'text-gray-500'}`}>
+                                  {currentLength} characters
+                                  {!isMinimumMet && remaining > 0 && (
+                                    <span className="text-orange-600 ml-1">
+                                      ({remaining} more needed)
+                                    </span>
+                                  )}
+                                  {isMinimumMet && (
+                                    <span className="text-green-600 ml-1">
+                                      ✓ Minimum reached
+                                    </span>
+                                  )}
+                                </span>
+                                <span className="text-gray-400">
+                                  Minimum: {minLength} characters
+                                </span>
+                              </div>
+                              <FormMessage />
+                            </FormItem>
+                          );
+                        }}
                       />
 
                       <div className="bg-gray-50 border rounded-lg p-4">
