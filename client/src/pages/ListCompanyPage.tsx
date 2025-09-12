@@ -215,14 +215,14 @@ export default function ListCompanyPage() {
       contactPerson: data.contactPerson,
       phone: data.phone,
       listingPlan: selectedPlan!,
-      paymentAmount: selectedPlan === 'basic' ? '20' : '30',
+      paymentAmount: selectedPlan === 'basic' ? '0.1' : '0.2',
     };
     listingMutation.mutate(submissionData);
   };
 
   const handlePayment = () => {
     if (listingId && selectedPlan) {
-      const amount = selectedPlan === 'basic' ? 20 : 30;
+      const amount = selectedPlan === 'basic' ? 0.1 : 0.2;
       paymentMutation.mutate({
         listingId,
         amount,
@@ -289,7 +289,7 @@ export default function ListCompanyPage() {
                   {selectedPlan === 'basic' ? 'Basic' : 'Premium'} Plan
                 </span>
                 <span className="text-2xl font-bold text-blue-600">
-                  ${selectedPlan === 'basic' ? '20' : '30'}/month
+                  ${selectedPlan === 'basic' ? '0.10' : '0.20'}/month
                 </span>
               </div>
             </div>
@@ -486,8 +486,8 @@ export default function ListCompanyPage() {
             }}>
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-2xl mb-2">Basic</CardTitle>
-                <div className="text-3xl font-bold text-gray-900">$20<span className="text-lg text-gray-600">/month</span></div>
-                <div className="text-sm text-gray-600">Billed quarterly ($60)</div>
+                <div className="text-3xl font-bold text-gray-900">$0.10<span className="text-lg text-gray-600">/month</span></div>
+                <div className="text-sm text-gray-600">Billed quarterly ($0.30)</div>
               </CardHeader>
               <CardContent className="pt-4">
                 <ul className="space-y-3">
@@ -536,8 +536,8 @@ export default function ListCompanyPage() {
               </div>
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-2xl mb-2">Premium</CardTitle>
-                <div className="text-3xl font-bold text-gray-900">$30<span className="text-lg text-gray-600">/month</span></div>
-                <div className="text-sm text-gray-600">Billed quarterly ($90)</div>
+                <div className="text-3xl font-bold text-gray-900">$0.20<span className="text-lg text-gray-600">/month</span></div>
+                <div className="text-sm text-gray-600">Billed quarterly ($0.60)</div>
               </CardHeader>
               <CardContent className="pt-4">
                 <ul className="space-y-3">
