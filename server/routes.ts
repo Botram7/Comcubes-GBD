@@ -715,7 +715,7 @@ Please contact this potential advertiser within 24 hours.
 
       // Generate payment reference
       const reference = paystackService.generateReference();
-      const amountInKobo = paystackService.convertToKobo(amount);
+      const amountInCents = paystackService.convertToCents(amount);
       
       // Get listing details for email
       const listings = await storage.getCompanyListings();
@@ -727,7 +727,8 @@ Please contact this potential advertiser within 24 hours.
 
       const paymentData = await paystackService.initializePayment({
         email: listing.contactEmail,
-        amount: amountInKobo,
+        amount: amountInCents,
+        currency: 'USD', // Specify USD currency for international business
         reference,
         metadata: {
           listingId,
@@ -1253,7 +1254,7 @@ Please contact this potential advertiser within 24 hours.
       if (verification.status === 'success') {
         // Update listing with payment information
         const { listingId } = verification.metadata;
-        const amount = paystackService.convertToNaira(verification.amount);
+        const amount = paystackService.convertToUSD(verification.amount);
         
         await storage.updateCompanyListingPayment(listingId, reference, amount);
         
