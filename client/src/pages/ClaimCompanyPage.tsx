@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useLocation } from "wouter";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -21,8 +21,10 @@ import {
   Globe,
   FileText,
   CreditCard,
-  ArrowLeft
+  ArrowLeft,
+  AlertCircle
 } from "lucide-react";
+import { normalizeUrl } from '@/lib/urlUtils';
 import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
 import { SEOHead } from "@/components/SEOHead";
 import type { Sector, Industry, Company, SearchResults } from "@/lib/types";
@@ -85,6 +87,10 @@ export default function ClaimCompanyPage() {
     plan: 'basic'
   });
 
+  // URL validation state
+  const [urlToCheck, setUrlToCheck] = useState<string>('');
+  const [urlCheckDebounceTimer, setUrlCheckDebounceTimer] = useState<NodeJS.Timeout | null>(null);
+
   // Check for URL parameters and auto-populate form data
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -134,6 +140,48 @@ export default function ClaimCompanyPage() {
     enabled: !!formData.companyId && !!selectedCompany,
     staleTime: Infinity,
   });
+
+  // URL checking functionality
+  const { data: urlCheckResult, isLoading: isCheckingUrl } = useQuery({
+    queryKey: ['/api/url-check', urlToCheck],
+    queryFn: async ({ queryKey }) => {
+      const [, url] = queryKey;
+      if (!url) return null;
+      const response = await fetch(`/api/url-check?u=${encodeURIComponent(url as string)}`);
+      return response.json();
+    },
+    enabled: !!urlToCheck,
+    staleTime: 300000, // 5 minutes
+    retry: false
+  });
+
+  // Debounced URL handler
+  const handleUrlChange = useCallback((value: string) => {
+    // Clear existing timer
+    if (urlCheckDebounceTimer) {
+      clearTimeout(urlCheckDebounceTimer);
+    }
+    
+    // Don't check empty values
+    if (!value.trim()) {
+      setUrlToCheck('');
+      return;
+    }
+
+    // Normalize the URL first to check what we'll actually be validating
+    const normalizedResult = normalizeUrl(value);
+    if (!normalizedResult.isValid) {
+      setUrlToCheck('');
+      return;
+    }
+
+    // Set a new timer
+    const timer = setTimeout(() => {
+      setUrlToCheck(normalizedResult.normalizedUrl);
+    }, 600); // 600ms debounce to match ListCompanyPage
+    
+    setUrlCheckDebounceTimer(timer);
+  }, [urlCheckDebounceTimer]);
 
   const handleSearchResults = (results: SearchResults | null) => {
     setSearchResults(results);
@@ -305,6 +353,14 @@ export default function ClaimCompanyPage() {
         variant: "destructive",
       });
       return;
+    }
+
+    // Normalize website URL before submission
+    if (formData.websiteUrl?.trim()) {
+      const normalizedResult = normalizeUrl(formData.websiteUrl);
+      if (normalizedResult.isValid) {
+        formData.websiteUrl = normalizedResult.normalizedUrl;
+      }
     }
 
     // Validate business email domain only if website URL is provided
@@ -549,9 +605,93 @@ export default function ClaimCompanyPage() {
                     <Input
                       id="websiteUrl"
                       value={formData.websiteUrl}
-                      onChange={(e) => setFormData(prev => ({ ...prev, websiteUrl: e.target.value }))}
-                      placeholder="https://www.yourcompany.com"
+                      onChange={(e) => {
+                        setFormData(prev => ({ ...prev, websiteUrl: e.target.value }));
+                        handleUrlChange(e.target.value);
+                      }}
+                      onBlur={(e) => {
+                        // Normalize URL on blur to show final format
+                        const normalizedResult = normalizeUrl(e.target.value);
+                        if (e.target.value && normalizedResult.isValid) {
+                          setFormData(prev => ({ ...prev, websiteUrl: normalizedResult.normalizedUrl }));
+                        }
+                      }}
+                      placeholder="yourcompany.com or https://yourcompany.com"
+                      data-testid="input-website"
                     />
+                    
+                    {/* URL Status Indicator */}
+                    {formData.websiteUrl.trim() && (
+                      <div 
+                        className="flex items-center text-xs mt-1" 
+                        aria-live="polite"
+                        data-testid="status-website-check"
+                      >
+                        {(() => {
+                          const currentValue = formData.websiteUrl || '';
+                          const normalizedResult = normalizeUrl(currentValue);
+                          
+                          // Get URL check status
+                          const getUrlStatus = () => {
+                            if (!currentValue.trim()) return null;
+                            if (!normalizedResult.isValid) return 'invalid';
+                            if (isCheckingUrl) return 'checking';
+                            if (urlCheckResult === null) return null;
+                            return urlCheckResult?.ok ? 'valid' : 'unreachable';
+                          };
+
+                          const urlStatus = getUrlStatus();
+
+                          return (
+                            <>
+                              {urlStatus === 'checking' && (
+                                <span className="text-blue-600 flex items-center">
+                                  <div className="animate-spin rounded-full h-3 w-3 border-b border-blue-600 mr-1"></div>
+                                  Checking website...
+                                </span>
+                              )}
+                              
+                              {urlStatus === 'valid' && (
+                                <span className="text-green-600 flex items-center">
+                                  <CheckCircle className="h-3 w-3 mr-1" />
+                                  Website looks good!
+                                  {urlCheckResult?.finalUrl && urlCheckResult.finalUrl !== currentValue && (
+                                    <span className="ml-1 text-gray-500">
+                                      → {urlCheckResult.finalUrl}
+                                    </span>
+                                  )}
+                                </span>
+                              )}
+                              
+                              {urlStatus === 'unreachable' && (
+                                <span className="text-amber-600 flex items-center">
+                                  <AlertCircle className="h-3 w-3 mr-1" />
+                                  We couldn't confirm this website is reachable. You can still submit your listing.
+                                  {urlCheckResult?.reason && (
+                                    <span className="ml-1 text-gray-500 text-xs">
+                                      ({urlCheckResult.reason})
+                                    </span>
+                                  )}
+                                </span>
+                              )}
+                              
+                              {urlStatus === 'invalid' && normalizedResult.error && (
+                                <span className="text-red-500 flex items-center">
+                                  <AlertCircle className="h-3 w-3 mr-1" />
+                                  {normalizedResult.error}
+                                </span>
+                              )}
+                              
+                              {normalizedResult.isValid && normalizedResult.normalizedUrl !== currentValue && urlStatus !== 'checking' && (
+                                <span className="text-gray-500 ml-auto">
+                                  Will be saved as: {normalizedResult.normalizedUrl}
+                                </span>
+                              )}
+                            </>
+                          );
+                        })()}
+                      </div>
+                    )}
                   </div>
                 </div>
 
