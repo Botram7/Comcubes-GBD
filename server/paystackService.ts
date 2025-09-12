@@ -13,8 +13,9 @@ export class PaystackService {
 
   async initializePayment(data: {
     email: string;
-    amount: number; // in kobo (Nigerian currency subunit)
+    amount: number; // in cents for USD, kobo for NGN
     reference: string;
+    currency?: string; // 'USD' or 'NGN' (defaults to USD for international business)
     metadata?: any;
   }): Promise<{ authorization_url: string; access_code: string; reference: string }> {
     if (!this.secretKey) {
@@ -37,6 +38,7 @@ export class PaystackService {
         body: JSON.stringify({
           email: data.email,
           amount: data.amount,
+          currency: data.currency || 'USD', // Default to USD for international business
           reference: data.reference,
           metadata: data.metadata,
         }),
@@ -95,7 +97,17 @@ export class PaystackService {
     return `COMCUBES_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   }
 
-  // Convert Naira to Kobo (Paystack expects amounts in kobo)
+  // Convert USD to Cents (Paystack expects USD amounts in cents)
+  convertToCents(usd: number): number {
+    return Math.round(usd * 100);
+  }
+
+  // Convert Cents to USD
+  convertToUSD(cents: number): number {
+    return cents / 100;
+  }
+
+  // Convert Naira to Kobo (Paystack expects NGN amounts in kobo)
   convertToKobo(naira: number): number {
     return Math.round(naira * 100);
   }
