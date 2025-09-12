@@ -4,6 +4,7 @@ import rateLimit from "express-rate-limit";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { adminSessionConfig, requireAdminAuth, validateAdminCredentials } from "./adminAuth";
+import { initDatabaseOnce } from "./init";
 
 const app = express();
 
@@ -263,6 +264,9 @@ app.use((req, res, next) => {
   });
 
   // Admin dashboard is now handled by React at /admin route
+
+  // Initialize database once at server startup
+  await initDatabaseOnce();
 
   const server = await registerRoutes(app);
 
