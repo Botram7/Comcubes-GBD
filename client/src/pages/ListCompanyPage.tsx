@@ -289,7 +289,7 @@ export default function ListCompanyPage() {
                   {selectedPlan === 'basic' ? 'Basic' : 'Premium'} Plan
                 </span>
                 <span className="text-2xl font-bold text-blue-600">
-                  ${selectedPlan === 'basic' ? '0.10' : '0.20'}/month
+                  ${selectedPlan === 'basic' ? '1.00' : '2.00'}/month
                 </span>
               </div>
             </div>
@@ -895,7 +895,7 @@ export default function ListCompanyPage() {
                           <div>
                             <h4 className="font-semibold text-gray-900">Selected Plan:</h4>
                             <p className="text-sm text-gray-600 capitalize">
-                              {selectedPlan} - ${selectedPlan === 'basic' ? '0.10' : '0.20'}/month (${selectedPlan === 'basic' ? '0.30' : '0.60'} quarterly)
+                              {selectedPlan} - ${selectedPlan === 'basic' ? '1.00' : '2.00'}/month (${selectedPlan === 'basic' ? '3.00' : '6.00'} quarterly)
                             </p>
                           </div>
                           <Badge variant={selectedPlan === 'premium' ? 'default' : 'secondary'}>
