@@ -239,6 +239,55 @@ export default function ClaimCompanyPage() {
     return emailDomain === expectedDomain || emailDomain.endsWith(`.${expectedDomain}`);
   };
 
+  // Validation function to check if all required fields are filled
+  const isFormValid = (): boolean => {
+    // Check required fields
+    const requiredFieldsFilled = !!(
+      formData.contactName?.trim() &&
+      formData.contactEmail?.trim() &&
+      formData.companyDescription?.trim()
+    );
+
+    // Basic email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isEmailFormatValid = emailRegex.test(formData.contactEmail);
+
+    // Check minimum lengths
+    const isContactNameValid = formData.contactName?.trim().length >= 2;
+    const isDescriptionValid = formData.companyDescription?.trim().length >= 10;
+
+    // If website URL is provided, validate business email against domain
+    let isBusinessEmailValid = true;
+    if (formData.websiteUrl?.trim()) {
+      isBusinessEmailValid = isValidBusinessEmail(formData.contactEmail, formData.websiteUrl);
+    }
+
+    return requiredFieldsFilled && 
+           isEmailFormatValid && 
+           isContactNameValid && 
+           isDescriptionValid && 
+           isBusinessEmailValid;
+  };
+
+  // Get validation error message for display
+  const getValidationMessage = (): string => {
+    if (!formData.contactName?.trim()) return 'Full Name is required';
+    if (formData.contactName?.trim().length < 2) return 'Full Name must be at least 2 characters';
+    
+    if (!formData.contactEmail?.trim()) return 'Business Email is required';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.contactEmail)) return 'Please enter a valid email address';
+    
+    if (formData.websiteUrl?.trim() && !isValidBusinessEmail(formData.contactEmail, formData.websiteUrl)) {
+      return 'Business email must match your company domain for security';
+    }
+    
+    if (!formData.companyDescription?.trim()) return 'Company Description is required';
+    if (formData.companyDescription?.trim().length < 10) return 'Company Description must be at least 10 characters';
+    
+    return '';
+  };
+
   const handleSubmit = () => {
     // Debug log to see what data we're trying to submit
     console.log("Form data being submitted:", formData);
@@ -258,8 +307,8 @@ export default function ClaimCompanyPage() {
       return;
     }
 
-    // Validate business email domain
-    if (!isValidBusinessEmail(formData.contactEmail, formData.websiteUrl)) {
+    // Validate business email domain only if website URL is provided
+    if (formData.websiteUrl?.trim() && !isValidBusinessEmail(formData.contactEmail, formData.websiteUrl)) {
       const expectedDomain = getExpectedDomain(formData.websiteUrl);
       toast({
         title: "Invalid Business Email",
@@ -469,16 +518,19 @@ export default function ClaimCompanyPage() {
                       onChange={(e) => setFormData(prev => ({ ...prev, contactEmail: e.target.value }))}
                       placeholder="your.name@company.com"
                       required
-                      className={!isValidBusinessEmail(formData.contactEmail, formData.websiteUrl) && formData.contactEmail ? 'border-red-500' : ''}
+                      className={formData.websiteUrl?.trim() && formData.contactEmail && !isValidBusinessEmail(formData.contactEmail, formData.websiteUrl) ? 'border-red-500' : ''}
                     />
-                    {formData.contactEmail && !isValidBusinessEmail(formData.contactEmail, formData.websiteUrl) && (
+                    {formData.websiteUrl?.trim() && formData.contactEmail && !isValidBusinessEmail(formData.contactEmail, formData.websiteUrl) && (
                       <p className="text-red-500 text-xs mt-1">
                         For security, business email must match your company domain. 
                         {getExpectedDomain(formData.websiteUrl) && ` Expected: @${getExpectedDomain(formData.websiteUrl)}`}
                       </p>
                     )}
                     <p className="text-xs text-gray-500 mt-1">
-                      Security requirement: Your email domain must match your company website domain
+                      {formData.websiteUrl?.trim() 
+                        ? 'Security requirement: Your email domain must match your company website domain' 
+                        : 'Add your company website to verify domain matching'
+                      }
                     </p>
                   </div>
 
@@ -535,11 +587,28 @@ export default function ClaimCompanyPage() {
                 </div>
               </div>
 
+              {/* Validation Error Message */}
+              {!isFormValid() && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                  <p className="text-red-800 text-sm font-medium">
+                    Please complete the following to continue:
+                  </p>
+                  <p className="text-red-700 text-sm mt-1">
+                    {getValidationMessage()}
+                  </p>
+                </div>
+              )}
+
               <div className="flex gap-4 pt-4">
                 <Button onClick={() => setStep('select')} variant="outline">
                   Back to Selection
                 </Button>
-                <Button onClick={() => setStep('payment')} className="flex items-center gap-2">
+                <Button 
+                  onClick={() => setStep('payment')} 
+                  className="flex items-center gap-2"
+                  disabled={!isFormValid()}
+                  data-testid="button-continue-pricing"
+                >
                   Continue to Pricing
                   <ArrowRight className="h-4 w-4" />
                 </Button>
