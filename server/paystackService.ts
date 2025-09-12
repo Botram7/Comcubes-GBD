@@ -65,9 +65,9 @@ export class PaystackService {
         console.error('Error Body:', errorText);
         console.error('===============================');
         
-        // If 403 error and we tried USD, fallback to NGN
-        if (response.status === 403 && preferredCurrency === 'USD') {
-          console.warn('USD not supported by this Paystack account, falling back to NGN...');
+        // If 403 error OR "No active channel" error and we tried USD, fallback to NGN
+        if ((response.status === 403 || (response.status === 400 && errorText.includes('No active channel'))) && preferredCurrency === 'USD') {
+          console.warn('USD channels not available on this Paystack account, falling back to NGN...');
           return await this.initializePaymentNGN(data);
         }
         throw new Error(`Paystack API error: ${response.status} - ${errorText}`);
