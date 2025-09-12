@@ -215,14 +215,14 @@ export default function ListCompanyPage() {
       contactPerson: data.contactPerson,
       phone: data.phone,
       listingPlan: selectedPlan!,
-      paymentAmount: selectedPlan === 'basic' ? '10' : '20',
+      paymentAmount: selectedPlan === 'basic' ? '100' : '200',
     };
     listingMutation.mutate(submissionData);
   };
 
   const handlePayment = () => {
     if (listingId && selectedPlan) {
-      const amount = selectedPlan === 'basic' ? 10 : 20;
+      const amount = selectedPlan === 'basic' ? 100 : 200;
       paymentMutation.mutate({
         listingId,
         amount,
