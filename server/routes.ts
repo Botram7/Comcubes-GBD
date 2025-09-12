@@ -1253,8 +1253,18 @@ Please contact this potential advertiser within 24 hours.
       
       if (verification.status === 'success') {
         // Update listing with payment information
-        const { listingId } = verification.metadata;
-        const amount = paystackService.convertToUSD(verification.amount);
+        const { listingId, fallbackPayment, originalAmount } = verification.metadata;
+        
+        // Handle both USD and NGN fallback payments
+        let amount: number;
+        if (fallbackPayment && originalAmount) {
+          // This was a fallback payment, use the original USD amount
+          amount = paystackService.convertToUSD(originalAmount);
+          console.log(`Payment verified with NGN fallback, using original USD amount: $${amount}`);
+        } else {
+          // Regular USD payment
+          amount = paystackService.convertToUSD(verification.amount);
+        }
         
         await storage.updateCompanyListingPayment(listingId, reference, amount);
         

@@ -28,7 +28,10 @@ export class PaystackService {
       };
     }
     
+    const preferredCurrency = data.currency || 'USD';
+    
     try {
+      // First, try with the preferred currency (USD)
       const response = await fetch(`${this.baseUrl}/transaction/initialize`, {
         method: 'POST',
         headers: {
@@ -38,13 +41,18 @@ export class PaystackService {
         body: JSON.stringify({
           email: data.email,
           amount: data.amount,
-          currency: data.currency || 'USD', // Default to USD for international business
+          currency: preferredCurrency,
           reference: data.reference,
           metadata: data.metadata,
         }),
       });
 
       if (!response.ok) {
+        // If 403 error and we tried USD, fallback to NGN
+        if (response.status === 403 && preferredCurrency === 'USD') {
+          console.warn('USD not supported by this Paystack account, falling back to NGN...');
+          return await this.initializePaymentNGN(data);
+        }
         throw new Error(`Paystack API error: ${response.status}`);
       }
 
@@ -56,9 +64,61 @@ export class PaystackService {
 
       return result.data;
     } catch (error) {
+      // If we get a 403 error and we tried USD, fallback to NGN
+      if (error instanceof Error && error.message.includes('403') && preferredCurrency === 'USD') {
+        console.warn('USD payment failed, falling back to NGN equivalent...');
+        return await this.initializePaymentNGN(data);
+      }
       console.error('Paystack initialization error:', error);
       throw error;
     }
+  }
+
+  // Fallback method for NGN payments with USD to NGN conversion
+  private async initializePaymentNGN(originalData: {
+    email: string;
+    amount: number; // USD amount in cents
+    reference: string;
+    metadata?: any;
+  }): Promise<{ authorization_url: string; access_code: string; reference: string }> {
+    // Convert USD cents to NGN kobo (approximate: 1 USD = 800 NGN)
+    const usdAmount = originalData.amount / 100; // Convert cents to dollars
+    const ngnAmount = usdAmount * 800; // Convert USD to NGN (approximate rate)
+    const ngnKobo = this.convertToKobo(ngnAmount);
+
+    const response = await fetch(`${this.baseUrl}/transaction/initialize`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${this.secretKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: originalData.email,
+        amount: ngnKobo,
+        currency: 'NGN',
+        reference: originalData.reference,
+        metadata: {
+          ...originalData.metadata,
+          originalCurrency: 'USD',
+          originalAmount: originalData.amount,
+          conversionRate: 800,
+          fallbackPayment: true
+        },
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Paystack NGN fallback API error: ${response.status}`);
+    }
+
+    const result = await response.json();
+    
+    if (!result.status) {
+      throw new Error(result.message || 'Failed to initialize NGN fallback payment');
+    }
+
+    console.log(`Payment initialized with NGN fallback: $${usdAmount} USD ≈ ₦${ngnAmount} NGN`);
+    return result.data;
   }
 
   async verifyPayment(reference: string): Promise<{
@@ -67,6 +127,7 @@ export class PaystackService {
     reference: string;
     customer: { email: string };
     metadata: any;
+    currency?: string;
   }> {
     try {
       const response = await fetch(`${this.baseUrl}/transaction/verify/${reference}`, {
