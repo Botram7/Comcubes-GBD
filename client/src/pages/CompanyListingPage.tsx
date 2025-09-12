@@ -34,16 +34,12 @@ const companyListingSchema = z.object({
 
 type CompanyListingData = z.infer<typeof companyListingSchema>;
 
-// Test pricing override for live Paystack testing
-const isTestPricing = import.meta.env.DEV || import.meta.env.VITE_TEST_PRICING === 'true' || new URLSearchParams(window.location.search).has('testPrice');
-
+// TEMPORARY: Hardcoded test pricing for live Paystack testing
 const LISTING_PRICES = {
-  basic: isTestPricing ? 0.1 : 20, // $0.1 for testing, $20 for production
-  premium: isTestPricing ? 0.2 : 30, // $0.2 for testing, $30 for production  
-  featured: isTestPricing ? 0.3 : 50, // $0.3 for testing, $50 for production
+  basic: 0.1, // $0.1 for testing with live Paystack
+  premium: 0.2, // $0.2 for testing
+  featured: 0.3, // $0.3 for testing
 };
-
-console.log('Test pricing active:', isTestPricing, 'Prices:', LISTING_PRICES);
 
 export default function CompanyListingPage() {
   const [, setLocation] = useLocation();
