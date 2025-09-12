@@ -162,7 +162,7 @@ export default function CompanyListingPage() {
 
   // Filter industries based on selected sector
   const [selectedSector, setSelectedSector] = useState<string>('');
-  const allIndustries = industries?.industries || [];
+  const allIndustries = (industries as any)?.industries || [];
   const filteredIndustries = allIndustries.filter(
     (industry: any) => industry.sectorName === selectedSector
   );
@@ -303,7 +303,7 @@ export default function CompanyListingPage() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          {(sectors || []).map((sector: any) => (
+                          {((sectors as any[]) || []).map((sector: any) => (
                             <SelectItem key={sector.id} value={sector.name}>
                               {sector.name}
                             </SelectItem>
