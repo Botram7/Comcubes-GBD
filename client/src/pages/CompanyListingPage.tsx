@@ -34,11 +34,18 @@ const companyListingSchema = z.object({
 
 type CompanyListingData = z.infer<typeof companyListingSchema>;
 
+// Debug environment
+console.log('Vite Mode:', import.meta.env.MODE);
+console.log('Is Development:', import.meta.env.MODE === 'development');
+
 const LISTING_PRICES = {
   basic: import.meta.env.MODE === 'development' ? 0.1 : 20, // $0.1 for dev testing, $20 for production
   premium: import.meta.env.MODE === 'development' ? 0.2 : 30, // $0.2 for dev testing, $30 for production
   featured: import.meta.env.MODE === 'development' ? 0.3 : 50, // $0.3 for dev testing, $50 for production
 };
+
+// Debug pricing
+console.log('Current LISTING_PRICES:', LISTING_PRICES);
 
 export default function CompanyListingPage() {
   const [, setLocation] = useLocation();
