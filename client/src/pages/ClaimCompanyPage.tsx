@@ -65,7 +65,6 @@ const CLAIM_PRICING = {
       "Enhanced company description (up to 1000 words)", 
       "Priority placement within industry", 
       "Additional contact methods",
-      "Company size and founding year display",
       "Enhanced SEO visibility"
     ] 
   }
@@ -897,7 +896,7 @@ export default function ClaimCompanyPage() {
                       disabled={claimMutation.isPending}
                       className="flex items-center gap-2"
                     >
-                      {claimMutation.isPending ? 'Submitting...' : `Submit Claim ($${CLAIM_PRICING[formData.plan].monthlyPrice}/month)`}
+                      {claimMutation.isPending ? 'Submitting...' : `Submit Claim ($${CLAIM_PRICING[formData.plan].annualPrice}/year)`}
                     </Button>
                   </div>
                 </>
