@@ -728,6 +728,7 @@ export default function ComprehensiveAdminDashboard() {
                   <TableHead>Company</TableHead>
                   <TableHead>Contact</TableHead>
                   <TableHead>Plan</TableHead>
+                  <TableHead>Amount</TableHead>
                   <TableHead>Status</TableHead>
                   <TableHead>Submitted</TableHead>
                   <TableHead>Actions</TableHead>
@@ -763,6 +764,14 @@ export default function ComprehensiveAdminDashboard() {
                       <Badge variant={claim.plan === 'premium' ? 'default' : 'secondary'}>
                         {claim.plan.charAt(0).toUpperCase() + claim.plan.slice(1)}
                       </Badge>
+                    </TableCell>
+                    <TableCell>
+                      <div className="text-sm text-muted-foreground">
+                        ${claim.plan === 'premium' ? '600.00' : '360.00'}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        Annual
+                      </div>
                     </TableCell>
                     <TableCell>
                       <div className="flex flex-col gap-1">
