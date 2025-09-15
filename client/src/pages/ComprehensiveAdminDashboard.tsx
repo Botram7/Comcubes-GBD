@@ -496,7 +496,7 @@ export default function ComprehensiveAdminDashboard() {
                     <TableCell>
                       <div>
                         {getPaymentStatusBadge(listing.paymentStatus)}
-                        <div className="text-sm text-muted-foreground">${listing.paymentAmount}</div>
+                        <div className="text-sm text-muted-foreground">${(parseFloat(listing.paymentAmount) / 100).toFixed(2)}</div>
                         {listing.paymentReference && (
                           <div className="text-xs text-muted-foreground">
                             Ref: {listing.paymentReference}
