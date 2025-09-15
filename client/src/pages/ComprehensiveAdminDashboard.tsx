@@ -131,6 +131,19 @@ export default function ComprehensiveAdminDashboard() {
   const [statusFilter, setStatusFilter] = useState('all');
   const [industryFilter, setIndustryFilter] = useState('all');
 
+  // Safe currency formatter - converts cents to dollars for display
+  const formatPaymentAmount = (amount: string | number): string => {
+    const numAmount = typeof amount === 'string' ? parseFloat(amount) : amount;
+    if (!isFinite(numAmount) || isNaN(numAmount)) {
+      return 'N/A';
+    }
+    // Convert cents to dollars and format as currency
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    }).format(numAmount / 100);
+  };
+
   // Check authentication on mount
   useEffect(() => {
     const checkAuth = async () => {
@@ -496,7 +509,7 @@ export default function ComprehensiveAdminDashboard() {
                     <TableCell>
                       <div>
                         {getPaymentStatusBadge(listing.paymentStatus)}
-                        <div className="text-sm text-muted-foreground">${listing.paymentAmount}</div>
+                        <div className="text-sm text-muted-foreground">{formatPaymentAmount(listing.paymentAmount)}</div>
                         {listing.paymentReference && (
                           <div className="text-xs text-muted-foreground">
                             Ref: {listing.paymentReference}
