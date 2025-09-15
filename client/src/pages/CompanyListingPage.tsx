@@ -140,7 +140,7 @@ export default function CompanyListingPage() {
 
   const onSubmit = (data: CompanyListingData) => {
     // Set the payment amount based on selected plan and convert to string
-    data.paymentAmount = LISTING_PRICES[selectedPlan].toString();
+    data.paymentAmount = (LISTING_PRICES[selectedPlan] * 100).toString(); // Convert to cents
     listingMutation.mutate(data);
   };
 
@@ -148,7 +148,7 @@ export default function CompanyListingPage() {
     if (listingId) {
       paymentMutation.mutate({
         listingId,
-        amount: LISTING_PRICES[selectedPlan],
+        amount: LISTING_PRICES[selectedPlan] * 100, // Convert to cents for Paystack
       });
     }
   };
