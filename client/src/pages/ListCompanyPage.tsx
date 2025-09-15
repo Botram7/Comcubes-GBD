@@ -219,14 +219,14 @@ export default function ListCompanyPage() {
     const formDataWithPayment = {
       ...data,
       listingPlan: selectedPlan!,
-      paymentAmount: selectedPlan === 'basic' ? '2000' : '3000',
+      paymentAmount: selectedPlan === 'basic' ? '6000' : '9000', // Quarterly billing: Basic $60, Premium $90
     };
     listingMutation.mutate(formDataWithPayment);
   };
 
   const handlePayment = () => {
     if (listingId && selectedPlan) {
-      const amount = selectedPlan === 'basic' ? 2000 : 3000;
+      const amount = selectedPlan === 'basic' ? 6000 : 9000; // Quarterly billing: Basic $60, Premium $90
       paymentMutation.mutate({
         listingId,
         amount,
@@ -306,7 +306,7 @@ export default function ListCompanyPage() {
                   {selectedPlan === 'basic' ? 'Basic' : 'Premium'} Plan
                 </span>
                 <span className="text-2xl font-bold text-blue-600">
-                  ${selectedPlan === 'basic' ? '20.00' : '30.00'}/month
+                  ${selectedPlan === 'basic' ? '60.00' : '90.00'}/quarter
                 </span>
               </div>
             </div>
@@ -503,7 +503,7 @@ export default function ListCompanyPage() {
             }}>
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-2xl mb-2">Basic</CardTitle>
-                <div className="text-3xl font-bold text-gray-900">$20.00<span className="text-lg text-gray-600">/month</span></div>
+                <div className="text-3xl font-bold text-gray-900">$60.00<span className="text-lg text-gray-600">/quarter</span></div>
                 <div className="text-sm text-gray-600">Billed quarterly ($60.00)</div>
               </CardHeader>
               <CardContent className="pt-4">
@@ -553,7 +553,7 @@ export default function ListCompanyPage() {
               </div>
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-2xl mb-2">Premium</CardTitle>
-                <div className="text-3xl font-bold text-gray-900">$30.00<span className="text-lg text-gray-600">/month</span></div>
+                <div className="text-3xl font-bold text-gray-900">$90.00<span className="text-lg text-gray-600">/quarter</span></div>
                 <div className="text-sm text-gray-600">Billed quarterly ($90.00)</div>
               </CardHeader>
               <CardContent className="pt-4">
@@ -912,7 +912,7 @@ export default function ListCompanyPage() {
                           <div>
                             <h4 className="font-semibold text-gray-900">Selected Plan:</h4>
                             <p className="text-sm text-gray-600 capitalize">
-                              {selectedPlan} - ${selectedPlan === 'basic' ? '20.00' : '30.00'}/month (${selectedPlan === 'basic' ? '60.00' : '90.00'} quarterly)
+                              {selectedPlan} - ${selectedPlan === 'basic' ? '60.00' : '90.00'}/quarter
                             </p>
                           </div>
                           <Badge variant={selectedPlan === 'premium' ? 'default' : 'secondary'}>
