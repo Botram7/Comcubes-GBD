@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useLocation } from "wouter";
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -43,8 +43,9 @@ interface ClaimFormData {
 
 const CLAIM_PRICING = {
   basic: { 
-    price: 30, 
-    monthlyPrice: 30,
+    price: 20, 
+    monthlyPrice: 20,
+    annualPrice: 240, // $20 × 12 for annual billing
     name: "Basic Claim", 
     features: [
       "Company logo upload", 
@@ -55,8 +56,9 @@ const CLAIM_PRICING = {
     ] 
   },
   premium: { 
-    price: 50, 
-    monthlyPrice: 50,
+    price: 30, 
+    monthlyPrice: 30,
+    annualPrice: 360, // $30 × 12 for annual billing
     name: "Premium Claim", 
     features: [
       "Everything in Basic", 
@@ -72,10 +74,12 @@ const CLAIM_PRICING = {
 export default function ClaimCompanyPage() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const queryClient = useQueryClient();
   
   const [step, setStep] = useState<'search' | 'select' | 'form' | 'payment'>('search');
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
+  const [claimId, setClaimId] = useState<number | null>(null);
   const [formData, setFormData] = useState<ClaimFormData>({
     companyId: '',
     companyName: '',
@@ -235,16 +239,18 @@ export default function ClaimCompanyPage() {
 
       // Debug: Log FormData contents
       console.log("FormData contents:");
-      for (let [key, value] of formDataToSend.entries()) {
+      for (const [key, value] of formDataToSend.entries()) {
         console.log(key, value);
       }
 
-      return apiRequest("POST", "/api/company-claims", formDataToSend);
+      const response = await apiRequest("POST", "/api/company-claims", formDataToSend);
+      return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (result) => {
+      setClaimId(result.claimId);
       toast({
         title: "Claim Submitted Successfully",
-        description: "We'll process your company claim and send payment instructions to your email.",
+        description: "Please complete payment to activate your company claim.",
       });
       queryClient.invalidateQueries({ queryKey: ["/api/admin"] });
       setStep('payment');
@@ -257,6 +263,44 @@ export default function ClaimCompanyPage() {
       });
     },
   });
+
+  // Payment mutation for company claims
+  const paymentMutation = useMutation({
+    mutationFn: async (data: { claimId: number; amount: number }) => {
+      const response = await apiRequest('POST', '/api/payment/initialize', data);
+      return response.json();
+    },
+    onSuccess: (result) => {
+      if (result.authorization_url) {
+        // Redirect to Paystack payment page
+        window.location.href = result.authorization_url;
+      } else {
+        toast({
+          title: "Payment Setup Failed",
+          description: "Could not initialize payment. Please try again.",
+          variant: "destructive",
+        });
+      }
+    },
+    onError: (error) => {
+      toast({
+        title: "Payment Failed",
+        description: error.message || "Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  // Handle payment with annual billing calculation
+  const handlePayment = () => {
+    if (claimId && formData.plan) {
+      const annualAmount = CLAIM_PRICING[formData.plan].annualPrice * 100; // Convert to cents for Paystack
+      paymentMutation.mutate({
+        claimId,
+        amount: annualAmount, // Annual billing: Basic $360, Premium $600
+      });
+    }
+  };
 
   // Domain validation helper functions
   const getExpectedDomain = (websiteUrl: string): string | null => {
@@ -818,8 +862,8 @@ export default function ClaimCompanyPage() {
                       >
                         <div className="text-center">
                           <h3 className="font-semibold text-lg">{plan.name}</h3>
-                          <p className="text-3xl font-bold text-blue-600 my-2">${plan.monthlyPrice}</p>
-                          <p className="text-sm text-gray-500 mb-4">per month, billed annually (${plan.price * 12}/year)</p>
+                          <p className="text-3xl font-bold text-blue-600 my-2">${plan.annualPrice}</p>
+                          <p className="text-sm text-gray-500 mb-4">per year (billed annually)</p>
                           <ul className="text-left space-y-2">
                             {plan.features.map((feature, index) => (
                               <li key={index} className="flex items-start gap-2 text-sm">
@@ -835,27 +879,72 @@ export default function ClaimCompanyPage() {
                 </div>
               </RadioGroup>
 
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                <h4 className="font-medium text-yellow-900 mb-2">What happens next?</h4>
-                <ul className="text-sm text-yellow-800 space-y-1">
-                  <li>• We'll review your claim within 24-48 hours</li>
-                  <li>• You'll receive payment instructions via email</li>
-                  <li>• Once payment is confirmed, your enhanced listing goes live</li>
-                </ul>
-              </div>
+              {!claimId ? (
+                <>
+                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                    <h4 className="font-medium text-yellow-900 mb-2">Ready to proceed?</h4>
+                    <p className="text-sm text-yellow-800">
+                      Submit your claim and proceed to secure payment with Paystack.
+                    </p>
+                  </div>
 
-              <div className="flex gap-4 pt-4">
-                <Button onClick={() => setStep('form')} variant="outline">
-                  Back to Details
-                </Button>
-                <Button 
-                  onClick={handleSubmit}
-                  disabled={claimMutation.isPending}
-                  className="flex items-center gap-2"
-                >
-                  {claimMutation.isPending ? 'Submitting...' : `Submit Claim ($${CLAIM_PRICING[formData.plan].monthlyPrice}/month)`}
-                </Button>
-              </div>
+                  <div className="flex gap-4 pt-4">
+                    <Button onClick={() => setStep('form')} variant="outline">
+                      Back to Details
+                    </Button>
+                    <Button 
+                      onClick={handleSubmit}
+                      disabled={claimMutation.isPending}
+                      className="flex items-center gap-2"
+                    >
+                      {claimMutation.isPending ? 'Submitting...' : `Submit Claim ($${CLAIM_PRICING[formData.plan].annualPrice}/year)`}
+                    </Button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <h4 className="font-medium text-green-900 mb-2">Claim Submitted Successfully!</h4>
+                    <p className="text-sm text-green-800">
+                      Complete your payment to activate your enhanced company listing.
+                    </p>
+                  </div>
+
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <h4 className="font-semibold text-blue-900">Selected Plan:</h4>
+                        <p className="text-sm text-blue-700 capitalize">
+                          {formData.plan} - ${CLAIM_PRICING[formData.plan].annualPrice}/year
+                        </p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-2xl font-bold text-blue-900">
+                          ${CLAIM_PRICING[formData.plan].annualPrice}
+                        </p>
+                        <p className="text-sm text-blue-600">Annual Payment</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 pt-4">
+                    <Button 
+                      onClick={() => setStep('form')} 
+                      variant="outline"
+                      disabled={paymentMutation.isPending}
+                    >
+                      Edit Details
+                    </Button>
+                    <Button 
+                      onClick={handlePayment}
+                      disabled={paymentMutation.isPending}
+                      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700"
+                    >
+                      {paymentMutation.isPending ? 'Initializing...' : 'Pay with Paystack (a Stripe subsidiary)'}
+                    </Button>
+                  </div>
+                </>
+              )}
             </CardContent>
           </Card>
         )}
