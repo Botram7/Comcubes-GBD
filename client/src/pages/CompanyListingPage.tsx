@@ -35,9 +35,9 @@ const companyListingSchema = z.object({
 type CompanyListingData = z.infer<typeof companyListingSchema>;
 
 const LISTING_PRICES = {
-  basic: 20, // $20 for Basic plan
-  premium: 30, // $30 for Premium plan
-  featured: 40, // $40 for Featured plan
+  basic: 60, // $60 for Basic plan (quarterly billing)
+  premium: 90, // $90 for Premium plan (quarterly billing)
+  featured: 120, // $120 for Featured plan (quarterly billing)
 };
 
 export default function CompanyListingPage() {
@@ -459,7 +459,7 @@ export default function CompanyListingPage() {
               {selectedPlan.charAt(0).toUpperCase() + selectedPlan.slice(1)} Plan
             </span>
             <span className="text-2xl font-bold text-blue-600">
-              ${LISTING_PRICES[selectedPlan]}/month
+              ${LISTING_PRICES[selectedPlan]}/quarter
             </span>
           </div>
         </div>
