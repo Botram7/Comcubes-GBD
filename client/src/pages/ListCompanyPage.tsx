@@ -219,14 +219,14 @@ export default function ListCompanyPage() {
     const formDataWithPayment = {
       ...data,
       listingPlan: selectedPlan!,
-      paymentAmount: selectedPlan === 'basic' ? '100' : '200',
+      paymentAmount: selectedPlan === 'basic' ? '2000' : '3000',
     };
     listingMutation.mutate(formDataWithPayment);
   };
 
   const handlePayment = () => {
     if (listingId && selectedPlan) {
-      const amount = selectedPlan === 'basic' ? 100 : 200;
+      const amount = selectedPlan === 'basic' ? 2000 : 3000;
       paymentMutation.mutate({
         listingId,
         amount,
