@@ -145,7 +145,19 @@ export default function ListCompanyPage() {
 
   const listingMutation = useMutation({
     mutationFn: async (data: CompanyListingData) => {
-      const response = await apiRequest('POST', '/api/company-listing', data);
+      // Map form data to backend schema
+      const mappedData = {
+        companyName: data.companyName,
+        websiteUrl: data.website,
+        contactEmail: data.email,
+        sectorName: data.businessSector,
+        industryName: data.industry,
+        description: data.companyDescription,
+        logoUrl: data.companyLogo || '',
+        listingPlan: data.listingPlan,
+        paymentAmount: data.paymentAmount || '',
+      };
+      const response = await apiRequest('POST', '/api/company-listing', mappedData);
       return response.json();
     },
     onSuccess: (result) => {
@@ -203,21 +215,13 @@ export default function ListCompanyPage() {
   });
 
   const onSubmit = (data: CompanyListingData) => {
-    // Map form data to backend schema
-    const submissionData = {
-      companyName: data.companyName,
-      websiteUrl: data.website,
-      contactEmail: data.email,
-      sectorName: data.businessSector,
-      industryName: data.industry,
-      description: data.companyDescription,
-      logoUrl: data.companyLogo || '',
-      contactPerson: data.contactPerson,
-      phone: data.phone,
+    // Set the payment amount and plan in the data
+    const formDataWithPayment = {
+      ...data,
       listingPlan: selectedPlan!,
       paymentAmount: selectedPlan === 'basic' ? '100' : '200',
     };
-    listingMutation.mutate(submissionData);
+    listingMutation.mutate(formDataWithPayment);
   };
 
   const handlePayment = () => {
@@ -275,6 +279,19 @@ export default function ListCompanyPage() {
       <div className="max-w-2xl mx-auto px-4 py-12">
         <Card>
           <CardContent className="p-12 text-center">
+            {/* Back Navigation Button */}
+            <div className="flex justify-start mb-6">
+              <Button 
+                variant="ghost" 
+                size="sm"
+                onClick={() => setStep('form')}
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Edit Details
+              </Button>
+            </div>
+
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <Building2 className="h-8 w-8 text-blue-600" />
             </div>
@@ -301,7 +318,7 @@ export default function ListCompanyPage() {
                 className="w-full"
                 disabled={paymentMutation.isPending}
               >
-                {paymentMutation.isPending ? 'Processing...' : 'Pay with Paystack'}
+                {paymentMutation.isPending ? 'Processing...' : 'Pay with Paystack (a subsidiary of Stripe)'}
               </Button>
               
               <div className="text-sm text-gray-500">
@@ -810,11 +827,11 @@ export default function ListCompanyPage() {
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                  {(sectors || []).map((sector: any) => (
+                                  {Array.isArray(sectors) ? sectors.map((sector: any) => (
                                     <SelectItem key={sector.id} value={sector.name}>
                                       {sector.name}
                                     </SelectItem>
-                                  ))}
+                                  )) : []}
                                 </SelectContent>
                               </Select>
                               <FormMessage />
@@ -834,11 +851,11 @@ export default function ListCompanyPage() {
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                  {availableIndustries.map((industry: any) => (
+                                  {Array.isArray(availableIndustries) ? availableIndustries.map((industry: any) => (
                                     <SelectItem key={industry.id || industry.name} value={industry.name}>
                                       {industry.name}
                                     </SelectItem>
-                                  ))}
+                                  )) : []}
                                 </SelectContent>
                               </Select>
                               <FormMessage />
