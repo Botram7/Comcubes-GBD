@@ -318,7 +318,7 @@ export default function ListCompanyPage() {
                 className="w-full"
                 disabled={paymentMutation.isPending}
               >
-                {paymentMutation.isPending ? 'Processing...' : 'Pay with Paystack (a subsidiary of Stripe)'}
+                {paymentMutation.isPending ? 'Processing...' : 'Pay with Paystack (a Stripe subsidiary)'}
               </Button>
               
               <div className="text-sm text-gray-500">
