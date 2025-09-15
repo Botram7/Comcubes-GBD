@@ -34,11 +34,10 @@ const companyListingSchema = z.object({
 
 type CompanyListingData = z.infer<typeof companyListingSchema>;
 
-// TEMPORARY: Hardcoded test pricing for live Paystack testing
 const LISTING_PRICES = {
-  basic: 1.0, // $1.0 for live Paystack
-  premium: 2.0, // $2.0 for live Paystack
-  featured: 3.0, // $3.0 for live Paystack
+  basic: 20, // $20 for Basic plan
+  premium: 30, // $30 for Premium plan
+  featured: 40, // $40 for Featured plan
 };
 
 export default function CompanyListingPage() {
