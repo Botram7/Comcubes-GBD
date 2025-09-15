@@ -496,7 +496,7 @@ export default function ComprehensiveAdminDashboard() {
                     <TableCell>
                       <div>
                         {getPaymentStatusBadge(listing.paymentStatus)}
-                        <div className="text-sm text-muted-foreground">${(parseFloat(listing.paymentAmount) / 100).toFixed(2)}</div>
+                        <div className="text-sm text-muted-foreground">${listing.paymentAmount}</div>
                         {listing.paymentReference && (
                           <div className="text-xs text-muted-foreground">
                             Ref: {listing.paymentReference}
@@ -767,10 +767,7 @@ export default function ComprehensiveAdminDashboard() {
                     </TableCell>
                     <TableCell>
                       <div className="text-sm text-muted-foreground">
-                        ${claim.plan === 'premium' ? '600.00' : '360.00'}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        Annual
+                        See Payment Records
                       </div>
                     </TableCell>
                     <TableCell>
