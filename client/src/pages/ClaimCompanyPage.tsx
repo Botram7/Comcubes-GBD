@@ -265,8 +265,8 @@ export default function ClaimCompanyPage() {
 
   // Payment mutation for company claims
   const paymentMutation = useMutation({
-    mutationFn: async (data: { listingId: number; amount: number }) => {
-      const response = await apiRequest('POST', '/api/payment/initialize', data);
+    mutationFn: async (data: { claimId: number }) => {
+      const response = await apiRequest('POST', '/api/claims/payment/initialize', data);
       return response.json();
     },
     onSuccess: (result) => {
@@ -292,11 +292,9 @@ export default function ClaimCompanyPage() {
 
   // Handle payment with annual billing calculation
   const handlePayment = () => {
-    if (claimId && formData.plan) {
-      const annualAmount = CLAIM_PRICING[formData.plan].annualPrice * 100; // Convert to cents for Paystack
+    if (claimId) {
       paymentMutation.mutate({
-        listingId: claimId, // Use listingId instead of claimId to match API expectation
-        amount: annualAmount, // Annual billing: Basic $360, Premium $600
+        claimId: claimId, // Use dedicated claims payment endpoint
       });
     }
   };

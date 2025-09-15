@@ -5,6 +5,7 @@ import path from "path";
 import crypto from "crypto";
 import { MailService } from '@sendgrid/mail';
 import { storage } from "../storage";
+import { PaystackService } from "../paystackService";
 
 // Configure multer for file uploads
 const upload = multer({
@@ -73,7 +74,7 @@ async function verifyEmailExists(email: string): Promise<{ valid: boolean; reaso
     } catch (dnsError) {
       // For major corporations, DNS might be protected/configured differently
       // Allow the email to proceed but log the issue
-      console.log(`DNS verification failed for domain ${domain}, but allowing to proceed:`, dnsError.message);
+      console.log(`DNS verification failed for domain ${domain}, but allowing to proceed:`, (dnsError as Error).message);
       return { valid: true, reason: 'DNS verification skipped for corporate domain' };
     }
 
@@ -311,6 +312,126 @@ export function registerCompanyClaimRoutes(app: Express) {
     } catch (error) {
       console.error("Error fetching claim statistics:", error);
       res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Initialize payment for company claim
+  app.post("/api/claims/payment/initialize", async (req, res) => {
+    try {
+      const { claimId } = req.body;
+
+      if (!claimId) {
+        return res.status(400).json({ error: "Claim ID is required" });
+      }
+
+      // Load claim by ID
+      const claim = await storage.getCompanyClaim(claimId);
+      if (!claim) {
+        return res.status(404).json({ error: "Claim not found" });
+      }
+
+      // Validate claim status
+      if (claim.status !== 'pending') {
+        return res.status(400).json({ error: "Claim payment can only be made for pending claims" });
+      }
+
+      // Calculate amount based on plan (annual billing: Basic $360, Premium $600)
+      const amounts = {
+        basic: 36000, // $360 in cents
+        premium: 60000, // $600 in cents
+        enterprise: 60000 // Same as premium for now
+      };
+
+      const amount = amounts[claim.plan as keyof typeof amounts];
+      if (!amount) {
+        return res.status(400).json({ error: "Invalid plan type" });
+      }
+
+      // Generate payment reference
+      const timestamp = Date.now();
+      const reference = `claim_${claimId}_${timestamp}`;
+
+      // Initialize payment with Paystack
+      const paystackService = new PaystackService();
+      const paymentData = await paystackService.initializePayment({
+        email: claim.contactEmail,
+        amount: amount,
+        reference: reference,
+        currency: 'USD',
+        metadata: {
+          type: 'claim',
+          claimId: claimId,
+          companyId: claim.companyId,
+          plan: claim.plan,
+          companyName: claim.companyName
+        }
+      });
+
+      // Store payment reference in the claim (optional - you might want to add this to storage)
+      // await storage.updateClaimPaymentReference(claimId, reference);
+
+      res.json({
+        authorization_url: paymentData.authorization_url,
+        access_code: paymentData.access_code,
+        reference: paymentData.reference,
+        amount: amount
+      });
+
+    } catch (error) {
+      console.error("Error initializing claim payment:", error);
+      res.status(500).json({ 
+        error: error instanceof Error ? error.message : "Payment initialization failed" 
+      });
+    }
+  });
+
+  // Verify payment for company claim
+  app.post("/api/claims/payment/verify", async (req, res) => {
+    try {
+      const { reference } = req.body;
+
+      if (!reference) {
+        return res.status(400).json({ error: "Payment reference is required" });
+      }
+
+      // Verify payment with Paystack
+      const paystackService = new PaystackService();
+      const paymentResult = await paystackService.verifyPayment(reference);
+
+      if (paymentResult.status === 'success') {
+        // Extract claimId from reference (format: claim_123_timestamp)
+        const claimIdMatch = reference.match(/^claim_(\d+)_/);
+        if (!claimIdMatch) {
+          return res.status(400).json({ error: "Invalid payment reference format" });
+        }
+
+        const claimId = parseInt(claimIdMatch[1]);
+        
+        // Update claim status to paid
+        await storage.updateCompanyClaimStatus(claimId, 'paid');
+
+        // TODO: Optionally create/attach enhanced details to the company profile here
+
+        res.json({
+          message: "Payment verified successfully",
+          status: "success",
+          claimId: claimId,
+          data: paymentResult
+        });
+
+      } else {
+        res.status(400).json({
+          message: "Payment verification failed",
+          status: paymentResult.status,
+          data: paymentResult
+        });
+      }
+
+    } catch (error) {
+      console.error("Error verifying claim payment:", error);
+      res.status(500).json({ 
+        error: error instanceof Error ? error.message : "Payment verification failed" 
+      });
     }
   });
 }
