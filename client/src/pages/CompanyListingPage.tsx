@@ -433,6 +433,19 @@ export default function CompanyListingPage() {
   const renderPayment = () => (
     <Card>
       <CardContent className="p-12 text-center">
+        {/* Back Navigation Button */}
+        <div className="flex justify-start mb-6">
+          <Button 
+            variant="ghost" 
+            size="sm"
+            onClick={() => setStep('form')}
+            className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Edit Details
+          </Button>
+        </div>
+
         <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <CreditCard className="h-8 w-8 text-blue-600" />
         </div>
@@ -447,7 +460,7 @@ export default function CompanyListingPage() {
               {selectedPlan.charAt(0).toUpperCase() + selectedPlan.slice(1)} Plan
             </span>
             <span className="text-2xl font-bold text-blue-600">
-              ${LISTING_PRICES[selectedPlan]}
+              ${LISTING_PRICES[selectedPlan]}/month
             </span>
           </div>
         </div>
@@ -459,7 +472,7 @@ export default function CompanyListingPage() {
             className="w-full"
             disabled={paymentMutation.isPending}
           >
-            {paymentMutation.isPending ? 'Processing...' : 'Pay with Paystack'}
+            {paymentMutation.isPending ? 'Processing...' : 'Pay with Paystack (a subsidiary of Stripe)'}
           </Button>
           
           <div className="text-sm text-gray-500">
