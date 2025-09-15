@@ -43,9 +43,9 @@ interface ClaimFormData {
 
 const CLAIM_PRICING = {
   basic: { 
-    price: 20, 
-    monthlyPrice: 20,
-    annualPrice: 240, // $20 × 12 for annual billing
+    price: 30, 
+    monthlyPrice: 30,
+    annualPrice: 360, // $30 × 12 for annual billing
     name: "Basic Claim", 
     features: [
       "Company logo upload", 
@@ -56,9 +56,9 @@ const CLAIM_PRICING = {
     ] 
   },
   premium: { 
-    price: 30, 
-    monthlyPrice: 30,
-    annualPrice: 360, // $30 × 12 for annual billing
+    price: 50, 
+    monthlyPrice: 50,
+    annualPrice: 600, // $50 × 12 for annual billing
     name: "Premium Claim", 
     features: [
       "Everything in Basic", 
@@ -862,8 +862,8 @@ export default function ClaimCompanyPage() {
                       >
                         <div className="text-center">
                           <h3 className="font-semibold text-lg">{plan.name}</h3>
-                          <p className="text-3xl font-bold text-blue-600 my-2">${plan.annualPrice}</p>
-                          <p className="text-sm text-gray-500 mb-4">per year (billed annually)</p>
+                          <p className="text-3xl font-bold text-blue-600 my-2">${plan.monthlyPrice}</p>
+                          <p className="text-sm text-gray-500 mb-4">per month, billed annually (${plan.annualPrice}/year)</p>
                           <ul className="text-left space-y-2">
                             {plan.features.map((feature, index) => (
                               <li key={index} className="flex items-start gap-2 text-sm">
@@ -897,7 +897,7 @@ export default function ClaimCompanyPage() {
                       disabled={claimMutation.isPending}
                       className="flex items-center gap-2"
                     >
-                      {claimMutation.isPending ? 'Submitting...' : `Submit Claim ($${CLAIM_PRICING[formData.plan].annualPrice}/year)`}
+                      {claimMutation.isPending ? 'Submitting...' : `Submit Claim ($${CLAIM_PRICING[formData.plan].monthlyPrice}/month)`}
                     </Button>
                   </div>
                 </>
