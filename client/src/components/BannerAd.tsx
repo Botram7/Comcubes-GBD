@@ -117,7 +117,8 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
     return (
       <div className={`${className}`} ref={adRef}>
         <Card 
-          className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 text-center animate-pulse w-full h-20 sm:h-24 md:h-28 lg:w-[160px] lg:h-[600px]"
+          className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 text-center animate-pulse"
+          style={{ width: '160px', height: '600px' }}
         >
           <div className="text-gray-400 h-full flex flex-col justify-center">
             <div className="text-sm font-medium mb-2">Loading...</div>
@@ -133,7 +134,8 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
       <div className={`${className}`} ref={adRef}>
         {/* Advertisement Space - 160x600 dimensions */}
         <Card 
-          className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 text-center cursor-pointer hover:bg-gray-200 transition-colors w-full h-20 sm:h-24 md:h-28 lg:w-[160px] lg:h-[600px]"
+          className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 text-center cursor-pointer hover:bg-gray-200 transition-colors"
+          style={{ width: '160px', height: '600px' }}
           onClick={handleClick}
         >
           <div className="text-gray-500 h-full flex flex-col justify-center">
@@ -152,7 +154,8 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
   return (
     <div className={`${className}`} ref={adRef}>
       <Card 
-        className="overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300 group w-full h-20 sm:h-24 md:h-28 lg:w-[160px] lg:h-[600px]"
+        className="overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300 group"
+        style={{ width: '160px', height: '600px' }}
         onClick={handleClick}
       >
         <div className="relative w-full h-full">

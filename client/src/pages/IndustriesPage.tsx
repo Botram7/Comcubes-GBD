@@ -315,9 +315,9 @@ export default function IndustriesPage() {
           </div>
 
           {/* Right Advertisement Banner - 160x600 */}
-          <div className="block w-full lg:block lg:w-auto flex-shrink-0">
+          <div className="hidden lg:block flex-shrink-0">
             <BannerAd 
-              className="lg:sticky lg:top-24" 
+              className="sticky top-24" 
               position="right"
             />
           </div>
