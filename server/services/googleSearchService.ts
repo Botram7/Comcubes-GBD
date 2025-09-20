@@ -139,8 +139,6 @@ export class GoogleSearchService {
       .filter(item => this.isLikelyBusinessResult(item))
       .map((item, index) => {
         const domain = this.extractDomain(item.link);
-        const country = this.estimateCountryFromDomain(domain);
-        const region = this.getRegionFromCountry(country);
 
         return {
           id: `google_${Date.now()}_${index}`,
@@ -149,8 +147,8 @@ export class GoogleSearchService {
           website: item.link,
           description: this.cleanSnippet(item.snippet),
           source: 'google' as const,
-          country,
-          region,
+          country: 'External',
+          region: 'External',
           displayDomain: domain
         };
       });
@@ -271,100 +269,6 @@ export class GoogleSearchService {
     }
   }
 
-  private estimateCountryFromDomain(domain: string): string {
-    const countryDomains: Record<string, string> = {
-      '.com': 'United States',
-      '.us': 'United States',
-      '.co.uk': 'United Kingdom',
-      '.uk': 'United Kingdom',
-      '.de': 'Germany',
-      '.fr': 'France',
-      '.ca': 'Canada',
-      '.au': 'Australia',
-      '.jp': 'Japan',
-      '.cn': 'China',
-      '.in': 'India',
-      '.br': 'Brazil',
-      '.it': 'Italy',
-      '.es': 'Spain',
-      '.nl': 'Netherlands',
-      '.se': 'Sweden',
-      '.no': 'Norway',
-      '.dk': 'Denmark',
-      '.fi': 'Finland',
-      '.ch': 'Switzerland',
-      // African countries
-      '.ng': 'Nigeria',
-      '.co.za': 'South Africa',
-      '.za': 'South Africa',
-      '.eg': 'Egypt',
-      '.ma': 'Morocco',
-      '.ke': 'Kenya',
-      '.tn': 'Tunisia',
-      '.dz': 'Algeria',
-      // Middle East
-      '.ae': 'United Arab Emirates',
-      '.sa': 'Saudi Arabia',
-      '.il': 'Israel',
-      // More countries
-      '.mx': 'Mexico',
-      '.ar': 'Argentina',
-      '.cl': 'Chile',
-      '.co': 'Colombia',
-      '.pe': 'Peru'
-    };
-
-    for (const [tld, country] of Object.entries(countryDomains)) {
-      if (domain.endsWith(tld)) {
-        return country;
-      }
-    }
-
-    return 'Global';
-  }
-
-  private getRegionFromCountry(country: string): string {
-    const regionMap: Record<string, string> = {
-      'United States': 'North America',
-      'Canada': 'North America',
-      'Mexico': 'North America',
-      'United Kingdom': 'Europe',
-      'Germany': 'Europe',
-      'France': 'Europe',
-      'Italy': 'Europe',
-      'Spain': 'Europe',
-      'Netherlands': 'Europe',
-      'Switzerland': 'Europe',
-      'Sweden': 'Europe',
-      'Norway': 'Europe',
-      'Denmark': 'Europe',
-      'Finland': 'Europe',
-      'China': 'Asia Pacific',
-      'Japan': 'Asia Pacific',
-      'India': 'Asia Pacific',
-      'Australia': 'Asia Pacific',
-      'Singapore': 'Asia Pacific',
-      'South Korea': 'Asia Pacific',
-      'Brazil': 'Latin America',
-      'Argentina': 'Latin America',
-      'Chile': 'Latin America',
-      'Colombia': 'Latin America',
-      'Peru': 'Latin America',
-      // Middle East & Africa
-      'Nigeria': 'Middle East & Africa',
-      'South Africa': 'Middle East & Africa',
-      'Egypt': 'Middle East & Africa',
-      'Morocco': 'Middle East & Africa',
-      'Kenya': 'Middle East & Africa',
-      'Tunisia': 'Middle East & Africa',
-      'Algeria': 'Middle East & Africa',
-      'United Arab Emirates': 'Middle East & Africa',
-      'Saudi Arabia': 'Middle East & Africa',
-      'Israel': 'Middle East & Africa'
-    };
-
-    return regionMap[country] || 'Global';
-  }
 }
 
 export const googleSearchService = new GoogleSearchService();
