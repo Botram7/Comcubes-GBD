@@ -147,7 +147,7 @@ export default function HomePage() {
             <img 
               src={heroLogo} 
               alt="COMCUBES Global Business Directory" 
-              className="w-64 h-20 md:w-96 md:h-32 object-contain"
+              className="w-80 h-[104px] md:w-[500px] md:h-[166px] object-contain"
             />
           </div>
 
