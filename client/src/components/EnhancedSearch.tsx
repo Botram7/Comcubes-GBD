@@ -133,25 +133,22 @@ export function EnhancedSearch() {
               sector: company.sectorName,
               industry: company.industryName,
               website: company.websiteUrl,
-              country: estimateCompanyCountry(company.websiteUrl),
-              region: getRegionFromCountry(estimateCompanyCountry(company.websiteUrl))
+              country: 'Local',
+              region: 'Local'
             });
           });
         }
         
         // Add external results from global search
         (globalData.external || []).forEach((company: any) => {
-          const detectedCountry = company.country || estimateCompanyCountry(company.website || '');
-          const detectedRegion = company.region || getRegionFromCountry(detectedCountry);
-          
           allResults.push({
             id: company.id,
             name: company.name,
             type: company.type || 'external_company',
             website: company.website,
             description: company.description,
-            country: detectedCountry,
-            region: detectedRegion,
+            country: company.country || 'External',
+            region: company.region || 'External',
             source: company.source || 'google'
           });
         });
@@ -187,8 +184,8 @@ export function EnhancedSearch() {
             sector: company.sectorName,
             industry: company.industryName,
             website: company.websiteUrl,
-            country: estimateCompanyCountry(company.websiteUrl),
-            region: getRegionFromCountry(estimateCompanyCountry(company.websiteUrl))
+            country: 'Local',
+            region: 'Local'
           });
         });
       }
@@ -237,67 +234,6 @@ export function EnhancedSearch() {
 
   // No longer need the timeout-based search since we're using React Query
 
-  // Helper functions
-  const estimateCompanyCountry = (website: string): string => {
-    if (!website) return 'Unknown';
-    
-    const domain = website.toLowerCase();
-    
-    // North America
-    if (domain.includes('.com') || domain.includes('.us')) return 'United States';
-    if (domain.includes('.ca')) return 'Canada';
-    if (domain.includes('.mx')) return 'Mexico';
-    
-    // Europe
-    if (domain.includes('.co.uk') || domain.includes('.uk')) return 'United Kingdom';
-    if (domain.includes('.de')) return 'Germany';
-    if (domain.includes('.fr')) return 'France';
-    if (domain.includes('.it')) return 'Italy';
-    if (domain.includes('.es')) return 'Spain';
-    if (domain.includes('.nl')) return 'Netherlands';
-    if (domain.includes('.ch')) return 'Switzerland';
-    if (domain.includes('.se')) return 'Sweden';
-    if (domain.includes('.no')) return 'Norway';
-    if (domain.includes('.dk')) return 'Denmark';
-    
-    // Asia Pacific
-    if (domain.includes('.cn')) return 'China';
-    if (domain.includes('.jp')) return 'Japan';
-    if (domain.includes('.in')) return 'India';
-    if (domain.includes('.au')) return 'Australia';
-    if (domain.includes('.sg')) return 'Singapore';
-    if (domain.includes('.kr')) return 'South Korea';
-    if (domain.includes('.th')) return 'Thailand';
-    if (domain.includes('.my')) return 'Malaysia';
-    
-    // Latin America
-    if (domain.includes('.br')) return 'Brazil';
-    if (domain.includes('.ar')) return 'Argentina';
-    if (domain.includes('.cl')) return 'Chile';
-    if (domain.includes('.co')) return 'Colombia';
-    if (domain.includes('.pe')) return 'Peru';
-    
-    // Middle East & Africa
-    if (domain.includes('.ae')) return 'United Arab Emirates';
-    if (domain.includes('.sa')) return 'Saudi Arabia';
-    if (domain.includes('.za')) return 'South Africa';
-    if (domain.includes('.il')) return 'Israel';
-    if (domain.includes('.eg')) return 'Egypt';
-    if (domain.includes('.ng')) return 'Nigeria';
-    if (domain.includes('.ke')) return 'Kenya';
-    if (domain.includes('.ma')) return 'Morocco';
-    if (domain.includes('.tn')) return 'Tunisia';
-    if (domain.includes('.dz')) return 'Algeria';
-    
-    return 'Global';
-  };
-
-  const getRegionFromCountry = (country: string): string => {
-    for (const [region, countries] of Object.entries(GEOGRAPHIC_DATA)) {
-      if (countries.includes(country)) return region;
-    }
-    return 'Global';
-  };
 
   const handleResultClick = (result: SearchResult) => {
     switch (result.type) {
