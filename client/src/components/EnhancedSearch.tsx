@@ -447,7 +447,7 @@ export function EnhancedSearch() {
                               <MapPin className="h-3 w-3" />
                               <span>{result.country}</span>
                             </div>
-                            {result.region && (
+                            {result.region && result.region !== result.country && (
                               <span>• {result.region}</span>
                             )}
                           </div>
