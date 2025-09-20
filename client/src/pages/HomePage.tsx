@@ -140,10 +140,10 @@ export default function HomePage() {
       </header>
       
       {/* Hero Section */}
-      <section className="bg-gray-50 py-12 md:py-20">
+      <section className="bg-gray-50 py-10 md:py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <div className="mb-6 md:mb-8 flex justify-center">
+          <div className="mb-5 md:mb-6 flex justify-center">
             <img 
               src={heroLogo} 
               alt="COMCUBES Global Business Directory" 
