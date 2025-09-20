@@ -426,7 +426,7 @@ export function EnhancedSearch() {
                                   result.type === 'industry' ? 'secondary' : 'outline'}
                           className="text-xs"
                         >
-                          {result.type}
+                          {result.type === 'external_company' ? 'company' : result.type}
                         </Badge>
                       </div>
                       
