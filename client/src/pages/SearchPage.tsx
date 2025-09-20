@@ -274,8 +274,8 @@ export default function SearchPage() {
                                 <Badge variant="outline" className="text-xs">
                                   {business.region || 'Global'}
                                 </Badge>
-                                <Badge variant="secondary" className="text-xs bg-green-50 text-green-700">
-                                  External
+                                <Badge variant="secondary" className="text-xs bg-blue-50 text-blue-700">
+                                  via Google
                                 </Badge>
                               </div>
                             </CardContent>

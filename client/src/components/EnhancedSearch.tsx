@@ -465,7 +465,7 @@ export function EnhancedSearch() {
                       )}
                       {result.id.toString().startsWith('google_') && (
                         <Badge variant="secondary" className="text-xs bg-blue-50 text-blue-700">
-                          via Google
+                          Google
                         </Badge>
                       )}
                     </div>
