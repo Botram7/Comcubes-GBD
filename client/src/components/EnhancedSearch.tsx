@@ -148,7 +148,7 @@ export function EnhancedSearch() {
             website: company.website,
             description: company.description,
             country: company.country || 'External',
-            region: company.region || 'External',
+            region: company.region || undefined,
             source: company.source || 'google'
           });
         });
@@ -421,13 +421,15 @@ export function EnhancedSearch() {
                     <div className="flex-1">
                       <div className="flex items-center space-x-2">
                         <h4 className="font-medium text-gray-900">{result.name}</h4>
-                        <Badge 
-                          variant={result.type === 'company' ? 'default' : 
-                                  result.type === 'industry' ? 'secondary' : 'outline'}
-                          className="text-xs"
-                        >
-                          {result.type === 'external_company' ? 'company' : result.type}
-                        </Badge>
+                        {result.type !== 'external_company' && (
+                          <Badge 
+                            variant={result.type === 'company' ? 'default' : 
+                                    result.type === 'industry' ? 'secondary' : 'outline'}
+                            className="text-xs"
+                          >
+                            {result.type}
+                          </Badge>
+                        )}
                       </div>
                       
                       <div className="mt-1 space-y-1">
