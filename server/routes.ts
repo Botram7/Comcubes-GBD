@@ -15,6 +15,27 @@ import { requireAdminAuth } from "./adminAuth";
 import { objectStorageService } from "./objectStorageService";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // SEO: Redirect middleware for canonical domain enforcement
+  app.use((req, res, next) => {
+    const host = req.get('Host') || '';
+    const protocol = req.get('X-Forwarded-Proto') || req.protocol;
+    const originalUrl = `${protocol}://${host}${req.originalUrl}`;
+    
+    // Check if we need to redirect to HTTPS
+    if (protocol === 'http' && process.env.NODE_ENV === 'production') {
+      return res.redirect(301, `https://${host}${req.originalUrl}`);
+    }
+    
+    // Check if we need to redirect from www to non-www
+    if (host.startsWith('www.')) {
+      const nonWwwHost = host.slice(4); // Remove 'www.'
+      return res.redirect(301, `${protocol}://${nonWwwHost}${req.originalUrl}`);
+    }
+    
+    // Continue to next middleware
+    next();
+  });
+  
   // Serve generated images from Object Storage
   app.get('/generated_images/:filename', async (req, res) => {
     const { filename } = req.params;
@@ -1381,6 +1402,44 @@ Please contact this potential advertiser within 24 hours.
       console.error('Error generating RSS feed:', error);
       res.status(500).send('Error generating RSS feed');
     }
+  });
+
+  // SEO: Robots.txt endpoint
+  app.get("/robots.txt", (req, res) => {
+    const robotsTxt = `User-agent: *
+Allow: /
+
+# Important pages for crawling
+Allow: /sectors
+Allow: /industries
+Allow: /companies
+Allow: /search
+
+# SEO and legal pages
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /disclaimer
+Allow: /affiliate-disclosure
+Allow: /contact
+
+# Disallow admin and dynamic endpoints
+Disallow: /admin
+Disallow: /api/
+Disallow: /resume-payment
+Disallow: /list-company
+Disallow: /claim-company
+
+# Sitemap location
+Sitemap: https://comcubes.com/sitemap.xml
+
+# Crawl delay to be respectful
+Crawl-delay: 1`;
+    
+    res.set({
+      'Content-Type': 'text/plain',
+      'Cache-Control': 'public, max-age=86400' // Cache for 24 hours
+    });
+    res.send(robotsTxt);
   });
 
   // SEO: Generate Open Graph image dynamically
