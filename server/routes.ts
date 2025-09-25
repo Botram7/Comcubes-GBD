@@ -1335,6 +1335,54 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
+  // SEO: RSS Feed endpoint (placeholder - amendable)
+  app.get("/feed", async (req, res) => {
+    try {
+      const now = new Date();
+      const pubDate = now.toUTCString();
+      
+      const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>COMCUBES - Global Business Directory</title>
+    <link>https://comcubes.com</link>
+    <description>Stay updated with the latest business directory updates, new sectors, industries, and company listings from COMCUBES - your comprehensive global business resource.</description>
+    <language>en-us</language>
+    <pubDate>${pubDate}</pubDate>
+    <lastBuildDate>${pubDate}</lastBuildDate>
+    <generator>COMCUBES RSS Generator</generator>
+    <atom:link href="https://comcubes.com/feed" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>Welcome to COMCUBES Global Business Directory</title>
+      <link>https://comcubes.com</link>
+      <description>Discover thousands of companies across all business sectors and industries worldwide. Navigate 20 major business sectors, explore 400+ specialized industries, and connect with 7,400+ leading global companies.</description>
+      <pubDate>${pubDate}</pubDate>
+      <guid>https://comcubes.com#welcome</guid>
+    </item>
+    
+    <item>
+      <title>Comprehensive Business Sectors Available</title>
+      <link>https://comcubes.com/sectors</link>
+      <description>Explore our comprehensive collection of 20 major business sectors, each containing specialized industries and leading companies organized for business professionals.</description>
+      <pubDate>${pubDate}</pubDate>
+      <guid>https://comcubes.com/sectors#overview</guid>
+    </item>
+    
+  </channel>
+</rss>`;
+      
+      res.set({
+        'Content-Type': 'application/rss+xml; charset=UTF-8',
+        'Cache-Control': 'public, max-age=3600' // Cache for 1 hour
+      });
+      res.send(rssXml);
+    } catch (error) {
+      console.error('Error generating RSS feed:', error);
+      res.status(500).send('Error generating RSS feed');
+    }
+  });
+
   // SEO: Generate Open Graph image dynamically
   app.get("/api/og-image", async (req, res) => {
     try {

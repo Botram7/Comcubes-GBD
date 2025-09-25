@@ -39,6 +39,12 @@ function Router() {
       <Route path="/search" component={SearchPage} />
       <Route path="/contact" component={ContactPage} />
       <Route path="/advertise" component={AdvertisePage} />
+      <Route path="/home">
+        {() => {
+          window.location.href = '/';
+          return null;
+        }}
+      </Route>
       <Route path="/company-listing">
         {() => {
           window.location.href = '/list-company';
