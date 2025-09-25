@@ -1,5 +1,14 @@
 import { useEffect } from 'react';
 
+// Canonical domain configuration - ensures consistent URLs across all pages
+const CANONICAL_DOMAIN = 'https://comcubes.com';
+
+// Utility function to get canonical URL for current path
+const getCanonicalUrl = (path?: string): string => {
+  const currentPath = path || window.location.pathname;
+  return `${CANONICAL_DOMAIN}${currentPath}`;
+};
+
 interface SEOHeadProps {
   title?: string;
   description?: string;
@@ -92,16 +101,18 @@ export function SEOHead({
     setMetaTag('theme-color', '#1e40af');
     setMetaTag('msapplication-TileColor', '#1e40af');
     
-    // Canonical URL
-    if (canonicalUrl) {
-      let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-      if (!canonical) {
-        canonical = document.createElement('link');
-        canonical.rel = 'canonical';
-        document.head.appendChild(canonical);
-      }
-      canonical.href = canonicalUrl;
+    // Canonical URL - always set for SEO consistency
+    const finalCanonicalUrl = canonicalUrl || getCanonicalUrl();
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
     }
+    canonical.href = finalCanonicalUrl;
+    
+    // Open Graph URL
+    setMetaTag('og:url', finalCanonicalUrl, 'property');
     
     // Structured Data (JSON-LD)
     if (structuredData) {
@@ -126,20 +137,20 @@ export const createBusinessDirectoryStructuredData = () => ({
   "@type": "WebSite",
   "name": "COMCUBES Global Business Directory",
   "alternateName": "COMCUBES",
-  "url": window.location.origin,
+  "url": CANONICAL_DOMAIN,
   "description": "Global business directory featuring thousands of companies across all industries and business sectors worldwide.",
   "potentialAction": {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": `${window.location.origin}/search?q={search_term_string}`
+      "urlTemplate": `${CANONICAL_DOMAIN}/search?q={search_term_string}`
     },
     "query-input": "required name=search_term_string"
   },
   "publisher": {
     "@type": "Organization",
     "name": "COMCUBES",
-    "url": window.location.origin,
+    "url": CANONICAL_DOMAIN,
     "sameAs": []
   }
 });
@@ -149,7 +160,7 @@ export const createOrganizationStructuredData = () => ({
   "@type": "Organization",
   "name": "COMCUBES",
   "alternateName": "Commercial Cubes",
-  "url": window.location.origin,
+  "url": CANONICAL_DOMAIN,
   "description": "Global business directory platform connecting businesses worldwide",
   "foundingDate": "2025",
   "contactPoint": {
