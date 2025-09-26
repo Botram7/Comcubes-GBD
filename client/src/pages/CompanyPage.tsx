@@ -291,7 +291,9 @@ export default function CompanyPage() {
               </p>
             </div>
 
-            <BusinessGrid items={(companyData as any)?.companies || []} type="company" onItemClick={(company) => handleCompanyClick(company as Company)} showClaimButtons={true} />
+            <div className="w-full overflow-hidden">
+              <BusinessGrid items={(companyData as any)?.companies || []} type="company" onItemClick={(company) => handleCompanyClick(company as Company)} showClaimButtons={true} />
+            </div>
 
             <Pagination 
               currentPage={currentPage}
