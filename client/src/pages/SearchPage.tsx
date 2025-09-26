@@ -12,7 +12,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { BannerAd } from '@/components/BannerAd';
 import { AffiliateDisclosureBanner } from '@/components/AffiliateDisclosureBanner';
 import { BusinessGrid } from '@/components/BusinessGrid';
-import comcubesIcon from "@assets/comcubes-new-logo-icon.png";
+import comcubesIcon from "@assets/comcubes-final-logo.png";
 import type { SearchResults } from "@/lib/types";
 
 // Popular search suggestions that link to relevant sectors/industries
@@ -97,7 +97,7 @@ export default function SearchPage() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
               <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                <img src={comcubesIcon} alt="COMCUBES" className="w-10 h-10" />
+                <img src={comcubesIcon} alt="COMCUBES" className="w-12 h-12" />
               </div>
               <h1 className="text-2xl font-bold text-primary " style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
