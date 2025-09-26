@@ -158,7 +158,7 @@ export default function CompanyPage() {
   const totalPages = Math.ceil(((companyData as any)?.total || 0) / 20);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <AffiliateDisclosureBanner />
       <SEOHead 
         title="Browse All Companies - COMCUBES Global Business Directory"
@@ -291,9 +291,7 @@ export default function CompanyPage() {
               </p>
             </div>
 
-            <div className="w-full overflow-hidden">
-              <BusinessGrid items={(companyData as any)?.companies || []} type="company" onItemClick={(company) => handleCompanyClick(company as Company)} showClaimButtons={true} />
-            </div>
+            <BusinessGrid items={(companyData as any)?.companies || []} type="company" onItemClick={(company) => handleCompanyClick(company as Company)} showClaimButtons={true} />
 
             <Pagination 
               currentPage={currentPage}

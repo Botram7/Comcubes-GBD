@@ -175,7 +175,7 @@ export default function IndustriesPage() {
   const total = paginatedData?.total || 0;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <AffiliateDisclosureBanner />
       <SEOHead 
         title="Industries Directory | Browse 400+ Industries | COMCUBES"
@@ -321,9 +321,7 @@ export default function IndustriesPage() {
               </p>
             </div>
 
-            <div className="w-full overflow-hidden">
-              <BusinessGrid items={industries} type="industry" onItemClick={(item) => handleIndustryClick(item as Industry)} />
-            </div>
+            <BusinessGrid items={industries} type="industry" onItemClick={(item) => handleIndustryClick(item as Industry)} />
 
             {totalPages > 1 && (
               <div className="mt-8">
