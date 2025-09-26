@@ -321,7 +321,9 @@ export default function IndustriesPage() {
               </p>
             </div>
 
-            <BusinessGrid items={industries} type="industry" onItemClick={(item) => handleIndustryClick(item as Industry)} />
+            <div className="w-full overflow-hidden">
+              <BusinessGrid items={industries} type="industry" onItemClick={(item) => handleIndustryClick(item as Industry)} />
+            </div>
 
             {totalPages > 1 && (
               <div className="mt-8">
