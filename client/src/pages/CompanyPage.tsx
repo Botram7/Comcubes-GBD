@@ -158,7 +158,7 @@ export default function CompanyPage() {
   const totalPages = Math.ceil(((companyData as any)?.total || 0) / 20);
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+    <div className="min-h-screen bg-gray-50">
       <AffiliateDisclosureBanner />
       <SEOHead 
         title="Browse All Companies - COMCUBES Global Business Directory"
@@ -227,7 +227,7 @@ export default function CompanyPage() {
         ]} 
       />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="main-content-with-sticky-footer max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex gap-6">
           {/* Left Advertisement Banner - 160x600 */}
           <div className="hidden lg:block flex-shrink-0">
