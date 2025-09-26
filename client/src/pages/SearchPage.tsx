@@ -94,22 +94,14 @@ export default function SearchPage() {
       {/* Header - Consistent with other pages */}
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity mr-4" onClick={() => setLocation('/')}>
+          <div className="flex items-center h-16">
+            <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity mr-4 flex-shrink-0" onClick={() => setLocation('/')}>
               <div className="w-16 h-16 mr-3 flex items-center justify-center">
                 <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
               </div>
             </div>
-            <SearchBar onSearchResults={handleSearchResults} searchMode={searchMode} />
-            <div className="flex items-center space-x-4">
-              <Button 
-                variant="outline" 
-                onClick={handleBackToHome}
-                className="flex items-center space-x-2"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                <span>Back to Home</span>
-              </Button>
+            <div className="flex-1">
+              <SearchBar onSearchResults={handleSearchResults} searchMode={searchMode} />
             </div>
           </div>
         </div>
