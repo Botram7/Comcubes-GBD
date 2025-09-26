@@ -25,7 +25,7 @@ import { useState, useEffect } from "react";
 import { getImageForEntity } from "@/lib/constants";
 import comcubesLogo from "@assets/default_1752716413946.png";
 import comcubesMonochrome from "@assets/default-monochrome_1752717527516.png";
-import comcubesIcon from "@assets/Artboard 2_1758848442771.png";
+import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import newComcubesLogo from "@assets/Artboard 5_1753135425496.png";
 import heroLogo from "@assets/comcubes-hero-logo.png";
 

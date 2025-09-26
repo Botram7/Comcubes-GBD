@@ -17,7 +17,7 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { apiRequest } from '@/lib/queryClient';
-import comcubesIcon from "@assets/Artboard 2_1758848442771.png";
+import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { normalizeUrl } from '@/lib/urlUtils';
 
 const companyListingSchema = z.object({

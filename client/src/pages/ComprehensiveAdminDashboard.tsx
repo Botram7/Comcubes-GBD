@@ -60,7 +60,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import comcubesIcon from '@assets/Artboard 2_1758848442771.png';
+import comcubesIcon from '@assets/Artboard 17 copy 3_1758850589536.png';
 import { SEOHead } from '@/components/SEOHead';
 
 interface CompanyListing {

@@ -6,7 +6,7 @@ import { FallbackIconPreview } from '@/components/FallbackIconPreview';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { SEOHead } from '@/components/SEOHead';
 import { useQuery } from "@tanstack/react-query";
-import comcubesIcon from "@assets/Artboard 2_1758848442771.png";
+import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 
 export default function LogoManagementPage() {
   // Get sample company names for fallback icon preview

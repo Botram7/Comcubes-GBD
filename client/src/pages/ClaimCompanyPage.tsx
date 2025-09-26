@@ -25,7 +25,7 @@ import {
   AlertCircle
 } from "lucide-react";
 import { normalizeUrl } from '@/lib/urlUtils';
-import comcubesIcon from "@assets/Artboard 2_1758848442771.png";
+import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { SEOHead } from "@/components/SEOHead";
 import type { Sector, Industry, Company, SearchResults } from "@/lib/types";
 
