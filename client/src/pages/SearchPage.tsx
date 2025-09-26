@@ -95,11 +95,10 @@ export default function SearchPage() {
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
+            <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity mr-4" onClick={() => setLocation('/')}>
               <div className="w-16 h-16 mr-3 flex items-center justify-center">
                 <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
               </div>
-              <h1 className="text-2xl font-bold text-primary " style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
             <SearchBar onSearchResults={handleSearchResults} searchMode={searchMode} />
             <div className="flex items-center space-x-4">
