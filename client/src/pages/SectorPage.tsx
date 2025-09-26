@@ -54,7 +54,7 @@ export default function SectorPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
-                <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                <div className="w-16 h-16 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
@@ -94,7 +94,7 @@ export default function SectorPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
-                <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                <div className="w-16 h-16 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
@@ -156,7 +156,7 @@ export default function SectorPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0" onClick={() => setLocation('/')}>
-              <div className="w-8 h-8 mr-3 flex items-center justify-center">
+              <div className="w-16 h-16 mr-3 flex items-center justify-center">
                 <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
               </div>
               <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
