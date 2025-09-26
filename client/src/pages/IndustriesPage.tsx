@@ -63,29 +63,39 @@ export default function IndustriesPage() {
       <div className="min-h-screen bg-gray-50">
         <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
-                <div className="w-16 h-16 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
+            <div className="py-4">
+              <div className="flex items-center">
+                <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 mr-4" onClick={() => setLocation('/')}>
+                  <div className="w-16 h-16 mr-3 flex items-center justify-center">
+                    <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
+                  </div>
+                </div>
+                <div className="flex-1 mr-4">
+                  <SearchBar onSearchResults={handleSearchResults} />
+                </div>
+                <div className="hidden sm:flex items-center space-x-2 md:space-x-4 flex-shrink-0">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setLocation('/search')}
+                    className="flex items-center gap-2 flex-shrink-0"
+                  >
+                    <Building2 className="h-4 w-4" />
+                    Advanced Search
+                  </Button>
+                  <span className="text-sm text-gray-600">Loading...</span>
                 </div>
               </div>
-              
-              <div className="flex items-center space-x-3">
-                <SearchBar onSearchResults={handleSearchResults} />
+              <div className="sm:hidden mt-3">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setLocation('/search')}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 w-full justify-center"
                 >
                   <Building2 className="h-4 w-4" />
                   Advanced Search
                 </Button>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                
-                <span className="text-sm text-gray-600 ">Loading...</span>
               </div>
             </div>
           </div>
@@ -105,27 +115,40 @@ export default function IndustriesPage() {
       <div className="min-h-screen bg-gray-50">
         <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
-                <div className="w-16 h-16 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
+            <div className="py-4">
+              <div className="flex items-center">
+                <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 mr-4" onClick={() => setLocation('/')}>
+                  <div className="w-16 h-16 mr-3 flex items-center justify-center">
+                    <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
+                  </div>
+                </div>
+                <div className="flex-1 mr-4">
+                  <SearchBar onSearchResults={handleSearchResults} />
+                </div>
+                <div className="hidden sm:flex items-center space-x-2 md:space-x-4 flex-shrink-0">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setLocation('/search')}
+                    className="flex items-center gap-2 flex-shrink-0"
+                  >
+                    <Building2 className="h-4 w-4" />
+                    Advanced Search
+                  </Button>
+                  <span className="text-sm text-gray-600">Error</span>
                 </div>
               </div>
-              
-              <div className="flex items-center space-x-3">
-                <SearchBar onSearchResults={handleSearchResults} />
+              <div className="sm:hidden mt-3">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setLocation('/search')}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 w-full justify-center"
                 >
                   <Building2 className="h-4 w-4" />
                   Advanced Search
                 </Button>
               </div>
-              
-              <span className="text-sm text-gray-600">Error</span>
             </div>
           </div>
         </header>
@@ -170,41 +193,54 @@ export default function IndustriesPage() {
       />
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center py-4">
-            <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0" onClick={() => setLocation('/')}>
-              <div className="w-16 h-16 mr-3 flex items-center justify-center">
-                <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
-              </div>
-            </div>
-            
-            <div className="flex-1 flex justify-center mx-4">
-              <div className="flex items-center space-x-2 md:space-x-4 max-w-2xl w-full">
-                <div className="flex-1">
-                  <SearchBar onSearchResults={handleSearchResults} />
+          <div className="py-4">
+            {/* Main header row */}
+            <div className="flex items-center">
+              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 mr-4" onClick={() => setLocation('/')}>
+                <div className="w-16 h-16 mr-3 flex items-center justify-center">
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
                 </div>
+              </div>
+              
+              <div className="flex-1 mr-4">
+                <SearchBar onSearchResults={handleSearchResults} />
+              </div>
+
+              {/* Keep Home button and page info for desktop only */}
+              <div className="hidden sm:flex items-center space-x-2 md:space-x-4 flex-shrink-0">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setLocation('/search')}
-                  className="hidden sm:flex items-center gap-2 flex-shrink-0"
+                  className="flex items-center gap-2 flex-shrink-0"
                 >
                   <Building2 className="h-4 w-4" />
                   Advanced Search
                 </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleBackToHome}
+                  className="flex items-center gap-2"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  <span>Home</span>
+                </Button>
+                <span className="text-xs md:text-sm text-gray-600">Page {currentPage} of {totalPages}</span>
               </div>
             </div>
-
-            <div className="flex items-center space-x-2 md:space-x-4">
+            
+            {/* Mobile Advanced Search button beneath logo and search */}
+            <div className="sm:hidden mt-3">
               <Button
-                variant="ghost"
+                variant="outline"
                 size="sm"
-                onClick={handleBackToHome}
-                className="flex items-center gap-2"
+                onClick={() => setLocation('/search')}
+                className="flex items-center gap-2 w-full justify-center"
               >
-                <ArrowLeft className="h-4 w-4" />
-                <span className="hidden sm:inline">Home</span>
+                <Building2 className="h-4 w-4" />
+                Advanced Search
               </Button>
-              <span className="text-xs md:text-sm text-gray-600">Page {currentPage} of {totalPages}</span>
             </div>
           </div>
         </div>
