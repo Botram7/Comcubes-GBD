@@ -39,7 +39,7 @@ export default function LogoManagementPage() {
           <div className="flex items-center justify-between h-16">
             <Link href="/">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-8 h-8 mr-3 flex items-center justify-center">
+                <div className="w-16 h-16 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>
