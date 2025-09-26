@@ -16,7 +16,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { apiRequest } from '@/lib/queryClient';
-import comcubesIcon from "@assets/Artboard 2_1758848442771.png";
+import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 
 const advertiseFormSchema = z.object({
   companyName: z.string().min(2, 'Company name must be at least 2 characters'),

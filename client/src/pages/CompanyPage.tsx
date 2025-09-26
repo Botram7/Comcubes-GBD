@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { SEOHead, createBusinessDirectoryStructuredData } from "@/components/SEOHead";
 import { AlertCircle, Building2 } from "lucide-react";
 
-import comcubesIcon from "@assets/Artboard 2_1758848442771.png";
+import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { BannerAd } from "@/components/BannerAd";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import type { Company, SearchResults } from "@/lib/types";

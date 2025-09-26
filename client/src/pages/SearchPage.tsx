@@ -12,7 +12,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { BannerAd } from '@/components/BannerAd';
 import { AffiliateDisclosureBanner } from '@/components/AffiliateDisclosureBanner';
 import { BusinessGrid } from '@/components/BusinessGrid';
-import comcubesIcon from "@assets/Artboard 2_1758848442771.png";
+import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import type { SearchResults } from "@/lib/types";
 
 // Popular search suggestions that link to relevant sectors/industries
