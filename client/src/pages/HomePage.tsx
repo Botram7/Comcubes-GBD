@@ -368,7 +368,7 @@ export default function HomePage() {
             <div>
               <div className="flex items-center mb-4">
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-40 h-40" />
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
                 </div>
                 <span className="text-xl font-bold" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</span>
               </div>
