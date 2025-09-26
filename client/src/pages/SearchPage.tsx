@@ -117,33 +117,35 @@ export default function SearchPage() {
 
       {/* Search Mode Toggle */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex items-center justify-center space-x-4 bg-white rounded-lg border p-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 bg-white rounded-lg border p-4">
           <span className="text-sm font-medium text-gray-700">Search Mode:</span>
-          <div className="flex bg-gray-100 rounded-lg p-1">
+          <div className="flex bg-gray-100 rounded-lg p-1 w-full sm:w-auto">
             <button
               onClick={() => setSearchMode('local')}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`flex-1 sm:flex-none px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors ${
                 searchMode === 'local' 
                   ? 'bg-blue-600 text-white shadow-sm' 
                   : 'text-gray-600 hover:text-blue-600'
               }`}
             >
               <Building2 className="h-4 w-4 inline mr-1" />
-              Local Directory (7,400+ companies)
+              <span className="hidden sm:inline">Local Directory (7,400+ companies)</span>
+              <span className="sm:hidden">Local (7,400+)</span>
             </button>
             <button
               onClick={() => setSearchMode('global')}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`flex-1 sm:flex-none px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors ${
                 searchMode === 'global' 
                   ? 'bg-green-600 text-white shadow-sm' 
                   : 'text-gray-600 hover:text-green-600'
               }`}
             >
               <Globe className="h-4 w-4 inline mr-1" />
-              Global Search (Worldwide via Google)
+              <span className="hidden sm:inline">Global Search (Worldwide via Google)</span>
+              <span className="sm:hidden">Global (Worldwide)</span>
             </button>
           </div>
-          <Badge variant={searchMode === 'local' ? 'default' : 'secondary'} className="ml-2">
+          <Badge variant={searchMode === 'local' ? 'default' : 'secondary'} className="sm:ml-2">
             {searchMode === 'local' ? 'Local' : 'Global'} Mode Active
           </Badge>
         </div>
