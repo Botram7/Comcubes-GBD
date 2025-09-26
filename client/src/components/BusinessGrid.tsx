@@ -70,7 +70,7 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
   const displayItems = gridItems.slice(0, 20);
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 w-full max-w-4xl mx-auto">
+    <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-1 sm:gap-2 w-full max-w-3xl mx-auto">
       {displayItems.map((item, index) => (
         <Card
           key={`${type}-${item.id}-${index}`}
