@@ -17,7 +17,7 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { apiRequest } from '@/lib/queryClient';
-import comcubesIcon from "@assets/Artboard 2 copy_1753136360343.png";
+import comcubesIcon from "@assets/comcubes-new-logo-icon.png";
 import { normalizeUrl } from '@/lib/urlUtils';
 
 const companyListingSchema = z.object({
@@ -260,7 +260,7 @@ export default function ListCompanyPage() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
               <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
+                <img src={comcubesIcon} alt="COMCUBES" className="w-10 h-10" />
               </div>
               <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
@@ -339,7 +339,7 @@ export default function ListCompanyPage() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
               <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
+                <img src={comcubesIcon} alt="COMCUBES" className="w-10 h-10" />
               </div>
               <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
@@ -397,7 +397,7 @@ export default function ListCompanyPage() {
             <div className="flex justify-between items-center py-4">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-10 h-10" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
@@ -455,7 +455,7 @@ export default function ListCompanyPage() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
               <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
+                <img src={comcubesIcon} alt="COMCUBES" className="w-10 h-10" />
               </div>
               <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
