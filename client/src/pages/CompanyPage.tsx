@@ -155,7 +155,7 @@ export default function CompanyPage() {
     );
   }
 
-  const totalPages = Math.ceil((companyData.total || 0) / 20);
+  const totalPages = Math.ceil((companyData?.total || 0) / 20);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -176,13 +176,13 @@ export default function CompanyPage() {
           <div className="py-4">
             {/* Main header row */}
             <div className="flex items-center">
-              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 mr-4" onClick={() => setLocation('/')}>
-                <div className="w-16 h-16 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
+              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 mr-1 sm:mr-4" onClick={() => setLocation('/')}>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 mr-1 sm:mr-3 flex items-center justify-center">
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-12 h-12 sm:w-16 sm:h-16" />
                 </div>
               </div>
               
-              <div className="flex-1 mr-4">
+              <div className="flex-1 mr-2 sm:mr-4">
                 <SearchBar onSearchResults={handleSearchResults} />
               </div>
 
@@ -276,7 +276,7 @@ export default function CompanyPage() {
                 <BusinessGrid 
                   items={searchResults.companies} 
                   type="company" 
-                  onItemClick={handleCompanyClick} 
+                  onItemClick={(company) => handleCompanyClick(company as Company)} 
                   showClaimButtons={true}
                 />
               </div>
@@ -287,11 +287,11 @@ export default function CompanyPage() {
             <div className="mb-6">
               <h2 className="text-3xl font-bold text-gray-900 ">All Companies</h2>
               <p className="text-gray-600  mt-2">
-                Browse {companyData.total} companies across all industries and sectors locally, or discover millions more worldwide via our Advanced Search feature powered by Google Custom Search
+                Browse {companyData?.total || 0} companies across all industries and sectors locally, or discover millions more worldwide via our Advanced Search feature powered by Google Custom Search
               </p>
             </div>
 
-            <BusinessGrid items={companyData.companies || []} type="company" onItemClick={handleCompanyClick} showClaimButtons={true} />
+            <BusinessGrid items={companyData?.companies || []} type="company" onItemClick={(company) => handleCompanyClick(company as Company)} showClaimButtons={true} />
 
             <Pagination 
               currentPage={currentPage}
