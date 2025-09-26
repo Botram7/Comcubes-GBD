@@ -25,7 +25,7 @@ import {
   AlertCircle
 } from "lucide-react";
 import { normalizeUrl } from '@/lib/urlUtils';
-import comcubesIcon from "@assets/comcubes-final-logo.png";
+import comcubesIcon from "@assets/comcubes-new-logo-icon.png";
 import { SEOHead } from "@/components/SEOHead";
 import type { Sector, Industry, Company, SearchResults } from "@/lib/types";
 
@@ -432,7 +432,7 @@ export default function ClaimCompanyPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
-              <img src={comcubesIcon} alt="COMCUBES" className="h-12 w-12" />
+              <img src={comcubesIcon} alt="COMCUBES" className="h-10 w-10" />
               <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
             </div>
             
