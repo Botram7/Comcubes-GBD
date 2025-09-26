@@ -49,7 +49,7 @@ export default function SectorsPage() {
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-10 h-10" />
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-20 h-20" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
@@ -76,7 +76,7 @@ export default function SectorsPage() {
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-10 h-10" />
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-20 h-20" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
