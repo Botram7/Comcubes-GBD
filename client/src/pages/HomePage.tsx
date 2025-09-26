@@ -25,7 +25,7 @@ import { useState, useEffect } from "react";
 import { getImageForEntity } from "@/lib/constants";
 import comcubesLogo from "@assets/default_1752716413946.png";
 import comcubesMonochrome from "@assets/default-monochrome_1752717527516.png";
-import comcubesIcon from "@assets/comcubes-new-logo-icon.png";
+import comcubesIcon from "@assets/Artboard 2_1758848442771.png";
 import newComcubesLogo from "@assets/Artboard 5_1753135425496.png";
 import heroLogo from "@assets/comcubes-hero-logo.png";
 
@@ -368,7 +368,7 @@ export default function HomePage() {
             <div>
               <div className="flex items-center mb-4">
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-20 h-20" />
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-40 h-40" />
                 </div>
                 <span className="text-xl font-bold" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</span>
               </div>

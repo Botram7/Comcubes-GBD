@@ -60,7 +60,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import comcubesIcon from '@assets/comcubes-new-logo-icon.png';
+import comcubesIcon from '@assets/Artboard 2_1758848442771.png';
 import { SEOHead } from '@/components/SEOHead';
 
 interface CompanyListing {
@@ -970,7 +970,7 @@ export default function ComprehensiveAdminDashboard() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
               <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                <img src={comcubesIcon} alt="COMCUBES" className="w-20 h-20" />
+                <img src={comcubesIcon} alt="COMCUBES" className="w-40 h-40" />
               </div>
               <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               <Badge variant="secondary" className="ml-2">Admin</Badge>

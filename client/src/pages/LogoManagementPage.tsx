@@ -6,7 +6,7 @@ import { FallbackIconPreview } from '@/components/FallbackIconPreview';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { SEOHead } from '@/components/SEOHead';
 import { useQuery } from "@tanstack/react-query";
-import comcubesIcon from "@assets/comcubes-new-logo-icon.png";
+import comcubesIcon from "@assets/Artboard 2_1758848442771.png";
 
 export default function LogoManagementPage() {
   // Get sample company names for fallback icon preview
@@ -40,7 +40,7 @@ export default function LogoManagementPage() {
             <Link href="/">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity">
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-20 h-20" />
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-40 h-40" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>
                   COMCUBES

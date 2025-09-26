@@ -21,7 +21,7 @@ import {
   Star,
   TrendingUp
 } from "lucide-react";
-import comcubesIcon from "@assets/comcubes-new-logo-icon.png";
+import comcubesIcon from "@assets/Artboard 2_1758848442771.png";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 import { generateCompanyDescription } from "@/utils/companyDescriptionGenerator";
@@ -68,7 +68,7 @@ export default function CompanyProfilePage() {
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-20 h-20" />
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-40 h-40" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
@@ -114,7 +114,7 @@ export default function CompanyProfilePage() {
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setLocation('/')}>
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-20 h-20" />
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-40 h-40" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
