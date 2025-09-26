@@ -155,7 +155,7 @@ export default function CompanyPage() {
     );
   }
 
-  const totalPages = Math.ceil((companyData?.total || 0) / 20);
+  const totalPages = Math.ceil(((companyData as any)?.total || 0) / 20);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -287,11 +287,11 @@ export default function CompanyPage() {
             <div className="mb-6">
               <h2 className="text-3xl font-bold text-gray-900 ">All Companies</h2>
               <p className="text-gray-600  mt-2">
-                Browse {companyData?.total || 0} companies across all industries and sectors locally, or discover millions more worldwide via our Advanced Search feature powered by Google Custom Search
+                Browse {(companyData as any)?.total || 0} companies across all industries and sectors locally, or discover millions more worldwide via our Advanced Search feature powered by Google Custom Search
               </p>
             </div>
 
-            <BusinessGrid items={companyData?.companies || []} type="company" onItemClick={(company) => handleCompanyClick(company as Company)} showClaimButtons={true} />
+            <BusinessGrid items={(companyData as any)?.companies || []} type="company" onItemClick={(company) => handleCompanyClick(company as Company)} showClaimButtons={true} />
 
             <Pagination 
               currentPage={currentPage}
