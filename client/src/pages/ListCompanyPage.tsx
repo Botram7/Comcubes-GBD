@@ -262,7 +262,7 @@ export default function ListCompanyPage() {
               <div className="w-16 h-16 mr-3 flex items-center justify-center">
                 <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
               </div>
-              <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+
             </div>
             <Button 
               variant="outline" 
@@ -341,7 +341,7 @@ export default function ListCompanyPage() {
               <div className="w-16 h-16 mr-3 flex items-center justify-center">
                 <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
               </div>
-              <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+
             </div>
             <Button 
               variant="outline" 
@@ -399,7 +399,7 @@ export default function ListCompanyPage() {
                 <div className="w-16 h-16 mr-3 flex items-center justify-center">
                   <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
                 </div>
-                <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+  
               </div>
               <Button 
                 variant="outline" 
@@ -457,7 +457,7 @@ export default function ListCompanyPage() {
               <div className="w-16 h-16 mr-3 flex items-center justify-center">
                 <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
               </div>
-              <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
+
             </div>
             <Button 
               variant="outline" 
