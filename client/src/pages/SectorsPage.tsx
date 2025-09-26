@@ -156,13 +156,13 @@ export default function SectorsPage() {
           <div className="py-4">
             {/* Main header row */}
             <div className="flex items-center">
-              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 mr-4" onClick={() => setLocation('/')}>
-                <div className="w-16 h-16 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
+              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 mr-1 sm:mr-4" onClick={() => setLocation('/')}>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 mr-1 sm:mr-3 flex items-center justify-center">
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-12 h-12 sm:w-16 sm:h-16" />
                 </div>
               </div>
               
-              <div className="flex-1 mr-4">
+              <div className="flex-1 mr-2 sm:mr-4 min-w-0">
                 <SearchBar onSearchResults={handleSearchResults} />
               </div>
 
