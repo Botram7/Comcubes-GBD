@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 
-import comcubesIcon from "@assets/comcubes-new-logo-icon.png";
+import comcubesIcon from "@assets/comcubes-final-logo.png";
 import { BannerAd } from "@/components/BannerAd";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { getActiveBannerImages, getBannerClickUrl } from "@/config/bannerAds";
@@ -49,7 +49,7 @@ export default function SectorsPage() {
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-10 h-10" />
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-12 h-12" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
@@ -76,7 +76,7 @@ export default function SectorsPage() {
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">
                 <div className="w-8 h-8 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-10 h-10" />
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-12 h-12" />
                 </div>
                 <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</h1>
               </div>
