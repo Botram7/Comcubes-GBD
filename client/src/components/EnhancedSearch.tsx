@@ -296,9 +296,9 @@ export function EnhancedSearch() {
               </Button>
             </PopoverTrigger>
             <PopoverContent 
-              className="w-96 p-6" 
-              side="left" 
-              align="start" 
+              className="w-80 sm:w-96 p-4 sm:p-6" 
+              side="bottom" 
+              align="end" 
               sideOffset={8}
               avoidCollisions={true}
               collisionPadding={20}
