@@ -131,6 +131,11 @@ export default function ListCompanyPage() {
     setUrlCheckDebounceTimer(timer);
   }, [urlCheckDebounceTimer]);
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Auto-populate fields from URL parameters
   useEffect(() => {
     if (preSelectedSector) {
