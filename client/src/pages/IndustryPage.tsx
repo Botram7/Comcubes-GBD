@@ -288,11 +288,56 @@ export default function IndustryPage() {
           </div>
         ) : (
           <>
-            <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900">{decodedIndustryName}</h2>
+            <div className="mb-8">
+              <h1 className="text-3xl font-bold text-gray-900">{decodedIndustryName} Industry</h1>
               <p className="text-gray-600 mt-2">
-                Companies in {decodedIndustryName} industry ({companies.length} companies)
+                Discover {companies.length} leading companies in the {decodedIndustryName} industry{sectorName ? ` within the ${sectorName} sector` : ''}. Each company listing includes direct website access, industry classification, and professional business details. Connect with industry leaders, emerging companies, and business opportunities in this specialized industry directory.
               </p>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
+                <span>🏢 {companies.length} Companies</span>
+                {sectorName && <span>📊 {sectorName} Sector</span>}
+                <span>🌍 Global Industry Directory</span>
+                <span>🔗 Direct Website Access</span>
+              </div>
+              
+              {/* Quick Navigation Links */}
+              <div className="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
+                <h3 className="text-sm font-semibold text-green-900 mb-3">Navigate Business Directory</h3>
+                <div className="flex flex-wrap gap-2">
+                  {sectorName && (
+                    <button 
+                      onClick={() => setLocation(`/sector/${encodeURIComponent(sectorName)}`)}
+                      className="text-xs px-3 py-1 bg-white border border-green-300 rounded-full hover:bg-green-100 transition-colors"
+                    >
+                      {sectorName} Sector
+                    </button>
+                  )}
+                  <button 
+                    onClick={() => setLocation('/industries')}
+                    className="text-xs px-3 py-1 bg-white border border-green-300 rounded-full hover:bg-green-100 transition-colors"
+                  >
+                    All Industries
+                  </button>
+                  <button 
+                    onClick={() => setLocation('/companies')}
+                    className="text-xs px-3 py-1 bg-white border border-green-300 rounded-full hover:bg-green-100 transition-colors"
+                  >
+                    All Companies
+                  </button>
+                  <button 
+                    onClick={() => setLocation('/sectors')}
+                    className="text-xs px-3 py-1 bg-white border border-green-300 rounded-full hover:bg-green-100 transition-colors"
+                  >
+                    All Sectors
+                  </button>
+                  <button 
+                    onClick={() => setLocation('/search')}
+                    className="text-xs px-3 py-1 bg-white border border-green-300 rounded-full hover:bg-green-100 transition-colors"
+                  >
+                    Advanced Search
+                  </button>
+                </div>
+              </div>
             </div>
 
             <BusinessGrid 
@@ -303,6 +348,72 @@ export default function IndustryPage() {
               currentSector={sectorName}
               currentIndustry={decodedIndustryName}
             />
+            
+            {/* Related Industries & Business Opportunities */}
+            {companies.length > 0 && (
+              <div className="mt-12 p-6 bg-gray-50 rounded-lg">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Explore Related Business Opportunities</h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Expand your business network by exploring related industries and sectors. Each area offers unique companies and professional opportunities.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-3">
+                    <h4 className="font-medium text-gray-900 text-sm">Popular Industries</h4>
+                    <div className="grid grid-cols-1 gap-2">
+                      <button 
+                        onClick={() => setLocation('/industry/Software Development')}
+                        className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
+                      >
+                        Software Development
+                      </button>
+                      <button 
+                        onClick={() => setLocation('/industry/Digital Marketing')}
+                        className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
+                      >
+                        Digital Marketing
+                      </button>
+                      <button 
+                        onClick={() => setLocation('/industry/Financial Technology')}
+                        className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
+                      >
+                        Financial Technology
+                      </button>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <h4 className="font-medium text-gray-900 text-sm">Business Tools</h4>
+                    <div className="grid grid-cols-1 gap-2">
+                      <button 
+                        onClick={() => setLocation('/list-company')}
+                        className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
+                      >
+                        List Your Company
+                      </button>
+                      <button 
+                        onClick={() => setLocation('/search')}
+                        className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
+                      >
+                        Find Business Partners
+                      </button>
+                      <button 
+                        onClick={() => setLocation('/contact')}
+                        className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
+                      >
+                        Business Inquiries
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-4 text-center">
+                  <button 
+                    onClick={() => setLocation('/industries')}
+                    className="text-sm text-green-600 hover:text-green-800 font-medium"
+                  >
+                    Browse All 400+ Industries →
+                  </button>
+                </div>
+              </div>
+            )}
           </>
         )}
           </div>
