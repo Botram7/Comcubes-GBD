@@ -243,31 +243,43 @@ export default function HomePage() {
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-            <Card className="text-center p-4 md:p-8 bg-white shadow-sm border border-gray-100">
+            <Card 
+              className="text-center p-4 md:p-8 bg-white shadow-sm border border-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200 hover:border-blue-300"
+              onClick={() => setLocation('/sectors')}
+            >
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart3 className="h-6 w-6 text-blue-600 " />
+                <BarChart3 className="h-6 w-6 text-blue-600" />
               </div>
-              <div className="text-3xl font-bold text-gray-900  mb-2">{sectorCount}</div>
-              <div className="text-gray-600  font-medium mb-1">Business Sectors</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">{sectorCount}</div>
+              <div className="text-gray-600 font-medium mb-1">Business Sectors</div>
               <div className="text-sm text-gray-500">Major global business categories</div>
+              <div className="text-xs text-blue-600 mt-2 font-medium">Browse All Sectors →</div>
             </Card>
 
-            <Card className="text-center p-4 md:p-8 bg-white shadow-sm border border-gray-100">
+            <Card 
+              className="text-center p-4 md:p-8 bg-white shadow-sm border border-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200 hover:border-purple-300"
+              onClick={() => setLocation('/industries')}
+            >
               <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Target className="h-6 w-6 text-purple-600" />
               </div>
-              <div className="text-3xl font-bold text-gray-900  mb-2">400+</div>
-              <div className="text-gray-600  font-medium mb-1">Specialized Industries</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">400+</div>
+              <div className="text-gray-600 font-medium mb-1">Specialized Industries</div>
               <div className="text-sm text-gray-500">Detailed industry classifications</div>
+              <div className="text-xs text-purple-600 mt-2 font-medium">Browse All Industries →</div>
             </Card>
 
-            <Card className="text-center p-4 md:p-8 bg-white shadow-sm border border-gray-100">
+            <Card 
+              className="text-center p-4 md:p-8 bg-white shadow-sm border border-gray-100 cursor-pointer hover:shadow-lg transition-all duration-200 hover:border-green-300"
+              onClick={() => setLocation('/companies')}
+            >
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="h-6 w-6 text-green-600" />
               </div>
-              <div className="text-3xl font-bold text-gray-900  mb-2">7,400+</div>
-              <div className="text-gray-600  font-medium mb-1">Global Companies</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">7,400+</div>
+              <div className="text-gray-600 font-medium mb-1">Global Companies</div>
               <div className="text-sm text-gray-500">Leading organizations worldwide</div>
+              <div className="text-xs text-green-600 mt-2 font-medium">Browse All Companies →</div>
             </Card>
           </div>
         </div>
@@ -330,6 +342,106 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Explore Our Directory Section */}
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Explore Our Business Directory
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+              Navigate through our comprehensive business ecosystem. Start broad with sectors, 
+              narrow down to specific industries, or dive directly into company profiles.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Directory Pages */}
+            <Card className="p-6 bg-white shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Browse by Category</h3>
+              <div className="space-y-3">
+                <button 
+                  onClick={() => setLocation('/sectors')}
+                  className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-sm text-gray-600">All Business Sectors</span>
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                </button>
+                <button 
+                  onClick={() => setLocation('/industries')}
+                  className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-sm text-gray-600">All Industries</span>
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                </button>
+                <button 
+                  onClick={() => setLocation('/companies')}
+                  className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-sm text-gray-600">All Companies</span>
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                </button>
+              </div>
+            </Card>
+
+            {/* Featured Sectors */}
+            <Card className="p-6 bg-white shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Popular Sectors</h3>
+              <div className="space-y-3">
+                <button 
+                  onClick={() => setLocation('/sector/Technology')}
+                  className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-sm text-gray-600">Technology</span>
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                </button>
+                <button 
+                  onClick={() => setLocation('/sector/Healthcare')}
+                  className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-sm text-gray-600">Healthcare</span>
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                </button>
+                <button 
+                  onClick={() => setLocation('/sector/Financial Services')}
+                  className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-sm text-gray-600">Financial Services</span>
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                </button>
+              </div>
+            </Card>
+
+            {/* Tools & Features */}
+            <Card className="p-6 bg-white shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Tools & Features</h3>
+              <div className="space-y-3">
+                <button 
+                  onClick={() => setLocation('/search')}
+                  className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-sm text-gray-600">Advanced Search</span>
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                </button>
+                <button 
+                  onClick={() => setLocation('/list-company')}
+                  className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-sm text-gray-600">List Your Company</span>
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                </button>
+                <button 
+                  onClick={() => setLocation('/contact')}
+                  className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  <span className="text-sm text-gray-600">Contact Support</span>
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                </button>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
 
       {/* Call to Action Section */}
       <section className="bg-blue-600 py-12 md:py-16">
@@ -378,7 +490,17 @@ export default function HomePage() {
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Quick Links</h3>
+              <h3 className="font-semibold mb-4">Browse Directory</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><button onClick={() => setLocation('/sectors')} className="hover:text-white text-left">All Business Sectors</button></li>
+                <li><button onClick={() => setLocation('/industries')} className="hover:text-white text-left">All Industries</button></li>
+                <li><button onClick={() => setLocation('/companies')} className="hover:text-white text-left">All Companies</button></li>
+                <li><button onClick={() => setLocation('/search')} className="hover:text-white text-left">Advanced Search</button></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="font-semibold mb-4">Legal</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><button onClick={() => setLocation('/privacy-policy')} className="hover:text-white text-left">Privacy Policy</button></li>
                 <li><button onClick={() => setLocation('/terms-of-service')} className="hover:text-white text-left">Terms of Service</button></li>

@@ -287,14 +287,98 @@ export default function SectorPage() {
           </div>
         ) : (
           <>
-            <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900">{decodedSectorName}</h2>
+            <div className="mb-8">
+              <h1 className="text-3xl font-bold text-gray-900">{decodedSectorName} Sector</h1>
               <p className="text-gray-600 mt-2">
-                Industries within {decodedSectorName} sector ({Array.isArray(industries) ? industries.length : 0} industries)
+                Explore {Array.isArray(industries) ? industries.length : 0} specialized industries within the {decodedSectorName} sector. Each industry features leading companies with detailed profiles, direct website access, and business opportunities. Navigate through industry leaders, emerging companies, and professional networks in this comprehensive sector directory.
               </p>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
+                <span>🏭 {Array.isArray(industries) ? industries.length : 0} Industries</span>
+                <span>🌍 Global Coverage</span>
+                <span>📊 Professional Profiles</span>
+              </div>
+              
+              {/* Quick Navigation Links */}
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <h3 className="text-sm font-semibold text-blue-900 mb-3">Explore More Business Sectors</h3>
+                <div className="flex flex-wrap gap-2">
+                  <button 
+                    onClick={() => setLocation('/sectors')}
+                    className="text-xs px-3 py-1 bg-white border border-blue-300 rounded-full hover:bg-blue-100 transition-colors"
+                  >
+                    All Business Sectors
+                  </button>
+                  <button 
+                    onClick={() => setLocation('/industries')}
+                    className="text-xs px-3 py-1 bg-white border border-blue-300 rounded-full hover:bg-blue-100 transition-colors"
+                  >
+                    All Industries
+                  </button>
+                  <button 
+                    onClick={() => setLocation('/companies')}
+                    className="text-xs px-3 py-1 bg-white border border-blue-300 rounded-full hover:bg-blue-100 transition-colors"
+                  >
+                    All Companies
+                  </button>
+                  <button 
+                    onClick={() => setLocation('/search')}
+                    className="text-xs px-3 py-1 bg-white border border-blue-300 rounded-full hover:bg-blue-100 transition-colors"
+                  >
+                    Advanced Search
+                  </button>
+                </div>
+              </div>
             </div>
 
             <BusinessGrid items={industries} type="industry" onItemClick={handleIndustryClick} />
+            
+            {/* Related Sectors Navigation */}
+            {Array.isArray(industries) && industries.length > 0 && (
+              <div className="mt-12 p-6 bg-gray-50 rounded-lg">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Continue Exploring Business Sectors</h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Discover more business opportunities across different sectors. Each sector contains specialized industries with leading companies worldwide.
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <button 
+                    onClick={() => setLocation('/sector/Technology')}
+                    className="p-3 bg-white rounded border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all text-left text-sm"
+                  >
+                    <div className="font-medium text-gray-900">Technology</div>
+                    <div className="text-xs text-gray-500">Innovation & Digital</div>
+                  </button>
+                  <button 
+                    onClick={() => setLocation('/sector/Healthcare')}
+                    className="p-3 bg-white rounded border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all text-left text-sm"
+                  >
+                    <div className="font-medium text-gray-900">Healthcare</div>
+                    <div className="text-xs text-gray-500">Medical & Life Sciences</div>
+                  </button>
+                  <button 
+                    onClick={() => setLocation('/sector/Financial Services')}
+                    className="p-3 bg-white rounded border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all text-left text-sm"
+                  >
+                    <div className="font-medium text-gray-900">Financial Services</div>
+                    <div className="text-xs text-gray-500">Banking & Finance</div>
+                  </button>
+                  <button 
+                    onClick={() => setLocation('/sector/Manufacturing')}
+                    className="p-3 bg-white rounded border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all text-left text-sm"
+                  >
+                    <div className="font-medium text-gray-900">Manufacturing</div>
+                    <div className="text-xs text-gray-500">Production & Industry</div>
+                  </button>
+                </div>
+                <div className="mt-4 text-center">
+                  <button 
+                    onClick={() => setLocation('/sectors')}
+                    className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+                  >
+                    View All 20 Business Sectors →
+                  </button>
+                </div>
+              </div>
+            )}
           </>
         )}
           </div>
