@@ -19,11 +19,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.use((req, res, next) => {
     const host = req.get('Host') || '';
     const protocol = req.get('X-Forwarded-Proto') || req.protocol;
-    const originalUrl = `${protocol}://${host}${req.originalUrl}`;
+    const path = req.path;
+    
+    // Handle /home redirects first (before other redirects)
+    if (path === '/home' || path === '/home/') {
+      const targetHost = host.startsWith('www.') ? host.slice(4) : host;
+      const targetProtocol = protocol === 'http' && process.env.NODE_ENV === 'production' ? 'https' : protocol;
+      return res.redirect(301, `${targetProtocol}://${targetHost}/`);
+    }
     
     // Check if we need to redirect to HTTPS
     if (protocol === 'http' && process.env.NODE_ENV === 'production') {
-      return res.redirect(301, `https://${host}${req.originalUrl}`);
+      const targetHost = host.startsWith('www.') ? host.slice(4) : host;
+      return res.redirect(301, `https://${targetHost}${req.originalUrl}`);
     }
     
     // Check if we need to redirect from www to non-www
