@@ -299,29 +299,29 @@ export default function SectorPage() {
               </div>
               
               {/* Quick Navigation Links */}
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                <h3 className="text-sm font-semibold text-blue-900 mb-3">Explore More Business Sectors</h3>
-                <div className="flex flex-wrap gap-2">
+              <div className="mt-6 p-3 sm:p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <h3 className="text-xs sm:text-sm font-semibold text-blue-900 mb-3">Explore More Business Sectors</h3>
+                <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
                   <button 
-                    onClick={() => setLocation('/sectors')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/sectors'); }}
                     className="text-xs px-3 py-1 bg-white border border-blue-300 rounded-full hover:bg-blue-100 transition-colors"
                   >
                     All Business Sectors
                   </button>
                   <button 
-                    onClick={() => setLocation('/industries')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/industries'); }}
                     className="text-xs px-3 py-1 bg-white border border-blue-300 rounded-full hover:bg-blue-100 transition-colors"
                   >
                     All Industries
                   </button>
                   <button 
-                    onClick={() => setLocation('/companies')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/companies'); }}
                     className="text-xs px-3 py-1 bg-white border border-blue-300 rounded-full hover:bg-blue-100 transition-colors"
                   >
                     All Companies
                   </button>
                   <button 
-                    onClick={() => setLocation('/search')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/search'); }}
                     className="text-xs px-3 py-1 bg-white border border-blue-300 rounded-full hover:bg-blue-100 transition-colors"
                   >
                     Advanced Search
@@ -334,35 +334,35 @@ export default function SectorPage() {
             
             {/* Related Sectors Navigation */}
             {Array.isArray(industries) && industries.length > 0 && (
-              <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Continue Exploring Business Sectors</h3>
-                <p className="text-gray-600 mb-4 text-sm">
+              <div className="mt-12 p-4 sm:p-6 bg-gray-50 rounded-lg">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">Continue Exploring Business Sectors</h3>
+                <p className="text-gray-600 mb-4 text-xs sm:text-sm">
                   Discover more business opportunities across different sectors. Each sector contains specialized industries with leading companies worldwide.
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                   <button 
-                    onClick={() => setLocation('/sector/Technology')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/sector/Technology'); }}
                     className="p-3 bg-white rounded border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all text-left text-sm"
                   >
                     <div className="font-medium text-gray-900">Technology</div>
                     <div className="text-xs text-gray-500">Innovation & Digital</div>
                   </button>
                   <button 
-                    onClick={() => setLocation('/sector/Healthcare')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/sector/Healthcare and Pharmaceuticals'); }}
                     className="p-3 bg-white rounded border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all text-left text-sm"
                   >
                     <div className="font-medium text-gray-900">Healthcare</div>
                     <div className="text-xs text-gray-500">Medical & Life Sciences</div>
                   </button>
                   <button 
-                    onClick={() => setLocation('/sector/Financial Services')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/sector/Banking and Financial Services'); }}
                     className="p-3 bg-white rounded border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all text-left text-sm"
                   >
-                    <div className="font-medium text-gray-900">Financial Services</div>
+                    <div className="font-medium text-gray-900">Banking & Financial</div>
                     <div className="text-xs text-gray-500">Banking & Finance</div>
                   </button>
                   <button 
-                    onClick={() => setLocation('/sector/Manufacturing')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/sector/Manufacturing'); }}
                     className="p-3 bg-white rounded border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all text-left text-sm"
                   >
                     <div className="font-medium text-gray-900">Manufacturing</div>
@@ -371,7 +371,7 @@ export default function SectorPage() {
                 </div>
                 <div className="mt-4 text-center">
                   <button 
-                    onClick={() => setLocation('/sectors')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/sectors'); }}
                     className="text-sm text-blue-600 hover:text-blue-800 font-medium"
                   >
                     View All 20 Business Sectors →
