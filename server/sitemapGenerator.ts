@@ -42,6 +42,7 @@ ${urlElements}
     const now = new Date().toISOString();
     
     return [
+      // Core pages with highest priority
       {
         url: this.baseUrl,
         lastmod: now,
@@ -51,13 +52,13 @@ ${urlElements}
       {
         url: `${this.baseUrl}/sectors`,
         lastmod: now,
-        changefreq: 'weekly',
+        changefreq: 'daily',
         priority: 0.9
       },
       {
         url: `${this.baseUrl}/industries`,
         lastmod: now,
-        changefreq: 'weekly',
+        changefreq: 'daily',
         priority: 0.9
       },
       {
@@ -66,17 +67,35 @@ ${urlElements}
         changefreq: 'daily',
         priority: 0.9
       },
+      
+      // Business-critical pages
+      {
+        url: `${this.baseUrl}/list-company`,
+        lastmod: now,
+        changefreq: 'weekly',
+        priority: 0.9
+      },
       {
         url: `${this.baseUrl}/search`,
         lastmod: now,
-        changefreq: 'monthly',
+        changefreq: 'weekly',
+        priority: 0.85
+      },
+      
+      // Content feeds for SEO
+      {
+        url: `${this.baseUrl}/feed/`,
+        lastmod: now,
+        changefreq: 'daily',
         priority: 0.8
       },
+      
+      // Secondary business pages
       {
         url: `${this.baseUrl}/advertise`,
         lastmod: now,
         changefreq: 'monthly',
-        priority: 0.7
+        priority: 0.6
       },
       {
         url: `${this.baseUrl}/contact`,
@@ -84,29 +103,31 @@ ${urlElements}
         changefreq: 'monthly',
         priority: 0.6
       },
+      
+      // Legal and compliance pages
       {
         url: `${this.baseUrl}/privacy-policy`,
         lastmod: now,
         changefreq: 'yearly',
-        priority: 0.3
+        priority: 0.4
       },
       {
         url: `${this.baseUrl}/terms-of-service`,
         lastmod: now,
         changefreq: 'yearly',
-        priority: 0.3
+        priority: 0.4
       },
       {
         url: `${this.baseUrl}/disclaimer`,
         lastmod: now,
         changefreq: 'yearly',
-        priority: 0.3
+        priority: 0.4
       },
       {
         url: `${this.baseUrl}/affiliate-disclosure`,
         lastmod: now,
         changefreq: 'yearly',
-        priority: 0.3
+        priority: 0.4
       }
     ];
   }
@@ -116,36 +137,53 @@ ${urlElements}
     const now = new Date().toISOString();
 
     try {
-      // Get all sectors
-      const sectors = await storage.getAllSectors();
+      // Get all sectors - high priority as they're major landing pages
+      const sectors = await storage.getSectors();
       for (const sector of sectors) {
         urls.push({
           url: `${this.baseUrl}/sector/${encodeURIComponent(sector.name)}`,
           lastmod: now,
-          changefreq: 'weekly',
-          priority: 0.8
+          changefreq: 'daily',
+          priority: 0.85
         });
       }
 
-      // Get all industries  
+      // Get all industries - medium-high priority, frequently updated
       const industries = await storage.getAllIndustries();
       for (const industry of industries) {
         urls.push({
           url: `${this.baseUrl}/industry/${encodeURIComponent(industry.name)}`,
           lastmod: now,
           changefreq: 'daily',
-          priority: 0.7
+          priority: 0.75
         });
       }
 
-      // Get all companies (limit to prevent huge sitemaps)
-      const companies = await storage.getAllCompanies(1000); // Limit to first 1000 companies
-      for (const company of companies) {
+      // Get companies with strategic priority distribution
+      const companies = await storage.getAllCompanies(1500); // Increased limit for better coverage
+      for (let i = 0; i < companies.length; i++) {
+        const company = companies[i];
+        
+        // Higher priority for top companies (first 200)
+        let priority = 0.6;
+        let changefreq: 'daily' | 'weekly' | 'monthly' = 'weekly';
+        
+        if (i < 200) {
+          priority = 0.7;
+          changefreq = 'daily';
+        } else if (i < 500) {
+          priority = 0.65;
+          changefreq = 'weekly';
+        } else {
+          priority = 0.55;
+          changefreq = 'monthly';
+        }
+        
         urls.push({
           url: `${this.baseUrl}/company/${encodeURIComponent(company.name)}`,
           lastmod: now,
-          changefreq: 'weekly',
-          priority: 0.6
+          changefreq: changefreq,
+          priority: priority
         });
       }
 
