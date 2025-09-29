@@ -1,5 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
 import helmet from "helmet";
+import compression from "compression";
 import rateLimit from "express-rate-limit";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
@@ -10,6 +11,20 @@ const app = express();
 
 // Configure trust proxy specifically for Replit's infrastructure
 app.set('trust proxy', 1); // Trust only the first proxy (more secure than 'true')
+
+// Compression middleware for better Core Web Vitals and page speed
+app.use(compression({
+  filter: (req: Request, res: Response) => {
+    // Compress all responses except images that are already compressed
+    if (req.headers['x-no-compression']) {
+      return false;
+    }
+    // Fall back to standard filter function
+    return compression.filter(req, res);
+  },
+  threshold: 1024, // Only compress responses above 1KB
+  level: 6, // Good balance between compression speed and ratio
+}));
 
 // Security Headers - Implement essential security headers
 app.use(helmet({
@@ -110,6 +125,41 @@ app.use((req, res, next) => {
     }
   });
 
+  next();
+});
+
+// Static asset caching optimization for Core Web Vitals and Page Speed
+app.use((req: Request, res: Response, next: NextFunction) => {
+  // Only apply caching in production for optimal performance
+  if (process.env.NODE_ENV === 'production') {
+    const originalSetHeader = res.setHeader;
+    res.setHeader = function(name: string, value: string | string[] | number) {
+      if (name.toLowerCase() === 'cache-control') {
+        // Don't override existing cache-control headers (for sitemap, banner images, etc.)
+        return originalSetHeader.call(this, name, value);
+      }
+      return originalSetHeader.call(this, name, value);
+    };
+
+    // Set cache headers based on file extension
+    const path = req.path;
+    
+    // Long-term caching for hashed static assets (Vite includes content hash)
+    if (path.match(/\.(css|js|mjs|woff2?|ttf|otf)$/)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      res.setHeader('Expires', new Date(Date.now() + 31536000000).toUTCString());
+    }
+    // Moderate caching for images and media
+    else if (path.match(/\.(png|jpg|jpeg|gif|svg|webp|ico|pdf)$/)) {
+      res.setHeader('Cache-Control', 'public, max-age=86400'); // 1 day
+      res.setHeader('Expires', new Date(Date.now() + 86400000).toUTCString());
+    }
+    // No aggressive caching for HTML to prevent stale shells
+    else if (path.match(/\.(html?)$/) || path === '/' || !path.includes('.')) {
+      res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    }
+  }
+  
   next();
 });
 
