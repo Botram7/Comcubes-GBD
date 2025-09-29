@@ -1356,39 +1356,87 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
-  // SEO: RSS Feed endpoint (placeholder - amendable)
-  app.get("/feed", async (req, res) => {
+  // SEO: RSS Feed endpoint - handle both /feed and /feed/
+  app.get(["/feed", "/feed/"], async (req, res) => {
     try {
       const now = new Date();
       const pubDate = now.toUTCString();
+      
+      // Get dynamic content from database
+      const sectors = await storage.getSectors();
+      const industries = await storage.getAllIndustries();
+      const companies = await storage.getAllCompanies();
+      
+      // Get recent/featured content for RSS items
+      const featuredSectors = sectors.slice(0, 5); // First 5 sectors
+      const featuredIndustries = industries.slice(0, 3); // First 3 industries
+      const featuredCompanies = companies.slice(0, 2); // First 2 companies
+      
+      let rssItems = '';
+      
+      // Add welcome item
+      rssItems += `
+    <item>
+      <title>COMCUBES Global Business Directory - ${sectors.length} Sectors, ${industries.length} Industries, ${companies.length} Companies</title>
+      <link>https://comcubes.com</link>
+      <description>Discover our comprehensive global business directory featuring ${sectors.length} business sectors, ${industries.length} specialized industries, and ${companies.length} leading companies worldwide. Navigate business opportunities across all major sectors.</description>
+      <pubDate>${pubDate}</pubDate>
+      <guid>https://comcubes.com#directory-${now.getTime()}</guid>
+    </item>`;
+      
+      // Add sector items
+      featuredSectors.forEach((sector: any) => {
+        rssItems += `
+    <item>
+      <title>Business Sector: ${sector.name}</title>
+      <link>https://comcubes.com/sector/${encodeURIComponent(sector.name)}</link>
+      <description>Explore companies and industries in the ${sector.name} sector. Discover leading businesses, industry trends, and professional opportunities in this specialized business area.</description>
+      <pubDate>${pubDate}</pubDate>
+      <guid>https://comcubes.com/sector/${encodeURIComponent(sector.name)}#rss</guid>
+    </item>`;
+      });
+      
+      // Add industry items
+      featuredIndustries.forEach((industry: any) => {
+        rssItems += `
+    <item>
+      <title>Industry Focus: ${industry.name}</title>
+      <link>https://comcubes.com/industry/${encodeURIComponent(industry.name)}</link>
+      <description>Companies and opportunities in ${industry.name} industry within ${industry.sectorName} sector. Connect with industry leaders and explore business partnerships.</description>
+      <pubDate>${pubDate}</pubDate>
+      <guid>https://comcubes.com/industry/${encodeURIComponent(industry.name)}#rss</guid>
+    </item>`;
+      });
+      
+      // Add company items
+      featuredCompanies.forEach((company: any) => {
+        rssItems += `
+    <item>
+      <title>Featured Company: ${company.name}</title>
+      <link>${company.websiteUrl}</link>
+      <description>${company.name} in ${company.industryName} industry, ${company.sectorName} sector. ${company.description || 'Leading company providing innovative solutions and business services.'}</description>
+      <pubDate>${pubDate}</pubDate>
+      <guid>https://comcubes.com/company/${company.id}#rss</guid>
+    </item>`;
+      });
       
       const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>COMCUBES - Global Business Directory</title>
     <link>https://comcubes.com</link>
-    <description>Stay updated with the latest business directory updates, new sectors, industries, and company listings from COMCUBES - your comprehensive global business resource.</description>
+    <description>Stay updated with the latest business directory updates, new sectors, industries, and company listings from COMCUBES - your comprehensive global business resource featuring ${sectors.length} sectors, ${industries.length} industries, and ${companies.length} companies worldwide.</description>
     <language>en-us</language>
     <pubDate>${pubDate}</pubDate>
     <lastBuildDate>${pubDate}</lastBuildDate>
     <generator>COMCUBES RSS Generator</generator>
-    <atom:link href="https://comcubes.com/feed" rel="self" type="application/rss+xml"/>
-    
-    <item>
-      <title>Welcome to COMCUBES Global Business Directory</title>
-      <link>https://comcubes.com</link>
-      <description>Discover thousands of companies across all business sectors and industries worldwide. Navigate 20 major business sectors, explore 400+ specialized industries, and connect with 7,400+ leading global companies.</description>
-      <pubDate>${pubDate}</pubDate>
-      <guid>https://comcubes.com#welcome</guid>
-    </item>
-    
-    <item>
-      <title>Comprehensive Business Sectors Available</title>
-      <link>https://comcubes.com/sectors</link>
-      <description>Explore our comprehensive collection of 20 major business sectors, each containing specialized industries and leading companies organized for business professionals.</description>
-      <pubDate>${pubDate}</pubDate>
-      <guid>https://comcubes.com/sectors#overview</guid>
-    </item>
+    <atom:link href="https://comcubes.com/feed/" rel="self" type="application/rss+xml"/>
+    <webMaster>contact-cgbd@comcubes.com (COMCUBES)</webMaster>
+    <managingEditor>admin@comcubes.com (COMCUBES Editorial)</managingEditor>
+    <category>Business</category>
+    <category>Directory</category>
+    <category>Companies</category>
+    <ttl>60</ttl>${rssItems}
     
   </channel>
 </rss>`;
