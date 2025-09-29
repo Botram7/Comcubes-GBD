@@ -161,15 +161,42 @@ export default function CompanyPage() {
     <div className="min-h-screen bg-gray-50">
       <AffiliateDisclosureBanner />
       <SEOHead 
-        title="Browse All Companies - COMCUBES Global Business Directory"
-        description="Explore thousands of companies from around the world. Search and discover businesses across all industries and sectors in our comprehensive global directory."
+        title={`Browse ${((companyData as any)?.total || 7400)} Global Companies Directory | COMCUBES`}
+        description={`Explore ${((companyData as any)?.total || 7400)} companies from around the world across 20 business sectors and 400+ industries. Search and discover businesses with direct website access, company profiles, and professional opportunities in our comprehensive global directory.`}
         keywords={[
           "companies directory", "global companies", "business listings", "company search",
           "worldwide businesses", "corporate directory", "international companies",
-          "business database", "company finder", "enterprise directory"
+          "business database", "company finder", "enterprise directory", "company profiles",
+          "business contacts", "global business directory", "professional networking"
         ]}
         canonicalUrl={`${window.location.origin}/companies`}
-        structuredData={createBusinessDirectoryStructuredData()}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Global Companies Directory",
+          "description": `Comprehensive directory of ${((companyData as any)?.total || 7400)} companies worldwide across all business sectors and industries`,
+          "url": `${window.location.origin}/companies`,
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": ((companyData as any)?.companies || []).slice(0, 20).map((company: any, index: number) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Organization",
+                "name": company.name,
+                "url": company.websiteUrl,
+                "description": `${company.name} - Company in ${company.industryName} industry`
+              }
+            })) || []
+          },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": `${window.location.origin}/` },
+              { "@type": "ListItem", "position": 2, "name": "All Companies", "item": `${window.location.origin}/companies` }
+            ]
+          }
+        }}
       />
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -285,10 +312,16 @@ export default function CompanyPage() {
         ) : (
           <>
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900 ">All Companies</h2>
-              <p className="text-gray-600  mt-2">
-                Browse {(companyData as any)?.total || 0} companies across all industries and sectors locally, or discover millions more worldwide via our Advanced Search feature powered by Google Custom Search
+              <h1 className="text-3xl font-bold text-gray-900">Global Companies Directory</h1>
+              <p className="text-gray-600 mt-2">
+                Explore {(companyData as any)?.total || 7400} leading companies spanning 20 business sectors and 400+ specialized industries worldwide. Each company listing includes direct website access, industry classification, and professional business details. Connect with businesses across technology, healthcare, finance, manufacturing, energy, and emerging sectors globally.
               </p>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
+                <span>🌍 {(companyData as any)?.total || 7400} Global Companies</span>
+                <span>🏭 400+ Specialized Industries</span>
+                <span>📊 20 Business Sectors</span>
+                <span>📄 Page {currentPage} of {totalPages}</span>
+              </div>
             </div>
 
             <BusinessGrid items={(companyData as any)?.companies || []} type="company" onItemClick={(company) => handleCompanyClick(company as Company)} showClaimButtons={true} />

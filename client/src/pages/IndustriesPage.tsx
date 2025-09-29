@@ -42,6 +42,12 @@ export default function IndustriesPage() {
     staleTime: 0,
   });
 
+  // Get sectors count for SEO metadata
+  const { data: sectors = [] } = useQuery<any[]>({
+    queryKey: ["/api/sectors"],
+    staleTime: 300000,
+  });
+
   const handleIndustryClick = (industry: Industry) => {
     setLocation(`/industry/${encodeURIComponent(industry.name)}`);
   };
@@ -178,18 +184,42 @@ export default function IndustriesPage() {
     <div className="min-h-screen bg-gray-50">
       <AffiliateDisclosureBanner />
       <SEOHead 
-        title="Industries Directory | Browse 400+ Industries | COMCUBES"
-        description="Browse over 400 specialized industries across all business sectors. Each industry features the top 20 companies with detailed profiles and direct website access."
+        title={`Browse ${total || '400+'} Specialized Industries Directory | COMCUBES Global Business Directory`}
+        description={`Explore ${total || '400+'} specialized industries across ${sectors?.length || 20} business sectors worldwide. Each industry showcases leading companies with detailed profiles, website access, and professional opportunities. Find businesses in technology, healthcare, finance, manufacturing, and more specialized fields.`}
         keywords={[
           "industries directory", "business industries", "industry listings", "specialized industries",
           "industry categories", "business specializations", "professional services", "industrial sectors",
-          "industry database", "commercial industries", "business verticals"
+          "industry database", "commercial industries", "business verticals", "global industries",
+          "industry classification", "business sectors", "professional industries", "commercial specialties"
         ]}
         canonicalUrl={`${window.location.origin}/industries`}
-        structuredData={createBreadcrumbStructuredData([
-          { name: "Home", url: `${window.location.origin}/` },
-          { name: "All Industries", url: `${window.location.origin}/industries` }
-        ])}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Global Industries Directory",
+          "description": `Comprehensive directory of ${total || '400+'} specialized industries with leading companies worldwide`,
+          "url": `${window.location.origin}/industries`,
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": industries?.slice(0, 20).map((industry: any, index: number) => ({
+              "@type": "ListItem", 
+              "position": index + 1,
+              "item": {
+                "@type": "Thing",
+                "name": industry.name,
+                "url": `${window.location.origin}/industry/${encodeURIComponent(industry.name)}`,
+                "description": `Specialized industry in ${industry.sectorName} sector`
+              }
+            })) || []
+          },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": `${window.location.origin}/` },
+              { "@type": "ListItem", "position": 2, "name": "All Industries", "item": `${window.location.origin}/industries` }
+            ]
+          }
+        }}
       />
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -315,10 +345,16 @@ export default function IndustriesPage() {
         ) : (
           <>
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900 ">All Industries</h2>
-              <p className="text-gray-600  mt-2">
-                Browse {total} specialized industries across all business sectors. Click on any industry to view its top companies.
+              <h1 className="text-3xl font-bold text-gray-900">Global Industries Directory</h1>
+              <p className="text-gray-600 mt-2">
+                Discover {total || '400+'} specialized industries spanning {sectors?.length || 20} major business sectors worldwide. Each industry features leading companies with detailed profiles, website access, and professional opportunities. Find specialized businesses in technology, healthcare, finance, manufacturing, energy, and emerging sectors.
               </p>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
+                <span>🏭 {total || '400+'} Specialized Industries</span>
+                <span>📊 {sectors?.length || 20} Business Sectors</span>
+                <span>🌍 7,400+ Global Companies</span>
+                <span>📄 Page {currentPage} of {totalPages}</span>
+              </div>
             </div>
 
             <BusinessGrid items={industries} type="industry" onItemClick={(item) => handleIndustryClick(item as Industry)} />
