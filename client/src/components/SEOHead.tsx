@@ -6,7 +6,10 @@ const CANONICAL_DOMAIN = 'https://comcubes.com';
 // Utility function to get canonical URL for current path
 const getCanonicalUrl = (path?: string): string => {
   const currentPath = path || window.location.pathname;
-  return `${CANONICAL_DOMAIN}${currentPath}`;
+  // Ensure path starts with / and normalize any edge cases
+  const normalizedPath = currentPath.startsWith('/') ? currentPath : `/${currentPath}`;
+  // Always use canonical domain regardless of current host
+  return `${CANONICAL_DOMAIN}${normalizedPath}`;
 };
 
 interface SEOHeadProps {
@@ -101,8 +104,10 @@ export function SEOHead({
     setMetaTag('theme-color', '#1e40af');
     setMetaTag('msapplication-TileColor', '#1e40af');
     
-    // Canonical URL - always set for SEO consistency
+    // Enhanced canonical URL implementation for stronger domain consolidation
     const finalCanonicalUrl = canonicalUrl || getCanonicalUrl();
+    
+    // Set canonical link - primary canonicalization signal
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (!canonical) {
       canonical = document.createElement('link');
@@ -111,8 +116,26 @@ export function SEOHead({
     }
     canonical.href = finalCanonicalUrl;
     
-    // Open Graph URL
+    // Additional canonicalization signals
+    setMetaTag('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
     setMetaTag('og:url', finalCanonicalUrl, 'property');
+    setMetaTag('twitter:url', finalCanonicalUrl);
+    
+    // Add rel="alternate" for HTTPS version if not already HTTPS
+    if (!finalCanonicalUrl.startsWith('https://')) {
+      const httpsUrl = finalCanonicalUrl.replace('http://', 'https://');
+      let alternateLink = document.querySelector('link[rel="alternate"][href*="https://"]') as HTMLLinkElement;
+      if (!alternateLink) {
+        alternateLink = document.createElement('link');
+        alternateLink.rel = 'alternate';
+        alternateLink.href = httpsUrl;
+        document.head.appendChild(alternateLink);
+      }
+    }
+    
+    // Ensure domain preference signals
+    setMetaTag('web_author', 'COMCUBES');
+    setMetaTag('identifier-URL', CANONICAL_DOMAIN);
     
     // Structured Data (JSON-LD)
     if (structuredData) {
