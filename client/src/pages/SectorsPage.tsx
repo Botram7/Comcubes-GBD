@@ -138,18 +138,42 @@ export default function SectorsPage() {
     <div className="page-with-sticky-footer bg-gray-50  font-inter ">
       <AffiliateDisclosureBanner />
       <SEOHead 
-        title="Business Sectors Directory | COMCUBES Global Business Directory"
-        description="Explore 20 major business sectors including Technology, Healthcare, Finance, Manufacturing, and more. Discover specialized industries within each sector worldwide."
+        title={`Browse ${sectors?.length || 20} Business Sectors Directory | COMCUBES Global Business Directory`}
+        description={`Explore ${sectors?.length || 20} major business sectors including Technology, Healthcare, Finance, Manufacturing, and more. Access specialized industries and thousands of companies within each sector worldwide through our comprehensive business directory.`}
         keywords={[
           "business sectors", "industry sectors", "business categories", "sector directory",
           "technology sector", "healthcare sector", "finance sector", "manufacturing sector",
-          "business classification", "industry categories", "commercial sectors"
+          "business classification", "industry categories", "commercial sectors",
+          "global business sectors", "sector listings", "business taxonomy", "industry classification"
         ]}
         canonicalUrl={`${window.location.origin}/sectors`}
-        structuredData={createBreadcrumbStructuredData([
-          { name: "Home", url: `${window.location.origin}/` },
-          { name: "Business Sectors", url: `${window.location.origin}/sectors` }
-        ])}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Business Sectors Directory",
+          "description": `Comprehensive directory of ${sectors?.length || 20} business sectors with specialized industries and companies worldwide`,
+          "url": `${window.location.origin}/sectors`,
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": sectors?.map((sector, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Thing",
+                "name": sector.name,
+                "url": `${window.location.origin}/sector/${encodeURIComponent(sector.name)}`,
+                "description": `Business sector focusing on ${sector.name.toLowerCase()}`
+              }
+            })) || []
+          },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": `${window.location.origin}/` },
+              { "@type": "ListItem", "position": 2, "name": "Business Sectors", "item": `${window.location.origin}/sectors` }
+            ]
+          }
+        }}
       />
       <header className="bg-white  shadow-sm border-b border-gray-200  sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -274,10 +298,16 @@ export default function SectorsPage() {
             ) : (
               <>
                 <div className="mb-6">
-                  <h2 className="text-3xl font-bold text-gray-900">Business Sectors</h2>
+                  <h1 className="text-3xl font-bold text-gray-900">Global Business Sectors Directory</h1>
                   <p className="text-gray-600 mt-2">
-                    Explore {sectors?.length || 20} major business sectors across global industries. Click on any sector to view its specialized industries.
+                    Discover {sectors?.length || 20} comprehensive business sectors spanning the global economy. Each sector contains specialized industries with leading companies worldwide. Navigate through our structured directory to find businesses in Technology, Healthcare, Finance, Manufacturing, Energy, and more.
                   </p>
+                  <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
+                    <span>📊 {sectors?.length || 20} Business Sectors</span>
+                    <span>🏭 400+ Specialized Industries</span>
+                    <span>🌍 7,400+ Global Companies</span>
+                    <span>🔍 Advanced Search Available</span>
+                  </div>
                 </div>
 
                 <BusinessGrid items={sectors || []} type="sector" onItemClick={handleSectorClick} />
