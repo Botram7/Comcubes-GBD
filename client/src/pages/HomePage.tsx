@@ -355,27 +355,27 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* Directory Pages */}
-            <Card className="p-6 bg-white shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200">
+            <Card className="p-4 sm:p-6 bg-white shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Browse by Category</h3>
               <div className="space-y-3">
                 <button 
-                  onClick={() => setLocation('/sectors')}
+                  onClick={() => { window.scrollTo(0, 0); setLocation('/sectors'); }}
                   className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
                 >
                   <span className="text-sm text-gray-600">All Business Sectors</span>
                   <ArrowRight className="h-4 w-4 text-gray-400" />
                 </button>
                 <button 
-                  onClick={() => setLocation('/industries')}
+                  onClick={() => { window.scrollTo(0, 0); setLocation('/industries'); }}
                   className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
                 >
                   <span className="text-sm text-gray-600">All Industries</span>
                   <ArrowRight className="h-4 w-4 text-gray-400" />
                 </button>
                 <button 
-                  onClick={() => setLocation('/companies')}
+                  onClick={() => { window.scrollTo(0, 0); setLocation('/companies'); }}
                   className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
                 >
                   <span className="text-sm text-gray-600">All Companies</span>
@@ -385,53 +385,53 @@ export default function HomePage() {
             </Card>
 
             {/* Featured Sectors */}
-            <Card className="p-6 bg-white shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Popular Sectors</h3>
+            <Card className="p-4 sm:p-6 bg-white shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">Popular Sectors</h3>
               <div className="space-y-3">
                 <button 
-                  onClick={() => setLocation('/sector/Technology')}
+                  onClick={() => { window.scrollTo(0, 0); setLocation('/sector/Technology'); }}
                   className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
                 >
                   <span className="text-sm text-gray-600">Technology</span>
                   <ArrowRight className="h-4 w-4 text-gray-400" />
                 </button>
                 <button 
-                  onClick={() => setLocation('/sector/Healthcare')}
+                  onClick={() => setLocation('/sector/Healthcare and Pharmaceuticals')}
                   className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
                 >
-                  <span className="text-sm text-gray-600">Healthcare</span>
+                  <span className="text-sm text-gray-600">Healthcare and Pharmaceuticals</span>
                   <ArrowRight className="h-4 w-4 text-gray-400" />
                 </button>
                 <button 
-                  onClick={() => setLocation('/sector/Financial Services')}
+                  onClick={() => setLocation('/sector/Banking and Financial Services')}
                   className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
                 >
-                  <span className="text-sm text-gray-600">Financial Services</span>
+                  <span className="text-sm text-gray-600">Banking and Financial Services</span>
                   <ArrowRight className="h-4 w-4 text-gray-400" />
                 </button>
               </div>
             </Card>
 
             {/* Tools & Features */}
-            <Card className="p-6 bg-white shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Tools & Features</h3>
+            <Card className="p-4 sm:p-6 bg-white shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-200">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">Tools & Features</h3>
               <div className="space-y-3">
                 <button 
-                  onClick={() => setLocation('/search')}
+                  onClick={() => { window.scrollTo(0, 0); setLocation('/search'); }}
                   className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
                 >
                   <span className="text-sm text-gray-600">Advanced Search</span>
                   <ArrowRight className="h-4 w-4 text-gray-400" />
                 </button>
                 <button 
-                  onClick={() => setLocation('/list-company')}
+                  onClick={() => { window.scrollTo(0, 0); setLocation('/list-company'); }}
                   className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
                 >
                   <span className="text-sm text-gray-600">List Your Company</span>
                   <ArrowRight className="h-4 w-4 text-gray-400" />
                 </button>
                 <button 
-                  onClick={() => setLocation('/contact')}
+                  onClick={() => { window.scrollTo(0, 0); setLocation('/contact'); }}
                   className="flex items-center justify-between w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
                 >
                   <span className="text-sm text-gray-600">Contact Support</span>

@@ -301,37 +301,37 @@ export default function IndustryPage() {
               </div>
               
               {/* Quick Navigation Links */}
-              <div className="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
-                <h3 className="text-sm font-semibold text-green-900 mb-3">Navigate Business Directory</h3>
-                <div className="flex flex-wrap gap-2">
+              <div className="mt-6 p-3 sm:p-4 bg-green-50 rounded-lg border border-green-200">
+                <h3 className="text-xs sm:text-sm font-semibold text-green-900 mb-3">Navigate Business Directory</h3>
+                <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
                   {sectorName && (
                     <button 
-                      onClick={() => setLocation(`/sector/${encodeURIComponent(sectorName)}`)}
+                      onClick={() => { window.scrollTo(0, 0); setLocation(`/sector/${encodeURIComponent(sectorName)}`); }}
                       className="text-xs px-3 py-1 bg-white border border-green-300 rounded-full hover:bg-green-100 transition-colors"
                     >
                       {sectorName} Sector
                     </button>
                   )}
                   <button 
-                    onClick={() => setLocation('/industries')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/industries'); }}
                     className="text-xs px-3 py-1 bg-white border border-green-300 rounded-full hover:bg-green-100 transition-colors"
                   >
                     All Industries
                   </button>
                   <button 
-                    onClick={() => setLocation('/companies')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/companies'); }}
                     className="text-xs px-3 py-1 bg-white border border-green-300 rounded-full hover:bg-green-100 transition-colors"
                   >
                     All Companies
                   </button>
                   <button 
-                    onClick={() => setLocation('/sectors')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/sectors'); }}
                     className="text-xs px-3 py-1 bg-white border border-green-300 rounded-full hover:bg-green-100 transition-colors"
                   >
                     All Sectors
                   </button>
                   <button 
-                    onClick={() => setLocation('/search')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/search'); }}
                     className="text-xs px-3 py-1 bg-white border border-green-300 rounded-full hover:bg-green-100 transition-colors"
                   >
                     Advanced Search
@@ -351,9 +351,9 @@ export default function IndustryPage() {
             
             {/* Related Industries & Business Opportunities */}
             {companies.length > 0 && (
-              <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Explore Related Business Opportunities</h3>
-                <p className="text-gray-600 mb-4 text-sm">
+              <div className="mt-12 p-4 sm:p-6 bg-gray-50 rounded-lg">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">Explore Related Business Opportunities</h3>
+                <p className="text-gray-600 mb-4 text-xs sm:text-sm">
                   Expand your business network by exploring related industries and sectors. Each area offers unique companies and professional opportunities.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -361,19 +361,19 @@ export default function IndustryPage() {
                     <h4 className="font-medium text-gray-900 text-sm">Popular Industries</h4>
                     <div className="grid grid-cols-1 gap-2">
                       <button 
-                        onClick={() => setLocation('/industry/Software Development')}
+                        onClick={() => { window.scrollTo(0, 0); setLocation('/industry/Software Development'); }}
                         className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
                       >
                         Software Development
                       </button>
                       <button 
-                        onClick={() => setLocation('/industry/Digital Marketing')}
+                        onClick={() => { window.scrollTo(0, 0); setLocation('/industry/Digital Marketing'); }}
                         className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
                       >
                         Digital Marketing
                       </button>
                       <button 
-                        onClick={() => setLocation('/industry/Financial Technology')}
+                        onClick={() => { window.scrollTo(0, 0); setLocation('/industry/Financial Technology'); }}
                         className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
                       >
                         Financial Technology
@@ -384,19 +384,19 @@ export default function IndustryPage() {
                     <h4 className="font-medium text-gray-900 text-sm">Business Tools</h4>
                     <div className="grid grid-cols-1 gap-2">
                       <button 
-                        onClick={() => setLocation('/list-company')}
+                        onClick={() => { window.scrollTo(0, 0); setLocation('/list-company'); }}
                         className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
                       >
                         List Your Company
                       </button>
                       <button 
-                        onClick={() => setLocation('/search')}
+                        onClick={() => { window.scrollTo(0, 0); setLocation('/search'); }}
                         className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
                       >
                         Find Business Partners
                       </button>
                       <button 
-                        onClick={() => setLocation('/contact')}
+                        onClick={() => { window.scrollTo(0, 0); setLocation('/contact'); }}
                         className="p-2 bg-white rounded border border-gray-200 hover:border-green-300 hover:shadow-sm transition-all text-left text-xs"
                       >
                         Business Inquiries
@@ -406,7 +406,7 @@ export default function IndustryPage() {
                 </div>
                 <div className="mt-4 text-center">
                   <button 
-                    onClick={() => setLocation('/industries')}
+                    onClick={() => { window.scrollTo(0, 0); setLocation('/industries'); }}
                     className="text-sm text-green-600 hover:text-green-800 font-medium"
                   >
                     Browse All 400+ Industries →
