@@ -22,6 +22,10 @@ if (emailEnabled) {
     connectionTimeout: 15000, // 15 seconds
     greetingTimeout: 15000,
     socketTimeout: 15000,
+    tls: {
+      // Namecheap hosting uses shared SSL certificates, so we need to set the servername
+      servername: 'web-hosting.com'
+    }
   });
   console.log('✅ Email service initialized with Namecheap SMTP');
   console.log(`   Host: ${SMTP_HOST}, Port: ${SMTP_PORT}`);
