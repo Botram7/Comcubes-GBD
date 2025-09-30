@@ -1,10 +1,10 @@
 import nodemailer from 'nodemailer';
 import { storage } from './storage';
 
-const SMTP_HOST = process.env.SMTP_HOST;
-const SMTP_PORT = process.env.SMTP_PORT;
-const SMTP_USER = process.env.SMTP_USER;
-const SMTP_PASS = process.env.SMTP_PASS;
+const SMTP_HOST = process.env.SMTP_HOST?.trim();
+const SMTP_PORT = process.env.SMTP_PORT?.trim();
+const SMTP_USER = process.env.SMTP_USER?.trim();
+const SMTP_PASS = process.env.SMTP_PASS?.trim();
 
 const emailEnabled = !!(SMTP_HOST && SMTP_PORT && SMTP_USER && SMTP_PASS);
 
@@ -19,9 +19,9 @@ if (emailEnabled) {
       user: SMTP_USER,
       pass: SMTP_PASS,
     },
-    connectionTimeout: 10000, // 10 seconds
-    greetingTimeout: 10000,
-    socketTimeout: 10000,
+    connectionTimeout: 15000, // 15 seconds
+    greetingTimeout: 15000,
+    socketTimeout: 15000,
   });
   console.log('✅ Email service initialized with Namecheap SMTP');
   console.log(`   Host: ${SMTP_HOST}, Port: ${SMTP_PORT}`);
