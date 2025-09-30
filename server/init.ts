@@ -2,6 +2,8 @@ import { db } from './db';
 import { sectors, industries, companies, bannerAds, appInitMeta } from '@shared/schema';
 import { csvParser } from './services/csvParser';
 import { eq } from 'drizzle-orm';
+import { seedGeographicData } from './seedGeography';
+import { geocodeCompanies } from './geocodeCompanies';
 
 /**
  * One-time database initialization bootstrap function
@@ -72,6 +74,60 @@ export async function initDatabaseOnce(): Promise<void> {
     console.error('❌ Error checking banner ads flag:', error);
     // If we can't check the flag, proceed with seeding to be safe
     await seedBannerAds();
+  }
+
+  // Check if geographic data initialization is already completed
+  try {
+    const geoFlag = await db
+      .select()
+      .from(appInitMeta)
+      .where(eq(appInitMeta.key, 'geography_seeded_v1'))
+      .limit(1);
+
+    if (geoFlag.length === 0) {
+      console.log('🌍 Geographic data not seeded, proceeding with geography initialization...');
+      await seedGeographicData();
+      
+      // Mark geographic data as seeded
+      await db.insert(appInitMeta).values({
+        key: 'geography_seeded_v1',
+        value: 'true'
+      });
+      console.log('✅ Geographic data seeding completed and marked as done');
+    } else {
+      console.log('✅ Geographic data already seeded, skipping');
+    }
+  } catch (error) {
+    console.error('❌ Error checking geographic data flag:', error);
+    // If we can't check the flag, proceed with seeding to be safe
+    await seedGeographicData();
+  }
+
+  // Check if company geocoding is already completed
+  try {
+    const geocodeFlag = await db
+      .select()
+      .from(appInitMeta)
+      .where(eq(appInitMeta.key, 'companies_geocoded_v1'))
+      .limit(1);
+
+    if (geocodeFlag.length === 0) {
+      console.log('📍 Companies not geocoded, proceeding with company geocoding...');
+      await geocodeCompanies();
+      
+      // Mark company geocoding as completed
+      await db.insert(appInitMeta).values({
+        key: 'companies_geocoded_v1',
+        value: 'true'
+      });
+      console.log('✅ Company geocoding completed and marked as done');
+    } else {
+      console.log('✅ Companies already geocoded, skipping');
+    }
+  } catch (error) {
+    console.error('❌ Error checking company geocoding flag:', error);
+    // If we can't check the flag, proceed with geocoding to be safe
+    await geocodeCompanies();
   }
 
   console.log('🎉 Database bootstrap initialization completed successfully!');
