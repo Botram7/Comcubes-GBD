@@ -93,6 +93,7 @@ export interface IStorage {
   getCountryBySlug(slug: string): Promise<Country | undefined>;
   getCompaniesByCountry(countryId: number, confidenceFilter?: string[]): Promise<Array<Company & { location: CompanyLocation }>>;
   getCompaniesByCountryWithFilters(countryId: number, filters?: { sectorName?: string; industryName?: string; confidence?: string[] }): Promise<Array<Company & { location: CompanyLocation }>>;
+  getCompaniesByRegionWithFilters(regionId: number, filters?: { countryId?: number; sectorName?: string; industryName?: string; confidence?: string[] }): Promise<Array<Company & { location: CompanyLocation }>>;
   getGeographicStats(): Promise<{
     totalContinents: number;
     totalRegions: number;
@@ -956,6 +957,70 @@ export class DatabaseStorage implements IStorage {
       })) as Array<Company & { location: CompanyLocation }>;
     } catch (error) {
       console.error('Error getting companies by country with filters:', error);
+      return [];
+    }
+  }
+
+  async getCompaniesByRegionWithFilters(
+    regionId: number, 
+    filters?: { countryId?: number; sectorName?: string; industryName?: string; confidence?: string[] }
+  ): Promise<Array<Company & { location: CompanyLocation }>> {
+    try {
+      // First get all countries in this region
+      const regionCountries = await db
+        .select({ id: countries.id })
+        .from(countries)
+        .where(eq(countries.regionId, regionId));
+      
+      const countryIds = regionCountries.map(c => c.id);
+      
+      if (countryIds.length === 0) {
+        return [];
+      }
+
+      const conditions = [
+        or(...countryIds.map(id => eq(companyLocations.countryId, id)))!
+      ];
+      
+      if (filters?.countryId) {
+        conditions.push(eq(companyLocations.countryId, filters.countryId));
+      }
+      if (filters?.sectorName) {
+        conditions.push(eq(companies.sectorName, filters.sectorName));
+      }
+      if (filters?.industryName) {
+        conditions.push(eq(companies.industryName, filters.industryName));
+      }
+      if (filters?.confidence && filters.confidence.length > 0) {
+        conditions.push(
+          or(...filters.confidence.map(c => eq(companyLocations.confidence, c)))!
+        );
+      }
+
+      const results = await db
+        .select({
+          id: companies.id,
+          name: companies.name,
+          websiteUrl: companies.websiteUrl,
+          industryName: companies.industryName,
+          sectorName: companies.sectorName,
+          location: companyLocations
+        })
+        .from(companyLocations)
+        .innerJoin(companies, eq(companyLocations.companyId, companies.id))
+        .where(and(...conditions))
+        .orderBy(companies.name);
+      
+      return results.map(r => ({
+        id: r.id,
+        name: r.name,
+        websiteUrl: r.websiteUrl,
+        industryName: r.industryName,
+        sectorName: r.sectorName,
+        location: r.location
+      })) as Array<Company & { location: CompanyLocation }>;
+    } catch (error) {
+      console.error('Error getting companies by region with filters:', error);
       return [];
     }
   }
