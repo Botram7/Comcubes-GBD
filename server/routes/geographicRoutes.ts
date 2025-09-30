@@ -88,16 +88,71 @@ export function registerGeographicRoutes(app: Express): void {
       }
 
       const stats = await storage.getRegionStats(region.id);
-      const countries = await storage.getCountriesByRegion(region.id);
+      const countriesData = await storage.getCountriesByRegion(region.id);
+
+      // Enhance countries with company counts
+      const countries = await Promise.all(countriesData.map(async (country) => {
+        const countryStats = await storage.getCountryStats(country.id);
+        return {
+          ...country,
+          companyCount: countryStats.totalCompanies
+        };
+      }));
 
       res.json({
-        ...region,
+        region,
         stats,
         countries
       });
     } catch (error) {
       console.error('Error fetching region:', error);
       res.status(500).json({ error: "Failed to load region" });
+    }
+  });
+
+  // Get companies by region with filters
+  app.get("/api/geography/regions/:slug/companies", async (req, res) => {
+    try {
+      const { slug } = req.params;
+      const { country, sector, industry, confidence } = req.query;
+      
+      const region = await storage.getRegionBySlug(slug);
+      
+      if (!region) {
+        return res.status(404).json({ error: "Region not found" });
+      }
+
+      const filters: any = {};
+      
+      if (country && typeof country === 'string') {
+        const countryData = await storage.getCountryBySlug(country);
+        if (countryData) {
+          filters.countryId = countryData.id;
+        }
+      }
+      
+      if (sector && typeof sector === 'string') {
+        filters.sectorName = sector;
+      }
+      
+      if (industry && typeof industry === 'string') {
+        filters.industryName = industry;
+      }
+      
+      if (confidence && typeof confidence === 'string') {
+        filters.confidence = confidence.split(',').filter(Boolean);
+      }
+
+      const companies = await storage.getCompaniesByRegionWithFilters(region.id, filters);
+      
+      res.json({
+        region,
+        companies,
+        total: companies.length
+      });
+    } catch (error) {
+      console.error('Error fetching companies by region:', error);
+      res.status(500).json({ error: "Failed to load companies" });
     }
   });
 

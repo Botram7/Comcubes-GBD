@@ -26,6 +26,8 @@ import AffiliateDisclosurePage from "@/pages/AffiliateDisclosurePage";
 import ClaimCompanyPage from "@/pages/ClaimCompanyPage";
 import GeographyPage from "@/pages/GeographyPage";
 import ContinentPage from "@/pages/ContinentPage";
+import RegionPage from "@/pages/RegionPage";
+import CountryPage from "@/pages/CountryPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -38,6 +40,8 @@ function Router() {
       <Route path="/industry/:industryName" component={IndustryPage} />
       <Route path="/geography" component={GeographyPage} />
       <Route path="/geography/continent/:slug" component={ContinentPage} />
+      <Route path="/geography/region/:slug" component={RegionPage} />
+      <Route path="/geography/country/:slug" component={CountryPage} />
       <Route path="/companies" component={CompanyPage} />
       <Route path="/company/:companyId" component={CompanyProfilePage} />
       <Route path="/search" component={SearchPage} />
