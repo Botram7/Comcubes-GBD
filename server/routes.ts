@@ -10,6 +10,7 @@ import { EmailService } from "./emailService";
 import { paystackService } from "./paystackService";
 import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/schema";
 import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
+import { registerGeographicRoutes } from "./routes/geographicRoutes";
 import multer from 'multer';
 import { requireAdminAuth } from "./adminAuth";
 import { objectStorageService } from "./objectStorageService";
@@ -1532,6 +1533,9 @@ Crawl-delay: 1`;
 
   // Register company claim routes
   registerCompanyClaimRoutes(app);
+
+  // Register geographic routes
+  registerGeographicRoutes(app);
 
   const httpServer = createServer(app);
   return httpServer;
