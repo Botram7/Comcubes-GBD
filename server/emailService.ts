@@ -66,6 +66,10 @@ export class EmailService {
         html: params.html,
       };
       
+      if (params.replyTo) {
+        console.log(`   Reply-To: ${params.replyTo}`);
+      }
+      
       const info = await transporter.sendMail(emailData);
       console.log('✅ Email sent successfully to:', params.to);
       console.log('   Message ID:', info.messageId);
