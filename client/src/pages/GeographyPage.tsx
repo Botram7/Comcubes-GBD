@@ -255,7 +255,7 @@ export default function GeographyPage() {
                         {continent.name}
                       </h3>
                       {continent.description && (
-                        <p className="text-sm text-gray-700 line-clamp-2 mb-3">
+                        <p className="text-sm text-gray-700 mb-3">
                           {continent.description}
                         </p>
                       )}

@@ -173,12 +173,11 @@ export default function HomePage() {
             
             <Button 
               onClick={() => setLocation('/geography')}
-              variant="outline"
-              className="px-8 py-3 rounded-lg font-medium border-2 border-green-600 text-green-600 hover:bg-green-50"
+              className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-3 rounded-lg font-medium"
               data-testid="button-explore-geography"
             >
               <Globe className="mr-2 h-4 w-4" />
-              Explore Global Geography
+              Browse By Location
             </Button>
             
             <Button 

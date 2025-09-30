@@ -26,11 +26,13 @@ export function registerGeographicRoutes(app: Express): void {
 
       const stats = await storage.getContinentStats(continent.id);
       const regions = await storage.getRegionsByContinent(continent.id);
+      const countries = await storage.getCountriesByContinent(continent.id);
 
       res.json({
-        ...continent,
-        stats,
-        regions
+        continent,
+        regions,
+        countries,
+        stats
       });
     } catch (error) {
       console.error('Error fetching continent:', error);
