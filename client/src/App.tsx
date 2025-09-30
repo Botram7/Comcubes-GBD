@@ -24,6 +24,7 @@ import TermsOfServicePage from "@/pages/TermsOfServicePage";
 import DisclaimerPage from "@/pages/DisclaimerPage";
 import AffiliateDisclosurePage from "@/pages/AffiliateDisclosurePage";
 import ClaimCompanyPage from "@/pages/ClaimCompanyPage";
+import GeographyPage from "@/pages/GeographyPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -34,6 +35,7 @@ function Router() {
       <Route path="/industries" component={IndustriesPage} />
       <Route path="/sector/:sectorName" component={SectorPage} />
       <Route path="/industry/:industryName" component={IndustryPage} />
+      <Route path="/geography" component={GeographyPage} />
       <Route path="/companies" component={CompanyPage} />
       <Route path="/company/:companyId" component={CompanyProfilePage} />
       <Route path="/search" component={SearchPage} />
