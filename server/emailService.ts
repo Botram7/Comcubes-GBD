@@ -1,16 +1,32 @@
-import { MailService } from '@sendgrid/mail';
+import nodemailer from 'nodemailer';
 import { storage } from './storage';
 
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
-const emailEnabled = !!SENDGRID_API_KEY;
+const SMTP_HOST = process.env.SMTP_HOST;
+const SMTP_PORT = process.env.SMTP_PORT;
+const SMTP_USER = process.env.SMTP_USER;
+const SMTP_PASS = process.env.SMTP_PASS;
 
-let sgMail: MailService | null = null;
+const emailEnabled = !!(SMTP_HOST && SMTP_PORT && SMTP_USER && SMTP_PASS);
 
-if (emailEnabled && SENDGRID_API_KEY) {
-  sgMail = new MailService();
-  sgMail.setApiKey(SENDGRID_API_KEY);
+let transporter: nodemailer.Transporter | null = null;
+
+if (emailEnabled) {
+  transporter = nodemailer.createTransport({
+    host: SMTP_HOST,
+    port: parseInt(SMTP_PORT || '587'),
+    secure: parseInt(SMTP_PORT || '587') === 465, // true for 465, false for other ports
+    auth: {
+      user: SMTP_USER,
+      pass: SMTP_PASS,
+    },
+    connectionTimeout: 10000, // 10 seconds
+    greetingTimeout: 10000,
+    socketTimeout: 10000,
+  });
+  console.log('✅ Email service initialized with Namecheap SMTP');
+  console.log(`   Host: ${SMTP_HOST}, Port: ${SMTP_PORT}`);
 } else {
-  console.warn('SENDGRID_API_KEY not set - email functionality disabled');
+  console.warn('⚠️ SMTP credentials not set - email functionality disabled');
 }
 
 interface EmailParams {
@@ -29,25 +45,31 @@ export class EmailService {
   }
 
   async sendEmail(params: EmailParams): Promise<boolean> {
-    if (!emailEnabled || !sgMail) {
-      console.log('Email would be sent to:', params.to, 'Subject:', params.subject);
+    if (!emailEnabled || !transporter) {
+      console.log('📧 Email would be sent to:', params.to, 'Subject:', params.subject);
       return true; // Return true for development purposes
     }
     
     try {
-      const emailData: any = {
+      console.log(`📧 Attempting to send email to: ${params.to}`);
+      const emailData: nodemailer.SendMailOptions = {
         to: params.to,
         from: params.from || this.fromEmail,
         subject: params.subject,
+        text: params.text,
+        html: params.html,
       };
       
-      if (params.text) emailData.text = params.text;
-      if (params.html) emailData.html = params.html;
-      
-      await sgMail.send(emailData);
+      const info = await transporter.sendMail(emailData);
+      console.log('✅ Email sent successfully to:', params.to);
+      console.log('   Message ID:', info.messageId);
       return true;
     } catch (error) {
-      console.error('SendGrid email error:', error);
+      console.error('❌ SMTP email error:', error);
+      if (error instanceof Error) {
+        console.error('   Error message:', error.message);
+        console.error('   Error stack:', error.stack);
+      }
       return false;
     }
   }
