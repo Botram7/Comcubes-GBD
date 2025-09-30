@@ -165,15 +165,27 @@ export default function HomePage() {
             <Button 
               onClick={handleExploreBusinessSectors}
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium"
+              data-testid="button-explore-sectors"
             >
               Explore Business Sectors
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             
             <Button 
+              onClick={() => setLocation('/geography')}
+              variant="outline"
+              className="px-8 py-3 rounded-lg font-medium border-2 border-green-600 text-green-600 hover:bg-green-50"
+              data-testid="button-explore-geography"
+            >
+              <Globe className="mr-2 h-4 w-4" />
+              Explore Global Geography
+            </Button>
+            
+            <Button 
               onClick={() => setLocation('/search')}
               variant="outline"
               className="px-8 py-3 rounded-lg font-medium border-2 hover:bg-gray-50"
+              data-testid="button-advanced-search"
             >
               <Search className="mr-2 h-4 w-4" />
               Advanced Search
