@@ -25,13 +25,32 @@ export function registerGeographicRoutes(app: Express): void {
       }
 
       const stats = await storage.getContinentStats(continent.id);
-      const regions = await storage.getRegionsByContinent(continent.id);
+      const regionsData = await storage.getRegionsByContinent(continent.id);
       const countries = await storage.getCountriesByContinent(continent.id);
+
+      // Enhance regions with counts
+      const regions = await Promise.all(regionsData.map(async (region) => {
+        const regionStats = await storage.getRegionStats(region.id);
+        return {
+          ...region,
+          countryCount: regionStats.totalCountries,
+          companyCount: regionStats.totalCompanies
+        };
+      }));
+
+      // Enhance countries with company counts
+      const countriesWithCounts = await Promise.all(countries.map(async (country) => {
+        const countryStats = await storage.getCountryStats(country.id);
+        return {
+          ...country,
+          companyCount: countryStats.totalCompanies
+        };
+      }));
 
       res.json({
         continent,
         regions,
-        countries,
+        countries: countriesWithCounts,
         stats
       });
     } catch (error) {
