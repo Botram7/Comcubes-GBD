@@ -144,6 +144,49 @@ export const appInitMeta = pgTable('app_init_meta', {
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
+// Geographic tables for continent/region/country hierarchy
+export const continents = pgTable('continents', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull().unique(), // e.g., 'Africa', 'Asia', 'Europe'
+  slug: text('slug').notNull().unique(), // e.g., 'africa', 'asia', 'europe'
+  code: text('code').notNull().unique(), // e.g., 'AF', 'AS', 'EU'
+  description: text('description'),
+});
+
+export const regions = pgTable('regions', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(), // e.g., 'West Africa', 'Southeast Asia'
+  slug: text('slug').notNull().unique(),
+  continentId: integer('continent_id').notNull().references(() => continents.id), // FK to continents
+  description: text('description'),
+});
+
+export const countries = pgTable('countries', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull().unique(), // e.g., 'Nigeria', 'United States'
+  slug: text('slug').notNull().unique(), // e.g., 'nigeria', 'united-states'
+  iso2: text('iso2').notNull().unique(), // ISO 3166-1 alpha-2, e.g., 'NG', 'US'
+  iso3: text('iso3').notNull().unique(), // ISO 3166-1 alpha-3, e.g., 'NGA', 'USA'
+  phoneCode: text('phone_code'), // e.g., '+234', '+1'
+  capital: text('capital'), // e.g., 'Abuja', 'Washington, D.C.'
+  currency: text('currency'), // e.g., 'NGN', 'USD'
+  regionId: integer('region_id').notNull().references(() => regions.id), // FK to regions
+  continentId: integer('continent_id').notNull().references(() => continents.id), // FK to continents (denormalized for performance)
+  flagEmoji: text('flag_emoji'), // e.g., '🇳🇬', '🇺🇸'
+});
+
+export const companyLocations = pgTable('company_locations', {
+  id: serial('id').primaryKey(),
+  companyId: integer('company_id').notNull().references(() => companies.id), // FK to companies
+  countryId: integer('country_id').notNull().references(() => countries.id), // FK to countries
+  city: text('city'), // Optional: e.g., 'Lagos', 'New York'
+  state: text('state'), // Optional: e.g., 'Lagos State', 'NY'
+  isPrimary: boolean('is_primary').default(true).notNull(), // Primary location for company
+  confidence: text('confidence').default('low').notNull(), // 'high', 'medium', 'low', 'unassigned'
+  source: text('source'), // 'tld', 'name_pattern', 'default_hub', 'manual'
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+});
+
 // Type exports
 export type Sector = typeof sectors.$inferSelect;
 export type Industry = typeof industries.$inferSelect;
@@ -157,6 +200,10 @@ export type AdAnalytics = typeof adAnalytics.$inferSelect;
 export type AdPerformanceSummary = typeof adPerformanceSummary.$inferSelect;
 export type EmailLog = typeof emailLogs.$inferSelect;
 export type AppInitMeta = typeof appInitMeta.$inferSelect;
+export type Continent = typeof continents.$inferSelect;
+export type Region = typeof regions.$inferSelect;
+export type Country = typeof countries.$inferSelect;
+export type CompanyLocation = typeof companyLocations.$inferSelect;
 
 export type InsertSector = typeof sectors.$inferInsert;
 export type InsertIndustry = typeof industries.$inferInsert;
@@ -170,6 +217,10 @@ export type InsertAdAnalytics = typeof adAnalytics.$inferInsert;
 export type InsertAdPerformanceSummary = typeof adPerformanceSummary.$inferInsert;
 export type InsertEmailLog = typeof emailLogs.$inferInsert;
 export type InsertAppInitMeta = typeof appInitMeta.$inferInsert;
+export type InsertContinent = typeof continents.$inferInsert;
+export type InsertRegion = typeof regions.$inferInsert;
+export type InsertCountry = typeof countries.$inferInsert;
+export type InsertCompanyLocation = typeof companyLocations.$inferInsert;
 
 // Zod schemas for validation
 export const insertSectorSchema = createInsertSchema(sectors);
@@ -195,3 +246,11 @@ export const insertEmailLogSchema = createInsertSchema(emailLogs);
 export const selectEmailLogSchema = createSelectSchema(emailLogs);
 export const insertAppInitMetaSchema = createInsertSchema(appInitMeta);
 export const selectAppInitMetaSchema = createSelectSchema(appInitMeta);
+export const insertContinentSchema = createInsertSchema(continents);
+export const selectContinentSchema = createSelectSchema(continents);
+export const insertRegionSchema = createInsertSchema(regions);
+export const selectRegionSchema = createSelectSchema(regions);
+export const insertCountrySchema = createInsertSchema(countries);
+export const selectCountrySchema = createSelectSchema(countries);
+export const insertCompanyLocationSchema = createInsertSchema(companyLocations);
+export const selectCompanyLocationSchema = createSelectSchema(companyLocations);
