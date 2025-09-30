@@ -3,8 +3,8 @@ import { z } from "zod";
 import multer from "multer";
 import path from "path";
 import crypto from "crypto";
-import { MailService } from '@sendgrid/mail';
 import { storage } from "../storage";
+import { EmailService } from "../emailService";
 import { PaystackService } from "../paystackService";
 
 // Configure multer for file uploads
@@ -146,35 +146,14 @@ export function registerCompanyClaimRoutes(app: Express) {
 
       // Send verification email
       try {
-        if (process.env.SENDGRID_API_KEY) {
-          const mailService = new MailService();
-          mailService.setApiKey(process.env.SENDGRID_API_KEY);
-          
-          await mailService.send({
-            to: validatedData.contactEmail,
-            from: 'admin@comcubes.com',
-            subject: `COMCUBES: Verify Your Company Claim - ${validatedData.companyName}`,
-            html: `
-              <h2>Verify Your Company Claim</h2>
-              <p>Dear ${validatedData.contactName},</p>
-              <p>Thank you for claiming your company listing on COMCUBES. To complete the verification process and prevent fraudulent claims, please use the verification code below:</p>
-              
-              <div style="background: #f8f9fa; padding: 20px; margin: 20px 0; text-align: center; border-radius: 8px;">
-                <h3 style="color: #2563eb; font-size: 24px; letter-spacing: 3px; margin: 0;">${verificationCode}</h3>
-              </div>
-              
-              <p><strong>Company:</strong> ${validatedData.companyName}</p>
-              <p><strong>Plan:</strong> ${validatedData.plan.charAt(0).toUpperCase() + validatedData.plan.slice(1)}</p>
-              
-              <p>This verification code will expire in 24 hours. If you did not request this claim, please ignore this email or contact us immediately.</p>
-              
-              <p>Best regards,<br>COMCUBES Team</p>
-              
-              <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
-              <p style="font-size: 12px; color: #666;">This is an automated security measure to ensure only legitimate business representatives can claim company listings.</p>
-            `
-          });
-        }
+        const emailService = new EmailService();
+        await emailService.sendClaimVerificationEmail({
+          contactName: validatedData.contactName,
+          contactEmail: validatedData.contactEmail,
+          companyName: validatedData.companyName,
+          plan: validatedData.plan,
+          verificationCode: verificationCode
+        });
       } catch (emailError) {
         console.error('Failed to send verification email:', emailError);
         // Continue with claim submission even if email fails
@@ -240,6 +219,21 @@ export function registerCompanyClaimRoutes(app: Express) {
 
       // Mark email as verified
       await storage.updateCompanyClaimEmailVerification(claimId, true);
+
+      // Send admin notification about the verified claim
+      try {
+        const emailService = new EmailService();
+        await emailService.sendClaimAdminNotification({
+          contactName: claim.contactName,
+          contactEmail: claim.contactEmail,
+          companyName: claim.companyName,
+          plan: claim.plan,
+          claimId: claimId
+        });
+      } catch (emailError) {
+        console.error('Failed to send admin notification:', emailError);
+        // Continue even if admin notification fails
+      }
 
       res.json({
         message: "Email verified successfully",
