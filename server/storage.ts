@@ -1,7 +1,7 @@
 import { csvParser } from './services/csvParser';
 import { db } from './db';
-import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, companyClaims, bannerAds, adAnalytics, adPerformanceSummary, emailLogs, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type CompanyClaim, type BannerAd, type AdAnalytics, type AdPerformanceSummary, type EmailLog, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist, type InsertCompanyClaim, type InsertBannerAd, type InsertAdAnalytics, type InsertAdPerformanceSummary, type InsertEmailLog } from '@shared/schema';
-import { eq, ilike, or, and } from 'drizzle-orm';
+import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, companyClaims, bannerAds, adAnalytics, adPerformanceSummary, emailLogs, continents, regions, countries, companyLocations, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type CompanyClaim, type BannerAd, type AdAnalytics, type AdPerformanceSummary, type EmailLog, type Continent, type Region, type Country, type CompanyLocation, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist, type InsertCompanyClaim, type InsertBannerAd, type InsertAdAnalytics, type InsertAdPerformanceSummary, type InsertEmailLog } from '@shared/schema';
+import { eq, ilike, or, and, sql } from 'drizzle-orm';
 import { generateCompanyDescription } from './services/companyDescriptionGenerator';
 
 export interface IStorage {
@@ -81,6 +81,39 @@ export interface IStorage {
     clickThroughRate: number;
     topPerformingImages: { imageUrl: string; clicks: number; impressions: number }[];
     dailyStats: { date: string; clicks: number; views: number; impressions: number }[];
+  }>;
+
+  // Geographic operations
+  getContinents(): Promise<Continent[]>;
+  getContinentBySlug(slug: string): Promise<Continent | undefined>;
+  getRegionsByContinent(continentId: number): Promise<Region[]>;
+  getRegionBySlug(slug: string): Promise<Region | undefined>;
+  getCountriesByRegion(regionId: number): Promise<Country[]>;
+  getCountriesByContinent(continentId: number): Promise<Country[]>;
+  getCountryBySlug(slug: string): Promise<Country | undefined>;
+  getCompaniesByCountry(countryId: number, confidenceFilter?: string[]): Promise<Array<Company & { location: CompanyLocation }>>;
+  getCompaniesByCountryWithFilters(countryId: number, filters?: { sectorName?: string; industryName?: string; confidence?: string[] }): Promise<Array<Company & { location: CompanyLocation }>>;
+  getGeographicStats(): Promise<{
+    totalContinents: number;
+    totalRegions: number;
+    totalCountries: number;
+    totalGeocodedCompanies: number;
+    confidenceDistribution: Array<{ confidence: string; count: number }>;
+  }>;
+  getRegionStats(regionId: number): Promise<{
+    totalCountries: number;
+    totalCompanies: number;
+    topCountries: Array<{ countryName: string; companyCount: number }>;
+  }>;
+  getCountryStats(countryId: number): Promise<{
+    totalCompanies: number;
+    sectorBreakdown: Array<{ sectorName: string; count: number }>;
+    industryBreakdown: Array<{ industryName: string; count: number }>;
+  }>;
+  getContinentStats(continentId: number): Promise<{
+    totalCountries: number;
+    totalCompanies: number;
+    topCountries: Array<{ countryName: string; companyCount: number }>;
   }>;
 }
 
@@ -757,6 +790,358 @@ export class DatabaseStorage implements IStorage {
       topPerformingImages,
       dailyStats
     };
+  }
+
+  // Geographic operations
+  async getContinents(): Promise<Continent[]> {
+    try {
+      return await db.select().from(continents).orderBy(continents.name);
+    } catch (error) {
+      console.error('Error getting continents:', error);
+      return [];
+    }
+  }
+
+  async getContinentBySlug(slug: string): Promise<Continent | undefined> {
+    try {
+      const [continent] = await db.select().from(continents)
+        .where(eq(continents.slug, slug))
+        .limit(1);
+      return continent || undefined;
+    } catch (error) {
+      console.error('Error getting continent by slug:', error);
+      return undefined;
+    }
+  }
+
+  async getRegionsByContinent(continentId: number): Promise<Region[]> {
+    try {
+      return await db.select().from(regions)
+        .where(eq(regions.continentId, continentId))
+        .orderBy(regions.name);
+    } catch (error) {
+      console.error('Error getting regions by continent:', error);
+      return [];
+    }
+  }
+
+  async getRegionBySlug(slug: string): Promise<Region | undefined> {
+    try {
+      const [region] = await db.select().from(regions)
+        .where(eq(regions.slug, slug))
+        .limit(1);
+      return region || undefined;
+    } catch (error) {
+      console.error('Error getting region by slug:', error);
+      return undefined;
+    }
+  }
+
+  async getCountriesByRegion(regionId: number): Promise<Country[]> {
+    try {
+      return await db.select().from(countries)
+        .where(eq(countries.regionId, regionId))
+        .orderBy(countries.name);
+    } catch (error) {
+      console.error('Error getting countries by region:', error);
+      return [];
+    }
+  }
+
+  async getCountriesByContinent(continentId: number): Promise<Country[]> {
+    try {
+      return await db.select().from(countries)
+        .where(eq(countries.continentId, continentId))
+        .orderBy(countries.name);
+    } catch (error) {
+      console.error('Error getting countries by continent:', error);
+      return [];
+    }
+  }
+
+  async getCountryBySlug(slug: string): Promise<Country | undefined> {
+    try {
+      const [country] = await db.select().from(countries)
+        .where(eq(countries.slug, slug))
+        .limit(1);
+      return country || undefined;
+    } catch (error) {
+      console.error('Error getting country by slug:', error);
+      return undefined;
+    }
+  }
+
+  async getCompaniesByCountry(
+    countryId: number, 
+    confidenceFilter?: string[]
+  ): Promise<Array<Company & { location: CompanyLocation }>> {
+    try {
+      const conditions = [eq(companyLocations.countryId, countryId)];
+      
+      // Filter by confidence if specified (e.g., ['high', 'medium'] to exclude 'low')
+      if (confidenceFilter && confidenceFilter.length > 0) {
+        conditions.push(
+          or(...confidenceFilter.map(c => eq(companyLocations.confidence, c)))!
+        );
+      }
+
+      const results = await db
+        .select({
+          id: companies.id,
+          name: companies.name,
+          websiteUrl: companies.websiteUrl,
+          industryName: companies.industryName,
+          sectorName: companies.sectorName,
+          location: companyLocations
+        })
+        .from(companyLocations)
+        .innerJoin(companies, eq(companyLocations.companyId, companies.id))
+        .where(and(...conditions))
+        .orderBy(companies.name);
+      
+      return results.map(r => ({
+        id: r.id,
+        name: r.name,
+        websiteUrl: r.websiteUrl,
+        industryName: r.industryName,
+        sectorName: r.sectorName,
+        location: r.location
+      })) as Array<Company & { location: CompanyLocation }>;
+    } catch (error) {
+      console.error('Error getting companies by country:', error);
+      return [];
+    }
+  }
+
+  async getCompaniesByCountryWithFilters(
+    countryId: number, 
+    filters?: { sectorName?: string; industryName?: string; confidence?: string[] }
+  ): Promise<Array<Company & { location: CompanyLocation }>> {
+    try {
+      const conditions = [eq(companyLocations.countryId, countryId)];
+      
+      if (filters?.sectorName) {
+        conditions.push(eq(companies.sectorName, filters.sectorName));
+      }
+      if (filters?.industryName) {
+        conditions.push(eq(companies.industryName, filters.industryName));
+      }
+      if (filters?.confidence && filters.confidence.length > 0) {
+        conditions.push(
+          or(...filters.confidence.map(c => eq(companyLocations.confidence, c)))!
+        );
+      }
+
+      const results = await db
+        .select({
+          id: companies.id,
+          name: companies.name,
+          websiteUrl: companies.websiteUrl,
+          industryName: companies.industryName,
+          sectorName: companies.sectorName,
+          location: companyLocations
+        })
+        .from(companyLocations)
+        .innerJoin(companies, eq(companyLocations.companyId, companies.id))
+        .where(and(...conditions))
+        .orderBy(companies.name);
+      
+      return results.map(r => ({
+        id: r.id,
+        name: r.name,
+        websiteUrl: r.websiteUrl,
+        industryName: r.industryName,
+        sectorName: r.sectorName,
+        location: r.location
+      })) as Array<Company & { location: CompanyLocation }>;
+    } catch (error) {
+      console.error('Error getting companies by country with filters:', error);
+      return [];
+    }
+  }
+
+  async getGeographicStats(): Promise<{
+    totalContinents: number;
+    totalRegions: number;
+    totalCountries: number;
+    totalGeocodedCompanies: number;
+    confidenceDistribution: Array<{ confidence: string; count: number }>;
+  }> {
+    try {
+      const [continentCount] = await db.select({ count: sql<number>`count(*)` }).from(continents);
+      const [regionCount] = await db.select({ count: sql<number>`count(*)` }).from(regions);
+      const [countryCount] = await db.select({ count: sql<number>`count(*)` }).from(countries);
+      const [companyLocationCount] = await db.select({ count: sql<number>`count(*)` }).from(companyLocations);
+      
+      const confidenceDistribution = await db
+        .select({
+          confidence: companyLocations.confidence,
+          count: sql<number>`count(*)`
+        })
+        .from(companyLocations)
+        .groupBy(companyLocations.confidence);
+
+      return {
+        totalContinents: Number(continentCount.count),
+        totalRegions: Number(regionCount.count),
+        totalCountries: Number(countryCount.count),
+        totalGeocodedCompanies: Number(companyLocationCount.count),
+        confidenceDistribution: confidenceDistribution.map(d => ({
+          confidence: d.confidence || 'unknown',
+          count: Number(d.count)
+        }))
+      };
+    } catch (error) {
+      console.error('Error getting geographic stats:', error);
+      return {
+        totalContinents: 0,
+        totalRegions: 0,
+        totalCountries: 0,
+        totalGeocodedCompanies: 0,
+        confidenceDistribution: []
+      };
+    }
+  }
+
+  async getRegionStats(regionId: number): Promise<{
+    totalCountries: number;
+    totalCompanies: number;
+    topCountries: Array<{ countryName: string; companyCount: number }>;
+  }> {
+    try {
+      const [countryCount] = await db
+        .select({ count: sql<number>`count(*)` })
+        .from(countries)
+        .where(eq(countries.regionId, regionId));
+
+      const topCountries = await db
+        .select({
+          countryName: countries.name,
+          companyCount: sql<number>`count(*)`
+        })
+        .from(countries)
+        .innerJoin(companyLocations, eq(countries.id, companyLocations.countryId))
+        .where(eq(countries.regionId, regionId))
+        .groupBy(countries.name)
+        .orderBy(sql`count(*) DESC`)
+        .limit(10);
+
+      const totalCompanies = topCountries.reduce((sum, c) => sum + Number(c.companyCount), 0);
+
+      return {
+        totalCountries: Number(countryCount.count),
+        totalCompanies,
+        topCountries: topCountries.map(c => ({
+          countryName: c.countryName,
+          companyCount: Number(c.companyCount)
+        }))
+      };
+    } catch (error) {
+      console.error('Error getting region stats:', error);
+      return {
+        totalCountries: 0,
+        totalCompanies: 0,
+        topCountries: []
+      };
+    }
+  }
+
+  async getCountryStats(countryId: number): Promise<{
+    totalCompanies: number;
+    sectorBreakdown: Array<{ sectorName: string; count: number }>;
+    industryBreakdown: Array<{ industryName: string; count: number }>;
+  }> {
+    try {
+      const [totalCompanies] = await db
+        .select({ count: sql<number>`count(*)` })
+        .from(companyLocations)
+        .where(eq(companyLocations.countryId, countryId));
+
+      const sectorBreakdown = await db
+        .select({
+          sectorName: companies.sectorName,
+          count: sql<number>`count(*)`
+        })
+        .from(companies)
+        .innerJoin(companyLocations, eq(companies.id, companyLocations.companyId))
+        .where(eq(companyLocations.countryId, countryId))
+        .groupBy(companies.sectorName)
+        .orderBy(sql`count(*) DESC`);
+
+      const industryBreakdown = await db
+        .select({
+          industryName: companies.industryName,
+          count: sql<number>`count(*)`
+        })
+        .from(companies)
+        .innerJoin(companyLocations, eq(companies.id, companyLocations.companyId))
+        .where(eq(companyLocations.countryId, countryId))
+        .groupBy(companies.industryName)
+        .orderBy(sql`count(*) DESC`)
+        .limit(10);
+
+      return {
+        totalCompanies: Number(totalCompanies.count),
+        sectorBreakdown: sectorBreakdown.map(s => ({
+          sectorName: s.sectorName,
+          count: Number(s.count)
+        })),
+        industryBreakdown: industryBreakdown.map(i => ({
+          industryName: i.industryName,
+          count: Number(i.count)
+        }))
+      };
+    } catch (error) {
+      console.error('Error getting country stats:', error);
+      return {
+        totalCompanies: 0,
+        sectorBreakdown: [],
+        industryBreakdown: []
+      };
+    }
+  }
+
+  async getContinentStats(continentId: number): Promise<{
+    totalCountries: number;
+    totalCompanies: number;
+    topCountries: Array<{ countryName: string; companyCount: number }>;
+  }> {
+    try {
+      const [countryCount] = await db
+        .select({ count: sql<number>`count(*)` })
+        .from(countries)
+        .where(eq(countries.continentId, continentId));
+
+      const topCountries = await db
+        .select({
+          countryName: countries.name,
+          companyCount: sql<number>`count(*)`
+        })
+        .from(countries)
+        .innerJoin(companyLocations, eq(countries.id, companyLocations.countryId))
+        .where(eq(countries.continentId, continentId))
+        .groupBy(countries.name)
+        .orderBy(sql`count(*) DESC`)
+        .limit(10);
+
+      const totalCompanies = topCountries.reduce((sum, c) => sum + Number(c.companyCount), 0);
+
+      return {
+        totalCountries: Number(countryCount.count),
+        totalCompanies,
+        topCountries: topCountries.map(c => ({
+          countryName: c.countryName,
+          companyCount: Number(c.companyCount)
+        }))
+      };
+    } catch (error) {
+      console.error('Error getting continent stats:', error);
+      return {
+        totalCountries: 0,
+        totalCompanies: 0,
+        topCountries: []
+      };
+    }
   }
 }
 
