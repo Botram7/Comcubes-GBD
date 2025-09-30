@@ -36,6 +36,7 @@ if (emailEnabled) {
 interface EmailParams {
   to: string;
   from?: string;
+  replyTo?: string;
   subject: string;
   text?: string;
   html?: string;
@@ -59,6 +60,7 @@ export class EmailService {
       const emailData: nodemailer.SendMailOptions = {
         to: params.to,
         from: params.from || this.fromEmail,
+        replyTo: params.replyTo,
         subject: params.subject,
         text: params.text,
         html: params.html,
@@ -100,6 +102,7 @@ export class EmailService {
     return this.sendEmail({
       to: adminEmail,
       from: this.fromEmail,
+      replyTo: data.email,
       subject: `[COMCUBES] New Contact: ${data.subject}`,
       html,
     });
@@ -420,5 +423,74 @@ export class EmailService {
     }
 
     return result;
+  }
+
+  async sendClaimVerificationEmail(data: {
+    contactName: string;
+    contactEmail: string;
+    companyName: string;
+    plan: string;
+    verificationCode: string;
+  }): Promise<boolean> {
+    const html = `
+      <h2>Verify Your Company Claim</h2>
+      <p>Dear ${data.contactName},</p>
+      <p>Thank you for claiming your company listing on COMCUBES. To complete the verification process and prevent fraudulent claims, please use the verification code below:</p>
+      
+      <div style="background: #f8f9fa; padding: 20px; margin: 20px 0; text-align: center; border-radius: 8px;">
+        <h3 style="color: #2563eb; font-size: 24px; letter-spacing: 3px; margin: 0;">${data.verificationCode}</h3>
+      </div>
+      
+      <p><strong>Company:</strong> ${data.companyName}</p>
+      <p><strong>Plan:</strong> ${data.plan.charAt(0).toUpperCase() + data.plan.slice(1)}</p>
+      
+      <p>This verification code will expire in 24 hours. If you did not request this claim, please ignore this email or contact us immediately.</p>
+      
+      <p>Best regards,<br>COMCUBES Team</p>
+      
+      <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
+      <p style="font-size: 12px; color: #666;">This is an automated security measure to ensure only legitimate business representatives can claim company listings.</p>
+    `;
+
+    return this.sendEmail({
+      to: data.contactEmail,
+      from: 'admin@comcubes.com',
+      subject: `COMCUBES: Verify Your Company Claim - ${data.companyName}`,
+      html,
+    });
+  }
+
+  async sendClaimAdminNotification(data: {
+    contactName: string;
+    contactEmail: string;
+    companyName: string;
+    plan: string;
+    claimId: number;
+  }): Promise<boolean> {
+    const adminEmail = 'admin@comcubes.com';
+    const html = `
+      <h2>New Company Claim Submitted</h2>
+      <p>A new company claim has been submitted and verified.</p>
+      
+      <div style="border: 1px solid #ddd; padding: 20px; margin: 20px 0; background-color: #f9f9f9;">
+        <h3>Claim Details:</h3>
+        <p><strong>Company Name:</strong> ${data.companyName}</p>
+        <p><strong>Contact Name:</strong> ${data.contactName}</p>
+        <p><strong>Contact Email:</strong> ${data.contactEmail}</p>
+        <p><strong>Plan:</strong> ${data.plan.charAt(0).toUpperCase() + data.plan.slice(1)}</p>
+        <p><strong>Claim ID:</strong> ${data.claimId}</p>
+      </div>
+      
+      <p><a href="${process.env.BASE_URL || 'http://localhost:5000'}/admin" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Review in Admin Dashboard</a></p>
+      
+      <p>Please review and approve/reject this claim in the admin dashboard.</p>
+    `;
+
+    return this.sendEmail({
+      to: adminEmail,
+      from: this.fromEmail,
+      subject: `New Company Claim Submitted - ${data.companyName}`,
+      html,
+    });
   }
 }
