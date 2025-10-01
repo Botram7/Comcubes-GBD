@@ -218,7 +218,7 @@ export function registerGeographicRoutes(app: Express): void {
   app.get("/api/geography/countries/:slug/companies", async (req, res) => {
     try {
       const { slug } = req.params;
-      const { sector, industry, confidence } = req.query;
+      const { sector, industry, confidence, page } = req.query;
       
       const country = await storage.getCountryBySlug(slug);
       
@@ -240,12 +240,30 @@ export function registerGeographicRoutes(app: Express): void {
         filters.confidence = confidence.split(',').filter(Boolean);
       }
 
-      const companies = await storage.getCompaniesByCountryWithFilters(country.id, filters);
+      const allCompanies = await storage.getCompaniesByCountryWithFilters(country.id, filters);
+      
+      // If no page is specified, return all companies
+      if (!page) {
+        return res.json({
+          country,
+          companies: allCompanies,
+          total: allCompanies.length
+        });
+      }
+
+      // With pagination
+      const pageNum = parseInt(page as string, 10) || 1;
+      const perPage = 20;
+      const startIndex = (pageNum - 1) * perPage;
+      const companies = allCompanies.slice(startIndex, startIndex + perPage);
       
       res.json({
         country,
         companies,
-        total: companies.length
+        total: allCompanies.length,
+        page: pageNum,
+        perPage,
+        totalPages: Math.ceil(allCompanies.length / perPage)
       });
     } catch (error) {
       console.error('Error fetching companies by country:', error);
