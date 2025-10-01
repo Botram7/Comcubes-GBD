@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Pagination } from "@/components/Pagination";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
+import { AlertCircle, Building2, ArrowLeft, LayoutGrid, Layers, List } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { BannerAd } from "@/components/BannerAd";
@@ -52,11 +52,17 @@ export default function CountryPage() {
   const [, params] = useRoute("/geography/country/:slug");
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [viewMode, setViewMode] = useState<'companies' | 'grouped' | 'industries'>('companies');
   const countrySlug = params?.slug || "";
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage, countrySlug]);
+
+  // Reset page when switching views
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [viewMode]);
 
   const { data: countryData, isLoading: isLoadingCountry, error: countryError } = useQuery<CountryWithStats>({
     queryKey: [`/api/geography/countries/${countrySlug}`],
@@ -64,9 +70,17 @@ export default function CountryPage() {
     staleTime: Infinity,
   });
 
+  // Fetch paginated companies for "companies" view
   const { data: companiesData, isLoading: isLoadingCompanies } = useQuery<CompaniesResponse>({
-    queryKey: [`/api/geography/countries/${countrySlug}/companies`, currentPage],
-    enabled: !!countrySlug,
+    queryKey: [`/api/geography/countries/${countrySlug}/companies?page=${currentPage}`, currentPage],
+    enabled: !!countrySlug && viewMode === 'companies',
+    staleTime: Infinity,
+  });
+
+  // Fetch all companies for "grouped" view
+  const { data: allCompaniesData, isLoading: isLoadingAllCompanies } = useQuery<CompaniesResponse>({
+    queryKey: [`/api/geography/countries/${countrySlug}/companies`],
+    enabled: !!countrySlug && viewMode === 'grouped',
     staleTime: Infinity,
   });
 
@@ -253,7 +267,11 @@ export default function CountryPage() {
                   <Building2 className="h-4 w-4" />
                   Advanced Search
                 </Button>
-                <span className="text-sm text-gray-600">Page {currentPage} of {totalPages}</span>
+                {(viewMode === 'companies' || viewMode === 'industries') && (
+                  <span className="text-sm text-gray-600">
+                    Page {currentPage} of {viewMode === 'companies' ? totalPages : Math.ceil((countryData?.stats.industryBreakdown.length || 0) / 20)}
+                  </span>
+                )}
               </div>
             </div>
             
@@ -354,22 +372,186 @@ export default function CountryPage() {
                   <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
                     <span>🏢 {totalCompanies.toLocaleString()} Companies</span>
                     <span>🌍 {countryData.region}</span>
-                    <span>📄 Page {currentPage} of {totalPages}</span>
+                    {(viewMode === 'companies' || viewMode === 'industries') && (
+                      <span>📄 Page {currentPage} of {viewMode === 'companies' ? totalPages : Math.ceil((countryData?.stats.industryBreakdown.length || 0) / 20)}</span>
+                    )}
                   </div>
                 </div>
 
-                <BusinessGrid 
-                  items={companies} 
-                  type="company" 
-                  onItemClick={(company) => handleCompanyClick(company as Company)}
-                  showClaimButtons={true}
-                />
+                {/* View Toggle Buttons */}
+                <div className="mb-6 flex flex-wrap gap-2">
+                  <Button
+                    variant={viewMode === 'companies' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setViewMode('companies')}
+                    className="flex items-center gap-2"
+                    data-testid="button-view-companies"
+                  >
+                    <LayoutGrid className="h-4 w-4" />
+                    All Companies
+                  </Button>
+                  <Button
+                    variant={viewMode === 'grouped' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setViewMode('grouped')}
+                    className="flex items-center gap-2"
+                    data-testid="button-view-grouped"
+                  >
+                    <Layers className="h-4 w-4" />
+                    Group by Sectors & Industries
+                  </Button>
+                  <Button
+                    variant={viewMode === 'industries' ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setViewMode('industries')}
+                    className="flex items-center gap-2"
+                    data-testid="button-view-industries"
+                  >
+                    <List className="h-4 w-4" />
+                    Industries
+                  </Button>
+                </div>
 
-                <Pagination 
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  onPageChange={handlePageChange}
-                />
+                {viewMode === 'companies' && (
+                  <>
+                    <BusinessGrid 
+                      items={companies} 
+                      type="company" 
+                      onItemClick={(company) => handleCompanyClick(company as Company)}
+                      showClaimButtons={true}
+                    />
+
+                    <Pagination 
+                      currentPage={currentPage}
+                      totalPages={totalPages}
+                      onPageChange={handlePageChange}
+                    />
+                  </>
+                )}
+
+                {viewMode === 'grouped' && (
+                  <>
+                    {isLoadingAllCompanies ? (
+                      <div className="text-center py-12">
+                        <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent"></div>
+                        <p className="mt-4 text-gray-600">Loading companies...</p>
+                      </div>
+                    ) : allCompaniesData && (
+                      <div className="space-y-6">
+                        {countryData.stats.sectorBreakdown
+                          .sort((a, b) => b.count - a.count)
+                          .map((sector) => {
+                            // Get industries for this sector from all companies
+                            const allCompanies = allCompaniesData.companies || [];
+                            
+                            // Find unique industries for this sector
+                            const sectorIndustriesMap = new Map<string, number>();
+                            allCompanies.forEach(c => {
+                              if (c.sectorName === sector.sectorName && c.industryName) {
+                                sectorIndustriesMap.set(
+                                  c.industryName, 
+                                  (sectorIndustriesMap.get(c.industryName) || 0) + 1
+                                );
+                              }
+                            });
+
+                            const sectorIndustries = Array.from(sectorIndustriesMap.entries())
+                              .map(([name, count]) => ({ industryName: name, count }))
+                              .sort((a, b) => b.count - a.count);
+
+                            if (sectorIndustries.length === 0) return null;
+
+                            return (
+                              <Card key={sector.sectorName} className="overflow-hidden">
+                                <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-4">
+                                  <h3 className="text-xl font-bold text-white flex items-center justify-between">
+                                    <span>{sector.sectorName}</span>
+                                    <span className="text-sm font-normal bg-white/20 px-3 py-1 rounded-full">
+                                      {sector.count} {sector.count === 1 ? 'company' : 'companies'}
+                                    </span>
+                                  </h3>
+                                </div>
+                                <CardContent className="p-6">
+                                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                    {sectorIndustries.map((industry) => (
+                                      <button
+                                        key={industry.industryName}
+                                        onClick={() => setLocation(`/industry/${encodeURIComponent(industry.industryName)}`)}
+                                        className="text-left p-4 rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 hover:from-blue-50 hover:to-blue-100 hover:shadow-lg transition-all border border-gray-200 hover:border-blue-400"
+                                        data-testid={`industry-link-${industry.industryName.toLowerCase().replace(/\s+/g, '-')}`}
+                                      >
+                                        <div className="flex items-start justify-between gap-2">
+                                          <div className="flex-1">
+                                            <div className="font-semibold text-gray-900 mb-1 line-clamp-2">
+                                              {industry.industryName}
+                                            </div>
+                                            <div className="text-sm text-gray-600">
+                                              {industry.count} {industry.count === 1 ? 'company' : 'companies'}
+                                            </div>
+                                          </div>
+                                          <Building2 className="h-5 w-5 text-blue-500 flex-shrink-0" />
+                                        </div>
+                                      </button>
+                                    ))}
+                                  </div>
+                                </CardContent>
+                              </Card>
+                            );
+                          })}
+                      </div>
+                    )}
+                  </>
+                )}
+
+                {viewMode === 'industries' && (
+                  <>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                      {countryData.stats.industryBreakdown
+                        .sort((a, b) => b.count - a.count)
+                        .slice((currentPage - 1) * 20, currentPage * 20)
+                        .map((industry) => {
+                          const gradient = [
+                            'from-blue-400 to-blue-600',
+                            'from-purple-400 to-purple-600',
+                            'from-pink-400 to-pink-600',
+                            'from-green-400 to-green-600',
+                            'from-yellow-400 to-yellow-600',
+                            'from-red-400 to-red-600',
+                            'from-indigo-400 to-indigo-600',
+                            'from-teal-400 to-teal-600'
+                          ];
+                          const randomGradient = gradient[Math.floor(Math.random() * gradient.length)];
+
+                          return (
+                            <Card
+                              key={industry.industryName}
+                              className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+                              onClick={() => setLocation(`/industry/${encodeURIComponent(industry.industryName)}`)}
+                              data-testid={`industry-card-${industry.industryName.toLowerCase().replace(/\s+/g, '-')}`}
+                            >
+                              <div className={`h-32 bg-gradient-to-br ${randomGradient} flex items-center justify-center`}>
+                                <Building2 className="h-16 w-16 text-white opacity-80" />
+                              </div>
+                              <CardContent className="p-4">
+                                <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 min-h-[3rem]">
+                                  {industry.industryName}
+                                </h3>
+                                <p className="text-sm text-gray-600">
+                                  {industry.count} {industry.count === 1 ? 'company' : 'companies'} in {countryData.name}
+                                </p>
+                              </CardContent>
+                            </Card>
+                          );
+                        })}
+                    </div>
+
+                    <Pagination 
+                      currentPage={currentPage}
+                      totalPages={Math.ceil(countryData.stats.industryBreakdown.length / 20)}
+                      onPageChange={handlePageChange}
+                    />
+                  </>
+                )}
               </div>
 
               <div className="hidden lg:block flex-shrink-0">
