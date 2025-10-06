@@ -34,6 +34,10 @@ interface CountryWithStats {
   capital: string | null;
   currency: string | null;
   region: string;
+  regionName?: string;
+  regionSlug?: string;
+  continentName?: string;
+  continentSlug?: string;
   stats: {
     totalCompanies: number;
     sectorBreakdown: Array<{ sectorName: string; count: number }>;
@@ -228,6 +232,14 @@ export default function CountryPage() {
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Geography", href: "/geography" },
+    ...(countryData.continentName && countryData.continentSlug 
+      ? [{ label: countryData.continentName, href: `/geography/continent/${countryData.continentSlug}` }]
+      : []
+    ),
+    ...(countryData.regionName && countryData.regionSlug 
+      ? [{ label: countryData.regionName, href: `/geography/region/${countryData.regionSlug}` }]
+      : []
+    ),
     { label: countryData.name },
   ];
 
