@@ -195,11 +195,11 @@ export default function RegionPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-2 order-1 lg:order-1">
-              <BannerAd position="left" />
+            <div className="hidden lg:block lg:col-span-2">
+              <BannerAd position="left" className="sticky top-24" />
             </div>
 
-            <div className="lg:col-span-8 order-2 lg:order-2">
+            <div className="lg:col-span-8">
               <div className="space-y-4">
                 <h2 className="text-2xl font-bold text-gray-900">
                   Search Results
@@ -285,19 +285,19 @@ export default function RegionPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-2 order-3 lg:order-3">
-              <BannerAd position="right" />
+            <div className="hidden lg:block lg:col-span-2">
+              <BannerAd position="right" className="sticky top-24" />
             </div>
           </div>
         </div>
       ) : (
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-2 order-1 lg:order-1">
-              <BannerAd position="left" />
+            <div className="hidden lg:block lg:col-span-2">
+              <BannerAd position="left" className="sticky top-24" />
             </div>
 
-            <div className="lg:col-span-8 order-2 lg:order-2">
+            <div className="lg:col-span-8">
               <Breadcrumbs items={breadcrumbs} />
 
               <div className="bg-gradient-to-br from-blue-50 to-cyan-100 border border-blue-200 rounded-lg p-6 sm:p-8 mb-8 shadow-sm">
@@ -386,8 +386,8 @@ export default function RegionPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-2 order-3 lg:order-3">
-              <BannerAd position="right" />
+            <div className="hidden lg:block lg:col-span-2">
+              <BannerAd position="right" className="sticky top-24" />
             </div>
           </div>
 
