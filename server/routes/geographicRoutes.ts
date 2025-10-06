@@ -1,5 +1,8 @@
 import type { Express } from "express";
 import { storage } from "../storage";
+import { db } from "../db";
+import { countries as countries_db, companyLocations } from "@shared/schema";
+import { eq, sql } from "drizzle-orm";
 
 export function registerGeographicRoutes(app: Express): void {
   
@@ -24,27 +27,61 @@ export function registerGeographicRoutes(app: Express): void {
         return res.status(404).json({ error: "Continent not found" });
       }
 
-      const stats = await storage.getContinentStats(continent.id);
-      const regionsData = await storage.getRegionsByContinent(continent.id);
-      const countries = await storage.getCountriesByContinent(continent.id);
+      const [stats, regionsData, countries] = await Promise.all([
+        storage.getContinentStats(continent.id),
+        storage.getRegionsByContinent(continent.id),
+        storage.getCountriesByContinent(continent.id)
+      ]);
 
-      // Enhance regions with counts
-      const regions = await Promise.all(regionsData.map(async (region) => {
-        const regionStats = await storage.getRegionStats(region.id);
-        return {
-          ...region,
-          countryCount: regionStats.totalCountries,
-          companyCount: regionStats.totalCompanies
-        };
+      // Get company counts for all regions in a single query
+      const regionCompanyCounts = await db
+        .select({
+          regionId: countries_db.regionId,
+          count: sql<number>`count(*)`
+        })
+        .from(companyLocations)
+        .innerJoin(countries_db, eq(companyLocations.countryId, countries_db.id))
+        .where(eq(countries_db.continentId, continent.id))
+        .groupBy(countries_db.regionId);
+
+      const regionCountMap = new Map(regionCompanyCounts.map(r => [r.regionId, Number(r.count)]));
+
+      // Get country counts for regions
+      const regionCountryCounts = await db
+        .select({
+          regionId: countries_db.regionId,
+          count: sql<number>`count(*)`
+        })
+        .from(countries_db)
+        .where(eq(countries_db.continentId, continent.id))
+        .groupBy(countries_db.regionId);
+
+      const regionCountryCountMap = new Map(regionCountryCounts.map(r => [r.regionId, Number(r.count)]));
+
+      // Enhance regions with counts from the maps
+      const regions = regionsData.map(region => ({
+        ...region,
+        countryCount: regionCountryCountMap.get(region.id) || 0,
+        companyCount: regionCountMap.get(region.id) || 0
       }));
 
-      // Enhance countries with company counts
-      const countriesWithCounts = await Promise.all(countries.map(async (country) => {
-        const countryStats = await storage.getCountryStats(country.id);
-        return {
-          ...country,
-          companyCount: countryStats.totalCompanies
-        };
+      // Get company counts for all countries in a single query
+      const countryCompanyCounts = await db
+        .select({
+          countryId: companyLocations.countryId,
+          count: sql<number>`count(*)`
+        })
+        .from(companyLocations)
+        .innerJoin(countries_db, eq(companyLocations.countryId, countries_db.id))
+        .where(eq(countries_db.continentId, continent.id))
+        .groupBy(companyLocations.countryId);
+
+      const countryCountMap = new Map(countryCompanyCounts.map(c => [c.countryId, Number(c.count)]));
+
+      // Enhance countries with company counts from the map
+      const countriesWithCounts = countries.map(country => ({
+        ...country,
+        companyCount: countryCountMap.get(country.id) || 0
       }));
 
       res.json({
@@ -87,16 +124,28 @@ export function registerGeographicRoutes(app: Express): void {
         return res.status(404).json({ error: "Region not found" });
       }
 
-      const stats = await storage.getRegionStats(region.id);
-      const countriesData = await storage.getCountriesByRegion(region.id);
+      const [stats, countriesData] = await Promise.all([
+        storage.getRegionStats(region.id),
+        storage.getCountriesByRegion(region.id)
+      ]);
 
-      // Enhance countries with company counts
-      const countries = await Promise.all(countriesData.map(async (country) => {
-        const countryStats = await storage.getCountryStats(country.id);
-        return {
-          ...country,
-          companyCount: countryStats.totalCompanies
-        };
+      // Get company counts for all countries in a single query
+      const countryCompanyCounts = await db
+        .select({
+          countryId: companyLocations.countryId,
+          count: sql<number>`count(*)`
+        })
+        .from(companyLocations)
+        .innerJoin(countries_db, eq(companyLocations.countryId, countries_db.id))
+        .where(eq(countries_db.regionId, region.id))
+        .groupBy(companyLocations.countryId);
+
+      const countryCountMap = new Map(countryCompanyCounts.map(c => [c.countryId, Number(c.count)]));
+
+      // Enhance countries with company counts from the map
+      const countries = countriesData.map(country => ({
+        ...country,
+        companyCount: countryCountMap.get(country.id) || 0
       }));
 
       res.json({
