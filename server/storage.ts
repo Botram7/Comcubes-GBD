@@ -860,12 +860,32 @@ export class DatabaseStorage implements IStorage {
     }
   }
 
-  async getCountryBySlug(slug: string): Promise<Country | undefined> {
+  async getCountryBySlug(slug: string): Promise<any | undefined> {
     try {
-      const [country] = await db.select().from(countries)
+      const [result] = await db
+        .select({
+          id: countries.id,
+          name: countries.name,
+          slug: countries.slug,
+          iso2: countries.iso2,
+          iso3: countries.iso3,
+          phoneCode: countries.phoneCode,
+          capital: countries.capital,
+          currency: countries.currency,
+          regionId: countries.regionId,
+          continentId: countries.continentId,
+          flagEmoji: countries.flagEmoji,
+          regionName: regions.name,
+          regionSlug: regions.slug,
+          continentName: continents.name,
+          continentSlug: continents.slug
+        })
+        .from(countries)
+        .innerJoin(regions, eq(countries.regionId, regions.id))
+        .innerJoin(continents, eq(countries.continentId, continents.id))
         .where(eq(countries.slug, slug))
         .limit(1);
-      return country || undefined;
+      return result || undefined;
     } catch (error) {
       console.error('Error getting country by slug:', error);
       return undefined;
