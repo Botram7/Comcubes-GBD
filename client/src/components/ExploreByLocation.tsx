@@ -42,7 +42,7 @@ export function ExploreByLocation() {
       staleTime: Infinity,
     });
     queryClient.prefetchQuery({
-      queryKey: [`/api/geography/countries/${slug}/companies?page=1`],
+      queryKey: [`/api/geography/countries/${slug}/companies?page=1`, 1],
       staleTime: Infinity,
     });
   };
