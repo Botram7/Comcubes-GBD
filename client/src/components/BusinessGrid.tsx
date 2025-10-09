@@ -121,6 +121,17 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
                 </Button>
               )}
 
+              {/* Industry Label at top - for cross-industry companies */}
+              {item.id !== -1 && (item as Company).industryName && (
+                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md shadow-lg">
+                    <p className="text-[9px] sm:text-xs font-semibold text-blue-600 whitespace-nowrap">
+                      {(item as Company).industryName}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {/* Text positioned at bottom center */}
               <div className="absolute inset-0 flex items-end justify-center">
                 <div className="text-center text-white p-3 pb-4">
