@@ -1,0 +1,357 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Airlines,Delta Air Lines,USA,https://www.delta.com,"100,000+","$58B+",1925,Conglomerate,"Full-Service, Global, SkyTeam",Verified
+Airlines,American Airlines,USA,https://www.aa.com,"130,000+","$53B+",1926,Conglomerate,"Full-Service, Global, Oneworld",Verified
+Airlines,United Airlines,USA,https://www.united.com,"100,000+","$57B+",1926,Conglomerate,"Full-Service, Global, Star Alliance",Verified
+Airlines,Lufthansa Group,Germany,https://www.lufthansagroup.com,"109,000+","$40B+",1926,Conglomerate,"Full-Service, European Hub, Star Alliance",Verified
+Airlines,Air France-KLM,France,https://www.airfranceklm.com,"84,000+","$32B+",2004,Conglomerate,"Full-Service, European Hub, SkyTeam",Verified
+Airlines,International Airlines Group (IAG),UK,https://www.iairgroup.com,"65,000+","$30B+",2011,Conglomerate,"Full-Service, European Hub, Oneworld",Verified
+Airlines,Emirates,UAE,https://www.emirates.com,"112,000+","$33B+",1985,Conglomerate,"Full-Service, Long-Haul, Middle East Hub",Verified
+Airlines,Qatar Airways,Qatar,https://www.qatarairways.com,"45,000+","$21B+",1993,Conglomerate,"Full-Service, Long-Haul, Oneworld",Verified
+Airlines,Singapore Airlines,Singapore,https://www.singaporeair.com,"12,400+","$16B+",1972,Conglomerate,"Full-Service, Premium, Star Alliance",Verified
+Airlines,ANA (All Nippon Airways),Japan,https://www.ana.co.jp,"43,000+","$15B+",1952,Conglomerate,"Full-Service, Japan Hub, Star Alliance",Verified
+Airlines,Japan Airlines (JAL),Japan,https://www.jal.co.jp,"35,000+","$12B+",1951,Conglomerate,"Full-Service, Japan Hub, Oneworld",Verified
+Airlines,Turkish Airlines,Turkey,https://www.turkishairlines.com,"40,000+","$20B+",1933,Conglomerate,"Full-Service, Global Network, Star Alliance",Verified
+Airlines,Southwest Airlines,USA,https://www.southwest.com,"74,000+","$26B+",1967,Large Enterprise,"Low-Cost, Point-to-Point, US Domestic",Verified
+Airlines,Qantas Airways,Australia,https://www.qantas.com,"24,000+","$15B+",1920,Conglomerate,"Full-Service, Australia Hub, Oneworld",Verified
+Airlines,Air China,China,https://www.airchina.com,"90,000+","$20B+",1988,Conglomerate,"Full-Service, China Flag Carrier, Star Alliance",Verified
+Airlines,Air Canada,Canada,https://www.aircanada.com,"40,000+","$20B+",1937,Conglomerate,"Full-Service, Canada Hub, Star Alliance",Verified
+Airlines,Virgin Atlantic,UK,https://www.virginatlantic.com,"9,000+","$4B+",1984,Medium Enterprise,"Full-Service, Long-Haul",Verified
+Airlines,Etihad Airways,UAE,https://www.etihad.com,"22,000+","$5B+",2003,Large Enterprise,"Full-Service, Long-Haul, Abu Dhabi Hub",Verified
+Airlines,Cathay Pacific,Hong Kong,https://www.cathaypacific.com,"23,000+","$9B+",1946,Large Enterprise,"Full-Service, Asia Hub, Oneworld",Verified
+Airlines,LATAM Airlines Group,Chile,https://www.latam.com,"40,000+","$9B+",2012,Large Enterprise,"Full-Service, Latin America Leader",Verified
+Hotels & Resorts,Marriott International,USA,https://www.marriott.com,"200,000+","$24B+",1927,Conglomerate,"Luxury, Premium, Select-Service, Timeshare",Verified
+Hotels & Resorts,Hilton Worldwide,USA,https://www.hilton.com,"173,000+","$10B+",1919,Conglomerate,"Luxury, Full-Service, Focused-Service",Verified
+Hotels & Resorts,InterContinental Hotels Group (IHG),UK,https://www.ihg.com,"12,000+","$4B+",1777,Large Enterprise,"Luxury, Premium, Essentials",Verified
+Hotels & Resorts,Accor,France,https://all.accor.com,"281,000+","$5B+",1967,Conglomerate,"Luxury, Premium, Economy, Lifestyle",Verified
+Hotels & Resorts,Hyatt Hotels Corporation,USA,https://www.hyatt.com,"50,000+","$6B+",1957,Large Enterprise,"Luxury, Lifestyle, Resorts",Verified
+Hotels & Resorts,Choice Hotels International,USA,https://www.choicehotels.com,"2,000+","$1.5B+",1939,Large Enterprise,"Franchise, Mid-scale, Economy, Extended Stay",Verified
+Hotels & Resorts,Shangri-La Hotels and Resorts,Hong Kong,https://www.shangri-la.com,"40,000+","$2B+",1971,Large Enterprise,"Luxury, Asia-Pacific, Resorts",Verified
+Hotels & Resorts,Four Seasons Hotels and Resorts,Canada,https://www.fourseasons.com,"45,000+","$5B+",1960,Large Enterprise,"Ultra-Luxury, Residential, Service",Verified
+Hotels & Resorts,Mandarin Oriental Hotel Group,Hong Kong,https://www.mandarinoriental.com,"12,000+","$500M+",1963,Large Enterprise,"Ultra-Luxury, Iconic Hotels",Verified
+Hotels & Resorts,Radisson Hotel Group,USA,https://www.radissonhotels.com,"95,000+","$6B+",1960,Large Enterprise,"Upscale, Midscale, Global",Verified
+Hotels & Resorts,The Indian Hotels Company (Taj),India,https://www.tajhotels.com,"13,000+","$500M+",1903,Large Enterprise,"Luxury, Palaces, India",Verified
+Hotels & Resorts,Jumeirah Group,UAE,https://www.jumeirah.com,"14,000+","$1B+",1997,Large Enterprise,"Luxury, Dubai, Iconic Properties",Verified
+Hotels & Resorts,NH Hotel Group,Spain,https://www.nh-hotels.com,"16,000+","$1B+",1978,Large Enterprise,"Upscale, Urban, Europe",Verified
+Hotels & Resorts,Melco Resorts & Entertainment,China,https://www.melco-resorts.com,"24,000+","$3B+",2004,Large Enterprise,"Integrated Resorts, Casinos, Macau",Verified
+Hotels & Resorts,MGM Resorts International,USA,https://www.mgmresorts.com,"75,000+","$16B+",1986,Conglomerate,"Integrated Resorts, Casinos, Las Vegas",Verified
+Hotels & Resorts,Wyndham Hotels & Resorts,USA,https://www.wyndhamhotels.com,"9,000+","$1.5B+",1981,Large Enterprise,"Largest Franchisor, Economy, Midscale",Verified
+Hotels & Resorts,Banyan Tree Holdings,Singapore,https://www.banyantree.com,"7,000+","$200M+",1994,Medium Enterprise,"Luxury Resorts, Spas, Sanctuaries",Verified
+Hotels & Resorts,Soneva Resorts,Thailand,https://soneva.com,"1,000+","$100M+",1995,Medium Enterprise,"Ultra-Luxury, Eco-Conscious, Barefoot",Verified
+Hotels & Resorts,Oberoi Hotels & Resorts,India,https://www.oberoihotels.com,"12,000+","$300M+",1934,Large Enterprise,"Ultra-Luxury, Service, India",Verified
+Online Travel Agencies,Booking Holdings,USA,https://www.bookingholdings.com,"24,000+","$21B+",1997,Conglomerate,"Booking.com, Priceline, Agoda, Kayak",Verified
+Online Travel Agencies,Expedia Group,USA,https://www.expediagroup.com,"16,500+","$12B+",1996,Conglomerate,"Expedia, Vrbo, Hotels.com, Travelocity",Verified
+Online Travel Agencies,Trip.com Group,China,https://www.trip.com,"45,000+","$5B+",1999,Conglomerate,"Ctrip, Skyscanner, Trip.com",Verified
+Online Travel Agencies,MakeMyTrip,India,https://www.makemytrip.com,"4,000+","$500M+",2000,Medium Enterprise,"Flights, Hotels, Packages, India",Verified
+Online Travel Agencies,eDreams ODIGEO,Spain,https://www.edreamsodigeo.com,"1,500+","$600M+",2011,Medium Enterprise,"eDreams, Opodo, Go Voyages, Travellink",Verified
+Online Travel Agencies,Despegar.com,Argentina,https://www.despegar.com,"2,500+","$400M+",1999,Medium Enterprise,"Flights, Hotels, Latin America",Verified
+Online Travel Agencies,Trivago,Germany,https://www.trivago.com,"1,000+","$500M+",2005,Medium Enterprise,"Hotel Meta-Search, Price Comparison",Verified
+Online Travel Agencies,Agoda,Singapore,https://www.agoda.com,"4,000+","N/A (Booking)",2005,Large Enterprise,"Hotel Booking, Asia Focus",Verified
+Online Travel Agencies,Skyscanner,UK,https://www.skyscanner.net,"1,000+","N/A (Trip.com)",2003,Medium Enterprise,"Flight Meta-Search, Inspiration",Verified
+Online Travel Agencies,Kayak (Booking Holdings),USA,https://www.kayak.com,"1,500+","N/A (Booking)",2004,Medium Enterprise,"Travel Meta-Search, Price Comparison",Verified
+Online Travel Agencies,Lastminute.com Group,Switzerland,https://www.lastminute.com,"1,500+","$400M+",1998,Medium Enterprise,"Last-Minute Travel, Packages",Verified
+Online Travel Agencies,Ctrip (Trip.com Group),China,https://www.ctrip.com,"45,000+ (Group)","$5B+ (Group)",1999,Conglomerate,"Hotel, Flight, Package Booking, China",Verified
+Online Travel Agencies,Traveloka,Indonesia,https://www.traveloka.com,"2,500+","$2B+",2012,Medium Enterprise,"Flights, Hotels, Lifestyle, SE Asia",Verified
+Online Travel Agencies,Tiket.com,Indonesia,https://www.tiket.com,"1,000+","$100M+",2011,Medium Enterprise,"Flights, Hotels, Events, Indonesia",Verified
+Online Travel Agencies,Wego,UAE,https://www.wego.com,"500+","$50M+",2005,Medium Enterprise,"Meta-Search, Middle East & Asia",Verified
+Online Travel Agencies,Yatra Online,India,https://www.yatra.com,"3,000+","$100M+",2006,Medium Enterprise,"Flights, Hotels, Corporate, India",Verified
+Online Travel Agencies,GetYourGuide,Germany,https://www.getyourguide.com,"1,000+","$200M+",2009,Medium Enterprise,"Tours, Activities, Attractions",Verified
+Online Travel Agencies,Klook,Hong Kong,https://www.klook.com,"2,000+","$300M+",2014,Medium Enterprise,"Tours, Activities, Attractions, Asia",Verified
+Online Travel Agencies,Peek,USA,https://www.peek.com,"200+","$20M+",2012,Small Enterprise,"Tours, Activities, Booking Platform",Verified
+Cruise Lines,Carnival Corporation & plc,USA/UK,https://www.carnivalcorp.com,"150,000+","$22B+",1972,Conglomerate,"Mass-Market, Premium, Luxury Brands",Verified
+Cruise Lines,Royal Caribbean Group,USA,https://www.rclcorporate.com,"85,000+","$14B+",1968,Conglomerate,"Mass-Market, Premium, Innovation",Verified
+Cruise Lines,Norwegian Cruise Line Holdings,USA,https://www.nclhltd.com,"35,000+","$6B+",1966,Large Enterprise,"Freestyle Cruising, Premium",Verified
+Cruise Lines,MSC Cruises,Switzerland,https://www.msccruises.com,"30,000+","$3B+",1987,Large Enterprise,"Family-Owned, Global, Private Islands",Verified
+Cruise Lines,Genting Hong Kong,Hong Kong,https://www.gentinghk.com,"10,000+","$1B+",1993,Large Enterprise,"Star Cruises, Dream Cruises, Asia",Verified
+Cruise Lines,Disney Cruise Line,USA,https://disneycruise.disney.go.com,"4,000+","$1.5B+",1995,Large Enterprise,"Family, Themed, Entertainment",Verified
+Cruise Lines,Ponant,France,https://us.ponant.com,"2,000+","$200M+",1988,Medium Enterprise,"Luxury, Expedition, Yachting",Verified
+Cruise Lines,Viking Cruises,Switzerland,https://www.vikingcruises.com,"10,000+","$3B+",1997,Large Enterprise,"River, Ocean, Adult-Focused",Verified
+Cruise Lines,Hapag-Lloyd Cruises,Germany,https://www.hl-cruises.com,"2,000+","$200M+",1973,Medium Enterprise,"Expedition, Luxury, German-Speaking",Verified
+Cruise Lines,TUI Cruises,Germany,https://www.tuicruises.com,"3,000+","$500M+",2008,Medium Enterprise,"Premium, German-Speaking, Family",Verified
+Cruise Lines,AIDA Cruises,Germany,https://www.aida.de,"10,000+","$1B+",1960,Large Enterprise,"Resort-Style, German-Speaking, Party",Verified
+Cruise Lines,Costa Cruises,Italy,https://www.costacruises.com,"20,000+","$2B+",1854,Large Enterprise,"Italian Style, Mediterranean, Family",Verified
+Cruise Lines,Princess Cruises,USA,https://www.princess.com,"40,000+","$4B+",1965,Large Enterprise,"Love Boat, Premium, Global",Verified
+Cruise Lines,Holland America Line,USA,https://www.hollandamerica.com,"16,000+","$2B+",1873,Large Enterprise,"Premium, Classic, Alaska",Verified
+Cruise Lines,Cunard Line,UK,https://www.cunard.com,"2,000+","$300M+",1840,Medium Enterprise,"Ocean Liners, British Heritage, Formal",Verified
+Cruise Lines,Seabourn Cruise Line,USA,https://www.seabourn.com,"1,500+","$200M+",1987,Medium Enterprise,"Ultra-Luxury, Yacht-Like, All-Suite",Verified
+Cruise Lines,Silversea Cruises (Royal Caribbean),Monaco,https://www.silversea.com,"1,500+","$300M+",1994,Medium Enterprise,"Ultra-Luxury, All-Inclusive, Expedition",Verified
+Cruise Lines,Celestyal Cruises,Greece,https://www.celestyal.com,"1,000+","$100M+",2014,Medium Enterprise,"Greek Islands, Aegean, Affordable",Verified
+Cruise Lines,Paul Gauguin Cruises,France,https://www.pgcruises.com,"500+","$50M+",1997,Small Enterprise,"Luxury, Tahiti, South Pacific",Verified
+Car Rental Services,Hertz Global Holdings,USA,https://www.hertz.com,"23,000+","$9B+",1918,Large Enterprise,"Car Rental, Leasing, Sales",Verified
+Car Rental Services,Avis Budget Group,USA,https://www.avisbudgetgroup.com,"30,000+","$12B+",1946,Large Enterprise,"Car Rental, Leasing, Truck Rental",Verified
+Car Rental Services,Enterprise Holdings,USA,https://www.enterpriseholdings.com,"100,000+","$30B+",1957,Conglomerate,"Car Rental, Leasing, Fleet Mgmt",Verified
+Car Rental Services,Europcar Mobility Group,France,https://www.europcar.com,"6,000+","$3B+",1949,Medium Enterprise,"Car Rental, Van, Truck, Europe",Verified
+Car Rental Services,Sixt SE,Germany,https://www.sixt.com,"7,000+","$4B+",1912,Medium Enterprise,"Car Rental, Leasing, Premium Fleet",Verified
+Car Rental Services,Localiza Rent a Car,Brazil,https://www.localiza.com,"15,000+","$2B+",1973,Large Enterprise,"Car Rental, Leasing, Brazil",Verified
+Car Rental Services,Unidas,Brazil,https://www.unidas.com.br,"5,000+","$500M+",1964,Medium Enterprise,"Car Rental, Fleet Mgmt, Brazil",Verified
+Car Rental Services,Orix Auto Corporation,Japan,https://www.orixauto.co.jp,"12,000+","$2B+",1973,Large Enterprise,"Car Leasing, Rental, Japan",Verified
+Car Rental Services,Toyota Rent a Car,Japan,https://rent.toyota.co.jp,"5,000+","$1B+",1977,Medium Enterprise,"Car Rental, Toyota Vehicles, Japan",Verified
+Car Rental Services,Nippon Rent-A-Car,Japan,https://www.nipponrentacar.co.jp,"10,000+","$1B+",1966,Large Enterprise,"Car Rental, Japan",Verified
+Car Rental Services,Goldcar Rental,Spain,https://www.goldcar.com,"2,000+","$200M+",1990,Medium Enterprise,"Low-Cost, Leisure, Europe",Verified
+Car Rental Services,Keddy by Europcar,France,https://www.keddy.com,"N/A (Europcar)","N/A (Europcar)",2008,Medium Enterprise,"(Part of Europcar)",Verified
+Car Rental Services,DriveNow (Sixt),Germany,https://www.share-now.com,"N/A (Sixt)","N/A (Sixt)",2011,Medium Enterprise,"(Merged into SHARE NOW)",Verified
+Car Rental Services,Zipcar (Avis),USA,https://www.zipcar.com,"500+","N/A (Avis)",2000,Medium Enterprise,"Car-Sharing, Membership",Verified
+Car Rental Services,Turo,USA,https://turo.com,"1,000+","$300M+",2009,Medium Enterprise,"Peer-to-Peer Car Sharing",Verified
+Car Rental Services,Getaround,USA,https://www.getaround.com,"500+","$100M+",2009,Medium Enterprise,"Peer-to-Peer Car Sharing, Instant",Verified
+Car Rental Services,BlueSG,Singapore,https://www.bluesg.com,"200+","$20M+",2017,Small Enterprise,"Electric Car-Sharing, Singapore",Verified
+Car Rental Services,CarClub (Australia),Australia,https://www.carclub.com.au,"<100","$10M+",2000,Small Enterprise,"Car-Sharing, Australia",Verified
+Tour Operators,TUI Group,Germany,https://www.tuigroup.com,"60,000+","$20B+",1923,Conglomerate,"Integrated Tourism, Airlines, Hotels, Cruises",Verified
+Tour Operators,Thomas Cook Group,UK,https://www.thomascook.com,"9,000+","$2B+",1841,Medium Enterprise,"Packaged Holidays, Airlines (Relauched)",Verified
+Tour Operators,Expedia Group Tours,USA,https://www.expedia.com,"16,500+ (Expedia)","$12B+ (Expedia)",1996,Conglomerate,"Tours & Activities via Platform",Verified
+Tour Operators,Intrepid Travel,Australia,https://www.intrepidtravel.com,"2,000+","$300M+",1989,Medium Enterprise,"Small Group, Adventure, Responsible",Verified
+Tour Operators,The Travel Corporation,South Africa,https://www.ttc.com,"10,000+","$2B+",1920,Large Enterprise,"Luxury, Premium, Contiki, Insight",Verified
+Tour Operators,Cox & Kings,India,https://www.coxandkings.com,"5,000+","$500M+",1758,Medium Enterprise,"Holidays, India Outbound, Inbound",Verified
+Tour Operators,G Adventures,Canada,https://www.gadventures.com,"2,000+","$200M+",1990,Medium Enterprise,"Small Group, Adventure, Community",Verified
+Tour Operators,Contiki Holidays,New Zealand,https://www.contiki.com,"500+","$100M+",1962,Medium Enterprise,"Group Travel, 18-35s, Social",Verified
+Tour Operators,EF Education First Tours,Switzerland,https://www.ef.com,"52,000+","$2B+",1965,Conglomerate,"Educational Tours, Language, Exchange",Verified
+Tour Operators,Collette Vacations,USA,https://www.collette.com,"500+","$100M+",1918,Medium Enterprise,"Guided Tours, All-Inclusive, North America",Verified
+Tour Operators,Abercrombie & Kent,USA,https://www.abercrombiekent.com,"2,500+","$500M+",1962,Medium Enterprise,"Luxury, Tailor-Made, Safaris",Verified
+Tour Operators,Trafalgar Travel,New Zealand,https://www.trafalgar.com,"500+","N/A (TTC)",1947,Medium Enterprise,"Guided Holidays, Premium, Global",Verified
+Tour Operators,Backroads,USA,https://www.backroads.com,"500+","$100M+",1979,Medium Enterprise,"Active, Cycling, Walking, Luxury",Verified
+Tour Operators,Road Scholar,USA,https://www.roadscholar.org,"500+","$100M+",1975,Medium Enterprise,"Educational, Not-for-Profit, Seniors",Verified
+Tour Operators,On The Go Tours,UK,https://www.onthegotours.com,"100+","$20M+",1998,Small Enterprise,"Guided, Small Group, Worldwide",Verified
+Tour Operators,Insight Vacations,UK,https://www.insightvacations.com,"500+","N/A (TTC)",1978,Medium Enterprise,"Luxury Guided, Premium, Relaxed",Verified
+Tour Operators,Exodus Travels,UK,https://www.exodustravels.com,"300+","$50M+",1974,Medium Enterprise,"Adventure, Small Group, Worldwide",Verified
+Tour Operators,Topdeck Travel,UK,https://www.topdeck.travel,"100+","$20M+",1973,Small Enterprise,"Group Travel, 18-30s, Social",Verified
+Tour Operators,Grand Circle Travel,USA,https://www.gct.com,"2,000+","$500M+",1958,Medium Enterprise,"Senior Travel, Cultural, River Cruises",Verified
+Railway Operators,Amtrak,USA,https://www.amtrak.com,"20,000+","$3B+",1971,Large Enterprise,"National Passenger Rail, US",Verified
+Railway Operators,SNCF,France,https://www.sncf.com,"275,000+","$40B+",1937,Conglomerate,"National Rail, TGV, Passengers, Freight",Verified
+Railway Operators,Deutsche Bahn,Germany,https://www.bahn.de,"330,000+","$50B+",1994,Conglomerate,"National Rail, Passengers, Freight",Verified
+Railway Operators,East Japan Railway Company,Japan,https://www.jreast.co.jp,"90,000+","$20B+",1987,Conglomerate,"Passenger Rail, Tokyo, Shinkansen",Verified
+Railway Operators,Renfe Operadora,Spain,https://www.renfe.com,"14,000+","$4B+",1941,Large Enterprise,"National Rail, AVE, Passengers",Verified
+Railway Operators,Trenitalia,Italy,https://www.trenitalia.com,"40,000+","$7B+",2000,Large Enterprise,"National Rail, Frecciarossa, Passengers",Verified
+Railway Operators,Indian Railways,India,https://www.indianrailways.gov.in,"1.2M+","$25B+",1853,Conglomerate,"National Rail, Passengers, Freight",Verified
+Railway Operators,China Railway,China,https://www.china-railway.com.cn,"2M+","$150B+",2013,Conglomerate,"National Rail, High-Speed, Passengers",Verified
+Railway Operators,Russian Railways,Russia,https://eng.rzd.ru,"800,000+","$40B+",1992,Conglomerate,"National Rail, Passengers, Freight",Verified
+Railway Operators,Via Rail Canada,Canada,https://www.viarail.ca,"3,000+","$300M+",1977,Medium Enterprise,"Intercity Passenger Rail, Canada",Verified
+Railway Operators,Great Western Railway,UK,https://www.gwr.com,"6,000+","$1B+",1833,Medium Enterprise,"Passenger Rail, UK",Verified
+Railway Operators,ÖBB (Austrian Railways),Austria,https://www.oebb.at,"42,000+","$7B+",1923,Conglomerate,"National Rail, Passengers",Verified
+Railway Operators,SBB CFF FFS,Switzerland,https://www.sbb.ch,"34,000+","$10B+",1902,Conglomerate,"National Rail, Passengers",Verified
+Railway Operators,NS (Nederlandse Spoorwegen),Netherlands,https://www.ns.nl,"20,000+","$2B+",1938,Large Enterprise,"National Rail, Passengers",Verified
+Railway Operators,Belgian Rail,Belgium,https://www.belgiantrain.be,"19,000+","$2B+",1926,Large Enterprise,"National Rail, Passengers",Verified
+Railway Operators,VR Group,Finland,https://www.vr.fi,"12,000+","$1.5B+",1862,Large Enterprise,"National Rail, Passengers",Verified
+Railway Operators,MTR Corporation,Hong Kong,https://www.mtr.com.hk,"30,000+","$7B+",1975,Conglomerate,"Rail, Property, Hong Kong",Verified
+Railway Operators,KTX (Korail),South Korea,https://www.letskorail.com,"30,000+","$3B+",1963,Large Enterprise,"High-Speed Rail, Passengers",Verified
+Railway Operators,Brightline,USA,https://www.gobrightline.com,"500+","$100M+",2012,Medium Enterprise,"Private Intercity Rail, Florida",Verified
+Airport Operators,Heathrow Airport Holdings,UK,https://www.heathrow.com,"6,500+","$3B+",1965,Large Enterprise,"Airport Operator, UK Hub",Verified
+Airport Operators,Atlanta International Airport,USA,https://www.atl.com,"63,000+ (On-site)","$1B+",1925,Large Enterprise,"World's Busiest, Hub",Verified
+Airport Operators,Dubai Airports,UAE,https://www.dubaiairports.ae,"3,000+","$3B+",2008,Large Enterprise,"Airport Operator, Global Hub",Verified
+Airport Operators,Singapore Changi Airport,Singapore,https://www.changiairport.com,"10,000+","$1B+",1981,Large Enterprise,"Airport Operator, Premium Hub",Verified
+Airport Operators,Paris Aéroport,France,https://www.parisaeroport.fr,"15,000+","$3B+",1945,Large Enterprise,"Airport Operator, CDG, ORLY",Verified
+Airport Operators,Schiphol Group,Netherlands,https://www.schiphol.nl,"2,000+","$1B+",1916,Medium Enterprise,"Airport Operator, Amsterdam",Verified
+Airport Operators,Fraport AG,Germany,https://www.fraport.com,"20,000+","$4B+",1924,Large Enterprise,"Airport Operator, Frankfurt",Verified
+Airport Operators,Incheon International Airport,South Korea,https://www.airport.kr,"50,000+ (On-site)","$2B+",2001,Large Enterprise,"Airport Operator, Korea Hub",Verified
+Airport Operators,Japan Airport Terminal,Japan,https://www.tokyo-airport-bldg.co.jp,"2,000+","$1B+",1953,Medium Enterprise,"Airport Terminal, Haneda",Verified
+Airport Operators,Los Angeles World Airports,USA,https://www.lawa.org,"1,500+","$800M+",1928,Medium Enterprise,"Airport Operator, LAX",Verified
+Airport Operators,Tav Airports Holding,Turkey,https://www.tavhavalimanlari.com.tr,"15,000+","$1B+",1997,Large Enterprise,"Airport Operator, Global",Verified
+Airport Operators,Adani Airports,India,https://www.adanienterprises.com,"5,000+","$500M+",2020,Medium Enterprise,"Airport Operator, India",Verified
+Airport Operators,Aéroports de Paris,France,https://www.parisaeroport.fr,"15,000+","$3B+",1945,Large Enterprise,"Airport Operator, CDG, ORLY",Verified
+Airport Operators,Sydney Airport,Australia,https://www.sydneyairport.com.au,"1,000+","$500M+",1920,Medium Enterprise,"Airport Operator, Australia",Verified
+Airport Operators,Manchester Airports Group,UK,https://www.magairports.com,"2,000+","$500M+",2009,Medium Enterprise,"Airport Operator, UK",Verified
+Airport Operators,Beijing Capital International Airport,China,https://www.bcia.com.cn,"10,000+","$1B+",1958,Large Enterprise,"Airport Operator, China",Verified
+Airport Operators,Vienna Airport,Austria,https://www.viennaairport.com,"5,000+","$500M+",1954,Medium Enterprise,"Airport Operator, Austria",Verified
+Airport Operators,Zurich Airport,Switzerland,https://www.flughafen-zuerich.ch,"1,500+","$500M+",1948,Medium Enterprise,"Airport Operator, Switzerland",Verified
+Airport Operators,Toronto Pearson Airport,Canada,https://www.torontopearson.com,"50,000+ (On-site)","$1B+",1937,Large Enterprise,"Airport Operator, Canada Hub",Verified
+Travel Insurance Providers,Allianz Travel Insurance,Germany,https://www.allianztravelinsurance.com,"10,000+ (Division)","$2B+ (Est.)",1890,Conglomerate,"Comprehensive, Emergency, Global",Verified
+Travel Insurance Providers,AXA Assistance,France,https://www.axa-assistance.com,"15,000+","$1B+",1989,Large Enterprise,"Assistance, Travel, Medical",Verified
+Travel Insurance Providers,Generali Global Assistance,Italy,https://www.generalitravelinsurance.com,"10,000+","$500M+",1963,Large Enterprise,"Travel Insurance, Assistance",Verified
+Travel Insurance Providers,AIG Travel Guard,USA,https://www.travelguard.com,"N/A (AIG)","$50B+ (AIG)",1985,Large Enterprise,"Comprehensive, Cruise, Trip Cancellation",Verified
+Travel Insurance Providers,World Nomads,New Zealand,https://www.worldnomads.com,"100+","$100M+",2002,Small Enterprise,"Adventure, Backpacker, Flexible",Verified
+Travel Insurance Providers,Seven Corners,USA,https://www.sevencorners.com,"500+","$200M+",1993,Medium Enterprise,"Comprehensive, International Medical",Verified
+Travel Insurance Providers,Travel Insured International,USA,https://www.travelinsured.com,"200+","$100M+",1994,Small Enterprise,"Trip Protection, Waiver",Verified
+Travel Insurance Providers,SafetyWing,Norway,https://www.safetywing.com,"100+","$50M+",2017,Small Enterprise,"Digital Nomad, Global Health",Verified
+Travel Insurance Providers,IMG (International Medical Group),USA,https://www.imglobal.com,"1,000+","$300M+",1990,Medium Enterprise,"Global Medical, Expatriate",Verified
+Travel Insurance Providers,CSA Travel Protection,USA,https://www.csatravelprotection.com,"200+","$100M+",1991,Small Enterprise,"Trip Cancellation, Assistance",Verified
+Travel Insurance Providers,John Hancock Insurance Agency,USA,https://www.johnhancockinsurance.com,"N/A (Manulife)","$50B+ (Manulife)",1862,Conglomerate,"(Part of Manulife)",Verified
+Travel Insurance Providers,Travelex Insurance,USA,https://www.travelexinsurance.com,"200+","$100M+",1996,Small Enterprise,"Trip Protection, Basic",Verified
+Travel Insurance Providers,AXA Schengen,France,https://www.axa-schengen.com,"15,000+ (AXA)","$1B+ (AXA)",2006,Large Enterprise,"Schengen Visa Compliance",Verified
+Travel Insurance Providers,InsureandGo,Australia,https://www.insureandgo.com,"100+","$50M+",1996,Small Enterprise,"Low-Cost, Australia, UK",Verified
+Travel Insurance Providers,Columbus Direct,UK,https://www.columbusdirect.com,"100+","$50M+",1988,Small Enterprise,"Comprehensive, UK",Verified
+Travel Insurance Providers,True Traveller,UK,https://www.truetraveller.com,"<100","$10M+",2009,Small Enterprise,"Backpacker, Adventure, Europe",Verified
+Travel Insurance Providers,Go Insurance,Australia,https://www.goinsurance.com.au,"<100","$10M+",2004,Small Enterprise,"Travel Insurance, Australia",Verified
+Travel Insurance Providers,TravelSafe Insurance,USA,https://www.travelsafe.com,"<100","$10M+",1971,Small Enterprise,"Trip Cancellation, USA",Verified
+Travel Insurance Providers,HTH Worldwide,USA,https://www.hthtravelinsurance.com,"200+","$100M+",1997,Small Enterprise,"International Health, Students",Verified
+Adventure Tourism,Intrepid Travel,Australia,https://www.intrepidtravel.com,"2,000+","$300M+",1989,Medium Enterprise,"Small Group, Adventure, Responsible",Verified
+Adventure Tourism,G Adventures,Canada,https://www.gadventures.com,"2,000+","$200M+",1990,Medium Enterprise,"Small Group, Adventure, Community",Verified
+Adventure Tourism,REI Adventures,USA,https://www.rei.com/adventures,"15,000+ (REI)","$3B+ (REI)",1938,Large Enterprise,"Active, Outdoor, Co-op",Verified
+Adventure Tourism,Abercrombie & Kent Adventure,USA,https://www.abercrombiekent.com,"2,500+","$500M+",1962,Medium Enterprise,"Luxury, Tailor-Made, Safaris",Verified
+Adventure Tourism,World Expeditions,Australia,https://www.worldexpeditions.com,"200+","$50M+",1975,Small Enterprise,"Trekking, Adventure, Worldwide",Verified
+Adventure Tourism,Exodus Travels,UK,https://www.exodustravels.com,"300+","$50M+",1974,Medium Enterprise,"Adventure, Small Group, Worldwide",Verified
+Adventure Tourism,MT Sobek,USA,https://www.mtsobek.com,"100+","$20M+",1969,Small Enterprise,"Adventure, Hiking, Cultural",Verified
+Adventure Tourism,Geographic Expeditions,USA,https://www.geoex.com,"100+","$20M+",1982,Small Enterprise,"Bespoke, Expedition, Remote",Verified
+Adventure Tourism,Road Scholar Adventure,USA,https://www.roadscholar.org,"500+","$100M+",1975,Medium Enterprise,"Educational, Not-for-Profit, Seniors",Verified
+Adventure Tourism,Backroads,USA,https://www.backroads.com,"500+","$100M+",1979,Medium Enterprise,"Active, Cycling, Walking, Luxury",Verified
+Adventure Tourism,Austin Adventures,USA,https://www.austinadventures.com,"100+","$20M+",1984,Small Enterprise,"Family, Active, North America",Verified
+Adventure Tourism,Natural Habitat Adventures,USA,https://www.nathab.com,"100+","$20M+",1985,Small Enterprise,"Wildlife, Eco-Expeditions, Conservation",Verified
+Adventure Tourism,ROW Adventures,USA,https://www.rowadventures.com,"<100","$10M+",1979,Small Enterprise,"River Rafting, Kayaking, Idaho",Verified
+Adventure Tourism,Butterfield & Robinson,Canada,https://www.butterfield.com,"200+","$50M+",1966,Small Enterprise,"Luxury, Biking, Walking",Verified
+Adventure Tourism,Thomson Safaris,Tanzania,https://www.thomsonsafaris.com,"100+","$20M+",1981,Small Enterprise,"Tanzania, Kilimanjaro, Safaris",Verified
+Adventure Tourism,Wild Frontiers Adventure Travel,UK,https://www.wildfrontierstravel.com,"100+","$20M+",2002,Small Enterprise,"Small Group, Cultural, Remote",Verified
+Adventure Tourism,Adventure Alternative,Northern Ireland,https://www.adventurealternative.com,"<100","$5M+",1991,Small Enterprise,"Trekking, Kilimanjaro, Charity",Verified
+Adventure Tourism,The Mountain Company,UK,https://www.themountaincompany.co.uk,"<100","$5M+",2005,Small Enterprise,"Trekking, Himalayas, Remote",Verified
+Adventure Tourism,Adventure Consultants,New Zealand,https://www.adventureconsultants.com,"<100","$5M+",1992,Small Enterprise,"Mountaineering, Everest, Guides",Verified
+Event Tourism,Freeman,USA,https://www.freeman.com,"7,000+","$3B+",1927,Large Enterprise,"Event Management, AV, Staging",Verified
+Event Tourism,Informa Markets,UK,https://www.informa.com,"11,000+","$3B+",1998,Large Enterprise,"Exhibitions, Conferences, B2B",Verified
+Event Tourism,GL Events,France,https://www.gl-events.com,"4,000+","$1B+",1978,Large Enterprise,"Exhibitions, Venues, Services",Verified
+Event Tourism,Messe Frankfurt,Germany,https://www.messefrankfurt.com,"2,500+","$500M+",1907,Medium Enterprise,"Trade Fairs, Consumer Shows, Global",Verified
+Event Tourism,Reed Exhibitions,UK,https://www.reedexhibitions.com,"3,500+","$1B+",1966,Large Enterprise,"Trade Fairs, B2B, Global",Verified
+Event Tourism,Clarion Events,UK,https://www.clarionevents.com,"1,000+","$300M+",1947,Medium Enterprise,"Exhibitions, Conferences, B2B/B2C",Verified
+Event Tourism,Comexposium,France,https://www.comexposium.com,"700+","$200M+",1979,Medium Enterprise,"Trade Shows, B2B, International",Verified
+Event Tourism,Viparis,France,https://www.viparis.com,"1,200+","$200M+",2006,Medium Enterprise,"Venue Management, Paris",Verified
+Event Tourism,Kenes Group,Switzerland,https://www.kenes.com,"500+","$100M+",1965,Medium Enterprise,"Medical, Scientific Conferences",Verified
+Event Tourism,Maritz Global Events,USA,https://www.maritz.com,"5,000+","$1B+",1894,Large Enterprise,"Meetings, Incentives, Events",Verified
+Event Tourism,PCMA (Professional Convention Management Association),USA,https://www.pcma.org,"100+","$20M+",1957,Small Enterprise,"Business Events, Education, Community",Verified
+Event Tourism,IMEX Group,UK,https://www.imexexhibitions.com,"200+","$50M+",2001,Small Enterprise,"Global Exhibitions, MICE",Verified
+Event Tourism,UBM (Informa),UK,https://www.ubm.com,"11,000+ (Informa)","$3B+ (Informa)",1918,Large Enterprise,"(Acquired by Informa)",Verified
+Event Tourism,MCI Group,Switzerland,https://www.mci-group.com,"2,500+","$500M+",1987,Medium Enterprise,"Associations, Events, Congresses",Verified
+Event Tourism,ES Global,Spain,https://www.esglobal.com,"200+","$50M+",1999,Small Enterprise,"Event Services, Temporary Structures",Verified
+Event Tourism,BESydney,Australia,https://www.besydney.com.au,"100+","$20M+",1995,Small Enterprise,"Convention Bureau, Destination Marketing",Verified
+Event Tourism,Las Vegas Convention and Visitors Authority,USA,https://www.lvcva.com,"500+","$100M+",1955,Medium Enterprise,"Destination Marketing, Convention Authority",Verified
+Event Tourism,Singapore Exhibition & Convention Bureau,Singapore,https://www.visitsingapore.com,"N/A (STB)","N/A",1971,Small Enterprise,"Business Events, Destination Marketing",Verified
+Luxury Travel,Abercrombie & Kent,USA,https://www.abercrombiekent.com,"2,500+","$500M+",1962,Medium Enterprise,"Luxury, Tailor-Made, Safaris",Verified
+Luxury Travel,Virtuoso,USA,https://www.virtuoso.com,"1,000+","$30B+ (Network Sales)",1986,Medium Enterprise,"Luxury Travel Network, Advisors",Verified
+Luxury Travel,Scott Dunn,UK,https://www.scottdunn.com,"500+","$200M+",1986,Medium Enterprise,"Tailor-Made, Family, Luxury",Verified
+Luxury Travel,Black Tomato,UK,https://www.blacktomato.com,"100+","$50M+",2005,Small Enterprise,"Bespoke, Experiential, Blink",Verified
+Luxury Travel,Original Travel,UK,https://www.originaltravel.co.uk,"100+","$50M+",2003,Small Enterprise,"Tailor-Made, Experiential, Europe",Verified
+Luxury Travel,Jacada Travel,UK,https://www.jacadatravel.com,"100+","$20M+",2008,Small Enterprise,"Luxury, Tailor-Made, Latin America",Verified
+Luxury Travel,Cazenove + Loyd,UK,https://www.cazloyd.com,"<100","$10M+",1999,Small Enterprise,"Bespoke, Ultra-Luxury, Tailor-Made",Verified
+Luxury Travel,Red Savannah,UK,https://www.redsavannah.com,"<100","$10M+",2010,Small Enterprise,"Luxury Villas, Tailor-Made",Verified
+Luxury Travel,The Luminaire,USA,https://www.theluminaire.co,"<100","$5M+",2018,Small Enterprise,"Experiential, Luxury, Design",Verified
+Luxury Travel,Exclusive Resorts,USA,https://www.exclusiveresorts.com,"500+","$100M+",2002,Medium Enterprise,"Luxury Destination Club, Residences",Verified
+Luxury Travel,Quintessentially Travel,UK,https://www.quintessentiallytravel.com,"N/A (Quintessentially)","N/A",2000,Medium Enterprise,"Lifestyle Management, Travel",Verified
+Luxury Travel,Belmond,UK,https://www.belmond.com,"8,000+","$1B+",1976,Large Enterprise,"Luxury Hotels, Trains, River Cruises",Verified
+Luxury Travel,Orient Express (Accor),France,https://www.orient-express.com,"N/A (Accor)","N/A (Accor)",1883,Large Enterprise,"Iconic Trains, Hotels, Legendary",Verified
+Luxury Travel,Four Seasons Private Jet,Canada,https://www.fourseasons.com,"45,000+ (Four Seasons)","$5B+ (Four Seasons)",1960,Large Enterprise,"Luxury Jet, All-Inclusive Itineraries",Verified
+Luxury Travel,Singita,South Africa,https://singita.com,"1,000+","$100M+",1993,Medium Enterprise,"Luxury Safaris, Conservation, Africa",Verified
+Luxury Travel,Cheval Blanc (LVMH),France,https://www.chevalblanc.com,"N/A (LVMH)","N/A (LVMH)",2006,Medium Enterprise,"Ultra-Luxury, Maisons, LVMH",Verified
+Luxury Travel,Aman Resorts,Switzerland,https://www.aman.com,"6,000+","$500M+",1988,Large Enterprise,"Ultra-Luxury, Resorts, Residences",Verified
+Luxury Travel,Soneva Resorts,Thailand,https://soneva.com,"1,000+","$100M+",1995,Medium Enterprise,"Ultra-Luxury, Eco-Conscious, Barefoot",Verified
+Luxury Travel,One&Only Resorts,UAE,https://www.oneandonlyresorts.com,"3,000+","$300M+",2002,Medium Enterprise,"Luxury Resorts, Kerzner",Verified
+Travel Technology,Amadeus IT Group,Spain,https://www.amadeus.com,"19,000+","$6B+",1987,Large Enterprise,"GDS, IT Solutions, Distribution",Verified
+Travel Technology,Sabre Corporation,USA,https://www.sabre.com,"9,000+","$4B+",1960,Large Enterprise,"GDS, Software, Solutions",Verified
+Travel Technology,Travelport,UK,https://www.travelport.com,"3,500+","$2B+",1971,Medium Enterprise,"GDS, Travel Commerce Platform",Verified
+Travel Technology,Booking Holdings,USA,https://www.bookingholdings.com,"24,000+","$21B+",1997,Conglomerate,"OTA, Meta-Search, Technology",Verified
+Travel Technology,Expedia Group,USA,https://www.expediagroup.com,"16,500+","$12B+",1996,Conglomerate,"OTA, Technology, Media",Verified
+Travel Technology,Trip.com Group,China,https://www.trip.com,"45,000+","$5B+",1999,Conglomerate,"OTA, Aggregation, Technology",Verified
+Travel Technology,Navitaire (Amadeus),USA,https://www.amadeus.com,"N/A (Amadeus)","N/A (Amadeus)",1995,Medium Enterprise,"Airline IT, Reservations",Verified
+Travel Technology,Duffel,UK,https://duffel.com,"200+","$50M+",2017,Small Enterprise,"Flight Booking API, Modern",Verified
+Travel Technology,Hopper,Canada,https://www.hopper.com,"500+","$100M+",2007,Medium Enterprise,"Mobile-First, Price Prediction, Fintech",Verified
+Travel Technology,TripActions,USA,https://www.tripactions.com,"3,000+","$4B+",2015,Large Enterprise,"Corporate Travel, Expense Mgmt",Verified
+Travel Technology,TravelPerk,Spain,https://www.travelperk.com,"1,500+","$200M+",2015,Medium Enterprise,"Business Travel, Platform",Verified
+Travel Technology,Concur Technologies (SAP),USA,https://www.concur.com,"N/A (SAP)","N/A (SAP)",1993,Large Enterprise,"(Acquired by SAP)",Verified
+Travel Technology,Travelport,UK,https://www.travelport.com,"3,500+","$2B+",1971,Medium Enterprise,"GDS, Travel Commerce Platform",Verified
+Travel Technology,SiteMinder,Australia,https://www.siteminder.com,"1,000+","$100M+",2006,Medium Enterprise,"Hotel Channel Manager, Distribution",Verified
+Travel Technology,Sabre Hospitality,USA,https://www.sabre.com,"9,000+ (Sabre)","$4B+ (Sabre)",1960,Large Enterprise,"Hotel IT, Central Reservations",Verified
+Travel Technology,Duetto,USA,https://www.duettocloud.com,"300+","$50M+",2012,Small Enterprise,"Revenue Strategy, Hotel Pricing",Verified
+Travel Technology,Kayak (Booking Holdings),USA,https://www.kayak.com,"1,500+","N/A (Booking)",2004,Medium Enterprise,"Travel Meta-Search, Price Comparison",Verified
+Travel Technology,RoomKey,USA,https://www.roomkey.com,"<100","$10M+",2011,Small Enterprise,"Hotel Search, Direct Booking",Verified
+Tourism Boards,VisitBritain,UK,https://www.visitbritain.com,"500+","$100M+",1969,Medium Enterprise,"National Tourism, Marketing, UK",Verified
+Tourism Boards,Discover Puerto Rico,USA,https://www.discoverpuertorico.com,"100+","$20M+",2018,Small Enterprise,"Destination Marketing, Puerto Rico",Verified
+Tourism Boards,Tourism Australia,Australia,https://www.australia.com,"200+","$50M+",1967,Small Enterprise,"National Tourism, Marketing, Australia",Verified
+Tourism Boards,Japan National Tourism Organization (JNTO),Japan,https://www.japan.travel,"200+","$50M+",1964,Small Enterprise,"National Tourism, Marketing, Japan",Verified
+Tourism Boards,Atout France,France,https://www.atout-france.fr,"300+","$100M+",1987,Medium Enterprise,"National Tourism, Marketing, France",Verified
+Tourism Boards,Italian National Tourist Board,Italy,https://www.italia.it,"200+","$50M+",1919,Small Enterprise,"National Tourism, Marketing, Italy",Verified
+Tourism Boards,Spain Tourism Board (Turespaña),Spain,https://www.spain.info,"300+","$100M+",1905,Medium Enterprise,"National Tourism, Marketing, Spain",Verified
+Tourism Boards,German National Tourist Board,Germany,https://www.germany.travel,"200+","$50M+",1948,Small Enterprise,"National Tourism, Marketing, Germany",Verified
+Tourism Boards,Visit USA Association,USA,https://www.visitusa.org,"<100","$5M+",1989,Small Enterprise,"Inbound Tourism, USA",Verified
+Tourism Boards,Destination Canada,Canada,https://www.destinationcanada.com,"200+","$50M+",1995,Small Enterprise,"National Tourism, Marketing, Canada",Verified
+Tourism Boards,South African Tourism,South Africa,https://www.southafrica.net,"200+","$50M+",1947,Small Enterprise,"National Tourism, Marketing, South Africa",Verified
+Tourism Boards,Tourism New Zealand,New Zealand,https://www.newzealand.com,"200+","$50M+",1901,Small Enterprise,"National Tourism, Marketing, NZ",Verified
+Tourism Boards,Singapore Tourism Board,Singapore,https://www.stb.gov.sg,"500+","$100M+",1964,Medium Enterprise,"National Tourism, Marketing, Singapore",Verified
+Tourism Boards,Malaysia Tourism Promotion Board,Malaysia,https://www.malaysia.travel,"200+","$50M+",1972,Small Enterprise,"National Tourism, Marketing, Malaysia",Verified
+Tourism Boards,Incredible India,India,https://www.incredibleindia.org,"500+","$100M+",1949,Medium Enterprise,"National Tourism, Marketing, India",Verified
+Tourism Boards,Turkey Tourism Promotion,Turkey,https://www.goturkiye.com,"300+","$100M+",1923,Medium Enterprise,"National Tourism, Marketing, Turkey",Verified
+Tourism Boards,Visit Dubai,UAE,https://www.visitdubai.com,"200+","$50M+",1997,Small Enterprise,"Destination Marketing, Dubai",Verified
+Tourism Boards,Thailand Tourism Authority,Thailand,https://www.tourismthailand.org,"500+","$100M+",1960,Medium Enterprise,"National Tourism, Marketing, Thailand",Verified
+Hospitality Management,Marriott International Management,USA,https://www.marriott.com,"200,000+","$24B+",1927,Conglomerate,"Management, Franchising, Operations",Verified
+Hospitality Management,Accor Management,France,https://all.accor.com,"281,000+","$5B+",1967,Conglomerate,"Management, Franchising, Operations",Verified
+Hospitality Management,Hilton Management Services,USA,https://www.hilton.com,"173,000+","$10B+",1919,Conglomerate,"Management, Franchising, Operations",Verified
+Hospitality Management,Four Seasons Management,Canada,https://www.fourseasons.com,"45,000+","$5B+",1960,Large Enterprise,"Management, Operations, Service",Verified
+Hospitality Management,InterContinental Hotels Group Management,UK,https://www.ihg.com,"12,000+","$4B+",1777,Large Enterprise,"Management, Franchising, Operations",Verified
+Hospitality Management,Hyatt Management,USA,https://www.hyatt.com,"50,000+","$6B+",1957,Large Enterprise,"Management, Franchising, Operations",Verified
+Hospitality Management,Radisson Hotel Group Management,USA,https://www.radissonhotels.com,"95,000+","$6B+",1960,Large Enterprise,"Management, Franchising, Operations",Verified
+Hospitality Management,Shangri-La Management,Hong Kong,https://www.shangri-la.com,"40,000+","$2B+",1971,Large Enterprise,"Management, Operations, Asia",Verified
+Hospitality Management,Rosewood Hotel Group,Hong Kong,https://www.rosewoodhotelgroup.com,"10,000+","$500M+",1979,Large Enterprise,"Management, Luxury, A Sense of Place",Verified
+Hospitality Management,Preferred Hotels & Resorts,USA,https://www.preferredhotels.com,"500+","$100M+",1968,Medium Enterprise,"Sales, Marketing, Distribution",Verified
+Hospitality Management,Soneva Management,Thailand,https://soneva.com,"1,000+","$100M+",1995,Medium Enterprise,"Management, Eco-Luxury, Resorts",Verified
+Hospitality Management,Aman Management,Switzerland,https://www.aman.com,"6,000+","$500M+",1988,Large Enterprise,"Management, Ultra-Luxury, Resorts",Verified
+Hospitality Management,Kempinski Management,Switzerland,https://www.kempinski.com,"25,000+","$1B+",1897,Large Enterprise,"Management, Luxury, Europe",Verified
+Hospitality Management,The Ritz-Carlton Management,USA,https://www.ritzcarlton.com,"50,000+ (Marriott)","$24B+ (Marriott)",1983,Large Enterprise,"Management, Luxury, Service",Verified
+Hospitality Management,Belmond Management,UK,https://www.belmond.com,"8,000+","$1B+",1976,Large Enterprise,"Management, Luxury, Trains, Hotels",Verified
+Hospitality Management,Red Carnation Hotels,UK,https://www.redcarnationhotels.com,"2,000+","$200M+",1952,Medium Enterprise,"Management, Family-Owned, Luxury",Verified
+Hospitality Management,Oetker Collection,France,https://www.oetkercollection.com,"5,000+","$500M+",1922,Medium Enterprise,"Management, Masterpiece Hotels",Verified
+Hospitality Management,Mandarin Oriental Management,Hong Kong,https://www.mandarinoriental.com,"12,000+","$500M+",1963,Large Enterprise,"Management, Luxury, Iconic Hotels",Verified
+Vacation Rentals,Airbnb,USA,https://www.airbnb.com,"6,000+","$10B+",2008,Conglomerate,"Peer-to-Peer, Experiences, Global",Verified
+Vacation Rentals,Vrbo (Expedia Group),USA,https://www.vrbo.com,"N/A (Expedia)","$12B+ (Expedia)",1995,Large Enterprise,"Whole-Home, Family, Vacation",Verified
+Vacation Rentals,Booking.com Vacation Rentals,Netherlands,https://www.booking.com,"17,000+ (Booking.com)","$21B+ (Booking Holdings)",1996,Conglomerate,"Platform, Hotels, Vacation Rentals",Verified
+Vacation Rentals,TripAdvisor Rentals,USA,https://www.tripadvisor.com,"3,000+ (TripAdvisor)","$1.5B+ (TripAdvisor)",2000,Large Enterprise,"Reviews, Rentals, Meta-Search",Verified
+Vacation Rentals,HomeToGo,Germany,https://www.hometogo.com,"500+","$100M+",2014,Medium Enterprise,"Meta-Search, Vacation Rentals",Verified
+Vacation Rentals,Sonder,USA,https://www.sonder.com,"5,000+","$500M+",2014,Medium Enterprise,"Hospitalified, Tech-Enabled, Apartments",Verified
+Vacation Rentals,Plum Guide,UK,https://www.plumguide.com,"100+","$20M+",2015,Small Enterprise,"Curated, Vetted, High-End",Verified
+Vacation Rentals,Kid & Coe,UK,https://kidandcoe.com,"<100","$5M+",2013,Small Enterprise,"Family-Friendly, Curated",Verified
+Vacation Rentals,Onefinestay (Accor),France,https://www.onefinestay.com,"N/A (Accor)","N/A (Accor)",2009,Medium Enterprise,"(Acquired by Accor)",Verified
+Vacation Rentals,TurnKey Vacation Rentals,USA,https://turnkeyvr.com,"500+","$100M+",2013,Medium Enterprise,"Property Management, Premium",Verified
+Vacation Rentals,Hopper Homes,Canada,https://www.hopper.com,"500+ (Hopper)","$100M+ (Hopper)",2007,Medium Enterprise,"(Part of Hopper)",Verified
+Vacation Rentals,Hostmaker (Airbnb),UK,https://www.hostmaker.com,"N/A (Airbnb)","N/A (Airbnb)",2014,Small Enterprise,"(Acquired by Airbnb)",Verified
+Vacation Rentals,Love Home Swap,UK,https://www.lovehomeswap.com,"<100","$10M+",2011,Small Enterprise,"Home Swapping, Membership",Verified
+Vacation Rentals,InvitedHome,USA,https://www.invitedhome.com,"200+","$50M+",2009,Small Enterprise,"Luxury, Property Management",Verified
+Vacation Rentals,Evolve Vacation Rental,USA,https://www.evolve.com,"500+","$100M+",2011,Medium Enterprise,"Property Management, Tech-Enabled",Verified
+Vacation Rentals,Luxury Retreats (Airbnb),Canada,https://www.luxuryretreats.com,"N/A (Airbnb)","N/A (Airbnb)",1999,Medium Enterprise,"(Acquired by Airbnb)",Verified
+Vacation Rentals,Vacasa,USA,https://www.vacasa.com,"14,000+","$1B+",2009,Large Enterprise,"Property Management, Full-Service",Verified
+Vacation Rentals,Awayz,Singapore,https://www.awayz.com,"<100","$5M+",2019,Small Enterprise,"Property Management, Asia",Verified
+Vacation Rentals,Tujia,China,https://www.tujia.com,"5,000+","$500M+",2011,Medium Enterprise,"Vacation Rentals, China",Verified
+Restaurant Chains (Tourist-Focused),McDonald's,USA,https://www.mcdonalds.com,"200,000+","$23B+",1940,Conglomerate,"Fast Food, Burgers, Global",Verified
+Restaurant Chains (Tourist-Focused),Starbucks,USA,https://www.starbucks.com,"402,000+","$36B+",1971,Conglomerate,"Coffee, Cafe, Global",Verified
+Restaurant Chains (Tourist-Focused),Subway,USA,https://www.subway.com,"N/A (Franchisor)","$9B+ (Est. System Sales)",1965,Conglomerate,"Sandwiches, Fast Food, Franchise",Verified
+Restaurant Chains (Tourist-Focused),KFC (Yum! Brands),USA,https://www.kfc.com,"N/A (Yum!)","$6B+ (Yum! KFC Div.)",1930,Conglomerate,"Fried Chicken, Fast Food",Verified
+Restaurant Chains (Tourist-Focused),Burger King (Restaurant Brands International),Canada,https://www.bk.com,"N/A (RBI)","$1.9B+ (RBI)",1954,Conglomerate,"Burgers, Fast Food",Verified
+Restaurant Chains (Tourist-Focused),Hard Rock Cafe,USA,https://www.hardrockcafe.com,"45,000+","$1B+",1971,Large Enterprise,"Themed, Music, American",Verified
+Restaurant Chains (Tourist-Focused),Planet Hollywood,USA,https://www.planethollywood.com,"2,000+","$100M+",1991,Medium Enterprise,"Themed, Hollywood, American",Verified
+Restaurant Chains (Tourist-Focused),Rainforest Cafe,USA,https://www.rainforestcafe.com,"2,000+","$100M+",1994,Medium Enterprise,"Themed, Jungle, Family",Verified
+Restaurant Chains (Tourist-Focused),Bubba Gump Shrimp Co.,USA,https://www.bubbagump.com,"2,000+","$100M+",1996,Medium Enterprise,"Themed, Seafood, Movie",Verified
+Restaurant Chains (Tourist-Focused),Margaritaville,USA,https://www.margaritaville.com,"5,000+","$200M+",1987,Medium Enterprise,"Themed, Tropical, Casual",Verified
+Restaurant Chains (Tourist-Focused),TGI Fridays,USA,https://www.tgifridays.com,"20,000+","$1B+",1965,Large Enterprise,"Casual Dining, American, Bar",Verified
+Restaurant Chains (Tourist-Focused),Applebee's (Dine Brands),USA,https://www.applebees.com,"N/A (Franchisor)","$1B+ (System Sales)",1980,Large Enterprise,"Casual Dining, Grill & Bar",Verified
+Restaurant Chains (Tourist-Focused),Chili's (Brinker International),USA,https://www.chilis.com,"100,000+","$3B+",1975,Large Enterprise,"Casual Dining, Tex-Mex",Verified
+Restaurant Chains (Tourist-Focused),Hooters,USA,https://www.hooters.com,"25,000+","$1B+",1983,Large Enterprise,"Casual Dining, Wings, Sports",Verified
+Restaurant Chains (Tourist-Focused),Dave & Buster's,USA,https://www.daveandbusters.com,"15,000+","$1.5B+",1982,Large Enterprise,"Eatertainment, Games, Sports",Verified
+Restaurant Chains (Tourist-Focused),Shake Shack,USA,https://www.shakeshack.com,"8,000+","$1B+",2004,Medium Enterprise,"Premium Fast Food, Burgers",Verified
+Restaurant Chains (Tourist-Focused),Five Guys,USA,https://www.fiveguys.com,"5,000+","$2B+",1986,Medium Enterprise,"Fast Casual, Burgers, Fries",Verified
+Restaurant Chains (Tourist-Focused),Wagamama,UK,https://www.wagamama.com,"5,000+","$500M+",1992,Medium Enterprise,"Pan-Asian, Noodles, Casual",Verified
+Restaurant Chains (Tourist-Focused),Nando's,South Africa,https://www.nandos.com,"20,000+","$1B+",1987,Large Enterprise,"Flame-Grilled Chicken, Peri-Peri",Verified
+Travel Media & Publishing,Lonely Planet,USA,https://www.lonelyplanet.com,"500+","$100M+",1973,Medium Enterprise,"Guidebooks, Digital, Inspiration",Verified
+Travel Media & Publishing,Fodor's Travel,USA,https://www.fodors.com,"100+","$20M+",1936,Small Enterprise,"Guidebooks, Online, Reviews",Verified
+Travel Media & Publishing,Rough Guides (APA),UK,https://www.roughguides.com,"100+","$20M+",1982,Small Enterprise,"Guidebooks, Digital, Backpacker",Verified
+Travel Media & Publishing,Bradt Travel Guides,UK,https://www.bradtguides.com,"<100","$5M+",1974,Small Enterprise,"Guidebooks, Slow, Offbeat",Verified
+Travel Media & Publishing,Frommer's,USA,https://www.frommers.com,"<100","$10M+",1957,Small Enterprise,"Guidebooks, Budget, Practical",Verified
+Travel Media & Publishing,Michelin Travel Guides,France,https://travelguide.michelin.com,"N/A (Michelin)","$30B+ (Michelin)",1900,Conglomerate,"Red Guide, Star Ratings, Green Guide",Verified
+Travel Media & Publishing,National Geographic Travel,USA,https://www.nationalgeographic.com/travel,"N/A (Nat Geo)","$1B+ (Nat Geo)",1888,Conglomerate,"Magazine, Digital, Expeditions",Verified
+Travel Media & Publishing,Travel + Leisure,USA,https://www.travelandleisure.com,"N/A (Dotdash Meredith)","$4B+ (Dotdash)",1971,Large Enterprise,"Magazine, Awards, Co's",Verified
+Travel Media & Publishing,Condé Nast Traveler,USA,https://www.cntraveler.com,"N/A (Condé Nast)","$2B+ (Condé Nast)",1987,Large Enterprise,"Magazine, Luxury, Influential",Verified
+Travel Media & Publishing,AFAR Media,USA,https://www.afar.com,"100+","$20M+",2009,Small Enterprise,"Magazine, Experiential, Media",Verified
+Travel Media & Publishing,Skift,USA,https://skift.com,"100+","$10M+",2012,Small Enterprise,"Industry News, Research, Analysis",Verified
+Travel Media & Publishing,The Points Guy,USA,https://thepointsguy.com,"200+","$50M+",2010,Small Enterprise,"Loyalty Programs, Credit Cards, News",Verified
+Travel Media & Publishing,TripAdvisor Media,USA,https://www.tripadvisor.com,"3,000+","$1.5B+",2000,Large Enterprise,"Reviews, Forums, Meta-Search",Verified
+Travel Media & Publishing,Wanderlust,UK,https://www.wanderlust.co.uk,"<100","$5M+",1993,Small Enterprise,"Magazine, Adventure, Inspiration",Verified
+Travel Media & Publishing,Travel Weekly,USA,https://www.travelweekly.com,"<100","$10M+",1958,Small Enterprise,"Trade News, B2B, Industry",Verified
+Travel Media & Publishing,TravelPulse,USA,https://www.travelpulse.com,"<100","$5M+",2011,Small Enterprise,"Trade News, B2B, Digital",Verified
+Travel Media & Publishing,World Travel Market,UK,https://www.wtm.com,"N/A (Reed)","N/A (Reed)",1980,Medium Enterprise,"Trade Show, Global, B2B",Verified
+Travel Media & Publishing,Travel Daily Media,China,https://www.traveldailymedia.com,"<100","$5M+",2006,Small Enterprise,"Trade News, China, B2B",Verified
+Transportation Services (Buses/Shuttles),Greyhound Lines,USA,https://www.greyhound.com,"8,000+","$700M+",1914,Medium Enterprise,"Intercity Coach, US",Verified
+Transportation Services (Buses/Shuttles),Megabus,UK,https://uk.megabus.com,"N/A (Stagecoach)","N/A (Stagecoach)",2003,Medium Enterprise,"Intercity Coach, Low-Cost, UK/Europe",Verified
+Transportation Services (Buses/Shuttles,FlixBus,Germany,https://www.flixbus.com,"3,000+","$2B+",2013,Medium Enterprise,"Intercity Coach, Europe, US",Verified
+Transportation Services (Buses/Shuttles),National Express,UK,https://www.nationalexpress.com,"45,000+","$3B+",1992,Large Enterprise,"UK Buses, Coach, US School",Verified
+Transportation Services (Buses/Shuttles),Eurolines,France,https://www.eurolines.eu,"N/A (FlixBus)","N/A (FlixBus)",1985,Medium Enterprise,"(Part of FlixBus)",Verified
+Transportation Services (Buses/Shuttles),Bolt Bus (Greyhound),USA,https://www.boltbus.com,"N/A (Greyhound)","N/A (Greyhound)",2008,Medium Enterprise,"(Discontinued)",Verified
+Transportation Services (Buses/Shuttles),Peter Pan Bus Lines,USA,https://peterpanbus.com,"1,000+","$100M+",1933,Small Enterprise,"Intercity Coach, US Northeast",Verified
+Transportation Services (Buses/Shuttles),Coach USA,USA,https://www.coachusa.com,"7,000+","$500M+",1995,Medium Enterprise,"Charter, Commuter, Tour",Verified
+Transportation Services (Buses/Shuttles),FirstGroup (Bus),UK,https://www.firstgroup.com,"30,000+","$5B+",1995,Large Enterprise,"UK Buses, Rail",Verified
+Transportation Services (Buses/Shuttles),Arriva Bus,UK,https://www.arrivabus.co.uk,"55,000+ (Arriva)","$5B+ (Arriva)",1938,Large Enterprise,"European Public Transport",Verified
+Transportation Services (Buses/Shuttles),Stagecoach Bus,UK,https://www.stagecoachgroup.com,"24,000+","$1.5B+",1980,Large Enterprise,"UK Buses, Coach",Verified
+Transportation Services (Buses/Shuttles),Transdev,France,https://www.transdev.com,"83,000+","$8B+",1955,Conglomerate,"Public Transport, Global",Verified
+Transportation Services (Buses/Shuttles),SBS Transit,Singapore,https://www.sbstransit.com.sg,"6,000+","$500M+",1973,Medium Enterprise,"Public Bus, Rail, Singapore",Verified
+Transportation Services (Buses/Shuttles),SMRT Buses,Singapore,https://www.smrt.com.sg,"6,000+ (SMRT)","$700M+ (SMRT)",1987,Medium Enterprise,"Public Bus, Rail, Singapore",Verified
+Transportation Services (Buses/Shuttles),ComfortDelGro Taxi,Singapore,https://www.cdgtaxi.com.sg,"25,000+ (ComfortDelGro)","$3B+ (ComfortDelGro)",2003,Large Enterprise,"Taxi, Bus, Transport",Verified
+Transportation Services (Buses/Shuttles),SuperShuttle,USA,https://www.supershuttle.com,"N/A (Veolia)","N/A",1983,Small Enterprise,"(Ceased Operations)",Verified
+Transportation Services (Buses/Shuttles),GO Airport Shuttle,USA,https://www.goairportshuttle.com,"500+","$50M+",1998,Small Enterprise,"Shared Ride, Airport, US",Verified
+Transportation Services (Buses/Shuttles),Uber Shuttle,USA,https://www.uber.com,"32,000+ (Uber)","$37B+ (Uber)",2009,Conglomerate,"(Part of Uber)",Verified
+Transportation Services (Buses/Shuttles),Lyft Shuttle,USA,https://www.lyft.com,"4,500+ (Lyft)","$4B+ (Lyft)",2012,Medium Enterprise,"(Part of Lyft)",Verified

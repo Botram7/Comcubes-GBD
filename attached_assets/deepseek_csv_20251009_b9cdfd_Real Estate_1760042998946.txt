@@ -1,0 +1,378 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Residential Development,Lennar Corporation,USA,https://www.lennar.com,"13,265+","$35B+",1954,Large Enterprise,"Single-Family Homes, Master-Planned Communities",Verified
+Residential Development,D.R. Horton,USA,https://www.drhorton.com,"14,766+","$37B+",1978,Large Enterprise,"Single-Family Homes, Entry-Level, Move-Up",Verified
+Residential Development,PulteGroup,USA,https://www.pultegroup.com,"6,000+","$18B+",1950,Large Enterprise,"First-Time, Move-Up, Active Adult Homes",Verified
+Residential Development,NVR Inc.,USA,https://www.nvrinc.com,"6,800+","$10B+",1980,Large Enterprise,"Single-Family Homes, Mortgage Banking",Verified
+Residential Development,Taylor Morrison,USA,https://www.taylormorrison.com,"2,500+","$8B+",2007,Large Enterprise,"Single-Family, Luxury Homes",Verified
+Residential Development,KB Home,USA,https://www.kbhome.com,"1,600+","$6B+",1957,Large Enterprise,"Build-to-Order Single-Family Homes",Verified
+Residential Development,Meritage Homes,USA,https://www.meritagehomes.com,"1,800+","$6B+",1985,Large Enterprise,"Energy-Efficient Single-Family Homes",Verified
+Residential Development,Toll Brothers,USA,https://www.tollbrothers.com,"2,500+","$10B+",1967,Large Enterprise,"Lury Homes, Country Clubs, Urban Living",Verified
+Residential Development,Century Communities,USA,https://www.centurycommunities.com,"1,200+","$4B+",2002,Large Enterprise,"Single-Family, Attached Homes",Verified
+Residential Development,Redrow Homes,UK,https://www.redrow.co.uk,"2,200+","$2B+",1974,Large Enterprise,"Premium Family Housing, UK",Verified
+Residential Development,Barratt Developments,UK,https://www.barrattdevelopments.co.uk,"6,500+","$6B+",1958,Large Enterprise,"Residential Development, UK Housebuilding",Verified
+Residential Development,Sekisui House,Japan,https://www.sekisuihouse.co.jp,"27,000+","$20B+",1960,Large Enterprise,"Detached Homes, Sustainable Housing",Verified
+Residential Development,Mitsui Fudosan Residential,Japan,https://www.mitsuifudosan.co.jp,"20,000+","$15B+",1941,Conglomerate,"Urban Development, Residential, REITs",Verified
+Residential Development,Lendlease,Australia,https://www.lendlease.com,"8,000+","$7B+",1958,Large Enterprise,"Urban Regeneration, Sustainable Communities",Verified
+Residential Development,Mirvac,Australia,https://www.mirvac.com,"1,500+","$2B+",1972,Large Enterprise,"Residential, Commercial, Funds Management",Verified
+Residential Development,CapitaLand Development,Singapore,https://www.capitaland.com,"13,000+","$4B+",2000,Large Enterprise,"Integrated Developments, Townships",Verified
+Residential Development,Poly Property,China,https://www.polyproperty.com,"10,000+","$5B+",2005,Large Enterprise,"Residential, Commercial, Property Management",Verified
+Residential Development,Country Garden,China,https://www.countrygarden.com.cn,"70,000+","$30B+",1992,Conglomerate,"Township Development, Property Management",Verified
+Residential Development,Grupo Lar,Spain,https://www.grupolar.es,"1,500+","$1B+",1954,Large Enterprise,"Residential Promotion, Land Development",Verified
+Residential Development,Brookfield Residential,Canada,https://brookfieldresidential.com,"1,000+","$2B+",1950,Large Enterprise,"Master-Planned Communities, North America",Verified
+Commercial Property,CBRE Group,USA,https://www.cbre.com,"115,000+","$31B+",1906,Conglomerate,"Property Sales, Leasing, Management, Valuation",Verified
+Commercial Property,JLL (Jones Lang LaSalle),UK,https://www.jll.com,"105,000+","$20B+",1783,Conglomerate,"Property Management, Leasing, Capital Markets, Advisory",Verified
+Commercial Property,Cushman & Wakefield,USA,https://www.cushmanwakefield.com,"50,000+","$10B+",1917,Conglomerate,"Agency Leasing, Property Management, Valuation",Verified
+Commercial Property,Brookfield Asset Management,Canada,https://www.brookfield.com,"200,000+","$95B+",1899,Conglomerate,"Alternative Asset Management, Real Estate, Infrastructure",Verified
+Commercial Property,Blackstone Real Estate,USA,https://www.blackstone.com,"4,000+","$10B+ (Real Estate AUM)",1985,Large Enterprise,"Real Estate Private Equity, Credit, Core+",Verified
+Commercial Property,Vornado Realty Trust,USA,https://www.vno.com,"4,000+","$2B+",1980,Large Enterprise,"Office, Retail, NYC & Chicago Focus",Verified
+Commercial Property,Boston Properties,USA,https://www.bostonproperties.com,"700+","$3B+",1970,Large Enterprise,"Office Properties, Class A, US Gateway Markets",Verified
+Commercial Property,Simon Property Group,USA,https://www.simon.com,"4,500+","$5B+",1960,Large Enterprise,"Malls, Premium Outlets, Retail REIT",Verified
+Commercial Property,ProLogis,USA,https://www.prologis.com,"2,500+","$8B+",1983,Large Enterprise,"Logistics Real Estate, Warehousing, Distribution",Verified
+Commercial Property,Gecina,France,https://www.gecina.fr,"400+","$1B+",1959,Large Enterprise,"Office, Residential, Paris Focus",Verified
+Commercial Property,Unibail-Rodamco-Westfield,France,https://www.urw.com,"3,500+","$3B+",1968,Large Enterprise,"Shopping Centers, Flagship Destinations",Verified
+Commercial Property,Klepierre,France,https://www.klepierre.com,"1,500+","$1B+",1965,Large Enterprise,"Shopping Centers, European Portfolio",Verified
+Commercial Property,Landsec,UK,https://www.landsec.com,"700+","$2B+",1944,Large Enterprise,"Office, Retail, Urban Regeneration",Verified
+Commercial Property,Hammerson,UK,https://www.hammerson.com,"400+","$500M+",1942,Large Enterprise,"Retail Parks, Premium Outlets, UK & France",Verified
+Commercial Property,Dexus,Australia,https://www.dexus.com,"600+","$1B+",1984,Large Enterprise,"Office, Industrial, Property Management",Verified
+Commercial Property,Link REIT,Hong Kong,https://www.linkreit.com,"1,500+","$1B+",2005,Large Enterprise,"Retail, Car Parking Facilities, Hong Kong",Verified
+Commercial Property,CapitaLand Investment,Singapore,https://www.capitalandinvest.com,"13,000+","$3B+",2000,Large Enterprise,"Lodging, REITs, Real Estate Investment",Verified
+Commercial Property,Mitsubishi Estate,Japan,https://www.mec.co.jp,"4,000+","$8B+",1937,Large Enterprise,"Office, Retail, Urban Development",Verified
+Commercial Property,Keppel REIT,Singapore,https://www.kreit.com,"100+","$200M+",2006,Mid-Market,"Office Real Estate, Singapore & Global",Verified
+REITs,Realty Income Corp,USA,https://www.realtyincome.com,"400+","$4B+",1969,Large Enterprise,"Net Lease, Retail, Monthly Dividends",Verified
+REITs,American Tower Corp,USA,https://www.americantower.com,"6,000+","$11B+",1995,Large Enterprise,"Communications Infrastructure, Cell Towers",Verified
+REITs,Crown Castle,USA,https://www.crowncastle.com,"5,000+","$7B+",1994,Large Enterprise,"Cell Towers, Fiber Optic Infrastructure",Verified
+REITs,Equinix,USA,https://www.equinix.com,"12,000+","$8B+",1998,Large Enterprise,"Data Centers, Colocation, Interconnection",Verified
+REITs,Public Storage,USA,https://www.publicstorage.com,"5,800+","$4B+",1972,Large Enterprise,"Self-Storage, Personal & Business",Verified
+REITs,Digital Realty Trust,USA,https://www.digitalrealty.com,"3,200+","$5B+",2004,Large Enterprise,"Data Centers, Colocation, Interconnection",Verified
+REITs,AvalonBay Communities,USA,https://www.avalonbay.com,"3,400+","$3B+",1978,Large Enterprise,"Multifamily Apartments, High-Quality Communities",Verified
+REITs,Equity Residential,USA,https://www.equityresidential.com,"2,600+","$3B+",1969,Large Enterprise,"Multifamily Apartments, Urban Markets",Verified
+REITs,Welltower,USA,https://www.welltower.com,"400+","$7B+",1970,Large Enterprise,"Healthcare, Senior Housing, Post-Acute Care",Verified
+REITs,Ventas,USA,https://www.ventasreit.com,"500+","$5B+",1983,Large Enterprise,"Senior Housing, Healthcare, Research",Verified
+REITs,Simon Property Group,USA,https://www.simon.com,"4,500+","$5B+",1960,Large Enterprise,"Malls, Premium Outlets, Retail REIT",Verified
+REITs,Essex Property Trust,USA,https://www.essex.com,"1,600+","$2B+",1971,Large Enterprise,"Multifamily Apartments, West Coast Focus",Verified
+REITs,Invitation Homes,USA,https://www.invitationhomes.com,"1,700+","$2B+",2012,Large Enterprise,"Single-Family Home Rentals, SFR",Verified
+REITs,Alexandria Real Estate,USA,https://www.are.com,"700+","$3B+",1994,Large Enterprise,"Life Science Clusters, Office, Labs",Verified
+REITs,Sun Communities,USA,https://www.suncommunities.com,"5,000+","$3B+",1975,Large Enterprise,"Manufactured Housing, RV Resorts, Marinas",Verified
+REITs,Extra Space Storage,USA,https://www.extraspace.com,"5,500+","$3B+",1977,Large Enterprise,"Self-Storage, Management, REIT",Verified
+REITs,W.P. Carey,USA,https://www.wpcarey.com,"400+","$2B+",1973,Large Enterprise,"Net Lease, Industrial, Warehouse, Office",Verified
+REITs,STORE Capital,USA,https://www.storecapital.com,"200+","$800M+",2011,Large Enterprise,"Net Lease, Single-Tenant Operational Real Estate",Verified
+REITs,National Retail Properties,USA,https://www.nnnreit.com,"100+","$800M+",1984,Large Enterprise,"Net Lease, Convenience Stores, Retail",Verified
+Property Management,Greystar Real Estate Partners,USA,https://www.greystar.com,"15,000+","$5B+",1993,Large Enterprise,"Multifamily Property Management, Investment",Verified
+Property Management,FirstService Residential,USA,https://www.fsresidential.com,"20,000+","$4B+",2011,Large Enterprise,"Residential Community Management, HOA",Verified
+Property Management,Lincoln Property Company,USA,https://www.lpc.com,"10,000+","$3B+",1965,Large Enterprise,"Multifamily, Commercial, Property Management",Verified
+Property Management,Cushman & Wakefield,USA,https://www.cushmanwakefield.com,"50,000+","$10B+",1917,Conglomerate,"Property Management, Facility Services",Verified
+Property Management,JLL Property Management,UK,https://www.jll.com,"105,000+","$20B+",1783,Conglomerate,"Property & Facility Management, Global",Verified
+Property Management,CBRE Property Management,USA,https://www.cbre.com,"115,000+","$31B+",1906,Conglomerate,"Property Management, Global Solutions",Verified
+Property Management,Colliers International,Canada,https://www.colliers.com,"17,000+","$4B+",1976,Large Enterprise,"Commercial Real Estate, Investment Services",Verified
+Property Management,BGIS,Canada,https://www.bgis.com,"10,000+","$2B+",1993,Large Enterprise,"Facility Management, Outsourcing",Verified
+Property Management,ISS Facility Services,Denmark,https://www.issworld.com,"350,000+","$12B+",1901,Conglomerate,"Facility Services, Cleaning, Catering, Security",Verified
+Property Management,Sodexo Facilities,France,https://www.sodexo.com,"420,000+","$20B+",1966,Conglomerate,"Facility Management, Food Services",Verified
+Property Management,Compass Group,UK,https://www.compass-group.com,"500,000+","$35B+",1941,Conglomerate,"Food Service, Support Services",Verified
+Property Management,Aden Group,China,https://www.adenchina.com,"8,000+","$500M+",1997,Large Enterprise,"Integrated Facility Management, China",Verified
+Property Management,JLL Hotels & Hospitality,UK,https://www.jll.com,"N/A","N/A",N/A,Large Enterprise,"Hotel Real Estate, Investment, Management",Verified
+Property Management,Associa,USA,https://www.associaonline.com,"10,000+","$1B+",1979,Large Enterprise,"Community Association Management, HOA",Verified
+Property Management,BuildingLink,USA,https://www.buildinglink.com,"200+","$50M+",1999,Mid-Market,"Residential Property Management Software",Verified
+Property Management,RealPage,USA,https://www.realpage.com,"10,000+","$2B+",1998,Large Enterprise,"Property Management Software, Multifamily",Verified
+Property Management,Yardi Systems,USA,https://www.yardi.com,"9,000+","$2B+",1984,Large Enterprise,"Property Management, Investment Software",Verified
+Property Management,AppFolio,USA,https://www.appfolio.com,"2,000+","$600M+",2006,Large Enterprise,"Property Management Software, SMB",Verified
+Property Management,Building Engines,USA,https://www.buildingengines.com,"300+","$50M+",2000,Mid-Market,"Commercial Property Management Software",Verified
+Real Estate Tech,Zillow Group,USA,https://www.zillowgroup.com,"5,000+","$2B+",2005,Large Enterprise,"Real Estate Marketplace, iBuying, Mortgages",Verified
+Real Estate Tech,Compass,USA,https://www.compass.com,"5,000+","$5B+",2012,Large Enterprise,"Real Estate Brokerage, Technology Platform",Verified
+Real Estate Tech,Opendoor,USA,https://www.opendoor.com,"2,000+","$7B+",2014,Large Enterprise,"iBuying, Instant Offers, Home Flipping",Verified
+Real Estate Tech,Redfin,USA,https://www.redfin.com,"5,000+","$2B+",2004,Large Enterprise,"Real Estate Brokerage, Online Platform",Verified
+Real Estate Tech,Realtor.com,USA,https://www.realtor.com,"1,000+","$600M+",1995,Large Enterprise,"Real Estate Listings, Marketplace",Verified
+Real Estate Tech,CoStar Group,USA,https://www.costargroup.com,"6,000+","$2B+",1987,Large Enterprise,"Commercial Real Estate Information, Analytics",Verified
+Real Estate Tech,Knock,USA,https://knock.com,"300+","$100M+",2015,Mid-Market,"Home Swap, iBuying Alternative",Verified
+Real Estate Tech,Orchard,USA,https://www.orchard.com,"500+","$200M+",2017,Mid-Market,"Home Buying & Selling Platform",Verified
+Real Estate Tech,Homelight,USA,https://www.homelight.com,"400+","$100M+",2012,Mid-Market,"Agent Matching, Real Estate Services",Verified
+Real Estate Tech,Ribbon,USA,https://www.ribbonhome.com,"300+","$100M+",2017,Mid-Market,"Power Buying, Home Offers",Verified
+Real Estate Tech,Real,USA,https://joinreal.com,"100+","$50M+",2019,Small Enterprise,"Real Estate Brokerage, Tech-Enabled",Verified
+Real Estate Tech,Loft,Brazil,https://loft.com.br,"2,000+","$500M+",2018,Large Enterprise,"Brazilian Real Estate, Marketplace, Renovation",Verified
+Real Estate Tech,PropertyGuru,Singapore,https://www.propertyguru.com.sg,"1,000+","$100M+",2007,Large Enterprise,"Property Listings, Southeast Asia",Verified
+Real Estate Tech,REA Group,Australia,https://www.realestate.com.au,"1,500+","$1B+",1995,Large Enterprise,"Property Listings, Australia, Asia",Verified
+Real Estate Tech,Square Yards,India,https://www.squareyards.com,"5,000+","$100M+",2014,Large Enterprise,"Real Estate Brokerage, India, MENA",Verified
+Real Estate Tech,Houzz,USA,https://www.houzz.com,"2,000+","$500M+",2009,Large Enterprise,"Home Design, Renovation, Marketplace",Verified
+Real Estate Tech,Reonomy,USA,https://www.reonomy.com,"200+","$50M+",2013,Mid-Market,"Commercial Real Estate Data, Analytics",Verified
+Real Estate Tech,Cherre,USA,https://www.cherre.com,"100+","$30M+",2016,Mid-Market,"Real Estate Data, Intelligence Platform",Verified
+Brokerage Services,Coldwell Banker,USA,https://www.coldwellbanker.com,"100,000+ (Agents)","$5B+",1906,Large Enterprise,"Residential Brokerage, Franchise Network",Verified
+Brokerage Services,RE/MAX,USA,https://www.remax.com,"140,000+ (Agents)","$3B+",1973,Large Enterprise,"Real Estate Franchise, Global Network",Verified
+Brokerage Services,Keller Williams,USA,https://www.kw.com,"180,000+ (Agents)","$4B+",1983,Large Enterprise,"Real Estate Franchise, Agent-Centric",Verified
+Brokerage Services,Sotheby's International Realty,USA,https://www.sothebysrealty.com,"25,000+ (Agents)","$200B+ (Sales)",1976,Large Enterprise,"Luxury Real Estate, Global Network",Verified
+Brokerage Services,Century 21,USA,https://www.century21.com,"100,000+ (Agents)","$3B+",1971,Large Enterprise,"Real Estate Franchise, Global Brand",Verified
+Brokerage Services,Berkshire Hathaway HomeServices,USA,https://www.bhhs.com,"50,000+ (Agents)","$2B+",2013,Large Enterprise,"Real Estate Franchise, Network",Verified
+Brokerage Services,Douglas Elliman,USA,https://www.elliman.com,"7,000+ (Agents)","$1B+",1911,Large Enterprise,"Luxury Real Estate, Residential Brokerage",Verified
+Brokerage Services,Corcoran Group,USA,https://www.corcoran.com,"2,500+ (Agents)","$500M+",1973,Large Enterprise,"Luxury Real Estate, NYC & Hamptons",Verified
+Brokerage Services,Engel & Völkers,Germany,https://www.engelvoelkers.com,"15,000+ (Agents)","$1B+",1977,Large Enterprise,"Luxury Real Estate, Global Network",Verified
+Brokerage Services,Savills,UK,https://www.savills.com,"39,000+","$2.5B+",1855,Large Enterprise,"Real Estate Services, Consulting, Property Management",Verified
+Brokerage Services,Knight Frank,UK,https://www.knightfrank.com,"20,000+","$800M+",1896,Large Enterprise,"Residential & Commercial Property, Consultancy",Verified
+Brokerage Services,Cushman & Wakefield,USA,https://www.cushmanwakefield.com,"50,000+","$10B+",1917,Conglomerate,"Commercial Brokerage, Agency Leasing",Verified
+Brokerage Services,JLL Residential,UK,https://www.jll.com,"N/A","N/A",N/A,Large Enterprise,"Residential Brokerage, Leasing, Sales",Verified
+Brokerage Services,ERA Real Estate,USA,https://www.era.com,"40,000+ (Agents)","$1B+",1971,Large Enterprise,"Real Estate Franchise, Network",Verified
+Brokerage Services,Better Homes and Gardens Real Estate,USA,https://www.bhgre.com,"45,000+ (Agents)","$1B+",2008,Large Enterprise,"Real Estate Franchise, Lifestyle Brand",Verified
+Brokerage Services,eXp Realty,USA,https://exprealty.com,"100,000+ (Agents)","$5B+",2009,Large Enterprise,"Cloud-Based Brokerage, Agent-Owned",Verified
+Brokerage Services,Homelink Real Estate,China,https://www.homelink.com.cn,"20,000+ (Agents)","$1B+",2001,Large Enterprise,"Real Estate Services, China",Verified
+Brokerage Services,LJ Hooker,Australia,https://www.ljhooker.com.au,"7,000+ (Agents)","$500M+",1928,Large Enterprise,"Real Estate Franchise, Australia",Verified
+Brokerage Services,Belle Property,Australia,https://www.belleproperty.com,"1,000+ (Agents)","$100M+",2001,Mid-Market,"Real Estate, Australia, Luxury Focus",Verified
+Vacation Rentals,Airbnb,USA,https://www.airbnb.com,"6,000+","$10B+",2008,Large Enterprise,"Short-Term Rentals, Experiences, Platform",Verified
+Vacation Rentals,VRBO (Expedia Group),USA,https://www.vrbo.com,"N/A","N/A",1995,Large Enterprise,"Vacation Rentals, Whole-Home Properties",Verified
+Vacation Rentals,Booking.com,Netherlands,https://www.booking.com,"20,000+","$20B+",1996,Conglomerate,"Online Travel, Hotels, Vacation Rentals",Verified
+Vacation Rentals,TripAdvisor Rentals,USA,https://www.tripadvisor.com,"2,000+","$1.5B+",2000,Large Enterprise,"Vacation Rentals, Travel Platform",Verified
+Vacation Rentals,HomeToGo,Germany,https://www.hometogo.com,"500+","$100M+",2014,Mid-Market,"Vacation Rental Meta-Search, Platform",Verified
+Vacation Rentals,Plum Guide,UK,https://www.plumguide.com,"100+","$20M+",2015,Small Enterprise,"Curated Vacation Homes, Luxury",Verified
+Vacation Rentals,Kid & Coe,UK,https://kidandcoe.com,"50+","$10M+",2013,Small Enterprise,"Family-Friendly Vacation Rentals",Verified
+Vacation Rentals,Onefinestay (Accor),France,https://www.onefinestay.com,"300+","$100M+",2010,Mid-Market,"Luxury Serviced Homes, Hotel Standards",Verified
+Vacation Rentals,Sonder,USA,https://www.sonder.com,"2,000+","$500M+",2014,Large Enterprise,"Tech-Enabled Hospitality, Apartments",Verified
+Vacation Rentals,TurnKey Vacation Rentals,USA,https://www.turnkeyvr.com,"500+","$100M+",2013,Mid-Market,"Vacation Rental Management, Hospitality",Verified
+Vacation Rentals,Vacasa,USA,https://www.vacasa.com,"7,000+","$1B+",2009,Large Enterprise,"Vacation Rental Management, Full-Service",Verified
+Vacation Rentals,Evolve,USA,https://www.evolve.com,"600+","$200M+",2011,Mid-Market,"Vacation Rental Management, Fee-Based",Verified
+Vacation Rentals,RedAwning,USA,https://www.redawning.com,"200+","$50M+",2010,Small Enterprise,"Vacation Rental Distribution, Technology",Verified
+Vacation Rentals,Hostfully,USA,https://www.hostfully.com,"50+","$10M+",2015,Small Enterprise,"Vacation Rental Management Software",Verified
+Vacation Rentals,Guesty,Israel,https://www.guesty.com,"500+","$100M+",2013,Mid-Market,"Vacation Rental Property Management Platform",Verified
+Vacation Rentals,Lodgify,Spain,https://www.lodgify.com,"200+","$20M+",2012,Small Enterprise,"Vacation Rental Software, Direct Bookings",Verified
+Vacation Rentals,AvantStay,USA,https://www.avantstay.com,"400+","$100M+",2016,Mid-Market,"Luxury Vacation Rentals, Group Travel",Verified
+Vacation Rentals,Leavetown,Canada,https://www.leavetown.com,"50+","$10M+",2005,Small Enterprise,"Vacation Rentals, Canada, US",Verified
+Vacation Rentals,Interhome,Switzerland,https://www.interhome.com,"500+","$200M+",1965,Mid-Market,"Vacation Rentals, European Portfolio",Verified
+Industrial Warehousing,ProLogis,USA,https://www.prologis.com,"2,500+","$8B+",1983,Large Enterprise,"Logistics Real Estate, Warehousing, Distribution",Verified
+Industrial Warehousing,Duke Realty,USA,https://www.dukerealty.com,"700+","$1B+",1972,Large Enterprise,"Industrial Warehouses, Bulk Distribution",Verified
+Industrial Warehousing,EastGroup Properties,USA,https://www.eastgroup.net,"200+","$600M+",1969,Large Enterprise,"Industrial Properties, Sunbelt US",Verified
+Industrial Warehousing,Rexford Industrial Realty,USA,https://www.rexfordindustrial.com,"300+","$700M+",2001,Large Enterprise,"Industrial, Southern California Infill",Verified
+Industrial Warehousing,First Industrial Realty Trust,USA,https://www.firstindustrial.com,"300+","$600M+",1994,Large Enterprise,"Industrial Distribution Facilities",Verified
+Industrial Warehousing,STAG Industrial,USA,https://www.stagindustrial.com,"200+","$600M+",2011,Large Enterprise,"Single-Tenant Industrial Buildings",Verified
+Industrial Warehousing,Terreno Realty Corporation,USA,https://www.terreno.com,"100+","$300M+",2009,Mid-Market,"Industrial, Coastal US Markets",Verified
+Industrial Warehousing,Goodman Group,Australia,https://www.goodman.com,"1,500+","$1B+",1989,Large Enterprise,"Industrial Property, Logistics, Partnerships",Verified
+Industrial Warehousing,ESR Group,Hong Kong,https://www.esr.com,"2,000+","$1B+",2011,Large Enterprise,"Logistics Real Estate, Asia-Pacific",Verified
+Industrial Warehousing,GLP Global,Singapore,https://www.glp.com,"1,500+","$2B+",2009,Large Enterprise,"Logistics Facilities, Data Centers, Renewable",Verified
+Industrial Warehousing,Logos Property,Australia,https://www.logosproperty.com,"500+","$200M+",2010,Mid-Market,"Logistics & Industrial Real Estate, Asia-Pacific",Verified
+Industrial Warehousing,Mapletree Logistics Trust,Singapore,https://www.mapletreelogisticstrust.com,"100+","$500M+",2005,Mid-Market,"Logistics Real Estate, Asia-Pacific REIT",Verified
+Industrial Warehousing,Segro,UK,https://www.segro.com,"400+","$800M+",1920,Large Enterprise,"Warehouses, Industrial, UK & Europe",Verified
+Industrial Warehousing,Gazeley (Brookfield),UK,https://www.gazeley.com,"N/A","N/A",1987,Mid-Market,"Logistics Parks, Sustainable Warehouses",Verified
+Industrial Warehousing,Tritax Big Box REIT,UK,https://www.tritaxbigbox.co.uk,"100+","$300M+",2013,Mid-Market,"Big Box Logistics, UK REIT",Verified
+Industrial Warehousing,Black Creek Industrial REIT,Canada,https://www.blackcreekgroup.com,"N/A","N/A",2009,Mid-Market,"Industrial Real Estate, Canada",Verified
+Industrial Warehousing,Summit Industrial REIT,Canada,https://www.summitindustrialreit.com,"100+","$200M+",2011,Mid-Market,"Light Industrial, Canada REIT",Verified
+Industrial Warehousing,CapitaLand Ascendas REIT,Singapore,https://www.capitaland.com,"N/A","N/A",2006,Large Enterprise,"Business Space, Industrial REIT",Verified
+Sustainable Buildings,Skanska,Sweden,https://www.skanska.com,"30,000+","$15B+",1887,Conglomerate,"Green Construction, Commercial, Infrastructure",Verified
+Sustainable Buildings,Lendlease,Australia,https://www.lendlease.com,"8,000+","$7B+",1958,Large Enterprise,"Sustainable Communities, Urban Regeneration",Verified
+Sustainable Buildings,Turner Construction,USA,https://www.turnerconstruction.com,"10,000+","$15B+",1902,Large Enterprise,"Commercial Construction, Green Building",Verified
+Sustainable Buildings,Webcor Builders,USA,https://www.webcor.com,"2,000+","$3B+",1971,Large Enterprise,"Commercial Construction, Technology",Verified
+Sustainable Buildings,Swinerton Builders,USA,https://swinerton.com,"4,000+","$4B+",1888,Large Enterprise,"Commercial, Renewable Energy Construction",Verified
+Sustainable Buildings,Clark Construction,USA,https://www.clarkconstruction.com,"4,500+","$5B+",1906,Large Enterprise,"Building, Civil Construction",Verified
+Sustainable Buildings,DPR Construction,USA,https://www.dpr.com,"10,000+","$8B+",1990,Large Enterprise,"Technical Construction, Sustainable",Verified
+Sustainable Buildings,STO Building Group,USA,https://www.stobuildinggroup.com,"5,000+","$6B+",1908,Large Enterprise,"Commercial Construction, Group Structure",Verified
+Sustainable Buildings,Bouygues Construction,France,https://www.bouygues-construction.com,"60,000+","$15B+",1952,Conglomerate,"Construction, Services, Energy",Verified
+Sustainable Buildings,Vinci Construction,France,https://www.vinci-construction.com,"115,000+","$25B+",1899,Conglomerate,"Construction, Concessions, Energy",Verified
+Sustainable Buildings,Obayashi Corporation,Japan,https://www.obayashi.co.jp,"17,000+","$15B+",1892,Conglomerate,"Construction, Engineering, Civil Engineering",Verified
+Sustainable Buildings,Shimizu Corporation,Japan,https://www.shimz.co.jp,"15,000+","$12B+",1804,Conglomerate,"Construction, Engineering, Green Building",Verified
+Sustainable Buildings,Skidmore, Owings & Merrill (SOM),USA,https://www.som.com,"1,200+","$300M+",1936,Large Enterprise,"Architecture, Engineering, Urban Planning",Verified
+Sustainable Buildings,Gensler,USA,https://www.gensler.com,"6,000+","$1.5B+",1965,Large Enterprise,"Architecture, Design, Planning, Consulting",Verified
+Sustainable Buildings,HOK,USA,https://www.hok.com,"1,800+","$500M+",1955,Large Enterprise,"Architecture, Engineering, Planning, Interiors",Verified
+Sustainable Buildings,Bjarke Ingels Group (BIG),Denmark,https://big.dk,"600+","$100M+",2005,Large Enterprise,"Architecture, Urbanism, Research",Verified
+Sustainable Buildings,Foster + Partners,UK,https://www.fosterandpartners.com,"1,500+","$250M+",1967,Large Enterprise,"Sustainable Design, Urban Planning, Architecture",Verified
+Sustainable Buildings,ZGF Architects,USA,https://www.zgf.com,"600+","$100M+",1942,Large Enterprise,"Architecture, Interior Design, Urban Design",Verified
+Real Estate Crowdfunding,Fundrise,USA,https://fundrise.com,"200+","$100M+",2010,Mid-Market,"Real Estate Investing, eREITs, eFunds",Verified
+Real Estate Crowdfunding,RealtyMogul,USA,https://www.realtymogul.com,"100+","$50M+",2012,Mid-Market,"Commercial Real Estate, REITs, Crowdfunding",Verified
+Real Estate Crowdfunding,CrowdStreet,USA,https://www.crowdstreet.com,"200+","$50M+",2013,Mid-Market,"Commercial Real Estate, Online Investing",Verified
+Real Estate Crowdfunding,PeerStreet,USA,https://www.peerstreet.com,"100+","$30M+",2013,Mid-Market,"Real Estate Debt, Short-Term Loans",Verified
+Real Estate Crowdfunding,RealCrowd,USA,https://www.realcrowd.com,"50+","$20M+",2012,Small Enterprise,"Commercial Real Estate, Direct Investing",Verified
+Real Estate Crowdfunding,Property Partner,UK,https://www.propertypartner.co,"50+","$10M+",2014,Small Enterprise,"Property Investment, UK, Fractional",Verified
+Real Estate Crowdfunding,Bricklane,UK,https://www.bricklane.com,"30+","$5M+",2015,Small Enterprise,"Residential Property Investment, UK",Verified
+Real Estate Crowdfunding,EstateGuru,Estonia,https://estateguru.co,"100+","$10M+",2014,Small Enterprise,"Property Secured Lending, Europe",Verified
+Real Estate Crowdfunding,Reinvest24,Estonia,https://www.reinvest24.com,"20+","$5M+",2017,Small Enterprise,"Real Estate Investing, Baltics, Europe",Verified
+Real Estate Crowdfunding,Bulkestate,Latvia,https://www.bulkestate.com,"20+","$5M+",2016,Small Enterprise,"Property-Backed Loans, Baltics",Verified
+Real Estate Crowdfunding,Housers,Spain,https://www.housers.com,"50+","$10M+",2015,Small Enterprise,"Real Estate Crowdfunding, Europe",Verified
+Real Estate Crowdfunding,Property Moose,UK,https://www.propertymoose.co.uk,"10+","$5M+",2014,Small Enterprise,"Property Investment, UK Platform",Verified
+Real Estate Crowdfunding,Homegrown,UK,https://www.homegrown.co.uk,"10+","$5M+",2015,Small Enterprise,"Property Investment, UK",Verified
+Real Estate Crowdfunding,SmallChange,USA,https://smallchange.com,"20+","$5M+",2016,Small Enterprise,"Real Estate Equity Crowdfunding, Reg A+",Verified
+Real Estate Crowdfunding,Citizencapital,France,https://www.citizencapital.fr,"20+","$5M+",2014,Small Enterprise,"Real Estate Crowdfunding, France",Verified
+Real Estate Crowdfunding,Crowdestate,Estonia,https://www.crowdestate.com,"30+","$10M+",2014,Small Enterprise,"Real Estate Investing, Baltics, Europe",Verified
+Real Estate Crowdfunding,Rendity,Austria,https://www.rendity.com,"20+","$5M+",2015,Small Enterprise,"Real Estate Crowdfunding, Austria, Germany",Verified
+Real Estate Crowdfunding,Exporo,Germany,https://www.exporo.de,"100+","$20M+",2014,Mid-Market,"Real Estate Crowdfunding, Germany",Verified
+Real Estate Crowdfunding,Home61,USA,https://home61.com,"50+","$10M+",2016,Small Enterprise,"Real Estate Technology, Home Buying",Verified
+Luxury Estates,Christie's International Real Estate,UK,https://www.christiesrealestate.com,"1,000+ (Agents)","$100B+ (Sales)",1995,Large Enterprise,"Luxury Real Estate, Fine Art Affiliation",Verified
+Luxury Estates,Sotheby's International Realty,USA,https://www.sothebysrealty.com,"25,000+ (Agents)","$200B+ (Sales)",1976,Large Enterprise,"Luxury Real Estate, Global Network",Verified
+Luxury Estates,Engel & Völkers,Germany,https://www.engelvoelkers.com,"15,000+ (Agents)","$1B+",1977,Large Enterprise,"Luxury Real Estate, Global Network",Verified
+Luxury Estates,Luxury Portfolio International,USA,https://www.luxuryportfolio.com,"50,000+ (Agents)","$1B+",2006,Large Enterprise,"Luxury Real Estate, Marketing Network",Verified
+Luxury Estates,ONE Sotheby's International Realty,USA,https://www.onesothebysrealty.com,"500+ (Agents)","$5B+ (Sales)",2010,Mid-Market,"Luxury Real Estate, Florida",Verified
+Luxury Estates,The Agency,USA,https://www.theagencyre.com,"1,000+ (Agents)","$10B+ (Sales)",2011,Mid-Market,"Luxury Real Estate, Boutique, Creative",Verified
+Luxury Estates,Compass,USA,https://www.compass.com,"5,000+","$5B+",2012,Large Enterprise,"Real Estate Brokerage, Technology Platform",Verified
+Luxury Estates,Coldwell Banker Global Luxury,USA,https://www.coldwellbankerluxury.com,"N/A","N/A",1906,Large Enterprise,"Luxury Real Estate, Brand Division",Verified
+Luxury Estates,Corcoran Group,USA,https://www.corcoran.com,"2,500+ (Agents)","$500M+",1973,Large Enterprise,"Luxury Real Estate, NYC & Hamptons",Verified
+Luxury Estates,Douglas Elliman,USA,https://www.elliman.com,"7,000+ (Agents)","$1B+",1911,Large Enterprise,"Luxury Real Estate, Residential Brokerage",Verified
+Luxury Estates,Knight Frank,UK,https://www.knightfrank.com,"20,000+","$800M+",1896,Large Enterprise,"Residential & Commercial Property, Consultancy",Verified
+Luxury Estates,Savills,UK,https://www.savills.com,"39,000+","$2.5B+",1855,Large Enterprise,"Real Estate Services, Consulting, Property Management",Verified
+Luxury Estates,Barnes International Realty,France,https://www.barnes-international.com,"500+ (Agents)","$5B+ (Sales)",1995,Mid-Market,"Luxury Real Estate, France, International",Verified
+Luxury Estates,Beauchamp Estates,UK,https://www.beauchamp.com,"100+ (Agents)","$1B+ (Sales)",1975,Small Enterprise,"Ultra-Prime London & Global Property",Verified
+Luxury Estates,Mayfair International Realty,UK,https://www.mayfairinternationalrealty.com,"50+ (Agents)","$500M+ (Sales)",2005,Small Enterprise,"Luxury Real Estate, London, Europe",Verified
+Luxury Estates,LuxuryEstate.com,Italy,https://www.luxuryestate.com,"100+","$20M+",2007,Small Enterprise,"Luxury Real Estate Portal, Europe",Verified
+Luxury Estates,JamesEdition,Sweden,https://www.jamesedition.com,"50+","$10M+",2008,Small Enterprise,"Luxury Marketplace, Real Estate, Yachts, Jets",Verified
+Luxury Estates,Unique Properties,Spain,https://www.uniqueproperties.es,"50+ (Agents)","$500M+ (Sales)",2002,Small Enterprise,"Luxury Real Estate, Spain",Verified
+Luxury Estates,Lionard Luxury Real Estate,Italy,https://www.lionard.com,"100+ (Agents)","$1B+ (Sales)",2008,Small Enterprise,"Luxury Real Estate, Italy, Historic Properties",Verified
+Senior Living Facilities,Brookdale Senior Living,USA,https://www.brookdale.com,"50,000+","$3B+",1978,Large Enterprise,"Senior Living Communities, Assisted Living",Verified
+Senior Living Facilities,Sunrise Senior Living,USA,https://www.sunriseseniorliving.com,"30,000+","$2B+",1981,Large Enterprise,"Assisted Living, Memory Care",Verified
+Senior Living Facilities,Five Star Senior Living,USA,https://www.fivestarseniorliving.com,"20,000+","$1B+",2000,Large Enterprise,"Independent & Assisted Living",Verified
+Senior Living Facilities,Atria Senior Living,USA,https://www.atriaseniorliving.com,"10,000+","$1B+",1996,Large Enterprise,"Senior Living, Independent, Assisted, Memory",Verified
+Senior Living Facilities,Emeritus Senior Living,USA,https://www.emeritus.com,"N/A","N/A",1993,Large Enterprise,"Assisted Living, Memory Care (Acquired)",Verified
+Senior Living Facilities,Capital Senior Living,USA,https://www.capitalsenior.com,"5,000+","$500M+",1990,Large Enterprise,"Independent, Assisted Living",Verified
+Senior Living Facilities,Enlivant,USA,https://www.enlivant.com,"5,000+","$500M+",2001,Mid-Market,"Assisted Living, Memory Care",Verified
+Senior Living Facilities,Erickson Senior Living,USA,https://www.erickson.com,"7,000+","$1B+",1983,Large Enterprise,"Continuing Care Retirement Communities",Verified
+Senior Living Facilities,Life Care Services,USA,https://www.lcsnet.com,"10,000+","$1B+",1971,Large Enterprise,"Senior Living Management, Development",Verified
+Senior Living Facilities,Benchmark Senior Living,USA,https://www.benchmarkseniorliving.com,"7,000+","$800M+",1997,Large Enterprise,"Assisted Living, Independent Living",Verified
+Senior Living Facilities,Holiday Retirement,USA,https://www.holidaytouch.com,"10,000+","$1B+",1971,Large Enterprise,"Independent Living Communities",Verified
+Senior Living Facilities,Watermark Retirement,USA,https://www.watermarkcommunities.com,"5,000+","$500M+",1985,Mid-Market,"Independent, Assisted Living, Memory Care",Verified
+Senior Living Facilities,Aegis Living,USA,https://www.aegisliving.com,"3,000+","$300M+",1997,Mid-Market,"Assisted Living, Memory Care",Verified
+Senior Living Facilities,Pacific Retirement Services,USA,https://prsliving.com,"2,000+","$200M+",1991,Mid-Market,"Non-Profit CCRC Management",Verified
+Senior Living Facilities,Senior Lifestyle,USA,https://www.seniorlifestyle.com,"6,000+","$600M+",1985,Large Enterprise,"Independent, Assisted, Memory Care",Verified
+Senior Living Facilities,Frontier Management,USA,https://frontiermgmt.com,"5,000+","$500M+",2000,Mid-Market,"Senior Living Management, West Coast",Verified
+Senior Living Facilities,Artis Senior Living,USA,https://artisseniorliving.com,"1,000+","$100M+",2012,Mid-Market,"Memory Care, Assisted Living",Verified
+Senior Living Facilities,Sonida Senior Living,USA,https://www.sonidaseniorliving.com,"3,000+","$300M+",1991,Mid-Market,"Independent Living Communities",Verified
+Senior Living Facilities,Trilogy Health Services,USA,https://www.trilogyhs.com,"10,000+","$1B+",1997,Large Enterprise,"Senior Living, Skilled Nursing, Rehab",Verified
+Smart Home Tech,Google Nest,USA,https://store.google.com/category/nest,"1,000+","N/A",2010,Large Enterprise,"Smart Thermostats, Cameras, Displays",Verified
+Smart Home Tech,Amazon Alexa Smart Home,USA,https://developer.amazon.com/alexa,"N/A","N/A",2014,Large Enterprise,"Voice Assistant, Smart Home Ecosystem",Verified
+Smart Home Tech,Apple HomeKit,USA,https://www.apple.com/home-app,"N/A","N/A",2014,Large Enterprise,"Smart Home Platform, Privacy-Focused",Verified
+Smart Home Tech,Control4,USA,https://www.control4.com,"1,000+","$200M+",2003,Mid-Market,"Home Automation, Custom Integration",Verified
+Smart Home Tech,Crestron Electronics,USA,https://www.crestron.com,"4,000+","$1B+",1972,Large Enterprise,"Advanced Control & Automation Systems",Verified
+Smart Home Tech,Vivint Smart Home,USA,https://www.vivint.com,"10,000+","$1B+",1999,Large Enterprise,"Smart Home Security, Monitoring",Verified
+Smart Home Tech,ADT Smart Home Security,USA,https://www.adt.com,"20,000+","$5B+",1874,Large Enterprise,"Security, Monitoring, Smart Home",Verified
+Smart Home Tech,SimpliSafe,USA,https://simplisafe.com,"1,000+","$500M+",2006,Mid-Market,"DIY Home Security, No Contracts",Verified
+Smart Home Tech,Abode,USA,https://goabode.com,"100+","$20M+",2014,Small Enterprise,"DIY Smart Home Security, Professional Monitoring",Verified
+Smart Home Tech,Ring (Amazon),USA,https://ring.com,"1,500+","$1B+",2013,Large Enterprise,"Video Doorbells, Security Cameras",Verified
+Smart Home Tech,Arlo Technologies,USA,https://www.arlo.com,"500+","$500M+",2014,Mid-Market,"Wireless Security Cameras, Smart Home",Verified
+Smart Home Tech,Ecobee,Canada,https://www.ecobee.com,"500+","$100M+",2007,Mid-Market,"Smart Thermostats, Sensors, Cameras",Verified
+Smart Home Tech,Honeywell Home,USA,https://www.honeywell.com,"N/A","N/A",1906,Large Enterprise,"Thermostats, Security, IAQ",Verified
+Smart Home Tech,Lutron Electronics,USA,https://www.lutron.com,"9,000+","$1B+",1961,Large Enterprise,"Lighting Control, Shades, Systems",Verified
+Smart Home Tech,Schlage (Allegion),USA,https://www.schlage.com,"N/A","N/A",1920,Large Enterprise,"Smart Locks, Door Hardware",Verified
+Smart Home Tech,August Home,USA,https://august.com,"100+","N/A",2012,Small Enterprise,"Smart Locks, Access Control",Verified
+Smart Home Tech,Yale Locks (Assa Abloy),Sweden,https://www.yale.com,"N/A","N/A",1840,Large Enterprise,"Door Locks, Smart Locks, Security",Verified
+Smart Home Tech,Samsung SmartThings,South Korea,https://www.smartthings.com,"N/A","N/A",2012,Large Enterprise,"Smart Home Platform, Hubs, Sensors",Verified
+Property Valuation,Cushman & Wakefield Valuation,USA,https://www.cushmanwakefield.com,"N/A","N/A",N/A,Large Enterprise,"Commercial Real Estate Valuation",Verified
+Property Valuation,CBRE Valuation & Advisory,USA,https://www.cbre.com,"N/A","N/A",N/A,Large Enterprise,"Valuation Services, Global",Verified
+Property Valuation,JLL Valuation Advisory,UK,https://www.jll.com,"N/A","N/A",N/A,Large Enterprise,"Valuation, Advisory, Consulting",Verified
+Property Valuation,Colliers International Valuation,Canada,https://www.colliers.com,"N/A","N/A",N/A,Large Enterprise,"Valuation & Advisory Services",Verified
+Property Valuation,HVS Global Hospitality Services,USA,https://www.hvs.com,"500+","$100M+",1980,Mid-Market,"Hospitality Consulting, Valuation, Advisory",Verified
+Property Valuation,Newmark Valuation & Advisory,USA,https://www.ngkf.com,"N/A","N/A",N/A,Large Enterprise,"Valuation, Real Estate Advisory",Verified
+Property Valuation,Integra Realty Resources,USA,https://www.irr.com,"1,000+","$150M+",1999,Mid-Market,"Real Estate Valuation, Advisory, Consulting",Verified
+Property Valuation,Valbridge Property Advisors,USA,https://www.valbridge.com,"500+","$100M+",2015,Mid-Market,"Independent Property Valuation, US",Verified
+Property Valuation,Walker & Dunlop Valuation,USA,https://www.walkerdunlop.com,"N/A","N/A",N/A,Large Enterprise,"Valuation Services, Multifamily Focus",Verified
+Property Valuation,Appraisal Institute,USA,https://www.appraisalinstitute.org,"N/A","N/A",1932,Professional Body,"Valuation Profession, Education, Designations",Verified
+Property Valuation,RICS (Royal Institution of Chartered Surveyors),UK,https://www.rics.org,"N/A","N/A",1868,Professional Body,"Chartered Surveyors, Standards, Ethics",Verified
+Property Valuation,CoreLogic,USA,https://www.corelogic.com,"5,000+","$2B+",1997,Large Enterprise,"Property Data, Analytics, Valuation Models",Verified
+Property Valuation,Clear Capital,USA,https://www.clearcapital.com,"500+","$100M+",2001,Mid-Market,"Valuation, Analytics, Appraisal Management",Verified
+Property Valuation,HouseCanary,USA,https://www.housecanary.com,"200+","$50M+",2013,Mid-Market,"Property Valuation, Data, Analytics",Verified
+Property Valuation,Chatham Financial,USA,https://www.chathamfinancial.com,"700+","$200M+",1991,Mid-Market,"Real Estate Risk Management, Valuation",Verified
+Property Valuation,Valcre,USA,https://valcre.com,"50+","$10M+",2016,Small Enterprise,"Commercial Real Estate Appraisal Software",Verified
+Property Valuation,ValueBase,USA,https://www.valuebase.com,"20+","$5M+",2014,Small Enterprise,"Real Estate Valuation Software",Verified
+Property Valuation,Quantarium,USA,https://quantarium.com,"100+","$20M+",2015,Small Enterprise,"AI-Powered Property Valuation, Data",Verified
+Property Valuation,Altus Group,Canada,https://www.altusgroup.com,"2,500+","$500M+",2005,Large Enterprise,"Property Tax, Valuation, Cost Consulting",Verified
+Mortgage Brokering,Rocket Mortgage,USA,https://www.rocketmortgage.com,"26,000+","$10B+",1985,Large Enterprise,"Online Mortgage Lending, Refinance",Verified
+Mortgage Brokering,LoanDepot,USA,https://www.loandepot.com,"10,000+","$2B+",2010,Large Enterprise,"Non-QM, Mortgage Lending, Refinance",Verified
+Mortgage Brokering,Guaranteed Rate,USA,https://www.rate.com,"5,000+","$1B+",2000,Large Enterprise,"Mortgage Lending, Digital Platform",Verified
+Mortgage Brokering,Fairway Independent Mortgage,USA,https://fairwayindependentmc.com,"12,000+","$3B+",1996,Large Enterprise,"Mortgage Lending, Retail & Wholesale",Verified
+Mortgage Brokering,United Wholesale Mortgage,USA,https://www.uwm.com,"9,000+","$2B+",1986,Large Enterprise,"Wholesale Mortgage Lending",Verified
+Mortgage Brokering,Caliber Home Loans,USA,https://www.caliberhomeloans.com,"8,000+","$2B+",2008,Large Enterprise,"Mortgage Lending, Servicing",Verified
+Mortgage Brokering,Newrez LLC,USA,https://www.newrez.com,"7,000+","$2B+",2008,Large Enterprise,"Mortgage Lending, Servicing",Verified
+Mortgage Brokering,Pennymac,USA,https://www.pennymac.com,"5,000+","$2B+",2008,Large Enterprise,"Mortgage Lending, Investment Management",Verified
+Mortgage Brokering,Freedom Mortgage,USA,https://www.freedommortgage.com,"7,000+","$2B+",1990,Large Enterprise,"FHA, VA, Refinance Lending",Verified
+Mortgage Brokering,Guild Mortgage,USA,https://www.guildmortgage.com,"4,500+","$1B+",1960,Large Enterprise,"Purchase, Refinance, Government Loans",Verified
+Mortgage Brokering,CrossCountry Mortgage,USA,https://crosscountrymortgage.com,"7,000+","$1B+",2003,Large Enterprise,"Mortgage Lending, Retail",Verified
+Mortgage Brokering,Homepoint Financial,USA,https://homepoint.com,"2,000+","$500M+",2015,Large Enterprise,"Wholesale Mortgage Lending",Verified
+Mortgage Brokering,AmeriSave Mortgage,USA,https://www.amerisave.com,"2,500+","$500M+",2002,Large Enterprise,"Online Mortgage Lending, Refinance",Verified
+Mortgage Brokering,Finance of America Mortgage,USA,https://www.financeofamerica.com,"2,500+","$1B+",2013,Large Enterprise,"Reverse Mortgages, Specialty Lending",Verified
+Mortgage Brokering,Better.com,USA,https://better.com,"2,000+","$800M+",2014,Large Enterprise,"Digital Mortgage Lending, Technology",Verified
+Mortgage Brokering,SoFi Home Loans,USA,https://www.sofi.com,"5,000+","$2B+",2011,Large Enterprise,"Student Loan Refinance, Personal Loans, Mortgages",Verified
+Mortgage Brokering,Flagstar Bank,USA,https://www.flagstar.com,"5,000+","$2B+",1987,Large Enterprise,"Banking, Mortgage Lending, Servicing",Verified
+Mortgage Brokering,loanDepot,USA,https://www.loandepot.com,"10,000+","$2B+",2010,Large Enterprise,"Non-QM, Mortgage Lending, Refinance",Verified
+Mortgage Brokering,Mr. Cooper,USA,https://www.mrcooper.com,"10,000+","$3B+",1994,Large Enterprise,"Mortgage Servicing, Origination",Verified
+Co-Working Spaces,WeWork,USA,https://www.wework.com,"5,000+","$3B+",2010,Large Enterprise,"Flexible Workspaces, Coworking",Verified
+Co-Working Spaces,Regus (IWG),UK,https://www.regus.com,"10,000+","$3B+",1989,Large Enterprise,"Coworking, Serviced Offices, Global",Verified
+Co-Working Spaces,Spaces (IWG),Netherlands,https://www.spacesworks.com,"N/A","N/A",2008,Large Enterprise,"Creative Coworking, Community",Verified
+Co-Working Spaces,Industrious,USA,https://www.industriousoffice.com,"1,000+","$200M+",2013,Large Enterprise,"Premium Coworking, Managed Offices",Verified
+Co-Working Spaces,Convene,USA,https://convene.com,"1,000+","$200M+",2009,Mid-Market,"Meeting, Event, Coworking Spaces",Verified
+Co-Working Spaces,Serendipity Labs,USA,https://serendipitylabs.com,"200+","$50M+",2011,Mid-Market,"Coworking, Private Offices",Verified
+Co-Working Spaces,The Executive Centre,Hong Kong,https://www.executivecentre.com,"1,000+","$200M+",1994,Large Enterprise,"Premium Serviced Offices, Asia-Pacific",Verified
+Co-Working Spaces,Knotel,USA,https://www.knotel.com,"500+","$100M+",2016,Mid-Market,"Flexible Office Space, Headquarters",Verified
+Co-Working Spaces,Impact Hub,Global,https://impacthub.net,"200+","$50M+",2005,Mid-Market,"Coworking, Social Innovation, Global Network",Verified
+Co-Working Spaces,The Office Group (Blackstone),UK,https://www.theofficegroup.co.uk,"500+","$100M+",2002,Mid-Market,"Design-led Workspaces, UK",Verified
+Co-Working Spaces,JustCo,Singapore,https://www.justcoglobal.com,"500+","$100M+",2011,Mid-Market,"Coworking, Asia-Pacific",Verified
+Co-Working Spaces,CommonGrounds Workplace,USA,https://commongroundsworkplace.com,"100+","$20M+",2014,Small Enterprise,"Coworking, Workplace-as-a-Service",Verified
+Co-Working Spaces,District Cowork,USA,https://www.districtcowork.com,"50+","$10M+",2011,Small Enterprise,"Coworking, Community, US",Verified
+Co-Working Spaces,The Wing,USA,https://www.the-wing.com,"200+","$50M+",2016,Small Enterprise,"Coworking, Women-Focused, Community",Verified
+Co-Working Spaces,Krewe,USA,https://krewe.com,"20+","$5M+",2016,Small Enterprise,"Coworking, Private Clubs, Networking",Verified
+Co-Working Spaces,The Farm Soho,USA,https://thefarmsoho.com,"50+","$10M+",2010,Small Enterprise,"Coworking, Creative Community, NYC",Verified
+Co-Working Spaces,Bond Collective,USA,https://www.bondcollective.com,"100+","$20M+",2017,Small Enterprise,"Coworking, Private Offices, US",Verified
+Co-Working Spaces,Workbar,USA,https://workbar.com,"100+","$20M+",2009,Small Enterprise,"Coworking, Boston, Corporate Partnerships",Verified
+Co-Working Spaces,Second Home,UK,https://www.secondhome.io,"100+","$20M+",2014,Small Enterprise,"Creative Workspaces, Biophilic Design",Verified
+Land Acquisition,Howard Hughes Corporation,USA,https://www.howardhughes.com,"500+","$1B+",2010,Large Enterprise,"Master-Planned Communities, Development",Verified
+Land Acquisition,The Land Institute,USA,https://www.landinstitute.org,"100+","$10M+",1976,Non-Profit,"Agricultural Research, Perennial Crops",Verified
+Land Acquisition,Texas Pacific Land Trust,USA,https://www.tpltrust.com,"100+","$600M+",1888,Large Enterprise,"Land, Water, Resource Management",Verified
+Land Acquisition,RMC Group,UK,https://www.rmc-group.com,"N/A","N/A",1971,Mid-Market,"Land Referencing, Stakeholder Engagement",Verified
+Land Acquisition,Land Securities Group,UK,https://www.landsec.com,"700+","$2B+",1944,Large Enterprise,"Office, Retail, Urban Regeneration",Verified
+Land Acquisition,Land Development Services (LDS),USA,https://www.ldsinc.com,"N/A","N/A",1996,Small Enterprise,"Land Development Consulting",Verified
+Land Acquisition,The Landsource Group,USA,https://www.landsource.com,"N/A","N/A",2004,Small Enterprise,"Land Acquisition, Development Consulting",Verified
+Land Acquisition,Land Advisors Organization,USA,https://www.landadvisors.com,"500+","$100M+",1997,Mid-Market,"Land Brokerage, Valuation, Research",Verified
+Land Acquisition,Consolidated-Tomoka Land Co.,USA,https://www.ctlc.com,"100+","$50M+",1902,Mid-Market,"Land Investment, Development, Florida",Verified
+Land Acquisition,Landmark Dividend,USA,https://www.landmarkdividend.com,"100+","$100M+",2010,Mid-Market,"Land Acquisition, Ground Leases",Verified
+Land Acquisition,Tejon Ranch Co.,USA,https://www.tejonranch.com,"100+","$50M+",1936,Mid-Market,"Land Management, Agriculture, Development",Verified
+Land Acquisition,St. Joe Company,USA,https://www.joe.com,"200+","$300M+",1936,Mid-Market,"Land Development, Florida, Residential",Verified
+Land Acquisition,Maui Land & Pineapple Company,USA,https://www.mauiland.com,"100+","$20M+",1909,Small Enterprise,"Land Management, Hawaii",Verified
+Land Acquisition,King Ranch,USA,https://king-ranch.com,"300+","$200M+",1853,Private,"Agriculture, Land Management, Cattle",Verified
+Land Acquisition,Landkom International,UK,https://www.landkom.com,"N/A","N/A",2005,Small Enterprise,"Agricultural Land Investment, Ukraine",Verified
+Land Acquisition,AgriLand,USA,https://agrilandusa.com,"N/A","N/A",2009,Small Enterprise,"Farmland Brokerage, US",Verified
+Land Acquisition,LandCentral,USA,https://www.landcentral.com,"N/A","N/A",2000,Small Enterprise,"Land Sales, Online Marketplace",Verified
+Land Acquisition,LandHub,USA,https://www.landhub.com,"N/A","N/A",1998,Small Enterprise,"Land Listing Website",Verified
+Land Acquisition,LandLeader,USA,https://www.landleader.com,"N/A","N/A",2000,Small Enterprise,"Land Broker Network, US",Verified
+Real Estate Law,DLA Piper,UK,https://www.dlapiper.com,"4,200+","$3.8B+",2005,Large Enterprise,"Corporate, Litigation, Real Estate, IP",Verified
+Real Estate Law,Greenberg Traurig,USA,https://www.gtlaw.com,"2,500+","$2B+",1967,Large Enterprise,"Corporate, Real Estate, Litigation, IP",Verified
+Real Estate Law,Hogan Lovells,UK,https://www.hoganlovells.com,"2,800+","$2.5B+",2010,Large Enterprise,"Corporate, Litigation, IP, Regulatory",Verified
+Real Estate Law,Skadden Arps,USA,https://www.skadden.com,"1,700+","$2.8B+",1948,Large Enterprise,"M&A, Litigation, Corporate Governance",Verified
+Real Estate Law,Sidley Austin,USA,https://www.sidley.com,"2,200+","$2.7B+",1866,Large Enterprise,"Corporate, Litigation, Financial Services",Verified
+Real Estate Law,Latham & Watkins,USA,https://www.lw.com,"3,200+","$5.5B+",1934,Large Enterprise,"Corporate, Litigation, Finance, Regulatory",Verified
+Real Estate Law,Baker McKenzie,USA,https://www.bakermckenzie.com,"6,500+","$3.3B+",1949,Large Enterprise,"Corporate, Tax, International Trade",Verified
+Real Estate Law,Allen & Overy,UK,https://www.allenovery.com,"2,800+","$2.4B+",1930,Large Enterprise,"Banking, Finance, Corporate, Litigation",Verified
+Real Estate Law,Clifford Chance,UK,https://www.cliffordchance.com,"3,500+","$2.5B+",1900,Large Enterprise,"Banking & Finance, Capital Markets, Corporate",Verified
+Real Estate Law,Linklaters,UK,https://www.linklaters.com,"2,900+","$2.3B+",1838,Large Enterprise,"Corporate, Finance, Capital Markets",Verified
+Real Estate Law,Norton Rose Fulbright,UK,https://www.nortonrosefulbright.com,"3,000+","$2.3B+",1794,Large Enterprise,"Corporate, Litigation, Regulatory, Energy",Verified
+Real Estate Law,King & Wood Mallesons,China,https://www.kwm.com,"2,500+","$1B+",2012,Large Enterprise,"Corporate, Finance, Dispute Resolution, Asia",Verified
+Real Estate Law,Squire Patton Boggs,UK,https://www.squirepattonboggs.com,"1,500+","$1B+",2014,Large Enterprise,"Corporate, Litigation, Public Policy",Verified
+Real Estate Law,White & Case,USA,https://www.whitecase.com,"2,600+","$2.9B+",1901,Large Enterprise,"Cross-Border M&A, International Arbitration",Verified
+Real Estate Law,Pinsent Masons,UK,https://www.pinsentmasons.com,"3,500+","$800M+",1996,Large Enterprise,"Real Estate, Infrastructure, Energy, Technology",Verified
+Real Estate Law,Dentons,Canada,https://www.dentons.com,"12,000+","$3B+",2013,Conglomerate,"Global Law Firm, Multiple Practice Areas",Verified
+Real Estate Law,Gowling WLG,UK,https://gowlingwlg.com,"1,500+","$500M+",2016,Large Enterprise,"Real Estate, Intellectual Property, Business",Verified
+Real Estate Law,Ashurst,UK,https://www.ashurst.com,"2,500+","$1B+",1822,Large Enterprise,"Corporate, Finance, Real Estate, Disputes",Verified
+Real Estate Law,Simpson Thacher & Bartlett,USA,https://www.stblaw.com,"1,000+","$1.5B+",1884,Large Enterprise,"M&A, Private Equity, Capital Markets",Verified
+Facility Management,JLL Facilities Management,UK,https://www.jll.com,"105,000+","$20B+",1783,Conglomerate,"Property & Facility Management, Global",Verified
+Facility Management,CBRE Global Workplace Solutions,USA,https://www.cbre.com,"115,000+","$31B+",1906,Conglomerate,"Facility Management, Project Management",Verified
+Facility Management,Cushman & Wakefield Facility Management,USA,https://www.cushmanwakefield.com,"50,000+","$10B+",1917,Conglomerate,"Facility Management, Integrated Services",Verified
+Facility Management,Sodexo Facilities,France,https://www.sodexo.com,"420,000+","$20B+",1966,Conglomerate,"Facility Management, Food Services",Verified
+Facility Management,ISS Facility Services,Denmark,https://www.issworld.com,"350,000+","$12B+",1901,Conglomerate,"Facility Services, Cleaning, Catering, Security",Verified
+Facility Management,Compass Group,UK,https://www.compass-group.com,"500,000+","$35B+",1941,Conglomerate,"Food Service, Support Services",Verified
+Facility Management,Aramark,USA,https://www.aramark.com,"270,000+","$18B+",1959,Conglomerate,"Food, Facilities, Uniform Services",Verified
+Facility Management,ABM Industries,USA,https://www.abm.com,"100,000+","$8B+",1909,Large Enterprise,"Facility Services, Engineering, Cleaning",Verified
+Facility Management,Johnson Controls,USA,https://www.johnsoncontrols.com,"100,000+","$27B+",1885,Conglomerate,"Building Management Systems, HVAC, Security",Verified
+Facility Management,Engie Services,France,https://www.engie.com,"170,000+","$60B+",2008,Conglomerate,"Energy Transition, Facility Management",Verified
+Facility Management,Serco Group,UK,https://www.serco.com,"50,000+","$5B+",1929,Large Enterprise,"Public Services, Facility Management",Verified
+Facility Management,Atalian Global Services,France,https://www.atalian.com,"100,000+","$5B+",1943,Large Enterprise,"Facility Management, Multitechnical Services",Verified
+Facility Management,Planon Software,Netherlands,https://www.planonsoftware.com,"500+","$100M+",1982,Mid-Market,"Integrated Workplace Management System (IWMS)",Verified
+Facility Management,Accruent,USA,https://www.accruent.com,"1,000+","$200M+",1995,Mid-Market,"Real Estate, Facility Management Software",Verified
+Facility Management,ServiceChannel,USA,https://servicechannel.com,"500+","$100M+",1999,Mid-Market,"Facility Maintenance Management Platform",Verified
+Facility Management,FacilityONE Technologies,USA,https://facilityone.com,"100+","$20M+",1995,Small Enterprise,"CMMS, Facility Management Software",Verified
+Facility Management,FM:Systems,USA,https://www.fmsystems.com,"500+","$100M+",1984,Mid-Market,"Workplace Management Software, IWMS",Verified
+Facility Management,UpKeep Maintenance Management,USA,https://www.onupkeep.com,"200+","$50M+",2014,Small Enterprise,"CMMS, Maintenance Management, Mobile",Verified
+Facility Management,ServiceNow Facilities Management,USA,https://www.servicenow.com,"22,000+","$9B+",2004,Large Enterprise,"ITSM, Enterprise Software, Facilities Module",Verified
+Mixed-Use Projects,Related Companies,USA,https://www.related.com,"4,000+","$10B+",1972,Large Enterprise,"Mixed-Use, Affordable Housing, Real Estate",Verified
+Mixed-Use Projects,Hines,USA,https://www.hines.com,"5,000+","$5B+",1957,Large Enterprise,"Global Real Estate, Development, Investment",Verified
+Mixed-Use Projects,Tishman Speyer,USA,https://www.tishmanspeyer.com,"1,500+","$2B+",1978,Large Enterprise,"Office, Residential, Mixed-Use",Verified
+Mixed-Use Projects,Brookfield Properties,Canada,https://brookfieldproperties.com,"20,000+","$5B+",2002,Large Enterprise,"Office, Retail, Mixed-Use, Development",Verified
+Mixed-Use Projects,Oxford Properties,Canada,https://www.oxfordproperties.com,"2,000+","$2B+",1960,Large Enterprise,"Real Estate Investment, Development, Management",Verified
+Mixed-Use Projects,Westfield Corporation (Unibail-Rodamco),France,https://www.westfield.com,"N/A","N/A",N/A,Large Enterprise,"Shopping Centers, Flagship Destinations",Verified
+Mixed-Use Projects,Forest City Realty Trust,USA,https://www.forestcity.net,"1,000+","$1B+",1921,Large Enterprise,"Mixed-Use, Office, Residential",Verified
+Mixed-Use Projects,Jerde Partnership,USA,https://www.jerde.com,"100+","$20M+",1977,Small Enterprise,"Placemaking, Retail, Mixed-Use Design",Verified
+Mixed-Use Projects,CallisonRTKL,USA,https://www.callisonrtkl.com,"2,000+","$400M+",1946,Large Enterprise,"Retail, Mixed-Use, Hospitality, Architecture",Verified
+Mixed-Use Projects,Gensler,USA,https://www.gensler.com,"6,000+","$1.5B+",1965,Large Enterprise,"Architecture, Design, Planning, Consulting",Verified
+Mixed-Use Projects,SOM (Skidmore, Owings & Merrill),USA,https://www.som.com,"1,200+","$300M+",1936,Large Enterprise,"Architecture, Engineering, Urban Planning",Verified
+Mixed-Use Projects,Kohn Pedersen Fox (KPF),USA,https://www.kpf.com,"800+","$200M+",1976,Large Enterprise,"Architecture, Master Planning, Interiors",Verified
+Mixed-Use Projects,Perkins and Will,USA,https://perkinswill.com,"2,500+","$600M+",1935,Large Enterprise,"Sustainable Architecture, Interior Design, Planning",Verified
+Mixed-Use Projects,The Irvine Company,USA,https://www.irvinecompany.com,"2,000+","$2B+",1864,Private,"Master-Planned Communities, Office, Retail",Verified
+Mixed-Use Projects,Simon Property Group,USA,https://www.simon.com,"4,500+","$5B+",1960,Large Enterprise,"Malls, Premium Outlets, Retail REIT",Verified
+Mixed-Use Projects,The Howard Hughes Corporation,USA,https://www.howardhughes.com,"500+","$1B+",2010,Large Enterprise,"Master-Planned Communities, Development",Verified
+Mixed-Use Projects,Bosco Verticale (Stefano Boeri),Italy,https://www.stefanoboeriarchitetti.net,"N/A","N/A",2008,Small Enterprise,"Vertical Forest, Sustainable Residential",Verified
+Mixed-Use Projects,Hudson Yards (Related),USA,https://www.hudsonyardsnewyork.com,"N/A","N/A",2005,Large Enterprise,"Large-Scale Mixed-Use, Office, Retail, Residential",Verified
+Mixed-Use Projects,Canary Wharf Group,UK,https://www.canarywharf.com,"2,000+","$1B+",1995,Large Enterprise,"Office, Retail, Residential, London",Verified

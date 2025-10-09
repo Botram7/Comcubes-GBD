@@ -1,0 +1,401 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Management Consulting,McKinsey & Company,USA,https://www.mckinsey.com,"38,000+","$15B+",1926,Large Enterprise,"Corporate Strategy, Operations, Organization",Verified
+Management Consulting,Boston Consulting Group,USA,https://www.bcg.com,"25,000+","$11.5B+",1963,Large Enterprise,"Growth Strategy, Digital Transformation, Change Management",Verified
+Management Consulting,Bain & Company,USA,https://www.bain.com,"15,000+","$5.8B+",1973,Large Enterprise,"Private Equity, Performance Improvement, Customer Strategy",Verified
+Management Consulting,Oliver Wyman,USA,https://www.oliverwyman.com,"6,000+","$2.5B+",1984,Large Enterprise,"Financial Services, Risk Management, Strategy",Verified
+Management Consulting,Booz Allen Hamilton,USA,https://www.boozallen.com,"33,000+","$10B+",1914,Large Enterprise,"Defense, Government, Technology Consulting",Verified
+Management Consulting,Kearney,USA,https://www.kearney.com,"4,500+","$1.6B+",1926,Large Enterprise,"Operations, Strategic Sourcing, Supply Chain",Verified
+Management Consulting,Roland Berger,Germany,https://www.rolandberger.com,"3,000+","$1B+",1967,Large Enterprise,"European Corporate Strategy, Restructuring",Verified
+Management Consulting,LEK Consulting,UK,https://www.lek.com,"1,800+","$700M+",1983,Large Enterprise,"Life Sciences, M&A, Due Diligence",Verified
+Management Consulting,AT Kearney,USA,https://www.kearney.com,"4,500+","$1.6B+",1926,Large Enterprise,"Operations, Strategic Sourcing, Supply Chain",Verified
+Management Consulting,Strategy& (PwC),USA,https://www.strategyand.pwc.com,"3,000+","N/A (Parent)",1944,Large Enterprise,"Corporate Strategy, Digital Business Transformation",Verified
+Management Consulting,OC&C Strategy Consultants,UK,https://www.occstrategy.com,"600+","$250M+",1987,Mid-Market,"Consumer Goods, Retail, Media, Private Equity",Verified
+Management Consulting,ZS Associates,USA,https://www.zs.com,"12,000+","$1.8B+",1983,Large Enterprise,"Sales & Marketing, Pharmaceuticals, AI & Analytics",Verified
+Management Consulting,Alvarez & Marsal,USA,https://www.alvarezandmarsal.com,"8,000+","$1.5B+",1983,Large Enterprise,"Turnaround, Restructuring, Performance Improvement",Verified
+Management Consulting,Simon-Kucher & Partners,Germany,https://www.simon-kucher.com,"2,000+","$600M+",1985,Large Enterprise,"Pricing & Revenue Management, Growth Strategy",Verified
+Management Consulting,Arthur D. Little,France,https://www.adlittle.com,"1,500+","$500M+",1886,Large Enterprise,"Technology & Innovation Management, R&D",Verified
+Management Consulting,Bridgepoint Group,UK,https://www.bridgepoint.eu,"300+","$200M+",2000,Mid-Market,"Private Equity Advisory, M&A",Verified
+Management Consulting,Brattle Group,USA,https://www.brattle.com,"500+","$150M+",1990,Mid-Market,"Economic Consulting, Expert Testimony",Verified
+Management Consulting,Charles River Associates,USA,https://www.crai.com,"1,000+","$600M+",1965,Large Enterprise,"Economic, Financial, & Management Consulting",Verified
+Management Consulting,Delta Capita,UK,https://www.deltacapita.com,"500+","$100M+",2007,Mid-Market,"Financial Services Consulting, Managed Services",Verified
+Management Consulting,Frontier Economics,UK,https://www.frontier-economics.com,"300+","$80M+",1999,Mid-Market,"Economic Regulation, Competition Policy",Verified
+IT Consulting,Accenture,Ireland,https://www.accenture.com,"721,000+","$64B+",1989,Conglomerate,"Technology, Operations, Digital Transformation",Verified
+IT Consulting,IBM Global Services,USA,https://www.ibm.com,"250,000+","$58B+",1911,Conglomerate,"IT Infrastructure, Cloud, AI, Consulting",Verified
+IT Consulting,Capgemini,France,https://www.capgemini.com,"340,000+","$22B+",1967,Conglomerate,"Technology Services, Digital Engineering, Consulting",Verified
+IT Consulting,Cognizant,USA,https://www.cognizant.com,"355,000+","$19B+",1994,Conglomerate,"IT Services, Digital Business, Consulting",Verified
+IT Consulting,Tata Consultancy Services,India,https://www.tcs.com,"606,000+","$29B+",1968,Conglomerate,"IT Services, BPO, Cloud, Consulting",Verified
+IT Consulting,Infosys,India,https://www.infosys.com,"336,000+","$18B+",1981,Conglomerate,"IT Services, Digital Transformation, Consulting",Verified
+IT Consulting,Wipro,India,https://www.wipro.com,"240,000+","$11B+",1945,Conglomerate,"IT, Consulting, Business Process Services",Verified
+IT Consulting,DXC Technology,USA,https://www.dxc.com,"130,000+","$17B+",2017,Large Enterprise,"IT Modernization, Cloud, Security",Verified
+IT Consulting,HCL Technologies,India,https://www.hcltech.com,"222,000+","$13B+",1976,Conglomerate,"IT Services, Engineering, R&D, Apps",Verified
+IT Consulting,Atos,France,https://atos.net,"95,000+","$12B+",1997,Large Enterprise,"Digital Transformation, Big Data, Cybersecurity",Verified
+IT Consulting,NTT DATA,Japan,https://www.nttdata.com,"190,000+","$23B+",1988,Conglomerate,"IT Services, Digital Business Consulting",Verified
+IT Consulting,EPAM Systems,USA,https://www.epam.com,"59,000+","$5B+",1993,Large Enterprise,"Digital Platform Engineering, Product Development",Verified
+IT Consulting,Publicis Sapient,France,https://www.publicissapient.com,"20,000+","$1.5B+",1990,Large Enterprise,"Digital Business Transformation, Technology",Verified
+IT Consulting,LTI (Larsen & Toubro Infotech),India,https://www.lntinfotech.com,"49,000+","$2.3B+",1996,Large Enterprise,"IT Solutions, Digital Services",Verified
+IT Consulting,ThoughtWorks,USA,https://www.thoughtworks.com,"10,000+","$1B+",1993,Large Enterprise,"Custom Software, Agile Development, Digital Innovation",Verified
+IT Consulting,Globant,Argentina,https://www.globant.com,"27,000+","$1.7B+",2003,Large Enterprise,"Digital Native, Software Innovation",Verified
+IT Consulting,Endava,UK,https://www.endava.com,"12,000+","$1B+",2000,Large Enterprise,"Agile Development, Digital Transformation",Verified
+IT Consulting,UST,USA,https://www.ust.com,"35,000+","$1.2B+",1999,Large Enterprise,"Digital Transformation, Cybersecurity, Cloud",Verified
+IT Consulting,Hexaware Technologies,India,https://www.hexaware.com,"24,000+","$900M+",1990,Large Enterprise,"IT, BPO, Cloud, Automation",Verified
+IT Consulting,Persistent Systems,India,https://www.persistent.com,"22,000+","$800M+",1990,Large Enterprise,"Software Product Development, Digital Engineering",Verified
+Accounting & Audit,Deloitte,UK,https://www2.deloitte.com,"415,000+","$65B+",1845,Conglomerate,"Audit, Tax, Consulting, Advisory",Verified
+Accounting & Audit,PwC,UK,https://www.pwc.com,"364,000+","$53B+",1998,Conglomerate,"Assurance, Tax, Advisory, Consulting",Verified
+Accounting & Audit,EY,UK,https://www.ey.com,"395,000+","$49B+",1989,Conglomerate,"Assurance, Tax, Strategy, Transactions, Consulting",Verified
+Accounting & Audit,KPMG,Netherlands,https://home.kpmg,"265,000+","$36B+",1987,Conglomerate,"Audit, Tax, Advisory, Consulting",Verified
+Accounting & Audit,BDO Global,Belgium,https://www.bdo.global,"111,000+","$12B+",1963,Large Enterprise,"Audit, Tax, Advisory, Public Accounting",Verified
+Accounting & Audit,Grant Thornton,UK,https://www.grantthornton.global,"68,000+","$6.6B+",1924,Large Enterprise,"Audit, Tax, Advisory, Public Accounting",Verified
+Accounting & Audit,RSM International,UK,https://rsm.global,"57,000+","$7.2B+",1964,Large Enterprise,"Audit, Tax, Consulting, Middle Market",Verified
+Accounting & Audit,Mazars,France,https://www.mazars.com,"47,000+","$2.5B+",1940,Large Enterprise,"Audit, Tax, Advisory, Accounting",Verified
+Accounting & Audit,Crowe Global,UK,https://www.crowe.com/global,"41,000+","$4.8B+",1942,Large Enterprise,"Audit, Tax, Consulting, Risk",Verified
+Accounting & Audit,Baker Tilly International,UK,https://www.bakertilly.global,"41,000+","$4.5B+",1987,Large Enterprise,"Accountancy, Tax, Business Advisory",Verified
+Accounting & Audit,Moore Global,UK,https://www.moore-global.com,"34,000+","$3.3B+",1962,Large Enterprise,"Accounting, Audit, Advisory, Global Network",Verified
+Accounting & Audit,Nexia International,UK,https://www.nexia.com,"33,000+","$4.2B+",1971,Large Enterprise,"Audit, Accounting, Tax, Advisory",Verified
+Accounting & Audit,CLA (CliftonLarsonAllen),USA,https://www.claconnect.com,"8,500+","$1.7B+",2012,Large Enterprise,"CPA, Advisory, Consulting, Wealth",Verified
+Accounting & Audit,PKF International,UK,https://www.pkf.org,"22,000+","$3B+",1969,Large Enterprise,"Audit, Accountancy, Business Advisory",Verified
+Accounting & Audit,RBZ LLP,USA,https://www.rbz.com,"200+","$50M+",1979,Small Enterprise,"Audit, Tax, Business Advisory",Verified
+Accounting & Audit,Plante Moran,USA,https://www.plantemoran.com,"3,500+","$800M+",1924,Large Enterprise,"Public Accounting, Consulting, Wealth Management",Verified
+Accounting & Audit,Armanino,USA,https://www.armanino.com,"2,500+","$400M+",1969,Large Enterprise,"Accounting, Consulting, Technology Solutions",Verified
+Accounting & Audit,Boulay Group,USA,https://www.boulaygroup.com,"300+","$60M+",1980,Small Enterprise,"CPA, Tax, Business Advisory",Verified
+Accounting & Audit,CBIZ,USA,https://www.cbiz.com,"5,000+","$1.2B+",1987,Large Enterprise,"Business Services, Insurance, Wealth",Verified
+Accounting & Audit,Marcum LLP,USA,https://www.marcumllp.com,"1,500+","$500M+",1951,Large Enterprise,"Assurance, Tax, Advisory Services",Verified
+Legal Services,Kirkland & Ellis,USA,https://www.kirkland.com,"3,500+","$6.5B+",1909,Large Enterprise,"Corporate, Litigation, Restructuring, Private Equity",Verified
+Legal Services,Latham & Watkins,USA,https://www.lw.com,"3,200+","$5.5B+",1934,Large Enterprise,"Corporate, Litigation, Finance, Regulatory",Verified
+Legal Services,DLA Piper,UK,https://www.dlapiper.com,"4,200+","$3.8B+",2005,Large Enterprise,"Corporate, Litigation, Real Estate, IP",Verified
+Legal Services,Baker McKenzie,USA,https://www.bakermckenzie.com,"6,500+","$3.3B+",1949,Large Enterprise,"Corporate, Tax, International Trade",Verified
+Legal Services,Skadden Arps,USA,https://www.skadden.com,"1,700+","$2.8B+",1948,Large Enterprise,"M&A, Litigation, Corporate Governance",Verified
+Legal Services,Clifford Chance,UK,https://www.cliffordchance.com,"3,500+","$2.5B+",1900,Large Enterprise,"Banking & Finance, Capital Markets, Corporate",Verified
+Legal Services,Allen & Overy,UK,https://www.allenovery.com,"2,800+","$2.4B+",1930,Large Enterprise,"Banking, Finance, Corporate, Litigation",Verified
+Legal Services,Linklaters,UK,https://www.linklaters.com,"2,900+","$2.3B+",1838,Large Enterprise,"Corporate, Finance, Capital Markets",Verified
+Legal Services,Sidley Austin,USA,https://www.sidley.com,"2,200+","$2.7B+",1866,Large Enterprise,"Corporate, Litigation, Financial Services",Verified
+Legal Services,White & Case,USA,https://www.whitecase.com,"2,600+","$2.9B+",1901,Large Enterprise,"Cross-Border M&A, International Arbitration",Verified
+Legal Services,Hogan Lovells,UK,https://www.hoganlovells.com,"2,800+","$2.5B+",2010,Large Enterprise,"Corporate, Litigation, IP, Regulatory",Verified
+Legal Services,Jones Day,USA,https://www.jonesday.com,"2,500+","$2.4B+",1893,Large Enterprise,"Litigation, Corporate, Tax, Labor",Verified
+Legal Services,Norton Rose Fulbright,UK,https://www.nortonrosefulbright.com,"3,000+","$2.3B+",1794,Large Enterprise,"Corporate, Litigation, Regulatory, Energy",Verified
+Legal Services,Greenberg Traurig,USA,https://www.gtlaw.com,"2,500+","$2B+",1967,Large Enterprise,"Corporate, Real Estate, Litigation, IP",Verified
+Legal Services,King & Spalding,USA,https://www.kslaw.com,"1,200+","$1.5B+",1885,Large Enterprise,"Litigation, Healthcare, Corporate, Energy",Verified
+Legal Services,Morgan Lewis,USA,https://www.morganlewis.com,"2,200+","$2.6B+",1873,Large Enterprise,"Corporate, Litigation, Labor, IP",Verified
+Legal Services,Paul Weiss,USA,https://www.paulweiss.com,"1,100+","$1.6B+",1875,Large Enterprise,"M&A, Litigation, Private Equity",Verified
+Legal Services,Ropes & Gray,USA,https://www.ropesgray.com,"1,500+","$2.5B+",1865,Large Enterprise,"Private Equity, Life Sciences, Litigation",Verified
+Legal Services,Sullivan & Cromwell,USA,https://www.sullcrom.com,"900+","$1.4B+",1879,Large Enterprise,"M&A, Corporate, Litigation, Financial Institutions",Verified
+Legal Services,Quinn Emanuel,USA,https://www.quinnemanuel.com,"900+","$1.5B+",1986,Large Enterprise,"Business Litigation, Trial Law",Verified
+Human Resources Consulting,Mercer,USA,https://www.mercer.com,"25,000+","$5B+",1937,Large Enterprise,"HR Consulting, Benefits, Investments, Career",Verified
+Human Resources Consulting,Aon Hewitt,UK,https://www.aon.com,"50,000+","$12B+",1913,Large Enterprise,"HR Solutions, Benefits, Risk, Retirement",Verified
+Human Resources Consulting,Willis Towers Watson,UK,https://www.wtwco.com,"46,000+","$9B+",1828,Large Enterprise,"HR Consulting, Benefits, Risk, Broking",Verified
+Human Resources Consulting,Korn Ferry,USA,https://www.kornferry.com,"9,000+","$2.5B+",1969,Large Enterprise,"Executive Search, Talent Management, Consulting",Verified
+Human Resources Consulting,Hay Group,USA,https://www.kornferry.com,"9,000+","$2.5B+ (Parent)",1943,Large Enterprise,"Job Evaluation, Compensation, Talent Management",Verified
+Human Resources Consulting,Randstad HR Solutions,Netherlands,https://www.randstad.com,"35,000+","$25B+",1960,Large Enterprise,"Staffing, Recruitment, HR Services",Verified
+Human Resources Consulting,ManpowerGroup Solutions,USA,https://www.manpowergroup.com,"28,000+","$21B+",1948,Large Enterprise,"Staffing, Recruitment, Workforce Solutions",Verified
+Human Resources Consulting,Robert Half International,USA,https://www.roberthalf.com,"15,500+","$7B+",1948,Large Enterprise,"Staffing, Accounting, Finance, IT",Verified
+Human Resources Consulting,Adecco Group,Switzerland,https://www.adeccogroup.com,"35,000+","$25B+",1957,Large Enterprise,"Staffing, Recruitment, HR Solutions",Verified
+Human Resources Consulting,Allegis Group,USA,https://www.allegisgroup.com,"15,000+","$12B+",1983,Large Enterprise,"Staffing, Recruitment, Talent Solutions",Verified
+Human Resources Consulting,Heidrick & Struggles,USA,https://www.heidrick.com,"2,000+","$900M+",1953,Large Enterprise,"Executive Search, Leadership Consulting",Verified
+Human Resources Consulting,Spencer Stuart,USA,https://www.spencerstuart.com,"1,500+","$700M+",1956,Large Enterprise,"Executive Search, Board Advisory",Verified
+Human Resources Consulting,Russell Reynolds Associates,USA,https://www.russellreynolds.com,"600+","$600M+",1969,Large Enterprise,"Executive Search, Assessment, Succession",Verified
+Human Resources Consulting,Egon Zehnder,Switzerland,https://www.egonzehnder.com,"500+","$600M+",1964,Large Enterprise,"Executive Search, Board Advisory, Leadership",Verified
+Human Resources Consulting,BCG BrightHouse,USA,https://www.bcg.com,"N/A","N/A",2001,Mid-Market,"Purpose & Culture Consulting, HR Strategy",Verified
+Human Resources Consulting,McKinsey People & Org,USA,https://www.mckinsey.com,"N/A","N/A",N/A,Large Enterprise,"Organization Design, Talent, HR Transformation",Verified
+Human Resources Consulting,PwC Saratoga,USA,https://www.pwc.com,"N/A","N/A",1979,Large Enterprise,"HR Benchmarking, Workforce Analytics",Verified
+Human Resources Consulting,WTW Talent & Rewards,UK,https://www.wtwco.com,"N/A","N/A",N/A,Large Enterprise,"Compensation, Benefits, Talent Management",Verified
+Human Resources Consulting,Gallup Consulting,USA,https://www.gallup.com,"2,000+","$100M+",1935,Large Enterprise,"Employee Engagement, Analytics, Advisory",Verified
+Human Resources Consulting,Insperity,USA,https://www.insperity.com,"5,000+","$5B+",1986,Large Enterprise,"HR Outsourcing, PEO, Benefits Administration",Verified
+Marketing & Advertising,WPP,UK,https://www.wpp.com,"109,000+","$17B+",1985,Conglomerate,"Advertising, Media, PR, Digital Transformation",Verified
+Marketing & Advertising,Omnicom Group,USA,https://www.omnicomgroup.com,"71,000+","$15B+",1986,Conglomerate,"Advertising, Marketing, Corporate Communications",Verified
+Marketing & Advertising,Publicis Groupe,France,https://www.publicisgroupe.com,"101,000+","$15B+",1926,Conglomerate,"Digital Transformation, Creative, Media",Verified
+Marketing & Advertising,Interpublic Group,USA,https://www.interpublic.com,"54,000+","$11B+",1902,Conglomerate,"Advertising, Digital Marketing, PR",Verified
+Marketing & Advertising,Dentsu,Japan,https://www.dentsu.com,"65,000+","$9B+",1901,Conglomerate,"Advertising, Japanese Market, Digital",Verified
+Marketing & Advertising,Havas Group,France,https://www.havas.com,"20,000+","$3B+",1835,Large Enterprise,"Creative Advertising, Media, Health",Verified
+Marketing & Advertising,Accenture Interactive,Ireland,https://www.accenture.com,"721,000+ (Parent)","$64B+ (Parent)",2009,Conglomerate,"Digital Marketing, Customer Experience",Verified
+Marketing & Advertising,Deluxe Media,USA,https://www.deluxe.com,"4,000+","$600M+",1915,Large Enterprise,"Content Localization, Distribution",Verified
+Marketing & Advertising,MDC Partners,USA,https://www.mdc-partners.com,"5,000+","$1.5B+",1980,Large Enterprise,"Creative Agencies, Marketing Services",Verified
+Marketing & Advertising,S4 Capital,UK,https://www.s4capital.com,"9,000+","$1B+",2018,Large Enterprise,"Digital Advertising, Content, Data & Media",Verified
+Marketing & Advertising,BlueFocus Communication Group,China,https://www.bluefocusgroup.com,"8,000+","$6B+",1996,Large Enterprise,"Digital Marketing, PR, Chinese Market",Verified
+Marketing & Advertising,Cheil Worldwide,South Korea,https://www.cheil.com,"6,000+","$2B+",1973,Large Enterprise,"Advertising, Samsung Affiliate, Global",Verified
+Marketing & Advertising,Hakuhodo DY Holdings,Japan,https://www.hakuhodody.com,"15,000+","$7B+",1895,Large Enterprise,"Advertising, Japanese Market, Research",Verified
+Marketing & Advertising,Asatsu-DK,Japan,https://www.adk.jp,"3,000+","$1B+",1956,Large Enterprise,"Advertising, Marketing, Japan",Verified
+Marketing & Advertising,CJ ENM,South Korea,https://www.cjenm.com,"5,000+","$5B+",1995,Large Enterprise,"Content, Media, Entertainment, Marketing",Verified
+Marketing & Advertising,Innocean Worldwide,South Korea,https://www.innocean.com,"2,500+","$500M+",2005,Large Enterprise,"Advertising, Automotive, Global",Verified
+Marketing & Advertising,Stagwell,USA,https://www.stagwellglobal.com,"13,000+","$2.5B+",2015,Large Enterprise,"Digital Transformation, Marketing, Communications",Verified
+Marketing & Advertising,VMLY&R,USA,https://www.vmlyr.com,"12,000+","$1.5B+",2018,Large Enterprise,"Brand Experience, Digital Marketing, Commerce",Verified
+Marketing & Advertising,R/GA,USA,https://www.rga.com,"1,500+","N/A",1977,Large Enterprise,"Digital Advertising, Innovation Consulting",Verified
+Marketing & Advertising,72andSunny,USA,https://www.72andsunny.com,"400+","$100M+",2004,Mid-Market,"Brand Innovation, Creative Advertising",Verified
+Engineering Consulting,AECOM,USA,https://www.aecom.com,"51,000+","$13B+",1990,Large Enterprise,"Infrastructure Design, Program Management, Environment",Verified
+Engineering Consulting,Jacobs Engineering Group,USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Aerospace, Technology, Buildings, Infrastructure",Verified
+Engineering Consulting,WSP Global,Canada,https://www.wsp.com,"67,000+","$11B+",1959,Large Enterprise,"Property, Transport, Environment, Energy",Verified
+Engineering Consulting,Arcadis,Netherlands,https://www.arcadis.com,"36,000+","$4.5B+",1888,Large Enterprise,"Environment, Infrastructure, Water, Buildings",Verified
+Engineering Consulting,Tetra Tech,USA,https://www.tetratech.com,"21,000+","$3.5B+",1966,Large Enterprise,"Water, Environment, Sustainable Infrastructure",Verified
+Engineering Consulting,Stantec,Canada,https://www.stantec.com,"26,000+","$5B+",1954,Large Enterprise,"Buildings, Energy, Water, Infrastructure",Verified
+Engineering Consulting,Wood Group,UK,https://www.woodplc.com,"35,000+","$5B+",1912,Large Enterprise,"Energy, Environment, Infrastructure, Mining",Verified
+Engineering Consulting,SNC-Lavalin,Canada,https://www.snclavalin.com,"30,000+","$7B+",1911,Large Enterprise,"Engineering, Procurement, Construction, PM",Verified
+Engineering Consulting,Ramboll Group,Denmark,https://ramboll.com,"17,000+","$2B+",1945,Large Enterprise,"Environment, Health, Energy, Buildings",Verified
+Engineering Consulting,Black & Veatch,USA,https://www.bv.com,"10,000+","$3.5B+",1915,Large Enterprise,"Energy, Water, Telecommunications",Verified
+Engineering Consulting,Fluor Corporation,USA,https://www.fluor.com,"40,000+","$14B+",1912,Large Enterprise,"EPC, Energy, Infrastructure, Life Sciences",Verified
+Engineering Consulting,GHD Group,Australia,https://www.ghd.com,"10,000+","$2B+",1928,Large Enterprise,"Water, Energy, Environment, Property",Verified
+Engineering Consulting,EXP,Canada,https://www.exp.com,"3,500+","$500M+",1956,Large Enterprise,"Engineering, Architecture, Consulting",Verified
+Engineering Consulting,Mott MacDonald,UK,https://www.mottmac.com,"18,000+","$2.5B+",1902,Large Enterprise,"Built Environment, Transport, Water, Energy",Verified
+Engineering Consulting,Kimley-Horn,USA,https://www.kimley-horn.com,"6,000+","$1.5B+",1967,Large Enterprise,"Land Development, Transportation, Environmental",Verified
+Engineering Consulting,HDR Inc.,USA,https://www.hdrinc.com,"12,000+","$2.5B+",1917,Large Enterprise,"Architecture, Engineering, Consulting",Verified
+Engineering Consulting,KBR,USA,https://www.kbr.com,"29,000+","$6B+",1901,Large Enterprise,"Government Services, Technology, Energy",Verified
+Engineering Consulting,AtkinsRéalis,Canada,https://www.atkinsrealis.com,"18,000+","$6B+",1911,Large Enterprise,"Engineering, Design, Project Management",Verified
+Engineering Consulting,Sweco,Sweden,https://www.sweco.se,"18,000+","$2.5B+",1958,Large Enterprise,"Architecture, Engineering, Environmental",Verified
+Engineering Consulting,Pöyry Group (AFRY),Switzerland,https://afry.com,"19,000+","$2.5B+",1898,Large Enterprise,"Energy, Infrastructure, Industry, Bioeconomy",Verified
+Environmental Consulting,ERM Group,UK,https://www.erm.com,"7,000+","$1.5B+",1971,Large Enterprise,"Sustainability, Climate Change, EHS, Transactions",Verified
+Environmental Consulting,Ramboll Environ,Denmark,https://ramboll.com,"17,000+","$2B+",1945,Large Enterprise,"Environment, Health, Energy, Buildings",Verified
+Environmental Consulting,AECOM Environment,USA,https://www.aecom.com,"51,000+ (Parent)","$13B+ (Parent)",1990,Large Enterprise,"Environmental Planning, Remediation, Compliance",Verified
+Environmental Consulting,Tetra Tech ES,USA,https://www.tetratech.com,"21,000+ (Parent)","$3.5B+ (Parent)",1966,Large Enterprise,"Environmental Management, Water, International Dev",Verified
+Environmental Consulting,Arcadis Gen,Netherlands,https://www.arcadis.com,"36,000+ (Parent)","$4.5B+ (Parent)",1888,Large Enterprise,"Environmental Remediation, Water Management",Verified
+Environmental Consulting,Antea Group,USA,https://us.anteagroup.com,"3,500+","$500M+",1972,Large Enterprise,"EHS, Risk Management, Sustainability",Verified
+Environmental Consulting,SLR Consulting,UK,https://www.slrconsulting.com,"2,000+","$300M+",1994,Large Enterprise,"Environmental & Advisory Services",Verified
+Environmental Consulting,Golder Associates (WSP),Canada,https://www.wsp.com,"7,000+","$1B+",1960,Large Enterprise,"Geotechnical, Environmental, Social",Verified
+Environmental Consulting,RPS Group,UK,https://www.rpsgroup.com,"5,000+","$700M+",1970,Large Enterprise,"Energy, Environment, Infrastructure",Verified
+Environmental Consulting,Stantec Environmental,Canada,https://www.stantec.com,"26,000+ (Parent)","$5B+ (Parent)",1954,Large Enterprise,"Environmental Services, Water, Ecology",Verified
+Environmental Consulting,WSP Environment,Canada,https://www.wsp.com,"67,000+ (Parent)","$11B+ (Parent)",1959,Large Enterprise,"Environmental Planning, Impact Assessment",Verified
+Environmental Consulting,Geosyntec Consultants,USA,https://www.geosyntec.com,"1,200+","$200M+",1983,Large Enterprise,"Geotechnical, Environmental, Water Resources",Verified
+Environmental Consulting,Trinity Consultants,USA,https://www.trinityconsultants.com,"600+","$100M+",1974,Mid-Market,"Air Quality, EHS Compliance, Management",Verified
+Environmental Consulting,Ramboll Environ,Denmark,https://ramboll.com,"17,000+","$2B+",1945,Large Enterprise,"Environment, Health, Energy, Buildings",Verified
+Environmental Consulting,Advisian (Worley),Australia,https://www.advisian.com,"N/A","N/A",2015,Mid-Market,"Energy, Resources, Environmental Advisory",Verified
+Environmental Consulting,Cardno (Stantec),Australia,https://www.cardno.com,"N/A","N/A",1945,Large Enterprise,"International Development, Environment, Infrastructure",Verified
+Environmental Consulting,CH2M Hill (Jacobs),USA,https://www.jacobs.com,"N/A","N/A",1946,Large Enterprise,"Water, Environment, Transportation, Nuclear",Verified
+Environmental Consulting,ENSR (AECOM),USA,https://www.aecom.com,"N/A","N/A",1970,Large Enterprise,"Environmental Remediation, Compliance",Verified
+Environmental Consulting,Langan Engineering,USA,https://www.langan.com,"1,300+","$300M+",1970,Large Enterprise,"Geotechnical, Environmental, Site Engineering",Verified
+Environmental Consulting,Terrapex Environmental,Canada,https://www.terrapex.com,"200+","$30M+",1986,Small Enterprise,"Environmental Site Assessment, Remediation",Verified
+Risk & Compliance Consulting,Kroll,USA,https://www.kroll.com,"6,500+","$2B+",1972,Large Enterprise,"Risk, Compliance, Cyber, Investigations",Verified
+Risk & Compliance Consulting,Control Risks,UK,https://www.controlrisks.com,"2,000+","$300M+",1975,Large Enterprise,"Risk Consulting, Security, Political Risk",Verified
+Risk & Compliance Consulting,FTI Consulting,USA,https://www.fticonsulting.com,"7,500+","$3B+",1982,Large Enterprise,"Forensic, Litigation, Restructuring, Strategic Comms",Verified
+Risk & Compliance Consulting,NAVEX Global,USA,https://www.navex.com,"1,000+","$200M+",1997,Mid-Market,"Compliance Management Software, Advisory",Verified
+Risk & Compliance Consulting,Duff & Phelps,USA,https://www.duffandphelps.com,"4,000+","$2B+",1932,Large Enterprise,"Valuation, Corporate Finance, Compliance",Verified
+Risk & Compliance Consulting,Protiviti,USA,https://www.protiviti.com,"9,000+","$1.5B+",2002,Large Enterprise,"Internal Audit, Risk, Compliance, Technology",Verified
+Risk & Compliance Consulting,Verisk Analytics,USA,https://www.verisk.com,"10,000+","$3B+",1971,Large Enterprise,"Data Analytics, Risk Assessment, Insurance",Verified
+Risk & Compliance Consulting,Guidehouse,USA,https://guidehouse.com,"17,000+","$3B+",2018,Large Enterprise,"Management Consulting, Risk, Technology, Healthcare",Verified
+Risk & Compliance Consulting,Exiger,USA,https://www.exiger.com,"500+","$100M+",2013,Mid-Market,"Supply Chain Risk, Compliance, Due Diligence",Verified
+Risk & Compliance Consulting,GAN Integrity,USA,https://www.ganintegrity.com,"200+","$50M+",2004,Small Enterprise,"Compliance Management Software, Advisory",Verified
+Risk & Compliance Consulting,PA Consulting,UK,https://www.paconsulting.com,"4,000+","$700M+",1943,Large Enterprise,"Innovation, Technology, Strategy, Risk",Verified
+Risk & Compliance Consulting,SGS,Switzerland,https://www.sgs.com,"97,000+","$7B+",1878,Conglomerate,"Inspection, Verification, Testing, Certification",Verified
+Risk & Compliance Consulting,Bureau Veritas,France,https://www.bureauveritas.com,"82,000+","$6B+",1828,Conglomerate,"Testing, Inspection, Certification",Verified
+Risk & Compliance Consulting,Intertek,UK,https://www.intertek.com,"46,000+","$4B+",1885,Conglomerate,"Quality Assurance, Testing, Inspection, Certification",Verified
+Risk & Compliance Consulting,LRQA (Lloyd's Register),UK,https://www.lrqa.com,"7,500+","$1B+",1760,Large Enterprise,"Marine, Energy, Management Systems Certification",Verified
+Risk & Compliance Consulting,DNV GL,Norway,https://www.dnv.com,"12,000+","$2.5B+",1864,Large Enterprise,"Maritime, Oil & Gas, Energy, Certification",Verified
+Risk & Compliance Consulting,TÜV SÜD,Germany,https://www.tuvsud.com,"25,000+","$3B+",1866,Large Enterprise,"Testing, Certification, Auditing, Training",Verified
+Risk & Compliance Consulting,TÜV Rheinland,Germany,https://www.tuv.com,"20,000+","$2.5B+",1872,Large Enterprise,"Testing, Inspection, Certification",Verified
+Risk & Compliance Consulting,BSI Group,UK,https://www.bsigroup.com,"4,000+","$600M+",1901,Large Enterprise,"Standards, Certification, Compliance",Verified
+Risk & Compliance Consulting,ERM Certification,UK,https://www.erm.com,"N/A","N/A",N/A,Large Enterprise,"Sustainability, EHS Management Systems Certification",Verified
+Economic Consulting,Cornerstone Research,USA,https://www.cornerstone.com,"700+","$300M+",1989,Mid-Market,"Economic & Financial Consulting, Litigation Support",Verified
+Economic Consulting,Brattle Group,USA,https://www.brattle.com,"500+","$150M+",1990,Mid-Market,"Economic Consulting, Expert Testimony",Verified
+Economic Consulting,Analysis Group,USA,https://www.analysisgroup.com,"1,200+","$500M+",1981,Large Enterprise,"Economic, Financial, & Strategy Consulting",Verified
+Economic Consulting,Charles River Associates,USA,https://www.crai.com,"1,000+","$600M+",1965,Large Enterprise,"Economic, Financial, & Management Consulting",Verified
+Economic Consulting,NERA Economic Consulting,USA,https://www.nera.com,"700+","$250M+",1961,Mid-Market,"Economic Consulting, Litigation, Regulation",Verified
+Economic Consulting,Compass Lexecon,USA,https://www.compasslexecon.com,"600+","$200M+",1977,Mid-Market,"Antitrust, Finance, Regulation, Litigation",Verified
+Economic Consulting,FTI Consulting Economics,USA,https://www.fticonsulting.com,"N/A","N/A",N/A,Large Enterprise,"Economic & Financial Consulting, Disputes",Verified
+Economic Consulting,The Berkeley Research Group,USA,https://thinkbrg.com,"1,500+","$900M+",2010,Large Enterprise,"Economic, Financial, & Advisory Services",Verified
+Economic Consulting,Economic Insight,UK,https://www.economicinsight.com,"50+","N/A",1999,Small Enterprise,"Economic Regulation, Policy, Competition",Verified
+Economic Consulting,Frontier Economics,UK,https://www.frontier-economics.com,"300+","$80M+",1999,Mid-Market,"Economic Regulation, Competition Policy",Verified
+Economic Consulting,Oxford Economics,UK,https://www.oxfordeconomics.com,"400+","$100M+",1981,Mid-Market,"Global Forecasting, Economic Impact",Verified
+Economic Consulting,Cambridge Econometrics,UK,https://www.camecon.com,"50+","N/A",1978,Small Enterprise,"Economic Modeling, Policy Analysis",Verified
+Economic Consulting,CRA International,USA,https://www.crai.com,"1,000+","$600M+",1965,Large Enterprise,"Economic, Financial, & Management Consulting",Verified
+Economic Consulting,EY-Parthenon,UK,https://www.ey.com,"N/A","N/A",1991,Large Enterprise,"Strategy Consulting, M&A, Portfolio Strategy",Verified
+Economic Consulting,LECG (now part of various),USA,https://www.lecg.com (archived),N/A,N/A,1988,N/A,"Economic & Financial Consulting (Defunct)",Verified
+Economic Consulting,Ecorys,Netherlands,https://www.ecorys.com,"4,000+","$500M+",1929,Large Enterprise,"Economic & Social Development, Policy, Research",Verified
+Economic Consulting,Ramboll Economics,Denmark,https://ramboll.com,"N/A","N/A",N/A,Large Enterprise,"Economic Analysis, Impact Assessment",Verified
+Economic Consulting,CEBR,UK,https://cebr.com,"50+","N/A",1992,Small Enterprise,"Economic Forecasting, Research",Verified
+Economic Consulting,The Conference Board,USA,https://www.conference-board.org,"500+","$100M+",1916,Mid-Market,"Economic Research, Business Insights, C-Suite Networks",Verified
+Economic Consulting,Economic Policy Institute,USA,https://www.epi.org,"50+","N/A",1986,Small Enterprise,"Economic Research, Public Policy, Labor Market",Verified
+Real Estate Consulting,JLL (Jones Lang LaSalle),USA,https://www.jll.com,"105,000+","$20B+",1783,Conglomerate,"Property Management, Leasing, Capital Markets, Advisory",Verified
+Real Estate Consulting,CBRE Group,USA,https://www.cbre.com,"115,000+","$31B+",1906,Conglomerate,"Property Sales, Leasing, Management, Valuation",Verified
+Real Estate Consulting,Cushman & Wakefield,USA,https://www.cushmanwakefield.com,"50,000+","$10B+",1917,Conglomerate,"Agency Leasing, Property Management, Valuation",Verified
+Real Estate Consulting,Colliers International,Canada,https://www.colliers.com,"17,000+","$4.5B+",1976,Large Enterprise,"Commercial Real Estate, Investment Services",Verified
+Real Estate Consulting,Savills,UK,https://www.savills.com,"39,000+","$2.5B+",1855,Large Enterprise,"Real Estate Services, Consulting, Property Management",Verified
+Real Estate Consulting,Knight Frank,UK,https://www.knightfrank.com,"20,000+","$800M+",1896,Large Enterprise,"Residential & Commercial Property, Consultancy",Verified
+Real Estate Consulting,Newmark Group,USA,https://www.ngkf.com,"7,000+","$2.5B+",1929,Large Enterprise,"Commercial Real Estate, Advisory, Capital Markets",Verified
+Real Estate Consulting,Marcus & Millichap,USA,https://www.marcusmillichap.com,"2,000+","$1B+",1971,Large Enterprise,"Investment Sales, Commercial Real Estate",Verified
+Real Estate Consulting,Avison Young,Canada,https://www.avisonyoung.com,"5,000+","$800M+",1978,Large Enterprise,"Commercial Real Estate Services, Consulting",Verified
+Real Estate Consulting,BRE (Building Research Establishment),UK,https://bregroup.com,"600+","$100M+",1921,Mid-Market,"Building Science, Sustainability, Fire Safety",Verified
+Real Estate Consulting,HVS Global Hospitality,USA,https://www.hvs.com,"500+","$100M+",1980,Mid-Market,"Hospitality Consulting, Valuation, Advisory",Verified
+Real Estate Consulting,Altus Group,Canada,https://www.altusgroup.com,"2,500+","$500M+",2005,Large Enterprise,"Property Tax, Valuation, Cost Consulting",Verified
+Real Estate Consulting,Transwestern,USA,https://www.transwestern.com,"2,000+","$400M+",1978,Large Enterprise,"Commercial Real Estate, Advisory, Agency",Verified
+Real Estate Consulting,Binswanger,USA,https://www.binswanger.com,"200+","$50M+",1931,Small Enterprise,"Corporate Real Estate, Advisory Services",Verified
+Real Estate Consulting,Franklin Street,USA,https://www.franklinst.com,"200+","$40M+",2006,Small Enterprise,"Real Estate, Capital, Insurance, Advisory",Verified
+Real Estate Consulting,Lee & Associates,USA,https://www.lee-associates.com,"1,000+","$200M+",1979,Mid-Market,"Commercial Real Estate Services",Verified
+Real Estate Consulting,NAI Global,USA,https://www.naiglobal.com,"5,000+","$500M+",1978,Large Enterprise,"Commercial Real Estate, Corporate Services",Verified
+Real Estate Consulting,Integra Realty Resources,USA,https://irr.com,"1,000+","$150M+",1999,Mid-Market,"Real Estate Valuation, Advisory, Consulting",Verified
+Real Estate Consulting,The Weitzman Group,USA,https://www.weitzmangroup.com,"300+","$60M+",1983,Small Enterprise,"Retail Real Estate, Advisory, Leasing",Verified
+Real Estate Consulting,Stok,USA,https://www.stok.com,"100+","$20M+",2012,Small Enterprise,"Sustainable Real Estate, Green Building Consulting",Verified
+Healthcare Consulting,IQVIA,USA,https://www.iqvia.com,"82,000+","$15B+",1982,Conglomerate,"Life Sciences, Clinical Research, Commercial Strategy",Verified
+Healthcare Consulting,Huron Consulting Group,USA,https://www.huronconsultinggroup.com,"4,000+","$1B+",2002,Large Enterprise,"Healthcare, Education, Business Advisory",Verified
+Healthcare Consulting,Chartis Group,USA,https://www.chartis.com,"500+","$150M+",2001,Mid-Market,"Healthcare Advisory, Digital Health, Strategy",Verified
+Healthcare Consulting,ECG Management Consultants,USA,https://www.ecgmc.com,"400+","$100M+",1993,Mid-Market,"Healthcare Strategy, Operations, Transactions",Verified
+Healthcare Consulting,LEK Health,USA,https://www.lek.com,"N/A","N/A",N/A,Large Enterprise,"Life Sciences, Biopharma, MedTech Strategy",Verified
+Healthcare Consulting,ZS Associates Health,USA,https://www.zs.com,"N/A","N/A",N/A,Large Enterprise,"Pharmaceuticals, Biotech, Commercial Strategy",Verified
+Healthcare Consulting,Guidehouse Health,USA,https://guidehouse.com,"N/A","N/A",N/A,Large Enterprise,"Healthcare Provider, Payer, Public Health",Verified
+Healthcare Consulting,McKinsey Healthcare,USA,https://www.mckinsey.com,"N/A","N/A",N/A,Large Enterprise,"Healthcare Strategy, Operations, Public Health",Verified
+Healthcare Consulting,Bain Healthcare,USA,https://www.bain.com,"N/A","N/A",N/A,Large Enterprise,"Healthcare Private Equity, Provider Performance",Verified
+Healthcare Consulting,BCG Health,USA,https://www.bcg.com,"N/A","N/A",N/A,Large Enterprise,"Biopharma, Health Systems, Digital Health",Verified
+Healthcare Consulting,Simon-Kucher Health,Germany,https://www.simon-kucher.com,"N/A","N/A",N/A,Large Enterprise,"Healthcare Pricing, Market Access, Commercial",Verified
+Healthcare Consulting,ClearView Healthcare Partners,USA,https://www.clearviewhcp.com,"200+","$50M+",2007,Small Enterprise,"Biopharmaceuticals, Strategy, Commercialization",Verified
+Healthcare Consulting,Putnam Associates,USA,https://www.putnamassociates.com,"150+","$40M+",1988,Small Enterprise,"Biopharmaceuticals, Strategy, Commercial Planning",Verified
+Healthcare Consulting,Health Advances,USA,https://www.healthadvances.com,"100+","$30M+",1991,Small Enterprise,"MedTech, Diagnostics, Life Sciences Strategy",Verified
+Healthcare Consulting,Trinity Life Sciences,USA,https://trinitylifesciences.com,"300+","$70M+",1996,Mid-Market,"Life Sciences, Commercial Strategy, Analytics",Verified
+Healthcare Consulting,Symbiance,Germany,https://www.symbiance.com,"100+","$20M+",2002,Small Enterprise,"Life Sciences, Digital Health, Technology",Verified
+Healthcare Consulting,Avalere Health,USA,https://avalere.com,"500+","$100M+",2000,Mid-Market,"Healthcare Policy, Market Access, Evidence",Verified
+Healthcare Consulting,Navigant Healthcare,USA,https://guidehouse.com,"N/A","N/A",1983,Large Enterprise,"Healthcare Provider, Payer, Life Sciences",Verified
+Healthcare Consulting,GE Healthcare Partners,USA,https://www.gehealthcare.com,"N/A","N/A",N/A,Large Enterprise,"Healthcare Performance Improvement, Advisory",Verified
+Healthcare Consulting,PA Consulting Health,UK,https://www.paconsulting.com,"N/A","N/A",N/A,Large Enterprise,"Healthcare Innovation, Technology, Strategy",Verified
+Education Consulting,McKinsey Education,USA,https://www.mckinsey.com,"N/A","N/A",N/A,Large Enterprise,"Education System Transformation, Strategy",Verified
+Education Consulting,Boston Consulting Group Education,USA,https://www.bcg.com,"N/A","N/A",N/A,Large Enterprise,"Education Strategy, Public Sector, EdTech",Verified
+Education Consulting,Parthenon-EY Education,UK,https://www.ey.com,"N/A","N/A",1991,Large Enterprise,"Education Strategy, M&A, Public Policy",Verified
+Education Consulting,Bain Education,USA,https://www.bain.com,"N/A","N/A",N/A,Large Enterprise,"Education Strategy, Performance Improvement",Verified
+Education Consulting,LEK Education,USA,https://www.lek.com,"N/A","N/A",N/A,Large Enterprise,"Education M&A, Due Diligence, Strategy",Verified
+Education Consulting,IEE (Institute for Educational Excellence),USA,https://www.ieeglobal.org,"50+","N/A",1995,Small Enterprise,"International Education Development, Consulting",Verified
+Education Consulting,Cambridge Education,UK,https://www.camb-ed.com,"200+","$30M+",2001,Small Enterprise,"International Development, Education Reform",Verified
+Education Consulting,Education Development Trust,UK,https://www.educationdevelopmenttrust.com,"500+","$50M+",1968,Mid-Market,"Education Research, School Improvement, Intl Dev",Verified
+Education Consulting,Tribal Group,UK,https://www.tribalgroup.com,"500+","$100M+",1999,Mid-Market,"Education Software, Services, Consulting",Verified
+Education Consulting,C2 Education,USA,https://www.c2educate.com,"1,000+","$100M+",1997,Mid-Market,"Test Prep, Tutoring, College Counseling",Verified
+Education Consulting,Kaplan Inc.,USA,https://www.kaplan.com,"12,000+","$1.5B+",1938,Large Enterprise,"Test Preparation, Higher Education, Professional Training",Verified
+Education Consulting,Educational Testing Service,USA,https://www.ets.org,"2,500+","$1B+",1947,Large Enterprise,"Assessment, Research, Policy, Testing",Verified
+Education Consulting,ETS Global,Netherlands,https://www.etsglobal.org,"N/A","N/A",N/A,Large Enterprise,"International Education Assessments, Services",Verified
+Education Consulting,CRB (Campus Research & Planning),USA,https://www.crbusa.com,"50+","N/A",1994,Small Enterprise,"Higher Education Facility Planning, Consulting",Verified
+Education Consulting,The Parthenon Group,USA,https://www.ey.com,"N/A","N/A",1991,Large Enterprise,"Education Strategy, M&A, Public Policy",Verified
+Education Consulting,RM Education,UK,https://www.rm.com,"1,000+","$200M+",1973,Mid-Market,"Education Technology, Resources, Assessment",Verified
+Education Consulting,Cambridge Assessment,UK,https://www.cambridgeassessment.org.uk,"2,500+","$500M+",1858,Large Enterprise,"Assessment, Qualifications, Research",Verified
+Education Consulting,IBIS Consulting,USA,https://ibisconsultinggroup.com,"20+","N/A",1999,Small Enterprise,"Independent School Consulting, Strategic Planning",Verified
+Education Consulting,Academic Partnerships,USA,https://www.academicpartnerships.com,"500+","$100M+",2007,Mid-Market,"Online Program Management, Higher Education",Verified
+Education Consulting,Eduventures Research,USA,https://www.encoura.org,"50+","N/A",1997,Small Enterprise,"Higher Education Research, Advisory",Verified
+Logistics & Supply Chain Consulting,McKinsey Operations,USA,https://www.mckinsey.com,"N/A","N/A",N/A,Large Enterprise,"Supply Chain Strategy, Operations, Procurement",Verified
+Logistics & Supply Chain Consulting,BCG Supply Chain,USA,https://www.bcg.com,"N/A","N/A",N/A,Large Enterprise,"Supply Chain Transformation, Digital Operations",Verified
+Logistics & Supply Chain Consulting,Bain Performance Improvement,USA,https://www.bain.com,"N/A","N/A",N/A,Large Enterprise,"Supply Chain, Procurement, Operational Excellence",Verified
+Logistics & Supply Chain Consulting,Kearney Operations,USA,https://www.kearney.com,"N/A","N/A",N/A,Large Enterprise,"Supply Chain, Operations, Strategic Sourcing",Verified
+Logistics & Supply Chain Consulting,GEP Worldwide,USA,https://www.gep.com,"5,000+","$700M+",1999,Large Enterprise,"Procurement, Supply Chain, Software",Verified
+Logistics & Supply Chain Consulting,EY Supply Chain,UK,https://www.ey.com,"N/A","N/A",N/A,Large Enterprise,"Supply Chain, Operations, Digital",Verified
+Logistics & Supply Chain Consulting,Deloitte Supply Chain,UK,https://www2.deloitte.com,"N/A","N/A",N/A,Large Enterprise,"Supply Chain & Network Operations",Verified
+Logistics & Supply Chain Consulting,Accenture Supply Chain,Ireland,https://www.accenture.com,"N/A","N/A",N/A,Conglomerate,"Supply Chain & Operations, Digital",Verified
+Logistics & Supply Chain Consulting,CAPGEMINI Invent Supply Chain,France,https://www.capgemini.com,"N/A","N/A",N/A,Conglomerate,"Supply Chain Transformation, Digital",Verified
+Logistics & Supply Chain Consulting,Infosys Consulting,India,https://www.infosys.com,"N/A","N/A",N/A,Conglomerate,"Supply Chain Planning, Logistics, SCM",Verified
+Logistics & Supply Chain Consulting,IBM Global Supply Chain,USA,https://www.ibm.com,"N/A","N/A",N/A,Conglomerate,"Supply Chain, Blockchain, AI, Analytics",Verified
+Logistics & Supply Chain Consulting,LE Supply Chain,USA,https://www.lek.com,"N/A","N/A",N/A,Large Enterprise,"Supply Chain Strategy, Due Diligence",Verified
+Logistics & Supply Chain Consulting,Tompkins International,USA,https://tompkinsinc.com,"200+","$40M+",1975,Small Enterprise,"Supply Chain Integration, Strategy, Implementation",Verified
+Logistics & Supply Chain Consulting,Chainalytics (NTT DATA),USA,https://www.nttdata.com,"N/A","N/A",1999,Large Enterprise,"Supply Chain Analytics, Planning, Network Design",Verified
+Logistics & Supply Chain Consulting,Argon & Co,UK,https://www.argonandco.com,"300+","$50M+",2014,Mid-Market,"Operations & Supply Chain Transformation",Verified
+Logistics & Supply Chain Consulting,AlixPartners Operations,USA,https://www.alixpartners.com,"N/A","N/A",N/A,Large Enterprise,"Supply Chain, Turnaround, Performance Improvement",Verified
+Logistics & Supply Chain Consulting,River Logic,USA,https://www.riverlogic.com,"100+","$20M+",2000,Small Enterprise,"Supply Chain Planning, Digital Twin, Software",Verified
+Logistics & Supply Chain Consulting,Optiant (PTC),USA,https://www.ptc.com,"N/A","N/A",2000,Small Enterprise,"Supply Chain Design, Inventory Optimization",Verified
+Logistics & Supply Chain Consulting,LLamasoft (Coupa),USA,https://www.coupa.com,"N/A","N/A",1997,Large Enterprise,"Supply Chain Design & Planning, Software",Verified
+Logistics & Supply Chain Consulting,Blue Yonder (Panasonic),USA,https://blueyonder.com,"3,000+","$1B+",1985,Large Enterprise,"Supply Chain Management, AI, SaaS",Verified
+Executive Search,Korn Ferry,USA,https://www.kornferry.com,"9,000+","$2.5B+",1969,Large Enterprise,"Executive Search, Talent Management, Consulting",Verified
+Executive Search,Egon Zehnder,Switzerland,https://www.egonzehnder.com,"500+","$600M+",1964,Large Enterprise,"Executive Search, Board Advisory, Leadership",Verified
+Executive Search,Heidrick & Struggles,USA,https://www.heidrick.com,"2,000+","$900M+",1953,Large Enterprise,"Executive Search, Leadership Consulting",Verified
+Executive Search,Spencer Stuart,USA,https://www.spencerstuart.com,"1,500+","$700M+",1956,Large Enterprise,"Executive Search, Board Advisory",Verified
+Executive Search,Russell Reynolds Associates,USA,https://www.russellreynolds.com,"600+","$600M+",1969,Large Enterprise,"Executive Search, Assessment, Succession",Verified
+Executive Search,Boyden,USA,https://www.boyden.com,"800+","$200M+",1946,Mid-Market,"Executive Search, Interim Management",Verified
+Executive Search,Odgers Berndtson,UK,https://www.odgersberndtson.com,"300+","$150M+",1972,Mid-Market,"Executive Search, Leadership Assessment",Verified
+Executive Search,Signium International,Germany,https://www.signium.com,"200+","$50M+",1961,Small Enterprise,"Executive Search, Global Network",Verified
+Executive Search,Stanton Chase,USA,https://www.stantonchase.com,"300+","$70M+",1990,Mid-Market,"Executive Search, Global Network",Verified
+Executive Search,Amrop,Belgium,https://www.amrop.com,"500+","$100M+",1977,Mid-Market,"Executive Search, Leadership Consulting",Verified
+Executive Search,MWM Consulting,Switzerland,https://www.mwmconsulting.com,"50+","N/A",1999,Small Enterprise,"Executive Search, Board Services",Verified
+Executive Search,DHR International,USA,https://www.dhrglobal.com,"300+","$100M+",1989,Mid-Market,"Executive Search, Global Network",Verified
+Executive Search,WittKieffer,USA,https://www.wittkieffer.com,"200+","$50M+",1969,Small Enterprise,"Executive Search, Healthcare, Education, Non-Profit",Verified
+Executive Search,True Search,USA,https://truesearch.com,"400+","$100M+",2000,Mid-Market,"Executive Search, Venture, Growth Equity",Verified
+Executive Search,Caldwell Partners,Canada,https://www.caldwell.com,"150+","$30M+",1970,Small Enterprise,"Executive Search, Board Services",Verified
+Executive Search,Chartwell Partners,USA,https://www.chartwellpartners.com,"50+","N/A",2004,Small Enterprise,"Executive Search, Private Equity",Verified
+Executive Search,Perrett Laver,UK,https://www.perrettlaver.com,"100+","$20M+",1997,Small Enterprise,"Executive Search, Education, Non-Profit, Public Sector",Verified
+Executive Search,Leathwaite,UK,https://www.leathwaite.com,"100+","$20M+",1999,Small Enterprise,"Executive Search, Financial & Professional Services",Verified
+Executive Search,The Miles Group,USA,https://www.miles-group.com,"50+","N/A",2004,Small Enterprise,"Executive Coaching, Leadership Development",Verified
+Executive Search,Mercuri Urval,Sweden,https://www.mercuriurval.com,"1,000+","$150M+",1967,Mid-Market,"Executive Search, Talent Management",Verified
+Market Research,Nielsen Holdings,UK,https://www.nielsen.com,"47,000+","$3.5B+",1923,Large Enterprise,"Audience Measurement, Consumer Insights, Data",Verified
+Market Research,Kantar,UK,https://www.kantar.com,"30,000+","$3B+",1993,Large Enterprise,"Brand, Marketing, Consumer Insights, Data",Verified
+Market Research,IQVIA,USA,https://www.iqvia.com,"82,000+","$15B+",1982,Conglomerate,"Healthcare Data, Analytics, Research, Consulting",Verified
+Market Research,GfK SE,Germany,https://www.gfk.com,"9,000+","$1.5B+",1934,Large Enterprise,"Consumer Tracking, Market Intelligence, Retail",Verified
+Market Research,IRI (Circana),USA,https://www.iriworldwide.com,"5,000+","$1B+",1979,Large Enterprise,"CPG, Retail, Market Intelligence, Analytics",Verified
+Market Research,IPSOS,France,https://www.ipsos.com,"20,000+","$2.5B+",1975,Large Enterprise,"Public Affairs, Advertising, Marketing, Media Research",Verified
+Market Research,YouGov,UK,https://yougov.com,"1,800+","$250M+",2000,Large Enterprise,"Public Opinion, Data Analytics, Omnibus",Verified
+Market Research,Gallup,USA,https://www.gallup.com,"2,000+","$100M+",1935,Large Enterprise,"Public Opinion, Employee Engagement, Analytics",Verified
+Market Research,Forrester Research,USA,https://www.forrester.com,"2,000+","$500M+",1983,Large Enterprise,"Technology, Marketing, CX, Strategy Research",Verified
+Market Research,J.D. Power,USA,https://www.jdpower.com,"800+","$200M+",1968,Mid-Market,"Customer Satisfaction, Benchmarking, Analytics",Verified
+Market Research,Comscore,USA,https://www.comscore.com,"1,700+","$400M+",1999,Large Enterprise,"Cross-Platform Media Measurement, Analytics",Verified
+Market Research,Maru Group,Canada,https://marugroup.net,"500+","$80M+",2000,Mid-Market,"Insight Communities, Market Research, Data",Verified
+Market Research,Intage Group,Japan,https://www.intage.co.jp,"1,500+","$300M+",1960,Large Enterprise,"Market Research, Retail Tracking, Japan",Verified
+Market Research,Netquest,Spain,https://www.netquest.com,"200+","$30M+",1998,Small Enterprise,"Online Sampling, Digital Research",Verified
+Market Research,Kadence International,Singapore,https://www.kadence.com,"300+","$50M+",1991,Mid-Market,"B2B, Consumer, Healthcare Research",Verified
+Market Research,Research Now SSI,USA,https://www.surveysampling.com,"1,000+","$200M+",1977,Mid-Market,"Online Sampling, Data Collection",Verified
+Market Research,Fieldwork,USA,https://www.fieldwork.com,"500+","$100M+",1981,Mid-Market,"Focus Group Facilities, Qualitative Research",Verified
+Market Research,Stratistics MRC,USA,https://www.strategymrc.com,"50+","N/A",1999,Small Enterprise,"Market Research Reports, Publishing",Verified
+Market Research,Dynata,USA,https://www.dynata.com,"2,000+","$500M+",1999,Large Enterprise,"Online Panel, Data Collection, Insights",Verified
+Market Research,MarketCast,USA,https://www.marketcast.com,"300+","$60M+",1989,Mid-Market,"Entertainment, Media, Brand Research",Verified
+Public Relations,Edelman,USA,https://www.edelman.com,"6,000+","$1B+",1952,Large Enterprise,"Communications, Marketing, Public Affairs, Crisis",Verified
+Public Relations,Weber Shandwick,USA,https://www.webershandwick.com,"3,500+","$800M+",2001,Large Enterprise,"Integrated Communications, Digital, Public Affairs",Verified
+Public Relations,FleishmanHillard,USA,https://fleishmanhillard.com,"2,500+","$600M+",1946,Large Enterprise,"Communications, Public Relations, Public Affairs",Verified
+Public Relations,BCW (Burson Cohn & Wolfe),USA,https://www.bcw-global.com,"4,000+","$700M+",2018,Large Enterprise,"Communications, Public Relations, Digital",Verified
+Public Relations,MSL Group (Publicis),France,https://www.publicisgroupe.com,"N/A","N/A",N/A,Large Enterprise,"Public Relations, Communications",Verified
+Public Relations,Ogilvy PR,USA,https://www.ogilvy.com,"N/A","N/A",N/A,Large Enterprise,"Public Relations, Influence, Social Marketing",Verified
+Public Relations,Ketchum,USA,https://www.ketchum.com,"1,500+","$300M+",1923,Large Enterprise,"Public Relations, Brand Marketing, Corporate Affairs",Verified
+Public Relations,Hill+Knowlton Strategies,USA,https://www.hkstrategies.com,"2,000+","$400M+",1927,Large Enterprise,"Public Affairs, Corporate, Crisis Communications",Verified
+Public Relations,APCO Worldwide,USA,https://apcoworldwide.com,"1,000+","$200M+",1984,Large Enterprise,"Public Affairs, Strategic Communications, Crisis",Verified
+Public Relations,Golin,USA,https://www.golin.com,"800+","$150M+",1956,Mid-Market,"Public Relations, Integrated Communications",Verified
+Public Relations,Ruder Finn,USA,https://www.ruderfinn.com,"600+","$100M+",1948,Mid-Market,"Public Relations, Health, Technology, Lifestyle",Verified
+Public Relations,Finn Partners,USA,https://www.finnpartners.com,"1,200+","$200M+",2011,Large Enterprise,"Public Relations, Marketing, Digital",Verified
+Public Relations,ICF Next,USA,https://www.icf.com,"N/A","N/A",N/A,Large Enterprise,"Marketing Communications, Digital, Social",Verified
+Public Relations,Porter Novelli,USA,https://www.porternovelli.com,"600+","$100M+",1972,Mid-Market,"Public Relations, Social Impact, Brand",Verified
+Public Relations,Zeno Group,USA,https://www.zenogroup.com,"600+","$100M+",1998,Mid-Market,"Public Relations, Digital, Content",Verified
+Public Relations,Real Chemistry,USA,https://realchemistry.com,"1,500+","$300M+",2001,Large Enterprise,"Health, Technology, Marketing Science",Verified
+Public Relations,Highwire PR,USA,https://www.highwirepr.com,"200+","$40M+",2008,Small Enterprise,"Technology, B2B, Healthcare Public Relations",Verified
+Public Relations,Allison+Partners,USA,https://www.allisonpr.com,"400+","$80M+",2001,Mid-Market,"Public Relations, Marketing, Digital",Verified
+Public Relations,W2O Group,USA,https://www.w2ogroup.com,"1,200+","$200M+",2001,Large Enterprise,"Healthcare, Technology, Analytics",Verified
+Public Relations,Sunshine Sachs Morgan & Lylis,USA,https://ssmandl.com,"200+","$40M+",1999,Small Enterprise,"Entertainment, Public Affairs, Social Impact",Verified
+Architecture & Design Services,Gensler,USA,https://www.gensler.com,"6,000+","$1.5B+",1965,Large Enterprise,"Architecture, Design, Planning, Consulting",Verified
+Architecture & Design Services,AECOM Design,USA,https://www.aecom.com,"N/A","N/A",N/A,Large Enterprise,"Architecture, Building Engineering, Design",Verified
+Architecture & Design Services,Perkins and Will,USA,https://perkinswill.com,"2,500+","$600M+",1935,Large Enterprise,"Sustainable Architecture, Interior Design, Planning",Verified
+Architecture & Design Services,HOK,USA,https://www.hok.com,"1,800+","$500M+",1955,Large Enterprise,"Architecture, Engineering, Planning, Interiors",Verified
+Architecture & Design Services,Jacobs Design,USA,https://www.jacobs.com,"N/A","N/A",N/A,Large Enterprise,"Buildings & Infrastructure Design",Verified
+Architecture & Design Services,IBI Group,Canada,https://www.ibigroup.com,"3,000+","$400M+",1974,Large Enterprise,"Architecture, Planning, Engineering, Technology",Verified
+Architecture & Design Services,CallisonRTKL,USA,https://www.rtkl.com,"2,000+","$400M+",1946,Large Enterprise,"Retail, Mixed-Use, Hospitality, Architecture",Verified
+Architecture & Design Services,CannonDesign,USA,https://www.cannondesign.com,"1,200+","$300M+",1945,Large Enterprise,"Healthcare, Education, Science, Architecture",Verified
+Architecture & Design Services,NBBJ,USA,https://www.nbbj.com,"800+","$200M+",1943,Large Enterprise,"Corporate, Healthcare, Sports, Architecture",Verified
+Architecture & Design Services,Perkins Eastman,USA,https://perkinseastman.com,"1,200+","$250M+",1981,Large Enterprise,"Architecture, Interior Design, Planning",Verified
+Architecture & Design Services,HDR Architecture,USA,https://www.hdrinc.com,"12,000+ (Parent)","$2.5B+ (Parent)",1917,Large Enterprise,"Architecture, Engineering, Consulting",Verified
+Architecture & Design Services,Stantec Design,Canada,https://www.stantec.com,"26,000+ (Parent)","$5B+ (Parent)",1954,Large Enterprise,"Architecture, Interior Design, Planning",Verified
+Architecture & Design Services,Woods Bagot,Australia,https://www.woodsbagot.com,"1,000+","$200M+",1869,Large Enterprise,"Architecture, Interior Design, Master Planning",Verified
+Architecture & Design Services,Zaha Hadid Architects,UK,https://www.zaha-hadid.com,"500+","$100M+",1979,Large Enterprise,"Parametric Design, Iconic Architecture",Verified
+Architecture & Design Services,SOM (Skidmore Owings & Merrill),USA,https://www.som.com,"1,200+","$300M+",1936,Large Enterprise,"High-Rise, Urban Planning, Engineering",Verified
+Architecture & Design Services,Foster + Partners,UK,https://www.fosterandpartners.com,"1,500+","$250M+",1967,Large Enterprise,"Sustainable Design, Urban Planning, Architecture",Verified
+Architecture & Design Services,Bjarke Ingels Group,Denmark,https://big.dk,"600+","$100M+",2005,Large Enterprise,"Architecture, Urbanism, Research",Verified
+Architecture & Design Services,Snøhetta,Norway,https://snohetta.com,"200+","$50M+",1989,Mid-Market,"Architecture, Landscape, Interior, Branding",Verified
+Architecture & Design Services,UNStudio,Netherlands,https://www.unstudio.com,"200+","$40M+",1988,Small Enterprise,"Architecture, Urban Development, Infrastructure",Verified
+Architecture & Design Services,Henning Larsen,Denmark,https://henninglarsen.com,"400+","$80M+",1959,Mid-Market,"Architecture, Landscape, Urbanism",Verified
+Event Management,Informa Markets,UK,https://www.informa.com,"11,000+","$3B+",1998,Large Enterprise,"Exhibitions, Events, Academic Publishing",Verified
+Event Management,RELX Group (Reed Exhibitions),UK,https://www.reedexpo.com,"30,000+ (Parent)","$10B+ (Parent)",1965,Large Enterprise,"Exhibitions, Conferences, Events",Verified
+Event Management,Messe Frankfurt,Germany,https://www.messefrankfurt.com,"2,500+","$500M+",1240,Large Enterprise,"Trade Fairs, Congresses, Events",Verified
+Event Management,GL Events,France,https://www.gl-events.com,"4,000+","$1B+",1978,Large Enterprise,"Event Management, Venue Operation, Services",Verified
+Event Management,Clarion Events,UK,https://www.clarionevents.com,"500+","$150M+",1947,Mid-Market,"Exhibitions, Conferences, Events",Verified
+Event Management,Comexposium,France,https://www.comexposium.com,"700+","$200M+",1972,Mid-Market,"Trade Shows, B2B Events",Verified
+Event Management,Hyve Group,UK,https://www.hyve.group,"600+","$100M+",1991,Mid-Market,"Global Exhibitions, Conferences",Verified
+Event Management,Tarsus Group,UK,https://www.tarsus.com,"400+","$100M+",1998,Mid-Market,"B2B Events, Exhibitions, Conferences",Verified
+Event Management,DMG Events,UAE,https://www.dmgevents.com,"300+","$80M+",1989,Mid-Market,"Events, Conferences, Exhibitions",Verified
+Event Management,UBM (Informa),UK,https://www.informa.com,"N/A","N/A",1918,Large Enterprise,"Exhibitions, Events (Acquired by Informa)",Verified
+Event Management,Madison Square Garden Co.,USA,https://www.msg.com,"5,000+","$1B+",1879,Large Enterprise,"Venue Management, Sports, Entertainment",Verified
+Event Management,Freeman,USA,https://www.freeman.com,"7,000+","$2B+",1927,Large Enterprise,"Event Management, Production, AV, Exhibits",Verified
+Event Management,George P. Johnson,USA,https://www.gpj.com,"2,000+","$500M+",1914,Large Enterprise,"Experiential Marketing, Events, Activations",Verified
+Event Management,Jack Morton Worldwide,USA,https://www.jackmorton.com,"800+","$200M+",1939,Mid-Market,"Experiential Marketing, Brand Events",Verified
+Event Management,PSAV (Encore Global),USA,https://www.encoreglobal.com,"10,000+","$1.5B+",1981,Large Enterprise,"Audiovisual, Event Technology, Production",Verified
+Event Management,Cvent,USA,https://www.cvent.com,"5,000+","$700M+",1999,Large Enterprise,"Event Management Software, Marketing, Venue Sourcing",Verified
+Event Management,BCD Meetings & Events,Netherlands,https://www.bcdme.com,"1,500+","$300M+",1971,Large Enterprise,"Meetings, Events, Travel Management",Verified
+Event Management,Maritz Global Events,USA,https://www.maritz.com,"4,000+","$800M+",1894,Large Enterprise,"Meetings, Events, Incentives, Travel",Verified
+Event Management,Inizio Engage,UK,https://inizio.health,"3,000+","$500M+",2018,Large Enterprise,"Healthcare Communications, Events, Engagement",Verified
+Event Management,Access Intelligence,UK,https://accessintelligence.com,"500+","$100M+",1999,Mid-Market,"Media, Information, Events, Software",Verified
+Outsourcing & Staffing,Adecco Group,Switzerland,https://www.adeccogroup.com,"35,000+","$25B+",1957,Large Enterprise,"Staffing, Recruitment, HR Solutions",Verified
+Outsourcing & Staffing,ManpowerGroup,USA,https://www.manpowergroup.com,"28,000+","$21B+",1948,Large Enterprise,"Staffing, Recruitment, Workforce Solutions",Verified
+Outsourcing & Staffing,Randstad,Netherlands,https://www.randstad.com,"35,000+","$25B+",1960,Large Enterprise,"Staffing, Recruitment, HR Services",Verified
+Outsourcing & Staffing,Recruit Holdings,Japan,https://www.recruit.co.jp,"47,000+","$28B+",1960,Conglomerate,"Staffing, HR Technology, Media",Verified
+Outsourcing & Staffing,Allegis Group,USA,https://www.allegisgroup.com,"15,000+","$12B+",1983,Large Enterprise,"Staffing, Recruitment, Talent Solutions",Verified
+Outsourcing & Staffing,Kelly Services,USA,https://www.kellyservices.com,"8,000+","$5B+",1946,Large Enterprise,"Staffing, Workforce Solutions",Verified
+Outsourcing & Staffing,Robert Half International,USA,https://www.roberthalf.com,"15,500+","$7B+",1948,Large Enterprise,"Staffing, Accounting, Finance, IT",Verified
+Outsourcing & Staffing,Insperity,USA,https://www.insperity.com,"5,000+","$5B+",1986,Large Enterprise,"HR Outsourcing, PEO, Benefits Administration",Verified
+Outsourcing & Staffing,Paychex,USA,https://www.paychex.com,"16,000+","$5B+",1971,Large Enterprise,"Payroll, HR, Benefits, Insurance",Verified
+Outsourcing & Staffing,ASGN Incorporated,USA,https://www.asgn.com,"4,000+","$4B+",1985,Large Enterprise,"IT Staffing, Consulting, Solutions",Verified
+Outsourcing & Staffing,TrueBlue,USA,https://www.trueblue.com,"4,000+","$2.5B+",1985,Large Enterprise,"Industrial, Skilled Trades Staffing",Verified
+Outsourcing & Staffing,Persol Holdings,Japan,https://www.persol-group.com,"35,000+","$11B+",1973,Large Enterprise,"Staffing, Recruitment, HR Services",Verified
+Outsourcing & Staffing,Willis Towers Watson Talent,UK,https://www.wtwco.com,"N/A","N/A",N/A,Large Enterprise,"Talent Acquisition, Workforce Solutions",Verified
+Outsourcing & Staffing,Hays plc,UK,https://www.hays.com,"12,000+","$8B+",1968,Large Enterprise,"Recruitment, Staffing, Workforce Solutions",Verified
+Outsourcing & Staffing,PageGroup,UK,https://www.page.com,"7,000+","$2B+",1976,Large Enterprise,"Recruitment, Executive Search",Verified
+Outsourcing & Staffing,SThree,UK,https://www.sthree.com,"3,000+","$1.5B+",1986,Large Enterprise,"STEM Staffing, Recruitment",Verified
+Outsourcing & Staffing,Impellam Group,UK,https://impellam.com,"3,000+","$2B+",2004,Large Enterprise,"Staffing, Managed Services, Recruitment",Verified
+Outsourcing & Staffing,Staffline Group,UK,https://www.staffline.co.uk,"2,000+","$1B+",1986,Large Enterprise,"Recruitment, Training, Outsourcing",Verified
+Outsourcing & Staffing,Harvey Nash Group,UK,https://www.harveynash.com,"4,000+","$1B+",1988,Large Enterprise,"IT Recruitment, Executive Search, Outsourcing",Verified
+Outsourcing & Staffing,Brunel International,Netherlands,https://www.brunel.net,"12,000+","$1.5B+",1975,Large Enterprise,"Global Workforce Solutions, Staffing",Verified

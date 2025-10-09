@@ -1,0 +1,372 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Oil Exploration,Saudi Aramco,Saudi Arabia,https://www.aramco.com,"70,000+","$600B+",1933,Conglomerate,"Integrated Oil & Gas, Petrochemicals",Verified
+Oil Exploration,ExxonMobil,USA,https://www.exxonmobil.com,"62,000+","$413B+",1870,Conglomerate,"Upstream, Downstream, Chemicals",Verified
+Oil Exploration,Chevron,USA,https://www.chevron.com,"43,000+","$246B+",1879,Conglomerate,"Integrated Energy, LNG",Verified
+Oil Exploration,Shell,UK,https://www.shell.com,"82,000+","$386B+",1907,Conglomerate,"Integrated Energy, Renewables, Trading",Verified
+Oil Exploration,BP,UK,https://www.bp.com,"67,000+","$164B+",1909,Large Enterprise,"Oil & Gas, Low Carbon Energy",Verified
+Oil Exploration,TotalEnergies,France,https://www.totalenergies.com,"105,000+","$263B+",1924,Conglomerate,"Integrated Energy, Solar, LNG",Verified
+Oil Exploration,ConocoPhillips,USA,https://www.conocophillips.com,"9,500+","$82B+",1917,Large Enterprise,"Exploration & Production (E&P)",Verified
+Oil Exploration,Petrobras,Brazil,https://petrobras.com.br,"45,000+","$124B+",1953,Large Enterprise,"Deepwater Exploration, Pre-Salt",Verified
+Oil Exploration,Rosneft,Russia,https://www.rosneft.com,"335,000+","$120B+",1993,Large Enterprise,"Integrated Oil & Gas, Refining",Verified
+Oil Exploration,PetroChina,China,https://www.petrochina.com.cn,"402,000+","$483B+",1999,Large Enterprise,"Integrated Oil & Gas, Pipelines",Verified
+Oil Exploration,Equinor,Norway,https://www.equinor.com,"21,000+","$137B+",1972,Large Enterprise,"Offshore E&P, Wind, Carbon Capture",Verified
+Oil Exploration,ADNOC,UAE,https://www.adnoc.ae,"50,000+","$100B+",1971,Large Enterprise,"Integrated Oil & Gas, Petrochemicals",Verified
+Oil Exploration,Eni,Italy,https://www.eni.com,"32,000+","$147B+",1953,Large Enterprise,"Oil & Gas, Plenitude Renewables",Verified
+Oil Exploration,Lukoil,Russia,https://www.lukoil.com,"101,000+","$144B+",1991,Large Enterprise,"Integrated Oil & Gas, Refining",Verified
+Oil Exploration,Hess Corporation,USA,https://www.hess.com,"1,600+","$11B+",1919,Medium Enterprise,"E&P, Guyana Offshore",Verified
+Oil Exploration,Occidental Petroleum,USA,https://www.oxy.com,"11,800+","$35B+",1920,Large Enterprise,"E&P, Carbon Management",Verified
+Oil Exploration,Woodside Energy,Australia,https://www.woodside.com,"4,700+","$17B+",1954,Large Enterprise,"LNG, Offshore E&P",Verified
+Oil Exploration,CNOOC,China,https://www.cnooc.com.cn,"20,000+","$60B+",1999,Large Enterprise,"Offshore E&P, LNG",Verified
+Oil Exploration,Sinopec,China,https://www.sinopec.com,"553,000+","$471B+",2000,Large Enterprise,"Integrated Oil & Gas, Refining",Verified
+Oil Exploration,Pemex,Mexico,https://www.pemex.com,"124,000+","$96B+",1938,Large Enterprise,"State-Owned Oil & Gas",Verified
+Renewable Energy,NextEra Energy,USA,https://www.nexteraenergy.com,"15,000+","$28B+",1925,Large Enterprise,"Wind, Solar, Utility Holding",Verified
+Renewable Energy,Ørsted,Denmark,https://orsted.com,"8,000+","$12B+",2006,Large Enterprise,"Offshore Wind, Bioenergy",Verified
+Renewable Energy,Iberdrola,Spain,https://www.iberdrola.com,"40,000+","$60B+",1901,Large Enterprise,"Wind, Grids, Hydro",Verified
+Renewable Energy,Enel Green Power,Italy,https://www.enelgreenpower.com,"2,000+","$2B+",2008,Medium Enterprise,"Solar, Wind, Geothermal",Verified
+Renewable Energy,Brookfield Renewable,Canada,https://bep.brookfield.com,"3,000+","$5B+",1999,Large Enterprise,"Hydro, Wind, Solar, Storage",Verified
+Renewable Energy,EDP Renewables,Portugal,https://www.edpr.com,"1,200+","$2B+",1996,Medium Enterprise,"Wind, Solar, Global Developer",Verified
+Renewable Energy,Vestas Wind Systems,Denmark,https://www.vestas.com,"29,000+","$16B+",1945,Large Enterprise,"Wind Turbines, Service",Verified
+Renewable Energy,Siemens Gamesa,Spain,https://www.siemensgamesa.com,"26,000+","$11B+",1976,Large Enterprise,"Wind Turbines, Offshore",Verified
+Renewable Energy,Canadian Solar,Canada,https://www.canadiansolar.com,"18,000+","$8B+",2001,Large Enterprise,"Solar Modules, Project Development",Verified
+Renewable Energy,JinkoSolar,China,https://www.jinkosolar.com,"40,000+","$12B+",2006,Large Enterprise,"Solar Modules, Cheetah Series",Verified
+Renewable Energy,First Solar,USA,https://www.firstsolar.com,"5,000+","$3B+",1999,Large Enterprise,"Thin-Film Solar Modules",Verified
+Renewable Energy,SunPower,USA,https://us.sunpower.com,"4,000+","$2B+",1985,Large Enterprise,"Residential Solar, Storage",Verified
+Renewable Energy,Scatec,Norway,https://scatec.com,"500+","$300M+",2007,Medium Enterprise,"Solar, Hydro, Hybrid Projects",Verified
+Renewable Energy,Innergex Renewable Energy,Canada,https://www.innergex.com,"500+","$700M+",2003,Medium Enterprise,"Run-of-River Hydro, Wind, Solar",Verified
+Renewable Energy,Acciona Energía,Spain,https://www.acciona-energia.es,"2,000+","$2B+",1997,Medium Enterprise,"Wind, Solar, Hydro",Verified
+Renewable Energy,ReNew Energy,India,https://www.renew.com,"3,000+","$1B+",2011,Medium Enterprise,"Wind, Solar, IPP",Verified
+Renewable Energy,Longi Green Energy,China,https://en.longi.com,"60,000+","$16B+",2000,Large Enterprise,"Solar Wafers, Modules",Verified
+Renewable Energy,EDF Renewables,France,https://www.edf-renewables.com,"4,000+","$2B+",1990,Medium Enterprise,"Wind, Solar, Storage",Verified
+Renewable Energy,Invenergy,USA,https://invenergy.com,"1,200+","$2B+",2001,Medium Enterprise,"Wind, Solar, Gas, Storage",Verified
+Nuclear Power,EDF,France,https://www.edf.fr,"165,000+","$95B+",1946,Large Enterprise,"Nuclear Fleet, Renewables, Grid",Verified
+Nuclear Power,Rosatom,Russia,https://rosatom.ru,"290,000+","$30B+",2007,Large Enterprise,"Nuclear Technology, Fuel Cycle",Verified
+Nuclear Power,China National Nuclear Corp,China,https://www.cnnc.com.cn,"100,000+","$20B+",1999,Large Enterprise,"Nuclear Power, Fuel, Engineering",Verified
+Nuclear Power,KEPCO,South Korea,https://www.kepco.co.kr,"20,000+","$51B+",1898,Large Enterprise,"Nuclear, Thermal, Power Distribution",Verified
+Nuclear Power,Exelon Generation,USA,https://www.exeloncorp.com,"32,000+","$45B+",2000,Large Enterprise,"Largest US Nuclear Fleet",Verified
+Nuclear Power,Duke Energy,USA,https://www.duke-energy.com,"27,000+","$29B+",1904,Large Enterprise,"Nuclear, Renewables, Regulated Utility",Verified
+Nuclear Power,Entergy,USA,https://www.entergy.com,"13,000+","$14B+",1913,Large Enterprise,"Nuclear, Regulated Utility",Verified
+Nuclear Power,CEZ Group,Czech Republic,https://www.cez.cz,"30,000+","$12B+",1992,Large Enterprise,"Nuclear, Coal, Renewables",Verified
+Nuclear Power,Vattenfall,Sweden,https://group.vattenfall.com,"20,000+","$30B+",1909,Large Enterprise,"Nuclear, Wind, Heat",Verified
+Nuclear Power,Ontario Power Generation,Canada,https://www.opg.com,"10,000+","$6B+",1999,Large Enterprise,"Nuclear, Hydro, Biomass",Verified
+Nuclear Power,Bruce Power,Canada,https://www.brucepower.com,"4,000+","$3B+",2001,Large Enterprise,"Nuclear Facility Operator",Verified
+Nuclear Power,Nuclear Power Corporation of India,India,https://www.npcil.co.in,"11,000+","$2B+",1987,Large Enterprise,"Nuclear Plant Design & Operation",Verified
+Nuclear Power,Kansai Electric Power,Japan,https://www.kepco.co.jp,"40,000+","$30B+",1951,Large Enterprise,"Nuclear, Thermal, Solar",Verified
+Nuclear Power,Hitachi GE Nuclear Energy,Japan,https://www.hitachi-hgne.co.jp,"3,000+","$1B+",2007,Medium Enterprise,"Nuclear Reactors, Services",Verified
+Nuclear Power,Westinghouse Electric,USA,https://www.westinghousenuclear.com,"9,000+","$5B+",1886,Large Enterprise,"AP1000 Reactors, Fuel, Services",Verified
+Nuclear Power,Framatome,France,https://www.framatome.com,"14,000+","$4B+",1958,Large Enterprise,"Nuclear Reactor Services, Fuel",Verified
+Nuclear Power,Toshiba Energy Systems,Japan,https://www.global.toshiba,"10,000+","$10B+",1975,Large Enterprise,"Turbines, Nuclear Equipment",Verified
+Electricity Distribution,State Grid Corporation of China,China,https://www.sgcc.com.cn,"900,000+","$460B+",2002,Conglomerate,"UHV Transmission, Distribution",Verified
+Electricity Distribution,Enel,Italy,https://www.enel.com,"67,000+","$100B+",1962,Large Enterprise,"Grids, Renewables, Retail",Verified
+Electricity Distribution,E.ON,Germany,https://www.eon.com,"75,000+","$110B+",2000,Large Enterprise,"Grids, Customer Solutions",Verified
+Electricity Distribution,Engie,France,https://www.engie.com,"160,000+","$66B+",2008,Large Enterprise,"Energy Services, Renewables, Grids",Verified
+Electricity Distribution,Dominion Energy,USA,https://www.dominionenergy.com,"17,000+","$17B+",1909,Large Enterprise,"Regulated Utility, Gas, Offshore Wind",Verified
+Electricity Distribution,Duke Energy,USA,https://www.duke-energy.com,"27,000+","$29B+",1904,Large Enterprise,"Regulated Utility, Nuclear, Renewables",Verified
+Electricity Distribution,Southern Company,USA,https://www.southerncompany.com,"27,000+","$29B+",1945,Large Enterprise,"Regulated Utility, Gas, Nuclear",Verified
+Electricity Distribution,Exelon,USA,https://www.exeloncorp.com,"32,000+","$45B+",2000,Large Enterprise,"Largest US T&D Utility",Verified
+Electricity Distribution,National Grid,UK,https://www.nationalgrid.com,"23,000+","$22B+",1990,Large Enterprise,"UK & US T&D, Interconnectors",Verified
+Electricity Distribution,American Electric Power,USA,https://www.aep.com,"17,000+","$19B+",1906,Large Enterprise,"Regulated T&D, Wind",Verified
+Electricity Distribution,NextEra Energy,USA,https://www.nexteraenergy.com,"15,000+","$28B+",1925,Large Enterprise,"Florida T&D, Renewables",Verified
+Electricity Distribution,EDP Portugal,Portugal,https://www.edp.com,"12,000+","$6B+",1976,Large Enterprise,"T&D, Renewables, Retail",Verified
+Electricity Distribution,Vattenfall,Sweden,https://group.vattenfall.com,"20,000+","$30B+",1909,Large Enterprise,"Nordic T&D, Heat",Verified
+Electricity Distribution,Endesa,Spain,https://www.endesa.com,"9,000+","$27B+",1944,Large Enterprise,"T&D, Generation, Retail",Verified
+Electricity Distribution,Tokyo Electric Power,Japan,https://www.tepco.co.jp,"40,000+","$50B+",1951,Large Enterprise,"T&D, Thermal, Renewables",Verified
+Electricity Distribution,KEPCO,South Korea,https://www.kepco.co.kr,"20,000+","$51B+",1898,Large Enterprise,"T&D, Nuclear, Thermal",Verified
+Electricity Distribution,AES Corporation,USA,https://www.aes.com,"8,500+","$12B+",1981,Large Enterprise,"IPP, Renewables, T&D",Verified
+Natural Gas,Gazprom,Russia,https://www.gazprom.com,"466,000+","$170B+",1989,Large Enterprise,"Gas Production, Pipelines, LNG",Verified
+Natural Gas,Shell,UK,https://www.shell.com,"82,000+","$386B+",1907,Conglomerate,"Integrated Gas, LNG",Verified
+Natural Gas,TotalEnergies,France,https://www.totalenergies.com,"105,000+","$263B+",1924,Conglomerate,"Integrated Gas, LNG",Verified
+Natural Gas,Chevron,USA,https://www.chevron.com,"43,000+","$246B+",1879,Conglomerate,"Integrated Gas, LNG",Verified
+Natural Gas,ExxonMobil,USA,https://www.exxonmobil.com,"62,000+","$413B+",1870,Conglomerate,"Integrated Gas, LNG",Verified
+Natural Gas,BP,UK,https://www.bp.com,"67,000+","$164B+",1909,Large Enterprise,"Gas & Low Carbon Energy",Verified
+Natural Gas,ConocoPhillips,USA,https://www.conocophillips.com,"9,500+","$82B+",1917,Large Enterprise,"LNG, E&P",Verified
+Natural Gas,Equinor,Norway,https://www.equinor.com,"21,000+","$137B+",1972,Large Enterprise,"LNG, Pipeline Gas",Verified
+Natural Gas,Eni,Italy,https://www.eni.com,"32,000+","$147B+",1953,Large Enterprise,"LNG, Pipeline Gas",Verified
+Natural Gas,QatarEnergy,Qatar,https://www.qatarenergy.qa,"8,000+","$50B+",1974,Large Enterprise,"LNG, NGLs, GTL",Verified
+Natural Gas,Sonatrach,Algeria,https://sonatrach.com,"120,000+","$40B+",1963,Large Enterprise,"Gas Production, LNG, Pipelines",Verified
+Natural Gas,Kinder Morgan,USA,https://www.kindermorgan.com,"11,000+","$19B+",1997,Large Enterprise,"Pipelines, Terminals, Storage",Verified
+Natural Gas,TC Energy,Canada,https://www.tcenergy.com,"7,000+","$12B+",1951,Large Enterprise,"Pipelines, Power, Storage",Verified
+Natural Gas,Williams Companies,USA,https://www.williams.com,"5,000+","$11B+",1908,Large Enterprise,"Pipelines, Gathering, Processing",Verified
+Natural Gas,Enbridge,Canada,https://www.enbridge.com,"12,000+","$48B+",1949,Large Enterprise,"Pipelines, Utilities, Renewables",Verified
+Natural Gas,ONEOK,USA,https://www.oneok.com,"2,800+","$22B+",1906,Large Enterprise,"NGLs, Pipelines, Storage",Verified
+Natural Gas,Petronas,Malaysia,https://www.petronas.com,"48,000+","$80B+",1974,Large Enterprise,"Integrated LNG, Petrochemicals",Verified
+Natural Gas,Woodside Energy,Australia,https://www.woodside.com,"4,700+","$17B+",1954,Large Enterprise,"LNG, Pipeline Gas",Verified
+Water Utilities,Veolia,France,https://www.veolia.com,"220,000+","$34B+",1853,Large Enterprise,"Water, Waste, Energy Services",Verified
+Water Utilities,Suez,France,https://www.suez.com,"40,000+","$9B+",1858,Large Enterprise,"Water, Waste Management",Verified
+Water Utilities,American Water Works,USA,https://www.amwater.com,"7,000+","$4B+",1886,Large Enterprise,"Regulated Water & Wastewater",Verified
+Water Utilities,Xylem,USA,https://www.xylem.com,"17,000+","$6B+",2011,Large Enterprise,"Water Technology, Treatment",Verified
+Water Utilities,Suez Water Technologies & Solutions,France,https://www.suezwatertechnologies.com,"10,000+","$3B+",1858,Large Enterprise,"Water Treatment Chemicals & Equipment",Verified
+Water Utilities,Southern Water,UK,https://www.southernwater.co.uk,"3,000+","$1B+",1989,Medium Enterprise,"Water & Wastewater Services",Verified
+Water Utilities,Thames Water,UK,https://www.thameswater.co.uk,"7,000+","$2B+",1989,Large Enterprise,"Water & Wastewater Services",Verified
+Water Utilities,Saint-Gobain Water Solutions,France,https://www.saint-gobain.com,"2,000+","$500M+",1665,Large Enterprise,"Water Filtration, Pumps",Verified
+Water Utilities,DuPont Water Solutions,USA,https://www.dupont.com,"5,000+","$1B+",2017,Medium Enterprise,"Membranes, Filtration, RO",Verified
+Water Utilities,Pentair,USA,https://www.pentair.com,"11,000+","$4B+",1966,Large Enterprise,"Water Filtration, Pools, Equipment",Verified
+Water Utilities,Severn Trent,UK,https://www.stwater.co.uk,"7,000+","$2B+",1974,Large Enterprise,"Water & Wastewater Services",Verified
+Water Utilities,United Utilities,UK,https://www.unitedutilities.com,"5,000+","$2B+",1995,Large Enterprise,"Water & Wastewater Services",Verified
+Water Utilities,American States Water,USA,https://www.aswater.com,"500+","$500M+",1929,Medium Enterprise,"Regulated Water, Electric",Verified
+Water Utilities,California Water Service,USA,https://www.calwater.com,"1,200+","$900M+",1926,Medium Enterprise,"Regulated Water Utility",Verified
+Water Utilities,Aquafed,France,https://www.aquafed.org,"N/A","N/A",2005,Small Enterprise,"Water Services Federation",Verified
+Water Utilities,Beijing Enterprises Water Group,China,https://www.bewg.com.hk,"10,000+","$2B+",1993,Large Enterprise,"Water Treatment, PPP Projects",Verified
+Water Utilities,Saur Group,France,https://www.saur.com,"12,000+","$2B+",1933,Large Enterprise,"Water Services, BOT Projects",Verified
+Water Utilities,Nalco Water (Ecolab),USA,https://www.ecolab.com,"47,000+","$15B+",1924,Large Enterprise,"Water Treatment, Chemicals",Verified
+Solar Panel Manufacturing,JinkoSolar,China,https://www.jinkosolar.com,"40,000+","$12B+",2006,Large Enterprise,"Mono PERC, TOPCon, Cheetah",Verified
+Solar Panel Manufacturing,Canadian Solar,Canada,https://www.canadiansolar.com,"18,000+","$8B+",2001,Large Enterprise,"Modules, Project Development",Verified
+Solar Panel Manufacturing,Trina Solar,China,https://www.trinasolar.com,"20,000+","$7B+",1997,Large Enterprise,"Modules, Trackers, Storage",Verified
+Solar Panel Manufacturing,LONGi Solar,China,https://en.longi.com,"60,000+","$16B+",2000,Large Enterprise,"Mono Wafers, Modules, HPBC",Verified
+Solar Panel Manufacturing,JA Solar,China,https://www.jasolar.com,"25,000+","$6B+",2005,Large Enterprise,"Modules, Cells, PERC",Verified
+Solar Panel Manufacturing,Hanwha Q CELLS,South Korea,https://www.q-cells.com,"12,000+","$3B+",1999,Large Enterprise,"Modules, Cells, Q.ANTUM",Verified
+Solar Panel Manufacturing,First Solar,USA,https://www.firstsolar.com,"5,000+","$3B+",1999,Large Enterprise,"CdTe Thin-Film, Series 6",Verified
+Solar Panel Manufacturing,Risen Energy,China,https://www.risenenergy.com,"15,000+","$5B+",1986,Large Enterprise,"Modules, HJT, BIPV",Verified
+Solar Panel Manufacturing,GCL System Integration,China,https://www.gclsi.com,"10,000+","$2B+",2003,Large Enterprise,"Modules, System Integration",Verified
+Solar Panel Manufacturing,SunPower,USA,https://us.sunpower.com,"4,000+","$2B+",1985,Large Enterprise,"Maxeon IBC, Residential",Verified
+Solar Panel Manufacturing,REC Group,Norway,https://www.recgroup.com,"2,000+","$1B+",1996,Medium Enterprise,"Alpha HJT, Heterojunction",Verified
+Solar Panel Manufacturing,Seraphim Solar,China,https://www.seraphim-energy.com,"5,000+","$1B+",2011,Medium Enterprise,"Modules, Mono, Bifacial",Verified
+Solar Panel Manufacturing,Vikram Solar,India,https://www.vikramsolar.com,"2,000+","$500M+",1979,Medium Enterprise,"Modules, EPC, O&M",Verified
+Solar Panel Manufacturing,Adani Solar,India,https://www.adanisolar.com,"5,000+","$1B+",2016,Medium Enterprise,"Cells, Modules, Manufacturing",Verified
+Solar Panel Manufacturing,Talesun Solar,China,https://en.talesun.com,"10,000+","$2B+",2010,Large Enterprise,"Modules, Cells, Bifacial",Verified
+Solar Panel Manufacturing,Heliene,Canada,https://www.heliene.com,"200+","$100M+",2010,Small Enterprise,"Modules, North American Manufacturing",Verified
+Solar Panel Manufacturing,Meyer Burger,Switzerland,https://www.meyerburger.com,"1,000+","$200M+",1953,Medium Enterprise,"Heterojunction/SmartWire",Verified
+Solar Panel Manufacturing,Maxeon Solar Technologies,Singapore,https://www.maxeon.com,"2,000+","$1B+",2020,Medium Enterprise,"IBC, Performance Line",Verified
+Solar Panel Manufacturing,Sunrun,USA,https://www.sunrun.com,"13,000+","$2B+",2007,Large Enterprise,"Residential Solar, Leasing",Verified
+Wind Farm Operations,Vestas,Denmark,https://www.vestas.com,"29,000+","$16B+",1945,Large Enterprise,"Turbines, Service, Offshore",Verified
+Wind Farm Operations,Siemens Gamesa,Spain,https://www.siemensgamesa.com,"26,000+","$11B+",1976,Large Enterprise,"Turbines, Offshore, Service",Verified
+Wind Farm Operations,GE Renewable Energy,USA,https://www.ge.com/renewableenergy,"40,000+","$16B+",1892,Large Enterprise,"Turbines, Cypress Platform, Haliade-X",Verified
+Wind Farm Operations,Goldwind,China,https://www.goldwind.com,"10,000+","$8B+",1998,Large Enterprise,"Permanent Magnet Direct-Drive",Verified
+Wind Farm Operations,NextEra Energy Resources,USA,https://www.nexteraenergy.com,"15,000+","$28B+",1925,Large Enterprise,"Wind Project Development, IPP",Verified
+Wind Farm Operations,Ørsted,Denmark,https://orsted.com,"8,000+","$12B+",2006,Large Enterprise,"Offshore Wind Development",Verified
+Wind Farm Operations,Enercon,Germany,https://www.enercon.de,"13,000+","$6B+",1984,Large Enterprise,"Gearless Turbines, Onshore",Verified
+Wind Farm Operations,EDP Renewables,Portugal,https://www.edpr.com,"1,200+","$2B+",1996,Medium Enterprise,"Wind Project Development, Global",Verified
+Wind Farm Operations,Iberdrola Renewables,Spain,https://www.iberdrola.com,"40,000+","$60B+",1901,Large Enterprise,"Wind Project Development, Global",Verified
+Wind Farm Operations,Acciona Energía,Spain,https://www.acciona-energia.es,"2,000+","$2B+",1997,Medium Enterprise,"Wind Project Development",Verified
+Wind Farm Operations,Northland Power,Canada,https://www.northlandpower.com,"1,000+","$2B+",1987,Medium Enterprise,"Offshore Wind, Solar, IPP",Verified
+Wind Farm Operations,Mainstream Renewable Power,Ireland,https://www.mainstreamrp.com,"500+","$100M+",2008,Small Enterprise,"Wind & Solar Project Development",Verified
+Wind Farm Operations,Senvion,Germany,https://www.senvion.com,"4,000+","$2B+",2001,Medium Enterprise,"Turbines, Onshore & Offshore",Verified
+Wind Farm Operations,Suzlon Energy,India,https://www.suzlon.com,"5,000+","$1B+",1995,Medium Enterprise,"Turbines, Onshore, Service",Verified
+Wind Farm Operations,Envision Energy,China,https://www.envision-group.com,"7,000+","$2B+",2007,Large Enterprise,"Turbines, EnOS Platform",Verified
+Wind Farm Operations,MHI Vestas,Japan/Denmark,https://mhivestasoffshore.com,"3,000+","$2B+",2014,Medium Enterprise,"Offshore Turbines (V164/172)",Verified
+Wind Farm Operations,RWE Renewables,Germany,https://www.rwe.com,"20,000+","$30B+",1898,Large Enterprise,"Offshore & Onshore Wind, Solar",Verified
+Wind Farm Operations,SSE Renewables,UK,https://www.sserenewables.com,"12,000+","$11B+",1998,Large Enterprise,"Offshore Wind, Hydro",Verified
+Wind Farm Operations,Avangrid Renewables,USA,https://www.avangrid.com,"7,000+","$7B+",1997,Large Enterprise,"Onshore Wind, Solar",Verified
+Battery Storage,Tesla Energy,USA,https://www.tesla.com,"100,000+","$95B+",2003,Large Enterprise,"Megapack, Powerwall, Software",Verified
+Battery Storage,LG Energy Solution,South Korea,https://www.lgensol.com,"30,000+","$25B+",2020,Large Enterprise,"NMC, LFP, Automotive & ESS",Verified
+Battery Storage,CATL,China,https://www.catl.com,"90,000+","$50B+",2011,Large Enterprise,"LFP, NMC, Sodium-ion",Verified
+Battery Storage,Samsung SDI,South Korea,https://www.samsungsdi.com,"30,000+","$15B+",1970,Large Enterprise,"PRiMX, Automotive & ESS",Verified
+Battery Storage,Panasonic Energy,Japan,https://www.panasonic.com,"270,000+","$70B+",1918,Large Enterprise,"NCA, Automotive & Industrial",Verified
+Battery Storage,Fluence Energy,USA,https://www.fluenceenergy.com,"1,000+","$1B+",2018,Medium Enterprise,"Grid-Scale Storage, Software",Verified
+Battery Storage,Enphase Energy,USA,https://www.enphase.com,"2,000+","$2B+",2006,Medium Enterprise,"IQ Batteries, Microinverters",Verified
+Battery Storage,Stem,USA,https://www.stem.com,"500+","$400M+",2009,Small Enterprise,"Athena AI, C&I Storage",Verified
+Battery Storage,Generac Power Systems,USA,https://www.generac.com,"10,000+","$4B+",1959,Large Enterprise,"PWRcell, Home Storage",Verified
+Battery Storage,Sungrow,China,https://www.sungrowpower.com,"5,000+","$5B+",1997,Large Enterprise,"Inverters, ESS, SBU",Verified
+Battery Storage,ABB,Switzerland,https://www.abb.com,"105,000+","$32B+",1988,Large Enterprise,"PCS, Grid Edge Storage",Verified
+Battery Storage,SMA Solar Technology,Germany,https://www.sma.de,"4,000+","$1B+",1981,Medium Enterprise,"Inverters, Sunny Boy Storage",Verified
+Battery Storage,SimpliPhi Power,USA,https://simpliphipower.com,"100+","$20M+",2010,Small Enterprise,"LFP, Non-Toxic, C&I",Verified
+Battery Storage,Blue Planet Energy,USA,https://blueplanetenergy.com,"50+","$10M+",2014,Small Enterprise,"Blue Ion LFP, Off-Grid",Verified
+Battery Storage,Redflow,Australia,https://redflow.com,"50+","$5M+",2005,Small Enterprise,"Zinc-Bromine Flow Batteries",Verified
+Battery Storage,Kokam,South Korea,https://www.kokam.com,"500+","$100M+",1989,Small Enterprise,"NMC, LFP, High-Power",Verified
+Battery Storage,Leclanché,Switzerland,https://www.leclanche.com,"200+","$50M+",1909,Small Enterprise,"LTO, Marine & Rail ESS",Verified
+Battery Storage,EnerSys,USA,https://www.enersys.com,"13,000+","$4B+",2000,Large Enterprise,"Industrial Batteries, NexSys",Verified
+Battery Storage,Northvolt,Sweden,https://northvolt.com,"5,000+","$1B+",2016,Medium Enterprise,"LFP, NMC, Gigafactories",Verified
+Smart Grids,Schneider Electric,France,https://www.se.com,"135,000+","$39B+",1836,Large Enterprise,"EcoStruxure, Microgrids, Automation",Verified
+Smart Grids,Siemens,Germany,https://www.siemens.com,"311,000+","$78B+",1847,Large Enterprise,"EnergyIP, Spectrum Power, Digital Grid",Verified
+Smart Grids,General Electric,USA,https://www.ge.com,"172,000+","$76B+",1892,Large Enterprise,"Grid Solutions, Digital",Verified
+Smart Grids,ABB,Switzerland,https://www.abb.com,"105,000+","$32B+",1988,Large Enterprise,"Ability, Network Manager",Verified
+Smart Grids,Honeywell,USA,https://www.honeywell.com,"97,000+","$36B+",1906,Large Enterprise,"Building & Grid Management",Verified
+Smart Grids,Eaton,USA,https://www.eaton.com,"92,000+","$24B+",1911,Large Enterprise,"xEnergy, CYME, CRO",Verified
+Smart Grids,Landis+Gyr,Switzerland,https://www.landisgyr.com,"5,000+","$2B+",1896,Large Enterprise,"Advanced Metering, Gridstream",Verified
+Smart Grids,Itron,USA,https://www.itron.com,"8,000+","$2B+",1977,Large Enterprise,"OpenWay Riva, Meters, Analytics",Verified
+Smart Grids,S&C Electric Company,USA,https://www.sandc.com,"2,500+","$1B+",1911,Medium Enterprise,"Switchgear, PureWave, Microgrids",Verified
+Smart Grids,Aclara Technologies,USA,https://www.aclara.com,"500+","$200M+",1998,Small Enterprise,"AMI, Sensors, Software",Verified
+Smart Grids,OSIsoft (AVEVA),USA,https://www.aveva.com,"1,400+","$1B+",1980,Medium Enterprise,"PI System, Data Management",Verified
+Smart Grids,Trilliant,USA,https://www.trilliant.com,"300+","$100M+",2004,Small Enterprise,"Communications, Analytics",Verified
+Smart Grids,Silver Spring Networks (Itron),USA,https://www.itron.com,"8,000+","$2B+",1977,Large Enterprise,"IPv6 Networking, Gen5",Verified
+Smart Grids,Grid4C,USA,https://www.grid4c.com,"50+","$10M+",2013,Small Enterprise,"AI Predictive Analytics",Verified
+Smart Grids,Smarter Grid Solutions,UK,https://smartergridsolutions.com,"100+","$20M+",2008,Small Enterprise,"DERMS, Active Network Management",Verified
+Smart Grids,Enel X,Italy,https://www.enelx.com,"1,000+","$1B+",2000,Medium Enterprise,"Demand Response, V2G, DERMS",Verified
+Smart Grids,Oracle Utilities,USA,https://www.oracle.com,"164,000+","$50B+",1977,Conglomerate,"NMS, MDM, O&O Cloud",Verified
+Smart Grids,Schweitzer Engineering Laboratories,USA,https://selinc.com,"5,000+","$1B+",1984,Medium Enterprise,"Protection Relays, Communications",Verified
+Offshore Drilling,Transocean,Switzerland,https://www.deepwater.com,"5,000+","$3B+",1926,Large Enterprise,"Ultra-Deepwater, Harsh Environment",Verified
+Offshore Drilling,Valaris,UK,https://www.valaris.com,"5,000+","$2B+",2019,Large Enterprise,"Jack-ups, Ultra-Deepwater",Verified
+Offshore Drilling,Noble Corporation,UK,https://www.noblecorp.com,"3,000+","$1B+",1921,Large Enterprise,"Ultra-Deepwater, Jack-ups",Verified
+Offshore Drilling,Diamond Offshore Drilling,USA,https://www.diamondoffshore.com,"2,000+","$1B+",1989,Medium Enterprise,"Deepwater, Semi-Submersibles",Verified
+Offshore Drilling,Saipem,Italy,https://www.saipem.com,"32,000+","$9B+",1957,Large Enterprise,"Drilling, E&C, Offshore Wind",Verified
+Offshore Drilling,Seadrill,Bermuda,https://www.seadrill.com,"5,000+","$1B+",2005,Large Enterprise,"Ultra-Deepwater, Harsh Environment",Verified
+Offshore Drilling,Borr Drilling,Bermuda,https://www.borrdrilling.com,"2,000+","$500M+",2016,Medium Enterprise,"Jack-up Rigs, Shallow Water",Verified
+Offshore Drilling,Shelf Drilling,UAE,https://www.shelfdrilling.com,"3,000+","$600M+",2012,Medium Enterprise,"Jack-up Rigs, Shallow Water",Verified
+Offshore Drilling,Vantage Drilling,USA,https://www.vantagedrilling.com,"1,000+","$200M+",2007,Small Enterprise,"Ultra-Deepwater, Jack-ups",Verified
+Offshore Drilling,Ocean Rig (Transocean),Greece,https://www.transocean.com,"5,000+","$3B+",1926,Large Enterprise,"Ultra-Deepwater Drillships",Verified
+Offshore Drilling,Maersk Drilling (Noble),Denmark,https://www.maerskdrilling.com,"3,000+","$1B+",1972,Large Enterprise,"Harsh Environment, Ultra-Deepwater",Verified
+Offshore Drilling,Pacific Drilling,USA,https://www.pacificdrilling.com,"1,000+","$300M+",2006,Small Enterprise,"Ultra-Deepwater Drillships",Verified
+Offshore Drilling,Rowan Companies (Valaris),USA,https://www.valaris.com,"5,000+","$2B+",2019,Large Enterprise,"Jack-ups, Ultra-Deepwater",Verified
+Offshore Drilling,Atwood Oceanics (Ensco),USA,https://www.valaris.com,"5,000+","$2B+",2019,Large Enterprise,"Deepwater Drillships",Verified
+Offshore Drilling,Paragon Offshore,USA,https://www.paragonoffshore.com,"1,000+","$200M+",2014,Small Enterprise,"Standard-Duty Jack-ups",Verified
+Offshore Drilling,KCA Deutag,UK,https://www.kcadeutag.com,"8,000+","$1B+",1884,Large Enterprise,"Land & Offshore Drilling",Verified
+Offshore Drilling,Honghua Group,China,https://www.honghua.com,"5,000+","$1B+",1997,Medium Enterprise,"Drilling Rigs, Equipment",Verified
+Offshore Drilling,COSL,China,https://www.cosl.com.cn,"10,000+","$4B+",2002,Large Enterprise,"Offshore Drilling, Services",Verified
+Offshore Drilling,Keppel Offshore & Marine,Singapore,https://www.keppelom.com,"20,000+","$6B+",1968,Large Enterprise,"Rig Building, Shipyard",Verified
+Energy Trading,Vitol,Netherlands,https://www.vitol.com,"500+","$505B+",1966,Large Enterprise,"Crude, Products, LNG",Verified
+Energy Trading,Trafigura,Singapore,https://www.trafigura.com,"8,600+","$318B+",1993,Large Enterprise,"Metals, Minerals, Oil, Gas",Verified
+Energy Trading,Glencore,Switzerland,https://www.glencore.com,"135,000+","$256B+",1974,Conglomerate,"Metals, Minerals, Oil, Viterra",Verified
+Energy Trading,Mercuria,Switzerland,https://www.mercuria.com,"1,000+","$174B+",2004,Large Enterprise,"Crude, Products, LNG",Verified
+Energy Trading,Gunvor Group,Switzerland,https://www.gunvorgroup.com,"1,600+","$150B+",2000,Large Enterprise,"Crude, Products, LNG",Verified
+Energy Trading,Koch Supply & Trading,USA,https://www.kochind.com,"120,000+","$125B+",1940,Conglomerate,"Crude, Products, Gas, Power",Verified
+Energy Trading,Cargill Energy,USA,https://www.cargill.com,"155,000+","$165B+",1865,Conglomerate,"Oil, Power, Gas, Freight",Verified
+Energy Trading,BP Trading,UK,https://www.bp.com,"67,000+","$164B+",1909,Large Enterprise,"Integrated Trading Desk",Verified
+Energy Trading,Shell Trading,UK,https://www.shell.com,"82,000+","$386B+",1907,Conglomerate,"Integrated Trading Desk",Verified
+Energy Trading,TotalEnergies Trading,France,https://www.totalenergies.com,"105,000+","$263B+",1924,Conglomerate,"Integrated Trading Desk",Verified
+Energy Trading,Engie Global Energy Management,France,https://gems.engie.com,"160,000+","$66B+",2008,Large Enterprise,"Gas, Power, LNG, Environmental",Verified
+Energy Trading,Uniper,Germany,https://www.uniper.energy,"11,000+","$288B+",2016,Large Enterprise,"European Gas & Power",Verified
+Energy Trading,RWE Supply & Trading,Germany,https://www.rwe.com,"20,000+","$30B+",1898,Large Enterprise,"European Power, Gas, Coal",Verified
+Energy Trading,EDF Trading,UK,https://www.edftrading.com,"165,000+","$95B+",1946,Large Enterprise,"Power, Gas, Coal, Freight",Verified
+Energy Trading,Gazprom Marketing & Trading,UK,https://www.gazprom-mt.com,"400+","$50B+",1999,Medium Enterprise,"Gas, Power, LNG",Verified
+Energy Trading,Eni Trading & Shipping,Italy,https://www.eni.com,"32,000+","$147B+",1953,Large Enterprise,"Integrated Trading Desk",Verified
+Energy Trading,Equinor Energy Trading,Norway,https://www.equinor.com,"21,000+","$137B+",1972,Large Enterprise,"Crude, Products, Gas, Power",Verified
+Energy Trading,Centrica Energy Trading,UK,https://www.centrica.com,"20,000+","$15B+",1997,Large Enterprise,"Gas, Power, LNG",Verified
+Energy Trading,Mitsubishi Corporation,Japan,https://www.mitsubishicorp.com,"80,000+","$156B+",1954,Conglomerate,"Integrated Trading, LNG",Verified
+Carbon Capture,Carbon Engineering,Canada,https://carbonengineering.com,"100+","$10M+",2009,Small Enterprise,"Direct Air Capture (DAC)",Verified
+Carbon Capture,Climeworks,Switzerland,https://climeworks.com,"200+","$50M+",2009,Small Enterprise,"Direct Air Capture (DAC)",Verified
+Carbon Capture,Global Thermostat,USA,https://globalthermostat.com,"50+","$5M+",2010,Small Enterprise,"Direct Air Capture (DAC)",Verified
+Carbon Capture,Carbfix,Iceland,https://www.carbfix.com,"50+","$10M+",2006,Small Enterprise,"Mineral Storage, In-situ",Verified
+Carbon Capture,Capture6,USA,https://www.capture6.org,"N/A","N/A",2021,Small Enterprise,"Direct Air & Water Capture",Verified
+Carbon Capture,Svante,Canada,https://www.svanteinc.com,"200+","$50M+",2007,Small Enterprise,"Solid Sorbent Capture",Verified
+Carbon Capture,Aker Carbon Capture,Norway,https://akercarboncapture.com,"500+","$100M+",2008,Small Enterprise,"Modular Capture Plants",Verified
+Carbon Capture,Equinor Carbon Solutions,Norway,https://www.equinor.com,"21,000+","$137B+",1972,Large Enterprise,"Storage Hub Development",Verified
+Carbon Capture,Shell CANSOLV,Canada,https://www.shell.com,"82,000+","$386B+",1907,Conglomerate,"Amine-Based Capture Technology",Verified
+Carbon Capture,LanzaTech,USA,https://www.lanzatech.com,"200+","$100M+",2005,Small Enterprise,"Carbon Recycling, Fuels & Chemicals",Verified
+Carbon Capture,CarbonCure Technologies,Canada,https://www.carboncure.com,"100+","$20M+",2012,Small Enterprise,"CO2-injected Concrete",Verified
+Carbon Capture,Blue Planet Systems,USA,https://www.blueplanetsystems.com,"50+","$10M+",2009,Small Enterprise,"Synthetic Limestone Aggregate",Verified
+Carbon Capture,CO2 Solutions (SAIPEM),Canada,https://www.saipem.com,"32,000+","$9B+",1957,Large Enterprise,"Enzymatic Capture Process",Verified
+Carbon Capture,Net Power,USA,https://www.netpower.com,"100+","$20M+",2010,Small Enterprise,"Allam Cycle, Gas Power with CC",Verified
+Carbon Capture,Carbicrete,Canada,https://www.carbicrete.com,"50+","$5M+",2016,Small Enterprise,"Carbon-Negative Concrete",Verified
+Carbon Capture,Heirloom Carbon Technologies,USA,https://www.heirloomcarbon.com,"50+","$10M+",2020,Small Enterprise,"Direct Air Capture, Minerals",Verified
+Carbon Capture,Quest Carbon Capture & Storage,Canada,https://www.shell.com,"82,000+","$386B+",1907,Conglomerate,"Large-Scale CCS Project",Verified
+Carbon Capture,Occidental Low Carbon Ventures,USA,https://www.oxy.com,"11,800+","$35B+",1920,Large Enterprise,"DAC Hubs, Investment",Verified
+Carbon Capture,Carbon Clean Solutions,UK,https://www.carbonclean.com,"200+","$50M+",2009,Small Enterprise,"Modular Carbon Capture",Verified
+Geothermal Plants,Orkuveita Reykjavíkur (OR),Iceland,https://www.or.is,"500+","$200M+",1921,Medium Enterprise,"District Heating, Power Generation",Verified
+Geothermal Plants,KenGen,Kenya,https://www.kengen.co.ke,"2,500+","$200M+",1954,Medium Enterprise,"Geothermal, Hydro, Thermal",Verified
+Geothermal Plants,Calpine Corporation,USA,https://www.calpine.com,"2,000+","$8B+",1984,Medium Enterprise,"Geysers Field, Power Marketing",Verified
+Geothermal Plants,Energy Development Corporation,Philippines,https://www.energy.com.ph,"1,500+","$700M+",1976,Medium Enterprise,"Integrated Steamfield & Power",Verified
+Geothermal Plants,Enel Green Power,Italy,https://www.enelgreenpower.com,"2,000+","$2B+",2008,Medium Enterprise,"Geothermal, Solar, Wind",Verified
+Geothermal Plants,Contact Energy,New Zealand,https://www.contactenergy.co.nz,"1,200+","$1B+",1995,Medium Enterprise,"Geothermal, Hydro, Gas",Verified
+Geothermal Plants,Pertamina Geothermal Energy,Indonesia,https://www.pge.pertamina.com,"1,000+","$300M+",2006,Medium Enterprise,"Steam Supply, Power Generation",Verified
+Geothermal Plants,Cyrq Energy,USA,https://www.cyrqenergy.com,"100+","$50M+",2009,Small Enterprise,"Geothermal Power Plants",Verified
+Geothermal Plants,Reykjavik Energy,Iceland,https://www.or.is,"500+","$200M+",1921,Medium Enterprise,"District Heating, Power Generation",Verified
+Geothermal Plants,Orka Energy,Iceland,https://orkan.is,"N/A","N/A",,Unknown,Unknown,Unverified
+Geothermal Plants,Turboden (Mitsubishi),Italy,https://www.turboden.com,"300+","$100M+",1980,Small Enterprise,"ORC Technology, Biomass",Verified
+Geothermal Plants,Climeon,Sweden,https://climeon.com,"100+","$20M+",2011,Small Enterprise,"Low-Temperature Heat Power",Verified
+Geothermal Plants,GreenFire Energy,USA,https://www.greenfireenergy.com,"50+","$10M+",2006,Small Enterprise,"Advanced Geothermal Systems",Verified
+Geothermal Plants,Alterra Power (Innergex),Canada,https://www.innergex.com,"500+","$700M+",2003,Medium Enterprise,"Run-of-River Hydro, Wind, Solar",Verified
+Geothermal Plants,US Geothermal,USA,https://www.ormat.com,"2,000+","$800M+",1965,Medium Enterprise,"Geothermal, Recovered Energy",Verified
+Geothermal Plants,Comisión Federal de Electricidad,Mexico,https://www.cfe.mx,"90,000+","$20B+",1937,Large Enterprise,"Geothermal, Hydro, Thermal",Verified
+Geothermal Plants,Star Energy,Indonesia,https://www.starenergy.co.id,"500+","$100M+",2006,Small Enterprise,"Geothermal Development",Verified
+Geothermal Plants,Bestec GmbH,Germany,https://www.bestec-eg.de,"N/A","N/A",,Unknown,Unknown,Unverified
+Hydropower,China Three Gorges Corporation,China,https://www.ctg.com.cn,"40,000+","$10B+",1993,Large Enterprise,"Hydropower, Dams, Renewables",Verified
+Hydropower,Électricité de France (EDF),France,https://www.edf.fr,"165,000+","$95B+",1946,Large Enterprise,"Hydropower, Nuclear, Renewables",Verified
+Hydropower,State Power Investment Corporation,China,https://www.spic.com.cn,"130,000+","$50B+",2015,Large Enterprise,"Hydropower, Solar, Wind",Verified
+Hydropower,Andritz Hydro,Austria,https://www.andritz.com,"29,000+","$9B+",1852,Large Enterprise,"Turbines, Generators, Services",Verified
+Hydropower,Voith Hydro,Germany,https://voith.com,"21,000+","$5B+",1867,Large Enterprise,"Turbines, Generators, Automation",Verified
+Hydropower,GE Renewable Energy,USA,https://www.ge.com/renewableenergy,"40,000+","$16B+",1892,Large Enterprise,"Hydropower Equipment, Services",Verified
+Hydropower,Sinohydro,China,https://en.sinohydro.com,"130,000+","$60B+",1950,Large Enterprise,"Dam Construction, EPC",Verified
+Hydropower,RusHydro,Russia,https://www.eng.rushydro.ru,"60,000+","$6B+",2004,Large Enterprise,"Hydropower Generation, Dams",Verified
+Hydropower,Statkraft,Norway,https://www.statkraft.com,"4,800+","$8B+",1895,Large Enterprise,"Hydropower, Wind, Solar",Verified
+Hydropower,OJSC HydroOGK,Russia,https://www.eng.rushydro.ru,"60,000+","$6B+",2004,Large Enterprise,"Hydropower Generation, Dams",Verified
+Hydropower,BC Hydro,Canada,https://www.bchydro.com,"6,000+","$6B+",1961,Large Enterprise,"Hydropower, T&D",Verified
+Hydropower,Hydro-Québec,Canada,https://www.hydroquebec.com,"19,000+","$14B+",1944,Large Enterprise,"Hydropower, R&D, T&D",Verified
+Hydropower,Itaipu Binacional,Brazil/Paraguay,https://www.itaipu.gov.br,"3,000+","$3B+",1974,Medium Enterprise,"Binational Dam, Power Generation",Verified
+Hydropower,PG&E Corporation,USA,https://www.pgecorp.com,"26,000+","$21B+",1905,Large Enterprise,"Hydropower, T&D, Gas",Verified
+Hydropower,Duke Energy,USA,https://www.duke-energy.com,"27,000+","$29B+",1904,Large Enterprise,"Hydropower, Nuclear, T&D",Verified
+Hydropower,Enel Green Power,Italy,https://www.enelgreenpower.com,"2,000+","$2B+",2008,Medium Enterprise,"Hydropower, Solar, Wind",Verified
+Hydropower,Vattenfall,Sweden,https://group.vattenfall.com,"20,000+","$30B+",1909,Large Enterprise,"Hydropower, Nuclear, Wind",Verified
+Utility-Scale Storage,Fluence,USA,https://www.fluenceenergy.com,"1,000+","$1B+",2018,Medium Enterprise,"Grid-Scale Storage, Software",Verified
+Utility-Scale Storage,Tesla Energy,USA,https://www.tesla.com,"100,000+","$95B+",2003,Large Enterprise,"Megapack, Software",Verified
+Utility-Scale Storage,NextEra Energy Resources,USA,https://www.nexteraenergy.com,"15,000+","$28B+",1925,Large Enterprise,"Storage + Renewables Co-location",Verified
+Utility-Scale Storage,AES Energy Storage,USA,https://www.aes.com,"8,500+","$12B+",1981,Large Enterprise,"Fluence JV, Project Development",Verified
+Utility-Scale Storage,LS Power,USA,https://www.lspower.com,"200+","$2B+",1990,Small Enterprise,"Gateway Project, Development",Verified
+Utility-Scale Storage,Stem,USA,https://www.stem.com,"500+","$400M+",2009,Small Enterprise,"Athena AI, C&I & Utility",Verified
+Utility-Scale Storage,ABB,Switzerland,https://www.abb.com,"105,000+","$32B+",1988,Large Enterprise,"PCS, Grid Edge Storage",Verified
+Utility-Scale Storage,Siemens,Germany,https://www.siemens.com,"311,000+","$78B+",1847,Large Enterprise,"Battery Storage Solutions",Verified
+Utility-Scale Storage,GE Renewable Energy,USA,https://www.ge.com/renewableenergy,"40,000+","$16B+",1892,Large Enterprise,"Reservoir Platform",Verified
+Utility-Scale Storage,Wärtsilä,Finland,https://www.wartsila.com,"17,000+","$6B+",1834,Large Enterprise,"GridSolv, GEMS Software",Verified
+Utility-Scale Storage,Sungrow,China,https://www.sungrowpower.com,"5,000+","$5B+",1997,Large Enterprise,"Inverters, ESS",Verified
+Utility-Scale Storage,RES Group,UK,https://www.res-group.com,"2,000+","$2B+",1982,Medium Enterprise,"Storage Project Development",Verified
+Utility-Scale Storage,Convergent Energy + Power,USA,https://convergentep.com,"100+","$50M+",2011,Small Enterprise,"C&I & Utility Storage",Verified
+Utility-Scale Storage,Greensmith Energy (Wärtsilä),USA,https://www.wartsila.com,"17,000+","$6B+",1834,Large Enterprise,"GEMS Software",Verified
+Utility-Scale Storage,StorEdge Solutions,USA,https://www.storedgesolutions.com,"N/A","N/A",,Unknown,Unknown,Unverified
+Utility-Scale Storage,Highview Power,UK,https://www.highviewpower.com,"100+","$20M+",2005,Small Enterprise,"Liquid Air Energy Storage",Verified
+Utility-Scale Storage,Form Energy,USA,https://www.formenergy.com,"500+","$100M+",2017,Small Enterprise,"Iron-Air Battery",Verified
+Utility-Scale Storage,ESS Inc,USA,https://essinc.com,"200+","$50M+",2011,Small Enterprise,"Iron Flow Battery",Verified
+Utility-Scale Storage,Energy Vault,Switzerland,https://www.energyvault.com,"200+","$100M+",2017,Small Enterprise,"Gravity Storage, EVx",Verified
+Energy Efficiency,Johnson Controls,USA,https://www.johnsoncontrols.com,"100,000+","$27B+",1885,Large Enterprise,"Building Management, HVAC, Controls",Verified
+Energy Efficiency,Schneider Electric,France,https://www.se.com,"135,000+","$39B+",1836,Large Enterprise,"EcoStruxure, Automation, IoT",Verified
+Energy Efficiency,Honeywell,USA,https://www.honeywell.com,"97,000+","$36B+",1906,Large Enterprise,"Building Controls, Forge",Verified
+Energy Efficiency,Siemens,Germany,https://www.siemens.com,"311,000+","$78B+",1847,Large Enterprise,"Desigo, Building Automation",Verified
+Energy Efficiency,Carrier Global Corporation,USA,https://www.carrier.com,"58,000+","$22B+",1915,Large Enterprise,"HVAC, Refrigeration, Controls",Verified
+Energy Efficiency,Trane Technologies,USA,https://www.tranetechnologies.com,"39,000+","$16B+",1913,Large Enterprise,"HVAC, Building Automation",Verified
+Energy Efficiency,Daikin Industries,Japan,https://www.daikin.com,"96,000+","$30B+",1924,Large Enterprise,"VRV Systems, Heat Pumps",Verified
+Energy Efficiency,Mitsubishi Electric,Japan,https://www.mitsubishielectric.com,"146,000+","$45B+",1921,Large Enterprise,"VFDs, HVAC, Building Systems",Verified
+Energy Efficiency,Signify (Philips Lighting),Netherlands,https://www.signify.com,"32,000+","$8B+",1891,Large Enterprise,"LED Lighting, Connected Systems",Verified
+Energy Efficiency,Acuity Brands,USA,https://www.acuitybrands.com,"12,000+","$4B+",2001,Large Enterprise,"Lighting, Lighting Controls",Verified
+Energy Efficiency,Legrand,France,https://www.legrandgroup.com,"38,000+","$8B+",1865,Large Enterprise,"Electrical & Digital Building Infrastructures",Verified
+Energy Efficiency,Eaton,USA,https://www.eaton.com,"92,000+","$24B+",1911,Large Enterprise,"Power Management, Circuit Protection",Verified
+Energy Efficiency,Danfoss,Denmark,https://www.danfoss.com,"42,000+","$9B+",1933,Large Enterprise,"Drives, HVACR, Heating",Verified
+Energy Efficiency,Lutron Electronics,USA,https://www.lutron.com,"3,000+","$1B+",1961,Medium Enterprise,"Lighting Controls, Shades",Verified
+Energy Efficiency,ESCO Technologies,USA,https://www.escotechnologies.com,"3,000+","$900M+",1990,Medium Enterprise,"Filtration, Test, Utility Solutions",Verified
+Energy Efficiency,Armacell,Germany,https://www.armacell.com,"3,200+","$800M+",1860,Medium Enterprise,"Insulation, Mechanical Systems",Verified
+Energy Efficiency,Kingspan Group,Ireland,https://www.kingspan.com,"20,000+","$8B+",1965,Large Enterprise,"Insulation, Building Envelope",Verified
+Energy Efficiency,Uponor,Finland,https://www.uponor.com,"3,900+","$1B+",1918,Medium Enterprise,"PEX Piping, Radiant Heating/Cooling",Verified
+Energy Efficiency,Veolia Water Technologies,France,https://www.veolia.com,"220,000+","$34B+",1853,Large Enterprise,"Water, Waste, Energy Services",Verified
+LNG Terminals,Cheniere Energy,USA,https://www.cheniere.com,"1,500+","$34B+",1983,Large Enterprise,"Sabine Pass, Corpus Christi",Verified
+LNG Terminals,QatarEnergy,Qatar,https://www.qatarenergy.qa,"8,000+","$50B+",1974,Large Enterprise,"North Field, LNG Trains",Verified
+LNG Terminals,Shell LNG,UK,https://www.shell.com,"82,000+","$386B+",1907,Conglomerate,"Integrated LNG Portfolio",Verified
+LNG Terminals,TotalEnergies LNG,France,https://www.totalenergies.com,"105,000+","$263B+",1924,Conglomerate,"Integrated LNG Portfolio",Verified
+LNG Terminals,ExxonMobil LNG,USA,https://www.exxonmobil.com,"62,000+","$413B+",1870,Conglomerate,"Golden Pass, PNG, Qatar",Verified
+LNG Terminals,Petronas LNG,Malaysia,https://www.petronas.com,"48,000+","$80B+",1974,Large Enterprise,"MLNG Complex, FLNG",Verified
+LNG Terminals,Woodside Energy LNG,Australia,https://www.woodside.com,"4,700+","$17B+",1954,Large Enterprise,"North West Shelf, Pluto",Verified
+LNG Terminals,Sempra Infrastructure,USA,https://www.semprainfrastructure.com,"300+","$1B+",1998,Small Enterprise,"Cameron, Port Arthur LNG",Verified
+LNG Terminals,Novatek LNG,Russia,https://www.novatek.ru,"4,000+","$30B+",1994,Large Enterprise,"Yamal LNG, Arctic LNG 2",Verified
+LNG Terminals,Tellurian,USA,https://www.tellurianinc.com,"100+","$50M+",2016,Small Enterprise,"Driftwood LNG",Verified
+LNG Terminals,Venture Global LNG,USA,https://www.venturegloballng.com,"500+","$1B+",2013,Small Enterprise,"Calcasieu Pass, Plaquemines",Verified
+LNG Terminals,Cheniere Partners,USA,https://www.cheniere.com,"1,500+","$34B+",1983,Large Enterprise,"Sabine Pass, Corpus Christi",Verified
+LNG Terminals,Freeport LNG,USA,https://www.freeportlng.com,"200+","$100M+",2002,Small Enterprise,"Freeport LNG Terminal",Verified
+LNG Terminals,Cameron LNG,USA,https://www.cameronlng.com,"N/A","N/A",,Unknown,Unknown,Unverified
+LNG Terminals,Cove Point LNG,USA,https://www.dominionenergy.com,"17,000+","$17B+",1909,Large Enterprise,"Cove Point Terminal",Verified
+LNG Terminals,Sonatrach LNG,Algeria,https://sonatrach.com,"120,000+","$40B+",1963,Large Enterprise,"LNG Trains, Export Terminals",Verified
+LNG Terminals,Gazprom LNG,Russia,https://www.gazprom.com,"466,000+","$170B+",1989,Large Enterprise,"Portovaya, Sakhalin",Verified
+LNG Terminals,ADNOC LNG,UAE,https://www.adnoc.ae,"50,000+","$100B+",1971,Large Enterprise,"Das Island, LNG Trains",Verified
+LNG Terminals,Inpex LNG,Japan,https://www.inpex.co.jp,"4,000+","$15B+",1966,Large Enterprise,"Ichthys LNG",Verified
+Power Plant Engineering,Bechtel,USA,https://www.bechtel.com,"55,000+","$17B+",1898,Large Enterprise,"EPC, Nuclear, Fossil, LNG",Verified
+Power Plant Engineering,Siemens Energy,Germany,https://www.siemens-energy.com,"92,000+","$32B+",2020,Large Enterprise,"Gas Turbines, Grid, Service",Verified
+Power Plant Engineering,General Electric,USA,https://www.ge.com,"172,000+","$76B+",1892,Large Enterprise,"Gas Turbines, H-Tech, Services",Verified
+Power Plant Engineering,Mitsubishi Power,Japan,https://power.mhi.com,"18,000+","$5B+",1884,Large Enterprise,"Gas Turbines, ACC, JAC",Verified
+Power Plant Engineering,Doosan Enerbility,South Korea,https://www.doosanenerbility.com,"5,000+","$5B+",1962,Large Enterprise,"Gas Turbines, EPC",Verified
+Power Plant Engineering,Wood Group,UK,https://www.woodplc.com,"40,000+","$7B+",1912,Large Enterprise,"Consulting, Projects, Operations",Verified
+Power Plant Engineering,Babcock & Wilcox,USA,https://www.babcock.com,"2,300+","$1B+",1867,Medium Enterprise,"Boilers, Emissions Control",Verified
+Power Plant Engineering,Andritz Group,Austria,https://www.andritz.com,"29,000+","$9B+",1852,Large Enterprise,"Hydro, Pulp & Paper, Separation",Verified
+Power Plant Engineering,Hitachi Energy,Japan,https://www.hitachi.com,"35,000+","$9B+",1910,Large Enterprise,"Grid, Power Electronics, HVDC",Verified
+Power Plant Engineering,Alstom,France,https://www.alstom.com,"70,000+","$17B+",1928,Large Enterprise,"Rail Transport, Signaling",Verified
+Power Plant Engineering,Toshiba Energy Systems,Japan,https://www.global.toshiba,"10,000+","$10B+",1975,Large Enterprise,"Turbines, Generators, Nuclear",Verified
+Power Plant Engineering,Black & Veatch,USA,https://www.bv.com,"10,000+","$4B+",1915,Large Enterprise,"EPC, Consulting, Smart Grid",Verified
+Power Plant Engineering,Samsung C&T,South Korea,https://www.samsungcnt.com,"7,000+","$25B+",1938,Large Enterprise,"Trading & Investment, Construction",Verified
+Power Plant Engineering,Larsen & Toubro,India,https://www.larsentoubro.com,"50,000+","$23B+",1938,Large Enterprise,"EPC, Technology, Engineering",Verified
+Power Plant Engineering,Tecnicas Reunidas,Spain,https://www.tecnicasreunidas.es,"7,000+","$2B+",1960,Large Enterprise,"Oil & Gas, Petrochemicals, Power",Verified
+Power Plant Engineering,China Energy Engineering Group,China,https://en.ceec.net.cn,"130,000+","$50B+",2011,Large Enterprise,"Coal, Nuclear, Renewables EPC",Verified
+Power Plant Engineering,Power Construction Corporation of China,China,https://en.powerchina.cn,"140,000+","$70B+",2011,Large Enterprise,"Hydropower, Infrastructure",Verified
+Power Plant Engineering,KEPCO Engineering & Construction,South Korea,https://www.kepco-enc.com,"2,000+","$1B+",1975,Medium Enterprise,"Nuclear, Thermal EPC",Verified
+Power Plant Engineering,ACWA Power,Saudi Arabia,https://www.acwapower.com,"3,500+","$1B+",2004,Medium Enterprise,"IPP, Solar, Wind, Desalination",Verified
+Biofuels,POET,USA,https://www.poet.com,"2,000+","$7B+",1987,Large Enterprise,"Bioethanol, Bioproducts",Verified
+Biofuels,ADM,USA,https://www.adm.com,"41,000+","$102B+",1902,Large Enterprise,"Bioethanol, Agricultural Processing",Verified
+Biofuels,Valero Energy,USA,https://www.valero.com,"10,000+","$176B+",1980,Large Enterprise,"Ethanol, Renewable Diesel, Refining",Verified
+Biofuels,Neste,Finland,https://www.neste.com,"5,000+","$30B+",1948,Large Enterprise,"Renewable Diesel, Sustainable Aviation Fuel",Verified
+Biofuels,Green Plains,USA,https://www.gpreinc.com,"1,000+","$3B+",2004,Medium Enterprise,"Biofuels, High-Protein Feed",Verified
+Biofuels,Renewable Energy Group,USA,https://www.regi.com,"600+","$4B+",1996,Medium Enterprise,"Biodiesel, Renewable Diesel",Verified
+Biofuels,Gevo,USA,https://www.gevo.com,"100+","$1M+",2005,Small Enterprise,"Isobutanol, Sustainable Aviation Fuel",Verified
+Biofuels,Amyris,USA,https://amyris.com,"500+","$200M+",2003,Small Enterprise,"Farnesene, Fermentation, Biochems",Verified
+Biofuels,Fulcrum BioEnergy,USA,https://fulcrum-bioenergy.com,"100+","$10M+",2007,Small Enterprise,"Waste-to-Fuels, Bio-Synfining",Verified
+Biofuels,Enerkem,Canada,https://www.enerkem.com,"200+","$50M+",2000,Small Enterprise,"Waste-to-Biofuels, Methanol",Verified
+Biofuels,Clariant Biofuels,Switzerland,https://www.clariant.com,"11,000+","$5B+",1995,Large Enterprise,"Sunliquid, Cellulosic Ethanol",Verified
+Biofuels,Abengoa Bioenergy,Spain,https://www.abengoa.com,"20,000+","$3B+",1941,Large Enterprise,"Cellulosic Ethanol, EPC",Verified
+Biofuels,BioAmber,Canada,https://www.bio-amber.com,"N/A","N/A",2008,Small Enterprise,"Bio-Succinic Acid",Verified
+Biofuels,Diamond Green Diesel (Valero),USA,https://www.valero.com,"10,000+","$176B+",1980,Large Enterprise,"Renewable Diesel, HVO",Verified
+Biofuels,Enviva,USA,https://www.envivabiomass.com,"1,300+","$1B+",2004,Medium Enterprise,"Wood Pellets, Biomass",Verified
+Biofuels,Raízen,Brazil,https://www.raizen.com.br,"30,000+","$30B+",2010,Large Enterprise,"Sugar-based Ethanol, 2G Ethanol",Verified
+Biofuels,Cosan,Brazil,https://www.cosan.com.br,"45,000+","$10B+",1936,Large Enterprise,"Bioethanol, Sugar, Energy, Logistics",Verified
+Biofuels,Verbio,Germany,https://www.verbio.de,"1,000+","$2B+",2006,Large Enterprise,"Biodiesel, Bioethanol, Biomethane",Verified
+Biofuels,INEOS Bio,UK,https://www.ineos.com,"26,000+","$65B+",1998,Large Enterprise,"Bio-attributed Products, Chemical Recycling",Verified

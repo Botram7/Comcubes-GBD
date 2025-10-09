@@ -1,0 +1,386 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Industrial Gases,Linde plc,UK,https://www.linde.com,"80,000+","$33B+",1879,Large Enterprise,"Industrial & Medical Gases, Engineering",Verified
+Industrial Gases,Air Liquide,France,https://www.airliquide.com,"67,000+","$28B+",1902,Large Enterprise,"Industrial & Medical Gases, Hydrogen",Verified
+Industrial Gases,Air Products & Chemicals,USA,https://www.airproducts.com,"23,000+","$12B+",1940,Large Enterprise,"Industrial Gases, Performance Materials",Verified
+Industrial Gases,Taiyo Nippon Sanso Corporation,Japan,https://www.tn-sanso.com,"20,000+","$7B+",1910,Large Enterprise,"Industrial Gases, Electronics",Verified
+Industrial Gases,Messer Group,Germany,https://www.messergroup.com,"11,000+","$4B+",1898,Large Enterprise,"Industrial & Specialty Gases",Verified
+Industrial Gases,Yingde Gases Group,China,https://www.yingdegas.com,"5,000+","$1B+",2001,Large Enterprise,"On-site Gas Supply, Bulk Gases",Verified
+Industrial Gases,Gulf Cryo,Kuwait,https://www.gulfcryo.com,"2,000+","$500M+",1953,Medium Enterprise,"Industrial & Medical Gases, Middle East",Verified
+Industrial Gases,Sol Group,Italy,https://www.solgroup.com,"4,500+","$1.5B+",1927,Large Enterprise,"Industrial & Medical Gases, Europe",Verified
+Industrial Gases,Southern Gas,India,https://www.southerngas.co.in,"1,000+","$200M+",1962,Medium Enterprise,"Industrial Gases, Cylinder Filling",Verified
+Industrial Gases,INOX Air Products,India,https://www.inoxairproducts.com,"2,500+","$500M+",1999,Medium Enterprise,"Cryogenic Gases, On-site Solutions",Verified
+Industrial Gases,Nippon Gases,Spain,https://www.nippongases.com,"2,000+","$600M+",1999,Medium Enterprise,"Industrial Gases, Iberian Market",Verified
+Industrial Gases,SIAD Group,Italy,https://www.siad.com,"1,500+","$400M+",1927,Medium Enterprise,"Industrial & Medical Gases",Verified
+Industrial Gases,Hangzhou Hangyang,China,https://www.hangyang.com,"2,000+","$500M+",1950,Medium Enterprise,"Cryogenic Equipment & Gases",Verified
+Industrial Gases,Air Water Inc.,Japan,https://www.awi.co.jp,"13,000+","$6B+",1928,Large Enterprise,"Industrial Gases, Chemicals, Healthcare",Verified
+Industrial Gases,Suzhou Jinhong Gas,China,https://www.sjgas.com,"1,000+","$300M+",1999,Medium Enterprise,"Specialty Gases, Electronics",Verified
+Industrial Gases,Gulf Industrial Gases,Bahrain,https://www.gigbh.com,"500+","$100M+",1977,Small Enterprise,"Industrial Gases, GCC Region",Verified
+Industrial Gases,Matheson Tri-Gas,USA,https://www.mathesongas.com,"1,500+","$800M+",1927,Medium Enterprise,"Specialty & Electronic Gases",Verified
+Industrial Gases,Chemix Gases,India,https://www.chemixgases.com,"300+","$50M+",1985,Small Enterprise,"Industrial & Medical Gases",Verified
+Industrial Gases,Buzwair Industrial Gases,Qatar,https://www.buzwairgases.com,"700+","$150M+",1958,Medium Enterprise,"Industrial Gases, Qatar Market",Verified
+Industrial Gases,Universal Industrial Gases,USA,https://www.uigi.com,"100+","$25M+",1967,Small Enterprise,"Cryogenic Plant Design, Gases",Verified
+Petrochemicals,BASF SE,Germany,https://www.basf.com,"111,000+","$87B+",1865,Conglomerate,"Chemicals, Plastics, Performance Products",Verified
+Petrochemicals,Dow Chemical Company,USA,https://www.dow.com,"37,000+","$57B+",1897,Large Enterprise,"Plastics, Chemicals, Agricultural Sciences",Verified
+Petrochemicals,SABIC,Saudi Arabia,https://www.sabic.com,"31,000+","$41B+",1976,Large Enterprise,"Petrochemicals, Agri-Nutrients, Metals",Verified
+Petrochemicals,LyondellBasell,Netherlands,https://www.lyondellbasell.com,"19,000+","$46B+",1953,Large Enterprise,"Polymers, Chemicals, Refining",Verified
+Petrochemicals,INEOS Group,UK,https://www.ineos.com,"26,000+","$65B+",1998,Large Enterprise,"Chemicals, Polymers, Oil & Gas",Verified
+Petrochemicals,ExxonMobil Chemical,USA,https://www.exxonmobilchemical.com,"71,000+","$413B+",1882,Conglomerate,"Petrochemicals, Plastics, Synthetic Lubricants",Verified
+Petrochemicals,Shell Chemicals,Netherlands,https://www.shell.com/chemicals,"82,000+","$386B+",1907,Conglomerate,"Base Chemicals, Performance Products",Verified
+Petrochemicals,Formosa Plastics Corporation,Taiwan,https://www.fpc.com.tw,"10,000+","$8B+",1954,Large Enterprise,"Plastics, Petrochemicals, Fibers",Verified
+Petrochemicals,Reliance Industries,India,https://www.ril.com,"250,000+","$100B+",1960,Conglomerate,"Petrochemicals, Refining, Oil & Gas",Verified
+Petrochemicals,LG Chem,South Korea,https://www.lgchem.com,"31,000+","$42B+",1947,Large Enterprise,"Petrochemicals, Batteries, Advanced Materials",Verified
+Petrochemicals,Sumitomo Chemical,Japan,https://www.sumitomo-chem.co.jp,"33,000+","$24B+",1913,Large Enterprise,"Petrochemicals, Pharmaceuticals, Agrochemicals",Verified
+Petrochemicals,Mitsubishi Chemical Holdings,Japan,https://www.mitsubishichem-hd.co.jp,"70,000+","$33B+",2005,Large Enterprise,"Performance Products, Industrial Materials",Verified
+Petrochemicals,Sinopec Chemical,China,https://www.sinopec.com,"553,000+","$471B+",2000,Large Enterprise,"Petrochemicals, Refining, Marketing",Verified
+Petrochemicals,Borealis AG,Austria,https://www.borealisgroup.com,"6,900+","$12B+",1994,Large Enterprise,"Polyolefins, Base Chemicals, Fertilizers",Verified
+Petrochemicals,Brantigel,Belgium,https://www.brantigel.com,"N/A","N/A",,Unknown,Unknown,Unverified
+Petrochemicals,Braskem,Brazil,https://www.braskem.com,"8,000+","$18B+",2002,Large Enterprise,"Thermoplastics, Green Polyethylene",Verified
+Petrochemicals,Hanwha Solutions Chemical,South Korea,https://www.hanwhasolutions.com,"12,000+","$30B+",1965,Large Enterprise,"Petrochemicals, Solar Energy, Advanced Materials",Verified
+Petrochemicals,PTT Global Chemical,Thailand,https://www.pttgcgroup.com,"5,000+","$15B+",2011,Large Enterprise,"Olefins, Aromatics, Performance Chemicals",Verified
+Petrochemicals,Lotte Chemical,South Korea,https://www.lottechem.com,"7,000+","$20B+",1976,Large Enterprise,"Petrochemicals, Base Chemicals",Verified
+Specialty Chemicals,Evonik Industries,Germany,https://www.evonik.com,"34,000+","$19B+",1843,Large Enterprise,"Specialty Additives, Nutrition & Care",Verified
+Specialty Chemicals,Clariant AG,Switzerland,https://www.clariant.com,"11,000+","$5B+",1995,Large Enterprise,"Catalysts, Additives, Care Chemicals",Verified
+Specialty Chemicals,Albemarle Corporation,USA,https://www.albemarle.com,"7,000+","$9B+",1887,Large Enterprise,"Lithium, Bromine, Catalysts",Verified
+Specialty Chemicals,DuPont de Nemours,USA,https://www.dupont.com,"28,000+","$13B+",2017,Large Enterprise,"Electronics, Water, Protection, Industrial Tech",Verified
+Specialty Chemicals,Solvay SA,Belgium,https://www.solvay.com,"23,000+","$14B+",1863,Large Enterprise,"Advanced Materials, Composites, Silica",Verified
+Specialty Chemicals,AkzoNobel Specialty Chemicals,Netherlands,https://www.akzonobel.com,"32,000+","$11B+",1792,Large Enterprise,"Paints, Coatings, Specialty Chemicals",Verified
+Specialty Chemicals,PPG Industries,USA,https://www.ppg.com,"50,000+","$18B+",1883,Large Enterprise,"Paints, Coatings, Optical Products",Verified
+Specialty Chemicals,Ashland Global Holdings,USA,https://www.ashland.com,"4,000+","$2B+",1924,Medium Enterprise,"Pharma, Personal Care, Coatings",Verified
+Specialty Chemicals,Lanxess AG,Germany,https://www.lanxess.com,"13,000+","$8B+",2004,Large Enterprise,"Specialty Chemicals, Engineering Plastics",Verified
+Specialty Chemicals,Celanese Corporation,USA,https://www.celanese.com,"8,500+","$9B+",1918,Large Enterprise,"Acetyl Chain, Engineered Materials",Verified
+Specialty Chemicals,Croda International,UK,https://www.croda.com,"6,000+","$2B+",1925,Large Enterprise,"Personal Care, Life Sciences, Crop Care",Verified
+Specialty Chemicals,Ecolab Inc.,USA,https://www.ecolab.com,"47,000+","$15B+",1923,Large Enterprise,"Water, Hygiene, Infection Prevention",Verified
+Specialty Chemicals,Huntsman Corporation,USA,https://www.huntsman.com,"9,000+","$8B+",1970,Large Enterprise,"Polyurethanes, Performance Products",Verified
+Specialty Chemicals,Element Solutions Inc.,USA,https://www.elementsolutionsinc.com,"3,500+","$2B+",2018,Medium Enterprise,"Electronics, Industrial & Specialty",Verified
+Specialty Chemicals,RPM International Inc.,USA,https://www.rpminc.com,"15,000+","$7B+",1947,Large Enterprise,"Coatings, Sealants, Building Materials",Verified
+Specialty Chemicals,Stepan Company,USA,https://www.stepan.com,"2,200+","$2B+",1932,Medium Enterprise,"Surfactants, Polyols, Specialty Products",Verified
+Specialty Chemicals,IMCD Group,Netherlands,https://www.imcdgroup.com,"4,000+","$5B+",1995,Large Enterprise,"Specialty Chemicals Distribution",Verified
+Specialty Chemicals,Wacker Chemie AG,Germany,https://www.wacker.com,"14,500+","$7B+",1914,Large Enterprise,"Silicones, Polymers, Biosolutions",Verified
+Specialty Chemicals,Sika AG,Switzerland,https://www.sika.com,"27,000+","$13B+",1910,Large Enterprise,"Construction Systems, Industrial Bonding",Verified
+Fertilizers & Agrochemicals,Nutrien Ltd,Canada,https://www.nutrien.com,"23,000+","$28B+",2018,Large Enterprise,"Potash, Nitrogen, Phosphate, Crop Services",Verified
+Fertilizers & Agrochemicals,Yara International,Norway,https://www.yara.com,"17,000+","$17B+",1905,Large Enterprise,"Nitrogen Fertilizers, Ammonia, Nitrates",Verified
+Fertilizers & Agrochemicals,Mosaic Company,USA,https://www.mosaicco.com,"13,000+","$12B+",2004,Large Enterprise,"Potash, Phosphate, Micro-nutrients",Verified
+Fertilizers & Agrochemicals,CF Industries Holdings,USA,https://www.cfindustries.com,"2,700+","$6B+",1946,Large Enterprise,"Nitrogen Fertilizers, Ammonia, UAN",Verified
+Fertilizers & Agrochemicals,ICL Group,Israel,https://www.icl-group.com,"12,500+","$7B+",1968,Large Enterprise,"Potash, Phosphates, Specialty Minerals",Verified
+Fertilizers & Agrochemicals,K+S Group,Germany,https://www.k-plus-s.com,"11,000+","$4B+",1889,Large Enterprise,"Potash, Magnesium, Salt",Verified
+Fertilizers & Agrochemicals,OCP Group,Morocco,https://www.ocpgroup.ma,"21,000+","$9B+",1920,Large Enterprise,"Phosphate Rock, Fertilizers",Verified
+Fertilizers & Agrochemicals,Uralkali,Russia,https://www.uralkali.com,"11,000+","$3B+",1930,Large Enterprise,"Potash Fertilizers",Verified
+Fertilizers & Agrochemicals,PhosAgro,Russia,https://www.phosagro.ru,"17,000+","$4B+",2001,Large Enterprise,"Phosphate-Based Fertilizers",Verified
+Fertilizers & Agrochemicals,Indian Farmers Fertiliser Cooperative (IFFCO),India,https://www.iffco.in,"35,000+","$10B+",1967,Large Enterprise,"Fertilizers, Agri-inputs, Cooperative",Verified
+Fertilizers & Agrochemicals,Coromandel International,India,https://www.coromandel.biz,"4,000+","$2B+",1961,Medium Enterprise,"Fertilizers, Crop Protection, Retail",Verified
+Fertilizers & Agrochemicals,Sinofert Holdings,China,https://www.sinofert.com,"3,000+","$3B+",2005,Medium Enterprise,"Fertilizer Production & Distribution",Verified
+Fertilizers & Agrochemicals,Haifa Group,Israel,https://www.haifa-group.com,"1,800+","$700M+",1966,Medium Enterprise,"Potassium Nitrate, Specialty Fertilizers",Verified
+Fertilizers & Agrochemicals,EuroChem Group,Switzerland,https://www.eurochemgroup.com,"27,000+","$7B+",2001,Large Enterprise,"Nitrogen, Phosphate, Potash",Verified
+Fertilizers & Agrochemicals,Wilbur-Ellis Agribusiness,USA,https://www.wilburellis.com,"4,000+","$3B+",1921,Medium Enterprise,"Crop Protection, Nutrition, Agribusiness",Verified
+Fertilizers & Agrochemicals,SQM (Sociedad Química y Minera),Chile,https://www.sqm.com,"5,700+","$3B+",1968,Large Enterprise,"Lithium, Iodine, Plant Nutrients",Verified
+Fertilizers & Agrochemicals,Sumitomo Chemical Agrosciences,Japan,https://www.sumitomo-chem.co.jp,"33,000+","$24B+",1913,Large Enterprise,"Agrochemicals, Pesticides, Seeds",Verified
+Fertilizers & Agrochemicals,Bayer CropScience,Germany,https://www.bayer.com,"99,000+","$51B+",1863,Conglomerate,"Seeds, Crop Protection, Biotechnology",Verified
+Paints & Coatings,Sherwin-Williams Company,USA,https://www.sherwin-williams.com,"64,000+","$23B+",1866,Large Enterprise,"Architectural, Industrial, Automotive Coatings",Verified
+Paints & Coatings,AkzoNobel Paints,Netherlands,https://www.akzonobel.com,"32,000+","$11B+",1792,Large Enterprise,"Decorative Paints, Performance Coatings",Verified
+Paints & Coatings,PPG Industries,USA,https://www.ppg.com,"50,000+","$18B+",1883,Large Enterprise,"Coatings, Paints, Optical Products",Verified
+Paints & Coatings,Nippon Paint Holdings,Japan,https://www.nipponpaint-holdings.com,"26,000+","$10B+",1881,Large Enterprise,"Automotive, Decorative, Industrial Coatings",Verified
+Paints & Coatings,RPM International (Rust-Oleum),USA,https://www.rpminc.com,"15,000+","$7B+",1947,Large Enterprise,"Protective Coatings, Sealants, Adhesives",Verified
+Paints & Coatings,Asian Paints,India,https://www.asianpaints.com,"7,000+","$3B+",1942,Large Enterprise,"Decorative Paints, Home Decor",Verified
+Paints & Coatings,Kansai Paint Co.,Japan,https://www.kansai.co.jp,"16,000+","$4B+",1918,Large Enterprise,"Automotive, Industrial, Decorative Coatings",Verified
+Paints & Coatings,Jotun Group,Norway,https://www.jotun.com,"10,000+","$3B+",1926,Large Enterprise,"Protective, Marine, Powder Coatings",Verified
+Paints & Coatings,Basf Coatings,Germany,https://www.basf.com,"111,000+","$87B+",1865,Conglomerate,"Automotive OEM, Refinish, Industrial Coatings",Verified
+Paints & Coatings,Axalta Coating Systems,USA,https://www.axalta.com,"12,000+","$5B+",1866,Large Enterprise,"Liquid & Powder Coatings, Refinish",Verified
+Paints & Coatings,Beckers Group,Germany,https://www.beckers-group.com,"1,500+","$700M+",1865,Medium Enterprise,"Coil, Industrial, Consumer Coatings",Verified
+Paints & Coatings,Hempel A/S,Denmark,https://www.hempel.com,"7,000+","$2B+",1915,Large Enterprise,"Protective, Marine, Decorative Coatings",Verified
+Paints & Coatings,Berger Paints India,India,https://www.bergerpaints.com,"3,500+","$1B+",1923,Medium Enterprise,"Decorative, Industrial, Automotive Paints",Verified
+Paints & Coatings,KCC Corporation,South Korea,https://www.kccworld.co.kr,"4,000+","$2B+",1958,Medium Enterprise,"Paints, Building Materials, Insulation",Verified
+Paints & Coatings,Shalimar Paints,India,https://www.shalimarpaints.com,"500+","$50M+",1902,Small Enterprise,"Decorative, Industrial, Automotive Paints",Verified
+Paints & Coatings,Tikkurila (PPG),Finland,https://www.tikkurila.com,"2,700+","$600M+",1862,Medium Enterprise,"Decorative Paints, Industrial Coatings",Verified
+Paints & Coatings,DuluxGroup (Nippon Paint),Australia,https://www.duluxgroup.com.au,"4,000+","$1B+",1918,Medium Enterprise,"Decorative Paints, Coatings, Adhesives",Verified
+Paints & Coatings,Sacal Paints International,UAE,https://www.sacalpaints.com,"200+","$30M+",1979,Small Enterprise,"Decorative, Protective, Marine Coatings",Verified
+Adhesives & Sealants,Henkel AG & Co. KGaA,Germany,https://www.henkel.com,"50,000+","$23B+",1876,Large Enterprise,"Adhesives, Sealants, Surface Technologies",Verified
+Adhesives & Sealants,3M Industrial Adhesives,USA,https://www.3m.com,"92,000+","$34B+",1902,Conglomerate,"Industrial Adhesives, Tapes, Bonding",Verified
+Adhesives & Sealants,H.B. Fuller Company,USA,https://www.hbfuller.com,"6,500+","$3B+",1887,Large Enterprise,"Adhesives, Sealants, Other Specialty Chemicals",Verified
+Adhesives & Sealants,Sika AG,Switzerland,https://www.sika.com,"27,000+","$13B+",1910,Large Enterprise,"Construction Adhesives, Sealants, Waterproofing",Verified
+Adhesives & Sealants,Arkema Group (Bostik),France,https://www.bostik.com,"20,500+","$11B+",2004,Large Enterprise,"Adhesives, Sealants, Flooring",Verified
+Adhesives & Sealants,Dow Adhesives,USA,https://www.dow.com,"37,000+","$57B+",1897,Large Enterprise,"Industrial Adhesives, Polymers",Verified
+Adhesives & Sealants,Avery Dennison Corporation,USA,https://www.averydennison.com,"30,000+","$8B+",1935,Large Enterprise,"Pressure-Sensitive Adhesives, Materials",Verified
+Adhesives & Sealants,Ashland Adhesives,USA,https://www.ashland.com,"4,000+","$2B+",1924,Medium Enterprise,"Specialty Adhesives, Composites",Verified
+Adhesives & Sealants,Illinois Tool Works (ITW),USA,https://www.itw.com,"46,000+","$16B+",1912,Large Enterprise,"Engineering Adhesives, Polymers",Verified
+Adhesives & Sealants,LORD Corporation,USA,https://www.lord.com,"3,200+","$1B+",1924,Medium Enterprise,"Adhesives, Coatings, Vibration Management",Verified
+Adhesives & Sealants,Pidilite Industries,India,https://www.pidilite.com,"4,000+","$1B+",1959,Medium Enterprise,"Consumer Adhesives, Construction Chemicals",Verified
+Adhesives & Sealants,ThreeBond Holdings,Japan,https://www.threebond.co.jp,"4,000+","$1B+",1957,Medium Enterprise,"Sealants, Adhesives, Lubricants",Verified
+Adhesives & Sealants,Toagosei Co.,Japan,https://www.toagosei.co.jp,"3,500+","$1B+",1917,Medium Enterprise,"Cyanoacrylate Adhesives, Acrylic Resins",Verified
+Adhesives & Sealants,Jowat SE,Germany,https://www.jowat.com,"1,000+","$300M+",1919,Medium Enterprise,"Industrial Adhesives, Hot Melts",Verified
+Adhesives & Sealants,Soudal Group,Belgium,https://www.soudal.com,"2,500+","$500M+",1966,Medium Enterprise,"Sealants, Adhesives, PU Foams",Verified
+Adhesives & Sealants,Weicon GmbH & Co. KG,Germany,https://www.weicon.com,"300+","$100M+",1947,Small Enterprise,"Specialty Adhesives, Sealants, Lubricants",Verified
+Adhesives & Sealants,Beardow Adams,UK,https://www.beardowadams.com,"200+","$50M+",1974,Small Enterprise,"Hot Melt Adhesives",Verified
+Adhesives & Sealants,Permabond Engineering Adhesives,USA,https://www.permabond.com,"500+","$100M+",1964,Small Enterprise,"Anaerobic, Cyanoacrylate, Epoxy Adhesives",Verified
+Adhesives & Sealants,Loxeal Engineering Adhesives,Italy,https://www.loxeal.com,"100+","$20M+",1979,Small Enterprise,"Industrial Adhesives, Sealants",Verified
+Synthetic Rubber,Arlanxeo (Saudi Aramco),Netherlands,https://www.arlanxeo.com,"3,800+","$3B+",2016,Large Enterprise,"Performance Elastomers, Synthetic Rubber",Verified
+Synthetic Rubber,Kumho Petrochemical,South Korea,https://www.kkpc.com,"2,500+","$4B+",1970,Medium Enterprise,"Synthetic Rubber, Resins",Verified
+Synthetic Rubber,LG Chem,South Korea,https://www.lgchem.com,"31,000+","$42B+",1947,Large Enterprise,"Synthetic Rubber, ABS, Petrochemicals",Verified
+Synthetic Rubber,JSR Corporation,Japan,https://www.jsr.co.jp,"9,000+","$4B+",1957,Large Enterprise,"Elastomers, Plastics, Electronic Materials",Verified
+Synthetic Rubber,Zeon Corporation,Japan,https://www.zeon.co.jp,"3,500+","$3B+",1950,Medium Enterprise,"Specialty Elastomers, Chemicals",Verified
+Synthetic Rubber,Synthos S.A.,Poland,https://www.synthosgroup.com,"3,000+","$2B+",1945,Medium Enterprise,"Synthetic Rubber, Latex, Polystyrene",Verified
+Synthetic Rubber,TSRC Corporation,Taiwan,https://www.tsrc.com.tw,"2,000+","$1B+",1973,Medium Enterprise,"SBR, BR, TPEs",Verified
+Synthetic Rubber,Versalis (Eni),Italy,https://www.versalis.eni.com,"5,000+","$7B+",2012,Large Enterprise,"Elastomers, Plastics, Base Chemicals",Verified
+Synthetic Rubber,Lion Elastomers,USA,https://www.lionelastomers.com,"500+","$200M+",1972,Small Enterprise,"EPDM, SBR, Specialty Elastomers",Verified
+Synthetic Rubber,ExxonMobil Chemical Rubber,USA,https://www.exxonmobilchemical.com,"71,000+","$413B+",1882,Conglomerate,"Butyl, EPDM, Vistalon",Verified
+Synthetic Rubber,Goodyear Tire & Rubber,USA,https://www.goodyear.com,"72,000+","$20B+",1898,Large Enterprise,"Tires, Synthetic Rubber",Verified
+Synthetic Rubber,Bridgestone Corporation,Japan,https://www.bridgestone.com,"138,000+","$33B+",1931,Large Enterprise,"Tires, Synthetic Rubber, Diversified Products",Verified
+Synthetic Rubber,Michelin Group,France,https://www.michelin.com,"125,000+","$28B+",1889,Large Enterprise,"Tires, High-Tech Materials",Verified
+Synthetic Rubber,PetroChina Synthetic Rubber,China,https://www.petrochina.com.cn,"402,000+","$365B+",1999,Large Enterprise,"SBR, BR, Petrochemicals",Verified
+Synthetic Rubber,Indian Synthetic Rubber,India,https://www.isrl.in,"100+","$50M+",2011,Small Enterprise,"Polybutadiene Rubber",Verified
+Synthetic Rubber,Apollo Tyres Synthetic Rubber,India,https://www.apollotyres.com,"16,000+","$2B+",1972,Large Enterprise,"Tires, Synthetic Rubber",Verified
+Synthetic Rubber,Trinseo,USA,https://www.trinseo.com,"2,300+","$5B+",2010,Medium Enterprise,"Latex, Synthetic Rubber, Plastics",Verified
+Synthetic Rubber,Denka Company Limited,Japan,https://www.denka.co.jp,"5,000+","$3B+",1915,Medium Enterprise,"Elastomers, Chemicals, Electronics",Verified
+Synthetic Rubber,LANXESS Synthetic Rubber,Germany,https://www.lanxess.com,"13,000+","$8B+",2004,Large Enterprise,"Performance Elastomers, Butyl Rubber",Verified
+Plastic Resins,LyondellBasell,Netherlands,https://www.lyondellbasell.com,"19,000+","$46B+",1953,Large Enterprise,"Polyethylene, Polypropylene, Advanced Polymers",Verified
+Plastic Resins,Dow Plastics,USA,https://www.dow.com,"37,000+","$57B+",1897,Large Enterprise,"Polyolefins, Performance Plastics",Verified
+Plastic Resins,SABIC Polymers,Saudi Arabia,https://www.sabic.com,"31,000+","$41B+",1976,Large Enterprise,"Polyethylene, Polypropylene, Engineering Thermoplastics",Verified
+Plastic Resins,INEOS Olefins & Polymers,UK,https://www.ineos.com,"26,000+","$65B+",1998,Large Enterprise,"Polyolefins, Styrenics",Verified
+Plastic Resins,BASF Plastics,Germany,https://www.basf.com,"111,000+","$87B+",1865,Conglomerate,"Engineering Plastics, Polyurethanes, Foams",Verified
+Plastic Resins,ExxonMobil Polymers,USA,https://www.exxonmobilchemical.com,"71,000+","$413B+",1882,Conglomerate,"Polyethylene, Polypropylene, Vistamaxx",Verified
+Plastic Resins,Formosa Plastics Corporation,Taiwan,https://www.fpc.com.tw,"10,000+","$8B+",1954,Large Enterprise,"PVC, Polyolefins, Acrylics",Verified
+Plastic Resins,Borealis AG,Austria,https://www.borealisgroup.com,"6,900+","$12B+",1994,Large Enterprise,"Polyolefins, Base Chemicals",Verified
+Plastic Resins,Braskem,Brazil,https://www.braskem.com,"8,000+","$18B+",2002,Large Enterprise,"Polyethylene, Polypropylene, Green Plastics",Verified
+Plastic Resins,Reliance Polymers,India,https://www.ril.com,"250,000+","$100B+",1960,Conglomerate,"Polypropylene, Polyethylene, PVC",Verified
+Plastic Resins,Lotte Chemical,South Korea,https://www.lottechem.com,"7,000+","$20B+",1976,Large Enterprise,"PET, PTA, Polyolefins",Verified
+Plastic Resins,Sumitomo Chemical Plastics,Japan,https://www.sumitomo-chem.co.jp,"33,000+","$24B+",1913,Large Enterprise,"Engineering Plastics, Resins",Verified
+Plastic Resins,Chevron Phillips Chemical,USA,https://www.cpchem.com,"5,000+","$15B+",2000,Large Enterprise,"Olefins, Polyolefins, Aromatics",Verified
+Plastic Resins,TotalEnergies Polymers,France,https://www.totalenergies.com,"105,000+","$210B+",1924,Conglomerate,"Polyethylene, Polypropylene, PS",Verified
+Plastic Resins,Westlake Chemical,USA,https://www.westlake.com,"8,700+","$15B+",1986,Large Enterprise,"PVC, PE, Styrenics",Verified
+Plastic Resins,Indorama Ventures,Thailand,https://www.indorama.com,"24,000+","$15B+",1994,Large Enterprise,"PET, Olefins, Fibers",Verified
+Plastic Resins,China National Chemical Corporation (ChemChina),China,https://www.chemchina.com,"140,000+","$70B+",2004,Large Enterprise,"Materials, Life Science, Basic Chemicals",Verified
+Plastic Resins,LyondellBasell Polyolefins,Netherlands,https://www.lyondellbasell.com,"19,000+","$46B+",1953,Large Enterprise,"Polyethylene, Polypropylene, Catalysts",Verified
+Plastic Resins,Sinopec Plastics,China,https://www.sinopec.com,"553,000+","$471B+",2000,Large Enterprise,"Synthetic Resins, Petrochemicals",Verified
+Dyes & Pigments,DIC Corporation,Japan,https://www.dic-global.com,"22,000+","$8B+",1908,Large Enterprise,"Printing Inks, Pigments, Compounds",Verified
+Dyes & Pigments,Clariant Pigments,Switzerland,https://www.clariant.com,"11,000+","$5B+",1995,Large Enterprise,"Pigments, Masterbatches, Additives",Verified
+Dyes & Pigments,BASF Colors & Effects,Germany,https://www.basf.com,"111,000+","$87B+",1865,Conglomerate,"Pigments, Dyes, Effect Materials",Verified
+Dyes & Pigments,Sudarshan Chemical Industries,India,https://www.sudarshan.com,"2,000+","$300M+",1951,Medium Enterprise,"Organic Pigments, Agro Chemicals",Verified
+Dyes & Pigments,Huntsman Pigments,USA,https://www.huntsman.com,"9,000+","$8B+",1970,Large Enterprise,"TiO2, Color Pigments, Additives",Verified
+Dyes & Pigments,Kronos Worldwide,USA,https://www.kronosww.com,"1,600+","$2B+",1916,Medium Enterprise,"Titanium Dioxide Pigments",Verified
+Dyes & Pigments,Tronox Holdings,USA,https://www.tronox.com,"6,500+","$3B+",2005,Large Enterprise,"Titanium Dioxide, Zircon",Verified
+Dyes & Pigments,Atul Ltd,India,https://www.atul.co.in,"2,500+","$600M+",1947,Medium Enterprise,"Dyes, Agrochemicals, Pharmaceuticals",Verified
+Dyes & Pigments,Heubach GmbH,Germany,https://www.heubachcolor.com,"1,000+","$500M+",1828,Medium Enterprise,"Organic Pigments, Complex Inorganic Color Pigments",Verified
+Dyes & Pigments,Kiri Industries,India,https://www.kiriindustries.com,"2,000+","$200M+",1975,Medium Enterprise,"Reactive Dyes, Dye Intermediates",Verified
+Dyes & Pigments,Lanxess Inorganic Pigments,Germany,https://www.lanxess.com,"13,000+","$8B+",2004,Large Enterprise,"Iron Oxide Pigments, Chromium Chemicals",Verified
+Dyes & Pigments,Toyo Ink SC Holdings,Japan,https://www.toyoinkgroup.com,"7,000+","$2B+",1896,Large Enterprise,"Printing Inks, Pigments, Functional Materials",Verified
+Dyes & Pigments,Cabot Corporation,USA,https://www.cabotcorp.com,"4,500+","$4B+",1882,Medium Enterprise,"Carbon Black, Fumed Silica, Masterbatches",Verified
+Dyes & Pigments,Merck KGaA Pigments,Germany,https://www.merckgroup.com,"57,000+","$23B+",1668,Conglomerate,"Effect Pigments, Luster Pigments",Verified
+Dyes & Pigments,Ferro Corporation,USA,https://www.ferro.com,"3,500+","$1B+",1919,Medium Enterprise,"Coatings, Colors, Ceramics",Verified
+Dyes & Pigments,Cathay Industries Group,France,https://www.cathayindustries.com,"500+","$200M+",1975,Small Enterprise,"Iron Oxide Pigments",Verified
+Dyes & Pigments,Trust Chem Co.,China,https://www.trustchem.com,"500+","$150M+",1998,Small Enterprise,"Organic Pigments, Dyes Intermediates",Verified
+Dyes & Pigments,Archroma,Switzerland,https://www.archroma.com,"3,000+","$1B+",2013,Medium Enterprise,"Textile Specialties, Paper Solutions, Emulsion Products",Verified
+Dyes & Pigments,Organic Dyes and Pigments,USA,https://www.organicdye.com,"100+","$20M+",1970,Small Enterprise,"Dyes, Pigments, Colorants",Verified
+Dyes & Pigments,Koel Colours Pvt. Ltd.,India,https://www.koelcolours.com,"200+","$30M+",1976,Small Enterprise,"Pigments, Dyes, Masterbatches",Verified
+Industrial Cleaners,Ecolab Inc.,USA,https://www.ecolab.com,"47,000+","$15B+",1923,Large Enterprise,"Institutional, Healthcare, Industrial Cleaning",Verified
+Industrial Cleaners,Diversey Holdings,USA,https://www.diversey.com,"9,000+","$3B+",1923,Medium Enterprise,"Hygiene, Cleaning, Infection Prevention",Verified
+Industrial Cleaners,3M Industrial Cleaning,USA,https://www.3m.com,"92,000+","$34B+",1902,Conglomerate,"Abrasive, Cleaning, Surface Conditioning",Verified
+Industrial Cleaners,BASF Cleaning Solutions,Germany,https://www.basf.com,"111,000+","$87B+",1865,Conglomerate,"Surfactants, Solvents, Formulations",Verified
+Industrial Cleaners,Henkel Industrial Cleaners,Germany,https://www.henkel.com,"50,000+","$23B+",1876,Large Enterprise,"Metal Cleaning, Electronics Cleaning",Verified
+Industrial Cleaners,Stepan Company,USA,https://www.stepan.com,"2,200+","$2B+",1932,Medium Enterprise,"Surfactants, Cleaning Agents",Verified
+Industrial Cleaners,Solvay Industrial Cleaners,Belgium,https://www.solvay.com,"23,000+","$14B+",1863,Large Enterprise,"Solvents, Degreasers, Surfactants",Verified
+Industrial Cleaners,The Clorox Company,USA,https://www.clorox.com,"8,800+","$7B+",1913,Large Enterprise,"Bleach, Disinfectants, Cleaning Products",Verified
+Industrial Cleaners,Kimberly-Clark Professional,USA,https://www.kcprofessional.com,"40,000+","$20B+",1872,Large Enterprise,"Wipes, Towels, Hygiene Products",Verified
+Industrial Cleaners,Zep Inc.,USA,https://www.zep.com,"2,600+","$1B+",1937,Medium Enterprise,"Cleaning, Maintenance, Sanitation",Verified
+Industrial Cleaners,Betz Laboratories (Suez),France,https://www.suez.com,"90,000+","$20B+",1858,Large Enterprise,"Water Treatment, Cleaning Chemicals",Verified
+Industrial Cleaners,Kao Corporation Industrial,Japan,https://www.kao.com,"33,000+","$13B+",1887,Large Enterprise,"Surfactants, Cleaning Agents",Verified
+Industrial Cleaners,Croda Industrial Chemicals,UK,https://www.croda.com,"6,000+","$2B+",1925,Large Enterprise,"Surfactants, Oleochemicals",Verified
+Industrial Cleaners,Quaker Chemical Corporation,USA,https://www.quakerhoughton.com,"4,500+","$2B+",1918,Medium Enterprise,"Metalworking Fluids, Industrial Lubricants",Verified
+Industrial Cleaners,Neogen Corporation,USA,https://www.neogen.com,"2,000+","$500M+",1982,Medium Enterprise,"Food Safety, Animal Safety, Disinfectants",Verified
+Industrial Cleaners,Spartan Chemical Company,USA,https://www.spartanchemical.com,"1,000+","$200M+",1956,Medium Enterprise,"Industrial Cleaners, Sanitizers",Verified
+Industrial Cleaners,National Chemical Laboratories,USA,https://www.nclonline.com,"100+","$20M+",1931,Small Enterprise,"Laboratory Cleaning, Reagents",Verified
+Industrial Cleaners,Alconox Inc.,USA,https://www.alconox.com,"50+","$10M+",1946,Small Enterprise,"Critical Cleaning Detergents",Verified
+Industrial Cleaners,ABRO Industries,USA,https://www.abro.com,"500+","$100M+",1945,Small Enterprise,"Automotive, Industrial Cleaners",Verified
+Industrial Cleaners,Chemtex Speciality Limited,India,https://www.chemtexltd.com,"1,000+","$100M+",1962,Medium Enterprise,"Specialty Cleaning Chemicals",Verified
+Water Treatment Chemicals,Solenis LLC,USA,https://www.solenis.com,"6,500+","$3B+",1907,Large Enterprise,"Pulp & Paper, Water, Oil & Gas",Verified
+Water Treatment Chemicals,Kemira Oyj,Finland,https://www.kemira.com,"5,000+","$3B+",1920,Large Enterprise,"Pulp & Paper, Water, Oil & Gas",Verified
+Water Treatment Chemicals,Ecolab Water Solutions,USA,https://www.ecolab.com,"47,000+","$15B+",1923,Large Enterprise,"Water Management, Treatment Technologies",Verified
+Water Treatment Chemicals,BASF Water Chemicals,Germany,https://www.basf.com,"111,000+","$87B+",1865,Conglomerate,"Scale Inhibitors, Corrosion Control",Verified
+Water Treatment Chemicals,Dow Water & Process Solutions,USA,https://www.dow.com,"37,000+","$57B+",1897,Large Enterprise,"Membranes, Ion Exchange Resins",Verified
+Water Treatment Chemicals,Suez Water Technologies,France,https://www.suezwatertechnologies.com,"90,000+","$20B+",1858,Large Enterprise,"Water Treatment, Process Solutions",Verified
+Water Treatment Chemicals,Kurita Water Industries,Japan,https://www.kurita.co.jp,"7,000+","$2B+",1949,Large Enterprise,"Water Treatment, Process Chemicals",Verified
+Water Treatment Chemicals,Lonza Group Water Care,Switzerland,https://www.lonza.com,"16,000+","$7B+",1897,Large Enterprise,"Disinfection, Microbial Control",Verified
+Water Treatment Chemicals,BWA Water Additives,UK,https://www.wateradditives.com,"200+","$50M+",1992,Small Enterprise,"Antiscalants, Dispersants, Biocides",Verified
+Water Treatment Chemicals,Buckman Laboratories,USA,https://www.buckman.com,"1,500+","$300M+",1945,Medium Enterprise,"Pulp & Paper, Leather, Water Treatment",Verified
+Water Treatment Chemicals,Nouryon,Netherlands,https://www.nouryon.com,"9,800+","$5B+",2018,Large Enterprise,"Pulp & Paper, Oil & Gas, Water",Verified
+Water Treatment Chemicals,SNF Floerger,France,https://www.snf.com,"5,000+","$3B+",1978,Large Enterprise,"Polyacrylamides, Flocculants",Verified
+Water Treatment Chemicals,Accepta Water Treatment,UK,https://www.accepta.com,"50+","$10M+",1998,Small Enterprise,"Water Treatment Chemicals, Testing",Verified
+Water Treatment Chemicals,Veolia Water Technologies,France,https://www.veolia.com,"179,000+","$34B+",1853,Large Enterprise,"Water Treatment, Resource Management",Verified
+Water Treatment Chemicals,ChemTreat Inc. (Danaher),USA,https://www.chemtreat.com,"1,000+","$500M+",1968,Medium Enterprise,"Industrial Water Treatment",Verified
+Water Treatment Chemicals,Italmatch Chemicals,Italy,https://www.italmatch.com,"700+","$200M+",1968,Small Enterprise,"Corrosion Inhibitors, Phosphorus Chemicals",Verified
+Water Treatment Chemicals,Cortec Corporation,USA,https://www.cortecvci.com,"400+","$100M+",1977,Small Enterprise,"VCI, Corrosion Inhibitors, Water Treatment",Verified
+Water Treatment Chemicals,Aditya Birla Chemicals,India,https://www.adityabirlachemicals.com,"10,000+","$4B+",1987,Large Enterprise,"Chlor-Alkali, Water Treatment Chemicals",Verified
+Water Treatment Chemicals,Innospec Inc.,USA,https://www.innospecinc.com,"2,000+","$1B+",1938,Medium Enterprise,"Fuel Specialties, Oilfield Chemicals, Personal Care",Verified
+Textile Chemicals,Huntsman Textile Effects,USA,https://www.huntsman.com,"9,000+","$8B+",1970,Large Enterprise,"Dyes, Chemicals, Digital Inks",Verified
+Textile Chemicals,Archroma Textile Specialties,Switzerland,https://www.archroma.com,"3,000+","$1B+",2013,Medium Enterprise,"Dyes, Chemicals, Process Solutions",Verified
+Textile Chemicals,Dystar Group,Germany,https://www.dystar.com,"4,000+","$800M+",1995,Large Enterprise,"Textile Dyes, Auxiliaries",Verified
+Textile Chemicals,Rudolf Group,Germany,https://www.rudolf-group.com,"1,500+","$300M+",1922,Medium Enterprise,"Auxiliaries, Finishing Agents",Verified
+Textile Chemicals,Kiri Industries Textile,India,https://www.kiriindustries.com,"2,000+","$200M+",1975,Medium Enterprise,"Reactive Dyes, Intermediates",Verified
+Textile Chemicals,Omnova Solutions,USA,https://www.omnova.com,"2,000+","$700M+",1999,Medium Enterprise,"Coatings, Nonwovens, Polymers",Verified
+Textile Chemicals,Tanatex Chemicals,Netherlands,https://www.tanatexchemicals.com,"500+","$100M+",1946,Small Enterprise,"Textile Auxiliaries, Process Chemicals",Verified
+Textile Chemicals,CHT Group,Germany,https://www.cht.com,"2,500+","$600M+",1953,Medium Enterprise,"Auxiliaries, Dyes, Silicones",Verified
+Textile Chemicals,Clariant Textile Chemicals,Switzerland,https://www.clariant.com,"11,000+","$5B+",1995,Large Enterprise,"Textile Chemicals, Dyes, Auxiliaries",Verified
+Textile Chemicals,Evonik Textile Additives,Germany,https://www.evonik.com,"34,000+","$19B+",1843,Large Enterprise,"Softeners, Water Repellents",Verified
+Textile Chemicals,Dai-ichi Karkaria Ltd.,India,https://www.dai-ichiindia.com,"500+","$50M+",1974,Small Enterprise,"Textile Auxiliaries, Specialty Chemicals",Verified
+Textile Chemicals,Lonsen Inc.,China,https://www.lonsen.com,"1,000+","$200M+",1997,Medium Enterprise,"Textile Dyes, Intermediates",Verified
+Textile Chemicals,Boer Group,China,https://www.boerchemicals.com,"500+","$100M+",2002,Small Enterprise,"Textile Auxiliaries, Leather Chemicals",Verified
+Textile Chemicals,Helena Chemical Company,USA,https://www.helenachemical.com,"4,000+","$3B+",1957,Medium Enterprise,"Crop Protection, Adjuvants",Verified
+Textile Chemicals,Pulcra Chemicals,Germany,https://www.pulcra-chemicals.com,"1,000+","$200M+",1921,Medium Enterprise,"Textile Finishing, Leather Processing",Verified
+Textile Chemicals,Zschimmer & Schwarz,Germany,https://www.zschimmer-schwarz.com,"2,500+","$500M+",1894,Medium Enterprise,"Auxiliaries, Surfactants, Dispersing Agents",Verified
+Textile Chemicals,Resil Chemicals Pvt. Ltd.,India,https://www.resil.com,"300+","$50M+",1975,Small Enterprise,"Textile Finishes, Water Repellents",Verified
+Textile Chemicals,Organic Dyes and Pigments Textile,USA,https://www.organicdye.com,"100+","$20M+",1970,Small Enterprise,"Textile Dyes, Pigments",Verified
+Textile Chemicals,Chemdyes Sdn Bhd,Malaysia,https://www.chemdyes.com,"200+","$30M+",1979,Small Enterprise,"Textile Dyes, Auxiliaries",Verified
+Food Additives,ADM Food Ingredients,USA,https://www.adm.com,"41,000+","$85B+",1902,Large Enterprise,"Flavors, Proteins, Starches, Lecithin",Verified
+Food Additives,Cargill Food Solutions,USA,https://www.cargill.com,"160,000+","$165B+",1865,Conglomerate,"Starches, Sweeteners, Cocoa, Proteins",Verified
+Food Additives,Ingredion Incorporated,USA,https://www.ingredion.com,"11,000+","$7B+",1906,Large Enterprise,"Starches, Sweeteners, Nutrition Ingredients",Verified
+Food Additives,Kerry Group,Ireland,https://www.kerrygroup.com,"26,000+","$8B+",1972,Large Enterprise,"Taste & Nutrition, Consumer Foods",Verified
+Food Additives,Tate & Lyle,UK,https://www.tateandlyle.com,"3,300+","$2B+",1921,Medium Enterprise,"Sweeteners, Texturants, Stabilizers",Verified
+Food Additives,DuPont Nutrition & Biosciences,USA,https://www.dupontnutritionandbiosciences.com,"28,000+","$13B+",2017,Large Enterprise,"Cultures, Enzymes, Probiotics, Soy",Verified
+Food Additives,Corbion,Netherlands,https://www.corbion.com,"2,400+","$1B+",2008,Medium Enterprise,"Lactic Acid, Preservatives, Algae Ingredients",Verified
+Food Additives,DSM Food Specialties,Netherlands,https://www.dsm.com,"23,000+","$10B+",1902,Large Enterprise,"Enzymes, Cultures, Vitamins, Preservatives",Verified
+Food Additives,International Flavors & Fragrances (IFF),USA,https://www.iff.com,"24,000+","$5B+",1889,Large Enterprise,"Flavors, Fragrances, Ingredients",Verified
+Food Additives,Sensient Technologies,USA,https://www.sensient.com,"3,800+","$1B+",1882,Medium Enterprise,"Colors, Flavors, Fragrances",Verified
+Food Additives,Givaudan Flavors,Switzerland,https://www.givaudan.com,"16,000+","$7B+",1895,Large Enterprise,"Flavors, Fragrances, Active Beauty",Verified
+Food Additives,Firmenich,Switzerland,https://www.firmenich.com,"10,000+","$4B+",1895,Large Enterprise,"Perfumery, Ingredients, Flavors",Verified
+Food Additives,Ashland Food Ingredients,USA,https://www.ashland.com,"4,000+","$2B+",1924,Medium Enterprise,"Texturants, Thickeners, Gums",Verified
+Food Additives,Jungbunzlauer,Switzerland,https://www.jungbunzlauer.com,"1,500+","$500M+",1864,Medium Enterprise,"Citrates, Xanthan Gum, Sweeteners",Verified
+Food Additives,Innophos Holdings,USA,https://www.innophos.com,"1,200+","$700M+",2004,Medium Enterprise,"Phosphate Salts, Food Grade Phosphates",Verified
+Food Additives,Ajinomoto Group,Japan,https://www.ajinomoto.com,"36,000+","$11B+",1909,Large Enterprise,"Amino Acids, Seasonings, Frozen Foods",Verified
+Food Additives,CP Kelco,USA,https://www.cpkelco.com,"1,800+","$700M+",1929,Medium Enterprise,"Pectin, Xanthan Gum, Gellan Gum",Verified
+Food Additives,Archer Daniels Midland Food Additives,USA,https://www.adm.com,"41,000+","$85B+",1902,Large Enterprise,"Flavors, Proteins, Starches, Lecithin",Verified
+Food Additives,Danisco (DuPont),USA,https://www.dupontnutritionandbiosciences.com,"28,000+","$13B+",2017,Large Enterprise,"Cultures, Enzymes, Probiotics, Soy",Verified
+Food Additives,Naturex (Givaudan),France,https://www.naturex.com,"1,700+","$500M+",1992,Medium Enterprise,"Natural Ingredients, Plant Extracts",Verified
+Cosmetic Chemicals,Givaudan Fragrances,Switzerland,https://www.givaudan.com,"16,000+","$7B+",1895,Large Enterprise,"Fragrances, Active Beauty",Verified
+Cosmetic Chemicals,Firmenich,Switzerland,https://www.firmenich.com,"10,000+","$4B+",1895,Large Enterprise,"Perfumery, Ingredients",Verified
+Cosmetic Chemicals,Symrise AG,Germany,https://www.symrise.com,"11,000+","$5B+",2003,Large Enterprise,"Fragrances, Cosmetic Ingredients",Verified
+Cosmetic Chemicals,International Flavors & Fragrances (IFF),USA,https://www.iff.com,"24,000+","$5B+",1889,Large Enterprise,"Fragrances, Cosmetic Actives",Verified
+Cosmetic Chemicals,BASF Personal Care,Germany,https://www.basf.com,"111,000+","$87B+",1865,Conglomerate,"UV Filters, Emollients, Polymers",Verified
+Cosmetic Chemicals,Croda Personal Care,UK,https://www.croda.com,"6,000+","$2B+",1925,Large Enterprise,"Active Ingredients, Delivery Systems",Verified
+Cosmetic Chemicals,Lubrizol Corporation,USA,https://www.lubrizol.com,"8,800+","$6B+",1928,Large Enterprise,"Polymers, Surfactants, Additives",Verified
+Cosmetic Chemicals,Ashland Personal Care,USA,https://www.ashland.com,"4,000+","$2B+",1924,Medium Enterprise,"Fixatives, Thickeners, Conditioning Polymers",Verified
+Cosmetic Chemicals,Clariant Personal Care,Switzerland,https://www.clariant.com,"11,000+","$5B+",1995,Large Enterprise,"Emulsifiers, Surfactants, Actives",Verified
+Cosmetic Chemicals,Evonik Personal Care,Germany,https://www.evonik.com,"34,000+","$19B+",1843,Large Enterprise,"Active Ingredients, Delivery Systems",Verified
+Cosmetic Chemicals,DSM Personal Care,Netherlands,https://www.dsm.com,"23,000+","$10B+",1902,Large Enterprise,"UV Filters, Vitamins, Peptides",Verified
+Cosmetic Chemicals,Seppic (Air Liquide),France,https://www.seppic.com,"1,000+","$300M+",1943,Medium Enterprise,"Emulsifiers, Surfactants, Actives",Verified
+Cosmetic Chemicals,Lonza Group Personal Care,Switzerland,https://www.lonza.com,"16,000+","$7B+",1897,Large Enterprise,"Preservatives, Actives, Delivery Systems",Verified
+Cosmetic Chemicals,Elementis plc,UK,https://www.elementis.com,"1,400+","$500M+",1844,Medium Enterprise,"Rheology Modifiers, Specialty Additives",Verified
+Cosmetic Chemicals,Solvay Personal Care,Belgium,https://www.solvay.com,"23,000+","$14B+",1863,Large Enterprise,"Surfactants, Polymers, Guar Derivatives",Verified
+Cosmetic Chemicals,Kao Chemicals,Japan,https://www.kao.com,"33,000+","$13B+",1887,Large Enterprise,"Surfactants, Esters, Specialty Chemicals",Verified
+Cosmetic Chemicals,Sensient Cosmetic Technologies,USA,https://www.sensient.com,"3,800+","$1B+",1882,Medium Enterprise,"Colors, Additives, Actives",Verified
+Cosmetic Chemicals,Provital Group,Spain,https://www.provitalgroup.com,"200+","$50M+",1979,Small Enterprise,"Natural Active Ingredients, Botanicals",Verified
+Cosmetic Chemicals,Barnet Products Corporation,USA,https://www.barnetproducts.com,"100+","$20M+",1970,Small Enterprise,"Esters, Waxes, Specialty Chemicals",Verified
+Cosmetic Chemicals,Lucas Meyer Cosmetics,Canada,https://www.lucasmeyercosmetics.com,"300+","$100M+",1905,Small Enterprise,"Emulsifiers, Active Ingredients",Verified
+Pharmaceutical Chemicals,Lonza Group,Switzerland,https://www.lonza.com,"16,000+","$7B+",1897,Large Enterprise,"APIs, Biologics, Cell & Gene Therapy",Verified
+Pharmaceutical Chemicals,Catalent Pharma Solutions,USA,https://www.catalent.com,"18,000+","$4B+",2007,Large Enterprise,"Drug Delivery, Biologics, Clinical Supply",Verified
+Pharmaceutical Chemicals,Siegfried Holding AG,Switzerland,https://www.siegfried.ch,"3,600+","$1B+",1873,Medium Enterprise,"APIs, Drug Products, Development",Verified
+Pharmaceutical Chemicals,Recipharm AB,Sweden,https://www.recipharm.com,"9,000+","$1B+",1995,Large Enterprise,"Pharmaceutical Contract Development & Manufacturing",Verified
+Pharmaceutical Chemicals,Thermo Fisher Scientific,USA,https://www.thermofisher.com,"130,000+","$49B+",2006,Conglomerate,"Pharma Services, Lab Equipment, Reagents",Verified
+Pharmaceutical Chemicals,Merck KGaA Life Science,Germany,https://www.merckgroup.com,"57,000+","$23B+",1668,Conglomerate,"Process Solutions, Lab Water, Bioprocessing",Verified
+Pharmaceutical Chemicals,Cambrex Corporation,USA,https://www.cambrex.com,"2,200+","$600M+",1981,Medium Enterprise,"APIs, Finished Dosage Forms",Verified
+Pharmaceutical Chemicals,Piramal Pharma Solutions,India,https://www.piramal.com,"5,000+","$1B+",1988,Medium Enterprise,"Contract Development & Manufacturing",Verified
+Pharmaceutical Chemicals,Wuxi AppTec,China,https://www.wuxiapptec.com,"35,000+","$5B+",2000,Large Enterprise,"R&D, Manufacturing, Testing",Verified
+Pharmaceutical Chemicals,Patheon (Thermo Fisher),USA,https://www.thermofisher.com,"130,000+","$49B+",2006,Conglomerate,"Pharmaceutical Development Services",Verified
+Pharmaceutical Chemicals,Evonik Health Care,Germany,https://healthcare.evonik.com,"34,000+","$19B+",1843,Large Enterprise,"Lipid-based Drug Delivery, APIs",Verified
+Pharmaceutical Chemicals,Samsung Biologics,South Korea,https://www.samsungbiologics.com,"3,000+","$1B+",2011,Large Enterprise,"Biologics Contract Manufacturing",Verified
+Pharmaceutical Chemicals,SAFC (Sigma-Aldrich),USA,https://www.sigmaaldrich.com,"10,000+","$3B+",1975,Large Enterprise,"Pharma & Biopharma Raw Materials",Verified
+Pharmaceutical Chemicals,Almac Group,UK,https://www.almacgroup.com,"5,600+","$800M+",1968,Large Enterprise,"API, Formulation, Clinical Services",Verified
+Pharmaceutical Chemicals,CARBOGEN AMCIS,Switzerland,https://www.carbogen-amcis.com,"1,000+","$200M+",1993,Medium Enterprise,"API Development, Manufacturing",Verified
+Pharmaceutical Chemicals,Porton Fine Chemicals,China,https://www.porton.com,"3,000+","$500M+",2005,Medium Enterprise,"APIs, Intermediates, CDMO",Verified
+Pharmaceutical Chemicals,Dr. Reddy's Laboratories,India,https://www.drreddys.com,"23,000+","$3B+",1984,Large Enterprise,"Generics, APIs, Biosimilars",Verified
+Pharmaceutical Chemicals,Aspen API,South Africa,https://www.aspenpharma.com,"9,000+","$2B+",1850,Large Enterprise,"Generic Pharmaceuticals, APIs",Verified
+Pharmaceutical Chemicals,Divis Laboratories,India,https://www.divislabs.com,"23,000+","$1B+",1990,Large Enterprise,"APIs, Intermediates, Custom Synthesis",Verified
+Electronic Chemicals,Entegris Inc.,USA,https://www.entegris.com,"8,000+","$3B+",1966,Large Enterprise,"Contamination Control, Handling, Purification",Verified
+Electronic Chemicals,Dow Electronic Materials,USA,https://www.dow.com,"37,000+","$57B+",1897,Large Enterprise,"CMP, Interconnect, Packaging",Verified
+Electronic Chemicals,Merck KGaA Electronics,Germany,https://www.merckgroup.com,"57,000+","$23B+",1668,Conglomerate,"Semiconductor Materials, Display Materials",Verified
+Electronic Chemicals,JSR Microelectronics,Japan,https://www.jsrmicro.com,"9,000+","$4B+",1957,Large Enterprise,"Photoresists, CMP Slurries",Verified
+Electronic Chemicals,TOK (Tokyo Ohka Kogyo),Japan,https://www.tok.co.jp,"5,000+","$1B+",1936,Large Enterprise,"Photoresists, Ancillaries",Verified
+Electronic Chemicals,Fujifilm Electronic Materials,Japan,https://www.fujifilm.com,"74,000+","$22B+",1934,Large Enterprise,"CMP Slurries, Photoresists, Cleaning Chemicals",Verified
+Electronic Chemicals,Samsung SDI Chemicals,South Korea,https://www.samsungsdi.com,"30,000+","$13B+",1970,Large Enterprise,"Electronic Chemicals, Energy Materials",Verified
+Electronic Chemicals,Sumitomo Chemical Electronics,Japan,https://www.sumitomo-chem.co.jp,"33,000+","$24B+",1913,Large Enterprise,"Photoresists, Plating Chemicals, Gases",Verified
+Electronic Chemicals,Shin-Etsu Chemical,Japan,https://www.shinetsu.co.jp,"19,000+","$17B+",1926,Large Enterprise,"Silicon Wafers, Photoresists, Synthetic Quartz",Verified
+Electronic Chemicals,DuPont Electronics & Imaging,USA,https://www.dupont.com,"28,000+","$13B+",2017,Large Enterprise,"Advanced Printing, Interconnect, Packaging",Verified
+Electronic Chemicals,Mitsubishi Chemical Electronic Materials,Japan,https://www.m-chemical.co.jp,"70,000+","$33B+",2005,Large Enterprise,"Polycarbonate, Compounds, Precursors",Verified
+Electronic Chemicals,BASF Electronic Chemicals,Germany,https://www.basf.com,"111,000+","$87B+",1865,Conglomerate,"CMP, Plating, Photoresists",Verified
+Electronic Chemicals,Honeywell Electronic Materials,USA,https://www.honeywell.com,"99,000+","$35B+",1906,Conglomerate,"Electronic Chemicals, Specialty Gases",Verified
+Electronic Chemicals,SACHEM Inc.,USA,https://www.sacheminc.com,"500+","$100M+",1952,Small Enterprise,"Ultra-Pure Chemicals, Solvents",Verified
+Electronic Chemicals,Kanto Chemical Co.,Japan,https://www.kanto.co.jp,"2,000+","$500M+",1944,Medium Enterprise,"High-Purity Chemicals, Reagents",Verified
+Electronic Chemicals,Avantor Performance Materials,USA,https://www.avantorsciences.com,"14,000+","$7B+",1904,Large Enterprise,"Ultra-Pure Materials, Biopharma Production",Verified
+Electronic Chemicals,LG Chem Electronic Materials,South Korea,https://www.lgchem.com,"31,000+","$42B+",1947,Large Enterprise,"OLED, Semiconductor, Battery Materials",Verified
+Electronic Chemicals,Air Products Electronics,USA,https://www.airproducts.com,"23,000+","$12B+",1940,Large Enterprise,"Electronic Gases, CMP Slurries",Verified
+Electronic Chemicals,Versum Materials (Merck),USA,https://www.versummaterials.com,"2,300+","$1B+",2015,Medium Enterprise,"Electronic Materials, Delivery Systems",Verified
+Construction Chemicals,Sika AG,Switzerland,https://www.sika.com,"27,000+","$13B+",1910,Large Enterprise,"Concrete Admixtures, Waterproofing, Sealants",Verified
+Construction Chemicals,BASF Construction Chemicals,Germany,https://www.basf.com,"111,000+","$87B+",1865,Conglomerate,"Admixtures, Flooring, Grouts",Verified
+Construction Chemicals,Mapei Group,Italy,https://www.mapei.com,"11,000+","$3B+",1937,Large Enterprise,"Adhesives, Sealants, Chemical Products",Verified
+Construction Chemicals,Fosroc International,UK,https://www.fosroc.com,"2,000+","$500M+",1986,Medium Enterprise,"Concrete Repair, Grouts, Anchoring",Verified
+Construction Chemicals,RPM International,USA,https://www.rpminc.com,"15,000+","$7B+",1947,Large Enterprise,"Coatings, Sealants, Building Materials",Verified
+Construction Chemicals,Henkel Construction,Germany,https://www.henkel.com,"50,000+","$23B+",1876,Large Enterprise,"Adhesives, Sealants, Surface Treatments",Verified
+Construction Chemicals,Ardex Group,Germany,https://www.ardex.com,"3,000+","$700M+",1949,Medium Enterprise,"Self-Leveling, Tile Adhesives, Toppings",Verified
+Construction Chemicals,The Euclid Chemical Company,USA,https://www.euclidchemical.com,"500+","$100M+",1910,Small Enterprise,"Concrete Admixtures, Curing, Repair",Verified
+Construction Chemicals,GCP Applied Technologies,USA,https://www.gcpat.com,"1,800+","$1B+",1915,Medium Enterprise,"Concrete Additives, Cement Additives",Verified
+Construction Chemicals,Pidilite Construction Chemicals,India,https://www.pidilite.com,"4,000+","$1B+",1959,Medium Enterprise,"Adhesives, Sealants, Waterproofing",Verified
+Construction Chemicals,CICO Technologies,India,https://www.cico.co.in,"1,000+","$100M+",1972,Medium Enterprise,"Waterproofing, Repair, Flooring",Verified
+Construction Chemicals,Dow Construction Chemicals,USA,https://www.dow.com,"37,000+","$57B+",1897,Large Enterprise,"Sealants, Adhesives, Insulation",Verified
+Construction Chemicals,Wacker Chemie Construction,Germany,https://www.wacker.com,"14,500+","$7B+",1914,Large Enterprise,"Silicone Sealants, Polymer Binders",Verified
+Construction Chemicals,Master Builders Solutions (MBCC Group),Germany,https://www.mbcc-group.com,"7,500+","$3B+",2022,Large Enterprise,"Admixtures, Adhesives, Sealants",Verified
+Construction Chemicals,Sobute New Materials,China,https://www.sobute.com,"1,000+","$200M+",1999,Medium Enterprise,"Concrete Admixtures, Functional Materials",Verified
+Construction Chemicals,Cemex Construction Chemicals,Mexico,https://www.cemex.com,"42,000+","$15B+",1906,Large Enterprise,"Admixtures, Grouts, Repair Mortars",Verified
+Construction Chemicals,Kryton International Inc.,Canada,https://www.kryton.com,"200+","$50M+",1973,Small Enterprise,"Concrete Waterproofing, Repair",Verified
+Construction Chemicals,Chryso Group (Saint-Gobain),France,https://www.chryso.com,"1,500+","$400M+",1942,Medium Enterprise,"Admixtures, Grinding Aids",Verified
+Construction Chemicals,Chembond Chemicals,India,https://www.chembond.com,"500+","$50M+",1975,Small Enterprise,"Construction Chemicals, Industrial Coatings",Verified
+Lubricants & Greases,Shell Lubricants,Netherlands,https://www.shell.com/lubricants,"82,000+","$386B+",1907,Conglomerate,"Engine Oils, Greases, Industrial Lubricants",Verified
+Lubricants & Greases,ExxonMobil Lubricants,USA,https://www.exxonmobil.com,"71,000+","$413B+",1882,Conglomerate,"Engine Oils, Synthetic Lubricants, Greases",Verified
+Lubricants & Greases,BP Castrol,UK,https://www.castrol.com,"67,100+","$164B+",1909,Large Enterprise,"Engine Oils, Industrial Lubricants",Verified
+Lubricants & Greases,Chevron Lubricants,USA,https://www.chevronlubricants.com,"42,600+","$94B+",1879,Large Enterprise,"Engine Oils, Industrial, Marine Lubricants",Verified
+Lubricants & Greases,TotalEnergies Lubricants,France,https://www.totalenergies.com,"105,000+","$210B+",1924,Conglomerate,"Engine Oils, Greases, Hydraulic Fluids",Verified
+Lubricants & Greases,Fuchs Petrolub SE,Germany,https://www.fuchs.com,"6,000+","$3B+",1931,Large Enterprise,"Industrial Lubricants, Greases, Metalworking",Verified
+Lubricants & Greases,Petronas Lubricants International,Malaysia,https://www.pli-petronas.com,"48,000+","$50B+",1974,Large Enterprise,"Engine Oils, Industrial, Automotive Lubricants",Verified
+Lubricants & Greases,Sinopec Lubricant Company,China,https://www.sinolube.com,"553,000+","$471B+",2000,Large Enterprise,"Engine Oils, Greases, Industrial Lubricants",Verified
+Lubricants & Greases,Idemitsu Kosan Co.,Japan,https://www.idemitsu.com,"8,000+","$25B+",1911,Large Enterprise,"Engine Oils, Greases, Process Oils",Verified
+Lubricants & Greases,JXTG Nippon Oil & Energy,Japan,https://www.noe.jxtg-group.co.jp,"40,000+","$50B+",1888,Large Enterprise,"Engine Oils, Greases, Industrial Lubricants",Verified
+Lubricants & Greases,Lukoil Lubricants,Russia,https://www.lukoil.com,"101,000+","$93B+",1991,Large Enterprise,"Engine Oils, Industrial Lubricants",Verified
+Lubricants & Greases,Valvoline Inc.,USA,https://www.valvoline.com,"8,900+","$3B+",1866,Large Enterprise,"Engine Oils, Greases, Coolants",Verified
+Lubricants & Greases,Phillips 66 Lubricants,USA,https://www.phillips66lubricants.com,"14,000+","$116B+",1917,Large Enterprise,"Engine Oils, Greases, Metalworking",Verified
+Lubricants & Greases,Quaker Chemical Corporation,USA,https://www.quakerhoughton.com,"4,500+","$2B+",1918,Medium Enterprise,"Metalworking Fluids, Industrial Lubricants",Verified
+Lubricants & Greases,Indian Oil Corporation,India,https://iocl.com,"33,000+","$75B+",1959,Large Enterprise,"Engine Oils, Greases, Industrial Lubricants",Verified
+Lubricants & Greases,Gulf Oil International,UK,https://www.gulfoilltd.com,"2,000+","$1B+",1901,Medium Enterprise,"Engine Oils, Greases, Industrial Lubricants",Verified
+Lubricants & Greases,Amsoil Inc.,USA,https://www.amsoil.com,"500+","$500M+",1972,Small Enterprise,"Synthetic Lubricants, Filtration",Verified
+Lubricants & Greases,Liqui Moly GmbH,Germany,https://www.liqui-moly.com,"4,000+","$700M+",1957,Medium Enterprise,"Engine Oils, Additives, Care Products",Verified
+Lubricants & Greases,Petro-Canada Lubricants,Canada,https://lubricants.petro-canada.com,"4,500+","$20B+",1975,Medium Enterprise,"Base Oils, Finished Lubricants",Verified
+Lubricants & Greases,Kluber Lubrication,Germany,https://www.klueber.com,"2,500+","$500M+",1929,Medium Enterprise,"Specialty Lubricants, Greases, Pastes",Verified
+Explosives & Pyrotechnics,Orica Limited,Australia,https://www.orica.com,"12,000+","$5B+",1874,Large Enterprise,"Commercial Explosives, Blasting Systems",Verified
+Explosives & Pyrotechnics,Dyno Nobel (Incitec Pivot),Australia,https://www.dynonobel.com,"5,500+","$3B+",1863,Large Enterprise,"Industrial Explosives, Initiating Systems",Verified
+Explosives & Pyrotechnics,MAXAM Corp,Spain,https://www.maxamcorp.com,"6,000+","$2B+",1872,Large Enterprise,"Explosives, Initiating Systems, Propellants",Verified
+Explosives & Pyrotechnics,ENAEX,Chile,https://www.enaex.com,"4,000+","$800M+",1920,Large Enterprise,"Industrial Explosives, Services",Verified
+Explosives & Pyrotechnics,Sasol Mining Chemicals,South Africa,https://www.sasol.com,"30,000+","$15B+",1950,Large Enterprise,"Explosives Emulsions, Initiating Systems",Verified
+Explosives & Pyrotechnics,Austin Powder Company,USA,https://www.austinpowder.com,"1,000+","$500M+",1833,Medium Enterprise,"Industrial Explosives, Blasting Supplies",Verified
+Explosives & Pyrotechnics,Chemring Group,UK,https://www.chemring.co.uk,"2,000+","$500M+",1960,Medium Enterprise,"Energetic Materials, Countermeasures",Verified
+Explosives & Pyrotechnics,NOF Corporation,Japan,https://www.nof.co.jp,"3,500+","$3B+",1949,Medium Enterprise,"Propellants, Explosives, Functional Chemicals",Verified
+Explosives & Pyrotechnics,Tata Chemicals Mining,India,https://www.tatachemicals.com,"5,000+","$2B+",1939,Medium Enterprise,"Industrial Explosives, Bulk Emulsions",Verified
+Explosives & Pyrotechnics,IDEAL Industrial Explosives,India,https://www.idealexplosives.com,"1,000+","$100M+",1986,Medium Enterprise,"Industrial Explosives, Accessories",Verified
+Explosives & Pyrotechnics,Gulf Oil Corporation Limited,India,https://www.gulfoilcorp.com,"1,000+","$200M+",1962,Medium Enterprise,"Explosives, Lubricants, Specialty Products",Verified
+Explosives & Pyrotechnics,Chemtura Corporation (Lanxess),USA,https://www.lanxess.com,"13,000+","$8B+",2004,Large Enterprise,"Flame Retardants, Industrial Chemicals",Verified
+Explosives & Pyrotechnics,Explosia a.s.,Czech Republic,https://www.explosia.cz,"1,000+","$200M+",1920,Medium Enterprise,"Industrial Explosives, Nitrocellulose",Verified
+Explosives & Pyrotechnics,BME (Bulk Mining Explosives),South Africa,https://www.bme.co.za,"2,000+","$400M+",1984,Medium Enterprise,"Bulk Emulsions, Explosives Services",Verified
+Explosives & Pyrotechnics,EPC Groupe,France,https://www.epc-groupe.com,"1,500+","$300M+",1889,Medium Enterprise,"Pyrotechnics, Civil Explosives",Verified
+Explosives & Pyrotechnics,Sasol Chemicals,South Africa,https://www.sasol.com,"30,000+","$15B+",1950,Large Enterprise,"Explosives, Fuels, Chemicals",Verified
+Explosives & Pyrotechnics,Standard Fireworks,India,https://www.standardfireworks.com,"1,000+","$100M+",1942,Medium Enterprise,"Fireworks, Pyrotechnics",Verified
+Explosives & Pyrotechnics,Hanwha Corporation Explosives,South Korea,https://www.hanwha.com,"12,000+","$30B+",1952,Large Enterprise,"Propellants, Explosives, Munitions",Verified
+Explosives & Pyrotechnics,Solar Industries India,India,https://www.solarindustries.com,"2,000+","$300M+",1995,Medium Enterprise,"Industrial Explosives, Detonators",Verified
+Chemical Distribution,Brenntag AG,Germany,https://www.brenntag.com,"17,500+","$20B+",1873,Large Enterprise,"Chemical Distribution, Ingredients",Verified
+Chemical Distribution,Univar Solutions,USA,https://www.univarsolutions.com,"10,000+","$12B+",1924,Large Enterprise,"Chemical Distribution, Ingredients",Verified
+Chemical Distribution,IMCD Group,Netherlands,https://www.imcdgroup.com,"4,000+","$5B+",1995,Large Enterprise,"Specialty Chemicals Distribution",Verified
+Chemical Distribution,Nexeo Solutions (Univar),USA,https://www.nexeosolutions.com,"10,000+","$12B+",1924,Large Enterprise,"Chemical Distribution, Plastics",Verified
+Chemical Distribution,Helm AG,Germany,https://www.helmag.com,"4,000+","$25B+",1900,Large Enterprise,"Chemical Distribution, Marketing",Verified
+Chemical Distribution,Biesterfeld AG,Germany,https://www.biesterfeld.com,"1,800+","$2B+",1906,Medium Enterprise,"Plastics, Rubber, Specialty Chemicals",Verified
+Chemical Distribution,Azelis SA,Belgium,https://www.azelis.com,"3,500+","$4B+",2001,Large Enterprise,"Specialty Chemicals, Food Ingredients",Verified
+Chemical Distribution,Ter Group,Spain,https://www.grupoter.com,"1,500+","$1B+",1955,Medium Enterprise,"Chemical Distribution, Logistics",Verified
+Chemical Distribution,ICC Industries Inc.,USA,https://www.iccindustries.com,"1,000+","$500M+",1955,Medium Enterprise,"Chemicals, Plastics, Pharmaceuticals",Verified
+Chemical Distribution,Jebsen & Jessen Group,Singapore,https://www.jjsea.com,"4,000+","$1B+",1963,Medium Enterprise,"Chemicals, Ingredients, Engineering",Verified
+Chemical Distribution,Reda Chemicals,Australia,https://www.redachemicals.com,"500+","$200M+",1965,Small Enterprise,"Specialty Chemicals Distribution",Verified
+Chemical Distribution,Omya AG,Switzerland,https://www.omya.com,"8,000+","$3B+",1884,Large Enterprise,"Industrial Minerals, Distribution",Verified
+Chemical Distribution,Quimidroga,Spain,https://www.quimidroga.com,"500+","$200M+",1957,Small Enterprise,"Chemical Distribution, Raw Materials",Verified
+Chemical Distribution,Budenheim Group,Germany,https://www.budenheim.com,"500+","$200M+",1908,Small Enterprise,"Phosphates, Fine Chemicals",Verified
+Chemical Distribution,Protea Chemicals,South Africa,https://www.proteachemicals.co.za,"500+","$200M+",1979,Small Enterprise,"Chemical Distribution, Formulations",Verified
+Chemical Distribution,Kanto Chemical Co.,Japan,https://www.kanto.co.jp,"2,000+","$500M+",1944,Medium Enterprise,"Laboratory Chemicals, Reagents",Verified
+Chemical Distribution,Harcros Chemicals,USA,https://www.harcroschem.com,"1,000+","$500M+",1920,Medium Enterprise,"Industrial, Specialty, Pool Chemicals",Verified
+Chemical Distribution,Manuchar NV,Belgium,https://www.manuchar.com,"1,800+","$2B+",1992,Medium Enterprise,"Chemicals, Steel, Pharmaceuticals",Verified
+Chemical Distribution,Hill Brothers Chemical Co.,USA,https://www.hillbrothers.com,"500+","$100M+",1921,Small Enterprise,"Industrial Chemicals, Solvents",Verified
+Chemical Distribution,Stockmeier Group,Germany,https://www.stockmeier.com,"2,000+","$1B+",1924,Medium Enterprise,"Chemical Distribution, Urethanes",Verified

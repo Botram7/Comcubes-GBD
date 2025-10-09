@@ -1,0 +1,380 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Air Cargo,FedEx Express,USA,https://www.fedex.com,"547,000+","$88B+",1971,Conglomerate,"Express Shipping, Freight, Logistics",Verified
+Air Cargo,United Parcel Service (UPS),USA,https://www.ups.com,"500,000+","$91B+",1907,Conglomerate,"Package Delivery, Supply Chain, Logistics",Verified
+Air Cargo,DHL Aviation,Germany,https://www.dhl.com,"600,000+ (Group)","$90B+ (Group)",1969,Conglomerate,"International Express, Logistics, Forwarding",Verified
+Air Cargo,Cathay Pacific Cargo,Hong Kong,https://www.cathaypacificcargo.com,"23,000+ (Group)","$2.1B+ (Cargo)",1946,Large Enterprise,"Perishables, Pharma, Electronics",Verified
+Air Cargo,Lufthansa Cargo,Germany,https://www.lufthansa-cargo.com,"109,000+ (Group)","$1.9B+ (Cargo)",1926,Large Enterprise,"Pharma, Live Animals, Aerospace",Verified
+Air Cargo,Emirates SkyCargo,UAE,https://www.emirates.com,"112,000+ (Group)","$5.8B+ (Cargo)",1985,Large Enterprise,"Perishables, Pharma, High-Value Goods",Verified
+Air Cargo,Singapore Airlines Cargo,Singapore,https://www.siacargo.com,"12,400+ (Group)","$1.3B+ (Cargo)",1972,Large Enterprise,"Perishables, Tech, Cargo Hub",Verified
+Air Cargo,Qatar Airways Cargo,Qatar,https://www.qrcargo.com,"45,000+ (Group)","$21B+ (Group)",1993,Large Enterprise,"General Cargo, Express, Pharma",Verified
+Air Cargo,Korean Air Cargo,South Korea,https://www.koreanair.com,"19,000+ (Group)","$2B+ (Cargo)",1962,Large Enterprise,"Electronics, Pharma, Live Animals",Verified
+Air Cargo,Cargolux,Luxembourg,https://www.cargolux.com,"2,000+","$2.5B+",1970,Large Enterprise,"Outsized Cargo, Charter, General",Verified
+Air Cargo,Atlas Air,USA,https://www.atlasair.com,"4,500+","$3.5B+",1992,Large Enterprise,"ACMI Leasing, Charter, Cargo",Verified
+Air Cargo,Air France-KLM Cargo,France,https://www.airfranceklmcargo.com,"84,000+ (Group)","$32B+ (Group)",2004,Large Enterprise,"Network Cargo, Pharma, Perishables",Verified
+Air Cargo,Turkish Cargo,Turkey,https://www.turkishcargo.com,"40,000+ (Group)","$5B+ (Est. Cargo)",1933,Large Enterprise,"General Cargo, Express, E-commerce",Verified
+Air Cargo,EVA Air Cargo,Taiwan,https://www.evaair.com,"11,000+","$1B+ (Est. Cargo)",1989,Large Enterprise,"Tech, General Cargo, Regional",Verified
+Air Cargo,ANA Cargo,Japan,https://www.ana.co.jp,"43,000+ (Group)","$1.5B+ (Est. Cargo)",1952,Large Enterprise,"Automotive, Pharma, General",Verified
+Air Cargo,China Southern Cargo,China,https://www.csair.com,"100,000+ (Group)","$3B+ (Est. Cargo)",1988,Conglomerate,"Domestic & International Cargo",Verified
+Air Cargo,Etihad Cargo,UAE,https://www.etihadcargo.com,"22,000+ (Group)","$1B+ (Est. Cargo)",2003,Large Enterprise,"Pharma, Perishables, General",Verified
+Air Cargo,Asiana Cargo,South Korea,https://us.flyasiana.com,"10,000+ (Group)","$800M+ (Est. Cargo)",1988,Large Enterprise,"General Cargo, Regional",Verified
+Air Cargo,Volga-Dnepr Group,Russia,https://www.volga-dnepr.com,"1,500+","$1B+",1990,Large Enterprise,"Outsized Cargo, Charter, AN-124",Verified
+Air Cargo,Longtail Aviation,Bermuda,https://www.longtailaviation.com,"<100","$50M+",1999,Small Enterprise,"B747 Charter, ACMI",Verified
+Marine Shipping,Maersk Line,Denmark,https://www.maersk.com,"100,000+","$51B+",1904,Conglomerate,"Container Shipping, Logistics, Terminals",Verified
+Marine Shipping,MSC (Mediterranean Shipping Company),Switzerland,https://www.msc.com,"200,000+","$28B+",1970,Conglomerate,"Container Shipping, Global Network",Verified
+Marine Shipping,COSCO Shipping,China,https://www.coscoshipping.com,"138,000+","$40B+",2016,Conglomerate,"Container Shipping, Ports, Logistics",Verified
+Marine Shipping,CMA CGM,France,https://www.cma-cgm.com,"110,000+","$47B+",1978,Conglomerate,"Container Shipping, Logistics, Air Cargo",Verified
+Marine Shipping,Hapag-Lloyd,Germany,https://www.hapag-lloyd.com,"14,000+","$20B+",1970,Large Enterprise,"Container Shipping, Liner Services",Verified
+Marine Shipping,Evergreen Marine,Taiwan,https://www.evergreen-marine.com,"10,000+","$12B+",1968,Large Enterprise,"Container Liner Services",Verified
+Marine Shipping,ONE (Ocean Network Express),Japan,https://www.one-line.com,"8,000+","$16B+",2017,Large Enterprise,"Container Shipping, Liner",Verified
+Marine Shipping,Yang Ming Marine Transport,Taiwan,https://www.yangming.com,"4,000+","$8B+",1972,Large Enterprise,"Container Liner Services",Verified
+Marine Shipping,HMM (Hyundai Merchant Marine),South Korea,https://www.hmm21.com,"3,000+","$9B+",1976,Large Enterprise,"Container Shipping, Bulk",Verified
+Marine Shipping,ZIM Integrated Shipping Services,Israel,https://www.zim.com,"4,000+","$5B+",1945,Large Enterprise,"Niche Trades, Liner Services",Verified
+Marine Shipping,Wan Hai Lines,Taiwan,https://www.wanhai.com,"5,000+","$6B+",1965,Large Enterprise,"Intra-Asia Shipping, Liner",Verified
+Marine Shipping,PIL (Pacific International Lines),Singapore,https://www.pilship.com,"10,000+","$4B+",1967,Large Enterprise,"Liner Shipping, Logistics",Verified
+Marine Shipping,Matson Navigation,USA,https://www.matson.com,"1,200+","$3B+",1882,Large Enterprise,"Pacific Shipping, Logistics",Verified
+Marine Shipping,Swire Shipping,Singapore,https://www.swireshipping.com,"1,000+","$1B+",1872,Large Enterprise,"Bulk, Specialist, Liner",Verified
+Marine Shipping,Grimaldi Group,Italy,https://www.grimaldi.napoli.it,"7,000+","$3B+",1947,Large Enterprise,"Ro-Ro, Passenger Ferries",Verified
+Marine Shipping,K Line (Kawasaki Kisen Kaisha),Japan,https://www.kline.com,"6,000+","$8B+",1919,Large Enterprise,"Bulk, Car Carriers, Energy",Verified
+Marine Shipping,NYK Line (Nippon Yusen Kabushiki Kaisha),Japan,https://www.nyk.com,"35,000+","$20B+",1885,Conglomerate,"Bulk, Containers, Car Carriers",Verified
+Marine Shipping,MOL (Mitsui O.S.K. Lines),Japan,https://www.mol.co.jp,"9,000+","$12B+",1884,Large Enterprise,"Bulk, Containers, LNG",Verified
+Marine Shipping,CSL Group,Canada,https://www.cslgroup.com,"2,000+","$1B+",1913,Large Enterprise,"Bulk Shipping, Self-Unloaders",Verified
+Rail Freight,Union Pacific Railroad,USA,https://www.up.com,"30,000+","$24B+",1862,Conglomerate,"Western US, Intermodal, Industrial",Verified
+Rail Freight,BNSF Railway,USA,https://www.bnsf.com,"35,000+","$25B+",1849,Conglomerate,"Western US, Intermodal, Consumer",Verified
+Rail Freight,Canadian National Railway,Canada,https://www.cn.ca,"25,000+","$17B+",1919,Conglomerate,"Transcontinental, Cross-Border",Verified
+Rail Freight,CSX Transportation,USA,https://www.csx.com,"20,000+","$15B+",1827,Conglomerate,"Eastern US, Merchandise, Coal",Verified
+Rail Freight,Norfolk Southern Railway,USA,https://www.nscorp.com,"19,000+","$13B+",1881,Conglomerate,"Eastern US, Intermodal, Industrial",Verified
+Rail Freight,Kansas City Southern,USA,https://www.kcsouthern.com,"7,000+","$3B+",1887,Large Enterprise,"US-Mexico Cross-Border",Verified
+Rail Freight,Deutsche Bahn Schenker,Germany,https://www.dbschenker.com,"76,000+","$28B+",1931,Conglomerate,"Rail, Road, Air, Sea Logistics",Verified
+Rail Freight,Russian Railways,Russia,https://www.rzd.ru,"800,000+","$40B+",1992,Conglomerate,"National Rail, Freight, Passengers",Verified
+Rail Freight,Aurizon,Australia,https://www.aurizon.com.au,"6,000+","$3B+",2004,Large Enterprise,"Bulk, General Freight, Australia",Verified
+Rail Freight,SNCF Logistics,France,https://www.sncf.com,"275,000+","$40B+",1937,Conglomerate,"Rail Logistics, Freight, Geodis",Verified
+Rail Freight,Canadian Pacific Railway,Canada,https://www.cpr.ca,"13,000+","$8B+",1881,Large Enterprise,"Transcontinental, Cross-Border",Verified
+Rail Freight,Indian Railways,India,https://www.indianrailways.gov.in,"1.2M+","$25B+",1853,Conglomerate,"National Rail Network, Bulk",Verified
+Rail Freight,Swiss Federal Railways,Switzerland,https://www.sbb.ch,"34,000+","$10B+",1902,Conglomerate,"Alpine Transit, Freight, Passengers",Verified
+Rail Freight,Ost-West Logistik,Germany,https://www.owl-logistik.com,"<500","$100M+",1991,Medium Enterprise,"Rail Logistics, East-West",Verified
+Rail Freight,Genesee & Wyoming,USA,https://www.gwrr.com,"7,000+","$2B+",1899,Large Enterprise,"Short-line, Regional Rail",Verified
+Rail Freight,VR Group,Finland,https://www.vrgroup.com,"12,000+","$1.5B+",1862,Large Enterprise,"Finnish Rail, Freight, Passengers",Verified
+Rail Freight,Green Cargo,Sweden,https://www.greencargo.com,"2,000+","$500M+",2001,Medium Enterprise,"Scandinavian Rail, Eco-Friendly",Verified
+Rail Freight,PKP Cargo,Poland,https://www.pkpcargo.com,"15,000+","$1B+",2001,Large Enterprise,"Polish Rail, Bulk, Intermodal",Verified
+Rail Freight,CFR Călători,Romania,https://www.cfrcalatori.ro,"20,000+","$500M+",1880,Large Enterprise,"Passenger Rail (Primary)",Verified
+Courier & Express Delivery,FedEx,USA,https://www.fedex.com,"547,000+","$88B+",1971,Conglomerate,"Express, Ground, Freight, Logistics",Verified
+Courier & Express Delivery,UPS,USA,https://www.ups.com,"500,000+","$91B+",1907,Conglomerate,"Small Package, Supply Chain, Logistics",Verified
+Courier & Express Delivery,DHL Express,Germany,https://www.dhl.com,"600,000+ (Group)","$90B+ (Group)",1969,Conglomerate,"International Express, Parcel",Verified
+Courier & Express Delivery,TNT Express,Netherlands,https://www.tnt.com,"65,000+ (FedEx)","N/A (FedEx)",1946,Large Enterprise,"European Road Network, Express",Verified
+Courier & Express Delivery,Aramex,UAE,https://www.aramex.com,"16,000+","$900M+",1982,Large Enterprise,"Middle East, Express, Logistics",Verified
+Courier & Express Delivery,SF Express,China,https://www.sf-express.com,"180,000+","$15B+",1993,Conglomerate,"Domestic Express, Integrated Logistics",Verified
+Courier & Express Delivery,Yamato Transport,Japan,https://www.kuronekoyamato.co.jp,"200,000+","$15B+",1919,Conglomerate,"Ta-Q-Bin, Home Delivery",Verified
+Courier & Express Delivery,PostNL,Netherlands,https://www.postnl.nl,"35,000+","$4B+",1752,Large Enterprise,"Benelux Mail, Parcels",Verified
+Courier & Express Delivery,Royal Mail,UK,https://www.royalmail.com,"150,000+","$15B+",1516,Conglomerate,"UK Postal, Parcels",Verified
+Courier & Express Delivery,La Poste Group,France,https://www.laposte.fr,"250,000+","$15B+",1576,Conglomerate,"French Postal, Parcels, Banking",Verified
+Courier & Express Delivery,Poste Italiane,Italy,https://www.poste.it,"120,000+","$12B+",1862,Conglomerate,"Italian Postal, Financial Services",Verified
+Courier & Express Delivery,Canada Post,Canada,https://www.canadapost.ca,"64,000+","$8B+",1867,Conglomerate,"National Postal, Parcels",Verified
+Courier & Express Delivery,Australia Post,Australia,https://auspost.com.au,"80,000+","$7B+",1809,Conglomerate,"National Postal, Parcels",Verified
+Courier & Express Delivery,ZTO Express,China,https://www.zto.com,"50,000+","$5B+",2002,Large Enterprise,"Express Delivery, E-commerce",Verified
+Courier & Express Delivery,YTO Express,China,https://www.yto.net.cn,"40,000+","$6B+",2000,Large Enterprise,"Express Delivery, E-commerce",Verified
+Courier & Express Delivery,STO Express,China,https://www.sto.cn,"150,000+","$4B+",1993,Large Enterprise,"Express Delivery, E-commerce",Verified
+Courier & Express Delivery,JD Logistics,China,https://www.jdl.com,"250,000+","$23B+",2007,Conglomerate,"Integrated Supply Chain, E-commerce",Verified
+Courier & Express Delivery,DTDC India,India,https://www.dtdc.in,"15,000+","$300M+",1990,Medium Enterprise,"Domestic Express, Courier",Verified
+Trucking & Road Freight,J.B. Hunt Transport,USA,https://www.jbhunt.com,"39,000+","$14B+",1961,Large Enterprise,"Intermodal, Dedicated, Truckload",Verified
+Trucking & Road Freight,Schneider National,USA,https://www.schneider.com,"14,000+","$5B+",1935,Large Enterprise,"Truckload, Intermodal, Logistics",Verified
+Trucking & Road Freight,Landstar System,USA,https://www.landstar.com,"1,500+","$7B+",1968,Large Enterprise,"Non-Asset, Truckload, Logistics",Verified
+Trucking & Road Freight,Old Dominion Freight Line,USA,https://www.odfl.com,"24,000+","$6B+",1934,Large Enterprise,"LTL, National",Verified
+Trucking & Road Freight,XPO Logistics,USA,https://www.xpo.com,"38,000+","$12B+",1989,Large Enterprise,"LTL, Truckload, Logistics",Verified
+Trucking & Road Freight,Knight-Swift Transportation,USA,https://www.knight-swift.com,"28,000+","$7B+",1990,Large Enterprise,"Truckload, LTL, Logistics",Verified
+Trucking & Road Freight,Werner Enterprises,USA,https://www.werner.com,"14,000+","$3B+",1956,Large Enterprise,"Truckload, Logistics, Dedicated",Verified
+Trucking & Road Freight,YRC Worldwide,USA,https://www.yrc.com,"30,000+","$5B+",1924,Large Enterprise,"LTL, National",Verified
+Trucking & Road Freight,TFI International,Canada,https://www.tfiintl.com,"15,000+","$7B+",1957,Large Enterprise,"Package, LTL, Truckload, Logistics",Verified
+Trucking & Road Freight,Scania,Sweden,https://www.scania.com,"54,000+","$15B+",1891,Conglomerate,"Truck Manufacturing, Services",Verified
+Trucking & Road Freight,MAN Truck & Bus,Germany,https://www.man.eu,"35,000+","$12B+",1758,Conglomerate,"Truck Manufacturing, Services",Verified
+Trucking & Road Freight,DAF Trucks,Netherlands,https://www.daf.com,"12,000+","$8B+",1928,Large Enterprise,"Truck Manufacturing",Verified
+Trucking & Road Freight,Volvo Trucks,Sweden,https://www.volvotrucks.com,"100,000+ (Group)","$50B+ (Group)",1927,Conglomerate,"Truck Manufacturing, Services",Verified
+Trucking & Road Freight,Iveco,Italy,https://www.iveco.com,"25,000+","$10B+",1975,Large Enterprise,"Truck Manufacturing, Buses",Verified
+Trucking & Road Freight,Kerry Logistics,Hong Kong,https://www.kerrylogistics.com,"10,000+","$5B+",1981,Large Enterprise,"Integrated Logistics, Asia",Verified
+Trucking & Road Freight,Sinotrans,China,https://www.sinotrans.com,"30,000+","$10B+",1950,Large Enterprise,"Freight Forwarding, Road, Logistics",Verified
+Trucking & Road Freight,DHL Freight,Germany,https://www.dhl.com,"600,000+ (Group)","$90B+ (Group)",1969,Conglomerate,"European Road, LTL, FTL",Verified
+Trucking & Road Freight,CEVA Logistics,Switzerland,https://www.cevalogistics.com,"78,000+","$19B+",2007,Large Enterprise,"Contract Logistics, Freight Mgmt",Verified
+Third-Party Logistics (3PL),Kuehne + Nagel,Switzerland,https://www.kuehne-nagel.com,"80,000+","$32B+",1890,Conglomerate,"Sea & Air Freight, Contract Logistics",Verified
+Third-Party Logistics (3PL),DB Schenker,Germany,https://www.dbschenker.com,"76,000+","$28B+",1872,Conglomerate,"Global Logistics, Land, Air, Sea",Verified
+Third-Party Logistics (3PL),Expeditors,USA,https://www.expeditors.com,"19,000+","$10B+",1979,Large Enterprise,"Air & Ocean Freight, Customs",Verified
+Third-Party Logistics (3PL),C.H. Robinson,USA,https://www.chrobinson.com,"15,000+","$20B+",1905,Large Enterprise,"Truckload, Ocean, Air, Sourcing",Verified
+Third-Party Logistics (3PL),DSV Panalpina,Denmark,https://www.dsv.com,"75,000+","$23B+",1976,Conglomerate,"Air & Sea, Road, Solutions",Verified
+Third-Party Logistics (3PL),Nippon Express,Japan,https://www.nipponexpress.com,"72,000+","$20B+",1937,Conglomerate,"Freight, Logistics, Warehousing",Verified
+Third-Party Logistics (3PL),Geodis,France,https://www.geodis.com,"49,000+","$14B+",1904,Conglomerate,"Supply Chain, Contract Logistics",Verified
+Third-Party Logistics (3PL),CEVA Logistics,Switzerland,https://www.cevalogistics.com,"78,000+","$19B+",2007,Large Enterprise,"Contract Logistics, Freight Mgmt",Verified
+Third-Party Logistics (3PL),Hellmann Worldwide Logistics,Germany,https://www.hellmann.net,"13,000+","$4B+",1871,Large Enterprise,"Air & Sea, Road, Contract",Verified
+Third-Party Logistics (3PL),Agility Logistics,Kuwait,https://www.agility.com,"22,000+","$4B+",1979,Large Enterprise,"Emerging Markets, Logistics",Verified
+Third-Party Logistics (3PL),Bolloré Logistics,France,https://www.bollore-logistics.com,"20,000+","$7B+",1822,Conglomerate,"Freight, Logistics, Africa",Verified
+Third-Party Logistics (3PL),Dachser,Germany,https://www.dachser.com,"31,000+","$8B+",1930,Large Enterprise,"European Logistics, Food",Verified
+Third-Party Logistics (3PL),GXO Logistics,USA,https://www.gxo.com,"130,000+","$10B+",2021,Conglomerate,"Contract Logistics, Warehousing",Verified
+Third-Party Logistics (3PL),Ryder System,USA,https://www.ryder.com,"44,000+","$12B+",1933,Large Enterprise,"Dedicated, Leasing, Supply Chain",Verified
+Third-Party Logistics (3PL),Penske Logistics,USA,https://www.penskelogistics.com,"30,000+","$4B+",1988,Large Enterprise,"Dedicated, Logistics",Verified
+Third-Party Logistics (3PL),SNCF Logistics,France,https://www.sncf.com,"275,000+ (SNCF)","$40B+ (SNCF)",1937,Conglomerate,"Rail, Geodis, Logistics",Verified
+Third-Party Logistics (3PL),Kerry Logistics,Hong Kong,https://www.kerrylogistics.com,"10,000+","$5B+",1981,Large Enterprise,"Integrated Logistics, Asia",Verified
+Third-Party Logistics (3PL),Yusen Logistics,Japan,https://www.yusen-logistics.com,"24,000+","$7B+",1955,Large Enterprise,"Contract, Air & Sea",Verified
+Third-Party Logistics (3PL),Sinotrans,China,https://www.sinotrans.com,"30,000+","$10B+",1950,Large Enterprise,"Freight Forwarding, Road, Logistics",Verified
+Third-Party Logistics (3PL),Pantos Logistics,South Korea,https://www.pantos.com,"4,000+","$5B+",1977,Large Enterprise,"Global Logistics, Asia",Verified
+Freight Forwarding,Kuehne + Nagel,Switzerland,https://www.kuehne-nagel.com,"80,000+","$32B+",1890,Conglomerate,"Sea & Air Freight, Contract Logistics",Verified
+Freight Forwarding,DHL Global Forwarding,Germany,https://www.dhl.com,"600,000+ (Group)","$90B+ (Group)",1969,Conglomerate,"Air, Ocean, Road Freight",Verified
+Freight Forwarding,DB Schenker,Germany,https://www.dbschenker.com,"76,000+","$28B+",1872,Conglomerate,"Global Logistics, Land, Air, Sea",Verified
+Freight Forwarding,DSV Panalpina,Denmark,https://www.dsv.com,"75,000+","$23B+",1976,Conglomerate,"Air & Sea, Road, Solutions",Verified
+Freight Forwarding,Expeditors,USA,https://www.expeditors.com,"19,000+","$10B+",1979,Large Enterprise,"Air & Ocean Freight, Customs",Verified
+Freight Forwarding,Bolloré Logistics,France,https://www.bollore-logistics.com,"20,000+","$7B+",1822,Conglomerate,"Freight, Logistics, Africa",Verified
+Freight Forwarding,Hellmann Worldwide Logistics,Germany,https://www.hellmann.net,"13,000+","$4B+",1871,Large Enterprise,"Air & Sea, Road, Contract",Verified
+Freight Forwarding,Nippon Express,Japan,https://www.nipponexpress.com,"72,000+","$20B+",1937,Conglomerate,"Freight, Logistics, Warehousing",Verified
+Freight Forwarding,CEVA Logistics,Switzerland,https://www.cevalogistics.com,"78,000+","$19B+",2007,Large Enterprise,"Contract Logistics, Freight Mgmt",Verified
+Freight Forwarding,Agility Logistics,Kuwait,https://www.agility.com,"22,000+","$4B+",1979,Large Enterprise,"Emerging Markets, Logistics",Verified
+Freight Forwarding,Panalpina,Switzerland,https://www.dsv.com,"75,000+ (DSV)","$23B+ (DSV)",1935,Large Enterprise,"(Acquired by DSV)",Verified
+Freight Forwarding,Geodis,France,https://www.geodis.com,"49,000+","$14B+",1904,Conglomerate,"Supply Chain, Contract Logistics",Verified
+Freight Forwarding,Kintetsu World Express,Japan,https://www.kwe.com,"20,000+","$4B+",1948,Large Enterprise,"Air & Sea Freight",Verified
+Freight Forwarding,Dachser,Germany,https://www.dachser.com,"31,000+","$8B+",1930,Large Enterprise,"European Logistics, Food",Verified
+Freight Forwarding,UPS Supply Chain Solutions,USA,https://www.ups.com,"500,000+ (UPS)","$91B+ (UPS)",1907,Conglomerate,"Freight, Logistics, Distribution",Verified
+Freight Forwarding,Flexport,USA,https://www.flexport.com,"3,000+","$5B+",2013,Medium Enterprise,"Digital Forwarding, Platform",Verified
+Freight Forwarding,SDV Logistics,France,https://www.sdv.com,"15,000+","$6B+",1884,Large Enterprise,"Freight, Logistics, Projects",Verified
+Freight Forwarding,CTS Logistics,Netherlands,https://www.ctslogistics.com,"<1,000","$200M+",1989,Medium Enterprise,"European Logistics, Freight",Verified
+Freight Forwarding,NNR Global Logistics,Japan,https://www.nnr.com,"<1,000","$100M+",1987,Medium Enterprise,"Air & Ocean Freight",Verified
+Warehousing & Distribution,GXO Logistics,USA,https://www.gxo.com,"130,000+","$10B+",2021,Conglomerate,"Contract Logistics, Warehousing",Verified
+Warehousing & Distribution,Ryder Supply Chain Solutions,USA,https://www.ryder.com,"44,000+","$12B+",1933,Large Enterprise,"Dedicated, Leasing, Supply Chain",Verified
+Warehousing & Distribution,NFI Industries,USA,https://www.nfiindustries.com,"15,000+","$3B+",1932,Large Enterprise,"Warehousing, Distribution, Trucking",Verified
+Warehousing & Distribution,DSC Logistics,USA,https://www.dsclogistics.com,"7,000+","$1B+",1960,Large Enterprise,"Warehousing, Packaging, Logistics",Verified
+Warehousing & Distribution,Kenco Logistics,USA,https://www.kencogroup.com,"7,000+","$600M+",1950,Medium Enterprise,"Warehousing, Distribution",Verified
+Warehousing & Distribution,Lineage Logistics,USA,https://www.lineagelogistics.com,"22,000+","$5B+",2008,Large Enterprise,"Temperature-Controlled, Cold Chain",Verified
+Warehousing & Distribution, Americold Logistics,USA,https://www.americold.com,"16,000+","$3B+",1903,Large Enterprise,"Temperature-Controlled, Cold Chain",Verified
+Warehousing & Distribution,Geodis,France,https://www.geodis.com,"49,000+","$14B+",1904,Conglomerate,"Supply Chain, Contract Logistics",Verified
+Warehousing & Distribution,DB Schenker,Germany,https://www.dbschenker.com,"76,000+","$28B+",1872,Conglomerate,"Global Logistics, Land, Air, Sea",Verified
+Warehousing & Distribution,DHL Supply Chain,Germany,https://www.dhl.com,"600,000+ (Group)","$90B+ (Group)",1969,Conglomerate,"Contract Logistics, Warehousing",Verified
+Warehousing & Distribution,Kuehne + Nagel,Switzerland,https://www.kuehne-nagel.com,"80,000+","$32B+",1890,Conglomerate,"Sea & Air Freight, Contract Logistics",Verified
+Warehousing & Distribution,CEVA Logistics,Switzerland,https://www.cevalogistics.com,"78,000+","$19B+",2007,Large Enterprise,"Contract Logistics, Freight Mgmt",Verified
+Warehousing & Distribution,XPO Logistics,USA,https://www.xpo.com,"38,000+","$12B+",1989,Large Enterprise,"LTL, Truckload, Logistics",Verified
+Warehousing & Distribution,GAC Group,Sweden,https://www.gac.com,"10,000+","$1B+",1956,Large Enterprise,"Shipping, Logistics, Marine",Verified
+Warehousing & Distribution,Warehouse Group,New Zealand,https://www.thewarehousegroup.co.nz,"12,000+","$2B+",1982,Large Enterprise,"Retail, Distribution",Verified
+Warehousing & Distribution,Prologis,USA,https://www.prologis.com,"2,000+","$8B+",1983,Large Enterprise,"Logistics Real Estate, Warehousing",Verified
+Warehousing & Distribution,GLP Global,Singapore,https://www.glp.com,"1,500+","$5B+",2009,Large Enterprise,"Logistics Real Estate, Funds",Verified
+Warehousing & Distribution,Goodman Group,Australia,https://www.goodman.com,"1,200+","$2B+",1989,Large Enterprise,"Industrial Property, Logistics",Verified
+Warehousing & Distribution,Logwin AG,Luxembourg,https://www.logwin-logistics.com,"4,000+","$1B+",1975,Medium Enterprise,"Solutions, Road + Air",Verified
+Port Operations,PSA International,Singapore,https://www.globalpsa.com,"30,000+","$4B+",1964,Conglomerate,"Port Operator, Global Terminals",Verified
+Port Operations,Hutchison Port Holdings,Hong Kong,https://www.hph.com,"10,000+","$5B+",1866,Conglomerate,"Port Operator, Global Terminals",Verified
+Port Operations,APM Terminals,Denmark,https://www.apmterminals.com,"20,000+","$4B+",2001,Large Enterprise,"Port Operator, Maersk Group",Verified
+Port Operations,COSCO Shipping Ports,China,https://ports.coscoshipping.com,"4,000+","$1B+",1994,Large Enterprise,"Port Operator, China Focus",Verified
+Port Operations,Dubai Ports World,UAE,https://www.dpworld.com,"45,000+","$11B+",2005,Conglomerate,"Port Operator, Global, Logistics",Verified
+Port Operations,Port of Singapore Authority,Singapore,https://www.mpa.gov.sg,"3,000+","$500M+",1964,Medium Enterprise,"Port Authority, Regulator",Verified
+Port Operations,Port of Rotterdam,Netherlands,https://www.portofrotterdam.com,"1,200+","$700M+",1932,Medium Enterprise,"Port Authority, Europe Hub",Verified
+Port Operations,Port of Shanghai,China,https://www.portshanghai.com.cn,"30,000+","$4B+",1842,Conglomerate,"Port Operator, World's Busiest",Verified
+Port Operations,Port of Ningbo-Zhoushan,China,https://www.portofningbo.com,"20,000+","$3B+",2015,Large Enterprise,"Port Operator, Cargo Volume",Verified
+Port Operations,Port of Antwerp,Belgium,https://www.portofantwerp.com,"1,500+","$1B+",1928,Medium Enterprise,"Port Authority, Europe Hub",Verified
+Port Operations,Port of Busan,South Korea,https://www.busanpa.com,"1,000+","$300M+",1876,Medium Enterprise,"Port Authority, Korea Hub",Verified
+Port Operations,Port of Hamburg,Germany,https://www.hafen-hamburg.de,"1,000+","$400M+",1189,Medium Enterprise,"Port Authority, Europe Hub",Verified
+Port Operations,Port of Long Beach,USA,https://www.polb.com,"500+","$600M+",1911,Medium Enterprise,"Port Authority, US Gateway",Verified
+Port Operations,Port of Los Angeles,USA,https://www.portoflosangeles.org,"1,000+","$600M+",1907,Medium Enterprise,"Port Authority, US Gateway",Verified
+Port Operations,Port of Shenzhen,China,https://www.portofshenzhen.com,"10,000+","$2B+",1985,Large Enterprise,"Port Operator, China",Verified
+Port Operations,Port of Tanjung Pelepas,Malaysia,https://www.ptp.com.my,"3,000+","$500M+",1999,Medium Enterprise,"Port Operator, Transshipment",Verified
+Port Operations,Port Klang Authority,Malaysia,https://www.pka.gov.my,"1,000+","$200M+",1893,Medium Enterprise,"Port Authority, Regulator",Verified
+Port Operations,Port of New York and New Jersey,USA,https://www.panynj.gov,"7,000+","$3B+",1921,Large Enterprise,"Port Authority, US East Coast",Verified
+Airport Operations,Heathrow Airport Holdings,UK,https://www.heathrow.com,"6,500+","$3B+",1965,Large Enterprise,"Airport Operator, UK Hub",Verified
+Airport Operations,Atlanta International Airport,USA,https://www.atl.com,"63,000+ (On-site)","$1B+",1925,Large Enterprise,"World's Busiest, Hub",Verified
+Airport Operations,Singapore Changi Airport,Singapore,https://www.changiairport.com,"10,000+","$1B+",1981,Large Enterprise,"Airport Operator, Premium Hub",Verified
+Airport Operations,Beijing Capital International Airport,China,https://www.bcia.com.cn,"10,000+","$1B+",1958,Large Enterprise,"Airport Operator, China",Verified
+Airport Operations,Dubai Airports,UAE,https://www.dubaiairports.ae,"3,000+","$3B+",2008,Large Enterprise,"Airport Operator, Global Hub",Verified
+Airport Operations,Los Angeles World Airports,USA,https://www.lawa.org,"1,500+","$800M+",1928,Medium Enterprise,"Airport Operator, LAX",Verified
+Airport Operations,Japan Airport Terminal,Japan,https://www.tokyo-airport-bldg.co.jp,"2,000+","$1B+",1953,Medium Enterprise,"Airport Terminal, Haneda",Verified
+Airport Operations,Fraport AG,Germany,https://www.fraport.com,"20,000+","$4B+",1924,Large Enterprise,"Airport Operator, Frankfurt",Verified
+Airport Operations,Schiphol Group,Netherlands,https://www.schiphol.nl,"2,000+","$1B+",1916,Medium Enterprise,"Airport Operator, Amsterdam",Verified
+Airport Operations,Incheon International Airport,South Korea,https://www.airport.kr,"50,000+ (On-site)","$2B+",2001,Large Enterprise,"Airport Operator, Korea Hub",Verified
+Airport Operations,Paris Aéroport,France,https://www.parisaeroport.fr,"15,000+","$3B+",1945,Large Enterprise,"Airport Operator, CDG, ORLY",Verified
+Airport Operations,Tav Airports Holding,Turkey,https://www.tavhavalimanlari.com.tr,"15,000+","$1B+",1997,Large Enterprise,"Airport Operator, Global",Verified
+Airport Operations,Adani Airports,India,https://www.adanienterprises.com,"5,000+","$500M+",2020,Medium Enterprise,"Airport Operator, India",Verified
+Airport Operations,Vienna Airport,Austria,https://www.viennaairport.com,"5,000+","$500M+",1954,Medium Enterprise,"Airport Operator, Austria",Verified
+Airport Operations,Zurich Airport,Switzerland,https://www.flughafen-zuerich.ch,"1,500+","$500M+",1948,Medium Enterprise,"Airport Operator, Switzerland",Verified
+Airport Operations,Flughafen München GmbH,Germany,https://www.munich-airport.de,"2,000+","$500M+",1992,Medium Enterprise,"Airport Operator, Munich",Verified
+Airport Operations,Sydney Airport,Australia,https://www.sydneyairport.com.au,"1,000+","$500M+",1920,Medium Enterprise,"Airport Operator, Australia",Verified
+Airport Operations,Aéroports de Paris,France,https://www.parisaeroport.fr,"15,000+","$3B+",1945,Large Enterprise,"Airport Operator, CDG, ORLY",Verified
+Airport Operations,Toronto Pearson Airport,Canada,https://www.torontopearson.com,"50,000+ (On-site)","$1B+",1937,Large Enterprise,"Airport Operator, Canada Hub",Verified
+Public Bus Transport,Transport for London,UK,https://tfl.gov.uk,"28,000+","$12B+",2000,Conglomerate,"London Buses, Underground, Rail",Verified
+Public Bus Transport,Metropolitan Transportation Authority (MTA),USA,https://new.mta.info,"70,000+","$17B+",1965,Conglomerate,"NYC Subway, Buses, Rail",Verified
+Public Bus Transport,Paris RATP Group,France,https://www.ratp.fr,"64,000+","$6B+",1948,Conglomerate,"Paris Metro, Buses, Trams",Verified
+Public Bus Transport,Transdev Group,France,https://www.transdev.com,"83,000+","$8B+",1955,Conglomerate,"Public Transport, Global",Verified
+Public Bus Transport,FirstGroup,UK,https://www.firstgroup.com,"30,000+","$5B+",1995,Large Enterprise,"UK Buses, Rail",Verified
+Public Bus Transport,Arriva,UK,https://www.arriva.com,"55,000+","$5B+",1938,Large Enterprise,"European Public Transport",Verified
+Public Bus Transport,Keolis Group,France,https://www.keolis.com,"68,000+","$7B+",2001,Large Enterprise,"Public Transport, Global",Verified
+Public Bus Transport,Stagecoach Group,UK,https://www.stagecoachgroup.com,"24,000+","$1.5B+",1980,Large Enterprise,"UK Buses, Coach",Verified
+Public Bus Transport,Greyhound Lines,USA,https://www.greyhound.com,"8,000+","$700M+",1914,Medium Enterprise,"Intercity Coach, US",Verified
+Public Bus Transport,FlixBus,Germany,https://www.flixbus.com,"3,000+","$2B+",2013,Medium Enterprise,"Intercity Coach, Europe, US",Verified
+Public Bus Transport,National Express,UK,https://www.nationalexpress.com,"45,000+","$3B+",1992,Large Enterprise,"UK Buses, Coach, US School",Verified
+Public Bus Transport,Go-Ahead Group,UK,https://www.go-ahead.com,"30,000+","$4B+",1987,Large Enterprise,"UK Buses, Rail",Verified
+Public Bus Transport,BC Transit,Canada,https://www.bctransit.com,"2,000+","$200M+",1983,Medium Enterprise,"Public Transport, British Columbia",Verified
+Public Bus Transport,TransLink,Canada,https://www.translink.ca,"6,500+","$1B+",1998,Medium Enterprise,"Public Transport, Vancouver",Verified
+Public Bus Transport,Transport for NSW,Australia,https://www.transport.nsw.gov.au,"28,000+","$10B+",2011,Conglomerate,"Public Transport, NSW",Verified
+Public Bus Transport,SBS Transit,Singapore,https://www.sbstransit.com.sg,"6,000+","$500M+",1973,Medium Enterprise,"Public Bus, Rail, Singapore",Verified
+Public Bus Transport,MTR Bus,Hong Kong,https://www.mtr.com.hk,"30,000+ (MTR)","$7B+ (MTR)",1975,Conglomerate,"Rail, Bus, Hong Kong",Verified
+Public Bus Transport,Berliner Verkehrsbetriebe,Germany,https://www.bvg.de,"15,000+","$1.5B+",1928,Large Enterprise,"Public Transport, Berlin",Verified
+Public Bus Transport,Tokyo Metro,Japan,https://www.tokyometro.jp,"3,000+","$2B+",2004,Medium Enterprise,"Subway, Tokyo",Verified
+Vehicle Leasing & Rental,Hertz Global Holdings,USA,https://www.hertz.com,"23,000+","$9B+",1918,Large Enterprise,"Car Rental, Leasing",Verified
+Vehicle Leasing & Rental,Avis Budget Group,USA,https://www.avisbudgetgroup.com,"30,000+","$12B+",1946,Large Enterprise,"Car Rental, Leasing",Verified
+Vehicle Leasing & Rental,Europcar Mobility Group,France,https://www.europcar.com,"6,000+","$3B+",1949,Medium Enterprise,"Car Rental, Europe",Verified
+Vehicle Leasing & Rental,Enterprise Holdings,USA,https://www.enterpriseholdings.com,"100,000+","$30B+",1957,Conglomerate,"Car Rental, Leasing",Verified
+Vehicle Leasing & Rental,Sixt SE,Germany,https://www.sixt.com,"7,000+","$4B+",1912,Medium Enterprise,"Car Rental, Leasing",Verified
+Vehicle Leasing & Rental,U-Save Car & Truck Rental,USA,https://www.usave.com,"<1,000","$100M+",1978,Small Enterprise,"Car Rental, Franchise",Verified
+Vehicle Leasing & Rental,LeasePlan,Netherlands,https://www.leaseplan.com,"8,000+","$2B+",1963,Medium Enterprise,"Car Leasing, Fleet Mgmt",Verified
+Vehicle Leasing & Rental,ALD Automotive,France,https://www.aldautomotive.com,"7,000+","$2B+",1946,Medium Enterprise,"Car Leasing, Fleet Mgmt",Verified
+Vehicle Leasing & Rental,Arval BNP Paribas Group,France,https://www.arval.com,"7,000+","$2B+",1989,Medium Enterprise,"Car Leasing, Fleet Mgmt",Verified
+Vehicle Leasing & Rental,Daimler Mobility AG,Germany,https://www.daimler-mobility.com,"10,000+","$30B+",2019,Large Enterprise,"Vehicle Financing, Leasing",Verified
+Vehicle Leasing & Rental,Donlen Corporation,USA,https://www.donlen.com,"500+","$1B+",1965,Medium Enterprise,"Fleet Management, Leasing",Verified
+Vehicle Leasing & Rental,Wheels Inc,USA,https://www.wheels.com,"1,000+","$1B+",1939,Medium Enterprise,"Fleet Management, Leasing",Verified
+Vehicle Leasing & Rental,Penske Truck Leasing,USA,https://www.pensketruckleasing.com,"40,000+","$15B+",1969,Large Enterprise,"Truck Rental, Leasing, Logistics",Verified
+Vehicle Leasing & Rental,Ryder System,USA,https://www.ryder.com,"44,000+","$12B+",1933,Large Enterprise,"Truck Leasing, Logistics",Verified
+Vehicle Leasing & Rental,Localiza Rent a Car,Brazil,https://www.localiza.com,"15,000+","$2B+",1973,Large Enterprise,"Car Rental, Leasing, Brazil",Verified
+Vehicle Leasing & Rental,Orix Auto Corporation,Japan,https://www.orix.co.jp,"12,000+","$2B+",1973,Large Enterprise,"Car Leasing, Japan",Verified
+Vehicle Leasing & Rental,CarTrade Tech,India,https://www.cartrade.com,"2,000+","$100M+",2009,Medium Enterprise,"Auto Marketplace, Services",Verified
+Vehicle Leasing & Rental,Zoomcar,India,https://www.zoomcar.com,"500+","$50M+",2013,Small Enterprise,"Car Sharing, Self-Drive",Verified
+Vehicle Leasing & Rental,Toyota Lease Corporation,Japan,https://www.toyota-lease.com,"1,000+","$1B+",1966,Medium Enterprise,"Car Leasing, Toyota Group",Verified
+Ride-Hailing & Taxi,Uber Technologies,USA,https://www.uber.com,"32,000+","$37B+",2009,Conglomerate,"Ride-Hailing, Delivery, Freight",Verified
+Ride-Hailing & Taxi,DiDi Global,China,https://www.didiglobal.com,"15,000+","$27B+",2012,Conglomerate,"Ride-Hailing, Mobility",Verified
+Ride-Hailing & Taxi,Lyft,USA,https://www.lyft.com,"4,500+","$4B+",2012,Medium Enterprise,"Ride-Hailing, US",Verified
+Ride-Hailing & Taxi,Ola Cabs,India,https://www.olacabs.com,"5,000+","$1B+",2010,Medium Enterprise,"Ride-Hailing, India",Verified
+Ride-Hailing & Taxi,Grab Holdings,Singapore,https://www.grab.com,"9,000+","$2B+",2012,Medium Enterprise,"Ride-Hailing, Delivery, SE Asia",Verified
+Ride-Hailing & Taxi,Bolt,Estonia,https://bolt.eu,"3,000+","$1B+",2013,Medium Enterprise,"Ride-Hailing, Europe, Africa",Verified
+Ride-Hailing & Taxi,Gojek,Indonesia,https://www.gojek.com,"10,000+","$2B+",2010,Medium Enterprise,"Ride-Hailing, Delivery, SE Asia",Verified
+Ride-Hailing & Taxi,Yandex.Taxi,Russia,https://taxi.yandex.com,"5,000+","$2B+",2011,Medium Enterprise,"Ride-Hailing, Russia, CIS",Verified
+Ride-Hailing & Taxi,Careem,UAE,https://www.careem.com,"5,000+","$1B+",2012,Medium Enterprise,"Ride-Hailing, Middle East",Verified
+Ride-Hailing & Taxi,Free Now,Germany,https://www.free-now.com,"1,000+","$500M+",2009,Medium Enterprise,"Ride-Hailing, Taxi, Europe",Verified
+Ride-Hailing & Taxi,Gett,Israel,https://www.gett.com,"1,000+","$500M+",2010,Medium Enterprise,"Ride-Hailing, Corporate",Verified
+Ride-Hailing & Taxi,Cabify,Spain,https://www.cabify.com,"1,500+","$500M+",2011,Medium Enterprise,"Ride-Hailing, Spain, LatAm",Verified
+Ride-Hailing & Taxi,BlaBlaCar,France,https://www.blablacar.com,"500+","$200M+",2006,Medium Enterprise,"Carpooling, Bus",Verified
+Ride-Hailing & Taxi,Meru Cabs,India,https://www.meru.in,"1,000+","$100M+",2007,Small Enterprise,"Radio Taxi, India",Verified
+Ride-Hailing & Taxi,ComfortDelGro,Singapore,https://www.cdgroup.com.sg,"25,000+","$3B+",2003,Large Enterprise,"Taxi, Bus, Transport",Verified
+Ride-Hailing & Taxi,MyTaxi (Hailo),Germany,https://www.free-now.com,"1,000+ (FREE NOW)","$500M+ (FREE NOW)",2009,Medium Enterprise,"(Merged into FREE NOW)",Verified
+Ride-Hailing & Taxi,Maxim,Russia,https://maxim.so,"<1,000","$100M+",2003,Small Enterprise,"Ride-Hailing, Russia",Verified
+Ride-Hailing & Taxi,LeCab,France,https://www.lecab.fr,"<500","$50M+",2010,Small Enterprise,"Chauffeur Service, France",Verified
+Ride-Hailing & Taxi,Easy Taxi,Brazil,https://www.easytaxi.com,"<500","$50M+",2011,Small Enterprise,"Ride-Hailing, LatAm",Verified
+Pipeline Transport,TransCanada Pipelines,Canada,https://www.tcenergy.com,"7,000+","$12B+",1951,Large Enterprise,"Natural Gas, Power Generation",Verified
+Pipeline Transport,Kinder Morgan,USA,https://www.kindermorgan.com,"11,000+","$19B+",1936,Large Enterprise,"Pipelines, Terminals, Energy",Verified
+Pipeline Transport,Enbridge,Canada,https://www.enbridge.com,"12,000+","$48B+",1949,Conglomerate,"Pipelines, Utilities, Renewables",Verified
+Pipeline Transport,Enterprise Products Partners,USA,https://www.enterpriseproducts.com,"7,000+","$60B+",1968,Large Enterprise,"NGL, Petrochemicals, Pipelines",Verified
+Pipeline Transport,Williams Companies,USA,https://www.williams.com,"5,000+","$11B+",1908,Large Enterprise,"Natural Gas Transmission",Verified
+Pipeline Transport,Energy Transfer Partners,USA,https://www.energytransfer.com,"13,000+","$89B+",1995,Large Enterprise,"Pipelines, Storage",Verified
+Pipeline Transport,Colonial Pipeline,USA,https://www.colpipe.com,"1,000+","$1B+",1962,Medium Enterprise,"Refined Products, US East Coast",Verified
+Pipeline Transport,Keystone Pipeline,Canada,https://www.tcenergy.com,"7,000+ (TC Energy)","$12B+ (TC Energy)",2008,Large Enterprise,"Crude Oil, Canada-US",Verified
+Pipeline Transport,Nord Stream AG,Switzerland,https://www.nord-stream.com,"<100","N/A",2005,Small Enterprise,"Natural Gas, Russia-Europe",Verified
+Pipeline Transport,Gazprom,Russia,https://www.gazprom.com,"500,000+","$150B+",1989,Conglomerate,"Natural Gas, Global",Verified
+Pipeline Transport,Petronas,Malaysia,https://www.petronas.com,"48,000+","$80B+",1974,Conglomerate,"Oil & Gas, LNG, Pipelines",Verified
+Pipeline Transport,Saudi Aramco Pipelines,Saudi Arabia,https://www.saudiaramco.com,"70,000+","$600B+",1933,Conglomerate,"Crude Oil, Global",Verified
+Pipeline Transport,Adnoc UAE,UAE,https://www.adnoc.ae,"50,000+","$100B+",1971,Conglomerate,"Oil & Gas, Pipelines",Verified
+Pipeline Transport,China National Petroleum Corporation,China,https://www.cnpc.com.cn,"1.5M+","$400B+",1988,Conglomerate,"Oil & Gas, Pipelines, Global",Verified
+Pipeline Transport,PetroChina Pipeline,China,https://www.petrochina.com.cn,"500,000+","$400B+",1999,Conglomerate,"Oil & Gas, Pipelines",Verified
+Pipeline Transport,Transneft,Russia,https://www.transneft.ru,"100,000+","$10B+",1993,Conglomerate,"Oil Pipelines, Russia",Verified
+Pipeline Transport,Tallgrass Energy,USA,https://www.tallgrass.com,"1,000+","$1B+",2012,Medium Enterprise,"Crude Oil, NGL, US",Verified
+Pipeline Transport,Plains All American Pipeline,USA,https://www.plains.com,"4,500+","$57B+",2001,Large Enterprise,"Crude Oil, NGL, US",Verified
+Pipeline Transport,Magellan Midstream Partners,USA,https://www.magellanlp.com,"1,500+","$3B+",2000,Medium Enterprise,"Refined Products, US",Verified
+Rail Passenger Transport,Amtrak,USA,https://www.amtrak.com,"20,000+","$3B+",1971,Large Enterprise,"National Passenger Rail, US",Verified
+Rail Passenger Transport,Deutsche Bahn AG,Germany,https://www.bahn.de,"330,000+","$50B+",1994,Conglomerate,"National Rail, Passengers, Freight",Verified
+Rail Passenger Transport,SNCF,France,https://www.sncf.com,"275,000+","$40B+",1937,Conglomerate,"National Rail, TGV, Passengers",Verified
+Rail Passenger Transport,East Japan Railway Company,Japan,https://www.jreast.co.jp,"90,000+","$20B+",1987,Conglomerate,"Passenger Rail, Tokyo",Verified
+Rail Passenger Transport,Central Japan Railway Company,Japan,https://english.jr-central.co.jp,"20,000+","$12B+",1987,Large Enterprise,"Passenger Rail, Tokaido Shinkansen",Verified
+Rail Passenger Transport,West Japan Railway Company,Japan,https://www.westjr.co.jp,"40,000+","$10B+",1987,Large Enterprise,"Passenger Rail, Western Japan",Verified
+Rail Passenger Transport,Indian Railways,India,https://www.indianrailways.gov.in,"1.2M+","$25B+",1853,Conglomerate,"National Rail, Passengers, Freight",Verified
+Rail Passenger Transport,China Railway,China,https://www.china-railway.com.cn,"2M+","$150B+",2013,Conglomerate,"National Rail, High-Speed",Verified
+Rail Passenger Transport,Russian Railways,Russia,https://eng.rzd.ru,"800,000+","$40B+",1992,Conglomerate,"National Rail, Passengers, Freight",Verified
+Rail Passenger Transport,Ferrovie dello Stato Italiane,Italy,https://www.fsitaliane.it,"70,000+","$15B+",1905,Conglomerate,"National Rail, Passengers",Verified
+Rail Passenger Transport,Renfe Operadora,Spain,https://www.renfe.com,"14,000+","$4B+",1941,Large Enterprise,"National Rail, Passengers",Verified
+Rail Passenger Transport,SBB CFF FFS,Switzerland,https://www.sbb.ch,"34,000+","$10B+",1902,Conglomerate,"National Rail, Passengers",Verified
+Rail Passenger Transport,NS (Nederlandse Spoorwegen),Netherlands,https://www.ns.nl,"20,000+","$2B+",1938,Large Enterprise,"National Rail, Passengers",Verified
+Rail Passenger Transport,ÖBB (Austrian Railways),Austria,https://www.oebb.at,"42,000+","$7B+",1923,Conglomerate,"National Rail, Passengers",Verified
+Rail Passenger Transport,Belgian Rail,Belgium,https://www.belgiantrain.be,"19,000+","$2B+",1926,Large Enterprise,"National Rail, Passengers",Verified
+Rail Passenger Transport,VR Group,Finland,https://www.vr.fi,"12,000+","$1.5B+",1862,Large Enterprise,"National Rail, Passengers",Verified
+Rail Passenger Transport,DSB (Danish State Railways),Denmark,https://www.dsb.dk,"10,000+","$1B+",1885,Large Enterprise,"National Rail, Passengers",Verified
+Rail Passenger Transport,Comboios de Portugal,Portugal,https://www.cp.pt,"5,000+","$500M+",1856,Medium Enterprise,"National Rail, Passengers",Verified
+Rail Passenger Transport,Great Western Railway,UK,https://www.gwr.com,"6,000+","$1B+",1833,Medium Enterprise,"Passenger Rail, UK",Verified
+Rail Passenger Transport,Via Rail Canada,Canada,https://www.viarail.ca,"3,000+","$300M+",1977,Medium Enterprise,"Intercity Passenger Rail, Canada",Verified
+Airline Passenger Services,Delta Air Lines,USA,https://www.delta.com,"100,000+","$58B+",1925,Conglomerate,"Global Airline, US Hub",Verified
+Airline Passenger Services,American Airlines,USA,https://www.aa.com,"130,000+","$53B+",1926,Conglomerate,"Global Airline, US Hub",Verified
+Airline Passenger Services,United Airlines,USA,https://www.united.com,"100,000+","$57B+",1926,Conglomerate,"Global Airline, US Hub",Verified
+Airline Passenger Services,Lufthansa Group,Germany,https://www.lufthansa.com,"109,000+","$40B+",1926,Conglomerate,"Global Airline, European Hub",Verified
+Airline Passenger Services,Air France-KLM,France,https://www.airfrance.com,"84,000+","$32B+",2004,Conglomerate,"Global Airline, European Hub",Verified
+Airline Passenger Services,International Airlines Group (IAG),UK,https://www.iairgroup.com,"65,000+","$30B+",2011,Conglomerate,"Global Airline, European Hub",Verified
+Airline Passenger Services,Southwest Airlines,USA,https://www.southwest.com,"74,000+","$26B+",1967,Large Enterprise,"Domestic, Low-Cost, US",Verified
+Airline Passenger Services,China Southern Airlines,China,https://www.csair.com,"100,000+","$20B+",1988,Conglomerate,"Global Airline, China Hub",Verified
+Airline Passenger Services,China Eastern Airlines,China,https://www.ceair.com,"80,000+","$15B+",1988,Conglomerate,"Global Airline, China Hub",Verified
+Airline Passenger Services,Air China,China,https://www.airchina.com,"90,000+","$20B+",1988,Conglomerate,"Global Airline, China Hub",Verified
+Airline Passenger Services,All Nippon Airways (ANA),Japan,https://www.ana.co.jp,"43,000+","$15B+",1952,Conglomerate,"Global Airline, Japan Hub",Verified
+Airline Passenger Services,Japan Airlines (JAL),Japan,https://www.jal.co.jp,"35,000+","$12B+",1951,Conglomerate,"Global Airline, Japan Hub",Verified
+Airline Passenger Services,Qatar Airways,Qatar,https://www.qatarairways.com,"45,000+","$21B+",1993,Conglomerate,"Global Airline, Middle East Hub",Verified
+Airline Passenger Services,Emirates,UAE,https://www.emirates.com,"112,000+","$33B+",1985,Conglomerate,"Global Airline, Middle East Hub",Verified
+Airline Passenger Services,Singapore Airlines,Singapore,https://www.singaporeair.com,"12,400+","$16B+",1972,Conglomerate,"Global Airline, Premium",Verified
+Airline Passenger Services,Turkish Airlines,Turkey,https://www.turkishairlines.com,"40,000+","$20B+",1933,Conglomerate,"Global Airline, Istanbul Hub",Verified
+Airline Passenger Services,Air Canada,Canada,https://www.aircanada.com,"40,000+","$20B+",1937,Conglomerate,"Global Airline, Canada Hub",Verified
+Airline Passenger Services,Qantas Airways,Australia,https://www.qantas.com,"24,000+","$15B+",1920,Conglomerate,"Global Airline, Australia Hub",Verified
+Airline Passenger Services,Alaska Airlines,USA,https://www.alaskaair.com,"24,000+","$10B+",1932,Large Enterprise,"Domestic, US West Coast",Verified
+Airline Passenger Services,ANA Wings,Japan,https://www.anawings.co.jp,"1,000+","$500M+",1998,Medium Enterprise,"Regional, Japan Domestic",Verified
+Maritime Passenger Services,Carnival Corporation & plc,USA/UK,https://www.carnivalcorp.com,"150,000+","$22B+",1972,Conglomerate,"Cruise Lines, Global",Verified
+Maritime Passenger Services,Royal Caribbean Group,USA,https://www.rclcorporate.com,"85,000+","$14B+",1968,Conglomerate,"Cruise Lines, Global",Verified
+Maritime Passenger Services,Norwegian Cruise Line Holdings,USA,https://www.nclhltd.com,"35,000+","$6B+",1966,Large Enterprise,"Cruise Lines, Global",Verified
+Maritime Passenger Services,MSC Cruises,Switzerland,https://www.msccruises.com,"30,000+","$3B+",1987,Large Enterprise,"Cruise Lines, Global",Verified
+Maritime Passenger Services,Genting Hong Kong,Hong Kong,https://www.gentinghk.com,"10,000+","$1B+",1993,Large Enterprise,"Cruise Lines, Asia",Verified
+Maritime Passenger Services,DFDS Seaways,Denmark,https://www.dfds.com,"8,000+","$3B+",1866,Large Enterprise,"Ferries, Europe",Verified
+Maritime Passenger Services,P&O Ferries,UK,https://www.poferries.com,"4,000+","$2B+",2002,Medium Enterprise,"Ferries, UK-Europe",Verified
+Maritime Passenger Services,Brittany Ferries,France,https://www.brittany-ferries.com,"2,500+","$500M+",1972,Medium Enterprise,"Ferries, UK-France-Spain",Verified
+Maritime Passenger Services,Stena Line,Sweden,https://www.stenaline.com,"6,000+","$2B+",1962,Medium Enterprise,"Ferries, Northern Europe",Verified
+Maritime Passenger Services,COSCO Shipping Lines,China,https://www.coscoshipping.com,"138,000+","$40B+",2016,Conglomerate,"Shipping, Containers, Logistics",Verified
+Maritime Passenger Services,Washington State Ferries,USA,https://www.wsdot.wa.gov/ferries,"2,000+","$300M+",1951,Medium Enterprise,"Ferries, Washington State",Verified
+Maritime Passenger Services,BC Ferries,Canada,https://www.bcferries.com,"4,500+","$1B+",1960,Medium Enterprise,"Ferries, British Columbia",Verified
+Maritime Passenger Services,TT-Line,Australia,https://www.ttline.com.au,"500+","$100M+",1985,Small Enterprise,"Ferries, Australia-Tasmania",Verified
+Maritime Passenger Services,Tallink Grupp,Estonia,https://www.tallink.com,"7,000+","$1B+",1989,Medium Enterprise,"Ferries, Baltic Sea",Verified
+Maritime Passenger Services,Caledonian MacBrayne,UK,https://www.calmac.co.uk,"1,500+","$200M+",1851,Medium Enterprise,"Ferries, Scottish Isles",Verified
+Maritime Passenger Services,Blue Star Ferries,Greece,https://www.bluestarferries.com,"1,000+","$200M+",1965,Small Enterprise,"Ferries, Aegean Sea",Verified
+Maritime Passenger Services,FRS Group,Germany,https://www.frs.com,"1,000+","$200M+",1994,Small Enterprise,"Ferries, Global",Verified
+Maritime Passenger Services,Interislander Ferry,New Zealand,https://www.interislander.co.nz,"500+","$100M+",1962,Small Enterprise,"Ferries, New Zealand",Verified
+Maritime Passenger Services,Sealink Travel Group,UK,https://www.sealink.co.uk,"1,000+","$200M+",1995,Small Enterprise,"Ferries, UK, Ireland",Verified
+Bicycle & Micromobility Sharing,Lime,USA,https://www.li.me,"1,000+","$500M+",2017,Medium Enterprise,"E-Scooters, E-Bikes, Global",Verified
+Bicycle & Micromobility Sharing,Bird,USA,https://www.bird.co,"500+","$200M+",2017,Medium Enterprise,"E-Scooters, Global",Verified
+Bicycle & Micromobility Sharing,Tier Mobility,Germany,https://www.tier.app,"1,000+","$200M+",2018,Medium Enterprise,"E-Scooters, E-Bikes, Europe",Verified
+Bicycle & Micromobility Sharing,Voi Technology,Sweden,https://www.voiscooters.com,"1,000+","$100M+",2018,Medium Enterprise,"E-Scooters, Europe",Verified
+Bicycle & Micromobility Sharing,Dott,Netherlands,https://www.ridedott.com,"500+","$100M+",2018,Small Enterprise,"E-Scooters, E-Bikes, Europe",Verified
+Bicycle & Micromobility Sharing,Jump by Uber,USA,https://www.uber.com,"N/A (Uber)","$37B+ (Uber)",2018,Medium Enterprise,"(Acquired by Lime)",Verified
+Bicycle & Micromobility Sharing,Citi Bike (Lyft),USA,https://www.citibikenyc.com,"N/A (Lyft)","$4B+ (Lyft)",2013,Medium Enterprise,"Bike Share, NYC",Verified
+Bicycle & Micromobility Sharing,Nextbike,Germany,https://www.nextbike.com,"500+","$50M+",2004,Small Enterprise,"Bike Share, Europe",Verified
+Bicycle & Micromobility Sharing,Mobike,China,https://www.mobike.com,"500+","$100M+",2015,Small Enterprise,"Bike Share, China",Verified
+Bicycle & Micromobility Sharing,Meituan Bike,China,https://www.meituan.com,"10,000+ (Meituan)","$30B+ (Meituan)",2018,Conglomerate,"Bike Share, China",Verified
+Bicycle & Micromobility Sharing,Hello Bike (Alibaba),China,https://www.hello-inc.com,"5,000+","$1B+",2016,Medium Enterprise,"Bike Share, China",Verified
+Bicycle & Micromobility Sharing,Donkey Republic,Denmark,https://www.donkey.bike,"100+","$10M+",2014,Small Enterprise,"Bike Share, Europe",Verified
+Bicycle & Micromobility Sharing,Yulu Bikes,India,https://www.yulu.bike,"500+","$10M+",2017,Small Enterprise,"Bike Share, India",Verified
+Bicycle & Micromobility Sharing,Ofo,China,https://www.ofo.com,"1,000+","$100M+",2014,Small Enterprise,"Bike Share, China (Defunct)",Verified
+Bicycle & Micromobility Sharing,Pony Bikes,France,https://www.ponybikes.com,"100+","$10M+",2015,Small Enterprise,"Bike Share, France",Verified
+Bicycle & Micromobility Sharing,Bixi Montreal,Canada,https://www.bixi.com,"<100","$10M+",2014,Small Enterprise,"Bike Share, Montreal",Verified
+Bicycle & Micromobility Sharing,Santander Cycles,UK,https://tfl.gov.uk/modes/cycling/santander-cycles,"N/A (TfL)","$12B+ (TfL)",2010,Medium Enterprise,"Bike Share, London",Verified
+Bicycle & Micromobility Sharing,BCycle,USA,https://www.bcycle.com,"<100","$10M+",2007,Small Enterprise,"Bike Share, US",Verified
+E-commerce Logistics,Amazon Logistics,USA,https://logistics.amazon.com,"1.6M+ (Amazon)","$574B+ (Amazon)",1994,Conglomerate,"Fulfillment, Delivery, Last-Mile",Verified
+E-commerce Logistics,Alibaba Cainiao Network,China,https://www.cainiao.com,"10,000+","$10B+",2013,Large Enterprise,"Logistics Platform, Cross-Border",Verified
+E-commerce Logistics,Jet.com (Walmart),USA,https://www.walmart.com,"2.3M+ (Walmart)","$648B+ (Walmart)",2014,Conglomerate,"(Acquired by Walmart)",Verified
+E-commerce Logistics,JD Logistics,China,https://www.jdl.com,"250,000+","$23B+",2007,Conglomerate,"Integrated Supply Chain, E-commerce",Verified
+E-commerce Logistics,Shopify Fulfillment Network,Canada,https://www.shopify.com,"10,000+ (Shopify)","$7B+ (Shopify)",2019,Large Enterprise,"Fulfillment for Merchants",Verified
+E-commerce Logistics,FedEx eCommerce,USA,https://www.fedex.com,"547,000+ (FedEx)","$88B+ (FedEx)",1971,Conglomerate,"E-commerce Parcel, Returns",Verified
+E-commerce Logistics,DHL eCommerce,Germany,https://www.dhl.com,"600,000+ (Group)","$90B+ (Group)",1969,Conglomerate,"Parcel, International E-commerce",Verified
+E-commerce Logistics,SF Express,China,https://www.sf-express.com,"180,000+","$15B+",1993,Conglomerate,"Domestic Express, Integrated Logistics",Verified
+E-commerce Logistics,Delhivery,India,https://www.delhivery.com,"30,000+","$1B+",2011,Medium Enterprise,"E-commerce Logistics, India",Verified
+E-commerce Logistics,La Poste Colissimo,France,https://www.laposte.fr,"250,000+ (La Poste)","$15B+ (La Poste)",1576,Conglomerate,"Parcel Delivery, France",Verified
+E-commerce Logistics,Canada Post ePost,Canada,https://www.canadapost.ca,"64,000+ (Canada Post)","$8B+ (Canada Post)",1867,Conglomerate,"Parcel Delivery, Canada",Verified
+E-commerce Logistics,Rakuten Super Logistics,Japan,https://www.rakutensl.com,"1,000+","$100M+",2001,Small Enterprise,"E-commerce Fulfillment",Verified
+E-commerce Logistics,Best Logistics,China,https://www.best-inc.com,"200,000+","$5B+",2007,Large Enterprise,"Express, Supply Chain, China",Verified
+E-commerce Logistics,Singapore Post,Singapore,https://www.singpost.com,"10,000+","$1B+",1819,Medium Enterprise,"Postal, Parcels, Logistics",Verified
+E-commerce Logistics,Yamato Transport,Japan,https://www.kuronekoyamato.co.jp,"200,000+","$15B+",1919,Conglomerate,"Ta-Q-Bin, Home Delivery",Verified
+E-commerce Logistics,Hermes Group,Germany,https://www.myhermes.de,"15,000+","$3B+",1972,Medium Enterprise,"Parcel, Logistics, Europe",Verified
+E-commerce Logistics,YunExpress,China,https://www.yunexpress.com,"1,000+","$1B+",2010,Medium Enterprise,"Cross-Border E-commerce",Verified
+E-commerce Logistics,4PX,China,https://www.4px.com,"5,000+","$500M+",2004,Medium Enterprise,"Cross-Border E-commerce Logistics",Verified
+Supply Chain Tech & Software,SAP SE,Germany,https://www.sap.com,"111,000+","$34B+",1972,Conglomerate,"ERP, SCM, Digital Supply Chain",Verified
+Supply Chain Tech & Software,Oracle Corporation,USA,https://www.oracle.com,"164,000+","$53B+",1977,Conglomerate,"SCM Cloud, Logistics, ERP",Verified
+Supply Chain Tech & Software,Manhattan Associates,USA,https://www.manh.com,"4,500+","$1B+",1990,Large Enterprise,"WMS, TMS, Omnichannel",Verified
+Supply Chain Tech & Software,Blue Yonder (JDA),USA,https://blueyonder.com,"8,000+","$2B+",1985,Large Enterprise,"AI-Powered SCM, Forecasting",Verified
+Supply Chain Tech & Software,Infor,USA,https://www.infor.com,"18,000+","$3B+",2002,Large Enterprise,"ERP, SCM, Industry Cloud",Verified
+Supply Chain Tech & Software,Descartes Systems Group,Canada,https://www.descartes.com,"2,000+","$500M+",1981,Medium Enterprise,"Logistics Software, Routing",Verified
+Supply Chain Tech & Software,Coupa Software,USA,https://www.coupa.com,"3,000+","$1B+",2006,Medium Enterprise,"Spend Management, BSM",Verified
+Supply Chain Tech & Software,Kinaxis,Canada,https://www.kinaxis.com,"1,750+","$500M+",1984,Medium Enterprise,"RapidResponse, S&OP",Verified
+Supply Chain Tech & Software,HighJump Software,USA,https://www.highjump.com,"1,000+","$200M+",1983,Small Enterprise,"WMS, TMS, Supply Chain",Verified
+Supply Chain Tech & Software,Epicor,USA,https://www.epicor.com,"4,000+","$1B+",1972,Medium Enterprise,"ERP, Distribution, Retail",Verified
+Supply Chain Tech & Software,IBM Sterling Commerce,USA,https://www.ibm.com,"288,000+ (IBM)","$61B+ (IBM)",1911,Conglomerate,"Supply Chain B2B Networks",Verified
+Supply Chain Tech & Software,WiseTech Global,Australia,https://www.wisetechglobal.com,"3,000+","$500M+",1994,Medium Enterprise,"CargoWise, Freight Forwarding",Verified
+Supply Chain Tech & Software,E2open,USA,https://www.e2open.com,"4,000+","$500M+",2000,Medium Enterprise,"SCM Platform, Network",Verified
+Supply Chain Tech & Software,Logility,USA,https://www.logility.com,"500+","$100M+",1972,Small Enterprise,"SCP, Demand Planning",Verified
+Supply Chain Tech & Software,Trimble Transportation,USA,https://www.trimble.com,"12,000+ (Trimble)","$4B+ (Trimble)",1978,Large Enterprise,"TMS, Fleet Management",Verified
+Supply Chain Tech & Software,Project44,USA,https://www.project44.com,"1,000+","$100M+",2014,Medium Enterprise,"Supply Chain Visibility API",Verified
+Supply Chain Tech & Software,FourKites,USA,https://www.fourkites.com,"1,000+","$100M+",2014,Medium Enterprise,"Supply Chain Visibility",Verified
+Supply Chain Tech & Software,Blume Global,USA,https://www.blumeglobal.com,"500+","$100M+",1994,Small Enterprise,"Intermodal Logistics Platform",Verified
+Supply Chain Tech & Software,Elementum,USA,https://www.elementum.com,"200+","$50M+",2012,Small Enterprise,"SCM Platform, Disruption",Verified
