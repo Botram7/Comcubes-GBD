@@ -1,0 +1,381 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Crop Production,Cargill,USA,https://www.cargill.com,"155,000+","$177.0B",1865,Conglomerate,Agribusiness, Commodity Trading,Verified
+Crop Production,ADM (Archer Daniels Midland),USA,https://www.adm.com,"41,000+","$101.6B",1902,Conglomerate,Agribusiness, Food Processing,Verified
+Crop Production,Bunge Limited,USA,https://www.bunge.com,"23,000+","$67.2B",1818,Large Enterprise,Agribusiness, Edible Oils,Verified
+Crop Production,COFCO Group,China,https://www.cofco.com,"120,000+","$82.0B",1949,Conglomerate,Agribusiness, State-Owned,Verified
+Crop Production,Louis Dreyfus Company,Netherlands,https://www.ldc.com,"17,000+","$49.6B",1851,Large Enterprise,Agribusiness, Commodity Trading,Verified
+Crop Production,Nutrien,Canada,https://www.nutrien.com,"24,000+","$27.7B",2018,Large Enterprise,Fertilizers, Crop Inputs,Verified
+Crop Production,Wilmar International,Singapore,https://www.wilmar-international.com,"90,000+","$65.6B",1991,Conglomerate,Agribusiness, Palm Oil,Verified
+Crop Production,Olam Agri,Singapore,https://www.olamagri.com,"25,000+","$37.0B",1989,Large Enterprise,Agribusiness, Food Ingredients,Verified
+Crop Production,Bayer Crop Science,Germany,https://www.bayer.com,"99,000+","$50.0B+",1863,Conglomerate,Seeds, Crop Protection,Verified
+Crop Production,Syngenta Group,China,https://www.syngentagroup.com,"57,000+","$33.4B",2000,Large Enterprise,Seeds, Crop Protection,Verified
+Crop Production,Corteva Agriscience,USA,https://www.corteva.com,"21,000+","$17.5B",2019,Large Enterprise,Seeds, Crop Protection,Verified
+Crop Production,Land O'Lakes,USA,https://www.landolakesinc.com,"9,000+","$16.0B",1921,Cooperative,Dairy, Crop Inputs,Verified
+Crop Production,CHS Inc.,USA,https://www.chsinc.com,"10,000+","$47.0B",1929,Cooperative,Energy, Agribusiness,Verified
+Crop Production,Andersons Inc.,USA,https://www.andersonsinc.com,"2,500+","$4.0B",1947,Large Enterprise,Grain, Ethanol,Verified
+Crop Production,AGCO Corporation,USA,https://www.agcocorp.com,"24,000+","$14.4B",1990,Large Enterprise,Agricultural Machinery,Verified
+Crop Production,Kubota Corporation,Japan,https://www.kubota.com,"41,000+","$19.8B",1890,Conglomerate,Agricultural Machinery, Engines,Verified
+Crop Production,Yara International,Norway,https://www.yara.com,"17,000+","$19.4B",1905,Large Enterprise,Fertilizers, Crop Nutrition,Verified
+Crop Production,CNH Industrial,UK,https://www.cnhindustrial.com,"40,000+","$24.1B",2012,Conglomerate,Agricultural Machinery,Verified
+Crop Production,Deere & Company,USA,https://www.deere.com,"82,000+","$61.3B",1837,Conglomerate,Agricultural Machinery,Verified
+Livestock Production,JBS S.A.,Brazil,https://www.jbs.com.br,"250,000+","$79.8B",1953,Conglomerate,Meat Processing,Verified
+Livestock Production,Tyson Foods,USA,https://www.tysonfoods.com,"142,000+","$53.3B",1935,Conglomerate,Meat Processing,Verified
+Livestock Production,BRF S.A.,Brazil,https://www.brf-global.com,"95,000+","$9.0B",1934,Large Enterprise,Meat Processing,Verified
+Livestock Production,Smithfield Foods (WH Group),USA,https://www.smithfieldfoods.com,"63,000+","$18.0B",1936,Large Enterprise,Meat Processing,Verified
+Livestock Production,Cargill Protein,USA,https://www.cargill.com,"155,000+","$177.0B",1865,Conglomerate,Meat, Poultry,Verified
+Livestock Production,Vion Food Group,Netherlands,https://vionfoodgroup.com,"12,000+","$5.5B",1928,Large Enterprise,Meat Processing,Verified
+Livestock Production,NH Foods,Japan,https://www.nh-foods.com,"21,000+","$12.0B",1942,Large Enterprise,Meat Processing,Verified
+Livestock Production,Minerva Foods,Brazil,https://www.minervafoods.com,"24,000+","$4.5B",1957,Large Enterprise,Meat Processing,Verified
+Livestock Production,Tönnies Group,Germany,https://www.toennies.de,"16,500+","$7.3B",1971,Large Enterprise,Meat Processing,Verified
+Livestock Production,Charoen Pokphand Foods,Thailand,https://www.cpfworldwide.com,"120,000+","$18.0B",1978,Conglomerate,Animal Feed, Meat,Verified
+Livestock Production,Hormel Foods,USA,https://www.hormelfoods.com,"20,000+","$12.1B",1891,Large Enterprise,Meat Processing,Verified
+Livestock Production,Pilgrim's Pride,USA,https://www.pilgrims.com,"59,000+","$17.5B",1946,Large Enterprise,Poultry Processing,Verified
+Livestock Production,Marfrig Global Foods,Brazil,https://www.marfrig.com,"63,000+","$7.5B",2000,Large Enterprise,Meat Processing,Verified
+Livestock Production,Seara Foods,Brazil,https://www.seara.com,"30,000+","N/A (Subsidiary)",1956,Large Enterprise,Meat Processing,Verified
+Livestock Production,Perdue Farms,USA,https://www.perduefarms.com,"21,000+","$8.1B",1920,Large Enterprise,Poultry Processing,Verified
+Livestock Production,Sanderson Farms,USA,https://www.sandersonfarms.com,"17,000+","$3.5B",1947,Large Enterprise,Poultry Processing,Verified
+Livestock Production,Inalca (Cremonini Group),Italy,https://www.inalca.it,"8,000+","$2.5B",1963,Large Enterprise,Meat Processing,Verified
+Livestock Production,Bell Food Group,Switzerland,https://www.bellfoodgroup.com,"12,000+","$4.5B",1869,Large Enterprise,Meat Processing,Verified
+Livestock Production,Cranswick plc,UK,https://www.cranswick.co.uk,"13,000+","$2.5B",1970,Large Enterprise,Meat Processing,Verified
+Dairy Farming,Nestlé Dairy,Switzerland,https://www.nestle.com,"273,000+","$107.0B",1866,Conglomerate,Dairy Products,Verified
+Dairy Farming,Lactalis Group,France,https://www.lactalis.com,"85,000+","$24.5B",1933,Conglomerate,Dairy Products,Verified
+Dairy Farming,Fonterra Co-operative,New Zealand,https://www.fonterra.com,"20,000+","$15.0B",2001,Cooperative,Dairy Products,Verified
+Dairy Farming,Dairy Farmers of America,USA,https://www.dfamilk.com,"18,000+","$20.0B",1998,Cooperative,Dairy Products,Verified
+Dairy Farming,Danone Dairy,France,https://www.danone.com,"102,000+","$28.0B",1919,Conglomerate,Dairy Products,Verified
+Dairy Farming,Saputo Inc.,Canada,https://www.saputo.com,"18,000+","$11.5B",1954,Large Enterprise,Dairy Products,Verified
+Dairy Farming,Arla Foods,Denmark,https://www.arlafoods.com,"19,000+","$13.5B",2000,Cooperative,Dairy Products,Verified
+Dairy Farming,Yili Group,China,https://www.yili.com,"50,000+","$17.0B",1993,Large Enterprise,Dairy Products,Verified
+Dairy Farming,Mengniu Dairy,China,https://www.mengniuir.com,"35,000+","$14.0B",1999,Large Enterprise,Dairy Products,Verified
+Dairy Farming,FrieslandCampina,Netherlands,https://www.frieslandcampina.com,"24,000+","$14.0B",2008,Cooperative,Dairy Products,Verified
+Dairy Farming,Dean Foods,USA,https://www.deanfoods.com,"15,000+","$7.8B",1925,Large Enterprise,Dairy Products,Verified
+Dairy Farming,Meiji Holdings,Japan,https://www.meiji.com,"16,000+","$10.5B",1906,Large Enterprise,Dairy Products,Verified
+Dairy Farming,Kraft Heinz Dairy,USA,https://www.kraftheinzcompany.com,"38,000+","$26.5B",1869,Large Enterprise,Dairy Products,Verified
+Dairy Farming,Schreiber Foods,USA,https://www.schreiberfoods.com,"9,000+","$5.5B",1945,Large Enterprise,Dairy Products,Verified
+Dairy Farming,Muller Group,Germany,https://www.muller-group.com,"26,000+","$6.5B",1896,Large Enterprise,Dairy Products,Verified
+Dairy Farming,Sodiaal Group,France,https://www.sodiaal.com,"9,000+","$6.0B",1964,Cooperative,Dairy Products,Verified
+Dairy Farming,Dairy Crest (Saputo),UK,https://www.dairycrest.co.uk,"1,100+","$0.7B",1996,Large Enterprise,Dairy Products,Verified
+Dairy Farming,Morinaga Milk Industry,Japan,https://www.morinagamilk.co.jp,"5,000+","$4.0B",1917,Large Enterprise,Dairy Products,Verified
+Dairy Farming,Amul (GCMMF),India,https://www.amul.com,"3,000+","$6.0B",1946,Cooperative,Dairy Products,Verified
+Dairy Farming,Parmalat (Lactalis),Italy,https://www.parmalat.com,"14,000+","$4.5B",1961,Large Enterprise,Dairy Products,Verified
+Aquaculture,Mowi ASA,Norway,https://www.mowi.com,"14,000+","$5.5B",1964,Large Enterprise,Salmon Farming,Verified
+Aquaculture,Thai Union Group,Thailand,https://www.thaiunion.com,"46,000+","$4.2B",1977,Large Enterprise,Seafood Processing,Verified
+Aquaculture,Maruha Nichiro Corporation,Japan,https://www.maruha-nichiro.co.jp,"11,000+","$6.5B",1882,Large Enterprise,Seafood Processing,Verified
+Aquaculture,Nippon Suisan Kaisha (Nissui),Japan,https://www.nissui.co.jp,"10,000+","$5.0B",1911,Large Enterprise,Seafood Processing,Verified
+Aquaculture,Cermaq Group (Mitsubishi),Norway,https://www.cermaq.com,"800+","$1.2B",1992,Large Enterprise,Salmon Farming,Verified
+Aquaculture,Lerøy Seafood Group,Norway,https://www.leroyseafood.com,"5,000+","$2.5B",1899,Large Enterprise,Seafood Processing,Verified
+Aquaculture,Grieg Seafood,Norway,https://griegseafood.com,"1,200+","$1.0B",1992,Large Enterprise,Salmon Farming,Verified
+Aquaculture,SalMar ASA,Norway,https://www.salmar.no,"1,500+","$2.0B",1991,Large Enterprise,Salmon Farming,Verified
+Aquaculture,Bakkafrost,Faroe Islands,https://www.bakkafrost.com,"1,600+","$1.0B",1968,Large Enterprise,Salmon Farming,Verified
+Aquaculture,Cooke Aquaculture,Canada,https://www.cookeaqua.com,"8,000+","$2.5B",1985,Large Enterprise,Seafood, Aquaculture,Verified
+Aquaculture,Charoen Pokphand Foods Aqua,Thailand,https://www.cpfworldwide.com,"120,000+","$18.0B",1978,Conglomerate,Shrimp Farming,Verified
+Aquaculture,Huon Aquaculture,Australia,https://www.huonaqua.com.au,"500+","$0.3B",1986,SME,Salmon Farming,Verified
+Aquaculture,Tassal Group,Australia,https://www.tassal.com.au,"1,200+","$0.5B",1986,Large Enterprise,Salmon Farming,Verified
+Aquaculture,Clearwater Seafoods,Canada,https://www.clearwater.ca,"1,800+","$0.6B",1976,Large Enterprise,Seafood,Verified
+Aquaculture,Camanchaca,Chile,https://www.camanchaca.cl,"3,000+","$0.5B",1985,Large Enterprise,Seafood Processing,Verified
+Aquaculture,Multiexport Foods,Chile,https://www.multiexportfoods.com,"2,000+","$0.4B",1987,Large Enterprise,Salmon Farming,Verified
+Aquaculture,High Liner Foods,Canada,https://www.highlinerfoods.com,"1,200+","$1.0B",1899,Large Enterprise,Seafood Processing,Verified
+Aquaculture,Austevoll Seafood,Norway,https://www.austevollseafood.com,"7,800+","$3.0B",1951,Large Enterprise,Seafood Processing,Verified
+Aquaculture,Labeyrie Fine Foods,France,https://www.labeyrie.com,"2,000+","$0.6B",1946,Large Enterprise,Seafood Products,Verified
+Agricultural Equipment,John Deere,USA,https://www.deere.com,"82,000+","$61.3B",1837,Conglomerate,Agricultural Machinery,Verified
+Agricultural Equipment,CNH Industrial (Case IH),UK,https://www.cnhindustrial.com,"40,000+","$24.1B",2012,Conglomerate,Agricultural Machinery,Verified
+Agricultural Equipment,AGCO Corporation (Massey Ferguson),USA,https://www.agcocorp.com,"24,000+","$14.4B",1990,Large Enterprise,Agricultural Machinery,Verified
+Agricultural Equipment,Kubota Corporation,Japan,https://www.kubota.com,"41,000+","$19.8B",1890,Conglomerate,Agricultural Machinery, Engines,Verified
+Agricultural Equipment,CLAAS Group,Germany,https://www.claas-group.com,"12,000+","$5.0B",1913,Large Enterprise,Agricultural Machinery,Verified
+Agricultural Equipment,AGCO (Fendt),USA,https://www.fendt.com,"24,000+","$14.4B",1990,Large Enterprise,Agricultural Machinery,Verified
+Agricultural Equipment,SDF Group (SAME Deutz-Fahr),Italy,https://www.sdfgroup.com,"3,500+","$1.5B",1927,Large Enterprise,Agricultural Machinery,Verified
+Agricultural Equipment,Kverneland Group,Norway,https://www.kvernelandgroup.com,"2,000+","$0.5B",1879,Large Enterprise,Agricultural Implements,Verified
+Agricultural Equipment,Yanmar Holdings,Japan,https://www.yanmar.com,"14,000+","$5.0B",1912,Large Enterprise,Engines, Equipment,Verified
+Agricultural Equipment,Kuhn Group,France,https://www.kuhn.com,"5,000+","$1.2B",1828,Large Enterprise,Agricultural Implements,Verified
+Agricultural Equipment,Amazone Group,Germany,https://www.amazone.de,"2,000+","$0.7B",1883,Large Enterprise,Agricultural Implements,Verified
+Agricultural Equipment,Grimme Group,Germany,https://www.grimme.com,"2,000+","$0.6B",1861,Large Enterprise,Potato Harvesting,Verified
+Agricultural Equipment,Bucher Industries,Switzerland,https://www.bucherindustries.com,"11,000+","$3.5B",1807,Large Enterprise,Agricultural Machinery,Verified
+Agricultural Equipment,Lemken GmbH,Germany,https://www.lemken.com,"1,800+","$0.5B",1780,Large Enterprise,Soil Cultivation,Verified
+Agricultural Equipment,Valmont Industries,USA,https://www.valmont.com,"11,000+","$3.8B",1946,Large Enterprise,Irrigation, Infrastructure,Verified
+Agricultural Equipment,Lindsay Corporation,USA,https://www.lindsay.com,"1,200+","$0.7B",1955,Large Enterprise,Irrigation,Verified
+Agricultural Equipment,Tractor and Equipment Company,USA,https://www.tractorandequipment.com,"500+","N/A",1927,SME,Equipment Dealer,Verified
+Agricultural Equipment,Rostselmash,Russia,https://rostselmash.com,"10,000+","$1.0B",1929,Large Enterprise,Agricultural Machinery,Verified
+Agricultural Equipment,Mahindra Tractors,India,https://www.mahindratractor.com,"5,000+","$1.5B",1945,Large Enterprise,Tractors,Verified
+Agricultural Equipment,Changfa Group,China,https://www.changfa.com,"10,000+","$1.2B",1953,Large Enterprise,Diesel Engines,Verified
+Seeds & Genetics,Bayer Crop Science Seeds,Germany,https://www.bayer.com,"99,000+","$50.0B+",1863,Conglomerate,Seeds, Crop Protection,Verified
+Seeds & Genetics,Corteva Agriscience Seeds,USA,https://www.corteva.com,"21,000+","$17.5B",2019,Large Enterprise,Seeds, Crop Protection,Verified
+Seeds & Genetics,Syngenta Seeds,China,https://www.syngenta.com,"57,000+","$33.4B",2000,Large Enterprise,Seeds, Crop Protection,Verified
+Seeds & Genetics,Limagrain Group,France,https://www.limagrain.com,"10,500+","$3.2B",1942,Large Enterprise,Seeds, Plant Genetics,Verified
+Seeds & Genetics,KWS SAAT SE & Co. KGaA,Germany,https://www.kws.com,"6,000+","$1.8B",1856,Large Enterprise,Seeds, Plant Breeding,Verified
+Seeds & Genetics,Sakata Seed Corporation,Japan,https://sakata.com,"3,200+","$0.8B",1913,Large Enterprise,Vegetable Seeds, Flowers,Verified
+Seeds & Genetics,Rijk Zwaan,Netherlands,https://www.rijkzwaan.com,"5,000+","$0.7B",1924,Large Enterprise,Vegetable Seeds,Verified
+Seeds & Genetics,DLF Seeds & Science,Denmark,https://www.dlf.com,"2,200+","$0.6B",1906,Large Enterprise,Forage & Turf Seeds,Verified
+Seeds & Genetics,BASF Agricultural Solutions,Germany,https://www.basf.com,"111,000+","$68.0B",1865,Conglomerate,Crop Protection, Seeds,Verified
+Seeds & Genetics,Bejo Zaden,Netherlands,https://www.bejo.com,"1,800+","$0.4B",1978,Large Enterprise,Vegetable Seeds,Verified
+Seeds & Genetics,Takii & Co.,Japan,https://www.takii.com,"1,500+","$0.4B",1835,Large Enterprise,Vegetable Seeds, Flowers,Verified
+Seeds & Genetics,Enza Zaden,Netherlands,https://www.enzazaden.com,"2,500+","$0.5B",1938,Large Enterprise,Vegetable Seeds,Verified
+Seeds & Genetics,Advanta Seeds (UPL),India,https://www.advantaseeds.com,"4,000+","N/A (Subsidiary)",1994,Large Enterprise,Seeds,Verified
+Seeds & Genetics,East-West Seed,Netherlands,https://www.eastwestseed.com,"3,700+","$0.2B",1982,Large Enterprise,Vegetable Seeds,Verified
+Seeds & Genetics,Nongwoo Bio,South Korea,https://www.nongwoobio.com,"500+","$0.1B",1975,SME,Seeds, Crop Protection,Verified
+Seeds & Genetics,Longping High-Tech,China,https://www.lpht.com.cn,"5,000+","$3.5B",1999,Large Enterprise,Seeds,Verified
+Seeds & Genetics,Land O'Lakes Seed,USA,https://www.winfieldunited.com,"9,000+","$16.0B",1921,Cooperative,Seeds, Crop Inputs,Verified
+Seeds & Genetics,AgReliant Genetics,USA,https://www.agreliantgenetics.com,"400+","$0.3B",2000,SME,Seeds,Verified
+Seeds & Genetics,Seminis (Bayer),Germany,https://www.seminis.com,"99,000+","$50.0B+",1863,Conglomerate,Vegetable Seeds,Verified
+Fertilizers & Nutrients,Yara International,Norway,https://www.yara.com,"17,000+","$19.4B",1905,Large Enterprise,Fertilizers, Crop Nutrition,Verified
+Fertilizers & Nutrients,Nutrien,Canada,https://www.nutrien.com,"24,000+","$27.7B",2018,Large Enterprise,Fertilizers, Crop Inputs,Verified
+Fertilizers & Nutrients,Mosaic Company,USA,https://www.mosaicco.com,"13,000+","$17.3B",2004,Large Enterprise,Potash, Phosphates,Verified
+Fertilizers & Nutrients,CF Industries Holdings,USA,https://www.cfindustries.com,"2,700+","$8.7B",1946,Large Enterprise,Nitrogen Fertilizers,Verified
+Fertilizers & Nutrients,ICL Group,Israel,https://www.icl-group.com,"12,500+","$10.0B",1968,Large Enterprise,Potash, Specialty Fertilizers,Verified
+Fertilizers & Nutrients,OCP Group,Morocco,https://www.ocpgroup.ma,"23,000+","$11.5B",1920,Large Enterprise,Phosphates, Fertilizers,Verified
+Fertilizers & Nutrients,K+S Group,Germany,https://www.k-plus-s.com,"11,000+","$5.0B",1889,Large Enterprise,Potash, Salt,Verified
+Fertilizers & Nutrients,Uralkali,Russia,https://www.uralkali.com,"11,000+","$3.0B",1930,Large Enterprise,Potash,Verified
+Fertilizers & Nutrients,PhosAgro,Russia,https://phosagro.com,"8,000+","$4.5B",2003,Large Enterprise,Phosphates, Fertilizers,Verified
+Fertilizers & Nutrients,Indian Farmers Fertiliser Cooperative (IFFCO),India,https://www.iffco.in,"3,500+","$10.0B",1967,Cooperative,Fertilizers,Verified
+Fertilizers & Nutrients,Coromandel International,India,https://www.coromandel.biz,"3,500+","$3.5B",1961,Large Enterprise,Fertilizers,Verified
+Fertilizers & Nutrients,Sinofert Holdings,China,https://www.sinofert.com,"2,000+","$2.5B",2005,Large Enterprise,Fertilizers,Verified
+Fertilizers & Nutrients,Haifa Group,Israel,https://www.haifa-group.com,"2,000+","$0.8B",1966,Large Enterprise,Specialty Fertilizers,Verified
+Fertilizers & Nutrients,EuroChem Group,Switzerland,https://www.eurochemgroup.com,"9,000+","$5.5B",2001,Large Enterprise,Nitrogen, Phosphates,Verified
+Fertilizers & Nutrients,Koch Fertilizer,USA,https://www.kochfertilizer.com,"3,000+","N/A (Subsidiary)",1969,Large Enterprise,Nitrogen Fertilizers,Verified
+Fertilizers & Nutrients,Wilbur-Ellis,USA,https://www.wilburellis.com,"4,500+","$3.5B",1921,Large Enterprise,Agribusiness, Inputs,Verified
+Fertilizers & Nutrients,Compo Expert,Germany,https://www.compo-expert.com,"500+","N/A (Subsidiary)",1956,SME,Specialty Fertilizers,Verified
+Fertilizers & Nutrients,Agrium (Nutrien),Canada,https://www.nutrien.com,"24,000+","$27.7B",2018,Large Enterprise,Fertilizers,Verified
+Fertilizers & Nutrients,Tessenderlo Group,Belgium,https://www.tessenderlo.com,"5,000+","$3.0B",1919,Large Enterprise,Specialty Chemicals,Verified
+Pesticides & Herbicides,Bayer Crop Protection,Germany,https://www.bayer.com,"99,000+","$50.0B+",1863,Conglomerate,Crop Protection,Verified
+Pesticides & Herbicides,Syngenta Crop Protection,China,https://www.syngenta.com,"57,000+","$33.4B",2000,Large Enterprise,Crop Protection,Verified
+Pesticides & Herbicides,Corteva Agriscience,USA,https://www.corteva.com,"21,000+","$17.5B",2019,Large Enterprise,Crop Protection,Verified
+Pesticides & Herbicides,BASF Agricultural Solutions,Germany,https://www.basf.com,"111,000+","$68.0B",1865,Conglomerate,Crop Protection,Verified
+Pesticides & Herbicides,FMC Corporation,USA,https://www.fmc.com,"6,500+","$5.8B",1883,Large Enterprise,Crop Protection,Verified
+Pesticides & Herbicides,UPL Limited,India,https://www.upl-ltd.com,"14,000+","$7.6B",1969,Large Enterprise,Crop Protection,Verified
+Pesticides & Herbicides,Sumitomo Chemical,Japan,https://www.sumitomo-chem.co.jp,"33,000+","$23.0B",1913,Conglomerate,Chemicals, Crop Protection,Verified
+Pesticides & Herbicides,Nufarm Limited,Australia,https://www.nufarm.com,"2,500+","$3.0B",1916,Large Enterprise,Crop Protection,Verified
+Pesticides & Herbicides,ADAMA Agricultural Solutions,Israel,https://www.adama.com,"5,000+","$6.5B",1945,Large Enterprise,Crop Protection,Verified
+Pesticides & Herbicides,PI Industries,India,https://www.piindustries.com,"3,000+","$1.0B",1947,Large Enterprise,Agrochemicals,Verified
+Pesticides & Herbicides,Isagro S.p.A.,Italy,https://www.isagro.com,"500+","$0.2B",1992,SME,Crop Protection,Verified
+Pesticides & Herbicides,American Vanguard Corporation,USA,https://www.american-vanguard.com,"1,200+","$0.7B",1969,SME,Crop Protection,Verified
+Pesticides & Herbicides,Rallis India (Tata),India,https://www.rallis.com,"2,500+","$0.5B",1948,Large Enterprise,Agrochemicals,Verified
+Pesticides & Herbicides,Sipcam-Oxon Group,Italy,https://www.sipcam-oxon.com,"1,000+","$0.6B",1946,Large Enterprise,Crop Protection,Verified
+Pesticides & Herbicides,Meghmani Organics,India,https://www.meghmani.com,"2,000+","$0.5B",1986,Large Enterprise,Agrochemicals, Pigments,Verified
+Pesticides & Herbicides,Bioworks,USA,https://www.bioworksinc.com,"300+","$0.1B",1990,SME,Biopesticides,Verified
+Pesticides & Herbicides,Certis USA,USA,https://www.certisusa.com,"400+","N/A (Subsidiary)",2001,SME,Biopesticides,Verified
+Pesticides & Herbicides,Marrone Bio Innovations,USA,https://www.marronebio.com,"200+","$0.04B",2006,SME,Biopesticides,Verified
+Pesticides & Herbicides,Koppert Biological Systems,Netherlands,https://www.koppert.com,"2,600+","$0.4B",1967,Large Enterprise,Biological Control,Verified
+Irrigation Systems,Netafim,Israel,https://www.netafim.com,"4,800+","$1.2B",1965,Large Enterprise,Drip Irrigation,Verified
+Irrigation Systems,Jain Irrigation Systems,India,https://www.jains.com,"11,000+","$1.3B",1963,Large Enterprise,Irrigation,Verified
+Irrigation Systems,Valmont Industries (Valley Irrigation),USA,https://www.valmont.com,"11,000+","$3.8B",1946,Large Enterprise,Irrigation, Infrastructure,Verified
+Irrigation Systems,Lindsay Corporation (Zimmatic),USA,https://www.lindsay.com,"1,200+","$0.7B",1955,Large Enterprise,Irrigation,Verified
+Irrigation Systems,Rain Bird Corporation,USA,https://www.rainbird.com,"4,000+","$0.8B",1933,Large Enterprise,Irrigation,Verified
+Irrigation Systems,Toro Company,USA,https://www.thetorocompany.com,"11,000+","$4.5B",1914,Large Enterprise,Irrigation, Turf,Verified
+Irrigation Systems,Hunter Industries,USA,https://www.hunterindustries.com,"1,800+","$0.5B",1981,Large Enterprise,Irrigation,Verified
+Irrigation Systems,Reinke Manufacturing,USA,https://www.reinke.com,"500+","N/A (Private)",1954,SME,Irrigation,Verified
+Irrigation Systems,Nelson Irrigation,USA,https://www.nelsonirrigation.com,"300+","N/A (Private)",1980,SME,Irrigation,Verified
+Irrigation Systems,Rivulis Irrigation,Israel,https://www.rivulis.com,"2,000+","$0.4B",1966,Large Enterprise,Drip Irrigation,Verified
+Irrigation Systems,Elgo Irrigation,Israel,https://www.elgo.com,"200+","N/A (Private)",1976,SME,Irrigation,Verified
+Irrigation Systems,Naandanjain Irrigation,India,https://www.naandanjain.com,"1,000+","$0.2B",1979,SME,Irrigation,Verified
+Irrigation Systems,T-L Irrigation,USA,https://www.tlirr.com,"400+","N/A (Private)",1954,SME,Irrigation,Verified
+Irrigation Systems,Agrodrip,Spain,https://www.agrodrip.com,"200+","N/A (Private)",1975,SME,Irrigation,Verified
+Irrigation Systems,Orbia (Netafim),Mexico,https://www.netafim.com,"22,000+","$8.5B",2020,Large Enterprise,Irrigation, Plastics,Verified
+Irrigation Systems,Lindsay Europe,France,https://www.lindsay.com,"1,200+","$0.7B",1955,Large Enterprise,Irrigation,Verified
+Irrigation Systems,Bauer Group,Germany,https://www.bauer.de,"12,000+","$2.0B",1790,Large Enterprise,Irrigation, Construction,Verified
+Irrigation Systems,Perrot Irrigation,Germany,https://www.perrot-regnerbau.de,"300+","N/A (Private)",1925,SME,Irrigation,Verified
+Irrigation Systems,Sumitomo Corporation Irrigation,Japan,https://www.sumitomocorp.com,"33,000+","$23.0B",1913,Conglomerate,Irrigation, Trading,Verified
+Agricultural Biotechnology,Bayer Crop Science Biotech,Germany,https://www.bayer.com,"99,000+","$50.0B+",1863,Conglomerate,Seeds, Biotech,Verified
+Agricultural Biotechnology,Corteva Agriscience Biotech,USA,https://www.corteva.com,"21,000+","$17.5B",2019,Large Enterprise,Seeds, Biotech,Verified
+Agricultural Biotechnology,Syngenta Biotechnology,China,https://www.syngenta.com,"57,000+","$33.4B",2000,Large Enterprise,Seeds, Biotech,Verified
+Agricultural Biotechnology,BASF Plant Science,Germany,https://www.basf.com,"111,000+","$68.0B",1865,Conglomerate,Plant Science,Verified
+Agricultural Biotechnology,Evogene Ltd.,Israel,https://www.evogene.com,"100+","$0.01B",1999,SME,Computational Biology,Verified
+Agricultural Biotechnology,KWS SAAT Biotech,Germany,https://www.kws.com,"6,000+","$1.8B",1856,Large Enterprise,Plant Breeding, Biotech,Verified
+Agricultural Biotechnology,Bioceres Crop Solutions,Argentina,https://biocerescrops.com,"500+","$0.4B",2001,SME,Crop Biotech,Verified
+Agricultural Biotechnology,Origin Agritech,China,https://www.originagritech.com,"200+","$0.03B",1997,SME,Seeds, Biotech,Verified
+Agricultural Biotechnology,Pacific Biosciences,USA,https://www.pacb.com,"700+","$0.2B",2000,SME,Gene Sequencing,Verified
+Agricultural Biotechnology,Precision BioSciences,USA,https://www.precisionbiosciences.com,"300+","$0.05B",2006,SME,Gene Editing,Verified
+Agricultural Biotechnology,AgBiome,USA,https://agbiome.com,"150+","N/A (Private)",2012,SME,Microbial Discovery,Verified
+Agricultural Biotechnology,Benson Hill,USA,https://bensonhill.com,"200+","$0.1B",2012,SME,Crop Design,Verified
+Agricultural Biotechnology,Inari Agriculture,USA,https://www.inari.com,"300+","N/A (Private)",2016,SME,Seed Optimization,Verified
+Agricultural Biotechnology,Pivot Bio,USA,https://www.pivotbio.com,"400+","N/A (Private)",2010,SME,Nitrogen Fixation,Verified
+Agricultural Biotechnology,Indigo Agriculture,USA,https://www.indigoag.com,"1,000+","N/A (Private)",2014,Large Enterprise,Microbials, Carbon,Verified
+Agricultural Biotechnology,Joyn Bio,USA,https://www.joynbio.com,"50+","N/A (JV)",2017,SME,Microbials,Verified
+Agricultural Biotechnology,GreenLight Biosciences,USA,https://www.greenlightbiosciences.com,"200+","$0.02B",2008,SME,RNA Biopesticides,Verified
+Agricultural Biotechnology,Pairwise Plants,USA,https://www.pairwise.com,"100+","N/A (Private)",2017,SME,Gene Editing,Verified
+Agricultural Biotechnology,Calyxt,USA,https://www.calyxt.com,"50+","$0.01B",2010,SME,Metabolic Engineering,Verified
+Organic Farming,WhiteWave Foods (Danone),France,https://www.danone.com,"102,000+","$28.0B",1919,Conglomerate,Organic Dairy, Plant-based,Verified
+Organic Farming,Organic Valley,CROPP Cooperative,USA,https://www.organicvalley.coop,"900+","$1.3B",1988,Cooperative,Organic Dairy,Verified
+Organic Farming,Hain Celestial Group,USA,https://www.hain.com,"3,300+","$1.8B",1993,Large Enterprise,Organic Food,Verified
+Organic Farming,General Mills Organic,USA,https://www.generalmills.com,"35,000+","$20.0B",1928,Conglomerate,Organic Food,Verified
+Organic Farming,Amy's Kitchen,USA,https://www.amys.com,"2,500+","$0.6B",1987,Large Enterprise,Organic Frozen Food,Verified
+Organic Farming,SunOpta,Canada,https://www.sunopta.com,"1,500+","$0.9B",1973,Large Enterprise,Organic Ingredients,Verified
+Organic Farming,Clif Bar & Company,USA,https://www.clifbar.com,"1,300+","$0.5B",1992,Large Enterprise,Organic Snacks,Verified
+Organic Farming,Nature's Path Foods,Canada,https://www.naturespath.com,"600+","$0.3B",1985,Large Enterprise,Organic Cereals,Verified
+Organic Farming,Stonyfield Farm (Lactalis),France,https://www.stonyfield.com,"85,000+","$24.5B",1933,Conglomerate,Organic Yogurt,Verified
+Organic Farming,Whole Foods Market (Amazon),USA,https://www.wholefoodsmarket.com,"95,000+","$22.0B",1980,Large Enterprise,Organic Retail,Verified
+Organic Farming,Earthbound Farm,USA,https://www.earthboundfarm.com,"600+","$0.4B",1984,Large Enterprise,Organic Produce,Verified
+Organic Farming,Applegate Farms (Hormel),USA,https://www.applegate.com,"20,000+","$12.1B",1891,Large Enterprise,Organic Meat,Verified
+Organic Farming,Annie's Homegrown (General Mills),USA,https://www.annies.com,"35,000+","$20.0B",1928,Conglomerate,Organic Packaged Food,Verified
+Organic Farming,New Hope Network,USA,https://www.newhope.com,"200+","N/A (Private)",1974,SME,Organic Media,Verified
+Organic Farming,Eden Foods,USA,https://www.edenfoods.com,"300+","$0.1B",1968,SME,Organic Food,Verified
+Organic Farming,Once Upon a Farm,USA,https://onceuponafarmorganics.com,"100+","N/A (Private)",2015,SME,Organic Baby Food,Verified
+Organic Farming,Plamil Foods,UK,https://www.plamilfoods.co.uk,"50+","N/A (Private)",1965,SME,Organic Vegan Food,Verified
+Organic Farming,Bio Suisse,Switzerland,https://www.bio-suisse.ch,"100+","N/A",1981,SME,Organic Certification,Verified
+Organic Farming,Green & Black's (Mondelez),UK,https://www.greenandblacks.com,"80,000+","$28.7B",2012,Conglomerate,Organic Chocolate,Verified
+Agribusiness & Commodity Trading,Cargill Agribusiness,USA,https://www.cargill.com,"155,000+","$177.0B",1865,Conglomerate,Agribusiness, Trading,Verified
+Agribusiness & Commodity Trading,ADM Trading,USA,https://www.adm.com,"41,000+","$101.6B",1902,Conglomerate,Agribusiness, Trading,Verified
+Agribusiness & Commodity Trading,Bunge Global Trading,USA,https://www.bunge.com,"23,000+","$67.2B",1818,Large Enterprise,Agribusiness, Trading,Verified
+Agribusiness & Commodity Trading,Louis Dreyfus Company Trading,Netherlands,https://www.ldc.com,"17,000+","$49.6B",1851,Large Enterprise,Agribusiness, Trading,Verified
+Agribusiness & Commodity Trading,COFCO International,China,https://www.cofcointernational.com,"120,000+","$82.0B",1949,Conglomerate,Agribusiness, Trading,Verified
+Agribusiness & Commodity Trading,Glencore Agriculture,Switzerland,https://www.glencore.com,"135,000+","$255.0B",1974,Conglomerate,Commodity Trading,Verified
+Agribusiness & Commodity Trading,Wilmar Trading,Singapore,https://www.wilmar-international.com,"90,000+","$65.6B",1991,Conglomerate,Agribusiness, Trading,Verified
+Agribusiness & Commodity Trading,Olam International Trading,Singapore,https://www.olamgroup.com,"25,000+","$37.0B",1989,Large Enterprise,Agribusiness, Trading,Verified
+Agribusiness & Commodity Trading,Noble Group,Hong Kong,https://www.thisisnoble.com,"500+","$7.0B",1986,Large Enterprise,Commodity Trading,Verified
+Agribusiness & Commodity Trading,Viterra,Canada,https://www.viterra.com,"18,000+","$54.0B",2007,Large Enterprise,Grain Handling, Trading,Verified
+Agribusiness & Commodity Trading,Zen-Noh Grain Corporation,Japan,https://www.zennoh.or.jp,"12,000+","$20.0B",1972,Cooperative,Grain Trading,Verified
+Agribusiness & Commodity Trading,Sodrugestvo Group,Russia,https://www.sga.ru,"5,000+","$2.0B",1994,Large Enterprise,Grain Trading,Verified
+Agribusiness & Commodity Trading,ETG Commodities,Singapore,https://www.etgworld.com,"5,000+","$3.0B",1967,Large Enterprise,Agribusiness, Trading,Verified
+Agribusiness & Commodity Trading,Ecom Agroindustrial Corp.,Switzerland,https://www.ecomtrading.com,"4,000+","$5.0B",1848,Large Enterprise,Coffee, Cotton Trading,Verified
+Agribusiness & Commodity Trading,CHS Inc. Trading,USA,https://www.chsinc.com,"10,000+","$47.0B",1929,Cooperative,Grain Trading,Verified
+Agribusiness & Commodity Trading,Archer Daniels Midland Trading,USA,https://www.adm.com,"41,000+","$101.6B",1902,Conglomerate,Agribusiness, Trading,Verified
+Agribusiness & Commodity Trading,Andersons Trading,USA,https://www.andersonsinc.com,"2,500+","$4.0B",1947,Large Enterprise,Grain Trading,Verified
+Agribusiness & Commodity Trading,Cargill AgHorizons,USA,https://www.cargill.com,"155,000+","$177.0B",1865,Conglomerate,Agribusiness, Risk Management,Verified
+Agricultural Cooperatives,CHS Inc.,USA,https://www.chsinc.com,"10,000+","$47.0B",1929,Cooperative,Energy, Agribusiness,Verified
+Agricultural Cooperatives,Land O'Lakes,USA,https://www.landolakesinc.com,"9,000+","$16.0B",1921,Cooperative,Dairy, Crop Inputs,Verified
+Agricultural Cooperatives,Dairy Farmers of America,USA,https://www.dfamilk.com,"18,000+","$20.0B",1998,Cooperative,Dairy Products,Verified
+Agricultural Cooperatives,Fonterra Co-operative Group,New Zealand,https://www.fonterra.com,"20,000+","$15.0B",2001,Cooperative,Dairy Products,Verified
+Agricultural Cooperatives,Arla Foods amba,Denmark,https://www.arla.com,"19,000+","$13.5B",2000,Cooperative,Dairy Products,Verified
+Agricultural Cooperatives,FrieslandCampina,Netherlands,https://www.frieslandcampina.com,"24,000+","$14.0B",2008,Cooperative,Dairy Products,Verified
+Agricultural Cooperatives,Ag Processing Inc (AGP),USA,https://www.agp.com,"1,000+","$3.5B",1943,Cooperative,Soybean Processing,Verified
+Agricultural Cooperatives,GROWMARK,USA,https://www.growmark.com,"1,200+","$9.0B",1927,Cooperative,Agribusiness, Energy,Verified
+Agricultural Cooperatives,Zen-Noh (National Federation of Agricultural Co-op),Japan,https://www.zennoh.or.jp,"12,000+","$20.0B",1972,Cooperative,Grain Trading,Verified
+Agricultural Cooperatives,Amul (GCMMF),India,https://www.amul.com,"3,000+","$6.0B",1946,Cooperative,Dairy Products,Verified
+Agricultural Cooperatives,Agrana Group,Austria,https://www.agrana.com,"9,000+","$3.0B",1988,Cooperative,Sugar, Starch, Fruit,Verified
+Agricultural Cooperatives,Sodiaal Cooperative,France,https://www.sodiaal.com,"9,000+","$6.0B",1964,Cooperative,Dairy Products,Verified
+Agricultural Cooperatives,First Milk Ltd,UK,https://www.firstmilk.co.uk,"500+","$0.5B",2000,Cooperative,Dairy Products,Verified
+Agricultural Cooperatives,Murray Goulburn Co-op,Australia,https://www.mgc.com.au,"400+","$1.0B",1950,Cooperative,Dairy Products,Verified
+Agricultural Cooperatives,Glanbia Co-op,Ireland,https://www.glanbia.com,"6,500+","$5.5B",1964,Cooperative,Nutrition, Dairy,Verified
+Agricultural Cooperatives,Associated Milk Producers Inc (AMPI),USA,https://www.ampi.com,"1,500+","$2.0B",1969,Cooperative,Dairy Products,Verified
+Agricultural Cooperatives,Darigold,USA,https://www.darigold.com,"800+","$2.5B",1918,Cooperative,Dairy Products,Verified
+Agricultural Cooperatives,California Dairies Inc.,USA,https://www.californiadairies.com,"600+","$3.0B",1999,Cooperative,Dairy Products,Verified
+Agricultural Cooperatives,Agropur,Canada,https://www.agropur.com,"8,000+","$6.5B",1938,Cooperative,Dairy Products,Verified
+Food Processing (Agricultural Output),Nestlé SA,Switzerland,https://www.nestle.com,"273,000+","$107.0B",1866,Conglomerate,Food & Beverage,Verified
+Food Processing (Agricultural Output),PepsiCo,USA,https://www.pepsico.com,"315,000+","$91.5B",1965,Conglomerate,Food & Beverage,Verified
+Food Processing (Agricultural Output),Unilever,UK/Netherlands,https://www.unilever.com,"127,000+","$64.0B",1929,Conglomerate,Consumer Goods,Verified
+Food Processing (Agricultural Output),Tyson Foods,USA,https://www.tysonfoods.com,"142,000+","$53.3B",1935,Conglomerate,Meat Processing,Verified
+Food Processing (Agricultural Output),Archer Daniels Midland Processing,USA,https://www.adm.com,"41,000+","$101.6B",1902,Conglomerate,Food Ingredients,Verified
+Food Processing (Agricultural Output),Cargill Food Solutions,USA,https://www.cargill.com,"155,000+","$177.0B",1865,Conglomerate,Food Ingredients,Verified
+Food Processing (Agricultural Output),Bunge Food & Ingredients,USA,https://www.bunge.com,"23,000+","$67.2B",1818,Large Enterprise,Food Ingredients,Verified
+Food Processing (Agricultural Output),JBS S.A. Processing,Brazil,https://www.jbs.com.br,"250,000+","$79.8B",1953,Conglomerate,Meat Processing,Verified
+Food Processing (Agricultural Output),Danone SA,France,https://www.danone.com,"102,000+","$28.0B",1919,Conglomerate,Dairy, Plant-based,Verified
+Food Processing (Agricultural Output),General Mills,USA,https://www.generalmills.com,"35,000+","$20.0B",1928,Conglomerate,Packaged Food,Verified
+Food Processing (Agricultural Output),Kraft Heinz Company,USA,https://www.kraftheinzcompany.com,"38,000+","$26.5B",1869,Large Enterprise,Packaged Food,Verified
+Food Processing (Agricultural Output),Kellogg's,USA,https://www.kelloggs.com,"31,000+","$15.3B",1906,Large Enterprise,Packaged Food,Verified
+Food Processing (Agricultural Output),Conagra Brands,USA,https://www.conagrabrands.com,"18,000+","$12.3B",1919,Large Enterprise,Packaged Food,Verified
+Food Processing (Agricultural Output),Mondelez International,USA,https://www.mondelezinternational.com,"80,000+","$36.0B",2012,Conglomerate,Snacks,Verified
+Food Processing (Agricultural Output),BRF S.A.,Brazil,https://www.brf-global.com,"95,000+","$9.0B",1934,Large Enterprise,Meat Processing,Verified
+Food Processing (Agricultural Output),Smithfield Foods (WH Group),USA,https://www.smithfieldfoods.com,"63,000+","$18.0B",1936,Large Enterprise,Meat Processing,Verified
+Food Processing (Agricultural Output),Saputo Inc.,Canada,https://www.saputo.com,"18,000+","$11.5B",1954,Large Enterprise,Dairy Products,Verified
+Food Processing (Agricultural Output),Perdue Farms,USA,https://www.perduefarms.com,"21,000+","$8.1B",1920,Large Enterprise,Poultry Processing,Verified
+Food Processing (Agricultural Output),Hormel Foods,USA,https://www.hormelfoods.com,"20,000+","$12.1B",1891,Large Enterprise,Meat Processing,Verified
+Agricultural Real Estate,Gladstone Land Corporation,USA,https://www.gladstoneland.com,"50+","$0.1B",1997,SME,Farmland REIT,Verified
+Agricultural Real Estate,Farmland Partners Inc.,USA,https://www.farmlandpartners.com,"30+","$0.2B",2013,SME,Farmland REIT,Verified
+Agricultural Real Estate,American Farmland Company,USA,https://www.americanfarmland.com,"20+","$0.1B",2014,SME,Farmland REIT,Verified
+Agricultural Real Estate,AgriCapital Corporation,Australia,https://www.agricapital.com.au,"50+","N/A (Private)",2005,SME,Agribusiness Investment,Verified
+Agricultural Real Estate,Macquarie Agricultural Funds,Australia,https://www.macquarie.com,"18,000+","$8.0B",1969,Conglomerate,Agricultural Investment,Verified
+Agricultural Real Estate,UBS Farmland Investors,Switzerland,https://www.ubs.com,"72,000+","$40.0B",1862,Conglomerate,Agricultural Investment,Verified
+Agricultural Real Estate,Hancock Natural Resource Group,USA,https://www.hancocknaturalresourcegroup.com,"200+","N/A (Subsidiary)",1985,SME,Timber, Farmland,Verified
+Agricultural Real Estate,Westchester Group Investment Management,USA,https://www.westchestergroup.com,"100+","N/A (Private)",1992,SME,Agricultural Investment,Verified
+Agricultural Real Estate,TIAA-CREF Global Agriculture,USA,https://www.tiaa.org,"15,000+","$30.0B",1918,Large Enterprise,Agricultural Investment,Verified
+Agricultural Real Estate,AgriInvest Europe,UK,https://www.agriinvesteurope.com,"50+","N/A (Private)",2007,SME,Agricultural Investment,Verified
+Agricultural Real Estate,Conservation Fund,USA,https://www.conservationfund.org,"100+","$0.2B",1985,SME,Land Conservation,Verified
+Agricultural Real Estate,Rural Funds Group,Australia,https://www.ruralfunds.com.au,"50+","$0.1B",1997,SME,Agricultural REIT,Verified
+Agricultural Real Estate,Agri Terra,South Africa,https://www.agriterra.co.za,"100+","N/A (Private)",2008,SME,Agricultural Investment,Verified
+Agricultural Real Estate,AgroGeneration,France,https://www.agrogeneration.com,"200+","$0.05B",2007,SME,Farmland Management,Verified
+Agricultural Real Estate,AgReserves Inc.,USA,https://www.agreserves.com,"1,000+","N/A (Private)",1953,Large Enterprise,Farmland Management,Verified
+Agricultural Real Estate,BrasilAgro,Brazil,https://www.brasilagro.com.br,"500+","$0.2B",2005,SME,Farmland Development,Verified
+Agricultural Real Estate,Adecoagro,Luxembourg,https://www.adecoagro.com,"5,000+","$1.5B",2002,Large Enterprise,Farmland Management,Verified
+Agricultural Real Estate,SLC Agrícola,Brazil,https://www.slcagricola.com.br,"3,000+","$0.8B",1977,Large Enterprise,Farmland Management,Verified
+Agricultural Real Estate,Calyx Agro (Louis Dreyfus),Netherlands,https://www.ldc.com,"17,000+","$49.6B",1851,Large Enterprise,Farmland Management,Verified
+Farm Management Software,John Deere Operations Center,USA,https://www.deere.com,"82,000+","$61.3B",1837,Conglomerate,Precision Ag,Verified
+Farm Management Software,Trimble Agriculture,USA,https://agriculture.trimble.com,"12,000+","$3.7B",1978,Large Enterprise,Precision Ag,Verified
+Farm Management Software,Climate Corporation (Bayer),Germany,https://climate.com,"99,000+","$50.0B+",1863,Conglomerate,Digital Farming,Verified
+Farm Management Software,AGCO Fuse Technologies,USA,https://www.fusetechnologies.com,"24,000+","$14.4B",1990,Large Enterprise,Precision Ag,Verified
+Farm Management Software,CNH Industrial Precision Technology,UK,https://www.cnhindustrial.com,"40,000+","$24.1B",2012,Conglomerate,Precision Ag,Verified
+Farm Management Software,Ag Leader Technology,USA,https://www.agleader.com,"300+","N/A (Private)",1991,SME,Precision Ag,Verified
+Farm Management Software,Topcon Agriculture,Japan,https://www.topconpositioning.com/agriculture,"4,000+","$1.5B",1932,Large Enterprise,Precision Ag,Verified
+Farm Management Software,Raven Industries,USA,https://www.ravenind.com,"1,200+","$0.4B",1956,Large Enterprise,Precision Ag,Verified
+Farm Management Software,AgJunction,USA,https://www.agjunction.com,"100+","$0.02B",1999,SME,Guidance Systems,Verified
+Farm Management Software,AgEagle Aerial Systems,USA,https://www.ageagle.com,"100+","$0.02B",2010,SME,Drone Imaging,Verified
+Farm Management Software,Agrivi,UK,https://www.agrivi.com,"50+","N/A (Private)",2013,SME,Farm Management,Verified
+Farm Management Software,Farmer's Edge,Canada,https://www.farmersedge.ca,"500+","$0.05B",2005,SME,Digital Agronomy,Verified
+Farm Management Software,Agrilibrium,South Africa,https://www.agrilibrium.co.za,"50+","N/A (Private)",2008,SME,Farm Management,Verified
+Farm Management Software,Gamaya,Switzerland,https://gamaya.com,"30+","N/A (Private)",2014,SME,Imaging Analytics,Verified
+Farm Management Software,Taranis,Israel,https://www.taranis.ag,"100+","N/A (Private)",2014,SME,Aerial Monitoring,Verified
+Farm Management Software,CropX,Israel,https://www.cropx.com,"70+","N/A (Private)",2013,SME,Soil Sensing,Verified
+Farm Management Software,Agworld,Australia,https://www.agworld.com,"50+","N/A (Private)",2010,SME,Farm Management,Verified
+Farm Management Software,Conservis Corporation,USA,https://www.conservis.com,"60+","N/A (Private)",2009,SME,Farm Management,Verified
+Farm Management Software,Granular (Corteva),USA,https://www.granular.ag,"21,000+","$17.5B",2019,Large Enterprise,Farm Management,Verified
+Agricultural Finance & Insurance,Rabobank,Netherlands,https://www.rabobank.com,"42,000+","$15.0B",1972,Cooperative,Agribusiness Banking,Verified
+Agricultural Finance & Insurance,Deutsche Bank Agribusiness,Germany,https://www.db.com,"84,000+","$30.0B",1870,Conglomerate,Agribusiness Banking,Verified
+Agricultural Finance & Insurance,BNP Paribas Agriculture,France,https://www.bnpparibas.com,"190,000+","$50.0B",1848,Conglomerate,Agribusiness Banking,Verified
+Agricultural Finance & Insurance,Santander Agribusiness,Spain,https://www.santander.com,"193,000+","$55.0B",1857,Conglomerate,Agribusiness Banking,Verified
+Agricultural Finance & Insurance,Commonwealth Bank Agribusiness,Australia,https://www.commbank.com.au,"49,000+","$20.0B",1911,Large Enterprise,Agribusiness Banking,Verified
+Agricultural Finance & Insurance,ING Agricultural Finance,Netherlands,https://www.ing.com,"57,000+","$25.0B",1991,Large Enterprise,Agribusiness Banking,Verified
+Agricultural Finance & Insurance,AgFirst Farm Credit Bank,USA,https://www.agfirst.com,"800+","$30.0B",1916,Cooperative,Ag Lending,Verified
+Agricultural Finance & Insurance,Farm Credit System,USA,https://www.farmcredit.com,"12,000+","$400.0B",1916,Cooperative,Ag Lending,Verified
+Agricultural Finance & Insurance,FCStone Group (StoneX),USA,https://www.stonex.com,"1,200+","$70.0B",1924,Large Enterprise,Risk Management,Verified
+Agricultural Finance & Insurance,Sompo Japan Agriculture Insurance,Japan,https://www.sompo-hd.com,"30,000+","$20.0B",1887,Large Enterprise,Ag Insurance,Verified
+Agricultural Finance & Insurance,AXA Agriculture Insurance,France,https://www.axa.com,"100,000+","$100.0B",1816,Conglomerate,Ag Insurance,Verified
+Agricultural Finance & Insurance,QBE Insurance Group,Australia,https://www.qbe.com,"12,000+","$15.0B",1886,Large Enterprise,Ag Insurance,Verified
+Agricultural Finance & Insurance,Allianz Agricultural Insurance,Germany,https://www.agri.allianz.com,"150,000+","$120.0B",1890,Conglomerate,Ag Insurance,Verified
+Agricultural Finance & Insurance,Swiss Re Agriculture,Switzerland,https://www.swissre.com,"14,000+","$45.0B",1863,Large Enterprise,Ag Reinsurance,Verified
+Agricultural Finance & Insurance,ProAg (Tokio Marine),USA,https://www.proag.com,"500+","$1.0B",1946,Large Enterprise,Crop Insurance,Verified
+Agricultural Finance & Insurance,RCIS (Zurich),Switzerland,https://www.rcis.com,"100+","N/A (Subsidiary)",1982,SME,Crop Insurance,Verified
+Agricultural Finance & Insurance,CNA Agriculture Insurance,USA,https://www.cna.com,"6,000+","$12.0B",1897,Large Enterprise,Ag Insurance,Verified
+Agricultural Finance & Insurance,Agriculture Insurance Company of India,India,https://www.aicofindia.com,"2,000+","$2.0B",2002,Large Enterprise,Crop Insurance,Verified
+Agricultural Finance & Insurance,PICC Agriculture Insurance,China,https://www.picc.com,"50,000+","$60.0B",1949,Large Enterprise,Ag Insurance,Verified
+Sustainable Agriculture,Indigo Agriculture,USA,https://www.indigoag.com,"1,000+","N/A (Private)",2014,Large Enterprise,Carbon Farming, Microbes,Verified
+Sustainable Agriculture,Benson Hill,USA,https://bensonhill.com,"200+","$0.1B",2012,SME,Crop Design,Verified
+Sustainable Agriculture,AeroFarms,USA,https://www.aerofarms.com,"200+","$0.03B",2004,SME,Vertical Farming,Verified
+Sustainable Agriculture,Plenty,USA,https://www.plenty.ag,"400+","N/A (Private)",2014,SME,Vertical Farming,Verified
+Sustainable Agriculture,Bowery Farming,USA,https://boweryfarming.com,"500+","N/A (Private)",2015,SME,Vertical Farming,Verified
+Sustainable Agriculture,BrightFarms,USA,https://www.brightfarms.com,"600+","$0.1B",2011,SME,Greenhouse Farming,Verified
+Sustainable Agriculture,AppHarvest,USA,https://www.appharvest.com,"500+","$0.05B",2017,SME,Greenhouse Farming,Verified
+Sustainable Agriculture,Infarm,Germany,https://www.infarm.com,"1,000+","$0.1B",2013,SME,Modular Farming,Verified
+Sustainable Agriculture,Gotham Greens,USA,https://www.gothamgreens.com,"500+","$0.1B",2009,SME,Greenhouse Farming,Verified
+Sustainable Agriculture,Greenhouse Foods Canada,Canada,https://www.greenhousecanada.com,"300+","N/A (Private)",2005,SME,Greenhouse Farming,Verified
+Sustainable Agriculture,Lufa Farms,Canada,https://montreal.lufa.com,"200+","N/A (Private)",2009,SME,Rooftop Farming,Verified
+Sustainable Agriculture,Sundrop Farms,Australia,https://www.sundropfarms.com,"100+","N/A (Private)",2010,SME,Solar Greenhouse,Verified
+Sustainable Agriculture,AgriFORCE Growing Systems,Canada,https://agriforcegs.com,"50+","$0.01B",2017,SME,Controlled Environment,Verified
+Sustainable Agriculture,Crop One Holdings,USA,https://www.croponeholdings.com,"150+","N/A (Private)",2011,SME,Vertical Farming,Verified
+Sustainable Agriculture,Kalera,USA,https://www.kalera.com,"100+","N/A (Private)",2013,SME,Vertical Farming,Verified
+Sustainable Agriculture,80 Acres Farms,USA,https://www.80acresfarms.com,"200+","N/A (Private)",2015,SME,Vertical Farming,Verified
+Sustainable Agriculture,Freight Farms,USA,https://www.freightfarms.com,"50+","N/A (Private)",2010,SME,Container Farming,Verified
+Sustainable Agriculture,Smallhold,USA,https://www.smallhold.com,"100+","N/A (Private)",2017,SME,Mushroom Farming,Verified
+Sustainable Agriculture,Agricool,France,https://www.agricool.co,"50+","N/A (Private)",2015,SME,Container Farming,Verified
+Agricultural Research,International Rice Research Institute (IRRI),Philippines,https://www.irri.org,"1,500+","$100M",1960,Research Institute,Rice Research,Verified
+Agricultural Research,International Maize and Wheat Improvement Center (CIMMYT),Mexico,https://www.cimmyt.org,"800+","$120M",1966,Research Institute,Wheat, Maize Research,Verified
+Agricultural Research,International Potato Center (CIP),Peru,https://cipotato.org,"500+","$80M",1971,Research Institute,Potato Research,Verified
+Agricultural Research,World Vegetable Center,Taiwan,https://avrdc.org,"400+","$50M",1971,Research Institute,Vegetable Research,Verified
+Agricultural Research,CGIAR Consortium,France,https://www.cgiar.org,"10,000+","$1.0B",1971,Research Institute,Agricultural Research,Verified
+Agricultural Research,Rothamsted Research,UK,https://www.rothamsted.ac.uk,"400+","$40M",1843,Research Institute,Agricultural Science,Verified
+Agricultural Research,Wageningen University & Research,Netherlands,https://www.wur.nl,"7,000+","$1.2B",1918,Research Institute,Agricultural Science,Verified
+Agricultural Research,INRAE (National Research Institute for Agriculture, Food and Environment),France,https://www.inrae.fr,"12,000+","$1.5B",1921,Research Institute,Agricultural Research,Verified
+Agricultural Research,John Innes Centre,UK,https://www.jic.ac.uk,"500+","$60M",1910,Research Institute,Plant Science,Verified
+Agricultural Research,Boyce Thompson Institute,USA,https://btiscience.org,"200+","$30M",1924,Research Institute,Plant Research,Verified
+Agricultural Research,The Sainsbury Laboratory,UK,https://www.tsl.ac.uk,"150+","$25M",1987,Research Institute,Plant Pathology,Verified
+Agricultural Research,AgResearch New Zealand,New Zealand,https://www.agresearch.co.nz,"700+","$100M",1992,Research Institute,Agricultural Research,Verified
+Agricultural Research,CSIRO Agriculture and Food,Australia,https://www.csiro.au,"5,000+","$1.5B",1926,Research Institute,Agricultural Research,Verified
+Agricultural Research,Embrapa (Brazilian Agricultural Research Corporation),Brazil,https://www.embrapa.br,"9,000+","$1.0B",1973,Research Institute,Agricultural Research,Verified
+Agricultural Research,ICAR (Indian Council of Agricultural Research),India,https://www.icar.org.in,"30,000+","$2.0B",1929,Research Institute,Agricultural Research,Verified
+Agricultural Research,Chinese Academy of Agricultural Sciences (CAAS),China,https://www.caas.cn,"10,000+","$1.5B",1957,Research Institute,Agricultural Research,Verified
+Agricultural Research,USDA Agricultural Research Service,USA,https://www.ars.usda.gov,"8,000+","$1.8B",1953,Government Agency,Agricultural Research,Verified
+Agricultural Research,Agriculture and Agri-Food Canada,Canada,https://agriculture.canada.ca,"5,000+","$1.0B",1912,Government Agency,Agricultural Research,Verified
+Agricultural Logistics & Storage,Ardent Mills,USA,https://www.ardentmills.com,"4,000+","$4.0B",2002,Large Enterprise,Grain Milling,Verified
+Agricultural Logistics & Storage,Scoular Company,USA,https://www.scoular.com,"1,200+","$5.0B",1892,Large Enterprise,Grain Marketing,Verified
+Agricultural Logistics & Storage,CHS Inc. Grain Marketing,USA,https://www.chsinc.com,"10,000+","$47.0B",1929,Cooperative,Grain Marketing,Verified
+Agricultural Logistics & Storage,Zen-Noh Grain Logistics,Japan,https://www.zennoh.or.jp,"12,000+","$20.0B",1972,Cooperative,Grain Logistics,Verified
+Agricultural Logistics & Storage,Gavilon Group (Marubeni),USA,https://www.gavilon.com,"2,000+","$10.0B",1874,Large Enterprise,Grain Merchandising,Verified
+Agricultural Logistics & Storage,Bunge Grain Logistics,USA,https://www.bunge.com,"23,000+","$67.2B",1818,Large Enterprise,Grain Logistics,Verified
+Agricultural Logistics & Storage,Cargill Grain & Oilseed Supply Chain,USA,https://www.cargill.com,"155,000+","$177.0B",1865,Conglomerate,Grain Logistics,Verified
+Agricultural Logistics & Storage,Louis Dreyfus Company Ports & Logistics,Netherlands,https://www.ldc.com,"17,000+","$49.6B",1851,Large Enterprise,Grain Logistics,Verified
+Agricultural Logistics & Storage,ADM Grain Logistics,USA,https://www.adm.com,"41,000+","$101.6B",1902,Conglomerate,Grain Logistics,Verified
+Agricultural Logistics & Storage,COFCO Logistics,China,https://www.cofco.com,"120,000+","$82.0B",1949,Conglomerate,Grain Logistics,Verified
+Agricultural Logistics & Storage,Ingredion Incorporated,USA,https://www.ingredion.com,"12,000+","$8.0B",1906,Large Enterprise,Ingredient Solutions,Verified
+Agricultural Logistics & Storage,AGP Grain Handling,USA,https://www.agp.com,"1,000+","$3.5B",1943,Cooperative,Grain Handling,Verified
+Agricultural Logistics & Storage,Richardson International,Canada,https://www.richardson.ca,"3,000+","$5.0B",1857,Large Enterprise,Grain Handling,Verified
+Agricultural Logistics & Storage,Paterson Grain,Canada,https://www.patersongrain.com,"500+","$1.0B",1908,Large Enterprise,Grain Handling,Verified
+Agricultural Logistics & Storage,Alliance Grain Traders,Canada,https://www.agtfoods.com,"2,000+","$1.5B",2001,Large Enterprise,Pulse Processing,Verified
+Agricultural Logistics & Storage,Graincorp Logistics,Australia,https://www.graincorp.com.au,"3,000+","$4.0B",1916,Large Enterprise,Grain Handling,Verified
+Agricultural Logistics & Storage,CBH Group,Australia,https://www.cbh.com.au,"1,500+","$3.5B",1933,Cooperative,Grain Handling,Verified
+Agricultural Logistics & Storage,Viterra Grain Handling,Canada,https://www.viterra.com,"18,000+","$54.0B",2007,Large Enterprise,Grain Handling,Verified
+Agricultural Logistics & Storage,Gavilon Fertilizer,USA,https://www.gavilon.com,"2,000+","$10.0B",1874,Large Enterprise,Fertilizer Distribution,Verified

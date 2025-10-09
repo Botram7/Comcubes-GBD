@@ -1,0 +1,374 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Biopharmaceuticals,Amgen,USA,https://www.amgen.com,"24,000+","$26B+",1980,Large Enterprise,"Biotechnology, Inflammation, Oncology, Nephrology",Verified
+Biopharmaceuticals,Gilead Sciences,USA,https://www.gilead.com,"14,000+","$27B+",1987,Large Enterprise,"Antiviral, HIV, HCV, Oncology, Cell Therapy",Verified
+Biopharmaceuticals,Biogen,USA,https://www.biogen.com,"9,000+","$10B+",1978,Large Enterprise,"Neuroscience, MS, SMA, Alzheimer's",Verified
+Biopharmaceuticals,Regeneron Pharmaceuticals,USA,https://www.regeneron.com,"11,000+","$12B+",1988,Large Enterprise,"Monoclonal Antibodies, Ophthalmology, Immunology",Verified
+Biopharmaceuticals,Vertex Pharmaceuticals,USA,https://www.vrtx.com,"5,000+","$9B+",1989,Large Enterprise,"Cystic Fibrosis, Precision Medicines",Verified
+Biopharmaceuticals,CSL Limited,Australia,https://www.csl.com,"27,000+","$13B+",1916,Large Enterprise,"Plasma Therapies, Vaccines, Biotherapeutics",Verified
+Biopharmaceuticals,Moderna,USA,https://www.modernatx.com,"3,900+","$18B+",2010,Large Enterprise,"mRNA Technology, Vaccines, Therapeutics",Verified
+Biopharmaceuticals,Novo Nordisk,Denmark,https://www.novonordisk.com,"55,000+","$25B+",1923,Large Enterprise,"Diabetes Care, GLP-1, Obesity",Verified
+Biopharmaceuticals,Alexion Pharmaceuticals,USA,https://alexion.com,"4,500+","$6B+",1992,Large Enterprise,"Rare Diseases, Complement Inhibition",Verified
+Biopharmaceuticals,Genmab,Denmark,https://www.genmab.com,"5,000+","$2B+",1999,Large Enterprise,"Antibody Therapeutics, Oncology",Verified
+Biopharmaceuticals,Seagen,USA,https://www.seagen.com,"3,000+","$2B+",1998,Large Enterprise,"Antibody-Drug Conjugates, Oncology",Verified
+Biopharmaceuticals,Sage Therapeutics,USA,https://www.sagerx.com,"500+","$100M+",2010,Medium Enterprise,"Neuroscience, Psychiatry",Verified
+Biopharmaceuticals,Argenx,Netherlands,https://www.argenx.com,"1,000+","$400M+",2008,Medium Enterprise,"Autoimmune Diseases, FcRN Inhibitors",Verified
+Biopharmaceuticals,Horizon Therapeutics,Ireland,https://www.horizontherapeutics.com,"1,200+","$3B+",2008,Medium Enterprise,"Rare Diseases, Autoimmune, Inflammatory",Verified
+Biopharmaceuticals,UCB,Belgium,https://www.ucb.com,"7,600+","$6B+",1928,Large Enterprise,"Neurology, Immunology",Verified
+Biopharmaceuticals,Incyte,USA,https://www.incyte.com,"2,000+","$3B+",1991,Large Enterprise,"Oncology, Inflammation, Autoimmunity",Verified
+Biopharmaceuticals,Biomarin Pharmaceutical,USA,https://www.biomarin.com,"3,000+","$2B+",1997,Large Enterprise,"Rare Genetic Diseases, Enzyme Replacement",Verified
+Biopharmaceuticals,Sarepta Therapeutics,USA,https://www.sarepta.com,"1,500+","$1B+",1980,Large Enterprise,"Rare Diseases, Neuromuscular, DMD",Verified
+Biopharmaceuticals,Ionis Pharmaceuticals,USA,https://www.ionispharma.com,"500+","$800M+",1989,Medium Enterprise,"Antisense Technology, Neurology, Cardiology",Verified
+Biopharmaceuticals,Alnylam Pharmaceuticals,USA,https://www.alnylam.com,"1,800+","$900M+",2002,Large Enterprise,"RNAi Therapeutics, Genetic Medicines",Verified
+Generic Drugs,Teva Pharmaceutical,Israel,https://www.tevapharm.com,"37,000+","$16B+",1901,Large Enterprise,"Generic Medicines, Specialty Pharma",Verified
+Generic Drugs,Mylan (Viatris),USA,https://www.viatris.com,"35,000+","$12B+",1961,Large Enterprise,"Generics, Biosimilars, OTC",Verified
+Generic Drugs,Sandoz (Novartis),Switzerland,https://www.sandoz.com,"22,000+","$10B+",1886,Large Enterprise,"Generics, Biosimilars, Antibiotics",Verified
+Generic Drugs,Sun Pharmaceutical,India,https://www.sunpharma.com,"37,000+","$5B+",1983,Large Enterprise,"Generics, Specialty, API",Verified
+Generic Drugs,Dr. Reddy's Laboratories,India,https://www.drreddys.com,"23,000+","$3B+",1984,Large Enterprise,"Generics, Active Pharmaceuticals",Verified
+Generic Drugs,Cipla,India,https://www.cipla.com,"26,000+","$2.5B+",1935,Large Enterprise,"Generics, Respiratory, ARV",Verified
+Generic Drugs,Lupin Limited,India,https://www.lupin.com,"16,000+","$2B+",1968,Large Enterprise,"Generics, API, Respiratory",Verified
+Generic Drugs,Hikma Pharmaceuticals,UK,https://www.hikma.com,"8,500+","$2.5B+",1978,Large Enterprise,"Generics, Injectables, Branded",Verified
+Generic Drugs,Endo International,Ireland,https://www.endo.com,"3,000+","$3B+",1920,Large Enterprise,"Generics, Branded Pharma, Sterile Injectables",Verified
+Generic Drugs,Aurobindo Pharma,India,https://www.aurobindo.com,"24,000+","$3B+",1986,Large Enterprise,"Generics, API, ARV",Verified
+Generic Drugs,Zydus Lifesciences,India,https://www.zyduslife.com,"25,000+","$2B+",1952,Large Enterprise,"Generics, API, Vaccines",Verified
+Generic Drugs,Amneal Pharmaceuticals,USA,https://www.amneal.com,"6,000+","$2B+",2002,Large Enterprise,"Generics, Specialty Pharma",Verified
+Generic Drugs,Lannett Company,USA,https://www.lannett.com,"1,000+","$500M+",1942,Medium Enterprise,"Generic Pharmaceuticals",Verified
+Generic Drugs,Alvogen,Iceland,https://www.alvogen.com,"3,000+","$1B+",2009,Large Enterprise,"Generics, Specialty Pharma",Verified
+Generic Drugs,Strides Pharma Science,India,https://www.strides.com,"5,000+","$300M+",1990,Large Enterprise,"Soft Gelatin, Generics, Regulated Markets",Verified
+Generic Drugs,Acella Pharmaceuticals,USA,https://www.acellapharma.com,"500+","$200M+",2005,Medium Enterprise,"Hormones, Dermatology, Compounding",Verified
+Generic Drugs,Amphastar Pharmaceuticals,USA,https://amphastar.com,"1,400+","$500M+",1996,Medium Enterprise,"Injectables, Nasal Sprays, API",Verified
+Generic Drugs,Edenbridge Pharmaceuticals,USA,https://edenbridgepharma.com,"100+","$50M+",2004,Small Enterprise,"Generic Pharmaceuticals, CNS",Verified
+Generic Drugs,Aphena Pharma Solutions,USA,https://aphenapharma.com,"500+","$100M+",2004,Medium Enterprise,"Pharma Packaging, Contract Manufacturing",Verified
+Medical Imaging,Siemens Healthineers,Germany,https://www.siemens-healthineers.com,"66,000+","$23B+",1896,Large Enterprise,"MRI, CT, Angiography, Laboratory Diagnostics",Verified
+Medical Imaging,GE Healthcare,USA,https://www.gehealthcare.com,"48,000+","$18B+",1994,Large Enterprise,"Ultrasound, MRI, Patient Monitoring",Verified
+Medical Imaging,Philips Healthcare,Netherlands,https://www.philips.com/healthcare,"37,000+","$14B+",1891,Large Enterprise,"Diagnostic Imaging, Image-Guided Therapy",Verified
+Medical Imaging,Canon Medical Systems,Japan,https://global.medical.canon,"7,000+","$4B+",1930,Large Enterprise,"CT, X-Ray, Ultrasound, MRI",Verified
+Medical Imaging,Hologic,USA,https://www.hologic.com,"6,500+","$5B+",1985,Large Enterprise,"Women's Health, Breast Imaging, Diagnostics",Verified
+Medical Imaging,Fujifilm Healthcare,Japan,https://www.fujifilm.com/healthcare,"40,000+","$22B+",1934,Large Enterprise,"Endoscopy, X-Ray, PACS, AI",Verified
+Medical Imaging,Shimadzu Corporation,Japan,https://www.shimadzu.com,"13,000+","$4B+",1875,Large Enterprise,"X-Ray, Analytical Instruments",Verified
+Medical Imaging,Agfa-Gevaert,Belgium,https://www.agfa.com/healthcare,"5,000+","$1.5B+",1867,Large Enterprise,"Radiology, IT Solutions, Film",Verified
+Medical Imaging,Mindray Medical,China,https://www.mindray.com,"14,000+","$4B+",1991,Large Enterprise,"Patient Monitoring, Ultrasound, Anesthesia",Verified
+Medical Imaging,Esperion Imaging,USA,https://www.esperion.com,"200+","$50M+",2008,Small Enterprise,"Cardiovascular Imaging Agents",Verified
+Medical Imaging,Bruker Corporation,USA,https://www.bruker.com,"7,500+","$2.5B+",1960,Large Enterprise,"Preclinical Imaging, Mass Spectrometry",Verified
+Medical Imaging,Analogic Corporation,USA,https://www.analogic.com,"900+","$200M+",1967,Medium Enterprise,"CT, Ultrasound, Security Imaging",Verified
+Medical Imaging,ContextVision,Sweden,https://www.contextvision.com,"50+","$10M+",1983,Small Enterprise,"Medical Image Enhancement, AI",Verified
+Medical Imaging,Varex Imaging,USA,https://www.vareximaging.com,"2,200+","$800M+",2017,Large Enterprise,"X-Ray Tubes, Digital Detectors",Verified
+Medical Imaging,AEcceleration,USA,https://www.aecceleration.com,"100+","$25M+",2015,Small Enterprise,"Radiology Workflow, AI",Verified
+Medical Imaging,Medtronic Imaging,USA,https://www.medtronic.com,"95,000+","$32B+",1949,Conglomerate,"Surgical Navigation, Image-Guided Therapy",Verified
+Medical Imaging,United Imaging Healthcare,China,https://www.united-imaging.com,"8,000+","$2B+",2011,Large Enterprise,"PET-CT, MRI, CT, X-Ray",Verified
+Medical Imaging,NeuroLogica (Samsung),South Korea,https://www.neurologica.com,"300+","$100M+",2004,Medium Enterprise,"Portable CT, Medical Imaging",Verified
+Medical Imaging,Neusoft Medical,China,https://www.neusoftmedical.com,"5,000+","$1B+",1998,Large Enterprise,"CT, MRI, X-Ray, PACS",Verified
+Telehealth,Teladoc Health,USA,https://www.teladochealth.com,"5,400+","$2B+",2002,Large Enterprise,"Virtual Care, Chronic Condition Management",Verified
+Telehealth,Amwell,USA,https://business.amwell.com,"600+","$250M+",2006,Large Enterprise,"Telehealth Platform, Acute & Chronic Care",Verified
+Telehealth,MDLive,USA,https://www.mdlive.com,"500+","$200M+",2009,Medium Enterprise,"Virtual Visits, Behavioral Health, Dermatology",Verified
+Telehealth,Doctor on Demand,USA,https://www.doctorondemand.com,"300+","$150M+",2012,Medium Enterprise,"Urgent Care, Mental Health, Chronic Care",Verified
+Telehealth,American Well,USA,https://www.americanwell.com,"600+","$250M+",2006,Large Enterprise,"Telehealth Infrastructure, Platform",Verified
+Telehealth,Livongo (Teladoc),USA,https://www.livongo.com,"600+","$350M+",2008,Large Enterprise,"Chronic Condition Management, Diabetes",Verified
+Telehealth,PlushCare,USA,https://plushcare.com,"200+","$100M+",2014,Medium Enterprise,"Primary Care, Mental Health, Prescriptions",Verified
+Telehealth,K Health,USA,https://khealth.com,"300+","$100M+",2016,Medium Enterprise,"AI-Powered Triage, Primary Care",Verified
+Telehealth,98point6,USA,https://www.98point6.com,"200+","$50M+",2015,Medium Enterprise,"Text-Based Care, AI, Clinical Support",Verified
+Telehealth,Babylon Health,UK,https://www.babylonhealth.com,"1,000+","$200M+",2013,Large Enterprise,"AI-Driven Triage, Virtual Consultations",Verified
+Telehealth,MeMD,USA,https://www.memd.com,"150+","$50M+",2010,Small Enterprise,"Urgent Care, Behavioral Health",Verified
+Telehealth,HealthTap,USA,https://www.healthtap.com,"100+","$50M+",2010,Small Enterprise,"Virtual Consults, Health Records, AI",Verified
+Telehealth,Maple,Canada,https://www.getmaple.ca,"100+","$30M+",2014,Small Enterprise,"Virtual Care, Specialist Network",Verified
+Telehealth,CirrusMD,USA,https://www.cirrusmd.com,"100+","$20M+",2012,Small Enterprise,"Text-Video Chat, Urgent Care",Verified
+Telehealth,Medici,USA,https://medici.md,"50+","$15M+",2016,Small Enterprise,"Secure Messaging, Teleconsultations",Verified
+Telehealth,Synzi,USA,https://www.synzi.com,"50+","$10M+",2015,Small Enterprise,"Virtual Care Platform, Remote Patient Monitoring",Verified
+Telehealth,Bluestream Health,USA,https://www.bluestreamhealth.com,"50+","$10M+",2014,Small Enterprise,"API-Based Virtual Care Platform",Verified
+Surgical Instruments,Medtronic,Ireland,https://www.medtronic.com,"95,000+","$32B+",1949,Conglomerate,"Medical Devices, Surgical Robotics, Cardiology",Verified
+Surgical Instruments,Johnson & Johnson,USA,https://www.jnj.com,"134,000+","$95B+",1886,Conglomerate,"Medical Devices, Consumer Health, Pharmaceuticals",Verified
+Surgical Instruments,Stryker Corporation,USA,https://www.stryker.com,"46,000+","$18B+",1941,Large Enterprise,"Orthopedics, Neurotech, Spine, Surgical Equipment",Verified
+Surgical Instruments,Becton Dickinson,USA,https://www.bd.com,"75,000+","$20B+",1897,Large Enterprise,"Medical Technology, Infection Prevention, Diagnostics",Verified
+Surgical Instruments,B. Braun Melsungen,Germany,https://www.bbraun.com,"66,000+","$9B+",1839,Large Enterprise,"Hospital Equipment, Infusion Therapy, Dialysis",Verified
+Surgical Instruments,Smith & Nephew,UK,https://www.smith-nephew.com,"18,000+","$5B+",1856,Large Enterprise,"Orthopedics, Sports Medicine, Advanced Wound Management",Verified
+Surgical Instruments,Zimmer Biomet,USA,https://www.zimmerbiomet.com,"18,000+","$7B+",1927,Large Enterprise,"Musculoskeletal Healthcare, Joint Reconstruction",Verified
+Surgical Instruments,Conmed Corporation,USA,https://www.conmed.com,"4,000+","$1B+",1970,Large Enterprise,"Orthopedic Surgery, General Surgery, Electrosurgery",Verified
+Surgical Instruments,Intuitive Surgical,USA,https://www.intuitive.com,"11,000+","$6B+",1995,Large Enterprise,"Robotic-Assisted Surgery, da Vinci System",Verified
+Surgical Instruments,Olympus Corporation,Japan,https://www.olympus-global.com,"31,000+","$8B+",1919,Large Enterprise,"Endoscopy, Minimally Invasive Surgery",Verified
+Surgical Instruments,Karl Storz,Germany,https://www.karlstorz.com,"8,000+","$2B+",1945,Large Enterprise,"Endoscopy, Imaging Systems",Verified
+Surgical Instruments,Richard Wolf GmbH,Germany,https://www.richard-wolf.com,"1,400+","$300M+",1947,Medium Enterprise,"Endoscopy, Urology, Laparoscopy",Verified
+Surgical Instruments,Microline Surgical,USA,https://www.microline.com,"200+","$50M+",1985,Small Enterprise,"Laparoscopic Instruments, Electrosurgery",Verified
+Surgical Instruments,Scanlan International,USA,https://www.scanlaninternational.com,"100+","$25M+",1962,Small Enterprise,"Surgical Instruments, Cardiovascular",Verified
+Surgical Instruments,Sklar Surgical Instruments,USA,https://www.sklarcorp.com,"300+","$100M+",1892,Medium Enterprise,"Surgical Instruments, Stainless Steel",Verified
+Surgical Instruments,Lawton GmbH & Co. KG,Germany,https://www.lawton.de,"200+","$50M+",1905,Small Enterprise,"ENT Instruments, Surgery",Verified
+Surgical Instruments,Geister Medizintechnik,Germany,https://www.geister.com,"100+","$25M+",1945,Small Enterprise,"Surgical Instruments, Ophthalmology",Verified
+Surgical Instruments,ASSI Surgical Instruments,USA,https://www.assisurgical.com,"200+","$50M+",1900,Small Enterprise,"Precision Surgical Instruments",Verified
+Surgical Instruments,Integra LifeSciences,USA,https://www.integralife.com,"4,000+","$1.5B+",1989,Large Enterprise,"Neurosurgery, Orthopedics, Regenerative Medicine",Verified
+Health Insurance,UnitedHealth Group,USA,https://www.unitedhealthgroup.com,"350,000+","$324B+",1977,Conglomerate,"Health Benefits, Optum Health Services",Verified
+Health Insurance,Anthem,USA,https://www.anthem.com,"85,000+","$156B+",1944,Large Enterprise,"Health Insurance, Managed Care",Verified
+Health Insurance,Aetna (CVS Health),USA,https://www.aetna.com,"50,000+","$90B+",1853,Large Enterprise,"Health Insurance, Pharmacy Benefits",Verified
+Health Insurance,Cigna,USA,https://www.cigna.com,"74,000+","$174B+",1792,Large Enterprise,"Global Health Services, Insurance",Verified
+Health Insurance,Humana,USA,https://www.humana.com,"67,000+","$93B+",1961,Large Enterprise,"Health Insurance, Medicare Advantage",Verified
+Health Insurance,Kaiser Permanente,USA,https://healthy.kaiserpermanente.org,"216,000+","$95B+",1945,Integrated System,"Integrated Care, Health Plan, Hospitals",Verified
+Health Insurance,Molina Healthcare,USA,https://www.molinahealthcare.com,"22,000+","$31B+",1980,Large Enterprise,"Medicaid, Medicare, Marketplace Plans",Verified
+Health Insurance,Centene Corporation,USA,https://www.centene.com,"74,000+","$146B+",1984,Large Enterprise,"Managed Care, Government Programs",Verified
+Health Insurance,Blue Cross Blue Shield,USA,https://www.bcbs.com,"(Federation)","N/A",1929,Association,"Federation of Independent Health Insurers",Verified
+Health Insurance,Allianz Care,Germany,https://www.allianzcare.com,"(Part of Allianz)","(Part of Allianz)",1890,Conglomerate,"International Health Insurance",Verified
+Health Insurance,AXA Global Healthcare,France,https://www.axa.com,"(Part of AXA)","(Part of AXA)",1816,Conglomerate,"Global Health Insurance, Expatriate Cover",Verified
+Health Insurance,Bupa Global,UK,https://www.bupa.com,"85,000+","$18B+",1947,Large Enterprise,"International Private Medical Insurance",Verified
+Health Insurance,Cigna Global,USA,https://www.cignaglobal.com,"(Part of Cigna)","(Part of Cigna)",1792,Large Enterprise,"Expatriate Health Insurance, Global Plans",Verified
+Health Insurance,Now Health International,Hong Kong,https://www.now-health.com,"200+","$100M+",2009,Medium Enterprise,"International Health Insurance",Verified
+Health Insurance,Aetna International,USA,https://www.aetnainternational.com,"(Part of Aetna)","(Part of Aetna)",1853,Large Enterprise,"Expatriate, Travel, Local Health Plans",Verified
+Health Insurance,GeoBlue,USA,https://www.geobluetravelinsurance.com,"(Part of Bupa)","(Part of Bupa)",1997,Large Enterprise,"Travel Medical Insurance, Expatriate Plans",Verified
+Health Insurance,IMG,USA,https://www.imglobal.com,"500+","$500M+",1990,Medium Enterprise,"International Health, Travel Insurance",Verified
+Health Insurance,William Russell,UK,https://www.william-russell.com,"200+","$100M+",1990,Medium Enterprise,"Expatriate Health Insurance, Life Insurance",Verified
+Clinical Research,IQVIA,USA,https://www.iqvia.com,"82,000+","$15B+",1982,Large Enterprise,"CRO, Real-World Evidence, Data Analytics",Verified
+Clinical Research,Parexel,USA,https://www.parexel.com,"20,000+","$3B+",1982,Large Enterprise,"CRO, Clinical Trials, Regulatory Services",Verified
+Clinical Research,PRA Health Sciences,USA,https://www.prahs.com,"29,000+","$4B+",1976,Large Enterprise,"CRO, Data Management, Biostatistics",Verified
+Clinical Research,Syneos Health,USA,https://www.syneoshealth.com,"28,000+","$5B+",2018,Large Enterprise,"CRO, Biopharmaceutical Solutions",Verified
+Clinical Research,ICON plc,Ireland,https://www.iconplc.com,"41,000+","$8B+",1990,Large Enterprise,"CRO, Clinical Research, Commercialization",Verified
+Clinical Research,PPD (Thermo Fisher),USA,https://www.ppd.com,"30,000+","$7B+",1985,Large Enterprise,"CRO, Clinical Development, Laboratory Services",Verified
+Clinical Research,Charles River Laboratories,USA,https://www.criver.com,"22,000+","$4B+",1947,Large Enterprise,"Research Models, Safety Assessment, CRO",Verified
+Clinical Research,Medpace,USA,https://www.medpace.com,"5,000+","$1.5B+",1992,Large Enterprise,"CRO, Full-Service Clinical Development",Verified
+Clinical Research,Wuxi AppTec,China,https://www.wuxiapptec.com,"35,000+","$5B+",2000,Large Enterprise,"R&D, Manufacturing, CRO",Verified
+Clinical Research,LabCorp Drug Development,USA,https://drugdevelopment.labcorp.com,"(Part of LabCorp)","(Part of LabCorp)",1971,Large Enterprise,"Central Lab, CRO, Drug Development",Verified
+Clinical Research,Pharmaceutical Product Development,USA,https://www.ppdi.com,"(Part of PPD)","(Part of PPD)",1985,Large Enterprise,"CRO, Clinical Trials",Verified
+Clinical Research,Fortrea,USA,https://www.fortrea.com,"19,000+","$3B+",2023,Large Enterprise,"CRO, Clinical Development, Patient Access",Verified
+Clinical Research,CMIC Group,Japan,https://www.cmicgroup.com,"5,000+","$1B+",1996,Large Enterprise,"CRO, SMO, Data Management",Verified
+Clinical Research,Clintec,UK,https://www.clintec.com,"300+","$50M+",1995,Medium Enterprise,"CRO, Niche Clinical Trials",Verified
+Clinical Research,Covance (LabCorp),USA,https://www.covance.com,"(Part of LabCorp)","(Part of LabCorp)",1997,Large Enterprise,"CRO, Central Laboratory",Verified
+Clinical Research,Pharm-Olam,USA,https://www.pharm-olam.com,"1,000+","$200M+",1994,Medium Enterprise,"CRO, Oncology, Rare Disease",Verified
+Clinical Research,KCAS Bioanalytical Services,USA,https://www.kcasbio.com,"200+","$50M+",1981,Small Enterprise,"Bioanalytical Laboratory, Biomarkers",Verified
+Clinical Research,Allucent,USA,https://allucent.com,"500+","$100M+",2007,Medium Enterprise,"CRO, Niche & Mid-Size Biopharma",Verified
+Hospital Management,HCA Healthcare,USA,https://hcahealthcare.com,"283,000+","$60B+",1968,Conglomerate,"Hospitals, Surgery Centers, Emergency Care",Verified
+Hospital Management,Universal Health Services,USA,https://www.uhsinc.com,"94,000+","$14B+",1978,Large Enterprise,"Acute Care, Behavioral Health",Verified
+Hospital Management,Tenet Healthcare,USA,https://www.tenethealth.com,"115,000+","$20B+",1967,Large Enterprise,"Hospitals, Ambulatory Surgery Centers",Verified
+Hospital Management,Community Health Systems,USA,https://www.chs.net,"60,000+","$12B+",1985,Large Enterprise,"Hospitals, Healthcare Services",Verified
+Hospital Management,Ramsay Health Care,Australia,https://www.ramsayhealth.com,"77,000+","$12B+",1964,Large Enterprise,"Hospitals, Surgery Centers, Mental Health",Verified
+Hospital Management,Fresenius Helios,Germany,https://www.freseniushelios.com,"(Part of Fresenius)","(Part of Fresenius)",1912,Conglomerate,"Hospitals, Outpatient Care",Verified
+Hospital Management,Asklepios Kliniken,Germany,https://www.asklepios.com,"57,000+","$7B+",1903,Large Enterprise,"Hospitals, Rehabilitation, Medical Care",Verified
+Hospital Management,IHH Healthcare,Malaysia,https://www.ihhhealthcare.com,"55,000+","$4B+",2010,Large Enterprise,"Hospitals, Integrated Healthcare",Verified
+Hospital Management,Apollo Hospitals,India,https://www.apollohospitals.com,"70,000+","$2B+",1983,Large Enterprise,"Hospitals, Clinics, Telemedicine",Verified
+Hospital Management,Fortis Healthcare,India,https://www.fortishealthcare.com,"23,000+","$1B+",1996,Large Enterprise,"Hospitals, Diagnostics, Primary Care",Verified
+Hospital Management,Raffles Medical Group,Singapore,https://www.rafflesmedicalgroup.com,"4,000+","$500M+",1976,Large Enterprise,"Hospitals, Clinics, Healthcare Services",Verified
+Hospital Management,Bumrungrad International Hospital,Thailand,https://www.bumrungrad.com,"5,000+","$500M+",1980,Large Enterprise,"International Hospital, Specialized Care",Verified
+Hospital Management,Mayo Clinic,USA,https://www.mayoclinic.org,"73,000+","$16B+",1864,Large Enterprise,"Academic Medical Center, Research, Education",Verified
+Hospital Management,Cleveland Clinic,USA,https://my.clevelandclinic.org,"77,000+","$13B+",1921,Large Enterprise,"Academic Medical Center, Heart Care, Research",Verified
+Hospital Management,Johns Hopkins Medicine,USA,https://www.hopkinsmedicine.org,"48,000+","$10B+",1889,Large Enterprise,"Academic Medical Center, Research, Education",Verified
+Hospital Management,Kaiser Permanente,USA,https://healthy.kaiserpermanente.org,"216,000+","$95B+",1945,Integrated System,"Integrated Health Plan & Hospitals",Verified
+Hospital Management,Mount Sinai Health System,USA,https://www.mountsinai.org,"43,000+","$8B+",1852,Large Enterprise,"Hospitals, Medical School, Research",Verified
+Hospital Management,CommonSpirit Health,USA,https://www.commonspirit.org,"150,000+","$34B+",2019,Large Enterprise,"Non-Profit Hospital System, Community Care",Verified
+Diagnostic Labs,Quest Diagnostics,USA,https://www.questdiagnostics.com,"50,000+","$11B+",1967,Large Enterprise,"Clinical Lab Testing, Information Services",Verified
+Diagnostic Labs,LabCorp,USA,https://www.labcorp.com,"75,000+","$16B+",1971,Large Enterprise,"Clinical Labs, Drug Development",Verified
+Diagnostic Labs,Sonic Healthcare,Australia,https://www.sonichealthcare.com,"40,000+","$7B+",1987,Large Enterprise,"Medical Diagnostics, Pathology, Radiology",Verified
+Diagnostic Labs,DiaSorin,Italy,https://www.diasorin.com,"1,600+","$400M+",1967,Medium Enterprise,"Immunodiagnostics, Molecular Diagnostics",Verified
+Diagnostic Labs,BioReference Laboratories,USA,https://www.bioreference.com,"(Part of Opko)","(Part of Opko)",1981,Large Enterprise,"Clinical Lab, Genomics, Oncology",Verified
+Diagnostic Labs,Eurofins Scientific,Luxembourg,https://www.eurofins.com,"61,000+","$7B+",1987,Large Enterprise,"Bioanalytical Testing, Food, Environment",Verified
+Diagnostic Labs,Synlab,Germany,https://www.synlab.com,"25,000+","$3B+",1994,Large Enterprise,"Medical Diagnostics, Laboratory Services",Verified
+Diagnostic Labs,Unilabs,Switzerland,https://www.unilabs.com,"9,000+","$1B+",1987,Large Enterprise,"Diagnostic Services, Imaging, Pathology",Verified
+Diagnostic Labs,Alere (Abbott),USA,https://www.alere.com,"(Part of Abbott)","(Part of Abbott)",2001,Large Enterprise,"Rapid Diagnostics, Point-of-Care",Verified
+Diagnostic Labs,NeoGenomics,USA,https://neogenomics.com,"2,200+","$500M+",2001,Large Enterprise,"Oncology Testing, Genetics, Pathology",Verified
+Diagnostic Labs,Myriad Genetics,USA,https://www.myriad.com,"2,500+","$700M+",1991,Large Enterprise,"Genetic Testing, Hereditary Cancer",Verified
+Diagnostic Labs,Genomic Health (Exact Sciences),USA,https://www.exactsciences.com,"(Part of Exact Sciences)","(Part of Exact Sciences)",2000,Large Enterprise,"Oncology Diagnostics, Genomic Testing",Verified
+Diagnostic Labs,Invitae,USA,https://www.invitae.com,"1,400+","$500M+",2010,Large Enterprise,"Genetic Information, Medical Genetics",Verified
+Diagnostic Labs,Natera,USA,https://www.natera.com,"2,500+","$800M+",2004,Large Enterprise,"Cell-Free DNA Testing, Prenatal, Oncology",Verified
+Diagnostic Labs,OPKO Health,USA,https://www.opko.com,"5,000+","$1B+",2007,Large Enterprise,"Diagnostics, BioReference Labs, Pharmaceuticals",Verified
+Diagnostic Labs,Fulgent Genetics,USA,https://www.fulgentgenetics.com,"500+","$200M+",2011,Medium Enterprise,"Genetic Testing, Next-Generation Sequencing",Verified
+Diagnostic Labs,Adaptive Biotechnologies,USA,https://www.adaptivebiotech.com,"900+","$200M+",2009,Medium Enterprise,"Immune Medicine, Sequencing",Verified
+Diagnostic Labs,Guardant Health,USA,https://www.guardanthealth.com,"1,400+","$500M+",2012,Large Enterprise,"Liquid Biopsy, Oncology Genomics",Verified
+Diagnostic Labs,Veracyte,USA,https://www.veracyte.com,"700+","$300M+",2008,Medium Enterprise,"Genomic Diagnostics, Cytology, Oncology",Verified
+Wearable Health Tech,Fitbit (Google),USA,https://www.fitbit.com,"(Part of Google)","(Part of Google)",2007,Large Enterprise,"Activity Trackers, Smartwatches",Verified
+Wearable Health Tech,Apple,USA,https://www.apple.com,"164,000+","$383B+",1976,Conglomerate,"Apple Watch, HealthKit, Fitness Tracking",Verified
+Wearable Health Tech,Garmin,USA,https://www.garmin.com,"19,000+","$5B+",1989,Large Enterprise,"Fitness Trackers, Smartwatches, GPS",Verified
+Wearable Health Tech,Samsung Electronics,South Korea,https://www.samsung.com,"287,000+","$245B+",1938,Conglomerate,"Galaxy Watch, Health Monitoring",Verified
+Wearable Health Tech,Withings,France,https://www.withings.com,"200+","$100M+",2008,Medium Enterprise,"Smart Scales, Blood Pressure, Sleep Tracking",Verified
+Wearable Health Tech,Oura Health,Finland,https://ouraring.com,"200+","$100M+",2013,Medium Enterprise,"Smart Ring, Sleep, Activity, Readiness",Verified
+Wearable Health Tech,Whoop,USA,https://www.whoop.com,"500+","$200M+",2012,Medium Enterprise,"Strap, Recovery, Sleep, Strain, Fitness",Verified
+Wearable Health Tech,BioIntelliSense,USA,https://www.biointellisense.com,"100+","$50M+",2018,Small Enterprise,"Medical-Grade Wearables, Continuous Monitoring",Verified
+Wearable Health Tech,Philips Healthcare,Netherlands,https://www.philips.com/healthcare,"37,000+","$14B+",1891,Large Enterprise,"Wearable Biosensors, Patient Monitoring",Verified
+Wearable Health Tech,Abbott FreeStyle Libre,USA,https://www.freestyle.abbott,"(Part of Abbott)","(Part of Abbott)",1888,Conglomerate,"Continuous Glucose Monitoring",Verified
+Wearable Health Tech,Dexcom,USA,https://www.dexcom.com,"8,000+","$3B+",1999,Large Enterprise,"Continuous Glucose Monitoring, Diabetes",Verified
+Wearable Health Tech,Medtronic Diabetes,USA,https://www.medtronic.com,"(Part of Medtronic)","(Part of Medtronic)",1949,Conglomerate,"Insulin Pumps, CGM, Diabetes Management",Verified
+Wearable Health Tech,Omron Healthcare,Japan,https://www.omronhealthcare.com,"(Part of Omron)","(Part of Omron)",1933,Large Enterprise,"Blood Pressure Monitors, Activity Trackers",Verified
+Wearable Health Tech,Bose Health,USA,https://www.bose.com,"(Part of Bose)","(Part of Bose)",1964,Large Enterprise,"Hearables, Hearing Health, Audio",Verified
+Wearable Health Tech,Valencell,USA,https://valencell.com,"50+","$10M+",2006,Small Enterprise,"Biometric Sensor Technology, PPG",Verified
+Wearable Health Tech,Current Health (Best Buy),USA,https://currenthealth.com,"(Part of Best Buy)","(Part of Best Buy)",2014,Medium Enterprise,"Remote Patient Monitoring Platform",Verified
+Wearable Health Tech,Biobeat,Israel,https://www.biobeat.com,"100+","$20M+",2016,Small Enterprise,"Chest Monitor, Blood Pressure, Vital Signs",Verified
+Wearable Health Tech,VivaLNK,USA,https://www.vivalnk.com,"50+","$10M+",2013,Small Enterprise,"Wearable Sensor Platform, Digital Health",Verified
+Wearable Health Tech,Empatica,USA,https://www.empatica.com,"100+","$20M+",2014,Small Enterprise,"Medical-Grade Wearables, Seizure Monitoring",Verified
+Vaccines,Pfizer,USA,https://www.pfizer.com,"83,000+","$100B+",1849,Conglomerate,"Vaccines, mRNA, Antivirals, Oncology",Verified
+Vaccines,Merck & Co.,USA,https://www.merck.com,"68,000+","$60B+",1891,Conglomerate,"Vaccines, Oncology, Infectious Diseases",Verified
+Vaccines,GlaxoSmithKline,UK,https://www.gsk.com,"94,000+","$45B+",2000,Conglomerate,"Vaccines, Pharmaceuticals, Consumer Health",Verified
+Vaccines,Sanofi Pasteur,France,https://www.sanofi.com,"(Part of Sanofi)","(Part of Sanofi)",1973,Conglomerate,"Vaccines, Pediatric, Travel, Influenza",Verified
+Vaccines,AstraZeneca,UK,https://www.astrazeneca.com,"83,000+","$44B+",1999,Conglomerate,"Vaccines, Oncology, Respiratory, CVMD",Verified
+Vaccines,Johnson & Johnson,USA,https://www.jnj.com,"134,000+","$95B+",1886,Conglomerate,"Vaccines, Pharmaceuticals, Medical Devices",Verified
+Vaccines,Moderna,USA,https://www.modernatx.com,"3,900+","$18B+",2010,Large Enterprise,"mRNA Vaccines, Infectious Diseases",Verified
+Vaccines,Novavax,USA,https://www.novavax.com,"800+","$1B+",1987,Medium Enterprise,"Protein-Based Vaccines, Adjuvant Technology",Verified
+Vaccines,Sinovac Biotech,China,https://www.sinovac.com,"1,000+","$2B+",2001,Large Enterprise,"Inactivated Vaccines, COVID-19, Hepatitis",Verified
+Vaccines,Bharat Biotech,India,https://www.bharatbiotech.com,"800+","$200M+",1996,Medium Enterprise,"Vaccines, Rotavirus, Typhoid, COVID-19",Verified
+Vaccines,Serum Institute of India,India,https://www.seruminstitute.com,"7,000+","$2B+",1966,Large Enterprise,"Vaccines, Largest by Doses, Pediatric",Verified
+Vaccines,CanSino Biologics,China,https://www.cansinotech.com,"500+","$100M+",2009,Medium Enterprise,"Adenovirus Vector Vaccines, COVID-19",Verified
+Vaccines,Valneva,France,https://valneva.com,"600+","$200M+",2013,Medium Enterprise,"Travel Vaccines, Chikungunya, Lyme",Verified
+Vaccines,Inovio Pharmaceuticals,USA,https://www.inovio.com,"200+","$50M+",1983,Small Enterprise,"DNA Medicines, Vaccine Platform",Verified
+Vaccines,CureVac,Germany,https://www.curevac.com,"700+","$100M+",2000,Medium Enterprise,"mRNA Technology, Cancer, Infectious Diseases",Verified
+Vaccines,CSL Seqirus,Australia,https://www.seqirus.com,"(Part of CSL)","(Part of CSL)",1916,Large Enterprise,"Influenza Vaccines, Cell-Based, Adjuvanted",Verified
+Vaccines,Bavarian Nordic,Denmark,https://www.bavarian-nordic.com,"500+","$300M+",1994,Medium Enterprise,"Smallpox, Mpox, Travel Vaccines",Verified
+Vaccines,Dynavax Technologies,USA,https://www.dynavax.com,"300+","$500M+",1996,Medium Enterprise,"Vaccine Adjuvants, Hepatitis B",Verified
+Vaccines,VBI Vaccines,USA,https://www.vbivaccines.com,"200+","$50M+",2001,Small Enterprise,"Enveloped Virus-Like Particle (eVLP) Platform",Verified
+Mental Health Apps,Talkspace,USA,https://www.talkspace.com,"500+","$200M+",2012,Medium Enterprise,"Therapy, Psychiatry, Messaging",Verified
+Mental Health Apps,BetterHelp,USA,https://www.betterhelp.com,"1,000+","$1B+",2013,Large Enterprise,"Online Therapy, Counseling",Verified
+Mental Health Apps,Cerebral,USA,https://www.cerebral.com,"4,000+","$300M+",2020,Large Enterprise,"Tele-Mental Health, Medication Management",Verified
+Mental Health Apps,Headspace,USA,https://www.headspace.com,"600+","$200M+",2010,Medium Enterprise,"Meditation, Mindfulness, Sleep",Verified
+Mental Health Apps,Calm,USA,https://www.calm.com,"200+","$150M+",2012,Medium Enterprise,"Meditation, Sleep, Relaxation",Verified
+Mental Health Apps,Woebot Health,USA,https://woebothealth.com,"100+","$50M+",2017,Small Enterprise,"AI-Powered CBT, Mental Health Chatbot",Verified
+Mental Health Apps,MindDoc (Somnio),Germany,https://minddoc.de,"200+","$50M+",2015,Small Enterprise,"Digital Mental Health, Symptom Tracking",Verified
+Mental Health Apps,Lyra Health,USA,https://www.lyrahealth.com,"1,000+","$200M+",2015,Large Enterprise,"Workforce Mental Health, Therapy, Coaching",Verified
+Mental Health Apps,Ginger,USA,https://www.ginger.com,"600+","$200M+",2011,Medium Enterprise,"On-Demand Behavioral Health, Coaching",Verified
+Mental Health Apps,Lantern,USA,https://lanternhealth.com,"50+","$10M+",2012,Small Enterprise,"Cognitive Behavioral Therapy, Coaching",Verified
+Mental Health Apps,SANVT,Germany,https://www.sanvt.com,"50+","$10M+",2019,Small Enterprise,"Mental Wellness, Digital Therapy",Verified
+Mental Health Apps,Youper,USA,https://www.youper.ai,"50+","$10M+",2016,Small Enterprise,"AI Emotional Health Assistant",Verified
+Mental Health Apps,7 Cups,USA,https://www.7cups.com,"100+","$20M+",2013,Small Enterprise,"Peer Support, Online Therapy",Verified
+Mental Health Apps,Moodfit,USA,https://www.getmoodfit.com,"50+","$5M+",2018,Small Enterprise,"Mental Fitness Tools, CBT",Verified
+Mental Health Apps,What's Up?,Australia,https://www.whatsupapp.com,"10+","$1M+",2013,Small Enterprise,"Mental Health App, Coping Tools",Verified
+Mental Health Apps,MindShift CBT,Canada,https://www.anxietycanada.com,"(Non-Profit)","N/A",1999,Small Enterprise,"Anxiety Management, CBT-Based App",Verified
+Mental Health Apps,Happify,USA,https://www.happify.com,"100+","$20M+",2012,Small Enterprise,"Science-Based Activities, Games",Verified
+Mental Health Apps,SuperBetter,USA,https://www.superbetter.com,"50+","$10M+",2012,Small Enterprise,"Gameful Resilience, Mental Health",Verified
+Mental Health Apps,IntelliCare,USA,https://intellicare.cbits.northwestern.edu,"(Research Project)","N/A",2015,Small Enterprise,"Suite of Mental Health Apps",Verified
+Prosthetics,Ossur,Iceland,https://www.ossur.com,"3,800+","$600M+",1971,Large Enterprise,"Prosthetics, Bionics, Orthotics",Verified
+Prosthetics,Ottobock,Germany,https://www.ottobock.com,"8,000+","$1B+",1919,Large Enterprise,"Prosthetics, Orthotics, Mobility",Verified
+Prosthetics,Blatchford Group,UK,https://www.blatchford.co.uk,"1,000+","$200M+",1890,Large Enterprise,"Prosthetic Liners, Microprocessor Knees",Verified
+Prosthetics,Fillauer,USA,https://www.fillauer.com,"500+","$100M+",1914,Medium Enterprise,"Upper Limb Prosthetics, Components",Verified
+Prosthetics,Össur Americas,USA,https://www.ossur.com,"(Part of Ossur)","(Part of Ossur)",1971,Large Enterprise,"Prosthetics, Orthotics, Americas Region",Verified
+Prosthetics,WillowWood,USA,https://www.willowwoodco.com,"200+","$50M+",1907,Small Enterprise,"Prosthetic Socks, Liners, Components",Verified
+Prosthetics,Steeper Group,UK,https://www.steepergroup.com,"300+","$50M+",1912,Small Enterprise,"Prosthetic Hands, Upper Limb",Verified
+Prosthetics,TRS,USA,https://www.oandp.com,"100+","$20M+",1983,Small Enterprise,"Silicone Prosthetics, Activity-Specific",Verified
+Prosthetics,Endolite,UK,https://www.endolite.com,"(Part of Blatchford)","(Part of Blatchford)",1890,Large Enterprise,"Lower Limb Prosthetics, Components",Verified
+Prosthetics,College Park Industries,USA,https://www.college-park.com,"200+","$50M+",1979,Small Enterprise,"Prosthetic Feet, Ankles, Components",Verified
+Prosthetics,Proteor,France,https://www.proteor.com,"500+","$100M+",1913,Medium Enterprise,"Orthotics, Prosthetics, Mobility",Verified
+Prosthetics,Ohio Willow Wood,USA,https://www.willowwoodco.com,"(Part of WillowWood)","(Part of WillowWood)",1907,Small Enterprise,"Prosthetic Liners, Cushioning",Verified
+Prosthetics,Ability Dynamics,USA,https://www.abilitydynamics.com,"100+","$20M+",1981,Small Enterprise,"Thermoplastic Prosthetics, Sockets",Verified
+Prosthetics,Ultraflex Systems,USA,https://www.ultraflexsystems.com,"100+","$20M+",1989,Small Enterprise,"Posture Control, Spinal Orthotics",Verified
+Prosthetics,Proteus Motion,USA,https://proteusmotion.com,"50+","$10M+",2017,Small Enterprise,"Robotic Exoskeleton, Rehabilitation",Verified
+Prosthetics,Bionic Prosthetics and Orthotics,USA,https://bionics.com,"100+","$20M+",2005,Small Enterprise,"Bionic Limbs, Advanced Prosthetics",Verified
+Prosthetics,Open Bionics,UK,https://openbionics.com,"50+","$10M+",2014,Small Enterprise,"3D-Printed Bionic Arms, Hero Arm",Verified
+Prosthetics,COVVI,UK,https://covvi.com,"50+","$10M+",2017,Small Enterprise,"Advanced Bionic Hands",Verified
+Prosthetics,Psyonic,USA,https://psyonic.io,"50+","$10M+",2015,Small Enterprise,"Advanced Bionic Hand, Touch Sensing",Verified
+Medical Robotics,Intuitive Surgical,USA,https://www.intuitive.com,"11,000+","$6B+",1995,Large Enterprise,"Robotic-Assisted Surgery, da Vinci System",Verified
+Medical Robotics,Stryker Corporation,USA,https://www.stryker.com,"46,000+","$18B+",1941,Large Enterprise,"Mako Robotic-Arm, Orthopedic Surgery",Verified
+Medical Robotics,Medtronic,Ireland,https://www.medtronic.com,"95,000+","$32B+",1949,Conglomerate,"Hugo RAS, Stealth, Navigation",Verified
+Medical Robotics,Zimmer Biomet,USA,https://www.zimmerbiomet.com,"18,000+","$7B+",1927,Large Enterprise,"ROSA Robotics, Knee, Spine, Brain",Verified
+Medical Robotics,Smith & Nephew,UK,https://www.smith-nephew.com,"18,000+","$5B+",1856,Large Enterprise,"Cori, Handheld Robotics, Orthopedics",Verified
+Medical Robotics,Accuray,USA,https://www.accuray.com,"1,000+","$400M+",1990,Medium Enterprise,"Radiotherapy Robotics, CyberKnife",Verified
+Medical Robotics,Hansen Medical (Auris Health),USA,https://www.aurishealth.com,"(Part of Johnson & Johnson)","(Part of J&J)",2002,Large Enterprise,"Robotic Catheters, Monarch Platform",Verified
+Medical Robotics,Mazor Robotics (Medtronic),Israel,https://www.medtronic.com,"(Part of Medtronic)","(Part of Medtronic)",2000,Large Enterprise,"Spine, Brain Robotics, Guidance",Verified
+Medical Robotics,TransEnterix,USA,https://www.transenterix.com,"100+","$20M+",2006,Small Enterprise,"Senhance Surgical System, Digital Laparoscopy",Verified
+Medical Robotics,Verb Surgical (Verily/J&J),USA,https://www.verbsurgical.com,"(Part of J&J)","(Part of J&J)",2015,Large Enterprise,"Digital Surgery, Platform",Verified
+Medical Robotics,CMR Surgical,UK,https://cmrsurgical.com,"500+","$100M+",2014,Medium Enterprise,"Versius, Minimal Access Surgery",Verified
+Medical Robotics,Medrobotics,USA,https://medrobotics.com,"100+","$20M+",2005,Small Enterprise,"Flex Robotic System, Snakelike Robots",Verified
+Medical Robotics,Vicarious Surgical,USA,https://www.vicarioussurgical.com,"100+","$20M+",2014,Small Enterprise,"Humanoid Robots, Virtual Reality",Verified
+Medical Robotics,Titan Medical,Canada,https://www.titanmedicalinc.com,"50+","$10M+",2008,Small Enterprise,"Single-Port Robotic Surgery, Enos",Verified
+Medical Robotics,Avatera Medical,Germany,https://www.avatera.eu,"100+","$20M+",2011,Small Enterprise,"avatera system, Robotic Surgery",Verified
+Medical Robotics,Memic Innovative Surgery,Israel,https://www.memicsurgery.com,"100+","$20M+",2013,Small Enterprise,"Hominis, Single-Port, Laparoscopic",Verified
+Medical Robotics,Activ Surgical,USA,https://www.activsurgical.com,"100+","$20M+",2017,Small Enterprise,"AI-Enhanced Surgery, Real-Time Imaging",Verified
+Medical Robotics,Asensus Surgical,USA,https://www.asensus.com,"200+","$10M+",2006,Small Enterprise,"Senhance, Intelligent Surgical Unit",Verified
+Medical Robotics,Diligent Robotics,USA,https://www.diligentrobots.com,"100+","$20M+",2017,Small Enterprise,"Moxi, Hospital Support Robot",Verified
+Genomics,Illumina,USA,https://www.illumina.com,"9,000+","$4.5B+",1998,Large Enterprise,"DNA Sequencing, Genomic Analysis",Verified
+Genomics,Thermo Fisher Scientific,USA,https://www.thermofisher.com,"130,000+","$49B+",1902,Conglomerate,"Sequencing, PCR, Genetic Analysis",Verified
+Genomics,Pacific Biosciences,USA,https://www.pacb.com,"600+","$200M+",2000,Medium Enterprise,"Long-Read Sequencing, HiFi",Verified
+Genomics,Oxford Nanopore Technologies,UK,https://nanoporetech.com,"800+","$200M+",2005,Medium Enterprise,"Portable Sequencing, Real-Time",Verified
+Genomics,BGI Group,China,https://www.bgi.com,"8,000+","$4B+",1999,Large Enterprise,"Sequencing, Genomics Research",Verified
+Genomics,QIAGEN,Germany,https://www.qiagen.com,"6,000+","$2B+",1984,Large Enterprise,"Sample to Insight, Automation",Verified
+Genomics,10x Genomics,USA,https://www.10xgenomics.com,"1,200+","$500M+",2012,Large Enterprise,"Single-Cell, Spatial Genomics",Verified
+Genomics,Guardant Health,USA,https://www.guardanthealth.com,"1,400+","$500M+",2012,Large Enterprise,"Liquid Biopsy, Oncology Genomics",Verified
+Genomics,Invitae,USA,https://www.invitae.com,"1,400+","$500M+",2010,Large Enterprise,"Genetic Information, Medical Genetics",Verified
+Genomics,Myriad Genetics,USA,https://www.myriad.com,"2,500+","$700M+",1991,Large Enterprise,"Genetic Testing, Hereditary Cancer",Verified
+Genomics,Natera,USA,https://www.natera.com,"2,500+","$800M+",2004,Large Enterprise,"Cell-Free DNA Testing, Prenatal, Oncology",Verified
+Genomics,Color Health,USA,https://www.color.com,"500+","$200M+",2013,Medium Enterprise,"Population Health, Genetic Testing",Verified
+Genomics,Fulgent Genetics,USA,https://www.fulgentgenetics.com,"500+","$200M+",2011,Medium Enterprise,"Genetic Testing, Next-Generation Sequencing",Verified
+Genomics,Twist Bioscience,USA,https://www.twistbioscience.com,"700+","$200M+",2013,Medium Enterprise,"Synthetic DNA, NGS Target Enrichment",Verified
+Genomics,Genomics England,UK,https://www.genomicsengland.co.uk,"300+","N/A",2013,Government,"Genome Sequencing, NHS, Research",Verified
+Genomics,SOPHiA GENETICS,Switzerland,https://www.sophiagenetics.com,"500+","$100M+",2011,Medium Enterprise,"Data-Driven Medicine, AI, Genomics",Verified
+Genomics,Personalis,USA,https://www.personalis.com,"300+","$50M+",2011,Medium Enterprise,"Cancer Genomics, Immuno-Oncology",Verified
+Genomics,Veritas Genetics,USA,https://www.veritasgenetics.com,"100+","$20M+",2014,Small Enterprise,"Whole Genome Sequencing, Interpretation",Verified
+Elderly Care Tech,GreatCall (Best Buy),USA,https://www.greatcall.com,"(Part of Best Buy)","(Part of Best Buy)",2006,Medium Enterprise,"Emergency Response, Mobile, Wearables",Verified
+Elderly Care Tech,GrandCare Systems,USA,https://www.grandcare.com,"50+","$10M+",2004,Small Enterprise,"Remote Monitoring, Social Connection",Verified
+Elderly Care Tech,Tunstall Healthcare,UK,https://www.tunstall.com,"2,000+","$300M+",1957,Large Enterprise,"Telecare, Connected Health, Monitoring",Verified
+Elderly Care Tech,Alarm.com,USA,https://www.alarm.com,"2,000+","$900M+",2000,Large Enterprise,"Smart Home, Wellness, Activity Monitoring",Verified
+Elderly Care Tech,CarePredict,USA,https://www.carepredict.com,"100+","$20M+",2013,Small Enterprise,"AI, Wearable, Activity & Behavior Tracking",Verified
+Elderly Care Tech,Evermind,USA,https://www.evermind.com,"50+","$10M+",2014,Small Enterprise,"In-Home Monitoring, Activity Sensing",Verified
+Elderly Care Tech,Lively (GreatCall),USA,https://www.mylively.com,"(Part of GreatCall)","(Part of GreatCall)",2012,Medium Enterprise,"Activity Sensors, Mobile Safety",Verified
+Elderly Care Tech,Uniper Care,USA,https://www.unipercare.com,"50+","$10M+",2015,Small Enterprise,"Social Engagement, Telewellness",Verified
+Elderly Care Tech,Home Instead Senior Care,USA,https://www.homeinstead.com,"(Franchise)","$2B+",1994,Large Enterprise,"In-Home Care, Franchise",Verified
+Elderly Care Tech,SafetyLine,Canada,https://www.safetylineloneworker.com,"100+","$20M+",1999,Small Enterprise,"Lone Worker, Fall Detection, Check-Ins",Verified
+Elderly Care Tech,MedMinder,USA,https://www.medminder.com,"100+","$20M+",2007,Small Enterprise,"Pill Dispenser, Medication Management",Verified
+Elderly Care Tech,ClearCare,USA,https://www.clearcareonline.com,"300+","$100M+",2010,Medium Enterprise,"Home Care Software, Scheduling, Billing",Verified
+Elderly Care Tech,CareMerge,USA,https://www.caremerge.com,"100+","$20M+",2010,Small Enterprise,"Care Coordination, Communication",Verified
+Elderly Care Tech,SafeinHome,USA,https://safeinhome.com,"50+","$10M+",2015,Small Enterprise,"Video Monitoring, Fall Detection",Verified
+Elderly Care Tech,Seniorlink,USA,https://www.seniorlink.com,"500+","$100M+",1998,Medium Enterprise,"Care Collaboration, Vela Platform",Verified
+Elderly Care Tech,Intuition Robotics,Israel,https://www.intuitionrobotics.com,"100+","$50M+",2016,Small Enterprise,"ElliQ, AI Companion, Social Robot",Verified
+Elderly Care Tech,K4Connect,USA,https://www.k4connect.com,"100+","$20M+",2013,Small Enterprise,"Smart Home Automation, Wellness",Verified
+Elderly Care Tech,Sense.ly,USA,https://www.sense.ly,"50+","$10M+",2013,Small Enterprise,"Virtual Nurse, Chronic Care Management",Verified
+Elderly Care Tech,CareHero,USA,https://www.carehero.com,"50+","$10M+",2018,Small Enterprise,"Caregiver Support, Remote Monitoring",Verified
+Health Analytics,Optum (UnitedHealth),USA,https://www.optum.com,"(Part of UnitedHealth)","$155B+",2011,Conglomerate,"Data Analytics, Pharmacy Care, Health Services",Verified
+Health Analytics,Cerner (Oracle),USA,https://www.cerner.com,"28,000+","$6B+",1979,Large Enterprise,"Electronic Health Records, Population Health",Verified
+Health Analytics,Epic Systems,USA,https://www.epic.com,"12,000+","$3B+",1979,Large Enterprise,"EHR, Healthcare Software",Verified
+Health Analytics,IBM Watson Health,USA,https://www.ibm.com/watson-health,"(Part of IBM)","(Part of IBM)",1911,Conglomerate,"AI, Data & Analytics, Life Sciences",Verified
+Health Analytics,SAS Institute,USA,https://www.sas.com,"12,000+","$3B+",1976,Large Enterprise,"Advanced Analytics, AI, Data Management",Verified
+Health Analytics,Health Catalyst,USA,https://www.healthcatalyst.com,"1,500+","$300M+",2008,Large Enterprise,"Data Platform, Analytics, Outcomes Improvement",Verified
+Health Analytics,Verana Health,USA,https://veranahealth.com,"200+","$50M+",2018,Small Enterprise,"Real-World Data, Clinical Analytics",Verified
+Health Analytics,Koninklijke Philips,Netherlands,https://www.philips.com/healthcare,"37,000+","$14B+",1891,Large Enterprise,"Health Informatics, Patient Monitoring",Verified
+Health Analytics,MedeAnalytics,USA,https://www.medeanalytics.com,"500+","$100M+",1994,Medium Enterprise,"Healthcare Performance Analytics",Verified
+Health Analytics,Change Healthcare,USA,https://www.changehealthcare.com,"16,000+","$3B+",2007,Large Enterprise,"Revenue Cycle, Data Analytics, Clinical Network",Verified
+Health Analytics,Flatiron Health (Roche),USA,https://flatiron.com,"1,000+","$200M+",2012,Large Enterprise,"Oncology EHR, Real-World Evidence",Verified
+Health Analytics,Tempus Labs,USA,https://www.tempus.com,"2,000+","$300M+",2015,Large Enterprise,"Precision Medicine, Genomic Sequencing, AI",Verified
+Health Analytics,Inovalon,USA,https://www.inovalon.com,"2,500+","$900M+",1998,Large Enterprise,"Cloud-Based Analytics, Data-Driven Insights",Verified
+Health Analytics,Precision Health AI,USA,https://www.precisionhealth.ai,"50+","$10M+",2018,Small Enterprise,"AI-Powered Clinical Trial Matching",Verified
+Health Analytics,Arcadia,USA,https://www.arcadia.io,"500+","$100M+",2002,Medium Enterprise,"Population Health Management, Data Platform",Verified
+Health Analytics,HealthVerity,USA,https://healthverity.com,"300+","$50M+",2014,Medium Enterprise,"Data Marketplace, Identity Management",Verified
+Health Analytics,Trilliant Health,USA,https://www.trillianthealth.com,"100+","$20M+",2018,Small Enterprise,"Healthcare Market Intelligence",Verified
+Health Analytics,OM1,USA,https://www.om1.com,"200+","$50M+",2015,Small Enterprise,"Real-World Data, AI, Predictive Analytics",Verified
+Health Analytics,SymphonyRM,USA,https://symphonyrm.com,"100+","$20M+",2015,Small Enterprise,"Healthcare CRM, Patient Engagement",Verified
+Pharmacy Chains,Walgreens Boots Alliance,USA,https://www.walgreensbootsalliance.com,"315,000+","$132B+",1901,Conglomerate,"Retail Pharmacy, Healthcare Services",Verified
+Pharmacy Chains,CVS Health,USA,https://www.cvs.com,"300,000+","$322B+",1963,Conglomerate,"Retail Pharmacy, PBM, Health Insurance",Verified
+Pharmacy Chains,Rite Aid,USA,https://www.riteaid.com,"50,000+","$24B+",1962,Large Enterprise,"Retail Pharmacy, Drugstore",Verified
+Pharmacy Chains,Walmart Pharmacy,USA,https://www.walmart.com,"2,300,000+","$572B+",1962,Conglomerate,"Retail Pharmacy, Discount",Verified
+Pharmacy Chains,Kroger Pharmacy,USA,https://www.kroger.com,"465,000+","$148B+",1883,Conglomerate,"Retail Pharmacy, Grocery",Verified
+Pharmacy Chains,Albertsons Companies,USA,https://www.albertsons.com,"290,000+","$78B+",1866,Conglomerate,"Retail Pharmacy, Grocery",Verified
+Pharmacy Chains,Cigna (Express Scripts),USA,https://www.express-scripts.com,"(Part of Cigna)","$174B+",1986,Large Enterprise,"Pharmacy Benefit Management, Mail Order",Verified
+Pharmacy Chains,Publix Pharmacy,USA,https://www.publix.com,"250,000+","$48B+",1930,Large Enterprise,"Retail Pharmacy, Grocery",Verified
+Pharmacy Chains,Costco Pharmacy,USA,https://www.costco.com,"304,000+","$227B+",1976,Conglomerate,"Retail Pharmacy, Membership Warehouse",Verified
+Pharmacy Chains,Lloyds Pharmacy,UK,https://lloydspharmacy.com,"15,000+","$2B+",1973,Large Enterprise,"Community Pharmacy, Clinical Services",Verified
+Pharmacy Chains,Shinagawa Pharmaceuticals,Japan,https://www.shinagawa-holdings.com,"5,000+","$1B+",1879,Large Enterprise,"Pharmacy, Drug Distribution",Verified
+Pharmacy Chains,Watsons (AS Watson Group),Hong Kong,https://www.aswatson.com,"130,000+","$22B+",1828,Large Enterprise,"Health & Beauty Retail, Pharmacy",Verified
+Pharmacy Chains,Guardian Health & Beauty,Singapore,https://www.guardian.com.sg,"5,000+","$500M+",1972,Large Enterprise,"Health & Beauty, Pharmacy",Verified
+Pharmacy Chains,Zuellig Pharma,Singapore,https://www.zuelligpharma.com,"13,000+","$15B+",1922,Large Enterprise,"Pharmaceutical Distribution, Services",Verified
+Pharmacy Chains,PharmEasy,India,https://pharmeasy.in,"5,000+","$1B+",2015,Large Enterprise,"Online Pharmacy, Diagnostics",Verified
+Pharmacy Chains,Netmeds,India,https://www.netmeds.com,"3,000+","$200M+",2015,Medium Enterprise,"Online Pharmacy, Healthcare Products",Verified
+Pharmacy Chains,MedPlus,India,https://www.medplusmart.com,"15,000+","$500M+",2006,Large Enterprise,"Retail Pharmacy, Diagnostics",Verified
+Pharmacy Chains,Drogaria São Paulo,Brazil,https://www.drogariasaopaulo.com.br,"10,000+","$1B+",1935,Large Enterprise,"Drugstore, Retail Pharmacy",Verified
+Medical Education,Medscape (WebMD),USA,https://www.medscape.com,"(Part of WebMD)","(Part of WebMD)",1995,Large Enterprise,"CME, Medical News, Reference",Verified
+Medical Education,Kaplan Medical,USA,https://www.kaptest.com/medical,"(Part of Kaplan)","(Part of Kaplan)",1938,Large Enterprise,"Test Prep, USMLE, Board Review",Verified
+Medical Education,AMBOSS,Germany,https://www.amboss.com,"500+","$100M+",2012,Medium Enterprise,"Medical Knowledge Platform, Qbank",Verified
+Medical Education,Osmosis,USA,https://www.osmosis.org,"100+","$50M+",2013,Small Enterprise,"Video Library, Qbank, Health Education",Verified
+Medical Education,Skyscape Medical Apps,USA,https://www.skyscape.com,"(Part of Everyday Health)","(Part of Everyday Health)",2000,Medium Enterprise,"Medical Reference, Apps",Verified
+Medical Education,Elsevier Clinical Solutions,Netherlands,https://www.elsevier.com,"8,200+","$3B+",1880,Large Enterprise,"Clinical Reference, Decision Support",Verified
+Medical Education,Wolters Kluwer Health,Netherlands,https://www.wolterskluwer.com,"19,000+","$5B+",1836,Large Enterprise,"Clinical Decision Support, Ovid",Verified
+Medical Education,McGraw Hill Medical,USA,https://www.mheducation.com,"5,000+","$2B+",1888,Large Enterprise,"Medical Textbooks, Reference",Verified
+Medical Education,Thieme Medical Publishers,Germany,https://www.thieme.com,"1,000+","$200M+",1886,Large Enterprise,"Medical and Science Publishing",Verified
+Medical Education,MedPage Today,USA,https://www.medpagetoday.com,"200+","$50M+",2004,Medium Enterprise,"Medical News, CME",Verified
+Medical Education,DocCheck Medical Services,Germany,https://www.doccheck.com,"200+","$50M+",1998,Medium Enterprise,"Online Community, Medical Logins",Verified
+Medical Education,Figure 1,Canada,https://figure1.com,"50+","$10M+",2013,Small Enterprise,"Medical Image Sharing, Social Network",Verified
+Medical Education,Doximity,USA,https://www.doximity.com,"500+","$200M+",2010,Medium Enterprise,"Professional Network, Medical News",Verified
+Medical Education,MedSchoolCoach,USA,https://medschoolcoach.com,"100+","$20M+",2007,Small Enterprise,"Admissions Consulting, Tutoring",Verified
+Medical Education,OnlineMedEd,USA,https://onlinemeded.org,"50+","$10M+",2013,Small Enterprise,"Medical Education Videos, Curriculum",Verified
+Medical Education,Meducation,UK,https://www.meducation.net,"50+","$5M+",2008,Small Enterprise,"Medical Education Resources, Sharing",Verified
+Medical Education,Medmastery,Austria,https://www.medmastery.com,"50+","$10M+",2015,Small Enterprise,"Online Medical Courses, Clinical Skills",Verified
+Medical Education,StatPearls Publishing,USA,https://www.statpearls.com,"100+","$20M+",2014,Small Enterprise,"Medical Education, Question Bank",Verified
+Health Tourism,Bumrungrad International,Thailand,https://www.bumrungrad.com,"5,000+","$500M+",1980,Large Enterprise,"International Hospital, JCI Accredited",Verified
+Health Tourism,Apollo Hospitals,India,https://www.apollohospitals.com,"70,000+","$2B+",1983,Large Enterprise,"Multi-Specialty, Cardiac, Orthopedics",Verified
+Health Tourism,Clemenceau Medical Center,Lebanon,https://www.cmc.com.lb,"1,000+","$100M+",2005,Medium Enterprise,"JCI Accredited, Multi-Specialty",Verified
+Health Tourism,Anadolu Medical Center,Turkey,https://www.anadolumedicalcenter.com,"2,000+","$200M+",2005,Large Enterprise,"Oncology, Cardiology, JCI Accredited",Verified
+Health Tourism,Gleneagles Hospital,Singapore,https://www.gleneagles.com.sg,"2,000+","$300M+",1957,Large Enterprise,"Multi-Specialty, JCI Accredited",Verified
+Health Tourism,Samitivej Hospital,Thailand,https://www.samitivejhospitals.com,"3,000+","$300M+",1979,Large Enterprise,"International Patients, Pediatrics",Verified
+Health Tourism,Asklepios Kliniken,Germany,https://www.asklepios.com,"57,000+","$7B+",1903,Large Enterprise,"Multi-Specialty, Rehabilitation",Verified
+Health Tourism,Quirónsalud,Spain,https://www.quironsalud.com,"35,000+","$4B+",2000,Large Enterprise,"Hospital Network, Multi-Specialty",Verified
+Health Tourism,Fortis Hospitals,India,https://www.fortishealthcare.com,"23,000+","$1B+",1996,Large Enterprise,"Multi-Specialty, Cardiac, Orthopedics",Verified
+Health Tourism,Prince Court Medical Centre,Malaysia,https://www.princecourt.com,"1,000+","$100M+",2007,Medium Enterprise,"JCI Accredited, Multi-Specialty",Verified
+Health Tourism,Shouldice Hospital,Canada,https://www.shouldice.com,"300+","$50M+",1945,Small Enterprise,"Hernia Repair, Specialty Surgery",Verified
+Health Tourism,Medicana Hospitals,Turkey,https://www.medicana.com.tr,"10,000+","$1B+",1992,Large Enterprise,"Hospital Group, Multi-Specialty",Verified
+Health Tourism,Centro Médico ABC,Mexico,https://www.abchospital.com,"1,000+","$100M+",1918,Medium Enterprise,"JCI Accredited, Tertiary Care",Verified
+Health Tourism,Raffles Hospital,Singapore,https://www.rafflesmedicalgroup.com,"(Part of Raffles Medical)","$500M+",1976,Large Enterprise,"Multi-Specialty, Health Screening",Verified
+Health Tourism,Asian Heart Institute,India,https://www.asianheartinstitute.org,"500+","$100M+",2002,Medium Enterprise,"Cardiac Surgery, JCI Accredited",Verified
+Health Tourism,Hinduja Hospital,India,https://www.hindujahospital.com,"2,000+","$200M+",1951,Large Enterprise,"Multi-Specialty, Tertiary Care",Verified
+Health Tourism,Acibadem Hospitals,Turkey,https://www.acibademinternational.com,"23,000+","$2B+",1991,Large Enterprise,"Hospital Group, JCI Accredited",Verified
+Health Tourism,Medanta Hospitals,India,https://www.medanta.org,"5,000+","$500M+",2009,Large Enterprise,"Multi-Specialty, Quaternary Care",Verified
+Health Tourism,Vejthani Hospital,Thailand,https://www.vejthani.com,"2,000+","$200M+",1994,Large Enterprise,"JCI Accredited, Multi-Specialty",Verified

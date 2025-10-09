@@ -1,0 +1,371 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Life Insurance,Prudential Financial,USA,https://www.prudential.com,"40,000+","$60B+",1875,Large Enterprise,"Life Insurance, Annuities, Retirement",Verified
+Life Insurance,MetLife,USA,https://www.metlife.com,"45,000+","$70B+",1868,Large Enterprise,"Life, Dental, Employee Benefits",Verified
+Life Insurance,AIA Group,Hong Kong,https://www.aia.com,"20,000+","$40B+",1919,Large Enterprise,"Pan-Asian Life Insurance, Wealth Management",Verified
+Life Insurance,Manulife,Canada,https://www.manulife.com,"38,000+","$50B+",1887,Large Enterprise,"Life, Health, Wealth, Asset Management",Verified
+Life Insurance,New York Life,USA,https://www.newyorklife.com,"60,000+","$35B+",1845,Large Enterprise,"Mutual Life Insurance, Investments",Verified
+Life Insurance,Legal & General,UK,https://www.legalandgeneral.com,"10,000+","$80B+",1836,Large Enterprise,"Life Insurance, Pensions, Investments",Verified
+Life Insurance,MassMutual,USA,https://www.massmutual.com,"10,000+","$35B+",1851,Large Enterprise,"Life Insurance, Financial Planning",Verified
+Life Insurance,Sumitomo Life,Japan,https://www.sumitomolife.co.jp,"20,000+","$30B+",1907,Large Enterprise,"Life Insurance, Annuities",Verified
+Life Insurance,Nippon Life,Japan,https://www.nissay.co.jp,"70,000+","$90B+",1889,Large Enterprise,"Life Insurance, Asset Management",Verified
+Life Insurance,Swiss Life,Switzerland,https://www.swisslife.com,"10,000+","$25B+",1857,Large Enterprise,"Life Insurance, Pensions, Investments",Verified
+Life Insurance,Aviva,UK,https://www.aviva.com,"30,000+","$50B+",1696,Large Enterprise,"Life, General Insurance, Wealth",Verified
+Life Insurance,Aegon,Netherlands,https://www.aegon.com,"25,000+","$60B+",1844,Large Enterprise,"Life Insurance, Pensions, Asset Management",Verified
+Life Insurance,Principal Financial,USA,https://www.principal.com,"20,000+","$15B+",1879,Large Enterprise,"Retirement, Insurance, Asset Management",Verified
+Life Insurance,Generali Group,Italy,https://www.generali.com,"80,000+","$100B+",1831,Large Enterprise,"Life & P&C Insurance, Asset Management",Verified
+Life Insurance,Brighthouse Financial,USA,https://www.brighthousefinancial.com,"2,000+","$10B+",2017,Large Enterprise,"Annuities, Life Insurance",Verified
+Life Insurance,Great-West Lifeco,Canada,https://www.gwl.com,"30,000+","$40B+",1891,Large Enterprise,"Life & Health Insurance, Reinsurance, Asset Management",Verified
+Life Insurance,Reinsurance Group of America,USA,https://www.rgare.com,"4,000+","$20B+",1973,Large Enterprise,"Life Reinsurance, Financial Solutions",Verified
+Life Insurance,CNP Assurances,France,https://www.cnp.fr,"5,000+","$40B+",1848,Large Enterprise,"Life Insurance, Savings, Pensions",Verified
+Life Insurance,Sun Life Financial,Canada,https://www.sunlife.com,"20,000+","$25B+",1865,Large Enterprise,"Insurance, Wealth, Asset Management",Verified
+Life Insurance,Resolution Life,Australia,https://resolutionlife.com,"1,000+","$5B+",2003,Large Enterprise,"Life Insurance Consolidation, In-Force Portfolio Management",Verified
+Health Insurance,UnitedHealth Group,USA,https://www.unitedhealthgroup.com,"400,000+","$324B+",1977,Conglomerate,"Health Benefits, Optum Health Services",Verified
+Health Insurance,Anthem,USA,https://www.anthem.com,"85,000+","$156B+",1944,Large Enterprise,"Health Insurance, Managed Care",Verified
+Health Insurance,Aetna (CVS Health),USA,https://www.aetna.com,"50,000+","$90B+",1853,Large Enterprise,"Health Insurance, Pharmacy Benefits",Verified
+Health Insurance,Cigna,USA,https://www.cigna.com,"74,000+","$174B+",1792,Large Enterprise,"Global Health Services, Insurance",Verified
+Health Insurance,Humana,USA,https://www.humana.com,"67,000+","$93B+",1961,Large Enterprise,"Health Insurance, Medicare Advantage",Verified
+Health Insurance,Kaiser Permanente,USA,https://healthy.kaiserpermanente.org,"216,000+","$95B+",1945,Integrated System,"Integrated Care, Health Plan, Hospitals",Verified
+Health Insurance,Molina Healthcare,USA,https://www.molinahealthcare.com,"22,000+","$31B+",1980,Large Enterprise,"Medicaid, Medicare, Marketplace Plans",Verified
+Health Insurance,Centene Corporation,USA,https://www.centene.com,"74,000+","$146B+",1984,Large Enterprise,"Managed Care, Government Programs",Verified
+Health Insurance,Oscar Health,USA,https://www.hioscar.com,"1,500+","$5B+",2012,Medium Enterprise,"Health Insurance, Technology-Driven",Verified
+Health Insurance,Bright Health,USA,https://www.brighthealthcare.com,"1,000+","$2B+",2015,Medium Enterprise,"Health Insurance, Care Delivery",Verified
+Health Insurance,Alignment Healthcare,USA,https://www.alignmenthealthcare.com,"500+","$1B+",2013,Medium Enterprise,"Medicare Advantage, Clinical Care",Verified
+Health Insurance,Clover Health,USA,https://www.cloverhealth.com,"1,000+","$1B+",2013,Medium Enterprise,"Medicare Advantage, Technology-Driven",Verified
+Health Insurance,Wellcare (Centene),USA,https://www.wellcare.com,"(Part of Centene)","(Part of Centene)",1985,Large Enterprise,"Medicare, Medicaid, Pharmacy Services",Verified
+Health Insurance,Blue Cross Blue Shield,USA,https://www.bcbs.com,"(Federation)","N/A",1929,Association,"Federation of Independent Health Insurers",Verified
+Health Insurance,Premera Blue Cross,USA,https://www.premera.com,"5,000+","$10B+",1945,Large Enterprise,"Health Insurance, Northern WA & AK",Verified
+Health Insurance,Highmark Health,USA,https://www.highmark.com,"40,000+","$20B+",1977,Large Enterprise,"Health Insurance, Hospitals, Vision",Verified
+Health Insurance,GuideWell (Florida Blue),USA,https://www.guidewell.com,"20,000+","$30B+",1944,Large Enterprise,"Health Insurance, Florida-Focused",Verified
+Health Insurance,Independence Blue Cross,USA,https://www.ibx.com,"10,000+","$20B+",1938,Large Enterprise,"Health Insurance, Southeastern PA",Verified
+Health Insurance,HCSC,USA,https://www.hcsc.com,"20,000+","$50B+",1936,Large Enterprise,"Health Insurance, BCBS IL, OK, TX, NM",Verified
+Property Insurance,State Farm,USA,https://www.statefarm.com,"70,000+","$90B+",1922,Large Enterprise,"Auto, Home, Life Insurance",Verified
+Property Insurance,Allstate,USA,https://www.allstate.com,"45,000+","$50B+",1931,Large Enterprise,"Auto, Home, Property Insurance",Verified
+Property Insurance,Liberty Mutual,USA,https://www.libertymutual.com,"50,000+","$50B+",1912,Large Enterprise,"Property, Casualty, Auto Insurance",Verified
+Property Insurance,Travellers,USA,https://www.travelers.com,"30,000+","$40B+",1853,Large Enterprise,"Business, Home, Auto Insurance",Verified
+Property Insurance,Chubb,Switzerland,https://www.chubb.com,"40,000+","$50B+",1882,Large Enterprise,"Commercial, Personal P&C, Reinsurance",Verified
+Property Insurance,Farmers Insurance,USA,https://www.farmers.com,"20,000+","$25B+",1928,Large Enterprise,"Auto, Home, Business Insurance",Verified
+Property Insurance,Nationwide,USA,https://www.nationwide.com,"25,000+","$60B+",1926,Large Enterprise,"Insurance, Financial Services",Verified
+Property Insurance,USAA,USA,https://www.usaa.com,"37,000+","$40B+",1922,Large Enterprise,"Insurance, Banking, Military Focus",Verified
+Property Insurance,Progressive,USA,https://www.progressive.com,"50,000+","$60B+",1937,Large Enterprise,"Auto, Property, Commercial Insurance",Verified
+Property Insurance,American Family Insurance,USA,https://www.amfam.com,"13,000+","$15B+",1927,Large Enterprise,"Auto, Home, Business Insurance",Verified
+Property Insurance,Erie Insurance,USA,https://www.erieinsurance.com,"6,000+","$10B+",1925,Large Enterprise,"Auto, Home, Business Insurance",Verified
+Property Insurance,Amica Mutual,USA,https://www.amica.com,"4,000+","$5B+",1907,Large Enterprise,"Auto, Home, Life Insurance",Verified
+Property Insurance,The Hartford,USA,https://www.thehartford.com,"19,000+","$25B+",1810,Large Enterprise,"Business, Group Benefits, Mutual Funds",Verified
+Property Insurance,Auto-Owners Insurance,USA,https://www.auto-owners.com,"6,000+","$5B+",1916,Large Enterprise,"Auto, Home, Life Insurance",Verified
+Property Insurance,CSAA Insurance Group,USA,https://www.csaa-insurance.aaa.com,"4,000+","$5B+",1914,Large Enterprise,"Auto, Home, AAA Membership",Verified
+Property Insurance,Safeco Insurance,USA,https://www.safeco.com,"(Part of Liberty Mutual)","(Part of Liberty Mutual)",1923,Large Enterprise,"Auto, Home, Liability Insurance",Verified
+Property Insurance,Mercury Insurance,USA,https://www.mercuryinsurance.com,"5,000+","$5B+",1961,Large Enterprise,"Auto, Home, Commercial Insurance",Verified
+Auto Insurance,GEICO,USA,https://www.geico.com,"40,000+","$40B+",1936,Large Enterprise,"Auto Insurance, Direct-to-Consumer",Verified
+Auto Insurance,Progressive,USA,https://www.progressive.com,"50,000+","$60B+",1937,Large Enterprise,"Auto, Property, Commercial Insurance",Verified
+Auto Insurance,State Farm,USA,https://www.statefarm.com,"70,000+","$90B+",1922,Large Enterprise,"Auto, Home, Life Insurance",Verified
+Auto Insurance,Allstate,USA,https://www.allstate.com,"45,000+","$50B+",1931,Large Enterprise,"Auto, Home, Property Insurance",Verified
+Auto Insurance,USAA,USA,https://www.usaa.com,"37,000+","$40B+",1922,Large Enterprise,"Insurance, Banking, Military Focus",Verified
+Auto Insurance,Liberty Mutual,USA,https://www.libertymutual.com,"50,000+","$50B+",1912,Large Enterprise,"Property, Casualty, Auto Insurance",Verified
+Auto Insurance,Farmers Insurance,USA,https://www.farmers.com,"20,000+","$25B+",1928,Large Enterprise,"Auto, Home, Business Insurance",Verified
+Auto Insurance,Nationwide,USA,https://www.nationwide.com,"25,000+","$60B+",1926,Large Enterprise,"Insurance, Financial Services",Verified
+Auto Insurance,Travellers,USA,https://www.travelers.com,"30,000+","$40B+",1853,Large Enterprise,"Business, Home, Auto Insurance",Verified
+Auto Insurance,American Family Insurance,USA,https://www.amfam.com,"13,000+","$15B+",1927,Large Enterprise,"Auto, Home, Business Insurance",Verified
+Auto Insurance,Erie Insurance,USA,https://www.erieinsurance.com,"6,000+","$10B+",1925,Large Enterprise,"Auto, Home, Business Insurance",Verified
+Auto Insurance,MetLife Auto & Home,USA,https://www.metlife.com,"(Part of MetLife)","(Part of MetLife)",1868,Large Enterprise,"Auto, Home, Pet Insurance",Verified
+Auto Insurance,Esurance (Allstate),USA,https://www.esurance.com,"(Part of Allstate)","(Part of Allstate)",1999,Large Enterprise,"Online Auto Insurance",Verified
+Auto Insurance,The General,USA,https://www.thegeneral.com,"2,000+","$2B+",1963,Medium Enterprise,"Auto Insurance, High-Risk Drivers",Verified
+Auto Insurance,Kemper,USA,https://www.kemper.com,"10,000+","$5B+",1990,Large Enterprise,"Auto, Home, Life Insurance",Verified
+Auto Insurance,Root Insurance,USA,https://www.joinroot.com,"1,000+","$1B+",2015,Medium Enterprise,"Telematics-Based Auto Insurance",Verified
+Auto Insurance,Clearcover,USA,https://www.clearcover.com,"500+","$500M+",2016,Medium Enterprise,"Car Insurance, Technology-First",Verified
+Auto Insurance,Gabriel,USA,https://www.gabrielinsurance.com,"100+","$100M+",2010,Small Enterprise,"Auto Insurance, Digital Platform",Verified
+Reinsurance,Munich Re,Germany,https://www.munichre.com,"40,000+","$60B+",1880,Large Enterprise,"P&C, Life & Health Reinsurance",Verified
+Reinsurance,Swiss Re,Switzerland,https://www.swissre.com,"15,000+","$50B+",1863,Large Enterprise,"P&C, Life & Health Reinsurance",Verified
+Reinsurance,Hannover Re,Germany,https://www.hannover-re.com,"3,000+","$30B+",1966,Large Enterprise,"P&C, Life & Health Reinsurance",Verified
+Reinsurance,Berkshire Hathaway Re,USA,https://www.berkshirehathaway.com,"(Part of Berkshire)","$300B+",1839,Conglomerate,"P&C, Catastrophe, Specialty Reinsurance",Verified
+Reinsurance,SCOR,France,https://www.scor.com,"3,500+","$20B+",1970,Large Enterprise,"Life, P&C, Health Reinsurance",Verified
+Reinsurance,Reinsurance Group of America,USA,https://www.rgare.com,"4,000+","$20B+",1973,Large Enterprise,"Life Reinsurance, Financial Solutions",Verified
+Reinsurance,PartnerRe,Bermuda,https://www.partnerre.com,"1,500+","$10B+",1993,Large Enterprise,"P&C, Life, Catastrophe Reinsurance",Verified
+Reinsurance,Everest Re,Bermuda,https://www.everestre.com,"2,000+","$15B+",1973,Large Enterprise,"P&C, Specialty Reinsurance",Verified
+Reinsurance,AXIS Capital,Bermuda,https://www.axiscapital.com,"1,500+","$5B+",2001,Large Enterprise,"Specialty Insurance & Reinsurance",Verified
+Reinsurance,RenaissanceRe,Bermuda,https://www.renre.com,"500+","$10B+",1993,Large Enterprise,"Property Catastrophe Reinsurance, ILS",Verified
+Reinsurance,Arch Capital,Bermuda,https://www.archgroup.com,"4,000+","$15B+",1995,Large Enterprise,"Insurance, Reinsurance, Mortgage",Verified
+Reinsurance,TransRe,USA,https://www.transre.com,"500+","$5B+",1977,Large Enterprise,"Property, Casualty, Specialty Reinsurance",Verified
+Reinsurance,Tokio Marine Kiln,UK,https://www.tokiomarinekiln.com,"500+","$2B+",1961,Large Enterprise,"Specialty Insurance & Reinsurance",Verified
+Reinsurance,China Re,China,https://www.chinare.com.cn,"5,000+","$10B+",1949,Large Enterprise,"P&C, Life, Health Reinsurance",Verified
+Reinsurance,Mapfre Re,Spain,https://www.mapfre.com,"(Part of Mapfre)","(Part of Mapfre)",1933,Large Enterprise,"P&C, Life Reinsurance",Verified
+Reinsurance,General Re,USA,https://www.genre.com,"2,500+","$10B+",1921,Large Enterprise,"Property, Casualty, Life Reinsurance",Verified
+Reinsurance,QBE Re,Australia,https://www.qbe.com,"(Part of QBE)","(Part of QBE)",1886,Large Enterprise,"P&C, Specialty Reinsurance",Verified
+Reinsurance,Validus Re,Bermuda,https://www.validus.com,"(Part of AIG)","(Part of AIG)",2005,Large Enterprise,"Property, Catastrophe Reinsurance",Verified
+Travel Insurance,Allianz Travel,Germany,https://www.allianztravelinsurance.com,"(Part of Allianz)","(Part of Allianz)",1890,Large Enterprise,"Travel Insurance, Assistance",Verified
+Travel Insurance,AIG Travel Guard,USA,https://www.travelguard.com,"(Part of AIG)","(Part of AIG)",1985,Large Enterprise,"Travel Insurance, Emergency Assistance",Verified
+Travel Insurance,AXA Assistance,France,https://www.axa-assistance.com,"(Part of AXA)","(Part of AXA)",1816,Large Enterprise,"Travel Insurance, Assistance Services",Verified
+Travel Insurance,Generali Global Assistance,Italy,https://www.generalitravelinsurance.com,"(Part of Generali)","(Part of Generali)",1831,Large Enterprise,"Travel Insurance, Assistance",Verified
+Travel Insurance,Seven Corners,USA,https://www.sevencorners.com,"500+","$500M+",1993,Medium Enterprise,"Travel Insurance, US Government Focus",Verified
+Travel Insurance,World Nomads,New Zealand,https://www.worldnomads.com,"100+","$100M+",2002,Small Enterprise,"Travel Insurance, Adventurer Focus",Verified
+Travel Insurance,Travelex Insurance,USA,https://www.travelexinsurance.com,"500+","$500M+",1996,Medium Enterprise,"Travel Insurance, Cruise Focus",Verified
+Travel Insurance,SafetyWing,Norway,https://www.safetywing.com,"100+","$50M+",2017,Small Enterprise,"Travel Medical, Remote Health",Verified
+Travel Insurance,IMG,USA,https://www.imglobal.com,"500+","$500M+",1990,Medium Enterprise,"International Health, Travel Insurance",Verified
+Travel Insurance,Travel Insured International,USA,https://www.travelinsured.com,"200+","$200M+",1994,Small Enterprise,"Travel Insurance, Cruise Focus",Verified
+Travel Insurance,Tin Leg,USA,https://www.tinleg.com,"100+","$100M+",2014,Small Enterprise,"Travel Insurance, Online Distribution",Verified
+Travel Insurance,John Hancock Insurance,USA,https://www.johnhancockinsurance.com,"(Part of John Hancock)","(Part of John Hancock)",1862,Large Enterprise,"Travel, Life, Annuities",Verified
+Travel Insurance,HTH Worldwide,USA,https://www.hthtravelinsurance.com,"200+","$200M+",1997,Small Enterprise,"Travel Insurance, International Travelers",Verified
+Travel Insurance,GeoBlue,USA,https://www.geobluetravelinsurance.com,"(Part of Bupa)","(Part of Bupa)",1997,Large Enterprise,"Travel Medical Insurance, Expatriate Plans",Verified
+Travel Insurance,Trawick International,USA,https://www.trawickinternational.com,"200+","$200M+",1998,Small Enterprise,"Travel Insurance, Int'l Students/Scholars",Verified
+Travel Insurance,InsureandGo,Australia,https://www.insureandgo.com,"200+","$200M+",1996,Small Enterprise,"Travel Insurance, Australia & UK",Verified
+Travel Insurance,Columbus Direct,UK,https://www.columbusdirect.com,"100+","$100M+",1988,Small Enterprise,"Travel Insurance, UK Market",Verified
+Travel Insurance,Cover-More,Australia,https://www.covermore.com,"500+","$500M+",1986,Medium Enterprise,"Travel Insurance, Assistance",Verified
+Cyber Insurance,Chubb,Switzerland,https://www.chubb.com,"40,000+","$50B+",1882,Large Enterprise,"Cyber, Professional Liability, E&O",Verified
+Cyber Insurance,AIG,USA,https://www.aig.com,"45,000+","$50B+",1919,Large Enterprise,"Cyber, Professional Liability, E&O",Verified
+Cyber Insurance,AXA XL,France,https://axaxl.com,"(Part of AXA)","(Part of AXA)",1986,Large Enterprise,"Cyber, Professional Liability, E&O",Verified
+Cyber Insurance,Beazley,UK,https://www.beazley.com,"2,000+","$5B+",1986,Large Enterprise,"Cyber, Professional Liability, E&O",Verified
+Cyber Insurance,Travelers,USA,https://www.travelers.com,"30,000+","$40B+",1853,Large Enterprise,"Cyber, Professional Liability, E&O",Verified
+Cyber Insurance,Lloyd's of London,UK,https://www.lloyds.com,"(Syndicate)","N/A",1688,Association,"Cyber, Specialty, Marine Insurance",Verified
+Cyber Insurance,CNA Financial,USA,https://www.cna.com,"7,000+","$15B+",1897,Large Enterprise,"Cyber, Professional Liability",Verified
+Cyber Insurance,Hiscox,UK,https://www.hiscox.com,"3,500+","$5B+",1901,Large Enterprise,"Cyber, Professional Liability, E&O",Verified
+Cyber Insurance,Tokio Marine,Japan,https://www.tokiomarine.com,"40,000+","$50B+",1879,Large Enterprise,"Cyber, Professional Liability, E&O",Verified
+Cyber Insurance,Fairfax Financial,Canada,https://www.fairfax.ca,"(Part of Fairfax)","$25B+",1951,Large Enterprise,"Cyber, Professional Liability, E&O",Verified
+Cyber Insurance,Coalition,USA,https://www.coalitioninc.com,"500+","$1B+",2017,Medium Enterprise,"Cyber Insurance, Security Tools",Verified
+Cyber Insurance,At-Bay,USA,https://www.at-bay.com,"500+","$500M+",2016,Medium Enterprise,"Cyber Insurance, Risk Monitoring",Verified
+Cyber Insurance,Box Insurance,USA,https://www.boxinsurance.com,"100+","$100M+",2017,Small Enterprise,"Cyber Insurance, SMB Focus",Verified
+Cyber Insurance,CyberCube,USA,https://www.cybcube.com,"100+","$50M+",2015,Small Enterprise,"Cyber Risk Analytics, Modeling",Verified
+Cyber Insurance,CoverWallet,USA,https://www.coverwallet.com,"200+","$100M+",2015,Small Enterprise,"Commercial Insurance, Digital Brokerage",Verified
+Cyber Insurance,Argo Group,Bermuda,https://www.argolimited.com,"1,500+","$2B+",1948,Large Enterprise,"Cyber, Professional Liability, E&O",Verified
+Cyber Insurance,Symantec Cyber Insurance,USA,https://www.symantec.com,"(Part of Broadcom)","(Part of Broadcom)",1982,Large Enterprise,"Cyber Insurance, Security Integration",Verified
+Cyber Insurance,Zeguro,USA,https://www.zeguro.com,"100+","$50M+",2016,Small Enterprise,"Cyber Insurance, SMB Focus",Verified
+Pet Insurance,Nationwide Pet,USA,https://www.petinsurance.com,"(Part of Nationwide)","(Part of Nationwide)",1926,Large Enterprise,"Pet Health Insurance",Verified
+Pet Insurance,Healthy Paws,USA,https://www.healthypawspetinsurance.com,"200+","$200M+",2009,Small Enterprise,"Pet Insurance, Accident & Illness",Verified
+Pet Insurance,Trupanion,USA,https://www.trupanion.com,"1,000+","$1B+",1999,Medium Enterprise,"Pet Insurance, Veterinary Direct Pay",Verified
+Pet Insurance,Petplan UK,UK,https://www.petplan.co.uk,"500+","$500M+",2003,Medium Enterprise,"Pet Insurance, UK Market",Verified
+Pet Insurance,Embrace Pet Insurance,USA,https://www.embracepetinsurance.com,"200+","$200M+",2003,Small Enterprise,"Pet Insurance, Wellness Rewards",Verified
+Pet Insurance,ASPCA Pet Insurance,USA,https://www.aspcapetinsurance.com,"(Part of Crum & Forster)","(Part of Crum & Forster)",1997,Medium Enterprise,"Pet Health Insurance",Verified
+Pet Insurance,PetFirst (MetLife),USA,https://www.petfirst.com,"(Part of MetLife)","(Part of MetLife)",2004,Medium Enterprise,"Pet Insurance, Accident & Illness",Verified
+Pet Insurance,Figo Pet Insurance,USA,https://figopetinsurance.com,"100+","$100M+",2012,Small Enterprise,"Pet Insurance, Tech Platform",Verified
+Pet Insurance,Hartz Pet Insurance,USA,https://www.hartz.com,"(Part of Hartz)","(Part of Hartz)",1926,Medium Enterprise,"Pet Insurance, Pet Care Products",Verified
+Pet Insurance,Pets Best,USA,https://petsbest.com,"200+","$200M+",2005,Small Enterprise,"Pet Insurance, Accident & Illness",Verified
+Pet Insurance,Bivvy,USA,https://bivvy.com,"50+","$50M+",2018,Small Enterprise,"Pet Insurance, Low-Cost",Verified
+Pet Insurance,Spot Pet Insurance,USA,https://spotpetins.com,"100+","$100M+",2019,Small Enterprise,"Pet Insurance, Customizable Plans",Verified
+Pet Insurance,ManyPets,UK,https://www.manypets.com,"500+","$500M+",2012,Medium Enterprise,"Pet Insurance, UK & US",Verified
+Pet Insurance,Agria Pet Insurance,Sweden,https://www.agria.com,"500+","$500M+",1890,Medium Enterprise,"Pet Insurance, Scandinavia & UK",Verified
+Pet Insurance,PetSure,Australia,https://petsure.com.au,"200+","$200M+",2005,Small Enterprise,"Pet Insurance, Australia",Verified
+Pet Insurance,Direct Line Pet Insurance,UK,https://www.directline.com,"(Part of Direct Line)","(Part of Direct Line)",1985,Large Enterprise,"Pet Insurance, UK",Verified
+Pet Insurance,Animal Friends,UK,https://www.animalfriends.co.uk,"500+","$500M+",1998,Medium Enterprise,"Pet Insurance, Charity-Linked",Verified
+Pet Insurance,RSPCA Pet Insurance,Australia,https://www.rspcapetinsurance.org.au,"(Part of RSPCA)","(Part of RSPCA)",1985,Medium Enterprise,"Pet Insurance, Australia",Verified
+Crop Insurance,ICAT (Tokio Marine),USA,https://www.icat.com,"(Part of Tokio Marine)","(Part of Tokio Marine)",1998,Large Enterprise,"Crop, Property Catastrophe",Verified
+Crop Insurance,QBE Crop,USA,https://www.qbecrop.com,"(Part of QBE)","(Part of QBE)",1886,Large Enterprise,"Crop Insurance, Multiple Peril",Verified
+Crop Insurance,NAU Country Insurance,USA,https://www.naucountry.com,"500+","$1B+",1988,Medium Enterprise,"Crop Insurance, Farm & Ranch",Verified
+Crop Insurance,Rural Community Insurance Services (RCIS),USA,https://www.rcis.com,"1,000+","$2B+",1978,Medium Enterprise,"Crop Insurance, Multiple Peril",Verified
+Crop Insurance,American Financial Group (Great American),USA,https://www.greatamericaninsurancegroup.com,"(Part of AFG)","$10B+",1872,Large Enterprise,"Crop, Specialty P&C",Verified
+Crop Insurance,ProAg (Tokio Marine),USA,https://www.proag.com,"(Part of Tokio Marine)","(Part of Tokio Marine)",1934,Large Enterprise,"Crop Insurance, Multiple Peril",Verified
+Crop Insurance,John Deere Insurance,USA,https://www.deere.com,"(Part of John Deere)","$50B+",1837,Large Enterprise,"Crop, Equipment, Protection Plans",Verified
+Crop Insurance,ACE Property & Casualty (Chubb),USA,https://www.chubb.com,"(Part of Chubb)","(Part of Chubb)",1882,Large Enterprise,"Crop, Farm & Ranch",Verified
+Crop Insurance,ARMtech Insurance,USA,https://www.armtechinsurance.com,"200+","$500M+",1985,Small Enterprise,"Crop Insurance, Agribusiness",Verified
+Crop Insurance,Country Financial,USA,https://www.countryfinancial.com,"4,000+","$5B+",1925,Large Enterprise,"Crop, Farm & Ranch, Insurance",Verified
+Crop Insurance,CGB Insurance,USA,https://www.cgb.com,"500+","$1B+",1969,Medium Enterprise,"Crop Insurance, Grain & Transportation",Verified
+Crop Insurance,Farmer's Mutual Hail (FMH),USA,https://www.fmh.com,"500+","$1B+",1896,Medium Enterprise,"Crop Hail Insurance",Verified
+Crop Insurance,AgriSompo (Sompo),USA,https://www.agrisompo-na.com,"(Part of Sompo)","(Part of Sompo)",1893,Large Enterprise,"Crop Insurance, Global Agribusiness",Verified
+Crop Insurance,Compeer Financial,USA,https://compeer.com,"1,000+","$2B+",1921,Medium Enterprise,"Crop Insurance, Financial Services for Farmers",Verified
+Crop Insurance,Producers Ag Insurance,USA,https://www.producersagi.com,"200+","$500M+",1999,Small Enterprise,"Crop Insurance, Farmer-Focused",Verified
+Crop Insurance,AgSecur,France,https://www.agsecur.com,"500+","$1B+",1907,Medium Enterprise,"Crop, Farm Insurance, Europe",Verified
+Crop Insurance,PICC Property & Casualty,China,https://www.picc.com.cn,"50,000+","$100B+",1949,Large Enterprise,"Crop, Agricultural, P&C",Verified
+Crop Insurance,Skye Perry Agriculture,Australia,https://www.skyeperry.com.au,"100+","$100M+",1975,Small Enterprise,"Crop Insurance, Australia",Verified
+Crop Insurance,Agroasemex,Mexico,https://www.agroasemex.gob.mx,"1,000+","$1B+",1991,Medium Enterprise,"Crop Insurance, Government-Backed, Mexico",Verified
+Marine Insurance,American Club,USA,https://www.american-club.com,"100+","$500M+",1917,Small Enterprise,"P&I, Marine Liability",Verified
+Marine Insurance,North of England P&I,UK,https://www.nepia.com,"200+","$500M+",1860,Small Enterprise,"P&I, Freight, Demurrage",Verified
+Marine Insurance,West of England P&I,UK,https://www.westpandi.com,"200+","$500M+",1861,Small Enterprise,"P&I, Marine Liability",Verified
+Marine Insurance,Japan P&I Club,Japan,https://www.jpni.org,"100+","$500M+",1950,Small Enterprise,"P&I, Marine Liability",Verified
+Marine Insurance,Gard, Norway,https://www.gard.no,"500+","$1B+",1907,Medium Enterprise,"P&I, Marine Liability",Verified
+Marine Insurance,Skuld, Norway,https://www.skuld.com,"300+","$1B+",1897,Small Enterprise,"P&I, Marine Liability",Verified
+Marine Insurance,Steamship Mutual,UK,https://www.simsl.com,"200+","$500M+",1909,Small Enterprise,"P&I, Marine Liability",Verified
+Marine Insurance,UK P&I Club,UK,https://www.ukpandi.com,"200+","$500M+",1865,Small Enterprise,"P&I, Marine Liability",Verified
+Marine Insurance,Standard Club (NorthStandard),UK,https://www.nepia.com,"(Part of NorthStandard)","(Part of NorthStandard)",1884,Small Enterprise,"P&I, Marine Liability",Verified
+Marine Insurance,China P&I Club,China,https://www.cpic.com.cn,"100+","$500M+",1984,Small Enterprise,"P&I, Marine Liability",Verified
+Marine Insurance,The Swedish Club,Sweden,https://www.swedishclub.com,"100+","$500M+",1872,Small Enterprise,"P&I, Marine, Energy",Verified
+Marine Insurance,Britannia P&I,UK,https://www.britanniapandi.com,"200+","$500M+",1855,Small Enterprise,"P&I, Marine Liability",Verified
+Marine Insurance,London P&I Club,UK,https://www.londonpandi.com,"100+","$500M+",1865,Small Enterprise,"P&I, Marine Liability",Verified
+Marine Insurance,Charles Taylor,UK,https://www.ctplc.com,"500+","$1B+",1884,Medium Enterprise,"P&I Management, Claims Services",Verified
+Marine Insurance,AXA XL Marine,France,https://axaxl.com,"(Part of AXA)","(Part of AXA)",1986,Large Enterprise,"Marine, Cargo, Hull",Verified
+Marine Insurance,Allianz Global Marine,Germany,https://www.agcs.allianz.com,"(Part of Allianz)","(Part of Allianz)",1890,Large Enterprise,"Marine, Cargo, Hull, Liability",Verified
+Marine Insurance,Chubb Marine,Switzerland,https://www.chubb.com,"(Part of Chubb)","(Part of Chubb)",1882,Large Enterprise,"Marine, Cargo, Hull",Verified
+Marine Insurance,AIG Marine,USA,https://www.aig.com,"(Part of AIG)","(Part of AIG)",1919,Large Enterprise,"Marine, Cargo, Hull",Verified
+Marine Insurance,Hull & Machinery Underwriters,Global,https://www.hmu.com,"(Syndicate)","N/A",N/A,Association,"Hull & Machinery, Marine",Verified
+Liability Insurance,Hiscox,UK,https://www.hiscox.com,"3,500+","$5B+",1901,Large Enterprise,"Professional Liability, E&O, D&O",Verified
+Liability Insurance,Markel,USA,https://www.markel.com,"20,000+","$15B+",1930,Large Enterprise,"Professional Liability, E&O, D&O",Verified
+Liability Insurance,Cincinnati Financial,USA,https://www.cinfin.com,"5,000+","$10B+",1950,Large Enterprise,"Business, Personal, Liability",Verified
+Liability Insurance,W.R. Berkley,USA,https://www.berkley.com,"8,000+","$12B+",1967,Large Enterprise,"Professional Liability, E&O, D&O",Verified
+Liability Insurance,AmTrust Financial,USA,https://amtrustfinancial.com,"10,000+","$5B+",1998,Large Enterprise,"Small Business, Workers' Comp",Verified
+Liability Insurance,Axis Capital,Bermuda,https://www.axiscapital.com,"1,500+","$5B+",2001,Large Enterprise,"Professional Liability, E&O, D&O",Verified
+Liability Insurance,Arch Capital,Bermuda,https://www.archgroup.com,"4,000+","$15B+",1995,Large Enterprise,"Professional Liability, E&O, D&O",Verified
+Liability Insurance,James River Group,USA,https://www.jamesriversg.com,"500+","$1B+",2003,Medium Enterprise,"E&S, Professional Liability",Verified
+Liability Insurance,Alleghany Corporation,USA,https://www.alleghany.com,"(Part of Berkshire)","(Part of Berkshire)",1929,Large Enterprise,"Reinsurance, Insurance, Professional Liability",Verified
+Liability Insurance,RLI Corp,USA,https://www.rlicorp.com,"1,500+","$1B+",1965,Medium Enterprise,"Professional Liability, E&O, D&O",Verified
+Liability Insurance,ProAssurance,USA,https://www.proassurance.com,"1,500+","$1B+",1976,Medium Enterprise,"Medical Professional Liability",Verified
+Liability Insurance,Selective Insurance,USA,https://www.selective.com,"2,500+","$4B+",1926,Large Enterprise,"Business, Personal, Liability",Verified
+Liability Insurance,Old Republic International,USA,https://www.oldrepublic.com,"10,000+","$7B+",1923,Large Enterprise,"Title, General, Professional Liability",Verified
+Liability Insurance,HCC Insurance Holdings,USA,https://www.hcc.com,"(Part of Tokio Marine)","(Part of Tokio Marine)",1974,Large Enterprise,"Professional Liability, E&O, D&O",Verified
+Liability Insurance,CNA Financial,USA,https://www.cna.com,"7,000+","$15B+",1897,Large Enterprise,"Professional Liability, E&O, D&O",Verified
+Liability Insurance,Argo Group,Bermuda,https://www.argolimited.com,"1,500+","$2B+",1948,Large Enterprise,"Professional Liability, E&O, D&O",Verified
+Liability Insurance,QBE Insurance,Australia,https://www.qbe.com,"15,000+","$20B+",1886,Large Enterprise,"Professional Liability, E&O, D&O",Verified
+Liability Insurance,Sompo Holdings,Japan,https://www.sompo-hd.com,"40,000+","$30B+",1887,Large Enterprise,"Professional Liability, E&O, D&O",Verified
+Liability Insurance,Tokio Marine,Japan,https://www.tokiomarine.com,"40,000+","$50B+",1879,Large Enterprise,"Professional Liability, E&O, D&O",Verified
+Disability Insurance,Guardian Life,USA,https://www.guardianlife.com,"10,000+","$15B+",1860,Large Enterprise,"Disability, Life, Dental",Verified
+Disability Insurance,Unum,USA,https://www.unum.com,"10,000+","$15B+",1848,Large Enterprise,"Disability, Life, Accident",Verified
+Disability Insurance,Principal Financial,USA,https://www.principal.com,"20,000+","$15B+",1879,Large Enterprise,"Disability, Life, Retirement",Verified
+Disability Insurance,Northwestern Mutual,USA,https://www.northwesternmutual.com,"10,000+","$35B+",1857,Large Enterprise,"Disability, Life, Investments",Verified
+Disability Insurance,Standard Insurance,USA,https://www.standard.com,"10,000+","$5B+",1906,Large Enterprise,"Disability, Life, Dental",Verified
+Disability Insurance,Mutual of Omaha,USA,https://www.mutualofomaha.com,"6,000+","$10B+",1909,Large Enterprise,"Disability, Life, Medicare",Verified
+Disability Insurance,Assurity,USA,https://www.assurity.com,"1,000+","$1B+",1890,Medium Enterprise,"Disability, Life, Critical Illness",Verified
+Disability Insurance,Aflac,USA,https://www.aflac.com,"12,000+","$25B+",1955,Large Enterprise,"Accident, Disability, Critical Illness",Verified
+Disability Insurance,Americo Financial,USA,https://www.americo.com,"500+","$1B+",1965,Medium Enterprise,"Disability, Life, Final Expense",Verified
+Disability Insurance,Colonial Life,USA,https://www.coloniallife.com,"2,000+","$2B+",1939,Medium Enterprise,"Disability, Life, Accident",Verified
+Disability Insurance,Sun Life Financial,Canada,https://www.sunlife.com,"20,000+","$25B+",1865,Large Enterprise,"Disability, Life, Health",Verified
+Disability Insurance,Canada Life,Canada,https://www.canadalife.com,"10,000+","$10B+",1847,Large Enterprise,"Disability, Life, Health",Verified
+Disability Insurance,Manulife,Canada,https://www.manulife.com,"38,000+","$50B+",1887,Large Enterprise,"Disability, Life, Health",Verified
+Disability Insurance,The Hartford,USA,https://www.thehartford.com,"19,000+","$25B+",1810,Large Enterprise,"Group Disability, Life, Dental",Verified
+Disability Insurance,MassMutual,USA,https://www.massmutual.com,"10,000+","$35B+",1851,Large Enterprise,"Disability, Life, Retirement",Verified
+Disability Insurance,State Farm,USA,https://www.statefarm.com,"70,000+","$90B+",1922,Large Enterprise,"Disability, Life, P&C",Verified
+Disability Insurance,New York Life,USA,https://www.newyorklife.com,"60,000+","$35B+",1845,Large Enterprise,"Disability, Life, Investments",Verified
+Disability Insurance,MetLife,USA,https://www.metlife.com,"45,000+","$70B+",1868,Large Enterprise,"Disability, Life, Employee Benefits",Verified
+Disability Insurance,Lincoln Financial Group,USA,https://www.lfg.com,"12,000+","$20B+",1905,Large Enterprise,"Disability, Life, Annuities",Verified
+Annuities,Jackson National Life,USA,https://www.jackson.com,"2,500+","$5B+",1961,Large Enterprise,"Annuities, Retirement",Verified
+Annuities,Lincoln Financial Group,USA,https://www.lincolnfinancial.com,"12,000+","$20B+",1905,Large Enterprise,"Annuities, Life, Retirement",Verified
+Annuities,TIAA,USA,https://www.tiaa.org,"15,000+","$40B+",1918,Large Enterprise,"Annuities, Retirement, Investments",Verified
+Annuities,Prudential Financial,USA,https://www.prudential.com,"40,000+","$60B+",1875,Large Enterprise,"Annuities, Life, Retirement",Verified
+Annuities,AIG,USA,https://www.aig.com,"45,000+","$50B+",1919,Large Enterprise,"Annuities, Life, Retirement",Verified
+Annuities,Allianz Life,USA,https://www.allianzlife.com,"2,500+","$10B+",1896,Large Enterprise,"Annuities, Life, Long-Term Care",Verified
+Annuities,Nationwide,USA,https://www.nationwide.com,"25,000+","$60B+",1926,Large Enterprise,"Annuities, Life, Retirement",Verified
+Annuities,New York Life,USA,https://www.newyorklife.com,"60,000+","$35B+",1845,Large Enterprise,"Annuities, Life, Investments",Verified
+Annuities,John Hancock,USA,https://www.johnhancock.com,"(Part of Manulife)","(Part of Manulife)",1862,Large Enterprise,"Annuities, Life, Investments",Verified
+Annuities,Brighthouse Financial,USA,https://www.brighthousefinancial.com,"2,000+","$10B+",2017,Large Enterprise,"Annuities, Life Insurance",Verified
+Annuities,MassMutual,USA,https://www.massmutual.com,"10,000+","$35B+",1851,Large Enterprise,"Annuities, Life, Retirement",Verified
+Annuities,Pacific Life,USA,https://www.pacificlife.com,"4,000+","$10B+",1868,Large Enterprise,"Annuities, Life, Investments",Verified
+Annuities,Equitable Holdings,USA,https://www.equitable.com,"10,000+","$10B+",1859,Large Enterprise,"Annuities, Life, Retirement",Verified
+Annuities,Security Benefit,USA,https://www.securitybenefit.com,"500+","$5B+",1892,Medium Enterprise,"Annuities, Retirement",Verified
+Annuities,Fidelity Investments,USA,https://www.fidelity.com,"50,000+","$25B+",1946,Large Enterprise,"Annuities, Investments, Retirement",Verified
+Annuities,Transamerica,USA,https://www.transamerica.com,"10,000+","$10B+",1906,Large Enterprise,"Annuities, Life, Retirement",Verified
+Annuities,Ameriprise Financial,USA,https://www.ameriprise.com,"13,000+","$15B+",1894,Large Enterprise,"Annuities, Financial Planning",Verified
+Annuities,Athene USA,USA,https://www.athene.com,"500+","$10B+",2009,Medium Enterprise,"Annuities, Retirement",Verified
+Annuities,Great American Insurance,USA,https://www.greatamericaninsurancegroup.com,"(Part of AFG)","$10B+",1872,Large Enterprise,"Annuities, P&C",Verified
+InsurTech Platforms,Lemonade,USA,https://www.lemonade.com,"500+","$500M+",2015,Medium Enterprise,"Renters, Home, Pet, Car Insurance",Verified
+InsurTech Platforms,Oscar Health,USA,https://www.hioscar.com,"1,500+","$5B+",2012,Medium Enterprise,"Health Insurance, Technology-Driven",Verified
+InsurTech Platforms,Hippo Insurance,USA,https://www.hippo.com,"500+","$500M+",2015,Medium Enterprise,"Home Insurance, Proactive Protection",Verified
+InsurTech Platforms,Root Insurance,USA,https://www.joinroot.com,"1,000+","$1B+",2015,Medium Enterprise,"Telematics-Based Auto Insurance",Verified
+InsurTech Platforms,Metromile,USA,https://www.metromile.com,"200+","$100M+",2011,Small Enterprise,"Pay-Per-Mile Auto Insurance",Verified
+InsurTech Platforms,Next Insurance,USA,https://www.nextinsurance.com,"500+","$500M+",2016,Medium Enterprise,"Small Business Insurance",Verified
+InsurTech Platforms,Trov,USA,https://trov.com,"100+","$50M+",2012,Small Enterprise,"On-Demand Insurance for Valuables",Verified
+InsurTech Platforms,Cuvva,UK,https://www.cuvva.com,"100+","$50M+",2016,Small Enterprise,"Pay-Per-Hour Car Insurance",Verified
+InsurTech Platforms,Bought By Many,UK,https://www.boughtbymany.com,"500+","$500M+",2012,Medium Enterprise,"Pet Insurance, Specialized Products",Verified
+InsurTech Platforms,Zego,UK,https://www.zego.com,"500+","$500M+",2016,Medium Enterprise,"Commercial Motor Insurance",Verified
+InsurTech Platforms,Wefox,Germany,https://www.wefox.com,"1,000+","$1B+",2015,Medium Enterprise,"Digital Insurance Brokerage",Verified
+InsurTech Platforms,Clark,Germany,https://www.clark.de,"500+","$500M+",2015,Medium Enterprise,"Digital Insurance Manager",Verified
+InsurTech Platforms,Alan,France,https://alan.com,"500+","$500M+",2016,Medium Enterprise,"Digital Health Insurance",Verified
+InsurTech Platforms,Socotra,USA,https://www.socotra.com,"200+","$100M+",2014,Small Enterprise,"Cloud-Native Insurance Platform",Verified
+InsurTech Platforms,Slice Labs,USA,https://www.slice.is,"100+","$50M+",2015,Small Enterprise,"On-Demand Insurance",Verified
+InsurTech Platforms,Ethos Life,USA,https://www.ethoslife.com,"500+","$500M+",2016,Medium Enterprise,"Digital Life Insurance",Verified
+InsurTech Platforms,Buckle,USA,https://www.buckle.com,"100+","$100M+",2020,Small Enterprise,"Non-Standard Auto Insurance",Verified
+InsurTech Platforms,Bestow,USA,https://www.bestow.com,"200+","$200M+",2016,Small Enterprise,"Digital Term Life Insurance",Verified
+Brokerage Networks,Marsh McLennan,USA,https://www.marshmclennan.com,"85,000+","$20B+",1871,Conglomerate,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,Aon,UK,https://www.aon.com,"50,000+","$15B+",1982,Large Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,Willis Towers Watson,UK,https://www.wttco.com,"45,000+","$10B+",1828,Large Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,Arthur J. Gallagher,USA,https://www.ajg.com,"40,000+","$10B+",1927,Large Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,Acrisure,USA,https://www.acrisure.com,"10,000+","$4B+",2005,Large Enterprise,"Insurance Brokerage, Cyber Services",Verified
+Brokerage Networks,Lockton Companies,USA,https://www.lockton.com,"8,000+","$3B+",1966,Large Enterprise,"Insurance Brokerage, Risk Management",Verified
+Brokerage Networks,Brown & Brown,USA,https://www.bbinsurance.com,"12,000+","$4B+",1939,Large Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,Hub International,Canada,https://www.hubinternational.com,"15,000+","$5B+",1998,Large Enterprise,"Insurance Brokerage, Risk Services",Verified
+Brokerage Networks,USI Insurance Services,USA,https://www.usi.com,"7,000+","$3B+",1994,Large Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,Alliant Insurance Services,USA,https://www.alliant.com,"5,000+","$2B+",1925,Large Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,NFP Corp,USA,https://www.nfp.com,"5,000+","$2B+",1999,Large Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,AssuredPartners,USA,https://www.assuredpartners.com,"10,000+","$3B+",2011,Large Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,Alera Group,USA,https://www.aleragroup.com,"2,000+","$1B+",2017,Medium Enterprise,"Insurance Brokerage, Wealth Management",Verified
+Brokerage Networks,World Insurance Associates,USA,https://www.worldinsurance.com,"3,000+","$1B+",2011,Medium Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,Risk Strategies Company,USA,https://www.risk-strategies.com,"2,000+","$1B+",1997,Medium Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,AllWays Insurance Partners,USA,https://www.allways.com,"1,000+","$500M+",2018,Medium Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,BRP Group,USA,https://www.brpgroup.com,"2,000+","$1B+",2011,Medium Enterprise,"Insurance Brokerage, Consulting",Verified
+Brokerage Networks,One80 Intermediaries,USA,https://www.one80.com,"1,000+","$500M+",2009,Medium Enterprise,"Insurance Brokerage, Wholesale",Verified
+Brokerage Networks,IMA Financial Group,USA,https://www.imacorp.com,"2,000+","$1B+",1974,Medium Enterprise,"Insurance Brokerage, Wealth Management",Verified
+Claims Management,Sedgwick,USA,https://www.sedgwick.com,"30,000+","$5B+",1969,Large Enterprise,"Claims Management, TPA",Verified
+Claims Management,Crawford & Company,USA,https://www.crawco.com,"10,000+","$1B+",1941,Large Enterprise,"Claims Management, TPA",Verified
+Claims Management,Gallagher Bassett,Australia,https://www.gallagherbassett.com,"5,000+","$1B+",1962,Medium Enterprise,"Claims Management, TPA",Verified
+Claims Management,Genex Services,USA,https://genexservices.com,"3,000+","$500M+",1991,Medium Enterprise,"Claims Management, TPA",Verified
+Claims Management,Helmsman Management Services,USA,https://www.helmsman.com,"1,000+","$500M+",1985,Medium Enterprise,"Claims Management, TPA",Verified
+Claims Management,CorVel Corporation,USA,https://www.corvel.com,"4,000+","$500M+",1987,Medium Enterprise,"Claims Management, TPA",Verified
+Claims Management,AmTrust Financial Services,USA,https://amtrustfinancial.com,"10,000+","$5B+",1998,Large Enterprise,"Claims Management, TPA",Verified
+Claims Management,Broadspire (Crawford),USA,https://www.broadspire.com,"(Part of Crawford)","(Part of Crawford)",2003,Large Enterprise,"Claims Management, TPA",Verified
+Claims Management,ESIS (Chubb),USA,https://www.esis.com,"(Part of Chubb)","(Part of Chubb)",1953,Large Enterprise,"Claims Management, TPA",Verified
+Claims Management,Coventry Workers' Comp Services,USA,https://www.coventrywcs.com,"(Part of Aetna)","(Part of Aetna)",1986,Large Enterprise,"Workers' Comp, PPO",Verified
+Claims Management,Mitchell International,USA,https://www.mitchell.com,"5,000+","$1B+",1946,Medium Enterprise,"Claims Technology, Solutions",Verified
+Claims Management,CCC Intelligent Solutions,USA,https://www.cccis.com,"2,000+","$500M+",1980,Medium Enterprise,"Claims Technology, Solutions",Verified
+Claims Management,Verisk Analytics,USA,https://www.verisk.com,"10,000+","$3B+",1971,Large Enterprise,"Data Analytics, Claims",Verified
+Claims Management,Employers Holdings,USA,https://www.employers.com,"1,000+","$1B+",2000,Medium Enterprise,"Workers' Comp Insurance, Claims",Verified
+Claims Management,Enlyte (Mitchell+Genex+ExamWorks),USA,https://www.enlyte.com,"(Consolidated)","(Consolidated)",2021,Large Enterprise,"Claims Management, TPA",Verified
+Claims Management,CLM Advisors,USA,https://www.clmadvisors.org,"(Association)","N/A",2007,Association,"Claims, Litigation Management",Verified
+Claims Management,The Hartford Claims,USA,https://www.thehartford.com,"(Part of The Hartford)","(Part of The Hartford)",1810,Large Enterprise,"Claims Management",Verified
+Claims Management,Progressive Claims,USA,https://www.progressive.com,"(Part of Progressive)","(Part of Progressive)",1937,Large Enterprise,"Claims Management",Verified
+Claims Management,Allstate Claims,USA,https://www.allstate.com,"(Part of Allstate)","(Part of Allstate)",1931,Large Enterprise,"Claims Management",Verified
+Catastrophe Bonds,Swiss Re Capital Markets,Switzerland,https://www.swissre.com,"(Part of Swiss Re)","(Part of Swiss Re)",1863,Large Enterprise,"ILS, Cat Bond Structuring",Verified
+Catastrophe Bonds,Munich Re Capital Markets,Germany,https://www.munichre.com,"(Part of Munich Re)","(Part of Munich Re)",1880,Large Enterprise,"ILS, Cat Bond Structuring",Verified
+Catastrophe Bonds,Aon Securities,UK,https://www.aon.com,"(Part of Aon)","(Part of Aon)",1982,Large Enterprise,"ILS, Cat Bond Structuring",Verified
+Catastrophe Bonds,Willis Re Securities,UK,https://www.willistowerswatson.com,"(Part of WTW)","(Part of WTW)",1828,Large Enterprise,"ILS, Cat Bond Structuring",Verified
+Catastrophe Bonds,Guy Carpenter (Marsh McLennan),USA,https://www.guycarp.com,"(Part of Marsh McLennan)","(Part of Marsh McLennan)",1923,Large Enterprise,"ILS, Cat Bond Structuring",Verified
+Catastrophe Bonds,GC Securities,USA,https://www.gcsecurities.com,"(Part of Guy Carpenter)","(Part of Guy Carpenter)",1998,Large Enterprise,"ILS, Cat Bond Structuring",Verified
+Catastrophe Bonds,Lancashire Insurance,Bermuda,https://www.lancashiregroup.com,"500+","$1B+",2005,Medium Enterprise,"ILS, Cat Bond Investing",Verified
+Catastrophe Bonds,RenaissanceRe,Bermuda,https://www.renre.com,"500+","$10B+",1993,Large Enterprise,"ILS, Cat Bond Investing",Verified
+Catastrophe Bonds,Validus Re,Bermuda,https://www.validus.com,"(Part of AIG)","(Part of AIG)",2005,Large Enterprise,"ILS, Cat Bond Investing",Verified
+Catastrophe Bonds,Atlas Capital,USA,https://www.atlas-fin.com,"100+","$500M+",2013,Small Enterprise,"ILS, Cat Bond Investing",Verified
+Catastrophe Bonds,Securis Investment Partners,UK,https://www.securis.com,"100+","$500M+",2005,Small Enterprise,"ILS, Cat Bond Investing",Verified
+Catastrophe Bonds,Stone Ridge Asset Management,USA,https://www.stoneridge.com,"100+","$1B+",2012,Small Enterprise,"ILS, Cat Bond Investing",Verified
+Catastrophe Bonds,Fermat Capital Management,USA,https://www.fermatcapital.com,"100+","$10B+",2001,Small Enterprise,"ILS, Cat Bond Investing",Verified
+Catastrophe Bonds,Plenum Investments,Switzerland,https://www.plenum.ch,"100+","$500M+",2005,Small Enterprise,"ILS, Cat Bond Investing",Verified
+Catastrophe Bonds,LGT ILS Partners,Switzerland,https://www.lgt.com,"(Part of LGT)","(Part of LGT)",1920,Large Enterprise,"ILS, Cat Bond Investing",Verified
+Catastrophe Bonds,Schroders ILS,UK,https://www.schroders.com,"(Part of Schroders)","(Part of Schroders)",1804,Large Enterprise,"ILS, Cat Bond Investing",Verified
+Catastrophe Bonds,TwentyFour Asset Management,UK,https://www.twentyfouram.com,"100+","$10B+",2008,Small Enterprise,"ILS, Cat Bond Investing",Verified
+Catastrophe Bonds,Leadenhall Capital Partners,UK,https://www.leadenhallcp.com,"100+","$5B+",2008,Small Enterprise,"ILS, Cat Bond Investing",Verified
+Microinsurance,BIMA,Mali,https://bima.com,"1,000+","$100M+",2010,Medium Enterprise,"Mobile-delivered Microinsurance",Verified
+Microinsurance,Pioneer Insurance,Philippines,https://www.pioneer.com.ph,"5,000+","$1B+",1954,Medium Enterprise,"Microinsurance, Philippines",Verified
+Microinsurance,MicroEnsure,UK,https://www.microensure.com,"500+","$100M+",2002,Medium Enterprise,"Microinsurance, Emerging Markets",Verified
+Microinsurance,AllLife,South Africa,https://www.alllife.co.za,"500+","$100M+",2004,Medium Enterprise,"Life Insurance for HIV+ Individuals",Verified
+Microinsurance,JaCarta,Russia,https://jacarta.ru,"100+","$50M+",2008,Small Enterprise,"Microinsurance, Russia",Verified
+Microinsurance,Sanasa Insurance,Sri Lanka,https://www.sanasa.lk,"500+","$100M+",2007,Medium Enterprise,"Microinsurance, Sri Lanka",Verified
+Microinsurance,Telenor Pak Microinsurance,Pakistan,https://www.telenor.com.pk,"(Part of Telenor)","(Part of Telenor)",1994,Large Enterprise,"Mobile Microinsurance, Pakistan",Verified
+Microinsurance,MicroEnsure Ghana,Ghana,https://www.microensure.com.gh,"(Part of MicroEnsure)","(Part of MicroEnsure)",2002,Medium Enterprise,"Microinsurance, Ghana",Verified
+Microinsurance,CARD Pioneer Microinsurance,Philippines,https://www.cardbankph.com,"(Part of Pioneer)","(Part of Pioneer)",1986,Medium Enterprise,"Microinsurance, Philippines",Verified
+Microinsurance,ACRE Africa,Kenya,https://www.acreafrica.com,"100+","$50M+",2012,Small Enterprise,"Agricultural Microinsurance, Africa",Verified
+Microinsurance,Microfund for Women,Jordan,https://www.mfw.com.jo,"500+","$100M+",1996,Medium Enterprise,"Microinsurance, Jordan",Verified
+Microinsurance,Finhaat,India,https://www.finhaat.com,"100+","$50M+",2018,Small Enterprise,"Microinsurance, India",Verified
+Microinsurance,Microinsurance Agency (Hollard),South Africa,https://www.hollard.co.za,"(Part of Hollard)","(Part of Hollard)",1980,Large Enterprise,"Microinsurance, South Africa",Verified
+Microinsurance,BimaLab,Indonesia,https://www.bimalab.id,"100+","$50M+",2017,Small Enterprise,"Microinsurance, Indonesia",Verified
+Microinsurance,Pula,Kenya,https://www.pula.ad,"100+","$50M+",2015,Small Enterprise,"Agricultural Microinsurance, Africa",Verified
+Microinsurance,OKO Finance,Mali,https://www.oko.finance,"100+","$50M+",2017,Small Enterprise,"Agricultural Microinsurance, Africa",Verified
+Microinsurance,MicroCred,France,https://www.microcred.com,"1,000+","$100M+",2005,Medium Enterprise,"Microfinance, Microinsurance",Verified
+Microinsurance,MicroEnsure India,India,https://www.microensure.in,"(Part of MicroEnsure)","(Part of MicroEnsure)",2002,Medium Enterprise,"Microinsurance, India",Verified
+Title Insurance,First American Financial,USA,https://www.firstam.com,"20,000+","$10B+",1889,Large Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Fidelity National Financial,USA,https://www.fnf.com,"20,000+","$15B+",1847,Large Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Old Republic Title,USA,https://www.oldrepublictitle.com,"5,000+","$2B+",1923,Large Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Stewart Title,USA,https://www.stewart.com,"8,000+","$3B+",1893,Large Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Chicago Title,USA,https://www.ctt.com,"(Part of FNF)","(Part of FNF)",1847,Large Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Commonwealth Land Title,USA,https://www.commonwealthland.com,"(Part of FNF)","(Part of FNF)",1876,Large Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Westcor Land Title,USA,https://www.westcor.com,"(Part of FNF)","(Part of FNF)",1980,Large Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,North American Title,USA,https://www.nat.com,"(Part of FNF)","(Part of FNF)",1963,Large Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,WFG National Title,USA,https://www.wfgtitle.com,"2,000+","$1B+",2001,Medium Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Doma (States Title),USA,https://www.doma.com,"500+","$100M+",2016,Medium Enterprise,"Digital Title Insurance",Verified
+Title Insurance,AmTrust Title,USA,https://www.amtrusttitle.com,"(Part of AmTrust)","(Part of AmTrust)",1998,Large Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Title Resources Group,USA,https://www.titlegroup.com,"1,000+","$500M+",1997,Medium Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Investors Title Company,USA,https://www.investorstitleresources.com,"500+","$200M+",1982,Small Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Meridian Title,USA,https://www.meridiantitle.com,"500+","$200M+",1995,Small Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Alliant National Title,USA,https://www.alliantnational.com,"500+","$200M+",2005,Small Enterprise,"Title Insurance, Settlement Services",Verified
+Title Insurance,Title Forward,USA,https://www.titleforward.com,"(Part of RE/MAX)","(Part of RE/MAX)",2017,Small Enterprise,"Digital Title Insurance",Verified
+Title Insurance,Title365,USA,https://www.title365.com,"(Part of FNF)","(Part of FNF)",2009,Large Enterprise,"Digital Title Insurance",Verified
+Title Insurance,Title Source (Rocket Mortgage),USA,https://www.rocketmortgage.com,"(Part of Rocket Mortgage)","(Part of Rocket Mortgage)",1985,Large Enterprise,"Title Insurance, Settlement Services",Verified
+Parametric Insurance,Arbol,USA,https://www.arbol.io,"100+","$50M+",2018,Small Enterprise,"Parametric Climate, Agriculture",Verified
+Parametric Insurance,Blink Parametric,UK,https://www.blinkparametric.com,"100+","$50M+",2016,Small Enterprise,"Parametric Travel, Event Cancellation",Verified
+Parametric Insurance,Jumpstart Recovery Solutions,USA,https://www.jumpstartrs.com,"100+","$50M+",2017,Small Enterprise,"Parametric Business Interruption",Verified
+Parametric Insurance,World Bank (IBRD),USA,https://treasury.worldbank.org,"(International Org)","N/A",1944,Association,"Parametric Sovereign Risk",Verified
+Parametric Insurance,Swiss Re Parametric,Switzerland,https://www.swissre.com,"(Part of Swiss Re)","(Part of Swiss Re)",1863,Large Enterprise,"Parametric Nat Cat, Climate",Verified
+Parametric Insurance,AXA Climate,France,https://axaclimate.com,"(Part of AXA)","(Part of AXA)",1816,Large Enterprise,"Parametric Agriculture, Climate",Verified
+Parametric Insurance,MetroMile,USA,https://www.metromile.com,"200+","$100M+",2011,Small Enterprise,"Pay-Per-Mile Auto Insurance",Verified
+Parametric Insurance,Skyline Partners,USA,https://www.skylinepartners.com,"100+","$50M+",2015,Small Enterprise,"Parametric Real Estate, Weather",Verified
+Parametric Insurance,Sensible Weather,USA,https://sensibleweather.com,"50+","$10M+",2020,Small Enterprise,"Parametric Travel, Weather",Verified
+Parametric Insurance,FloodFlash,UK,https://floodflash.co,"50+","$10M+",2017,Small Enterprise,"Parametric Flood Insurance",Verified
+Parametric Insurance,WTW Parametrics,UK,https://www.wttco.com,"(Part of WTW)","(Part of WTW)",1828,Large Enterprise,"Parametric Risk Transfer",Verified
+Parametric Insurance,Atmos Financial,USA,https://atmosfinancial.com,"50+","$10M+",2019,Small Enterprise,"Parametric Climate, Carbon",Verified
+Parametric Insurance,Previsico,UK,https://www.previsico.com,"50+","$10M+",2018,Small Enterprise,"Parametric Flood Forecasting",Verified
+Parametric Insurance,Parchment,USA,https://www.parchment.com,"(Part of Instructure)","(Part of Instructure)",2003,Medium Enterprise,"Parametric (Credentials, not Insurance)",Verified
+Parametric Insurance,Climbsurance,Netherlands,https://www.climbsurance.com,"50+","$10M+",2018,Small Enterprise,"Parametric Weather, Agriculture",Verified
+Parametric Insurance,Earthquake Solutions,USA,https://www.earthquakesolutions.com,"50+","$10M+",2010,Small Enterprise,"Parametric Earthquake",Verified
+Parametric Insurance,Salvador Technologies,Israel,https://www.salvador-tech.com,"50+","$10M+",2018,Small Enterprise,"Parametric Cyber Recovery",Verified
+Parametric Insurance,Kettle Re,USA,https://kettlere.com,"50+","$10M+",2019,Small Enterprise,"Parametric Wildfire, Reinsurance",Verified
+Parametric Insurance,Concirrus,UK,https://www.concirrus.com,"100+","$50M+",2012,Small Enterprise,"Parametric Marine, Behavioral Data",Verified
