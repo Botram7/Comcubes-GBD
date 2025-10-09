@@ -1,0 +1,373 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Meat Processing,JBS S.A.,Brazil,https://www.jbs.com.br,"270,000+","$65B+",1953,Conglomerate,"Beef, Poultry, Pork",Verified
+Meat Processing,Tyson Foods,USA,https://www.tysonfoods.com,"142,000+","$53B+",1935,Conglomerate,"Chicken, Beef, Pork",Verified
+Meat Processing,Cargill Meat Solutions,USA,https://www.cargill.com,"160,000+","$165B+",1865,Conglomerate,"Beef, Poultry, Protein",Verified
+Meat Processing,WH Group (Smithfield),China,https://www.wh-group.com,"120,000+","$26B+",1958,Large Enterprise,"Pork Production & Processing",Verified
+Meat Processing,BRF S.A.,Brazil,https://www.brf-global.com,"100,000+","$8B+",1934,Large Enterprise,"Poultry, Processed Foods",Verified
+Meat Processing,NH Foods,Japan,https://www.nh-foods.com,"23,000+","$9B+",1942,Large Enterprise,"Beef, Pork, Processed Meats",Verified
+Meat Processing,Vion Food Group,Netherlands,https://vionfoodgroup.com,"12,000+","$5B+",1928,Large Enterprise,"Pork, Beef",Verified
+Meat Processing,Hormel Foods,USA,https://www.hormelfoods.com,"20,000+","$12B+",1891,Large Enterprise,"Processed Meats, Shelf-Stable Foods",Verified
+Meat Processing,Minerva Foods,Brazil,https://www.minervafoods.com,"30,000+","$3B+",1957,Large Enterprise,"Beef Exports, Leather",Verified
+Meat Processing,Seaboard Corporation,USA,https://www.seaboardcorp.com,"12,000+","$9B+",1918,Large Enterprise,"Pork, Commodity Trading",Verified
+Meat Processing,Perdue Farms,USA,https://www.perduefarms.com,"21,000+","$8B+",1920,Large Enterprise,"Poultry, Pork",Verified
+Meat Processing,Sanderson Farms,USA,https://www.sandersonfarms.com,"17,000+","$4B+",1947,Large Enterprise,"Poultry",Verified
+Meat Processing,Marfrig Global Foods,Brazil,https://www.marfrig.com,"32,000+","$5B+",2000,Large Enterprise,"Beef, Burgers",Verified
+Meat Processing,Nippon Ham,Japan,https://www.nipponham-group.com,"24,000+","$6B+",1949,Large Enterprise,"Pork, Ham, Sausages",Verified
+Meat Processing,OSI Group,USA,https://www.osigroup.com,"20,000+","$7B+",1909,Large Enterprise,"Custom Food Solutions, Value-Added Meats",Verified
+Meat Processing,Bell Food Group,Switzerland,https://www.bellfoodgroup.com,"12,000+","$4B+",1869,Large Enterprise,"Pork, Poultry, Convenience",Verified
+Meat Processing,Cranswick plc,UK,https://www.cranswick.co.uk,"13,000+","$2.5B+",1970,Large Enterprise,"Fresh Pork, Poultry, Convenience",Verified
+Meat Processing,Tönnies Group,Germany,https://www.toennies.de,"16,000+","$7B+",1971,Large Enterprise,"Pork, Sausages",Verified
+Meat Processing,Inalca (Cremonini Group),Italy,https://www.inalca.it,"9,000+","$2B+",1963,Large Enterprise,"Beef, Processed Meats",Verified
+Meat Processing,Charoen Pokphand Foods,Thailand,https://www.cpfworldwide.com,"120,000+","$17B+",1978,Conglomerate,"Aquaculture, Poultry, Livestock",Verified
+Dairy Products,Nestlé SA,Switzerland,https://www.nestle.com,"273,000+","$99B+",1866,Conglomerate,"Infant Nutrition, Dairy, Coffee",Verified
+Dairy Products,Dairy Farmers of America,USA,https://www.dfamilk.com,"18,000+","$21B+",1998,Large Enterprise,"Milk, Cheese, Dairy Ingredients",Verified
+Dairy Products,Fonterra Co-operative,New Zealand,https://www.fonterra.com,"20,000+","$13B+",2001,Large Enterprise,"Dairy Exports, Ingredients",Verified
+Dairy Products,Lactalis Group,France,https://www.lactalis.com,"85,000+","$23B+",1933,Conglomerate,"Cheese, Milk, Yogurt",Verified
+Dairy Products,Danone SA,France,https://www.danone.com,"102,000+","$27B+",1919,Conglomerate,"Yogurt, Plant-Based, Waters",Verified
+Dairy Products,Saputo Inc.,Canada,https://www.saputo.com,"18,000+","$11B+",1954,Large Enterprise,"Cheese, Fluid Milk",Verified
+Dairy Products,Arla Foods,Denmark,https://www.arlafoods.com,"19,000+","$13B+",1881,Large Enterprise,"Dairy Co-operative, Cheese",Verified
+Dairy Products,Yili Group,China,https://www.yili.com,"60,000+","$17B+",1993,Conglomerate,"Milk, Yogurt, Dairy Products",Verified
+Dairy Products,Mengniu Dairy,China,https://www.mengniuir.com,"40,000+","$15B+",1999,Conglomerate,"Milk, Yogurt, Ice Cream",Verified
+Dairy Products,FrieslandCampina,Netherlands,https://www.frieslandcampina.com,"24,000+","$14B+",1871,Large Enterprise,"Milk, Cheese, Ingredients",Verified
+Dairy Products,Dean Foods,USA,https://www.deanfoods.com,"16,000+","$7B+",1925,Large Enterprise,"Fluid Milk, Dairy Products",Verified
+Dairy Products,Meiji Holdings,Japan,https://www.meiji.com,"22,000+","$10B+",1917,Conglomerate,"Dairy, Confectionery, Pharma",Verified
+Dairy Products,Kraft Heinz Dairy,USA,https://www.kraftheinzcompany.com,"38,000+","$26B+",1869,Conglomerate,"Cheese, Dairy Products",Verified
+Dairy Products,Schreiber Foods,USA,https://www.schreiberfoods.com,"7,000+","$5B+",1945,Large Enterprise,"Private Label Cheese, Cream Cheese",Verified
+Dairy Products,Muller Group,Germany,https://www.muller-group.com,"26,000+","$7B+",1896,Large Enterprise,"Yogurt, Dairy Desserts",Verified
+Dairy Products,Sodiaal Group,France,https://www.sodiaal.com,"21,000+","$6B+",1963,Large Enterprise,"Milk, Cheese, Yogurt",Verified
+Dairy Products,Dairy Crest (Saputo),UK,https://www.dairycrest.co.uk,"1,100+","$600M+",1996,Large Enterprise,"Cheese, Dairy Spreads",Verified
+Dairy Products,Morinaga Milk Industry,Japan,https://www.morinagamilk.co.jp,"5,000+","$3B+",1917,Large Enterprise,"Milk, Yogurt, Ice Cream",Verified
+Dairy Products,Amul (GCMMF),India,https://www.amul.com,"3.6M+","$7B+",1946,Large Enterprise,"Milk, Butter, Cheese Co-operative",Verified
+Bakery & Confectionery,Mondelez International,USA,https://www.mondelezinternational.com,"80,000+","$36B+",2012,Conglomerate,"Biscuits, Chocolate, Gum",Verified
+Bakery & Confectionery,Grupo Bimbo,Mexico,https://www.grupobimbo.com,"138,000+","$21B+",1945,Conglomerate,"Bread, Baked Goods, Snacks",Verified
+Bakery & Confectionery,Yamazaki Baking Co.,Japan,https://www.yamazakipan.co.jp,"28,000+","$8B+",1948,Large Enterprise,"Bread, Confectionery",Verified
+Bakery & Confectionery,Ferrero Group,Italy,https://www.ferrero.com,"41,000+","$15B+",1946,Large Enterprise,"Chocolate, Confectionery",Verified
+Bakery & Confectionery,General Mills,USA,https://www.generalmills.com,"35,000+","$20B+",1928,Conglomerate,"Flour, Baking Mixes, Snacks",Verified
+Bakery & Confectionery,Kellogg's,USA,https://www.kelloggs.com,"31,000+","$15B+",1906,Conglomerate,"Cereal, Snacks, Convenience Foods",Verified
+Bakery & Confectionery,Flowers Foods,USA,https://www.flowersfoods.com,"9,000+","$4B+",1919,Large Enterprise,"Bread, Buns, Snacks",Verified
+Bakery & Confectionery,Barilla Group,Italy,https://www.barillagroup.com,"8,500+","$4B+",1877,Large Enterprise,"Pasta, Sauces, Bakery",Verified
+Bakery & Confectionery,Hershey Company,USA,https://www.thehersheycompany.com,"18,000+","$10B+",1894,Large Enterprise,"Chocolate, Confectionery, Snacks",Verified
+Bakery & Confectionery,Lotte Confectionery,South Korea,https://www.lotte.co.kr,"5,000+","$2B+",1967,Large Enterprise,"Gum, Chocolate, Snacks",Verified
+Bakery & Confectionery,Pladis Global,UK,https://www.pladisglobal.com,"25,000+","$4B+",2016,Large Enterprise,"Biscuits, Chocolate, Wafers",Verified
+Bakery & Confectionery,Aryzta AG,Switzerland,https://www.aryzta.com,"10,000+","$2B+",2008,Large Enterprise,"Frozen Bakery, Baked Goods",Verified
+Bakery & Confectionery,McKee Foods,USA,https://www.mckeefoods.com,"6,000+","$1B+",1934,Large Enterprise,"Snack Cakes, Cookies",Verified
+Bakery & Confectionery,Campbell Soup Company,USA,https://www.campbells.com,"14,000+","$9B+",1869,Large Enterprise,"Soup, Snacks, Simple Meals",Verified
+Bakery & Confectionery,Hain Celestial Group,USA,https://www.hain.com,"5,500+","$2B+",1993,Large Enterprise,"Natural & Organic Foods",Verified
+Bakery & Confectionery,Cargill Cocoa & Chocolate,USA,https://www.cargill.com,"160,000+","$165B+",1865,Conglomerate,"Cocoa, Chocolate Ingredients",Verified
+Bakery & Confectionery,Haribo GmbH & Co. KG,Germany,https://www.haribo.com,"7,000+","$3B+",1920,Large Enterprise,"Gummi Candies, Licorice",Verified
+Bakery & Confectionery,Orion Confectionery,South Korea,https://www.orionworld.com,"5,000+","$1B+",1956,Large Enterprise,"Chocolate, Snacks, Biscuits",Verified
+Bakery & Confectionery,Crown Confectionery,South Korea,https://www.crown.co.kr,"2,000+","$500M+",1956,Large Enterprise,"Bakery, Snacks",Verified
+Bakery & Confectionery,Perfetti Van Melle,Netherlands,https://www.perfettivanmelle.com,"18,000+","$2B+",2001,Large Enterprise,"Candy, Gum, Mints",Verified
+Fruit & Vegetable Processing,Dole Food Company,USA,https://www.dole.com,"38,000+","$9B+",1851,Large Enterprise,"Fresh Fruit, Vegetables",Verified
+Fruit & Vegetable Processing,Del Monte Pacific,Singapore,https://www.delmontepacific.com,"10,000+","$2B+",1886,Large Enterprise,"Canned Fruit, Juice, Vegetables",Verified
+Fruit & Vegetable Processing,Chiquita Brands International,USA,https://www.chiquita.com,"20,000+","$3B+",1870,Large Enterprise,"Bananas, Fresh Produce",Verified
+Fruit & Vegetable Processing,Bonduelle Group,France,https://www.bonduelle.com,"14,000+","$3B+",1853,Large Enterprise,"Canned & Frozen Vegetables",Verified
+Fruit & Vegetable Processing,Conagra Brands (Produce),USA,https://www.conagrabrands.com,"18,000+","$12B+",1919,Conglomerate,"Frozen & Canned Vegetables",Verified
+Fruit & Vegetable Processing,Mission Produce,USA,https://www.missionproduce.com,"6,000+","$1B+",1983,Large Enterprise,"Avocado Sourcing & Distribution",Verified
+Fruit & Vegetable Processing,Total Produce (Dole),Ireland,https://www.doleplc.com,"45,000+","$9B+",1826,Large Enterprise,"Fresh Fruit & Vegetables",Verified
+Fruit & Vegetable Processing,Fresh Del Monte Produce,USA,https://www.freshdelmonte.com,"42,000+","$4B+",1886,Large Enterprise,"Fresh & Prepared Fruit & Vegetables",Verified
+Fruit & Vegetable Processing,Sunkist Growers,USA,https://www.sunkist.com,"500+","$1B+",1893,Medium Enterprise,"Citrus Marketing Co-operative",Verified
+Fruit & Vegetable Processing,Driscoll's,USA,https://www.driscolls.com,"10,000+","$4B+",1904,Large Enterprise,"Berries, Fresh Fruit",Verified
+Fruit & Vegetable Processing,Naturipe Farms,USA,https://www.naturipe.com,"1,000+","$500M+",1917,Medium Enterprise,"Berry Grower & Marketer",Verified
+Fruit & Vegetable Processing,Calavo Growers,USA,https://www.calavo.com,"3,000+","$1B+",1924,Large Enterprise,"Avocados, Fresh-cut Fruit",Verified
+Fruit & Vegetable Processing,Grimmway Farms,USA,https://www.grimmway.com,"5,000+","$1B+",1968,Large Enterprise,"Carrots, Organic Produce",Verified
+Fruit & Vegetable Processing,Earthbound Farm,USA,https://www.earthboundfarm.com,"600+","$500M+",1984,Medium Enterprise,"Organic Salads & Produce",Verified
+Fruit & Vegetable Processing,Tanimura & Antle,USA,https://www.taproduce.com,"3,000+","$700M+",1982,Large Enterprise,"Fresh Lettuce, Vegetables",Verified
+Fruit & Vegetable Processing,Mann Packing,USA,https://www.mannpacking.com,"1,500+","$300M+",1939,Medium Enterprise,"Fresh-cut Vegetables",Verified
+Fruit & Vegetable Processing,Greenyard NV,Belgium,https://www.greenyard.group,"9,000+","$4B+",1987,Large Enterprise,"Frozen & Fresh Fruit & Vegetables",Verified
+Fruit & Vegetable Processing,Costa Group,Australia,https://www.costagroup.com.au,"7,000+","$1B+",1888,Large Enterprise,"Berries, Mushrooms, Citrus",Verified
+Fruit & Vegetable Processing,Zespri International,New Zealand,https://www.zespri.com,"400+","$3B+",1997,Medium Enterprise,"Kiwifruit Marketing",Verified
+Oils & Fats,Bunge Limited,USA,https://www.bunge.com,"23,000+","$67B+",1818,Conglomerate,"Agribusiness, Edible Oils",Verified
+Oils & Fats,Wilmar International,Singapore,https://www.wilmar-international.com,"90,000+","$65B+",1991,Conglomerate,"Palm Oil, Sugar, Grains",Verified
+Oils & Fats,Cargill Oils,USA,https://www.cargill.com,"160,000+","$165B+",1865,Conglomerate,"Edible Oils, Ingredients",Verified
+Oils & Fats,ADM (Archer Daniels Midland),USA,https://www.adm.com,"41,000+","$102B+",1902,Conglomerate,"Oilseeds, Grains, Ingredients",Verified
+Oils & Fats,Aceites Borges Pont,Spain,https://www.borgespont.com,"500+","$300M+",1896,Medium Enterprise,"Olive Oil, Seed Oils",Verified
+Oils & Fats,Olam Agri,Singapore,https://www.olamagri.com,"87,000+","$39B+",1989,Conglomerate,"Agri-commodities, Edible Oils",Verified
+Oils & Fats,IOI Corporation,Malaysia,https://www.ioigroup.com,"30,000+","$5B+",1969,Large Enterprise,"Palm Oil, Oleochemicals",Verified
+Oils & Fats,AAK AB,Sweden,https://www.aak.com,"4,000+","$3B+",1871,Large Enterprise,"Specialty Oils & Fats",Verified
+Oils & Fats,Golden Agri-Resources,Singapore,https://www.goldenagri.com.sg,"50,000+","$9B+",1996,Large Enterprise,"Palm Oil, Oilseed Products",Verified
+Oils & Fats,Sime Darby Plantation,Malaysia,https://www.simedarbyplantation.com,"80,000+","$5B+",1910,Large Enterprise,"Palm Oil, Rubber",Verified
+Oils & Fats,Musim Mas Group,Singapore,https://www.musimmas.com,"20,000+","$6B+",1932,Large Enterprise,"Palm Oil, Oleochemicals",Verified
+Oils & Fats,KS Oils,India,https://www.ksol.in,"1,000+","$200M+",1991,Medium Enterprise,"Edible Oils, Oilseeds",Verified
+Oils & Fats,Richardson International,Canada,https://www.richardson.ca,"3,000+","$5B+",1857,Large Enterprise,"Oilseeds, Grains",Verified
+Oils & Fats,Viterra,Canada,https://www.viterra.com,"20,000+","$54B+",1927,Large Enterprise,"Grain Handling, Oilseeds",Verified
+Oils & Fats,Mewah International,Singapore,https://www.mewah.com,"5,000+","$4B+",1957,Large Enterprise,"Edible Oils, Fats",Verified
+Oils & Fats,Fuji Oil Holdings,Japan,https://www.fujioilholdings.com,"4,000+","$2B+",1950,Large Enterprise,"Cocoa, Oils, Fats",Verified
+Oils & Fats,Deoleo SA,Spain,https://www.deoleo.com,"800+","$800M+",1988,Medium Enterprise,"Olive Oil, Seed Oils",Verified
+Oils & Fats,Corbion,Netherlands,https://www.corbion.com,"2,500+","$1B+",1906,Large Enterprise,"Biobased Ingredients, Oils",Verified
+Oils & Fats,Avena Nordic Grain,Sweden,https://www.avena.fi,"200+","$100M+",2005,Small Enterprise,"Oats, Oat Oil",Verified
+Frozen Foods,Nestlé Frozen Foods,Switzerland,https://www.nestle.com,"273,000+","$99B+",1866,Conglomerate,"Pizza, Meals, Vegetables",Verified
+Frozen Foods,Conagra Brands (Frozen),USA,https://www.conagrabrands.com,"18,000+","$12B+",1919,Conglomerate,"Frozen Meals, Snacks, Vegetables",Verified
+Frozen Foods,Nomad Foods,UK,https://www.nomadfoods.com,"6,000+","$3B+",2015,Large Enterprise,"Frozen Seafood, Meals, Vegetables",Verified
+Frozen Foods,McCain Foods,Canada,https://www.mccain.com,"22,000+","$8B+",1957,Large Enterprise,"Frozen Potatoes, Appetizers",Verified
+Frozen Foods,Ajinomoto Frozen Foods,Japan,https://www.ajinomoto.com,"37,000+","$11B+",1909,Conglomerate,"Frozen Foods, Seasonings",Verified
+Frozen Foods,General Mills Frozen,USA,https://www.generalmills.com,"35,000+","$20B+",1928,Conglomerate,"Frozen Vegetables, Meals",Verified
+Frozen Foods,Lamb Weston,USA,https://www.lambweston.com,"7,000+","$5B+",1950,Large Enterprise,"Frozen Potato Products",Verified
+Frozen Foods,Simplot Food Group,USA,https://www.simplot.com,"10,000+","$7B+",1929,Large Enterprise,"Frozen Potatoes, Vegetables",Verified
+Frozen Foods,Bellisio Foods (Charoen Pokphand),Thailand,https://www.bellisiofoods.com,"2,000+","$1B+",1970,Large Enterprise,"Frozen Meals, Entrees",Verified
+Frozen Foods,Tyson Frozen Foods,USA,https://www.tysonfoods.com,"142,000+","$53B+",1935,Conglomerate,"Frozen Poultry, Prepared Foods",Verified
+Frozen Foods,Rich Products Corporation,USA,https://www.richs.com,"12,000+","$4B+",1945,Large Enterprise,"Frozen Desserts, Bakery, Appetizers",Verified
+Frozen Foods,Aryzta Frozen Bakery,Switzerland,https://www.aryzta.com,"10,000+","$2B+",2008,Large Enterprise,"Frozen Bakery Products",Verified
+Frozen Foods,Iglo Group (Nomad Foods),UK,https://www.nomadfoods.com,"6,000+","$3B+",1966,Large Enterprise,"Frozen Fish, Vegetables, Meals",Verified
+Frozen Foods,Schwan's Company,USA,https://www.schwanscompany.com,"11,000+","$3B+",1952,Large Enterprise,"Frozen Pizza, Desserts, Meals",Verified
+Frozen Foods,Pinnacle Foods (Conagra),USA,https://www.conagrabrands.com,"4,500+","$3B+",1998,Large Enterprise,"Frozen & Shelf-stable Foods",Verified
+Frozen Foods,Findus Group,Switzerland,https://www.findus.com,"1,500+","$500M+",1945,Medium Enterprise,"Frozen Foods, Vegetables",Verified
+Frozen Foods,Maruha Nichiro Corporation,Japan,https://www.maruha-nichiro.co.jp,"22,000+","$8B+",1882,Large Enterprise,"Frozen Seafood, Processed Foods",Verified
+Frozen Foods,Greencore Group,Ireland,https://www.greencore.com,"12,000+","$2B+",1991,Large Enterprise,"Convenience Foods, Sandwiches",Verified
+Frozen Foods,Oetker Frozen Products,Germany,https://www.oetker.com,"38,000+","$16B+",1891,Conglomerate,"Frozen Pizza, Convenience Foods",Verified
+Snack Foods,PepsiCo Frito-Lay,USA,https://www.pepsico.com,"309,000+","$86B+",1965,Conglomerate,"Potato Chips, Snacks, Beverages",Verified
+Snack Foods,Kellogg's Snacks,USA,https://www.kelloggs.com,"31,000+","$15B+",1906,Conglomerate,"Crackers, Snack Bars, Cookies",Verified
+Snack Foods,Mars Snacking,USA,https://www.mars.com,"140,000+","$45B+",1911,Conglomerate,"Chocolate, Candy, Snacks",Verified
+Snack Foods,Hershey Snacks,USA,https://www.thehersheycompany.com,"18,000+","$10B+",1894,Large Enterprise,"Chocolate, Candy, Snacks",Verified
+Snack Foods,Mondelez Snacks,USA,https://www.mondelezinternational.com,"80,000+","$36B+",2012,Conglomerate,"Biscuits, Chocolate, Gum",Verified
+Snack Foods,Calbee,Japan,https://www.calbee.co.jp,"5,000+","$2B+",1949,Large Enterprise,"Potato Chips, Snacks",Verified
+Snack Foods,J&J Snack Foods,USA,https://www.jjsnack.com,"4,000+","$1B+",1971,Large Enterprise,"Pretzels, Churros, Ice Cream",Verified
+Snack Foods,Snyder's-Lance (Campbell Soup),USA,https://www.campbellsnacks.com,"5,000+","$2B+",2009,Large Enterprise,"Pretzels, Crackers, Cookies",Verified
+Snack Foods,Intersnack Group,Germany,https://www.intersnack.com,"3,000+","$1B+",1968,Large Enterprise,"Nuts, Crisps, Snacks",Verified
+Snack Foods,Jack Link's Protein Snacks,USA,https://www.jacklinks.com,"7,000+","$2B+",1885,Large Enterprise,"Jerky, Meat Snacks",Verified
+Snack Foods,Pladis Snacks,UK,https://www.pladisglobal.com,"25,000+","$4B+",2016,Large Enterprise,"Biscuits, Crackers, Wafers",Verified
+Snack Foods,UTZ Brands,USA,https://www.utzsnacks.com,"1,800+","$1B+",1921,Large Enterprise,"Potato Chips, Snacks",Verified
+Snack Foods,Want Want China,China,https://www.want-want.com,"60,000+","$4B+",1962,Large Enterprise,"Rice Crackers, Snacks, Beverages",Verified
+Snack Foods,Italpasta,Canada,https://www.italpasta.com,"300+","$200M+",1987,Medium Enterprise,"Pasta, Snacks",Verified
+Snack Foods,Old Dutch Foods,Canada,https://www.olddutchfoods.com,"1,200+","$400M+",1934,Medium Enterprise,"Potato Chips, Snacks",Verified
+Snack Foods,Pringles (Kellogg's),USA,https://www.pringles.com,"31,000+","$15B+",1968,Conglomerate,"Stackable Potato Crisps",Verified
+Snack Foods,Walker's Snacks (PepsiCo),UK,https://www.walkers.co.uk,"309,000+","$86B+",1948,Conglomerate,"Potato Crisps, Snacks",Verified
+Snack Foods,Diamond Foods (Snyder's-Lance),USA,https://www.diamondnuts.com,"1,200+","$900M+",1912,Medium Enterprise,"Nuts, Snacks",Verified
+Soft Drinks,Coca-Cola Company,USA,https://www.coca-colacompany.com,"82,000+","$43B+",1886,Conglomerate,"Sparkling Beverages, Juices",Verified
+Soft Drinks,PepsiCo Beverages,USA,https://www.pepsico.com,"309,000+","$86B+",1965,Conglomerate,"Carbonated Drinks, Juices, Water",Verified
+Soft Drinks,Red Bull,Austria,https://www.redbull.com,"15,000+","$9B+",1987,Large Enterprise,"Energy Drinks, Media",Verified
+Soft Drinks,Keurig Dr Pepper,USA,https://www.keurigdrpepper.com,"28,000+","$14B+",2018,Conglomerate,"Coffee, Carbonated Soft Drinks",Verified
+Soft Drinks,Monster Beverage,USA,https://www.monsterbevcorp.com,"4,300+","$7B+",1935,Large Enterprise,"Energy Drinks, Beverages",Verified
+Soft Drinks,National Beverage Corp,USA,https://www.nationalbeverage.com,"1,400+","$1B+",1985,Large Enterprise,"Sparkling Waters, Soft Drinks",Verified
+Soft Drinks,Asahi Soft Drinks,Japan,https://www.asahigroup-holdings.com,"40,000+","$19B+",1889,Conglomerate,"Tea, Coffee, Soft Drinks",Verified
+Soft Drinks,Kirin Beverage,Japan,https://www.kirinholdings.com,"40,000+","$16B+",1885,Conglomerate,"Tea, Coffee, Soft Drinks",Verified
+Soft Drinks,Suntory Beverage,Japan,https://www.suntory.com,"44,000+","$22B+",1899,Conglomerate,"Tea, Coffee, Soft Drinks",Verified
+Soft Drinks,F&N Beverages,Singapore,https://www.fnn.com.sg,"6,000+","$2B+",1883,Large Enterprise,"Soft Drinks, Dairy Beverages",Verified
+Soft Drinks,Prasi Group (Squirt),Mexico,https://www.prasigroup.com,"1,000+","$300M+",1940,Medium Enterprise,"Soft Drinks, Beverages",Verified
+Soft Drinks,Tingyi (Cayman Islands),China,https://www.tingyi.com,"80,000+","$9B+",1992,Large Enterprise,"Instant Noodles, Beverages",Verified
+Soft Drinks,Otsuka Pharmaceutical Beverages,Japan,https://www.otsuka.co.jp,"47,000+","$13B+",1921,Conglomerate,"Nutraceutical Beverages",Verified
+Soft Drinks,Britvic plc,UK,https://www.britvic.com,"4,000+","$2B+",1845,Large Enterprise,"Soft Drinks, Mixers",Verified
+Soft Drinks,Parle Agro,India,https://www.parleagro.com,"2,000+","$500M+",1949,Medium Enterprise,"Soft Drinks, Packaged Water",Verified
+Soft Drinks,JDE Peet's Beverages,Netherlands,https://www.jdepeets.com,"20,000+","$9B+",2015,Large Enterprise,"Coffee, Tea, Beverages",Verified
+Soft Drinks,Cott Corporation,Canada,https://www.bluebuffalo.com,"11,000+","$3B+",1955,Large Enterprise,"Beverages, Water Filtration",Verified
+Soft Drinks,Big Red Inc.,USA,https://www.bigred.com,"200+","$100M+",1937,Small Enterprise,"Soft Drinks, Cream Soda",Verified
+Alcoholic Beverages,Diageo plc,UK,https://www.diageo.com,"28,000+","$21B+",1997,Conglomerate,"Spirits, Beer, Wine",Verified
+Alcoholic Beverages,Anheuser-Busch InBev,Belgium,https://www.ab-inbev.com,"169,000+","$57B+",2008,Conglomerate,"Beer, Malt Beverages",Verified
+Alcoholic Beverages,Heineken N.V.,Netherlands,https://www.theheinekencompany.com,"85,000+","$33B+",1864,Conglomerate,"Beer, Cider",Verified
+Alcoholic Beverages,Pernod Ricard,France,https://www.pernod-ricard.com,"19,000+","$13B+",1975,Conglomerate,"Spirits, Wine",Verified
+Alcoholic Beverages,Constellation Brands,USA,https://www.cbrands.com,"10,000+","$10B+",1945,Large Enterprise,"Beer, Wine, Spirits",Verified
+Alcoholic Beverages,Kirin Holdings,Japan,https://www.kirinholdings.com,"40,000+","$16B+",1885,Conglomerate,"Beer, Beverages, Pharma",Verified
+Alcoholic Beverages,Asahi Group Holdings,Japan,https://www.asahigroup-holdings.com,"40,000+","$19B+",1889,Conglomerate,"Beer, Spirits, Soft Drinks",Verified
+Alcoholic Beverages,Suntory Holdings,Japan,https://www.suntory.com,"44,000+","$22B+",1899,Conglomerate,"Spirits, Beer, Soft Drinks",Verified
+Alcoholic Beverages,Moët Hennessy Louis Vuitton (LVMH),France,https://www.lvmh.com,"196,000+","$93B+",1987,Conglomerate,"Wine, Spirits, Champagne",Verified
+Alcoholic Beverages,Carlsberg Group,Denmark,https://www.carlsberggroup.com,"41,000+","$11B+",1847,Conglomerate,"Beer, Beverages",Verified
+Alcoholic Beverages,Brown-Forman Corporation,USA,https://www.brown-forman.com,"5,500+","$4B+",1870,Large Enterprise,"Spirits, Wine",Verified
+Alcoholic Beverages,Treasury Wine Estates,Australia,https://www.tweglobal.com,"2,500+","$2B+",2011,Large Enterprise,"Wine",Verified
+Alcoholic Beverages,Thai Beverage,Thailand,https://www.thaibev.com,"50,000+","$7B+",2003,Large Enterprise,"Spirits, Beer, Non-Alc Beverages",Verified
+Alcoholic Beverages,William Grant & Sons,UK,https://www.williamgrant.com,"2,000+","$1B+",1887,Medium Enterprise,"Spirits, Whisky",Verified
+Alcoholic Beverages,Remy Cointreau,France,https://www.remy-cointreau.com,"2,000+","$1B+",1724,Medium Enterprise,"Cognac, Liqueurs",Verified
+Alcoholic Beverages,Bacardi Limited,Bermuda,https://www.bacardilimited.com,"7,000+","$6B+",1862,Large Enterprise,"Spirits, Rum",Verified
+Alcoholic Beverages,Edrington Group,UK,https://www.edrington.com,"3,500+","$1B+",1860,Medium Enterprise,"Spirits, Whisky",Verified
+Alcoholic Beverages,Beam Suntory,USA,https://www.beamsuntory.com,"5,000+","$5B+",2014,Large Enterprise,"Spirits, Whisky",Verified
+Alcoholic Beverages,Molson Coors Beverage Company,USA,https://www.molsoncoors.com,"17,000+","$11B+",2005,Large Enterprise,"Beer, Malt Beverages",Verified
+Coffee & Tea,Nestlé Coffee Brands,Switzerland,https://www.nestle.com,"273,000+","$99B+",1866,Conglomerate,"Instant Coffee, Capsules",Verified
+Coffee & Tea,JDE Peet's,Netherlands,https://www.jdepeets.com,"20,000+","$9B+",2015,Large Enterprise,"Coffee, Tea",Verified
+Coffee & Tea,Starbucks Coffee Company,USA,https://www.starbucks.com,"402,000+","$36B+",1971,Conglomerate,"Coffee Shops, Roasting",Verified
+Coffee & Tea,Lavazza Group,Italy,https://www.lavazza.com,"4,000+","$3B+",1895,Large Enterprise,"Coffee Roasting",Verified
+Coffee & Tea,Strauss Group Coffee,Israel,https://www.strauss-group.com,"15,000+","$2B+",1936,Large Enterprise,"Coffee, Water, Dairy",Verified
+Coffee & Tea,Tata Consumer Products,India,https://www.tataconsumer.com,"3,500+","$2B+",1962,Large Enterprise,"Tea, Coffee, Water",Verified
+Coffee & Tea,Keurig Dr Pepper Coffee,USA,https://www.keurigdrpepper.com,"28,000+","$14B+",2018,Conglomerate,"Coffee, Beverages",Verified
+Coffee & Tea,UCC Ueshima Coffee,Japan,https://www.ucc.co.jp,"2,000+","$1B+",1933,Medium Enterprise,"Coffee Roasting, Vending",Verified
+Coffee & Tea,Sara Lee Bakery Group (JDE),Netherlands,https://www.saraleedesserts.com,"1,000+","$500M+",1939,Medium Enterprise,"Bakery, Desserts",Verified
+Coffee & Tea,Dunkin' Brands,USA,https://www.dunkinbrands.com,"21,000+","$1B+",1950,Large Enterprise,"Coffee, Baked Goods",Verified
+Coffee & Tea,Illycaffè,Italy,https://www.illy.com,"1,400+","$600M+",1933,Medium Enterprise,"Coffee Roasting",Verified
+Coffee & Tea,Coffee Day Global,India,https://www.cafecoffeeday.com,"10,000+","$200M+",1996,Large Enterprise,"Coffee Shops, Vending",Verified
+Coffee & Tea,Melitta Group,Germany,https://www.melitta-group.com,"4,500+","$2B+",1908,Large Enterprise,"Coffee, Filters",Verified
+Coffee & Tea,Tchibo GmbH,Germany,https://www.tchibo.com,"12,000+","$4B+",1949,Large Enterprise,"Coffee, Non-food Retail",Verified
+Coffee & Tea,Costa Coffee (Coca-Cola),UK,https://www.costa.co.uk,"19,000+","$1B+",1971,Large Enterprise,"Coffee Shops, Roasting",Verified
+Coffee & Tea,JAB Holding Company,Luxembourg,https://www.jabholco.com,"150,000+","$50B+",2012,Conglomerate,"Coffee, Pet Care, Retail",Verified
+Coffee & Tea,The J.M. Smucker Company Coffee,USA,https://www.jmsmucker.com,"7,000+","$8B+",1897,Large Enterprise,"Coffee, Jams, Peanut Butter",Verified
+Coffee & Tea,Massimo Zanetti Beverage Group,Italy,https://www.mzbgroup.com,"3,000+","$1B+",1973,Medium Enterprise,"Coffee Roasting",Verified
+Water & Beverages,Nestlé Waters,Switzerland,https://www.nestle-waters.com,"273,000+","$99B+",1866,Conglomerate,"Bottled Water, Beverages",Verified
+Water & Beverages,Danone Waters,France,https://www.danone.com,"102,000+","$27B+",1919,Conglomerate,"Bottled Water, Beverages",Verified
+Water & Beverages,Coca-Cola Beverages,USA,https://www.coca-colacompany.com,"82,000+","$43B+",1886,Conglomerate,"Water, Juices, Soft Drinks",Verified
+Water & Beverages,PepsiCo Beverages,USA,https://www.pepsico.com,"309,000+","$86B+",1965,Conglomerate,"Water, Juices, Soft Drinks",Verified
+Water & Beverages,Groupe Danone Evian,France,https://www.evian.com,"102,000+","$27B+",1908,Conglomerate,"Mineral Water",Verified
+Water & Beverages,Fiji Water,USA,https://www.fijiwater.com,"800+","$300M+",1996,Medium Enterprise,"Artisanal Water",Verified
+Water & Beverages,Voss Water,Norway,https://vosswater.com,"200+","$100M+",1998,Small Enterprise,"Premium Artisanal Water",Verified
+Water & Beverages,Perrier (Nestlé),France,https://www.perrier.com,"273,000+","$99B+",1863,Conglomerate,"Sparkling Mineral Water",Verified
+Water & Beverages,Suntory Beverage Water Brands,Japan,https://www.suntory.com,"44,000+","$22B+",1899,Conglomerate,"Bottled Water, Beverages",Verified
+Water & Beverages,National Beverage Corp (LaCroix),USA,https://www.nationalbeverage.com,"1,400+","$1B+",1985,Large Enterprise,"Sparkling Water, Soft Drinks",Verified
+Water & Beverages,BlueTriton Brands,USA,https://www.bluetritonbrands.com,"7,000+","$5B+",2021,Large Enterprise,"Spring Water, Purified Water",Verified
+Water & Beverages,Crystal Geyser Water Company,USA,https://www.crystalgeyser.com,"500+","$200M+",1977,Medium Enterprise,"Spring Water",Verified
+Water & Beverages,Icelandic Glacial,Iceland,https://icelandicglacial.com,"100+","$50M+",2004,Small Enterprise,"Premium Spring Water",Verified
+Water & Beverages,Highland Spring Group,UK,https://www.highlandspring.com,"400+","$200M+",1979,Medium Enterprise,"Spring Water",Verified
+Water & Beverages,Ty Nant,UK,https://www.tynant.com,"50+","$10M+",1980,Small Enterprise,"Premium Natural Water",Verified
+Water & Beverages,Radenska Group,Slovenia,https://www.radenska.si,"300+","$100M+",1869,Small Enterprise,"Mineral Water",Verified
+Water & Beverages,Mountain Valley Spring Water,USA,https://www.mountainvalleyspring.com,"200+","$50M+",1871,Small Enterprise,"Spring Water",Verified
+Food Service & Restaurants,McDonald's Corporation,USA,https://www.mcdonalds.com,"200,000+","$23B+",1955,Conglomerate,"Quick Service Restaurants",Verified
+Food Service & Restaurants,Yum! Brands (KFC, Pizza Hut),USA,https://www.yum.com,"45,000+","$7B+",1997,Conglomerate,"Quick Service Restaurants",Verified
+Food Service & Restaurants,Starbucks Corporation,USA,https://www.starbucks.com,"402,000+","$36B+",1971,Conglomerate,"Coffee Shops, Roasting",Verified
+Food Service & Restaurants,Restaurant Brands International,Canada,https://www.rbi.com,"N/A","$7B+",2014,Conglomerate,"Quick Service Restaurants",Verified
+Food Service & Restaurants,Compass Group,UK,https://www.compass-group.com,"500,000+","$38B+",1941,Conglomerate,"Contract Food Service",Verified
+Food Service & Restaurants,Sodexo,France,https://www.sodexo.com,"412,000+","$24B+",1966,Conglomerate,"Contract Food Service",Verified
+Food Service & Restaurants,Aramark Corporation,USA,https://www.aramark.com,"270,000+","$17B+",1959,Conglomerate,"Contract Food Service",Verified
+Food Service & Restaurants,Chipotle Mexican Grill,USA,https://www.chipotle.com,"110,000+","$10B+",1993,Large Enterprise,"Fast Casual Restaurants",Verified
+Food Service & Restaurants,Domino's Pizza,USA,https://www.dominos.com,"20,000+","$4B+",1960,Large Enterprise,"Pizza Delivery",Verified
+Food Service & Restaurants,Darden Restaurants,USA,https://www.darden.com,"190,000+","$10B+",1968,Large Enterprise,"Casual Dining Restaurants",Verified
+Food Service & Restaurants,Brinker International,USA,https://www.brinker.com,"62,000+","$4B+",1975,Large Enterprise,"Casual Dining Restaurants",Verified
+Food Service & Restaurants,Autogrill Group,Italy,https://www.autogrill.com,"34,000+","$3B+",1977,Large Enterprise,"Travel Dining, Retail",Verified
+Food Service & Restaurants,Whitbread (Costa Coffee),UK,https://www.whitbread.co.uk,"37,000+","$3B+",1742,Large Enterprise,"Hotels, Restaurants",Verified
+Food Service & Restaurants,Wagamama (The Restaurant Group),UK,https://www.wagamama.com,"5,000+","$500M+",1992,Medium Enterprise,"Casual Dining Restaurants",Verified
+Food Service & Restaurants,Seven & I Food Systems,Japan,https://www.7andi.com,"69,000+","$60B+",1973,Conglomerate,"Convenience Stores, Restaurants",Verified
+Food Service & Restaurants,Deliveroo,UK,https://www.deliveroo.com,"2,500+","$2B+",2013,Medium Enterprise,"Food Delivery",Verified
+Food Service & Restaurants,Just Eat Takeaway,Netherlands,https://www.justeattakeaway.com,"10,000+","$5B+",2000,Large Enterprise,"Food Delivery",Verified
+Food Service & Restaurants,DoorDash,USA,https://www.doordash.com,"20,000+","$8B+",2013,Large Enterprise,"Food Delivery, Logistics",Verified
+Food Service & Restaurants,Uber Eats,USA,https://www.ubereats.com,"32,000+","$11B+",2014,Conglomerate,"Food Delivery, Mobility",Verified
+Seafood Processing,Maruha Nichiro Corporation,Japan,https://www.maruha-nichiro.co.jp,"22,000+","$8B+",1882,Large Enterprise,"Frozen Seafood, Processed Foods",Verified
+Seafood Processing,Nippon Suisan Kaisha (Nissui),Japan,https://www.nissui.co.jp,"20,000+","$6B+",1911,Large Enterprise,"Seafood, Processed Foods",Verified
+Seafood Processing,Mowi ASA,Norway,https://www.mowi.com,"14,000+","$5B+",1964,Large Enterprise,"Farmed Salmon, Seafood",Verified
+Seafood Processing,Thai Union Group,Thailand,https://www.thaiunion.com,"46,000+","$4B+",1977,Large Enterprise,"Canned Tuna, Seafood",Verified
+Seafood Processing,Marine Harvest (Mowi),Norway,https://www.mowi.com,"14,000+","$5B+",1964,Large Enterprise,"Farmed Salmon, Seafood",Verified
+Seafood Processing,Clearwater Seafoods,Canada,https://www.clearwater.ca,"2,000+","$500M+",1976,Medium Enterprise,"Shellfish, Seafood",Verified
+Seafood Processing,High Liner Foods,Canada,https://www.highlinerfoods.com,"4,300+","$1B+",1899,Large Enterprise,"Frozen Seafood",Verified
+Seafood Processing,Grieg Seafood,Norway,https://griegseafood.com,"1,500+","$700M+",1991,Medium Enterprise,"Farmed Salmon",Verified
+Seafood Processing,Lerøy Seafood Group,Norway,https://www.leroyseafood.com,"5,000+","$2B+",1899,Large Enterprise,"Farmed Salmon, Seafood",Verified
+Seafood Processing,SalMar ASA,Norway,https://www.salmar.no,"1,500+","$2B+",1991,Medium Enterprise,"Farmed Salmon",Verified
+Seafood Processing,Bakkafrost,Faroe Islands,https://www.bakkafrost.com,"1,600+","$700M+",1968,Medium Enterprise,"Farmed Salmon",Verified
+Seafood Processing,Trident Seafoods,USA,https://www.tridentseafoods.com,"9,000+","$2B+",1973,Large Enterprise,"Wild-caught Seafood",Verified
+Seafood Processing,Cermaq Group (Mitsubishi),Norway,https://www.cermaq.com,"1,200+","$1B+",2005,Medium Enterprise,"Farmed Salmon",Verified
+Seafood Processing,Austevoll Seafood,Norway,https://www.austevollseafood.com,"8,000+","$3B+",1956,Large Enterprise,"Fishing, Seafood Processing",Verified
+Seafood Processing,Labeyrie Fine Foods,France,https://www.labeyrie.com,"2,000+","$500M+",1946,Medium Enterprise,"Smoked Salmon, Delicatessen",Verified
+Seafood Processing,Sealord Group,New Zealand,https://www.sealord.com,"1,200+","$300M+",1961,Medium Enterprise,"Fishing, Seafood Processing",Verified
+Seafood Processing,Young's Seafood,UK,https://www.youngsseafood.co.uk,"2,500+","$500M+",1805,Medium Enterprise,"Frozen Seafood",Verified
+Seafood Processing,Pescanova,Spain,https://www.pescanova.com,"4,000+","$1B+",1960,Large Enterprise,"Frozen Seafood, Aquaculture",Verified
+Seafood Processing,Seafood Connection,Netherlands,https://www.seafoodconnection.com,"200+","$100M+",1992,Small Enterprise,"Seafood Import, Distribution",Verified
+Grain & Cereal Products,ADM Milling,USA,https://www.adm.com,"41,000+","$102B+",1902,Conglomerate,"Flour, Milling Products",Verified
+Grain & Cereal Products,Cargill Grains,USA,https://www.cargill.com,"160,000+","$165B+",1865,Conglomerate,"Grains, Oilseeds",Verified
+Grain & Cereal Products,Bunge Milling,USA,https://www.bunge.com,"23,000+","$67B+",1818,Conglomerate,"Grains, Oilseeds",Verified
+Grain & Cereal Products,General Mills Cereals,USA,https://www.generalmills.com,"35,000+","$20B+",1928,Conglomerate,"Breakfast Cereals",Verified
+Grain & Cereal Products,Kellogg's Cereals,USA,https://www.kelloggs.com,"31,000+","$15B+",1906,Conglomerate,"Breakfast Cereals",Verified
+Grain & Cereal Products,Pepsico Quaker Oats,USA,https://www.pepsico.com,"309,000+","$86B+",1965,Conglomerate,"Oatmeal, Cereal Bars",Verified
+Grain & Cereal Products,Post Holdings,USA,https://www.postholdings.com,"11,000+","$6B+",1895,Large Enterprise,"Cereals, Active Nutrition",Verified
+Grain & Cereal Products,Ardent Mills,USA,https://www.ardentmills.com,"4,000+","$4B+",2014,Large Enterprise,"Flour Milling",Verified
+Grain & Cereal Products,Conagra Mills,USA,https://www.conagrabrands.com,"18,000+","$12B+",1919,Conglomerate,"Flour, Baking Mixes",Verified
+Grain & Cereal Products,Flour Mills of Nigeria,Nigeria,https://www.fmnplc.com,"12,000+","$2B+",1960,Large Enterprise,"Flour, Pasta, Sugar",Verified
+Grain & Cereal Products,GoodMills Group,Austria,https://www.goodmillsgroup.com,"1,200+","$500M+",1999,Medium Enterprise,"Flour, Baking Ingredients",Verified
+Grain & Cereal Products,Graincorp,Australia,https://www.graincorp.com.au,"3,000+","$5B+",1916,Large Enterprise,"Grain Handling, Storage",Verified
+Grain & Cereal Products,Wilmar Grains,Singapore,https://www.wilmar-international.com,"90,000+","$65B+",1991,Conglomerate,"Grains, Oilseeds",Verified
+Grain & Cereal Products,Nisshin Seifun Group,Japan,https://www.nisshin.com,"20,000+","$5B+",1900,Large Enterprise,"Flour, Processed Foods",Verified
+Grain & Cereal Products,Prima Ltd,Singapore,https://www.prima.com.sg,"1,000+","$300M+",1961,Medium Enterprise,"Flour, Baking Products",Verified
+Grain & Cereal Products,King Milling Company,USA,https://www.kingmilling.com,"200+","$100M+",1890,Small Enterprise,"Flour Milling",Verified
+Grain & Cereal Products,Morning Foods,UK,https://www.morningfoods.co.uk,"500+","$200M+",1889,Medium Enterprise,"Cereals, Oats",Verified
+Grain & Cereal Products,Weetabix Limited,UK,https://www.weetabix.com,"1,000+","$400M+",1932,Medium Enterprise,"Breakfast Cereals",Verified
+Grain & Cereal Products,Viterra Grain,Canada,https://www.viterra.com,"20,000+","$54B+",1927,Large Enterprise,"Grain Handling, Marketing",Verified
+Sugar & Sweeteners,Südzucker AG,Germany,https://www.suedzucker.de,"19,000+","$8B+",1926,Large Enterprise,"Sugar, Bioethanol, Fruits",Verified
+Sugar & Sweeteners,Tereos,France,https://www.tereos.com,"23,000+","$5B+",1932,Large Enterprise,"Sugar, Starch, Alcohol",Verified
+Sugar & Sweeteners,Cosan,Brazil,https://www.cosan.com.br,"45,000+","$7B+",1936,Large Enterprise,"Sugar, Ethanol, Energy",Verified
+Sugar & Sweeteners,Associated British Foods (British Sugar),UK,https://www.abfoods.com,"138,000+","$21B+",1935,Conglomerate,"Sugar, Groceries, Retail",Verified
+Sugar & Sweeteners,Nordzucker AG,Germany,https://www.nordzucker.com,"3,400+","$2B+",1838,Large Enterprise,"Sugar, Animal Feed",Verified
+Sugar & Sweeteners,American Sugar Refining (ASR Group),USA,https://www.asr-group.com,"5,000+","$4B+",1899,Large Enterprise,"Sugar Refining",Verified
+Sugar & Sweeteners,Wilmar Sugar,Singapore,https://www.wilmar-international.com,"90,000+","$65B+",1991,Conglomerate,"Sugar, Palm Oil, Grains",Verified
+Sugar & Sweeteners,Mitr Phol Group,Thailand,https://www.mitrphol.com,"40,000+","$3B+",1946,Large Enterprise,"Sugar, Bio-products",Verified
+Sugar & Sweeteners,Bannari Amman Group,India,https://www.bannari.com,"10,000+","$1B+",1972,Large Enterprise,"Sugar, Distilleries, Wind Power",Verified
+Sugar & Sweeteners,Rogers Sugar,Canada,https://www.rogerssugar.com,"700+","$600M+",1890,Medium Enterprise,"Sugar Refining, Maple Products",Verified
+Sugar & Sweeteners,EID Parry,India,https://www.eidparry.com,"5,000+","$1B+",1788,Large Enterprise,"Sugar, Nutraceuticals",Verified
+Sugar & Sweeteners,Imperial Sugar (Louis Dreyfus),USA,https://www.imperialsugar.com,"17,000+","$44B+",1843,Large Enterprise,"Sugar, Commodities",Verified
+Sugar & Sweeteners,MSM Malaysia Holdings,Malaysia,https://www.msmsugar.com,"2,000+","$500M+",1959,Medium Enterprise,"Sugar Refining",Verified
+Sugar & Sweeteners,Raja Bahadur International,India,https://www.rbisugar.com,"1,000+","$200M+",1933,Medium Enterprise,"Sugar, Bio-products",Verified
+Sugar & Sweeteners,Guangdong Hengfu Group,China,https://www.hengfu.com,"20,000+","$3B+",1993,Large Enterprise,"Sugar, Yeast, Bio-products",Verified
+Sugar & Sweeteners,Tongaat Hulett,South Africa,https://tongaat.com,"8,000+","$800M+",1892,Large Enterprise,"Sugar, Property",Verified
+Sugar & Sweeteners,Illovo Sugar Africa,South Africa,https://www.illovosugarafrica.com,"24,000+","$1B+",1891,Large Enterprise,"Sugar, Ethanol",Verified
+Sugar & Sweeteners,Cofco Tunhe,China,https://www.cofco.com,"20,000+","$3B+",1995,Large Enterprise,"Sugar, Tomato Products",Verified
+Pet Food,Mars Petcare,USA,https://www.mars.com,"140,000+","$45B+",1911,Conglomerate,"Pet Food, Veterinary Services",Verified
+Pet Food,Nestlé Purina PetCare,Switzerland,https://www.purina.com,"273,000+","$99B+",1866,Conglomerate,"Pet Food, Pet Care",Verified
+Pet Food,Colgate-Palmolive (Hill's Pet Nutrition),USA,https://www.hillspet.com,"34,000+","$19B+",1806,Conglomerate,"Prescription Diet Pet Food",Verified
+Pet Food,J.M. Smucker Pet Food,USA,https://www.jmsmucker.com,"7,000+","$8B+",1897,Large Enterprise,"Pet Food, Coffee, Spreads",Verified
+Pet Food,General Mills Pet Food,USA,https://www.generalmills.com,"35,000+","$20B+",1928,Conglomerate,"Natural Pet Food",Verified
+Pet Food,Blue Buffalo (General Mills),USA,https://www.bluebuffalo.com,"1,000+","$1B+",2002,Medium Enterprise,"Natural Pet Food",Verified
+Pet Food,Scheig & Company,USA,https://www.scheig.com,"200+","$100M+",1947,Small Enterprise,"Pet Food Ingredients",Verified
+Pet Food,Diamond Pet Foods,USA,https://www.diamondpet.com,"500+","$200M+",1970,Medium Enterprise,"Premium Pet Food",Verified
+Pet Food,WellPet LLC,USA,https://www.wellpet.com,"400+","$300M+",1997,Medium Enterprise,"Natural Pet Food",Verified
+Pet Food,Agrolimen SA,Spain,https://www.agrolimen.com,"2,000+","$500M+",1963,Medium Enterprise,"Pet Food, Animal Feed",Verified
+Pet Food,Heristo AG,Germany,https://www.heristo.com,"2,000+","$1B+",1948,Medium Enterprise,"Pet Food, Meat Products",Verified
+Pet Food,Total Alimentos,Brazil,https://www.totalalimentos.com.br,"3,000+","$500M+",1987,Medium Enterprise,"Premium Pet Food",Verified
+Pet Food,Unicharm PetCare,Japan,https://www.unicharm.co.jp,"16,000+","$7B+",1961,Large Enterprise,"Pet Care, Hygiene Products",Verified
+Pet Food,Affinity Petcare,Spain,https://www.affinity-petcare.com,"1,000+","$400M+",1990,Medium Enterprise,"Pet Food",Verified
+Pet Food,Royal Canin (Mars),France,https://www.royalcanin.com,"8,000+","$3B+",1968,Large Enterprise,"Breed-Specific Pet Food",Verified
+Pet Food,Butcher's Pet Care,UK,https://www.butcherspetcare.co.uk,"300+","$100M+",1987,Small Enterprise,"Natural Pet Food",Verified
+Pet Food,PLB International,Thailand,https://www.plbthai.com,"500+","$100M+",1999,Small Enterprise,"Pet Food, Animal Feed",Verified
+Pet Food,Real Pet Food Company,Australia,https://www.therealpetfoodcompany.com,"600+","$200M+",1994,Medium Enterprise,"Raw Pet Food",Verified
+Baby Food,Nestlé Nutrition,Switzerland,https://www.nestle.com,"273,000+","$99B+",1866,Conglomerate,"Infant Formula, Baby Food",Verified
+Baby Food,Danone Baby Nutrition,France,https://www.danone.com,"102,000+","$27B+",1919,Conglomerate,"Infant Formula, Baby Food",Verified
+Baby Food,Reckitt Benckiser (Mead Johnson),UK,https://www.meadjohnson.com,"40,000+","$17B+",1905,Conglomerate,"Infant Formula, Nutrition",Verified
+Baby Food,Abbott Nutrition,USA,https://www.abbott.com,"115,000+","$43B+",1888,Conglomerate,"Infant Formula, Adult Nutrition",Verified
+Baby Food,Hero Group,Switzerland,https://www.hero-group.com,"4,000+","$1B+",1886,Large Enterprise,"Baby Food, Jams, Cereals",Verified
+Baby Food,FrieslandCampina Baby Nutrition,Netherlands,https://www.frieslandcampina.com,"24,000+","$14B+",1871,Large Enterprise,"Infant Formula, Dairy",Verified
+Baby Food,Heinz Baby (Kraft Heinz),USA,https://www.heinz.com,"38,000+","$26B+",1869,Conglomerate,"Baby Food, Cereals",Verified
+Baby Food,Perrigo Nutritionals,USA,https://www.perrigo.com,"11,000+","$5B+",1887,Large Enterprise,"Store-brand Infant Formula",Verified
+Baby Food,Bellamy's Organic (China Mengniu),Australia,https://www.bellamysorganic.com.au,"200+","$100M+",2004,Small Enterprise,"Organic Baby Formula",Verified
+Baby Food,Hipp GmbH & Co. Vertrieb KG,Germany,https://www.hipp.de,"4,000+","$1B+",1932,Medium Enterprise,"Organic Baby Food",Verified
+Baby Food,Ella's Kitchen (Hain Celestial),UK,https://www.ellaskitchen.co.uk,"100+","$100M+",2006,Small Enterprise,"Organic Baby Food",Verified
+Baby Food,Nurture Inc (Happy Family Organics),USA,https://www.happyfamilyorganics.com,"300+","$200M+",2006,Small Enterprise,"Organic Baby Food",Verified
+Baby Food,Plum Organics (Campbell Soup),USA,https://www.plumorganics.com,"100+","$100M+",2007,Small Enterprise,"Organic Baby Food",Verified
+Baby Food,Holle Baby Food,Switzerland,https://www.holle.ch,"200+","$100M+",1933,Small Enterprise,"Demeter-certified Baby Food",Verified
+Baby Food,Topfer GmbH,Germany,https://www.topfer.de,"300+","$100M+",1932,Small Enterprise,"Baby Food, Nutrition",Verified
+Baby Food,Aptamil (Danone),France,https://www.aptaclub.co.uk,"102,000+","$27B+",1968,Conglomerate,"Infant Formula",Verified
+Baby Food,Kendamil,UK,https://www.kendamil.com,"100+","$50M+",1864,Small Enterprise,"Infant Formula",Verified
+Baby Food,Nuby (Luv n' care),USA,https://www.nuby.com,"500+","$200M+",1975,Medium Enterprise,"Baby Feeding Accessories",Verified
+Condiments & Sauces,Kraft Heinz Company,USA,https://www.kraftheinzcompany.com,"38,000+","$26B+",2015,Conglomerate,"Ketchup, Sauces, Condiments",Verified
+Condiments & Sauces,McCormick & Company,USA,https://www.mccormick.com,"14,000+","$6B+",1889,Large Enterprise,"Spices, Seasonings, Flavors",Verified
+Condiments & Sauces,Unilever Foods,UK/Netherlands,https://www.unilever.com,"128,000+","$64B+",1929,Conglomerate,"Mayonnaise, Dressings, Spreads",Verified
+Condiments & Sauces,Kikkoman Corporation,Japan,https://www.kikkoman.com,"6,000+","$5B+",1917,Large Enterprise,"Soy Sauce, Seasonings",Verified
+Condiments & Sauces,Yamasa Corporation,Japan,https://www.yamasa.com,"1,000+","$500M+",1645,Medium Enterprise,"Soy Sauce, Seasonings",Verified
+Condiments & Sauces,Hormel Foods (Skippy),USA,https://www.hormelfoods.com,"20,000+","$12B+",1891,Large Enterprise,"Peanut Butter, Sauces",Verified
+Condiments & Sauces,Conagra Brands (Condiments),USA,https://www.conagrabrands.com,"18,000+","$12B+",1919,Conglomerate,"Condiments, Cooking Sprays",Verified
+Condiments & Sauces,Nutrition & Santé (Andros Group),France,https://www.groupeandros.com,"2,000+","$500M+",1948,Medium Enterprise,"Fruit Spreads, Desserts",Verified
+Condiments & Sauces,Sempio Foods Company,South Korea,https://www.sempio.com,"1,000+","$300M+",1946,Medium Enterprise,"Soy Sauce, Pastes, Sauces",Verified
+Condiments & Sauces,Lee Kum Kee,Hong Kong,https://www.lkk.com,"5,000+","$2B+",1888,Large Enterprise,"Asian Sauces, Condiments",Verified
+Condiments & Sauces,The French's Food Company,Canada,https://www.frenchs.com,"1,000+","$500M+",1904,Medium Enterprise,"Mustard, Condiments",Verified
+Condiments & Sauces,B&G Foods,USA,https://www.bgfoods.com,"2,500+","$2B+",1889,Medium Enterprise,"Spices, Sauces, Canned Goods",Verified
+Condiments & Sauces,Hain Celestial (Sauces),USA,https://www.hain.com,"5,500+","$2B+",1993,Large Enterprise,"Organic & Natural Sauces",Verified
+Condiments & Sauces,Campbell Soup (Sauces),USA,https://www.campbells.com,"14,000+","$9B+",1869,Large Enterprise,"Sauces, Condiments",Verified
+Condiments & Sauces,Bull-Dog Sauce Co.,Japan,https://www.bull-dog.co.jp,"500+","$200M+",1902,Small Enterprise,"Tonkatsu Sauce, Condiments",Verified
+Condiments & Sauces,Colman's (Unilever),UK,https://www.colmans.co.uk,"128,000+","$64B+",1814,Conglomerate,"Mustard, Sauces",Verified
+Condiments & Sauces,Heinz Beanz (Kraft Heinz),UK,https://www.heinz.co.uk,"38,000+","$26B+",1869,Conglomerate,"Baked Beans, Sauces",Verified
+Condiments & Sauces,La Costeña,Mexico,https://www.lacostena.com.mx,"2,000+","$500M+",1923,Medium Enterprise,"Mexican Condiments, Canned Goods",Verified
+Health & Functional Foods,Herbalife Nutrition,USA,https://www.herbalife.com,"9,900+","$5B+",1980,Large Enterprise,"Nutrition Supplements, Weight Management",Verified
+Health & Functional Foods,Abbott Nutrition,USA,https://www.abbott.com,"115,000+","$43B+",1888,Conglomerate,"Medical Nutrition, Supplements",Verified
+Health & Functional Foods,Amway Nutrilite,USA,https://www.amway.com,"21,000+","$8B+",1959,Large Enterprise,"Dietary Supplements",Verified
+Health & Functional Foods,Nestlé Health Science,Switzerland,https://www.nestlehealthscience.com,"273,000+","$99B+",1866,Conglomerate,"Medical Nutrition, Supplements",Verified
+Health & Functional Foods,Danone Medical Nutrition,France,https://www.danone.com,"102,000+","$27B+",1919,Conglomerate,"Medical Nutrition",Verified
+Health & Functional Foods,GNC Holdings,USA,https://www.gnc.com,"5,500+","$2B+",1935,Large Enterprise,"Vitamin & Supplement Retail",Verified
+Health & Functional Foods,Glanbia Performance Nutrition,Ireland,https://www.glanbia.com,"6,500+","$5B+",1964,Large Enterprise,"Sports Nutrition, Ingredients",Verified
+Health & Functional Foods,Nature's Bounty (The Bountiful Company),USA,https://www.bountifulcompany.com,"4,000+","$2B+",1971,Large Enterprise,"Vitamins, Supplements",Verified
+Health & Functional Foods,Blackmores Limited,Australia,https://www.blackmores.com.au,"1,200+","$500M+",1930,Medium Enterprise,"Vitamins, Supplements",Verified
+Health & Functional Foods,Hain Celestial Health Foods,USA,https://www.hain.com,"5,500+","$2B+",1993,Large Enterprise,"Natural & Organic Foods",Verified
+Health & Functional Foods,USANA Health Sciences,USA,https://www.usana.com,"1,000+","$1B+",1992,Medium Enterprise,"Nutritional Supplements",Verified
+Health & Functional Foods,Atkins Nutritionals (Simply Good Foods),USA,https://www.atkins.com,"300+","$500M+",1989,Medium Enterprise,"Low-carb Nutrition",Verified
+Health & Functional Foods,Archer Daniels Midland Health,USA,https://www.adm.com,"41,000+","$102B+",1902,Conglomerate,"Nutrition Ingredients",Verified
+Health & Functional Foods,Daiya Foods (Otsuka),Canada,https://www.daiyafoods.com,"200+","$100M+",2008,Small Enterprise,"Dairy-free Alternatives",Verified
+Health & Functional Foods,BellRing Brands,USA,https://www.bellring.com,"400+","$1B+",2019,Medium Enterprise,"Ready-to-drink Shakes, Bars",Verified
+Health & Functional Foods,General Mills Health,USA,https://www.generalmills.com,"35,000+","$20B+",1928,Conglomerate,"Better-for-you Snacks",Verified
+Health & Functional Foods,Meiji Functional Foods,Japan,https://www.meiji.com,"22,000+","$10B+",1917,Conglomerate,"Yogurt, Probiotics",Verified
+Health & Functional Foods,Yakult Honsha,Japan,https://www.yakult.co.jp,"40,000+","$4B+",1935,Large Enterprise,"Probiotic Beverages",Verified
+Animal Feed,Cargill Animal Nutrition,USA,https://www.cargill.com,"160,000+","$165B+",1865,Conglomerate,"Animal Feed, Nutrition",Verified
+Animal Feed,ADM Animal Nutrition,USA,https://www.adm.com,"41,000+","$102B+",1902,Conglomerate,"Animal Feed, Ingredients",Verified
+Animal Feed,New Hope Group,China,https://www.newhopegroup.com,"60,000+","$12B+",1982,Large Enterprise,"Animal Feed, Livestock",Verified
+Animal Feed,Charoen Pokphand Foods,Thailand,https://www.cpfworldwide.com,"120,000+","$17B+",1978,Conglomerate,"Animal Feed, Aquaculture",Verified
+Animal Feed,ForFarmers NV,Netherlands,https://www.forfarmers.eu,"2,500+","$3B+",1896,Large Enterprise,"Compound Feed, Animal Nutrition",Verified
+Animal Feed,Nutreco (SHV Holdings),Netherlands,https://www.nutreco.com,"12,000+","$7B+",1994,Large Enterprise,"Animal Nutrition, Aquafeed",Verified
+Animal Feed,Alltech Inc.,USA,https://www.alltech.com,"6,000+","$3B+",1980,Large Enterprise,"Animal Nutrition, Feed Additives",Verified
+Animal Feed,De Heus Animal Nutrition,Netherlands,https://www.deheus.com,"11,000+","$4B+",1911,Large Enterprise,"Animal Feed, Nutrition",Verified
+Animal Feed,AB Agri (Associated British Foods),UK,https://www.abagri.com,"3,000+","$2B+",1984,Medium Enterprise,"Animal Feed, Ingredients",Verified
+Animal Feed,BASF Animal Nutrition,Germany,https://www.basf.com,"122,000+","$87B+",1865,Conglomerate,"Feed Enzymes, Vitamins",Verified
+Animal Feed,DSM Animal Nutrition,Netherlands,https://www.dsm.com,"23,000+","$9B+",1902,Large Enterprise,"Vitamins, Enzymes, Additives",Verified
+Animal Feed,Tyson Animal Feed,USA,https://www.tysonfoods.com,"142,000+","$53B+",1935,Conglomerate,"Animal Feed, Ingredients",Verified
+Animal Feed,Perdue Animal Nutrition,USA,https://www.perduefarms.com,"21,000+","$8B+",1920,Large Enterprise,"Animal Feed, Nutrition",Verified
+Animal Feed,Provimi (Cargill),Netherlands,https://www.provimi.com,"160,000+","$165B+",1920,Conglomerate,"Animal Nutrition, Premixes",Verified
+Animal Feed,Purina Animal Nutrition (Land O'Lakes),USA,https://www.purinamills.com,"10,000+","$16B+",1927,Large Enterprise,"Animal Feed, Nutrition",Verified
+Animal Feed,Evonik Animal Nutrition,Germany,https://corporate.evonik.com,"33,000+","$18B+",1843,Large Enterprise,"Amino Acids, Feed Additives",Verified
+Animal Feed,Biomin (ERBER Group),Austria,https://www.biomin.net,"1,000+","$500M+",1983,Medium Enterprise,"Feed Additives, Mycotoxin Management",Verified
+Animal Feed,Trouw Nutrition (Nutreco),Netherlands,https://www.trouwnutrition.com,"(Part of Nutreco)","(Part of Nutreco)",1931,Large Enterprise,"Farm Nutrition, Feed Specialties, Water Solubles",Verified
+Animal Feed,DeKalb Feeds (Bayer),USA,https://www.dekalbasgrowdeltapine.com,"(Part of Bayer)","(Part of Bayer)",1912,Large Enterprise,"Animal Health, Feed Ingredients",Verified

@@ -1,0 +1,378 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Passenger Vehicles,Toyota Motor Corporation,Japan,https://global.toyota,"375,000+","$305B",1937,Conglomerate,Full-line Vehicle Manufacturer,Verified
+Passenger Vehicles,Volkswagen Group,Germany,https://www.volkswagenag.com,"676,000+","$322B",1937,Conglomerate,Full-line Vehicle Manufacturer,Verified
+Passenger Vehicles,Ford Motor Company,USA,https://www.ford.com,"173,000+","$176B",1903,Conglomerate,Full-line Vehicle Manufacturer,Verified
+Passenger Vehicles,General Motors,USA,https://www.gm.com,"167,000+","$172B",1908,Conglomerate,Full-line Vehicle Manufacturer,Verified
+Passenger Vehicles,Honda Motor Co.,Japan,https://global.honda,"211,000+","$124B",1948,Conglomerate,Full-line Vehicle Manufacturer,Verified
+Passenger Vehicles,Stellantis,Netherlands,https://www.stellantis.com,"272,000+","$203B",2021,Conglomerate,Full-line Vehicle Manufacturer,Verified
+Passenger Vehicles,Hyundai Motor Group,South Korea,https://www.hyundai.com,"121,000+","$106B",1967,Conglomerate,Full-line Vehicle Manufacturer,Verified
+Passenger Vehicles,BMW Group,Germany,https://www.bmwgroup.com,"154,000+","$123B",1916,Conglomerate,Premium Vehicles, Motorcycles,Verified
+Passenger Vehicles,Nissan Motor Co.,Japan,https://www.nissan-global.com,"136,000+","$78B",1933,Large Enterprise,Full-line Vehicle Manufacturer,Verified
+Passenger Vehicles,Mercedes-Benz Group,Germany,https://group.mercedes-benz.com,"172,000+","$158B",1926,Conglomerate,Premium Vehicles,Verified
+Passenger Vehicles,SAIC Motor,China,https://www.saicmotor.com,"167,000+","$122B",1955,Large Enterprise,State-owned Manufacturer,Verified
+Passenger Vehicles,Geely Auto Group,China,https://www.geely.com,"49,000+","$23B",1986,Large Enterprise,Volume Manufacturer,Verified
+Passenger Vehicles,Renault Group,France,https://www.renaultgroup.com,"111,000+","$54B",1899,Large Enterprise,Volume Manufacturer,Verified
+Passenger Vehicles,Suzuki Motor Corporation,Japan,https://www.globalsuzuki.com,"68,000+","$37B",1909,Large Enterprise,Compact Cars, Motorcycles,Verified
+Passenger Vehicles,Subaru Corporation,Japan,https://www.subaru.co.jp,"34,000+","$31B",1953,Large Enterprise,All-Wheel Drive Vehicles,Verified
+Passenger Vehicles,Mazda Motor Corporation,Japan,https://www.mazda.com,"52,000+","$26B",1920,Large Enterprise,Volume Manufacturer,Verified
+Passenger Vehicles,Tata Motors,India,https://www.tatamotors.com,"78,000+","$47B",1945,Large Enterprise,Commercial & Passenger Vehicles,Verified
+Passenger Vehicles,Proton Holdings,Malaysia,https://www.proton.com,"11,000+","$2B",1983,Large Enterprise,National Manufacturer,Verified
+Passenger Vehicles,Great Wall Motor,China,https://www.gwm-global.com,"70,000+","$28B",1984,Large Enterprise,SUVs, Pickups,Verified
+Passenger Vehicles,Changan Automobile,China,https://global.changan.com.cn,"95,000+","$18B",1862,Large Enterprise,State-owned Manufacturer,Verified
+Electric Vehicles,Tesla,USA,https://www.tesla.com,"140,000+","$97B",2003,Large Enterprise,Battery Electric Vehicles,Verified
+Electric Vehicles,BYD Auto,China,https://www.byd.com,"570,000+","$85B",1995,Conglomerate,Battery Electric & Hybrid Vehicles,Verified
+Electric Vehicles,NIO,China,https://www.nio.com,"15,000+","$7B",2014,Large Enterprise,Premium Electric Vehicles,Verified
+Electric Vehicles,Rivian,USA,https://www.rivian.com,"14,000+","$4B",2009,Large Enterprise,Electric Adventure Vehicles,Verified
+Electric Vehicles,Lucid Motors,USA,https://www.lucidmotors.com,"7,000+","$2B",2007,Large Enterprise,Luxury Electric Vehicles,Verified
+Electric Vehicles,Xpeng Motors,China,https://en.xiaopeng.com,"16,000+","$4B",2014,Large Enterprise,Smart Electric Vehicles,Verified
+Electric Vehicles,Li Auto,China,https://www.lixiang.com,"19,000+","$17B",2015,Large Enterprise,Extended-Range Electric Vehicles,Verified
+Electric Vehicles,Polestar,Sweden,https://www.polestar.com,"2,800+","$2B",2017,Large Enterprise,Premium Electric Vehicles,Verified
+Electric Vehicles,Fisker Inc.,USA,https://fiskerinc.com,"500+","$0.1B",2016,SME,Electric Vehicle Startup,Verified
+Electric Vehicles,Faraday Future,USA,https://www.ff.com,"400+","N/A",2014,SME,Electric Vehicle Startup,Verified
+Electric Vehicles,Canoo,USA,https://canoo.com,"800+","N/A",2017,SME,Lifestyle Electric Vehicles,Verified
+Electric Vehicles,Arrival,UK,https://arrival.com,"1,700+","N/A",2015,SME,Commercial Electric Vehicles,Verified
+Electric Vehicles,Lightyear,Netherlands,https://lightyear.one,"100+","N/A",2016,SME,Solar Electric Vehicles,Verified
+Electric Vehicles,Mahindra Electric,India,https://www.mahindraelectric.com,"500+","N/A",1999,SME,Electric Vehicle Subsidiary,Verified
+Electric Vehicles,ORA (Great Wall),China,https://www.ora-eu.com,"N/A (Subsidiary)","N/A",2018,Large Enterprise,Electric Vehicle Brand,Verified
+Electric Vehicles,Seres,USA,https://www.seres.com,"1,000+","N/A",2016,SME,Electric Vehicle Startup,Verified
+Electric Vehicles,VinFast,Vietnam,https://vinfastauto.com,"7,000+","$1B",2017,Large Enterprise,Electric Vehicle Manufacturer,Verified
+Electric Vehicles,Byton,China,https://www.byton.com,"500+","N/A",2016,SME,Smart Electric Vehicles,Verified
+Electric Vehicles,Lordstown Motors,USA,https://lordstownmotors.com,"100+","N/A",2018,SME,Electric Pickup Trucks,Verified
+Motorcycles,Honda Motorcycles,Japan,https://global.honda,"211,000+","$124B",1948,Conglomerate,Motorcycles, Power Equipment,Verified
+Motorcycles,Yamaha Motor Co.,Japan,https://global.yamaha-motor.com,"53,000+","$18B",1955,Large Enterprise,Motorcycles, Marine Products,Verified
+Motorcycles,Hero MotoCorp,India,https://www.heromotocorp.com,"9,000+","$4B",1984,Large Enterprise,Two-Wheelers,Verified
+Motorcycles,Bajaj Auto,India,https://www.bajajauto.com,"10,000+","$5B",1945,Large Enterprise,Two & Three-Wheelers,Verified
+Motorcycles,Kawasaki Heavy Industries,Japan,https://global.kawasaki.com,"42,000+","$15B",1878,Conglomerate,Heavy Machinery, Motorcycles,Verified
+Motorcycles,Suzuki Motorcycles,Japan,https://www.globalsuzuki.com,"68,000+","$37B",1909,Large Enterprise,Motorcycles, Automobiles,Verified
+Motorcycles,TVS Motor Company,India,https://www.tvsmotor.com,"6,000+","$3B",1978,Large Enterprise,Two & Three-Wheelers,Verified
+Motorcycles,KTM AG,Austria,https://www.ktm.com,"4,000+","$2B",1934,Large Enterprise,Sport Motorcycles,Verified
+Motorcycles,BMW Motorrad,Germany,https://www.bmw-motorrad.com,"154,000+","$123B",1916,Conglomerate,Premium Motorcycles,Verified
+Motorcycles,Ducati,Italy,https://www.ducati.com,"1,700+","$1B",1926,Large Enterprise,Premium Motorcycles,Verified
+Motorcycles,Harley-Davidson,USA,https://www.harley-davidson.com,"5,800+","$6B",1903,Large Enterprise,Cruiser Motorcycles,Verified
+Motorcycles,Royal Enfield,India,https://www.royalenfield.com,"15,000+","$1B",1955,Large Enterprise,Classic Motorcycles,Verified
+Motorcycles,Piaggio Group,Italy,https://www.piaggiogroup.com,"7,000+","$2B",1884,Large Enterprise,Scooters, Motorcycles,Verified
+Motorcycles,QJ Motor,China,https://www.qjmotor.com,"20,000+","$1B",1985,Large Enterprise,Motorcycle Manufacturer,Verified
+Motorcycles,Loncin Motor,China,https://en.loncin.com,"13,000+","$1B",1993,Large Enterprise,Engines, Motorcycles,Verified
+Motorcycles,Zongshen Industrial Group,China,https://www.zongshenmotor.com,"20,000+","$2B",1992,Large Enterprise,Motorcycles, Engines,Verified
+Motorcycles,Electric Motion,France,https://www.electric-motion.fr,"50+","N/A",2010,SME,Electric Trial Motorcycles,Verified
+Motorcycles,Zero Motorcycles,USA,https://www.zeromotorcycles.com,"200+","N/A",2006,SME,Electric Motorcycles,Verified
+Motorcycles,Energica Motor Company,Italy,https://www.energicamotor.com,"100+","N/A",2014,SME,Electric Motorcycles,Verified
+Commercial Trucks,Daimler Truck AG,Germany,https://www.daimlertruck.com,"104,000+","$64B",1926,Conglomerate,Commercial Vehicles,Verified
+Commercial Trucks,Volvo Group,Sweden,https://www.volvogroup.com,"105,000+","$53B",1927,Conglomerate,Trucks, Buses, Construction,Verified
+Commercial Trucks,Traton Group (VW),Germany,https://www.traton.com,"100,000+","$48B",2015,Conglomerate,Commercial Vehicles,Verified
+Commercial Trucks,PACCAR Inc.,USA,https://www.paccar.com,"31,000+","$35B",1905,Large Enterprise,Heavy-Duty Trucks,Verified
+Commercial Trucks,Navistar International,USA,https://www.navistar.com,"14,000+","$11B",1902,Large Enterprise,Commercial Vehicles,Verified
+Commercial Trucks,Scania AB,Sweden,https://www.scania.com,"57,000+","$17B",1891,Large Enterprise,Heavy Trucks, Buses,Verified
+Commercial Trucks,MAN Truck & Bus,Germany,https://www.mantruckandbus.com,"36,000+","$14B",1758,Large Enterprise,Commercial Vehicles,Verified
+Commercial Trucks,Isuzu Motors,Japan,https://www.isuzu.co.jp,"29,000+","$22B",1937,Large Enterprise,Commercial Vehicles, Diesel Engines,Verified
+Commercial Trucks,Hino Motors,Japan,https://www.hino-global.com,"34,000+","$18B",1942,Large Enterprise,Commercial Vehicles,Verified
+Commercial Trucks,Tata Motors CV,India,https://www.tatamotors.com,"78,000+","$47B",1945,Large Enterprise,Commercial Vehicles,Verified
+Commercial Trucks,Ashok Leyland,India,https://www.ashokleyland.com,"12,000+","$4B",1948,Large Enterprise,Commercial Vehicles,Verified
+Commercial Trucks,FAW Jiefang,China,https://www.fawjiefang.com.cn,"30,000+","$10B",1953,Large Enterprise,Commercial Vehicles,Verified
+Commercial Trucks,Shacman,China,https://www.shacman.com,"28,000+","$8B",1968,Large Enterprise,Heavy-Duty Trucks,Verified
+Commercial Trucks,KAMAZ,Russia,https://kamaz.ru,"35,000+","$3B",1969,Large Enterprise,Heavy-Duty Trucks,Verified
+Commercial Trucks,Renault Trucks,France,https://renault-trucks.com,"10,000+","$5B",1978,Large Enterprise,Commercial Vehicles,Verified
+Commercial Trucks,IVECO,Italy,https://www.iveco.com,"21,000+","$14B",1975,Large Enterprise,Commercial Vehicles,Verified
+Commercial Trucks,Mack Trucks,USA,https://www.macktrucks.com,"3,000+","N/A (Subsidiary)",1900,Large Enterprise,Heavy-Duty Trucks,Verified
+Commercial Trucks,Peterbilt,USA,https://www.peterbilt.com,"3,000+","N/A (Subsidiary)",1939,Large Enterprise,Heavy-Duty Trucks,Verified
+Commercial Trucks,Kenworth,USA,https://www.kenworth.com,"3,000+","N/A (Subsidiary)",1923,Large Enterprise,Heavy-Duty Trucks,Verified
+Auto Parts Manufacturing,Bosch,Germany,https://www.bosch.com,"421,000+","$100B+",1886,Conglomerate,Automotive Technology,Verified
+Auto Parts Manufacturing,Denso Corporation,Japan,https://www.denso.com,"170,000+","$50B+",1949,Large Enterprise,Automotive Components,Verified
+Auto Parts Manufacturing,Magna International,Canada,https://www.magna.com,"158,000+","$42B",1957,Large Enterprise,Vehicle Assembly,Verified
+Auto Parts Manufacturing,Continental AG,Germany,https://www.continental.com,"200,000+","$44B",1871,Conglomerate,Tires, Auto Parts,Verified
+Auto Parts Manufacturing,ZF Friedrichshafen,Germany,https://www.zf.com,"165,000+","$46B",1915,Large Enterprise,Transmission Systems,Verified
+Auto Parts Manufacturing,Aisin Seiki Co.,Japan,https://www.aisin.com,"120,000+","$35B",1943,Large Enterprise,Automotive Components,Verified
+Auto Parts Manufacturing,Hyundai Mobis,South Korea,https://www.mobis.co.kr,"30,000+","$30B",1977,Large Enterprise,Modules, Parts,Verified
+Auto Parts Manufacturing,Ford Motor Components,USA,https://ford.com,"173,000+","$176B",1903,Conglomerate,OEM Parts,Verified
+Auto Parts Manufacturing,Valeo,France,https://www.valeo.com,"20,000+","$22B",1923,Large Enterprise,Automotive Systems,Verified
+Auto Parts Manufacturing,Faurecia,France,https://www.faurecia.com,"75,000+","$20B",1997,Large Enterprise,Car Interiors,Verified
+Auto Parts Manufacturing,Lear Corporation,USA,https://www.lear.com,"165,000+","$23B",1917,Large Enterprise,Seating, E-Systems,Verified
+Auto Parts Manufacturing,Adient,USA,https://www.adient.com,"75,000+","$15B",2016,Large Enterprise,Automotive Seating,Verified
+Auto Parts Manufacturing,APTIV,UK,https://www.aptiv.com,"20,000+","$20B",1994,Large Enterprise,Vehicle Software,Verified
+Auto Parts Manufacturing,Yazaki Corporation,Japan,https://www.yazaki-group.com,"260,000+","$16B",1929,Large Enterprise,Vehicle Harnesses,Verified
+Auto Parts Manufacturing,Sumitomo Electric,Japan,https://global.sei.co.jp,"280,000+","$29B",1897,Conglomerate,Automotive Wires,Verified
+Auto Parts Manufacturing,JTEKT Corporation,Japan,https://www.jtekt.co.jp,"50,000+","$12B",1921,Large Enterprise,Steering Systems,Verified
+Auto Parts Manufacturing,Schaeffler Group,Germany,https://www.schaeffler.com,"83,000+","$17B",1946,Large Enterprise,Bearings, Components,Verified
+Auto Parts Manufacturing,MAHLE GmbH,Germany,https://www.mahle.com,"72,000+","$14B",1920,Large Enterprise,Engine Systems,Verified
+Auto Parts Manufacturing,BorgWarner,USA,https://www.borgwarner.com,"50,000+","$18B",1880,Large Enterprise,Propulsion Systems,Verified
+EV Batteries,CATL,China,https://www.catl.com,"100,000+","$50B",2011,Large Enterprise,Lithium Batteries,Verified
+EV Batteries,LG Energy Solution,South Korea,https://www.lgensol.com,"30,000+","$25B",2020,Large Enterprise,Battery Cells,Verified
+EV Batteries,Panasonic Energy,Japan,https://www.panasonic.com,"240,000+","$70B",1918,Conglomerate,Automotive Batteries,Verified
+EV Batteries,BYD Battery,China,https://www.bydbattery.com,"570,000+","$85B",1995,Conglomerate,EV Batteries,Verified
+EV Batteries,Samsung SDI,South Korea,https://www.samsungsdi.com,"30,000+","$15B",1970,Large Enterprise,Battery Cells,Verified
+EV Batteries,SK Innovation,South Korea,https://www.skinnovation.com,"3,000+","$50B",1962,Large Enterprise,Battery Materials,Verified
+EV Batteries,Northvolt,Sweden,https://northvolt.com,"5,000+","$1B",2016,Large Enterprise,Sustainable Batteries,Verified
+EV Batteries,Envision AESC,Japan,https://envision-aesc.com,"2,000+","$3B",2007,Large Enterprise,Battery Manufacturing,Verified
+EV Batteries,Farasis Energy,China,https://www.farasis.com,"5,000+","$2B",2009,Large Enterprise,Battery Cells,Verified
+EV Batteries,Microvast,USA,https://www.microvast.com,"1,000+","$0.3B",2006,SME,Battery Solutions,Verified
+EV Batteries,QuantumScape,USA,https://www.quantumscape.com,"500+","$0.1B",2010,SME,Solid-State Batteries,Verified
+EV Batteries,Solid Power,USA,https://www.solidpowerbattery.com,"200+","$0.05B",2012,SME,Solid-State Batteries,Verified
+EV Batteries,Svolt Energy,China,https://en.svolt.cn,"6,000+","$2B",2016,Large Enterprise,Battery Innovation,Verified
+EV Batteries,ProLogium Technology,Taiwan,https://www.prologium.com,"500+","$0.5B",2006,SME,Solid-State Batteries,Verified
+EV Batteries,Leclanché,Switzerland,https://www.leclanche.com,"300+","$0.1B",1909,SME,Battery Storage,Verified
+EV Batteries,Valmet Automotive,Finland,https://www.valmet-automotive.com,"5,000+","$2B",1968,Large Engineering,Vehicle Contracting,Verified
+EV Batteries,Electrovaya,Canada,https://www.electrovaya.com,"200+","$0.1B",1996,SME,Lith-ion Batteries,Verified
+EV Batteries,Battery Resourcers,USA,https://www.batteryresourcers.com,"100+","N/A",2015,SME,Battery Recycling,Verified
+EV Batteries,Factorial Energy,USA,https://factorialenergy.com,"100+","N/A",2013,SME,Solid-State Batteries,Verified
+Autonomous Driving Tech,Waymo (Alphabet),USA,https://waymo.com,"2,500+","N/A",2009,Large Enterprise,Autonomous Driving,Verified
+Autonomous Driving Tech,Cruise (GM),USA,https://getcruise.com,"2,000+","N/A",2013,Large Enterprise,Self-Driving Tech,Verified
+Autonomous Driving Tech,Argo AI (Ford/VW),USA,https://www.argo.ai,"1,000+","N/A",2016,Large Enterprise,Autonomous Systems,Verified
+Autonomous Driving Tech,Mobileye (Intel),Israel,https://www.mobileye.com,"3,000+","$2B",1999,Large Enterprise,ADAS, Vision,Verified
+Autonomous Driving Tech,Aurora Innovation,USA,https://aurora.tech,"1,500+","N/A",2017,Large Enterprise,Self-Driving,Verified
+Autonomous Driving Tech,TuSimple,USA,https://www.tusimple.com,"500+","N/A",2015,SME,Autonomous Trucks,Verified
+Autonomous Driving Tech,Zoox (Amazon),USA,https://zoox.com,"1,000+","N/A",2014,Large Enterprise,Robotaxis,Verified
+Autonomous Driving Tech,Einride,Sweden,https://www.einride.tech,"500+","N/A",2016,SME,Autonomous Freight,Verified
+Autonomous Driving Tech,Motional (Hyundai/Aptiv),USA,https://motional.com,"1,000+","N/A",2020,Large Enterprise,Autonomous Driving,Verified
+Autonomous Driving Tech,Plus,USA,https://www.plus.ai,"500+","N/A",2016,SME,Self-Driving Trucks,Verified
+Autonomous Driving Tech,Nuro,USA,https://nuro.ai,"500+","N/A",2016,SME,Autonomous Delivery,Verified
+Autonomous Driving Tech,Oxbotica,UK,https://oxbotica.com,"200+","N/A",2014,SME,Autonomous Software,Verified
+Autonomous Driving Tech,May Mobility,USA,https://maymobility.com,"300+","N/A",2017,SME,Autonomous Shuttles,Verified
+Autonomous Driving Tech,WeRide,China,https://www.weride.ai,"500+","N/A",2017,SME,Autonomous Driving,Verified
+Autonomous Driving Tech,Pony.ai,USA/China,https://www.pony.ai,"500+","N/A",2016,SME,Autonomous Tech,Verified
+Autonomous Driving Tech,Baidu Apollo,China,https://apollo.auto,"5,000+","N/A",2017,Large Enterprise,Autonomous Platform,Verified
+Autonomous Driving Tech,DiDi Autonomous Driving,China,https://www.didiglobal.com,"1,000+","N/A",2019,Large Enterprise,RoboTaxi,Verified
+Autonomous Driving Tech,DeepRoute.ai,China,https://www.deeproute.ai,"200+","N/A",2019,SME,Autonomous Solutions,Verified
+Autonomous Driving Tech,Five AI,UK,https://five.ai,"100+","N/A",2015,SME,Autonomous Software,Verified
+Fleet Management,Trimble Transportation,USA,https://transportation.trimble.com,"12,000+","$4B",1978,Large Enterprise,Fleet Solutions,Verified
+Fleet Management,Verizon Connect,USA,https://www.verizonconnect.com,"5,000+","$2B",2002,Large Enterprise,Fleet Tracking,Verified
+Fleet Management,Geotab,Canada,https://www.geotab.com,"2,000+","$1B",2000,Large Enterprise,Telematics,Verified
+Fleet Management,Omnitracs,USA,https://www.omnitracs.com,"1,000+","N/A",1988,Large Enterprise,Fleet Management,Verified
+Fleet Management,Teletrac Navman,USA,https://www.teletracnavman.com,"1,000+","N/A",1988,Large Enterprise,Fleet Tracking,Verified
+Fleet Management,Fleet Complete,Canada,https://www.fleetcomplete.com,"500+","N/A",2001,SME,Fleet Tracking,Verified
+Fleet Management,Samsara,USA,https://www.samsara.com,"3,000+","$1B",2015,Large Enterprise,Operations Cloud,Verified
+Fleet Management,KeepTruckin,USA,https://keeptruckin.com,"2,000+","N/A",2013,Large Enterprise,ELD Compliance,Verified
+Fleet Management,Chevin Fleet Solutions,UK,https://www.chevinfleet.com,"200+","N/A",1990,SME,Fleet Software,Verified
+Fleet Management,TomTom Telematics,Netherlands,https://www.tomtom.com,"4,000+","$1B",1991,Large Enterprise,Navigation,Verified
+Fleet Management,INRIX,USA,https://inrix.com,"500+","N/A",2004,SME,Transportation Analytics,Verified
+Fleet Management,Azuga,USA,https://www.azuga.com,"200+","N/A",2012,SME,GPS Tracking,Verified
+Fleet Management,GPS Insight,USA,https://www.gpsinsight.com,"500+","N/A",2004,SME,Fleet Tracking,Verified
+Fleet Management,Fleetio,USA,https://www.fleetio.com,"200+","N/A",2012,SME,Fleet Maintenance,Verified
+Fleet Management,Mix Telematics,South Africa,https://www.mixtelematics.com,"1,000+","$150M",1996,Large Enterprise,Fleet Management,Verified
+Fleet Management,Webfleet Solutions,Netherlands,https://www.webfleet.com,"1,000+","N/A",2001,Large Enterprise,Telematics,Verified
+Fleet Management,Automile,Sweden,https://www.automile.com,"100+","N/A",2013,SME,Fleet Management,Verified
+Fleet Management,ClearPathGPS,USA,https://www.clearpathgps.com,"100+","N/A",2008,SME,Fleet Tracking,Verified
+Fleet Management,Linxio,Australia,https://linxio.com.au,"50+","N/A",2012,SME,Fleet Management,Verified
+Car Rental Services,Hertz Global Holdings,USA,https://www.hertz.com,"23,000+","$10B",1918,Large Enterprise,Car Rental,Verified
+Car Rental Services,Avis Budget Group,USA,https://www.avisbudgetgroup.com,"18,000+","$12B",1946,Large Enterprise,Car Rental,Verified
+Car Rental Services,Europcar Mobility Group,France,https://www.europcar-mobility-group.com,"6,000+","$3B",1949,Large Enterprise,Car Rental,Verified
+Car Rental Services,Enterprise Holdings,USA,https://www.enterpriseholdings.com,"80,000+","$30B",1957,Large Enterprise,Car Rental,Verified
+Car Rental Services,Sixt SE,Germany,https://www.sixt.com,"7,000+","$4B",1912,Large Enterprise,Car Rental,Verified
+Car Rental Services,Localiza,Brazil,https://www.localiza.com,"15,000+","$3B",1973,Large Enterprise,Car Rental,Verified
+Car Rental Services,U-Save Car & Truck Rental,USA,https://www.usave.com,"500+","N/A",1978,SME,Car Rental,Verified
+Car Rental Services,ACE Rent a Car,USA,https://www.acerentacar.com,"1,000+","N/A",1966,SME,Car Rental,Verified
+Car Rental Services,Fox Rent A Car,USA,https://www.foxrentacar.com,"500+","N/A",1989,SME,Car Rental,Verified
+Car Rental Services,Advantage Rent a Car,USA,https://www.advantage.com,"1,000+","N/A",1963,SME,Car Rental,Verified
+Car Rental Services,Thrifty Car Rental,USA,https://www.thrifty.com,"2,000+","N/A",1958,SME,Car Rental,Verified
+Car Rental Services,Dollar Rent A Car,USA,https://www.dollar.com,"2,000+","N/A",1965,SME,Car Rental,Verified
+Car Rental Services,Firefly Car Rental,USA,https://www.fireflycarrental.com,"500+","N/A",2010,SME,Car Rental,Verified
+Car Rental Services,National Car Rental,USA,https://www.nationalcar.com,"5,000+","N/A",1947,Large Enterprise,Car Rental,Verified
+Car Rental Services,Alamo Rent a Car,USA,https://www.alamo.com,"5,000+","N/A",1974,Large Enterprise,Car Rental,Verified
+Car Rental Services,Green Motion,UK,https://www.greenmotion.com,"200+","N/A",2007,SME,Car Rental,Verified
+Car Rental Services,Drivy (Getaround),France,https://www.getaround.com,"500+","N/A",2009,SME,Car Sharing,Verified
+Car Rental Services,Turo,USA,https://turo.com,"1,000+","N/A",2009,SME,Peer-to-Peer,Verified
+Luxury Vehicles,Rolls-Royce Motor Cars,UK,https://www.rolls-roycemotorcars.com,"2,000+","N/A",1906,Large Enterprise,Ultra-Luxury Vehicles,Verified
+Luxury Vehicles,Bentley Motors,UK,https://www.bentleymotors.com,"4,000+","$3B",1919,Large Enterprise,Luxury Vehicles,Verified
+Luxury Vehicles,Ferrari,Italy,https://www.ferrari.com,"5,000+","$6B",1939,Large Enterprise,Luxury Sports Cars,Verified
+Luxury Vehicles,Lamborghini,Italy,https://www.lamborghini.com,"2,000+","$3B",1963,Large Enterprise,Super Sports Cars,Verified
+Luxury Vehicles,Maserati,Italy,https://www.maserati.com,"1,000+","$2B",1914,Large Enterprise,Luxury Vehicles,Verified
+Luxury Vehicles,Aston Martin,UK,https://www.astonmartin.com,"3,000+","$2B",1913,Large Enterprise,Luxury Sports Cars,Verified
+Luxury Vehicles,McLaren Automotive,UK,https://cars.mclaren.com,"3,000+","$1B",1985,Large Enterprise,Supercars,Verified
+Luxury Vehicles,Bugatti Automobiles,France,https://www.bugatti.com,"100+","N/A",1909,SME,Hypercars,Verified
+Luxury Vehicles,Maybach (Mercedes-Benz),Germany,https://www.mercedes-maybach.com,"N/A (Division)","N/A",1909,Large Enterprise,Ultra-Luxury,Verified
+Luxury Vehicles,Genesis Motor,South Korea,https://www.genesis.com,"N/A (Division)","N/A",2015,Large Enterprise,Luxury Vehicles,Verified
+Luxury Vehicles,Lotus Cars,UK,https://www.lotuscars.com,"1,500+","$1B",1948,Large Enterprise,Sports Cars,Verified
+Luxury Vehicles,Pagani Automobili,Italy,https://www.pagani.com,"100+","N/A",1992,SME,Hypercars,Verified
+Luxury Vehicles,Alfa Romeo,Italy,https://www.alfaromeo.com,"N/A (Division)","N/A",1910,Large Enterprise,Performance Cars,Verified
+Luxury Vehicles,Acura (Honda),Japan,https://www.acura.com,"N/A (Division)","N/A",1986,Large Enterprise,Luxury Vehicles,Verified
+Luxury Vehicles,Lexus (Toyota),Japan,https://www.lexus.com,"N/A (Division)","N/A",1989,Large Enterprise,Luxury Vehicles,Verified
+Luxury Vehicles,Cadillac (GM),USA,https://www.cadillac.com,"N/A (Division)","N/A",1902,Large Enterprise,Luxury Vehicles,Verified
+Luxury Vehicles,Infiniti (Nissan),Japan,https://www.infiniti.com,"N/A (Division)","N/A",1989,Large Enterprise,Luxury Vehicles,Verified
+Luxury Vehicles,Jaguar Land Rover,UK,https://www.jaguarlandrover.com,"40,000+","$35B",1922,Large Enterprise,Luxury Vehicles,Verified
+Luxury Vehicles,Polestar,Sweden,https://www.polestar.com,"2,800+","$2B",2017,Large Enterprise,Premium Electric,Verified
+Off-Road Vehicles,Jeep (Stellantis),USA,https://www.jeep.com,"N/A (Division)","N/A",1941,Large Enterprise,Off-Road SUVs,Verified
+Off-Road Vehicles,Land Rover,UK,https://www.landrover.com,"N/A (Division)","N/A",1948,Large Enterprise,Off-Road Vehicles,Verified
+Off-Road Vehicles,Toyota Land Cruiser,Japan,https://www.toyota.com,"N/A (Division)","N/A",1951,Large Enterprise,Off-Road Vehicles,Verified
+Off-Road Vehicles,Ford Bronco,USA,https://www.ford.com,"N/A (Division)","N/A",1966,Large Enterprise,Off-Road SUV,Verified
+Off-Road Vehicles,Mercedes-Benz G-Class,Germany,https://www.mercedes-benz.com,"N/A (Division)","N/A",1979,Large Enterprise,Luxury Off-Road,Verified
+Off-Road Vehicles,Suzuki Jimny,Japan,https://www.globalsuzuki.com,"N/A (Division)","N/A",1970,Large Enterprise,Compact Off-Road,Verified
+Off-Road Vehicles,Mahindra Thar,India,https://www.mahindra.com,"N/A (Division)","N/A",1945,Large Enterprise,Off-Road SUV,Verified
+Off-Road Vehicles,INECOMPANY,Germany,https://www.ineco.com,"100+","N/A",1971,SME,Off-Road Vehicles,Verified
+Off-Road Vehicles,ARB Corporation,Australia,https://arb.com.au,"3,000+","$0.5B",1975,Large Enterprise,Off-Road Equipment,Verified
+Off-Road Vehicles,Can-Am (BRP),Canada,https://can-am.brp.com,"20,000+","$10B",2003,Large Enterprise,Off-Road Vehicles,Verified
+Off-Road Vehicles,Polaris Industries,USA,https://www.polaris.com,"16,000+","$9B",1954,Large Enterprise,Off-Road Vehicles,Verified
+Off-Road Vehicles,Arctic Cat,USA,https://arcticcat.txtsv.com,"1,000+","N/A",1960,SME,Off-Road Vehicles,Verified
+Off-Road Vehicles,Triumph Motorcycles,UK,https://www.triumphmotorcycles.com,"2,000+","$1B",1902,Large Enterprise,Adventure Motorcycles,Verified
+Off-Road Vehicles,CFMOTO,China,https://www.cfmoto.com,"5,000+","$2B",1989,Large Enterprise,Powersports,Verified
+Off-Road Vehicles,Hisun Motors,USA,https://www.hisunmotors.com,"1,000+","N/A",1988,SME,UTVs,Verified
+Off-Road Vehicles,KYMCO,Taiwan,https://www.kymco.com,"3,000+","$1B",1963,Large Enterprise,Scooters, ATVs,Verified
+Off-Road Vehicles,Segway Powersports,USA,https://segwaypowersports.com,"500+","N/A",2015,SME,Powersports,Verified
+Off-Road Vehicles,Tomcar,Australia,https://tomcar.com,"50+","N/A",2003,SME,Off-Road Vehicles,Verified
+Motorsports,Formula 1 Group,UK,https://www.formula1.com,"500+","$3B",1950,Large Enterprise,Premier Racing,Verified
+Motorsports,NASCAR,USA,https://www.nascar.com,"1,000+","$2B",1948,Large Enterprise,Stock Car Racing,Verified
+Motorsports,IndyCar Series,USA,https://www.indycar.com,"200+","N/A",1994,SME,Open-Wheel Racing,Verified
+Motorsports,Fédération Internationale de l'Automobile (FIA),France,https://www.fia.com,"300+","N/A",1904,SME,Motorsport Governance,Verified
+Motorsports,World Rally Championship (WRC),France,https://www.wrc.com,"100+","N/A",1973,SME,Rally Racing,Verified
+Motorsports,Le Mans 24 Hours,France,https://www.24h-lemans.com,"100+","N/A",1923,SME,Endurance Racing,Verified
+Motorsports,MotoGP,Spain,https://www.motogp.com,"200+","N/A",1949,SME,Motorcycle Racing,Verified
+Motorsports,Mercedes-AMG Petronas F1 Team,Germany,https://www.mercedesamgf1.com,"1,500+","N/A",2010,Large Enterprise,Formula 1 Team,Verified
+Motorsports,Scuderia Ferrari,Italy,https://www.ferrari.com,"1,500+","N/A",1929,Large Enterprise,Formula 1 Team,Verified
+Motorsports,Red Bull Racing,Austria,https://www.redbullracing.com,"1,000+","N/A",2005,Large Enterprise,Formula 1 Team,Verified
+Motorsports,McLaren Racing,UK,https://www.mclaren.com,"1,000+","N/A",1963,Large Enterprise,Formula 1 Team,Verified
+Motorsports,Porsche Motorsport,Germany,https://www.porsche.com,"N/A (Division)","N/A",1971,Large Enterprise,Motorsport Division,Verified
+Motorsports,Toyota Gazoo Racing,Japan,https://toyotagazooracing.com,"N/A (Division)","N/A",2015,Large Enterprise,Motorsport Division,Verified
+Motorsports,Hendrick Motorsports,USA,https://www.hendrickmotorsports.com,"600+","N/A",1984,SME,NASCAR Team,Verified
+Motorsports,Team Penske,USA,https://www.teampenske.com,"500+","N/A",1966,SME,Racing Team,Verified
+Motorsports,Roush Fenway Racing,USA,https://www.roushfenway.com,"400+","N/A",1988,SME,NASCAR Team,Verified
+Motorsports,Andretti Autosport,USA,https://www.andrettiautosport.com,"300+","N/A",1993,SME,Racing Team,Verified
+Motorsports,Chip Ganassi Racing,USA,https://www.ganassi.com,"200+","N/A",1990,SME,Racing Team,Verified
+Automotive Software,Vector Informatik,Germany,https://www.vector.com,"3,000+","$0.5B",1988,Large Enterprise,Auto Software Tools,Verified
+Automotive Software,ETAS (Bosch),Germany,https://www.etas.com,"1,000+","N/A",1994,Large Enterprise,Software Products,Verified
+Automotive Software,Elektrobit,Germany,https://www.elektrobit.com,"4,000+","N/A",1985,Large Enterprise,Auto Software,Verified
+Automotive Software,Wind River Systems,USA,https://www.windriver.com,"2,000+","$0.5B",1981,Large Enterprise,Embedded Software,Verified
+Automotive Software,Green Hills Software,USA,https://www.ghs.com,"300+","N/A",1982,SME,Embedded Software,Verified
+Automotive Software,BlackBerry QNX,Canada,https://blackberry.qnx.com,"500+","N/A",1980,SME,Embedded OS,Verified
+Automotive Software,Apex.AI,USA,https://www.apex.ai,"100+","N/A",2017,SME,Auto Software,Verified
+Automotive Software,Airbiquity,USA,https://www.airbiquity.com,"100+","N/A",1997,SME,Connected Vehicles,Verified
+Automotive Software,TTTech Auto,Austria,https://www.tttech-auto.com,"1,000+","N/A",1998,Large Enterprise,Safety Software,Verified
+Automotive Software,Carota,China,https://www.carota.ai,"100+","N/A",2020,SME,OTA Management,Verified
+Automotive Software,Red Bend Software (Harman),USA,https://www.harman.com,"30,000+","$9B",1999,Large Enterprise,Software Management,Verified
+Automotive Software,Mojio,Canada,https://moj.io,"100+","N/A",2012,SME,Connected Car,Verified
+Automotive Software,Sibros,USA,https://www.sibros.tech,"200+","N/A",2018,SME,Connected Vehicle,Verified
+Automotive Software,Excelfore,USA,https://www.excelfore.com,"100+","N/A",2009,SME,Connectivity,Verified
+Automotive Software,C2A Security,Israel,https://c2a-sec.com,"100+","N/A",2016,SME,Auto Cybersecurity,Verified
+Automotive Software,Upstream Security,Israel,https://upstream.auto,"100+","N/A",2017,SME,Cybersecurity,Verified
+Automotive Software,Perceptive Automata,USA,https://www.perceptiveautomata.com,"50+","N/A",2014,SME,AI Perception,Verified
+Automotive Software,Cognata,Israel,https://www.cognata.com,"100+","N/A",2016,SME,Simulation,Verified
+Automotive Software,Foretellix,Israel,https://www.foretellix.com,"100+","N/A",2018,SME,Verification,Verified
+Tire Manufacturing,Michelin,France,https://www.michelin.com,"132,000+","$30B",1889,Large Enterprise,Tires,Verified
+Tire Manufacturing,Bridgestone,Japan,https://www.bridgestone.com,"138,000+","$33B",1931,Large Enterprise,Tires,Verified
+Tire Manufacturing,Goodyear Tire & Rubber,USA,https://www.goodyear.com,"72,000+","$21B",1898,Large Enterprise,Tires,Verified
+Tire Manufacturing,Continental Tires,Germany,https://www.continental-tires.com,"200,000+","$44B",1871,Conglomerate,Tires,Verified
+Tire Manufacturing,Pirelli & C.,Italy,https://www.pirelli.com,"31,000+","$7B",1872,Large Enterprise,Tires,Verified
+Tire Manufacturing,Hankook Tire,South Korea,https://www.hankooktire.com,"20,000+","$7B",1941,Large Enterprise,Tires,Verified
+Tire Manufacturing,Sumitomo Rubber Industries,Japan,https://www.srigroup.co.jp,"38,000+","$8B",1909,Large Enterprise,Tires,Verified
+Tire Manufacturing,Yokohama Rubber,Japan,https://www.y-yokohama.com,"20,000+","$7B",1917,Large Enterprise,Tires,Verified
+Tire Manufacturing,Cooper Tire & Rubber,USA,https://coopertire.com,"10,000+","$3B",1914,Large Enterprise,Tires,Verified
+Tire Manufacturing,Toyo Tire Corporation,Japan,https://www.toyo-tire.com,"14,000+","$4B",1945,Large Enterprise,Tires,Verified
+Tire Manufacturing,Maxxis International,Taiwan,https://www.maxxis.com,"30,000+","$5B",1967,Large Enterprise,Tires,Verified
+Tire Manufacturing,Apollo Tyres,India,https://www.apollotyres.com,"17,000+","$3B",1972,Large Enterprise,Tires,Verified
+Tire Manufacturing,Cheng Shin Rubber (Maxxis),Taiwan,https://www.cst.com.tw,"25,000+","$4B",1967,Large Enterprise,Tires,Verified
+Tire Manufacturing,Giti Tire,Singapore,https://www.giti.com,"10,000+","$2B",1951,Large Enterprise,Tires,Verified
+Tire Manufacturing,Nokian Tyres,Finland,https://www.nokiantyres.com,"5,000+","$2B",1898,Large Enterprise,Tires,Verified
+Tire Manufacturing,MRF Tyres,India,https://www.mrftyres.com,"20,000+","$3B",1946,Large Enterprise,Tires,Verified
+Tire Manufacturing,CEAT Tyres,India,https://www.ceat.com,"6,000+","$1B",1958,Large Enterprise,Tires,Verified
+Tire Manufacturing,Falken Tire (Sumitomo),Japan,https://www.falkentire.com,"N/A (Subsidiary)","N/A",1983,Large Enterprise,Tires,Verified
+Tire Manufacturing,Nexen Tire,South Korea,https://www.nexentire.com,"5,000+","$2B",1942,Large Enterprise,Tires,Verified
+Charging Infrastructure,ChargePoint,USA,https://www.chargepoint.com,"2,000+","$0.5B",2007,Large Enterprise,EV Charging,Verified
+Charging Infrastructure,Tesla Supercharger,USA,https://www.tesla.com,"140,000+","$97B",2003,Large Enterprise,EV Charging,Verified
+Charging Infrastructure,EVgo,USA,https://www.evgo.com,"500+","$0.2B",2010,SME,EV Charging,Verified
+Charging Infrastructure,Electrify America,USA,https://www.electrifyamerica.com,"500+","N/A",2016,SME,EV Charging,Verified
+Charging Infrastructure,Shell Recharge,Netherlands,https://www.shell.com,"82,000+","$385B",1907,Conglomerate,EV Charging,Verified
+Charging Infrastructure,BP Pulse,UK,https://www.bppulse.co.uk,"67,000+","$248B",1909,Conglomerate,EV Charging,Verified
+Charging Infrastructure,Ionity (BMW/Daimler/Ford/VW),Germany,https://ionity.eu,"100+","N/A",2017,SME,EV Charging,Verified
+Charging Infrastructure,Blink Charging,USA,https://www.blinkcharging.com,"500+","$0.1B",2009,SME,EV Charging,Verified
+Charging Infrastructure,ABB E-mobility,Switzerland,https://new.abb.com,"105,000+","$32B",1988,Conglomerate,EV Charging,Verified
+Charging Infrastructure,Siemens eMobility,Germany,https://new.siemens.com,"293,000+","$87B",1847,Conglomerate,EV Charging,Verified
+Charging Infrastructure,Webasto Charging Systems,Germany,https://www.webasto-group.com,"17,000+","$5B",1901,Large Enterprise,EV Charging,Verified
+Charging Infrastructure,Wallbox,Spain,https://www.wallbox.com,"1,000+","$0.2B",2015,SME,EV Charging,Verified
+Charging Infrastructure,Pod Point,UK,https://pod-point.com,"500+","N/A",2009,SME,EV Charging,Verified
+Charging Infrastructure,Alfen,Netherlands,https://alfen.com,"500+","$0.2B",1937,SME,EV Charging,Verified
+Charging Infrastructure,EVBox,Netherlands,https://evbox.com,"1,000+","N/A",2010,SME,EV Charging,Verified
+Charging Infrastructure,ChargeFox,Australia,https://chargefox.com,"100+","N/A",2017,SME,EV Charging,Verified
+Charging Infrastructure,Greenlots (Shell),USA,https://www.greenlots.com,"N/A (Subsidiary)","N/A",2008,SME,EV Charging,Verified
+Charging Infrastructure,Beam Global,USA,https://beamforall.com,"100+","N/A",2005,SME,EV Charging,Verified
+Charging Infrastructure,Volta Charging,USA,https://www.voltacharging.com,"200+","$0.1B",2010,SME,EV Charging,Verified
+Vehicle Telematics,Geotab,Canada,https://www.geotab.com,"2,000+","$1B",2000,Large Enterprise,Telematics,Verified
+Vehicle Telematics,Verizon Connect,USA,https://www.verizonconnect.com,"5,000+","$2B",2002,Large Enterprise,Fleet Tracking,Verified
+Vehicle Telematics,Octo Telematics,Italy,https://www.octotelematics.com,"1,000+","N/A",2002,Large Enterprise,Telematics,Verified
+Vehicle Telematics,Trimble Transportation,USA,https://transportation.trimble.com,"12,000+","$4B",1978,Large Enterprise,Fleet Solutions,Verified
+Vehicle Telematics,CalAmp,USA,https://www.calamp.com,"1,000+","$0.3B",1981,SME,Telematics,Verified
+Vehicle Telematics,Danlaw Inc.,USA,https://www.danlaw.com,"500+","N/A",1982,SME,Telematics,Verified
+Vehicle Telematics,Mix Telematics,South Africa,https://www.mixtelematics.com,"1,000+","$150M",1996,Large Enterprise,Fleet Management,Verified
+Vehicle Telematics,Inseego,USA,https://inseego.com,"500+","$0.3B",1996,SME,Connectivity,Verified
+Vehicle Telematics,Spireon,USA,https://www.spireon.com,"500+","N/A",2009,SME,Telematics,Verified
+Vehicle Telematics,Continental Automotive,Germany,https://www.continental-automotive.com,"200,000+","$44B",1871,Conglomerate,Telematics,Verified
+Vehicle Telematics,Harman Connected Services,USA,https://www.harman.com,"30,000+","$9B",1980,Large Enterprise,Connected Car,Verified
+Vehicle Telematics,AirIQ,Canada,https://www.airiq.com,"100+","N/A",1998,SME,GPS Tracking,Verified
+Vehicle Telematics,Scope Technology,Australia,https://www.scopetechnology.com,"50+","N/A",2004,SME,Telematics,Verified
+Vehicle Telematics,Teletrac Navman,USA,https://www.teletracnavman.com,"1,000+","N/A",1988,Large Enterprise,Fleet Tracking,Verified
+Vehicle Telematics,TomTom Telematics,Netherlands,https://www.tomtom.com,"4,000+","$1B",1991,Large Enterprise,Navigation,Verified
+Vehicle Telematics,Intellicar Telematics,USA,https://intellicar.com,"100+","N/A",2012,SME,Telematics,Verified
+Vehicle Telematics,GPS Trackit,USA,https://www.gpstrackit.com,"200+","N/A",2002,SME,Fleet Tracking,Verified
+Vehicle Telematics,Fleetio,USA,https://www.fleetio.com,"200+","N/A",2012,SME,Fleet Maintenance,Verified
+Vehicle Telematics,Azuga,USA,https://www.azuga.com,"200+","N/A",2012,SME,GPS Tracking,Verified
+Automotive AI,NVIDIA Automotive,USA,https://www.nvidia.com,"26,000+","$61B",1993,Large Enterprise,AI Hardware/Software,Verified
+Automotive AI,Waymo (Alphabet),USA,https://waymo.com,"2,500+","N/A",2009,Large Enterprise,Autonomous Driving,Verified
+Automotive AI,Mobileye (Intel),Israel,https://www.mobileye.com,"3,000+","$2B",1999,Large Enterprise,ADAS, Vision,Verified
+Automotive AI,Argo AI (Ford/VW),USA,https://www.argo.ai,"1,000+","N/A",2016,Large Enterprise,Autonomous Systems,Verified
+Automotive AI,Five AI,UK,https://five.ai,"100+","N/A",2015,SME,Autonomous Software,Verified
+Automotive AI,Cognata,Israel,https://www.cognata.com,"100+","N/A",2016,SME,Simulation,Verified
+Automotive AI,AEye,USA,https://www.aeye.ai,"100+","N/A",2013,SME,Lidar,Verified
+Automotive AI,Perceptive Automata,USA,https://www.perceptiveautomata.com,"50+","N/A",2014,SME,AI Perception,Verified
+Automotive AI,DeepScale (Tesla),USA,https://www.tesla.com,"N/A (Acquired)","N/A",2015,SME,AI Perception,Verified
+Automotive AI,AImotive,USA,https://aimotive.com,"100+","N/A",2015,SME,AI Software,Verified
+Automotive AI,Recogni,USA,https://www.recogni.com,"50+","N/A",2017,SME,AI Vision,Verified
+Automotive AI,DeepRoute.ai,China,https://www.deeproute.ai,"200+","N/A",2019,SME,Autonomous Solutions,Verified
+Automotive AI,Phantom AI,USA,https://www.phantom.ai,"50+","N/A",2017,SME,ADAS,Verified
+Automotive AI,Foretellix,Israel,https://www.foretellix.com,"100+","N/A",2018,SME,Verification,Verified
+Automotive AI,Plus.ai,USA,https://www.plus.ai,"500+","N/A",2016,SME,Self-Driving Trucks,Verified
+Automotive AI,Helm.ai,USA,https://www.helm.ai,"50+","N/A",2016,SME,AI Software,Verified
+Automotive AI,Seoul Robotics,South Korea,https://www.seoulrobotics.org,"100+","N/A",2017,SME,3D Perception,Verified
+Automotive AI,Carmera,USA,https://www.carmera.com,"50+","N/A",2015,SME,HD Mapping,Verified
+Classic Car Restoration,Fiskens,UK,https://fiskens.com,"20+","N/A",1993,SME,Classic Car Sales,Verified
+Classic Car Restoration,Classic Motor Cars,UK,https://www.classicmotorcars.co.uk,"50+","N/A",1994,SME,Restoration,Verified
+Classic Car Restoration,Paul Russell and Company,USA,https://paulrussell.com,"30+","N/A",1978,SME,Restoration,Verified
+Classic Car Restoration,RM Restorations,Canada,https://www.rmrestorations.com,"100+","N/A",1991,SME,Restoration,Verified
+Classic Car Restoration,Wayne Carini Restoration,USA,https://f40.com,"20+","N/A",1976,SME,Restoration,Verified
+Classic Car Restoration,Thornley Kelham,UK,https://www.thornleykelham.com,"40+","N/A",2009,SME,Restoration,Verified
+Classic Car Restoration,Redline Restorations,USA,https://redlinerestorations.com,"30+","N/A",1999,SME,Restoration,Verified
+Classic Car Restoration,Graber Automotive,Switzerland,https://www.graberautomotive.com,"20+","N/A",1985,SME,Restoration,Verified
+Classic Car Restoration,Carrozzeria Touring Superleggera,Italy,https://www.touringsuperleggera.eu,"50+","N/A",1926,SME,Coachbuilding,Verified
+Classic Car Restoration,Revology Cars,USA,https://revologycars.com,"100+","N/A",2014,SME,Replica Cars,Verified
+Classic Car Restoration,Singer Vehicle Design,USA,https://singervehicledesign.com,"100+","N/A",2009,SME,Restoration,Verified
+Classic Car Restoration,Icon Derelicts,USA,https://www.icon4x4.com,"50+","N/A",2007,SME,Restomods,Verified
+Classic Car Restoration,The Guild of Automotive Restorers,Canada,https://www.guildclassiccars.com,"30+","N/A",1990,SME,Restoration,Verified
+Classic Car Restoration,Level One Restorations,USA,https://www.levelonerestorations.com,"20+","N/A",2002,SME,Restoration,Verified
+Classic Car Restoration,Canepa Motorsports,USA,https://canepa.com,"50+","N/A",1998,SME,Restoration,Verified
+Classic Car Restoration,Classic Restorations,USA,https://www.classicrestorations.com,"25+","N/A",1985,SME,Restoration,Verified
+Classic Car Restoration,Steves Auto Restorations,USA,https://www.stevesautorestorations.com,"40+","N/A",1974,SME,Restoration,Verified
+Classic Car Restoration,The Finest Automobile Restorations,USA,https://www.finestautomobilerestorations.com,"30+","N/A",1988,SME,Restoration,Verified
+Classic Car Restoration,Classic Coachworks,USA,https://classiccoachworks.com,"20+","N/A",1979,SME,Restoration,Verified
+Ride-Hailing Platforms,Uber,USA,https://www.uber.com,"32,000+","$37B",2009,Large Enterprise,Ride-Hailing,Verified
+Ride-Hailing Platforms,Lyft,USA,https://www.lyft.com,"4,500+","$4B",2012,Large Enterprise,Ride-Hailing,Verified
+Ride-Hailing Platforms,Didi Chuxing,China,https://www.didiglobal.com,"14,000+","$27B",2012,Large Enterprise,Ride-Hailing,Verified
+Ride-Hailing Platforms,Grab,Singapore,https://www.grab.com,"9,000+","$1B",2012,Large Enterprise,Ride-Hailing,Verified
+Ride-Hailing Platforms,Ola Cabs,India,https://www.olacabs.com,"8,000+","$1B",2010,Large Enterprise,Ride-Hailing,Verified
+Ride-Hailing Platforms,Bolt,Estonia,https://bolt.eu,"3,000+","$1B",2013,Large Enterprise,Ride-Hailing,Verified
+Ride-Hailing Platforms,Gojek,Indonesia,https://www.gojek.com,"30,000+","$2B",2010,Large Enterprise,Ride-Hailing,Verified
+Ride-Hailing Platforms,Yandex.Taxi,Russia,https://taxi.yandex.com,"10,000+","$2B",2011,Large Enterprise,Ride-Hailing,Verified
+Ride-Hailing Platforms,Free Now (BMW/Daimler),Germany,https://free-now.com,"1,000+","N/A",2009,Large Enterprise,Ride-Hailing,Verified
+Ride-Hailing Platforms,Careem (Uber),UAE,https://www.careem.com,"4,000+","N/A",2012,Large Enterprise,Ride-Hailing,Verified
+Ride-Hailing Platforms,Gett,UK,https://www.gett.com,"1,000+","N/A",2010,SME,Ride-Hailing,Verified
+Ride-Hailing Platforms,Cabify,Spain,https://cabify.com,"1,500+","N/A",2011,SME,Ride-Hailing,Verified
+Ride-Hailing Platforms,Blablacar,France,https://www.blablacar.com,"600+","$0.2B",2006,SME,Carpooling,Verified
+Ride-Hailing Platforms,Juno (Gett),USA,https://www.gett.com,"N/A (Acquired)","N/A",2016,SME,Ride-Hailing,Verified
+Ride-Hailing Platforms,Beat (Daimler),Greece,https://thebeat.co,"500+","N/A",2011,SME,Ride-Hailing,Verified
+Ride-Hailing Platforms,InDriver,USA,https://www.indriver.com,"1,000+","N/A",2012,SME,Ride-Hailing,Verified
+Ride-Hailing Platforms,Via Transportation,USA,https://ridewithvia.com,"600+","N/A",2012,SME,Transit Tech,Verified
+Ride-Hailing Platforms,Mytaxi (Free Now),Germany,https://free-now.com,"N/A (Merged)","N/A",2009,SME,Ride-Hailing,Verified
+Ride-Hailing Platforms,Scoot Networks,USA,https://scoot.co,"100+","N/A",2011,SME,Scooter Sharing,Verified
+Car Subscription Services,Cluno,Germany,https://www.cluno.com,"200+","N/A",2016,SME,Car Subscription,Verified
+Car Subscription Services,Care by Volvo,Sweden,https://www.volvocars.com,"N/A (Division)","N/A",2016,Large Enterprise,Car Subscription,Verified
+Car Subscription Services,Porsche Drive,Germany,https://www.porsche.com,"N/A (Division)","N/A",2018,Large Enterprise,Car Subscription,Verified
+Car Subscription Services,Access by BMW,Germany,https://www.bmw.com,"N/A (Division)","N/A",2018,Large Enterprise,Car Subscription,Verified
+Car Subscription Services,Mercedes-Benz Collection,Germany,https://www.mercedes-benz.com,"N/A (Division)","N/A",2017,Large Enterprise,Car Subscription,Verified
+Car Subscription Services,Canvas (Ford),USA,https://www.canvas.com,"N/A (Closed)","N/A",2017,SME,Car Subscription,Verified
+Car Subscription Services,Book by Cadillac,USA,https://www.cadillac.com,"N/A (Division)","N/A",2017,Large Enterprise,Car Subscription,Verified
+Car Subscription Services,Fair,USA,https://www.fair.com,"500+","N/A",2016,SME,Car Subscription,Verified
+Car Subscription Services,Canoo,USA,https://canoo.com,"800+","N/A",2017,SME,Lifestyle Electric Vehicles,Verified
+Car Subscription Services,Onto,UK,https://on.to,"200+","N/A",2017,SME,EV Subscription,Verified
+Car Subscription Services,Elmo,UK,https://elmodrive.com,"100+","N/A",2015,SME,EV Subscription,Verified
+Car Subscription Services,Drover,UK,https://www.drover.com,"N/A (Acquired)","N/A",2015,SME,Car Subscription,Verified
+Car Subscription Services,Carma,USA,https://www.carmaclub.com,"100+","N/A",2016,SME,Car Subscription,Verified
+Car Subscription Services,HyreCar,USA,https://www.hyrecar.com,"200+","$0.1B",2014,SME,Car Rental,Verified
+Car Subscription Services,FlexDrive,USA,https://www.flexdrive.com,"100+","N/A",2013,SME,Car Subscription,Verified
+Car Subscription Services,Swish,USA,https://swish.co,"50+","N/A",2015,SME,Car Subscription,Verified
+Car Subscription Services,Autonomy,USA,https://autonomy.com,"100+","N/A",2021,SME,Car Subscription,Verified
+Car Subscription Services,Blinker,USA,https://www.blinker.com,"100+","N/A",2014,SME,Car Buying,Verified
+Car Subscription Services,Zipcar Flex,USA,https://www.zipcar.com,"N/A (Division)","N/A",2000,Large Enterprise,Car Sharing,Verified

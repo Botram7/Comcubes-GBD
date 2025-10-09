@@ -1,0 +1,378 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Automotive Manufacturing,Toyota Motor Corporation,Japan,https://global.toyota,"375,000+","$300B+",1937,Conglomerate,"Automobiles, EVs, Hybrids, Robotics",Verified
+Automotive Manufacturing,Volkswagen Group,Germany,https://www.volkswagenag.com,"676,000+","$300B+",1937,Conglomerate,"Passenger Cars, Commercial Vehicles, EVs",Verified
+Automotive Manufacturing,Stellantis,Netherlands,https://www.stellantis.com,"272,000+","$200B+",2021,Conglomerate,"Multi-Brand Auto Portfolio, EVs",Verified
+Automotive Manufacturing,General Motors,USA,https://www.gm.com,"167,000+","$170B+",1908,Large Enterprise,"Trucks, EVs, Autonomous Vehicles",Verified
+Automotive Manufacturing,Ford Motor Company,USA,https://www.ford.com,"177,000+","$170B+",1903,Large Enterprise,"Trucks, SUVs, EVs, Commercial Vehicles",Verified
+Automotive Manufacturing,Honda Motor Co.,Japan,https://global.honda,"211,000+","$130B+",1948,Conglomerate,"Automobiles, Motorcycles, Power Equipment",Verified
+Automotive Manufacturing,BMW Group,Germany,https://www.bmwgroup.com,"149,000+","$150B+",1916,Large Enterprise,"Luxury Vehicles, Motorcycles, EVs",Verified
+Automotive Manufacturing,Hyundai Motor Group,South Korea,https://www.hyundaimotorgroup.com,"249,000+","$120B+",1967,Conglomerate,"Automobiles, EVs, Steel, Construction",Verified
+Automotive Manufacturing,SAIC Motor,China,https://www.saicmotor.com,"145,000+","$110B+",1955,Large Enterprise,"Joint Ventures, Passenger & Commercial Vehicles",Verified
+Automotive Manufacturing,Nissan Motor Co.,Japan,https://www.nissan-global.com,"136,000+","$80B+",1933,Large Enterprise,"Automobiles, EVs, Crossovers",Verified
+Automotive Manufacturing,Tesla,USA,https://www.tesla.com,"127,000+","$95B+",2003,Large Enterprise,"Electric Vehicles, Energy Storage, Solar",Verified
+Automotive Manufacturing,Mercedes-Benz Group,Germany,https://group.mercedes-benz.com,"172,000+","$160B+",1926,Large Enterprise,"Luxury Vehicles, Vans, EVs",Verified
+Automotive Manufacturing,Kia Corporation,South Korea,https://www.kia.com,"48,000+","$70B+",1944,Large Enterprise,"Passenger Cars, SUVs, EVs",Verified
+Automotive Manufacturing,Renault Group,France,https://www.renaultgroup.com,"170,000+","$50B+",1899,Large Enterprise,"Automobiles, EVs, Alliance Partnerships",Verified
+Automotive Manufacturing,Geely Auto Group,China,https://www.geely.com,"43,000+","$20B+",1986,Large Enterprise,"Passenger Vehicles, EVs, Volvo Ownership",Verified
+Automotive Manufacturing,Tata Motors,India,https://www.tatamotors.com,"78,000+","$40B+",1945,Large Enterprise,"Passenger Cars, Commercial Vehicles, Jaguar Land Rover",Verified
+Automotive Manufacturing,Mazda Motor Corporation,Japan,https://www.mazda.com,"50,000+","$30B+",1920,Large Enterprise,"Passenger Cars, SKYACTIV Technology",Verified
+Automotive Manufacturing,Subaru Corporation,Japan,https://www.subaru.co.jp,"35,000+","$30B+",1953,Large Enterprise,"All-Wheel Drive Vehicles, Crossovers",Verified
+Automotive Manufacturing,BAIC Group,China,https://www.baicgroup.com.cn,"130,000+","$70B+",1958,Large Enterprise,"Joint Ventures, Own Brand Vehicles, EVs",Verified
+Automotive Manufacturing,BYD Auto,China,https://www.byd.com,"570,000+","$85B+",1995,Large Enterprise,"Electric Vehicles, Batteries, Monorail",Verified
+Aerospace & Defense Manufacturing,Boeing,USA,https://www.boeing.com,"156,000+","$75B+",1916,Conglomerate,"Commercial Airplanes, Defense, Space",Verified
+Aerospace & Defense Manufacturing,Lockheed Martin,USA,https://www.lockheedmartin.com,"116,000+","$65B+",1995,Conglomerate,"Defense, Aeronautics, Missiles, Space",Verified
+Aerospace & Defense Manufacturing,Airbus,Netherlands,https://www.airbus.com,"134,000+","$70B+",1970,Conglomerate,"Commercial Aircraft, Helicopters, Defense",Verified
+Aerospace & Defense Manufacturing,Northrop Grumman,USA,https://www.northropgrumman.com,"97,000+","$40B+",1939,Conglomerate,"Defense Systems, Aerospace, Mission Systems",Verified
+Aerospace & Defense Manufacturing,General Dynamics,USA,https://www.gd.com,"106,000+","$40B+",1899,Conglomerate,"Aerospace, Combat Vehicles, Marine Systems",Verified
+Aerospace & Defense Manufacturing,Raytheon Technologies,USA,https://www.rtx.com,"182,000+","$70B+",2020,Conglomerate,"Aerospace, Defense, Cybersecurity",Verified
+Aerospace & Defense Manufacturing,Bombardier,Canada,https://www.bombardier.com,"66,000+","$7B+",1942,Large Enterprise,"Business Aircraft, Regional Jets",Verified
+Aerospace & Defense Manufacturing,BAE Systems,UK,https://www.baesystems.com,"93,000+","$25B+",1999,Large Enterprise,"Defense, Aerospace, Security",Verified
+Aerospace & Defense Manufacturing,Safran,France,https://www.safran-group.com,"83,000+","$20B+",2005,Large Enterprise,"Aerospace Propulsion, Aircraft Equipment, Defense",Verified
+Aerospace & Defense Manufacturing,Leonardo S.p.A.,Italy,https://www.leonardo.com,"49,000+","$16B+",1948,Large Enterprise,"Helicopters, Aeronautics, Electronics, Defense",Verified
+Aerospace & Defense Manufacturing,Embraer,Brazil,https://www.embraer.com,"18,000+","$5B+",1969,Large Enterprise,"Commercial, Defense, Executive Jets",Verified
+Aerospace & Defense Manufacturing,Thales Group,France,https://www.thalesgroup.com,"81,000+","$20B+",1893,Large Enterprise,"Aerospace, Defense, Transportation, Security",Verified
+Aerospace & Defense Manufacturing,HAL (Hindustan Aeronautics),India,https://hal-india.co.in,"29,000+","$3B+",1940,Large Enterprise,"Aircraft, Helicopters, Aerospace",Verified
+Aerospace & Defense Manufacturing,Kawasaki Heavy Industries,Japan,https://global.kawasaki.com,"40,000+","$15B+",1896,Large Enterprise,"Aerospace, Rolling Stock, Motorcycles, Ships",Verified
+Aerospace & Defense Manufacturing,Mitsubishi Heavy Industries,Japan,https://www.mhi.com,"80,000+","$35B+",1884,Conglomerate,"Aerospace, Energy, Machinery, Defense",Verified
+Aerospace & Defense Manufacturing,United Aircraft Corporation,Russia,https://www.uacrussia.ru,"100,000+","$7B+",2006,Large Enterprise,"Military & Civil Aircraft",Verified
+Aerospace & Defense Manufacturing,AVIC (Aviation Industry Corp of China),China,https://www.avic.com,"400,000+","$90B+",2008,Conglomerate,"Military & Civil Aircraft, Aero-Engines",Verified
+Aerospace & Defense Manufacturing,Rolls-Royce Holdings,UK,https://www.rolls-royce.com,"42,000+","$18B+",1906,Large Enterprise,"Aero-Engines, Power Systems, Defense",Verified
+Aerospace & Defense Manufacturing,Dassault Aviation,France,https://www.dassault-aviation.com,"12,000+","$6B+",1929,Large Enterprise,"Business Jets, Military Aircraft",Verified
+Electronics Manufacturing,Foxconn (Hon Hai Precision Industry),Taiwan,https://www.foxconn.com,"1,000,000+","$200B+",1974,Conglomerate,"Consumer Electronics, Components, Assembly",Verified
+Electronics Manufacturing,Pegatron,Taiwan,https://www.pegatron.com,"100,000+","$50B+",2008,Large Enterprise,"Computing, Communications, Consumer Electronics",Verified
+Electronics Manufacturing,Flextronics (Flex),Singapore,https://www.flex.com,"200,000+","$30B+",1969,Large Enterprise,"Electronics Design, Manufacturing, Supply Chain",Verified
+Electronics Manufacturing,Jabil,USA,https://www.jabil.com,"260,000+","$35B+",1966,Large Enterprise,"Electronics Manufacturing, Supply Chain",Verified
+Electronics Manufacturing,Wistron,Taiwan,https://www.wistron.com,"80,000+","$30B+",2001,Large Enterprise,"ICT Products, Design & Manufacturing Services",Verified
+Electronics Manufacturing,Quanta Computer,Taiwan,https://www.quantatw.com,"40,000+","$45B+",1988,Large Enterprise,"Notebooks, Cloud Computing, IoT",Verified
+Electronics Manufacturing,Compal Electronics,Taiwan,https://www.compal.com,"40,000+","$35B+",1984,Large Enterprise,"Notebooks, Smart Devices, IoT",Verified
+Electronics Manufacturing,Sanmina Corporation,USA,https://www.sanmina.com,"40,000+","$9B+",1980,Large Enterprise,"Integrated Manufacturing, Components, Solutions",Verified
+Electronics Manufacturing,Lite-On Technology,Taiwan,https://www.liteon.com,"40,000+","$7B+",1975,Large Enterprise,"Optoelectronics, Power Management, IoT",Verified
+Electronics Manufacturing,Venture Corporation,Singapore,https://www.venture.com.sg,"12,000+","$3B+",1984,Large Enterprise,"Technology Services, Products & Solutions",Verified
+Electronics Manufacturing,Benchmark Electronics,USA,https://www.bench.com,"12,000+","$3B+",1979,Large Enterprise,"Precision Manufacturing, Engineering Services",Verified
+Electronics Manufacturing,USI (Universal Scientific Industrial),Taiwan,https://www.usiglobal.com,"20,000+","$15B+",1976,Large Enterprise,"Modules, Boards, System Assembly",Verified
+Electronics Manufacturing,Celestica,Canada,https://www.celestica.com,"25,000+","$7B+",1994,Large Enterprise,"Hardware Platform & Supply Chain Solutions",Verified
+Electronics Manufacturing,Plexus Corp,USA,https://www.plexus.com,"20,000+","$4B+",1979,Large Enterprise,"Design, Development, Manufacturing",Verified
+Electronics Manufacturing,Kimball Electronics,USA,https://www.kimballelectronics.com,"10,000+","$1.5B+",1961,Large Enterprise,"Medical, Automotive, Industrial Electronics",Verified
+Electronics Manufacturing,New Kinpo Group,Taiwan,https://www.newkinpogroup.com,"30,000+","$10B+",1973,Large Enterprise,"Consumer Electronics, Smart Home, Robotics",Verified
+Electronics Manufacturing,Inventec,Taiwan,https://www.inventec.com,"20,000+","$15B+",1975,Large Enterprise,"Servers, Notebooks, IoT Devices",Verified
+Electronics Manufacturing,Zollner Elektronik,Germany,https://www.zollner.de,"7,000+","$1B+",1925,Large Enterprise,"Electronics, Mechatronics, Cable Assemblies",Verified
+Industrial Machinery,Caterpillar Inc.,USA,https://www.caterpillar.com,"113,000+","$70B+",1925,Conglomerate,"Construction, Mining, Diesel, Natural Gas Engines",Verified
+Industrial Machinery,John Deere,USA,https://www.deere.com,"82,000+","$60B+",1837,Conglomerate,"Agricultural, Construction, Forestry Machinery",Verified
+Industrial Machinery,Siemens AG,Germany,https://www.siemens.com,"320,000+","$80B+",1847,Conglomerate,"Digital Industries, Smart Infrastructure, Mobility",Verified
+Industrial Machinery,Hitachi Ltd.,Japan,https://www.hitachi.com,"350,000+","$80B+",1910,Conglomerate,"IT, Energy, Industry, Mobility, Smart Life",Verified
+Industrial Machinery,Komatsu Ltd.,Japan,https://www.komatsu.com,"60,000+","$25B+",1921,Large Enterprise,"Construction, Mining, Utility Equipment",Verified
+Industrial Machinery,Volvo Group,Sweden,https://www.volvogroup.com,"100,000+","$50B+",1927,Large Enterprise,"Trucks, Buses, Construction Equipment, Engines",Verified
+Industrial Machinery,Doosan Heavy Industries,South Korea,https://www.doosanheavy.com,"30,000+","$10B+",1962,Large Enterprise,"Power Plants, Desalination, Construction Equipment",Verified
+Industrial Machinery,Sandvik AB,Sweden,https://www.home.sandvik,"40,000+","$12B+",1862,Large Enterprise,"Mining, Rock Excavation, Materials Technology",Verified
+Industrial Machinery,Atlas Copco,Sweden,https://www.atlascopco.com,"50,000+","$15B+",1873,Large Enterprise,"Compressors, Vacuum Solutions, Power Tools",Verified
+Industrial Machinery,CNH Industrial,UK,https://www.cnhindustrial.com,"40,000+","$25B+",2013,Large Enterprise,"Agricultural & Construction Equipment",Verified
+Industrial Machinery,Kubota Corporation,Japan,https://www.kubota.com,"40,000+","$20B+",1890,Large Enterprise,"Agricultural Machinery, Engines, Water Treatment",Verified
+Industrial Machinery,Sumitomo Heavy Industries,Japan,https://www.shi.co.jp,"30,000+","$7B+",1888,Large Enterprise,"Industrial Machinery, Plastic Machinery, Gearboxes",Verified
+Industrial Machinery,Mitsubishi Heavy Industries,Japan,https://www.mhi.com,"80,000+","$35B+",1884,Conglomerate,"Energy, Logistics, Aerospace, Marine",Verified
+Industrial Machinery,XCMG Group,China,https://www.xcmg.com,"30,000+","$15B+",1989,Large Enterprise,"Construction Machinery, Heavy Equipment",Verified
+Industrial Machinery,SANY Group,China,https://www.sanyglobal.com,"20,000+","$15B+",1989,Large Enterprise,"Construction Machinery, Heavy Equipment",Verified
+Industrial Machinery,Schneider Electric,France,https://www.se.com,"162,000+","$40B+",1836,Large Enterprise,"Energy Management, Industrial Automation",Verified
+Industrial Machinery,Toshiba Machine,Japan,https://www.toshiba-machine.co.jp,"2,000+","$1B+",1949,Medium Enterprise,"Injection Molding Machines, Machine Tools",Verified
+Industrial Machinery,FANUC Corporation,Japan,https://www.fanuc.com,"9,000+","$6B+",1956,Large Enterprise,"CNC Systems, Robotics, ROBOMACHINE",Verified
+Industrial Machinery,Rockwell Automation,USA,https://www.rockwellautomation.com,"26,000+","$9B+",1903,Large Enterprise,"Industrial Automation, Digital Transformation",Verified
+Chemical Manufacturing,BASF SE,Germany,https://www.basf.com,"111,000+","$90B+",1865,Conglomerate,"Chemicals, Plastics, Performance Products, Agriculture",Verified
+Chemical Manufacturing,Dow Chemical Company,USA,https://www.dow.com,"37,000+","$55B+",1897,Large Enterprise,"Plastics, Chemicals, Agricultural Sciences",Verified
+Chemical Manufacturing,Sinopec (China Petroleum & Chemical),China,https://www.sinopecgroup.com,"553,000+","$450B+",2000,Conglomerate,"Petrochemicals, Refining, Chemicals",Verified
+Chemical Manufacturing,SABIC,Saudi Arabia,https://www.sabic.com,"31,000+","$50B+",1976,Large Enterprise,"Chemicals, Agri-Nutrients, Metals",Verified
+Chemical Manufacturing,LyondellBasell,Netherlands,https://www.lyondellbasell.com,"19,000+","$50B+",2005,Large Enterprise,"Polymers, Chemicals, Refining, Plastics",Verified
+Chemical Manufacturing,Formosa Plastics,Taiwan,https://www.fpg.com.tw,"40,000+","$35B+",1954,Large Enterprise,"Plastics, Petrochemicals, Steel",Verified
+Chemical Manufacturing,INEOS Group,UK,https://www.ineos.com,"26,000+","$65B+",1998,Large Enterprise,"Chemicals, Petrochemicals, Oil & Gas",Verified
+Chemical Manufacturing,LG Chem,South Korea,https://www.lgchem.com,"25,000+","$40B+",1947,Large Enterprise,"Petrochemicals, Advanced Materials, Batteries",Verified
+Chemical Manufacturing,Evonik Industries,Germany,https://corporate.evonik.com,"32,000+","$20B+",1843,Large Enterprise,"Specialty Chemicals, Nutrition & Care",Verified
+Chemical Manufacturing,Mitsubishi Chemical Group,Japan,https://www.mcgc.com,"70,000+","$35B+",2005,Large Enterprise,"Chemicals, Performance Products, Health Care",Verified
+Chemical Manufacturing,Air Liquide,France,https://www.airliquide.com,"67,000+","$30B+",1902,Large Enterprise,"Industrial Gases, Healthcare, Environment",Verified
+Chemical Manufacturing,Linde plc,UK,https://www.linde.com,"73,000+","$30B+",1879,Large Enterprise,"Industrial Gases, Engineering",Verified
+Chemical Manufacturing,DuPont de Nemours,USA,https://www.dupont.com,"28,000+","$13B+",2017,Large Enterprise,"Electronics, Water, Protection, Industrial Tech",Verified
+Chemical Manufacturing,PPG Industries,USA,https://www.ppg.com,"50,000+","$18B+",1883,Large Enterprise,"Paints, Coatings, Specialty Materials",Verified
+Chemical Manufacturing,AkzoNobel,Netherlands,https://www.akzonobel.com,"32,000+","$12B+",1792,Large Enterprise,"Paints, Coatings, Specialty Chemicals",Verified
+Chemical Manufacturing,Sumitomo Chemical,Japan,https://www.sumitomo-chem.co.jp,"33,000+","$25B+",1913,Large Enterprise,"Chemicals, Plastics, Pharmaceuticals, Agrochemicals",Verified
+Chemical Manufacturing,Toray Industries,Japan,https://www.toray.com,"48,000+","$20B+",1926,Large Enterprise,"Fibers & Textiles, Plastics, Chemicals, Films",Verified
+Chemical Manufacturing,Solvay SA,Belgium,https://www.solvay.com,"23,000+","$15B+",1863,Large Enterprise,"Advanced Materials, Chemicals",Verified
+Pharmaceutical Manufacturing,Pfizer Inc.,USA,https://www.pfizer.com,"83,000+","$100B+",1849,Conglomerate,"Vaccines, Internal Medicine, Oncology, Rare Disease",Verified
+Pharmaceutical Manufacturing,Johnson & Johnson,USA,https://www.jnj.com,"134,000+","$95B+",1886,Conglomerate,"Pharmaceuticals, MedTech, Consumer Health",Verified
+Pharmaceutical Manufacturing,Roche Holding,Switzerland,https://www.roche.com,"103,000+","$70B+",1896,Conglomerate,"Pharmaceuticals, Diagnostics",Verified
+Pharmaceutical Manufacturing,Novartis AG,Switzerland,https://www.novartis.com,"108,000+","$50B+",1996,Conglomerate,"Innovative Medicines, Generics, Eye Care",Verified
+Pharmaceutical Manufacturing,Merck & Co.,USA,https://www.merck.com,"68,000+","$60B+",1891,Conglomerate,"Vaccines, Oncology, Hospital, Animal Health",Verified
+Pharmaceutical Manufacturing,AstraZeneca,UK,https://www.astrazeneca.com,"83,000+","$45B+",1999,Conglomerate,"Oncology, CVRM, Respiratory & Immunology",Verified
+Pharmaceutical Manufacturing,GlaxoSmithKline,UK,https://www.gsk.com,"94,000+","$40B+",2000,Conglomerate,"Vaccines, Specialty Medicines, General Medicine",Verified
+Pharmaceutical Manufacturing,Sanofi,France,https://www.sanofi.com,"91,000+","$45B+",1973,Conglomerate,"Vaccines, Specialty Care, General Medicines",Verified
+Pharmaceutical Manufacturing,AbbVie Inc.,USA,https://www.abbvie.com,"50,000+","$60B+",2013,Large Enterprise,"Immunology, Oncology, Aesthetics, Neuroscience",Verified
+Pharmaceutical Manufacturing,Bristol Myers Squibb,USA,https://www.bms.com,"34,000+","$45B+",1887,Large Enterprise,"Oncology, Cardiovascular, Immunology",Verified
+Pharmaceutical Manufacturing,Takeda Pharmaceutical,Japan,https://www.takeda.com,"47,000+","$30B+",1781,Large Enterprise,"Gastroenterology, Rare Diseases, Plasma, Oncology",Verified
+Pharmaceutical Manufacturing,Eli Lilly and Company,USA,https://www.lilly.com,"39,000+","$30B+",1876,Large Enterprise,"Diabetes, Oncology, Immunology, Neuroscience",Verified
+Pharmaceutical Manufacturing,Gilead Sciences,USA,https://www.gilead.com,"14,000+","$27B+",1987,Large Enterprise,"HIV, Liver Diseases, Oncology, Inflammation",Verified
+Pharmaceutical Manufacturing,Amgen Inc.,USA,https://www.amgen.com,"24,000+","$26B+",1980,Large Enterprise,"Biotechnology, Inflammation, Oncology, Nephrology",Verified
+Pharmaceutical Manufacturing,Novo Nordisk,Denmark,https://www.novonordisk.com,"55,000+","$25B+",1923,Large Enterprise,"Diabetes Care, Obesity, Rare Blood Diseases",Verified
+Pharmaceutical Manufacturing,Moderna,USA,https://www.modernatx.com,"3,900+","$18B+",2010,Large Enterprise,"mRNA Technology, Vaccines, Therapeutics",Verified
+Pharmaceutical Manufacturing,Bayer AG,Germany,https://www.bayer.com,"99,000+","$50B+",1863,Conglomerate,"Pharmaceuticals, Consumer Health, Crop Science",Verified
+Pharmaceutical Manufacturing,Astellas Pharma,Japan,https://www.astellas.com,"15,000+","$12B+",2005,Large Enterprise,"Oncology, Urology, Immunology, Nephrology",Verified
+Pharmaceutical Manufacturing,Biogen Inc.,USA,https://www.biogen.com,"9,000+","$10B+",1978,Large Enterprise,"Neuroscience, MS, SMA, Alzheimer's",Verified
+Food Processing,Nestlé SA,Switzerland,https://www.nestle.com,"273,000+","$100B+",1866,Conglomerate,"Infant Nutrition, Water, Dairy, Confectionery",Verified
+Food Processing,PepsiCo,USA,https://www.pepsico.com,"315,000+","$90B+",1965,Conglomerate,"Beverages, Snacks, Convenient Foods",Verified
+Food Processing,JBS S.A.,Brazil,https://www.jbs.com.br,"270,000+","$80B+",1953,Conglomerate,"Beef, Poultry, Pork, Value-Added Products",Verified
+Food Processing,Tyson Foods,USA,https://www.tysonfoods.com,"142,000+","$55B+",1935,Large Enterprise,"Chicken, Beef, Pork, Prepared Foods",Verified
+Food Processing,Cargill,USA,https://www.cargill.com,"160,000+","$165B+",1865,Conglomerate,"Agricultural Services, Food Ingredients, Meat",Verified
+Food Processing,Archer Daniels Midland,USA,https://www.adm.com,"41,000+","$102B+",1902,Conglomerate,"Oilseeds, Carbohydrate Solutions, Nutrition",Verified
+Food Processing,Unilever,UK/Netherlands,https://www.unilever.com,"128,000+","$65B+",1929,Conglomerate,"Ice Cream, Nutrition, Personal Care, Home Care",Verified
+Food Processing,Mars Inc.,USA,https://www.mars.com,"140,000+","$45B+",1911,Conglomerate,"Confectionery, Petcare, Food, Drinks",Verified
+Food Processing,Kraft Heinz Company,USA,https://www.kraftheinzcompany.com,"38,000+","$26B+",2015,Large Enterprise,"Sauces, Cheese, Meals, Beverages",Verified
+Food Processing,Danone SA,France,https://www.danone.com,"100,000+","$28B+",1919,Large Enterprise,"Dairy, Plant-Based, Waters, Specialized Nutrition",Verified
+Food Processing,General Mills,USA,https://www.generalmills.com,"35,000+","$20B+",1928,Large Enterprise,"Flour, Snacks, Yogurt, Meals",Verified
+Food Processing,Conagra Brands,USA,https://www.conagrabrands.com,"18,000+","$13B+",1919,Large Enterprise,"Frozen, Snacks, Refrigerated, Grocery",Verified
+Food Processing,Kellogg's,USA,https://www.kelloggs.com,"31,000+","$15B+",1906,Large Enterprise,"Cereal, Snacks, Plant-Based Foods",Verified
+Food Processing,Mondelez International,USA,https://www.mondelezinternational.com,"91,000+","$35B+",2012,Large Enterprise,"Biscuits, Chocolate, Gum, Candy",Verified
+Food Processing,Smithfield Foods,USA,https://www.smithfieldfoods.com,"40,000+","$16B+",1936,Large Enterprise,"Pork Production, Packaged Meats",Verified
+Food Processing,BRF S.A.,Brazil,https://www.brf-global.com,"100,000+","$8B+",1934,Large Enterprise,"Poultry, Processed Foods",Verified
+Food Processing,OSI Group,USA,https://www.osigroup.com,"20,000+","$7B+",1909,Large Enterprise,"Custom Food Solutions, Value-Added Meats",Verified
+Food Processing,Perdue Farms,USA,https://www.perduefarms.com,"21,000+","$8B+",1920,Large Enterprise,"Poultry, Pork, Agriculture",Verified
+Beverage Production,Coca-Cola Company,USA,https://www.coca-colacompany.com,"82,000+","$45B+",1886,Conglomerate,"Sparkling Beverages, Juices, Water, Sports Drinks",Verified
+Beverage Production,PepsiCo,USA,https://www.pepsico.com,"315,000+","$90B+",1965,Conglomerate,"Beverages, Snacks, Convenient Foods",Verified
+Beverage Production,Anheuser-Busch InBev,Belgium,https://www.ab-inbev.com,"169,000+","$60B+",2008,Conglomerate,"Beer, Malt Beverages",Verified
+Beverage Production,Heineken N.V.,Netherlands,https://www.theheinekencompany.com,"85,000+","$35B+",1864,Large Enterprise,"Beer, Cider",Verified
+Beverage Production,Diageo plc,UK,https://www.diageo.com,"28,000+","$20B+",1997,Large Enterprise,"Spirits, Beer, Wine",Verified
+Beverage Production,Kirin Holdings,Japan,https://www.kirinholdings.com,"40,000+","$18B+",1907,Large Enterprise,"Beer, Beverages, Pharmaceuticals",Verified
+Beverage Production,Asahi Group Holdings,Japan,https://www.asahigroup-holdings.com,"40,000+","$20B+",1889,Large Enterprise,"Beer, Spirits, Soft Drinks, Food",Verified
+Beverage Production,Pernod Ricard,France,https://www.pernod-ricard.com,"19,000+","$13B+",1975,Large Enterprise,"Wines & Spirits",Verified
+Beverage Production,Suntory Holdings,Japan,https://www.suntory.com,"40,000+","$25B+",1899,Large Enterprise,"Alcoholic & Non-Alcoholic Beverages",Verified
+Beverage Production,Nestlé Waters,Switzerland,https://www.nestle-waters.com,"(Part of Nestlé)","(Part of Nestlé)",1992,Large Enterprise,"Bottled Water",Verified
+Beverage Production,Danone Waters,France,https://www.danone.com,"(Part of Danone)","(Part of Danone)",1919,Large Enterprise,"Bottled Water",Verified
+Beverage Production,Red Bull,Austria,https://www.redbull.com,"15,000+","$10B+",1987,Large Enterprise,"Energy Drinks, Media, Sports",Verified
+Beverage Production,Monster Beverage Corp,USA,https://www.monsterbevcorp.com,"4,000+","$7B+",1990,Large Enterprise,"Energy Drinks",Verified
+Beverage Production,JDE Peet's,Netherlands,https://www.jdepeets.com,"20,000+","$9B+",2015,Large Enterprise,"Coffee, Tea",Verified
+Beverage Production,Keurig Dr Pepper,USA,https://www.keurigdrpepper.com,"28,000+","$15B+",2018,Large Enterprise,"Coffee, Soft Drinks, Juice",Verified
+Beverage Production,Lotte Chilsung Beverage,South Korea,https://www.lottechilsung.co.kr,"5,000+","$2B+",1950,Large Enterprise,"Soft Drinks, Juices",Verified
+Beverage Production,Oak Beverages,USA,https://www.drinkoak.com,"500+","$100M+",2018,Small Enterprise,"Plant-Based Beverages",Verified
+Beverage Production,Tsingtao Brewery,China,https://www.tsingtaobeer.com,"40,000+","$5B+",1903,Large Enterprise,"Beer",Verified
+Beverage Production,Thai Beverage,Thailand,https://www.thaibev.com,"30,000+","$8B+",2006,Large Enterprise,"Spirits, Beer, Non-Alcoholic Beverages",Verified
+Textile Manufacturing,Shandong Ruyi Technology Group,China,https://www.chinaruyi.com,"30,000+","$5B+",1972,Large Enterprise,"Wool, Cotton, Fashion, Luxury Brands",Verified
+Textile Manufacturing,Lu Thai Textile,China,https://www.luthai.com,"20,000+","$2B+",1987,Large Enterprise,"Shirting Fabrics, Yarn-Dyed Fabrics",Verified
+Textile Manufacturing,Toray Industries,Japan,https://www.toray.com,"48,000+","$20B+",1926,Large Enterprise,"Synthetic Fibers, Textiles, Carbon Fiber",Verified
+Textile Manufacturing,Teijin Limited,Japan,https://www.teijin.com,"20,000+","$8B+",1918,Large Enterprise,"Aramid, Carbon Fibers, Plastics, Films",Verified
+Textile Manufacturing,Hyosung TNC,South Korea,https://www.hyosungtnc.com,"10,000+","$6B+",1966,Large Enterprise,"Spandex, Nylon, Polyester, Textured Yarn",Verified
+Textile Manufacturing,Lenzing AG,Austria,https://www.lenzing.com,"7,000+","$3B+",1938,Large Enterprise,"Botanic Fibers, Viscose, Lyocell, Modal",Verified
+Textile Manufacturing,Indorama Ventures,Thailand,https://www.indorama.com,"26,000+","$15B+",1994,Large Enterprise,"PET, Olefins, Fibers",Verified
+Textile Manufacturing,Weiqiao Textile,China,https://www.weiqiaotextile.com,"50,000+","$4B+",1997,Large Enterprise,"Cotton Yarn, Grey Fabric, Denim",Verified
+Textile Manufacturing,Shenzhou International Group,China,https://www.shenzhouintl.com,"80,000+","$4B+",1990,Large Enterprise,"Knitwear, Garment Manufacturing",Verified
+Textile Manufacturing,Arvind Limited,India,https://www.arvind.com,"30,000+","$1B+",1931,Large Enterprise,"Denim, Woven, Garments, Advanced Materials",Verified
+Textile Manufacturing,Far Eastern New Century,Taiwan,https://www.fenc.com,"30,000+","$8B+",1954,Large Enterprise,"Polyester, Textiles, PET, Engineering Plastics",Verified
+Textile Manufacturing,Youngor Group,China,https://www.youngor.com,"50,000+","$5B+",1979,Large Enterprise,"Apparel, Real Estate, Textiles",Verified
+Textile Manufacturing,Vardhman Textiles,India,https://www.vardhman.com,"30,000+","$1B+",1965,Large Enterprise,"Yarn, Fabric, Sewing Thread, Acrylic Fiber",Verified
+Textile Manufacturing,Grasim Industries,India,https://www.grasim.com,"25,000+","$10B+",1947,Large Enterprise,"Viscose Staple Fiber, Chemicals, Cement",Verified
+Textile Manufacturing,PVH Corp,USA,https://www.pvh.com,"30,000+","$10B+",1881,Large Enterprise,"Apparel, Calvin Klein, Tommy Hilfiger",Verified
+Textile Manufacturing,Coats Group,UK,https://www.coats.com,"17,000+","$2B+",1755,Large Enterprise,"Industrial Thread, Structural Components, Zips",Verified
+Textile Manufacturing,Eastman Machine Company,USA,https://www.eastmanmachine.com,"500+","$100M+",1888,Medium Enterprise,"Cutting Machines, Textile Equipment",Verified
+Textile Manufacturing,Khimvolokno,Belarus,https://www.khimvolokno.by,"5,000+","$500M+",1960,Medium Enterprise,"Chemical Fibers, Cord Fabric",Verified
+Textile Manufacturing,Shahlon Group,India,https://www.shahlon.com,"1,000+","$100M+",1984,Medium Enterprise,"Synthetic Yarn, Texturizing",Verified
+Apparel & Footwear,Nike Inc.,USA,https://www.nike.com,"83,000+","$55B+",1964,Large Enterprise,"Athletic Footwear, Apparel, Equipment",Verified
+Apparel & Footwear,Adidas AG,Germany,https://www.adidas-group.com,"61,000+","$25B+",1949,Large Enterprise,"Athletic Footwear, Apparel, Accessories",Verified
+Apparel & Footwear,LVMH Fashion Group,France,https://www.lvmh.com,"196,000+","$90B+",1987,Conglomerate,"Luxury Fashion, Leather Goods, Watches, Jewelry",Verified
+Apparel & Footwear,H&M Group,Sweden,https://hmgroup.com,"107,000+","$20B+",1947,Large Enterprise,"Fast Fashion, Apparel, Home Furnishings",Verified
+Apparel & Footwear,Zara (Inditex),Spain,https://www.inditex.com,"165,000+","$40B+",1975,Large Enterprise,"Fast Fashion, Apparel, Accessories",Verified
+Apparel & Footwear,Kering SA,France,https://www.kering.com,"47,000+","$25B+",1963,Large Enterprise,"Luxury Fashion, Leather Goods, Jewelry",Verified
+Apparel & Footwear,PVH Corp,USA,https://www.pvh.com,"30,000+","$10B+",1881,Large Enterprise,"Apparel, Calvin Klein, Tommy Hilfiger",Verified
+Apparel & Footwear,Uniqlo (Fast Retailing),Japan,https://www.fastretailing.com,"56,000+","$20B+",1963,Large Enterprise,"Casual Wear, Basics, Apparel",Verified
+Apparel & Footwear,VF Corporation,USA,https://www.vfc.com,"35,000+","$12B+",1899,Large Enterprise,"Outdoor, Active, Workwear, Jeans",Verified
+Apparel & Footwear,Puma SE,Germany,https://about.puma.com,"20,000+","$9B+",1948,Large Enterprise,"Athletic Footwear, Apparel, Accessories",Verified
+Apparel & Footwear,Anta Sports,China,https://www.anta.com,"55,000+","$10B+",1991,Large Enterprise,"Sportswear, Footwear, Outdoor",Verified
+Apparel & Footwear,Under Armour,USA,https://www.underarmour.com,"9,000+","$6B+",1996,Large Enterprise,"Performance Apparel, Footwear, Accessories",Verified
+Apparel & Footwear,Lululemon Athletica,Canada,https://www.lululemon.com,"33,000+","$10B+",1998,Large Enterprise,"Yoga & Athletic Apparel, Accessories",Verified
+Apparel & Footwear,Hanesbrands Inc.,USA,https://www.hanesbrands.com,"59,000+","$7B+",1901,Large Enterprise,"Innerwear, Activewear, Socks",Verified
+Apparel & Footwear,Levi Strauss & Co.,USA,https://www.levistrauss.com,"15,000+","$6B+",1853,Large Enterprise,"Denim Jeans, Apparel, Accessories",Verified
+Apparel & Footwear,Ralph Lauren Corporation,USA,https://www.ralphlauren.com,"24,000+","$6B+",1967,Large Enterprise,"Lifestyle Apparel, Accessories, Home",Verified
+Apparel & Footwear,Gap Inc.,USA,https://www.gapinc.com,"95,000+","$16B+",1969,Large Enterprise,"Casual Apparel, Denim, Accessories",Verified
+Apparel & Footwear,Skechers USA,USA,https://www.skechers.com,"13,000+","$8B+",1992,Large Enterprise,"Lifestyle, Performance Footwear",Verified
+Apparel & Footwear,Columbia Sportswear,USA,https://www.columbia.com,"8,000+","$4B+",1938,Large Enterprise,"Outdoor Apparel, Footwear, Equipment",Verified
+Furniture Manufacturing,IKEA Group,Netherlands,https://www.ikea.com,"225,000+","$50B+",1943,Conglomerate,"Flat-Pack Furniture, Home Accessories, Food",Verified
+Furniture Manufacturing,Ashley Furniture Industries,USA,https://www.ashleyfurniture.com,"30,000+","$5B+",1945,Large Enterprise,"Furniture, Home Accessories, Mattresses",Verified
+Furniture Manufacturing,La-Z-Boy Inc.,USA,https://www.la-z-boy.com,"11,000+","$2B+",1927,Large Enterprise,"Recliners, Sofas, Chairs, Ottomans",Verified
+Furniture Manufacturing,Steelcase Inc.,USA,https://www.steelcase.com,"12,000+","$3B+",1912,Large Enterprise,"Office Furniture, Workspace Solutions",Verified
+Furniture Manufacturing,Herman Miller,USA,https://www.hermanmiller.com,"8,000+","$3B+",1905,Large Enterprise,"Office Furniture, Seating, Workspaces",Verified
+Furniture Manufacturing,HNI Corporation,USA,https://www.hnicorp.com,"8,000+","$2B+",1944,Large Enterprise,"Office Furniture, hearth Products",Verified
+Furniture Manufacturing,Leggett & Platt,USA,https://www.leggett.com,"20,000+","$5B+",1883,Large Enterprise,"Furniture Components, Bedding, Geo Components",Verified
+Furniture Manufacturing,Natuzzi S.p.A.,Italy,https://www.natuzzi.com,"5,000+","$500M+",1959,Medium Enterprise,"Leather & Fabric Sofas, Armchairs",Verified
+Furniture Manufacturing,Man Wah Holdings,Hong Kong,https://www.manwah.com,"20,000+","$2B+",1968,Large Enterprise,"Recliners, Sofas, Sectionals",Verified
+Furniture Manufacturing,Sleemon (Shanghai),China,https://www.sleemon.com,"10,000+","$1B+",1996,Large Enterprise,"Mattresses, Bedding Products",Verified
+Furniture Manufacturing,Flexsteel Industries,USA,https://www.flexsteel.com,"1,000+","$500M+",1893,Medium Enterprise,"Residential, Commercial Furniture",Verified
+Furniture Manufacturing,Hooker Furniture,USA,https://www.hookerfurniture.com,"2,000+","$700M+",1924,Medium Enterprise,"Casegoods, Upholstery, Home Entertainment",Verified
+Furniture Manufacturing,Godrej Interio,India,https://www.godrejinterio.com,"5,000+","$500M+",1897,Medium Enterprise,"Institutional, Office, Residential Furniture",Verified
+Furniture Manufacturing,Nitori Holdings,Japan,https://www.nitori-group.com,"20,000+","$7B+",1967,Large Enterprise,"Furniture, Home Furnishings",Verified
+Furniture Manufacturing,Roche Bobois,France,https://www.roche-bobois.com,"1,000+","$300M+",1960,Medium Enterprise,"High-End Furniture, Interior Design",Verified
+Furniture Manufacturing,Poltrona Frau,Italy,https://www.poltronafrau.com,"1,000+","$200M+",1912,Medium Enterprise,"Leather Furniture, Interiors, Contract",Verified
+Furniture Manufacturing,Kinnarps AB,Sweden,https://www.kinnarps.com,"2,000+","$500M+",1942,Medium Enterprise,"Office, Public Environment Furniture",Verified
+Furniture Manufacturing,Nowy Styl Group,Poland,https://www.nowystylgroup.com,"5,000+","$500M+",1992,Medium Enterprise,"Office, Contract Furniture",Verified
+Furniture Manufacturing,Flokk AS,Norway,https://www.flokk.com,"1,000+","$300M+",1947,Medium Enterprise,"Workplace Seating, Tables",Verified
+Paper & Pulp,International Paper,USA,https://www.internationalpaper.com,"39,000+","$20B+",1898,Large Enterprise,"Packaging, Pulp, Paper",Verified
+Paper & Pulp,WestRock,USA,https://www.westrock.com,"50,000+","$20B+",2015,Large Enterprise,"Corrugated Packaging, Consumer Packaging",Verified
+Paper & Pulp,Stora Enso,Finland,https://www.storaenso.com,"22,000+","$12B+",1998,Large Enterprise,"Biomaterials, Wood, Paper",Verified
+Paper & Pulp,UPM-Kymmene,Finland,https://www.upm.com,"17,000+","$12B+",1996,Large Enterprise,"Biofuels, Biochemicals, Pulp, Paper",Verified
+Paper & Pulp,Sappi Limited,South Africa,https://www.sappi.com,"12,000+","$6B+",1936,Large Enterprise,"Dissolving Pulp, Paper, Packaging",Verified
+Paper & Pulp,DS Smith,UK,https://www.dssmith.com,"30,000+","$10B+",1940,Large Enterprise,"Recycled Packaging, Paper",Verified
+Paper & Pulp,Mondi Group,UK,https://www.mondigroup.com,"26,000+","$9B+",1967,Large Enterprise,"Packaging, Paper",Verified
+Paper & Pulp,Nippon Paper Group,Japan,https://www.nipponpapergroup.com,"20,000+","$10B+",1949,Large Enterprise,"Paper, Pulp, Biomaterials",Verified
+Paper & Pulp,Oji Holdings Corporation,Japan,https://www.ojiholdings.co.jp,"30,000+","$12B+",1873,Large Enterprise,"Paper, Pulp, Packaging",Verified
+Paper & Pulp,Kimberly-Clark,USA,https://www.kimberly-clark.com,"40,000+","$20B+",1872,Large Enterprise,"Tissue, Personal Care, Professional",Verified
+Paper & Pulp,Georgia-Pacific,USA,https://www.gp.com,"35,000+","$25B+",1927,Large Enterprise,"Tissue, Pulp, Packaging, Building Products",Verified
+Paper & Pulp,Nine Dragons Paper,Hong Kong,https://www.ndpaper.com,"20,000+","$10B+",1995,Large Enterprise,"Packaging Paper, Pulp",Verified
+Paper & Pulp,Lee & Man Paper,China,https://www.leeandman.com,"15,000+","$5B+",1994,Large Enterprise,"Packaging Paper, Pulp",Verified
+Paper & Pulp,Svenska Cellulosa Aktiebolaget (SCA),Sweden,https://www.sca.com,"4,000+","$2B+",1929,Large Enterprise,"Forest, Wood, Pulp, Tissue",Verified
+Paper & Pulp,Smurfit Kappa Group,Ireland,https://www.smurfitkappa.com,"47,000+","$13B+",1934,Large Enterprise,"Paper-Based Packaging",Verified
+Paper & Pulp,The Navigator Company,Portugal,https://www.thenavigatorcompany.com,"2,000+","$2B+",1953,Large Enterprise,"Uncoated Woodfree Paper, Pulp",Verified
+Paper & Pulp,Metsä Board,Finland,https://www.metsagroup.com,"2,000+","$2B+",2005,Large Enterprise,"Folding Boxboard, White Kraft Liner",Verified
+Paper & Pulp,Resolute Forest Products,Canada,https://www.resolutefp.com,"7,000+","$4B+",2007,Large Enterprise,"Market Pulp, Tissue, Wood Products",Verified
+Paper & Pulp,Empresas CMPC,Chile,https://www.cmpc.cl,"18,000+","$6B+",1920,Large Enterprise,"Pulp, Tissue, Packaging, Wood Products",Verified
+Steel & Metal Products,ArcelorMittal,Luxembourg,https://corporate.arcelormittal.com,"157,000+","$80B+",2006,Conglomerate,"Steel, Mining",Verified
+Steel & Metal Products,China Baowu Steel Group,China,https://www.baowugroup.com,"220,000+","$150B+",2016,Conglomerate,"Steel, Materials",Verified
+Steel & Metal Products,Nippon Steel Corporation,Japan,https://www.nipponsteel.com,"105,000+","$60B+",2012,Conglomerate,"Steel, Engineering, Chemicals",Verified
+Steel & Metal Products,POSCO,South Korea,https://www.posco.co.kr,"35,000+","$70B+",1968,Conglomerate,"Steel, Engineering, Construction, Trading",Verified
+Steel & Metal Products,HBIS Group,China,https://www.hbisco.com,"120,000+","$70B+",2008,Conglomerate,"Steel, Mining, Logistics",Verified
+Steel & Metal Products,Jiangsu Shagang Group,China,https://www.shasteel.cn,"40,000+","$40B+",1975,Large Enterprise,"Steel, Metal Products",Verified
+Steel & Metal Products,Tata Steel,India,https://www.tatasteel.com,"65,000+","$30B+",1907,Large Enterprise,"Steel, Industrial Products",Verified
+Steel & Metal Products,Nucor Corporation,USA,https://www.nucor.com,"31,000+","$40B+",1940,Large Enterprise,"Steel, Steel Products",Verified
+Steel & Metal Products,JFE Holdings,Japan,https://www.jfe-holdings.co.jp,"60,000+","$35B+",2002,Large Enterprise,"Steel, Engineering, Trading",Verified
+Steel & Metal Products,Thyssenkrupp AG,Germany,https://www.thyssenkrupp.com,"100,000+","$45B+",1999,Conglomerate,"Steel, Industrial, Materials, Marine",Verified
+Steel & Metal Products,United States Steel Corp,USA,https://www.ussteel.com,"25,000+","$20B+",1901,Large Enterprise,"Steel, Tubular Products",Verified
+Steel & Metal Products,Novolipetsk Steel (NLMK),Russia,https://nlmk.com,"60,000+","$15B+",1993,Large Enterprise,"Steel, Rolled Products",Verified
+Steel & Metal Products,Severstal PJSC,Russia,https://www.severstal.com,"50,000+","$10B+",1993,Large Enterprise,"Steel, Mining",Verified
+Steel & Metal Products,Gerdau S.A.,Brazil,https://www.gerdau.com,"30,000+","$18B+",1901,Large Enterprise,"Steel, Long Steel",Verified
+Steel & Metal Products,JSW Steel,India,https://www.jsw.in,"40,000+","$15B+",1982,Large Enterprise,"Steel, Energy, Infrastructure",Verified
+Steel & Metal Products,AK Steel Holding,USA,https://www.aksteel.com,"9,000+","$7B+",1899,Large Enterprise,"Carbon, Stainless, Electrical Steel",Verified
+Steel & Metal Products,Hyundai Steel,South Korea,https://www.hyundai-steel.com,"20,000+","$20B+",1953,Large Enterprise,"Steel, Automotive Parts",Verified
+Steel & Metal Products,Ansteel Group,China,https://www.ansteel.com.cn,"130,000+","$40B+",2010,Large Enterprise,"Steel, Mining",Verified
+Steel & Metal Products,Mechel PAO,Russia,https://www.mechel.com,"60,000+","$5B+",2003,Large Enterprise,"Steel, Coal, Power",Verified
+Plastic & Rubber Products,Berkshire Hathaway (Lubrizol),USA,https://www.lubrizol.com,"8,000+","$7B+",1928,Large Enterprise,"Additives, Advanced Materials",Verified
+Plastic & Rubber Products,LyondellBasell,Netherlands,https://www.lyondellbasell.com,"19,000+","$50B+",2005,Large Enterprise,"Polymers, Chemicals, Refining, Plastics",Verified
+Plastic & Rubber Products,Dow Chemical,USA,https://www.dow.com,"37,000+","$55B+",1897,Large Enterprise,"Plastics, Chemicals, Agricultural Sciences",Verified
+Plastic & Rubber Products,BASF SE,Germany,https://www.basf.com,"111,000+","$90B+",1865,Conglomerate,"Chemicals, Plastics, Performance Products, Agriculture",Verified
+Plastic & Rubber Products,Sinopec Group,China,https://www.sinopecgroup.com,"553,000+","$450B+",2000,Conglomerate,"Petrochemicals, Refining, Chemicals",Verified
+Plastic & Rubber Products,SABIC,Saudi Arabia,https://www.sabic.com,"31,000+","$50B+",1976,Large Enterprise,"Chemicals, Agri-Nutrients, Metals",Verified
+Plastic & Rubber Products,Formosa Plastics,Taiwan,https://www.fpg.com.tw,"40,000+","$35B+",1954,Large Enterprise,"Plastics, Petrochemicals, Steel",Verified
+Plastic & Rubber Products,Covestro AG,Germany,https://www.covestro.com,"18,000+","$20B+",2015,Large Enterprise,"Polyurethanes, Polycarbonates, Coatings",Verified
+Plastic & Rubber Products,Borealis AG,Austria,https://www.borealisgroup.com,"6,000+","$10B+",1994,Large Enterprise,"Polyolefins, Base Chemicals, Fertilizers",Verified
+Plastic & Rubber Products,Braskem,Brazil,https://www.braskem.com,"8,000+","$20B+",2002,Large Enterprise,"Thermoplastics, Polyethylene, Polypropylene",Verified
+Plastic & Rubber Products,Westlake Chemical,USA,https://www.westlake.com,"15,000+","$15B+",1986,Large Enterprise,"Olefins, Vinyls, Building Products",Verified
+Plastic & Rubber Products,INEOS Group,UK,https://www.ineos.com,"26,000+","$65B+",1998,Large Enterprise,"Chemicals, Petrochemicals, Oil & Gas",Verified
+Plastic & Rubber Products,DSM,Netherlands,https://www.dsm.com,"23,000+","$9B+",1902,Large Enterprise,"Nutrition, Health, Sustainable Living",Verified
+Plastic & Rubber Products,LANXESS AG,Germany,https://www.lanxess.com,"13,000+","$8B+",2004,Large Enterprise,"Specialty Chemicals, Plastics, Rubber",Verified
+Plastic & Rubber Products,Goodyear Tire & Rubber,USA,https://www.goodyear.com,"72,000+","$20B+",1898,Large Enterprise,"Tires, Rubber",Verified
+Plastic & Rubber Products,Michelin,France,https://www.michelin.com,"132,000+","$30B+",1889,Large Enterprise,"Tires, Mobility Services, Guides",Verified
+Plastic & Rubber Products,Bridgestone Corporation,Japan,https://www.bridgestone.com,"143,000+","$35B+",1931,Large Enterprise,"Tires, Diversified Products",Verified
+Plastic & Rubber Products,Continental AG,Germany,https://www.continental.com,"199,000+","$45B+",1871,Conglomerate,"Tires, Automotive Technologies",Verified
+Plastic & Rubber Products,Hutchinson SA,France,https://www.hutchinson.com,"40,000+","$6B+",1853,Large Enterprise,"Polymer Sealing, Vibration Control, Fluid Transfer",Verified
+Semiconductor Manufacturing,TSMC (Taiwan Semiconductor),Taiwan,https://www.tsmc.com,"73,000+","$75B+",1987,Conglomerate,"Semiconductor Foundry, Wafer Fabrication",Verified
+Semiconductor Manufacturing,Samsung Electronics,South Korea,https://www.samsung.com,"287,000+","$245B+",1938,Conglomerate,"Memory, Foundry, Logic, Consumer Electronics",Verified
+Semiconductor Manufacturing,Intel Corporation,USA,https://www.intel.com,"132,000+","$65B+",1968,Conglomerate,"Microprocessors, Chipsets, Foundry",Verified
+Semiconductor Manufacturing,SK Hynix,South Korea,https://www.skhynix.com,"30,000+","$35B+",1983,Large Enterprise,"Memory Semiconductors, DRAM, NAND Flash",Verified
+Semiconductor Manufacturing,Micron Technology,USA,https://www.micron.com,"48,000+","$30B+",1978,Large Enterprise,"Memory, Storage, DRAM, NAND, NOR",Verified
+Semiconductor Manufacturing,Broadcom Inc.,USA,https://www.broadcom.com,"20,000+","$35B+",1991,Large Enterprise,"Semiconductor, Infrastructure Software",Verified
+Semiconductor Manufacturing,Qualcomm,USA,https://www.qualcomm.com,"51,000+","$45B+",1985,Large Enterprise,"Wireless Telecom, SoCs, Modems, RF",Verified
+Semiconductor Manufacturing,Texas Instruments,USA,https://www.ti.com,"33,000+","$20B+",1930,Large Enterprise,"Analog, Embedded Processors",Verified
+Semiconductor Manufacturing,NVIDIA Corporation,USA,https://www.nvidia.com,"26,000+","$60B+",1993,Large Enterprise,"GPUs, AI, Data Center, Gaming",Verified
+Semiconductor Manufacturing,Infineon Technologies,Germany,https://www.infineon.com,"56,000+","$17B+",1999,Large Enterprise,"Power Semiconductors, Automotive, Security",Verified
+Semiconductor Manufacturing,UMC (United Microelectronics),Taiwan,https://www.umc.com,"20,000+","$9B+",1980,Large Enterprise,"Semiconductor Foundry",Verified
+Semiconductor Manufacturing,STMicroelectronics,Switzerland,https://www.st.com,"51,000+","$16B+",1987,Large Enterprise,"Analog, MEMS, Microcontrollers, Power",Verified
+Semiconductor Manufacturing,NXP Semiconductors,Netherlands,https://www.nxp.com,"35,000+","$13B+",2006,Large Enterprise,"Automotive, Security, Connectivity",Verified
+Semiconductor Manufacturing,GlobalFoundries,USA,https://www.gf.com,"15,000+","$8B+",2009,Large Enterprise,"Semiconductor Foundry",Verified
+Semiconductor Manufacturing,ASE Technology Holding,Taiwan,https://www.aseglobal.com,"100,000+","$20B+",1984,Large Enterprise,"Semiconductor Assembly, Test, Packaging",Verified
+Semiconductor Manufacturing,Analog Devices,USA,https://www.analog.com,"25,000+","$12B+",1965,Large Enterprise,"Analog, Mixed-Signal, DSPs",Verified
+Semiconductor Manufacturing,ON Semiconductor,USA,https://www.onsemi.com,"34,000+","$8B+",1999,Large Enterprise,"Power Management, Sensor, Analog",Verified
+Semiconductor Manufacturing,Renesas Electronics,Japan,https://www.renesas.com,"21,000+","$10B+",2002,Large Enterprise,"Microcontrollers, SoCs, Power Semiconductors",Verified
+Semiconductor Manufacturing,Sony Semiconductor,Japan,https://www.sony-semicon.com,"(Part of Sony)","$10B+",2015,Large Enterprise,"Image Sensors, Camera Modules",Verified
+Medical Devices,Medtronic plc,Ireland,https://www.medtronic.com,"95,000+","$32B+",1949,Conglomerate,"Medical Technology, Surgical Robotics, Cardiology",Verified
+Medical Devices,Johnson & Johnson MedTech,USA,https://www.jnj.com,"(Part of J&J)","$30B+",1886,Conglomerate,"Surgery, Orthopedics, Vision, Interventional",Verified
+Medical Devices,Abbott Laboratories,USA,https://www.abbott.com,"115,000+","$45B+",1888,Conglomerate,"Diagnostics, Medical Devices, Nutrition, Pharmaceuticals",Verified
+Medical Devices,Siemens Healthineers,Germany,https://www.siemens-healthineers.com,"66,000+","$23B+",1896,Large Enterprise,"MRI, CT, Angiography, Laboratory Diagnostics",Verified
+Medical Devices,GE Healthcare,USA,https://www.gehealthcare.com,"48,000+","$18B+",1994,Large Enterprise,"Ultrasound, MRI, Patient Monitoring",Verified
+Medical Devices,Philips Healthcare,Netherlands,https://www.philips.com,"37,000+","$14B+",1891,Large Enterprise,"Diagnostic Imaging, Image-Guided Therapy",Verified
+Medical Devices,Becton Dickinson,USA,https://www.bd.com,"75,000+","$20B+",1897,Large Enterprise,"Medical Technology, Infection Prevention, Diagnostics",Verified
+Medical Devices,Stryker Corporation,USA,https://www.stryker.com,"46,000+","$18B+",1941,Large Enterprise,"Orthopedics, Neurotech, Spine, Surgical Equipment",Verified
+Medical Devices,Boston Scientific,USA,https://www.bostonscientific.com,"48,000+","$14B+",1979,Large Enterprise,"Interventional Cardiology, Endoscopy, Urology",Verified
+Medical Devices,Baxter International,USA,https://www.baxter.com,"60,000+","$15B+",1931,Large Enterprise,"Renal Care, Medication Delivery, Pharmaceuticals",Verified
+Medical Devices,Fresenius Medical Care,Germany,https://www.freseniusmedicalcare.com,"125,000+","$20B+",1996,Large Enterprise,"Dialysis Products, Services",Verified
+Medical Devices,Edwards Lifesciences,USA,https://www.edwards.com,"18,000+","$6B+",1958,Large Enterprise,"Heart Valve Therapy, Critical Care",Verified
+Medical Devices,Zimmer Biomet,USA,https://www.zimmerbiomet.com,"18,000+","$7B+",1927,Large Enterprise,"Musculoskeletal Healthcare, Joint Reconstruction",Verified
+Medical Devices,Intuitive Surgical,USA,https://www.intuitive.com,"11,000+","$6B+",1995,Large Enterprise,"Robotic-Assisted Surgery, da Vinci System",Verified
+Medical Devices,Smith & Nephew,UK,https://www.smith-nephew.com,"18,000+","$5B+",1856,Large Enterprise,"Orthopedics, Sports Medicine, Advanced Wound Management",Verified
+Medical Devices,Getinge AB,Sweden,https://www.getinge.com,"11,000+","$3B+",1904,Large Enterprise,"Surgical Tables, Sterilization, ICU Equipment",Verified
+Medical Devices,Alcon Inc.,Switzerland,https://www.alcon.com,"24,000+","$9B+",1945,Large Enterprise,"Ophthalmic Surgery, Vision Care",Verified
+Medical Devices,ResMed Inc.,USA,https://www.resmed.com,"9,000+","$4B+",1989,Large Enterprise,"Sleep Apnea, COPD, Digital Health",Verified
+Medical Devices,Straumann Group,Switzerland,https://www.straumann.com,"9,000+","$3B+",1954,Large Enterprise,"Dental Implants, Prosthetics, Digital Dentistry",Verified
+Building Materials,Saint-Gobain,France,https://www.saint-gobain.com,"167,000+","$55B+",1665,Conglomerate,"Construction Products, High-Performance Materials",Verified
+Building Materials,CRH plc,Ireland,https://www.crh.com,"75,000+","$35B+",1970,Large Enterprise,"Building Materials, Aggregates, Cement",Verified
+Building Materials,Cemex,Mexico,https://www.cemex.com,"42,000+","$15B+",1906,Large Enterprise,"Cement, Ready-Mix, Aggregates",Verified
+Building Materials,Knauf,Germany,https://www.knauf.com,"40,000+","$15B+",1932,Large Enterprise,"Gypsum, Insulation, Drywall",Verified
+Building Materials,USG Corporation,USA,https://www.usg.com,"(Part of Gebr. Knauf)","(Part of Knauf)",1901,Large Enterprise,"Gypsum, Ceilings, Joint Compounds",Verified
+Building Materials,James Hardie Industries,Ireland,https://www.jameshardie.com,"5,000+","$4B+",1888,Large Enterprise,"Fiber Cement Siding, Backerboard",Verified
+Building Materials,Owens Corning,USA,https://www.owenscorning.com,"20,000+","$10B+",1938,Large Enterprise,"Insulation, Roofing, Composites",Verified
+Building Materials,Vulcan Materials,USA,https://www.vulcanmaterials.com,"12,000+","$8B+",1909,Large Enterprise,"Aggregates, Asphalt, Concrete",Verified
+Building Materials,HeidelbergCement,Germany,https://www.heidelbergcement.com,"51,000+","$22B+",1873,Large Enterprise,"Cement, Aggregates, Ready-Mix Concrete",Verified
+Building Materials,Martin Marietta Materials,USA,https://www.martinmarietta.com,"10,000+","$6B+",1993,Large Enterprise,"Aggregates, Cement, Magnesia Specialties",Verified
+Building Materials,Sumitomo Osaka Cement,Japan,https://www.soc.co.jp,"3,000+","$2B+",1907,Medium Enterprise,"Cement, Construction Materials",Verified
+Building Materials,Anhui Conch Cement,China,https://www.conch.cn,"50,000+","$25B+",1997,Large Enterprise,"Cement, Clinker",Verified
+Building Materials,Asia Cement Corporation,Taiwan,https://www.acc.com.tw,"5,000+","$2B+",1957,Medium Enterprise,"Cement, Ready-Mix Concrete",Verified
+Building Materials,Boral Limited,Australia,https://www.boral.com,"9,000+","$3B+",1946,Large Enterprise,"Construction Materials, Fly Ash",Verified
+Building Materials,Gyproc (Saint-Gobain),France,https://www.gyproc.com,"(Part of Saint-Gobain)","(Part of Saint-Gobain)",1915,Large Enterprise,"Gypsum, Plasterboards",Verified
+Building Materials,Sika AG,Switzerland,https://www.sika.com,"33,000+","$12B+",1910,Large Enterprise,"Concrete Admixtures, Waterproofing, Sealants",Verified
+Building Materials,Fortune Brands Home & Security,USA,https://www.fbhs.com,"28,000+","$8B+",2011,Large Enterprise,"Cabinets, Plumbing, Doors, Security",Verified
+Building Materials,Masco Corporation,USA,https://www.masco.com,"19,000+","$8B+",1929,Large Enterprise,"Plumbing, Decorative Architectural Products",Verified
+Building Materials,BlueScope Steel,Australia,https://www.bluescopesteel.com,"15,000+","$12B+",2002,Large Enterprise,"Steel, Building Products",Verified
+Consumer Goods,Procter & Gamble,USA,https://us.pg.com,"107,000+","$85B+",1837,Conglomerate,"Baby, Feminine, Family Care, Fabric, Grooming",Verified
+Consumer Goods,Unilever,UK/Netherlands,https://www.unilever.com,"128,000+","$65B+",1929,Conglomerate,"Ice Cream, Nutrition, Personal Care, Home Care",Verified
+Consumer Goods,L'Oréal Group,France,https://www.loreal.com,"88,000+","$45B+",1909,Conglomerate,"Cosmetics, Hair Color, Skincare, Perfumes",Verified
+Consumer Goods,Henkel AG,Germany,https://www.henkel.com,"50,000+","$25B+",1876,Large Enterprise,"Adhesives, Beauty Care, Laundry & Home Care",Verified
+Consumer Goods,Colgate-Palmolive,USA,https://www.colgatepalmolive.com,"34,000+","$19B+",1806,Large Enterprise,"Oral Care, Personal Care, Home Care, Pet Nutrition",Verified
+Consumer Goods,Estée Lauder Companies,USA,https://www.elcompanies.com,"62,000+","$18B+",1946,Large Enterprise,"Skincare, Makeup, Fragrance, Hair Care",Verified
+Consumer Goods,Reckitt Benckiser,UK,https://www.reckitt.com,"40,000+","$18B+",1999,Large Enterprise,"Health, Hygiene, Nutrition",Verified
+Consumer Goods,Beiersdorf AG,Germany,https://www.beiersdorf.com,"21,000+","$10B+",1882,Large Enterprise,"Skincare, Wound Care, Adhesives",Verified
+Consumer Goods,Shiseido Company,Japan,https://www.shiseidogroup.com,"46,000+","$8B+",1872,Large Enterprise,"Cosmetics, Skincare, Fragrance",Verified
+Consumer Goods,Amway,USA,https://www.amway.com,"21,000+","$9B+",1959,Large Enterprise,"Nutrition, Beauty, Home, Personal Care",Verified
+Consumer Goods,Kao Corporation,Japan,https://www.kao.com,"33,000+","$13B+",1887,Large Enterprise,"Cosmetics, Skincare, Hair Care, Fabric Care",Verified
+Consumer Goods,Church & Dwight Co.,USA,https://www.churchdwight.com,"5,000+","$5B+",1846,Large Enterprise,"Household, Personal Care, Specialty Products",Verified
+Consumer Goods,SC Johnson & Son,USA,https://www.scjohnson.com,"13,000+","$11B+",1886,Large Enterprise,"Household Cleaning, Storage, Air Care, Pest Control",Verified
+Consumer Goods,Godrej Consumer Products,India,https://www.godrejcp.com,"10,000+","$1B+",2001,Large Enterprise,"Household, Personal Care, Hair Care",Verified
+Consumer Goods,Clorox Company,USA,https://www.thecloroxcompany.com,"9,000+","$7B+",1913,Large Enterprise,"Cleaning, Lifestyle, Household",Verified
+Consumer Goods,Natura &Co,Brazil,https://naturaeco.com,"40,000+","$8B+",1969,Large Enterprise,"Cosmetics, Toiletries, Fragrances",Verified
+Consumer Goods,Edgewell Personal Care,USA,https://www.edgewell.com,"6,000+","$2B+",2015,Large Enterprise,"Shaving, Grooming, Skin Care, Feminine Care",Verified
+Consumer Goods,Mary Kay Inc.,USA,https://www.marykay.com,"5,000+","$4B+",1963,Large Enterprise,"Cosmetics, Skincare",Verified
+Consumer Goods,Avon Products,UK,https://www.avonworldwide.com,"20,000+","$5B+",1886,Large Enterprise,"Cosmetics, Fragrances, Toiletries",Verified
+Shipbuilding,Huntington Ingalls Industries,USA,https://www.huntingtoningalls.com,"42,000+","$11B+",2011,Large Enterprise,"Naval Ships, Submarines, Repair",Verified
+Shipbuilding,Samsung Heavy Industries,South Korea,https://www.shi.samsung.co.kr,"13,000+","$7B+",1974,Large Enterprise,"Drillships, LNG Carriers, Offshore Platforms",Verified
+Shipbuilding,Daewoo Shipbuilding & Marine Engineering,South Korea,https://www.dsme.co.kr,"12,000+","$8B+",1973,Large Enterprise,"LNG Carriers, Containerships, Offshore",Verified
+Shipbuilding,Hyundai Heavy Industries,South Korea,https://www.hhi.co.kr,"25,000+","$15B+",1972,Large Enterprise,"Ships, Offshore, Industrial Plants, Engines",Verified
+Shipbuilding,China State Shipbuilding Corporation,China,https://www.cssc.net.cn,"300,000+","$50B+",1999,Conglomerate,"Commercial, Naval Ships, Offshore",Verified
+Shipbuilding,China Shipbuilding Industry Corporation,China,https://www.csic.com.cn,"170,000+","$40B+",1999,Conglomerate,"Naval, Commercial Ships, Marine Equipment",Verified
+Shipbuilding,Mitsubishi Heavy Industries,Japan,https://www.mhi.com,"80,000+","$35B+",1884,Conglomerate,"Ships, Aerospace, Energy, Machinery",Verified
+Shipbuilding,Fincantieri S.p.A.,Italy,https://www.fincantieri.com,"19,000+","$7B+",1959,Large Enterprise,"Cruise Ships, Naval Vessels, Offshore",Verified
+Shipbuilding,BAE Systems Maritime,UK,https://www.baesystems.com,"(Part of BAE Systems)","(Part of BAE Systems)",1999,Large Enterprise,"Naval Ships, Submarines, Maritime Services",Verified
+Shipbuilding,Naval Group,France,https://www.naval-group.com,"16,000+","$4B+",2007,Large Enterprise,"Naval Defense, Submarines, Surface Ships",Verified
+Shipbuilding,Sumitomo Heavy Industries,Japan,https://www.shi.co.jp,"30,000+","$7B+",1888,Large Enterprise,"Industrial Machinery, Ships, Precision Equipment",Verified
+Shipbuilding,Kawasaki Heavy Industries,Japan,https://global.kawasaki.com,"40,000+","$15B+",1896,Large Enterprise,"Ships, Aerospace, Rolling Stock, Motorcycles",Verified
+Shipbuilding,Hanjin Heavy Industries,South Korea,https://www.hanjinsc.com,"3,000+","$1B+",1937,Medium Enterprise,"Containerships, Bulk Carriers, Offshore",Verified
+Shipbuilding,Cochin Shipyard Limited,India,https://www.cochinshipyard.com,"2,000+","$500M+",1972,Medium Enterprise,"Shipbuilding, Repair",Verified
+Shipbuilding,Mitsui E&S Holdings,Japan,https://www.mes.co.jp,"5,000+","$2B+",1917,Medium Enterprise,"Ships, Machinery, Engineering",Verified
+Shipbuilding,Imabari Shipbuilding,Japan,https://www.imabari.com,"12,000+","$4B+",1901,Large Enterprise,"Bulk Carriers, Containerships, Tankers",Verified
+Shipbuilding,Japan Marine United Corporation,Japan,https://www.jmuc.co.jp,"8,000+","$3B+",2013,Large Enterprise,"Naval, Commercial Ships",Verified
+Shipbuilding,STX Offshore & Shipbuilding,South Korea,https://www.stxship.co.kr,"3,000+","$1B+",1967,Medium Enterprise,"Offshore, Specialized Vessels",Verified
+Renewable Energy Equipment,Vestas Wind Systems,Denmark,https://www.vestas.com,"29,000+","$17B+",1945,Large Enterprise,"Wind Turbines, Service, Solutions",Verified
+Renewable Energy Equipment,Siemens Gamesa,Spain,https://www.siemensgamesa.com,"26,000+","$11B+",1976,Large Enterprise,"Onshore & Offshore Wind Turbines, Service",Verified
+Renewable Energy Equipment,General Electric Renewable Energy,USA,https://www.ge.com,"(Part of GE)","$15B+",1892,Conglomerate,"Onshore & Offshore Wind, Hydro, Grid",Verified
+Renewable Energy Equipment,Goldwind Science & Technology,China,https://www.goldwind.com,"9,000+","$8B+",1998,Large Enterprise,"Wind Turbines, Energy Storage",Verified
+Renewable Energy Equipment,Envision Group,China,https://www.envision-group.com,"7,000+","$7B+",2007,Large Enterprise,"Wind Turbines, AIoT, Batteries",Verified
+Renewable Energy Equipment,First Solar,USA,https://www.firstsolar.com,"6,000+","$3B+",1999,Large Enterprise,"Thin-Film Solar Modules",Verified
+Renewable Energy Equipment,JinkoSolar,China,https://www.jinkosolar.com,"15,000+","$12B+",2006,Large Enterprise,"Solar Modules, Cells, Wafers",Verified
+Renewable Energy Equipment,Trina Solar,China,https://www.trinasolar.com,"20,000+","$8B+",1997,Large Enterprise,"Solar Modules, Trackers, Systems",Verified
+Renewable Energy Equipment,LG Chem (Energy Storage),South Korea,https://www.lgchem.com,"(Part of LG Chem)","$5B+",1947,Large Enterprise,"EV Batteries, Energy Storage Systems",Verified
+Renewable Energy Equipment,Canadian Solar,Canada,https://www.canadiansolar.com,"15,000+","$8B+",2001,Large Enterprise,"Solar Modules, Project Development",Verified
+Renewable Energy Equipment,SMA Solar Technology,Germany,https://www.sma.de,"4,000+","$1B+",1981,Medium Enterprise,"Solar Inverters, Energy Management",Verified
+Renewable Energy Equipment,Sungrow Power Supply,China,https://www.sungrowpower.com,"7,000+","$5B+",1997,Large Enterprise,"Solar Inverters, Energy Storage",Verified
+Renewable Energy Equipment,Enphase Energy,USA,https://www.enphase.com,"2,000+","$2B+",2006,Medium Enterprise,"Microinverters, Energy Storage, Software",Verified
+Renewable Energy Equipment,SolarEdge Technologies,Israel,https://www.solaredge.com,"5,000+","$3B+",2006,Large Enterprise,"Solar Inverters, Optimizers, EV Charging",Verified
+Renewable Energy Equipment,ABB Electrification,Switzerland,https://new.abb.com,"(Part of ABB)","$15B+",1988,Large Enterprise,"EV Charging, Solar Inverters, Grid Edge",Verified
+Renewable Energy Equipment,Tesla Energy,USA,https://www.tesla.com,"(Part of Tesla)","$6B+",2003,Large Enterprise,"Solar Roof, Energy Storage, Solar Panels",Verified
+Renewable Energy Equipment,Northland Power,Canada,https://www.northlandpower.com,"1,000+","$2B+",1987,Medium Enterprise,"Offshore Wind, Onshore Renewables",Verified
+Renewable Energy Equipment,Ørsted,Denmark,https://orsted.com,"8,000+","$10B+",2006,Large Enterprise,"Offshore & Onshore Wind, Bioenergy",Verified
+Renewable Energy Equipment,Siemens Energy,Germany,https://www.siemens-energy.com,"92,000+","$30B+",2020,Large Enterprise,"Gas & Steam Turbines, Grid, Wind, Hydrogen",Verified
