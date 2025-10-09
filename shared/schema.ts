@@ -1,4 +1,4 @@
-import { pgTable, text, integer, timestamp, json, varchar, serial, boolean } from 'drizzle-orm/pg-core';
+import { pgTable, text, integer, timestamp, json, varchar, serial, boolean, unique } from 'drizzle-orm/pg-core';
 import { createInsertSchema, createSelectSchema } from 'drizzle-zod';
 import { z } from 'zod';
 
@@ -26,7 +26,11 @@ export const companies = pgTable('companies', {
   companySize: text('company_size'), // e.g., "Large Enterprise", "SME", "Conglomerate"
   specializationTags: text('specialization_tags'), // Comma-separated: "Film Production, Distribution, Franchise Management"
   verificationStatus: text('verification_status').default('unverified'), // 'verified', 'unverified', 'pending'
-});
+}, (table) => ({
+  // Composite unique constraint: same company can exist in different sectors/industries
+  // but prevents true duplicates (same name + sector + industry)
+  uniqueCompanyIndustry: unique().on(table.name, table.sectorName, table.industryName),
+}));
 
 // Contact Messages table
 export const contactMessages = pgTable('contact_messages', {
