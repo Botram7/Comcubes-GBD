@@ -6,6 +6,18 @@ import { eq, sql } from "drizzle-orm";
 
 export function registerGeographicRoutes(app: Express): void {
   
+  // Get top countries by company count
+  app.get("/api/geography/top-countries", async (req, res) => {
+    try {
+      const limit = parseInt(req.query.limit as string) || 10;
+      const topCountries = await storage.getTopCountriesByCompanyCount(limit);
+      res.json(topCountries);
+    } catch (error) {
+      console.error('Error fetching top countries:', error);
+      res.status(500).json({ error: "Failed to load top countries" });
+    }
+  });
+  
   // Get all continents
   app.get("/api/geography/continents", async (req, res) => {
     try {
