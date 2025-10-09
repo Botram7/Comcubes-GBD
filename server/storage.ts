@@ -116,6 +116,7 @@ export interface IStorage {
     totalCompanies: number;
     topCountries: Array<{ countryName: string; companyCount: number }>;
   }>;
+  getTopCountriesByCompanyCount(limit: number): Promise<Array<Country & { companyCount: number }>>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -1226,6 +1227,58 @@ export class DatabaseStorage implements IStorage {
         totalCompanies: 0,
         topCountries: []
       };
+    }
+  }
+
+  async getTopCountriesByCompanyCount(limit: number): Promise<Array<Country & { companyCount: number }>> {
+    try {
+      const topCountriesData = await db
+        .select({
+          id: countries.id,
+          name: countries.name,
+          slug: countries.slug,
+          iso2: countries.iso2,
+          iso3: countries.iso3,
+          phoneCode: countries.phoneCode,
+          capital: countries.capital,
+          currency: countries.currency,
+          regionId: countries.regionId,
+          continentId: countries.continentId,
+          companyCount: sql<number>`count(*)`
+        })
+        .from(countries)
+        .innerJoin(companyLocations, eq(countries.id, companyLocations.countryId))
+        .groupBy(
+          countries.id,
+          countries.name,
+          countries.slug,
+          countries.iso2,
+          countries.iso3,
+          countries.phoneCode,
+          countries.capital,
+          countries.currency,
+          countries.regionId,
+          countries.continentId
+        )
+        .orderBy(sql`count(*) DESC`)
+        .limit(limit);
+
+      return topCountriesData.map(c => ({
+        id: c.id,
+        name: c.name,
+        slug: c.slug,
+        iso2: c.iso2,
+        iso3: c.iso3,
+        phoneCode: c.phoneCode,
+        capital: c.capital,
+        currency: c.currency,
+        regionId: c.regionId,
+        continentId: c.continentId,
+        companyCount: Number(c.companyCount)
+      }));
+    } catch (error) {
+      console.error('Error getting top countries by company count:', error);
+      return [];
     }
   }
 }
