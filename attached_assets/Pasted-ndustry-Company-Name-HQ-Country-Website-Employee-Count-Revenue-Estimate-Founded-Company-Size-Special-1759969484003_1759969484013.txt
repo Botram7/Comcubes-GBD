@@ -1,0 +1,21 @@
+ndustry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Film Production,Warner Bros. Pictures,USA,https://www.warnerbros.com,"8,000+","$12B+",1923,Large Enterprise,"Film Production, Distribution, Franchise Management",Verified
+Film Production,Universal Pictures,USA,https://www.universalpictures.com,"5,000+","$4B+",1912,Large Enterprise,"Film Production, Distribution, Theme Park Integration",Verified
+Film Production,Paramount Pictures,USA,https://www.paramount.com,"3,500+","$3B+",1912,Large Enterprise,"Film Production, Distribution, Library Content",Verified
+Film Production,Sony Pictures Entertainment,USA,https://www.sonypictures.com,"9,000+","$8B+",1987,Large Enterprise,"Film Production, Television, Game Shows",Verified
+Film Production,Walt Disney Studios,USA,https://www.waltdisneystudios.com,"10,000+","$9B+",1923,Conglomerate,"Film Production, Franchises (Marvel, Star Wars), Animation",Verified
+Film Production,Lionsgate Films,USA,https://www.lionsgate.com,"1,600+","$3.5B+",1997,Large Enterprise,"Film Production, Television Series, Acquisitions",Verified
+Film Production,MGM Studios,USA,https://www.mgm.com,"800+","$1B+",1924,Large Enterprise,"Film Production, Library, Episodic Content",Verified
+Film Production,Legendary Entertainment,USA,https://www.legendary.com,"400+","$1B+",2000,Mid-Market,"Film Production, Blockbuster Franchises",Verified
+Film Production,StudioCanal,France,https://www.studiocanal.com,"800+","$1B+",1988,Large Enterprise,"Film Production, Distribution, European Content",Verified
+Film Production,A24 Films,USA,https://a24films.com,"200+","$500M+",2012,Mid-Market,"Independent Film, Acclaimed Cinema",Verified
+Film Production,Pathé,France,https://www.pathe.com,"1,500+","$1.5B+",1896,Large Enterprise,"Film Production, Distribution, Cinema Operation",Verified
+Film Production,Gaumont Film Company,France,https://www.gaumont.com,"500+","$400M+",1895,Large Enterprise,"Film Production, Oldest Film Company",Verified
+Film Production,Toho Company,Japan,https://www.toho.co.jp,"2,000+","$2B+",1932,Large Enterprise,"Film Production, Distribution, Godzilla Franchise",Verified
+Film Production,CJ ENM,South Korea,https://www.cjenm.com,"5,000+","$5B+",1995,Large Enterprise,"Film Production, K-Drama, Music, Content",Verified
+Film Production,Yash Raj Films,India,https://www.yashrajfilms.com,"1,000+","$300M+",1970,Large Enterprise,"Bollywood Production, Music, Distribution",Verified
+Film Production,Mosfilm,Russia,https://www.mosfilm.ru,"1,000+","N/A",1920,Large Enterprise,"Film Production, Historic Russian Library",Verified
+Film Production,Working Title Films,UK,https://www.workingtitlefilms.com,"50+","N/A",1983,Small Enterprise,"British Film Production, Co-Productions",Verified
+Film Production,New Regency Productions,USA,https://www.newregency.com,"100+","$1B+",1991,Mid-Market,"Film Production, Financing",Verified
+Film Production,Annapurna Pictures,USA,https://annapurna.pictures,"80+","N/A",2011,Small Enterprise,"Independent Film Production",Verified
+Film Production,STX Entertainment,USA,https://www.stxfilms.com,"200+","$500M+",2014,Mid-Market,"Film Production, Financing, Distribution",Verified

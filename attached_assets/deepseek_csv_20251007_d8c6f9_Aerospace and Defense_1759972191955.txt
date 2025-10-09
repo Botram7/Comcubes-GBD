@@ -1,0 +1,400 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Commercial Aircraft Manufacturing,Boeing,USA,https://www.boeing.com,"145,000+","$66.6B",1916,Large Enterprise,Full-Spectrum Aerospace,Verified
+Commercial Aircraft Manufacturing,Airbus,Netherlands,https://www.airbus.com,"130,000+","€59B",1970,Large Enterprise,Full-Spectrum Aerospace,Verified
+Commercial Aircraft Manufacturing,Embraer,Brazil,https://www.embraer.com,"18,000+","$5.0B",1969,Large Enterprise,Regional & Business Jets,Verified
+Commercial Aircraft Manufacturing,Bombardier,Canada,https://www.bombardier.com,"60,000+","$6.5B",1942,Large Enterprise,Business Jets,Verified
+Commercial Aircraft Manufacturing,COMAC,China,https://www.comac.cc,"9,000+","N/A (State-Owned)",2008,Large Enterprise,Narrow-body Airliners,Verified
+Commercial Aircraft Manufacturing,Dassault Aviation,France,https://www.dassault-aviation.com,"12,000+","€5.5B",1936,Large Enterprise,Business Jets, Military Aircraft,Verified
+Commercial Aircraft Manufacturing,Gulfstream Aerospace,USA,https://www.gulfstream.com,"19,000+","N/A (Subsidiary)",1958,Large Enterprise,Business Jets,Verified
+Commercial Aircraft Manufacturing,Mitsubishi Heavy Industries,Japan,https://www.mhi.com,"80,000+","$32B",1884,Conglomerate,Heavy Machinery, Aerospace,Verified
+Commercial Aircraft Manufacturing,Textron Aviation,USA,https://www.textronaviation.com,"12,000+","N/A (Subsidiary)",1927,Large Enterprise,General Aviation,Verified
+Commercial Aircraft Manufacturing,Irkut Corporation,Russia,https://www.irkut.com,"14,000+","N/A",1932,Large Enterprise,Military & Civil Aircraft,Verified
+Commercial Aircraft Manufacturing,ATR Aircraft,France,https://www.atr-aircraft.com,"1,100+","N/A (JV)",1981,SME,Turboprop Aircraft,Verified
+Commercial Aircraft Manufacturing,Pilatus Aircraft,Switzerland,https://www.pilatus-aircraft.com,"2,300+","$1.2B",1939,SME,General Aviation, Trainer Aircraft,Verified
+Commercial Aircraft Manufacturing,Antonov,Ukraine,https://www.antonov.com,"12,000+","N/A",1946,Large Enterprise,Cargo Aircraft,Verified
+Commercial Aircraft Manufacturing,Honda Aircraft Company,USA,https://www.hondajet.com,"100+","N/A (Subsidiary)",2006,SME,Very Light Jets,Verified
+Commercial Aircraft Manufacturing,Piper Aircraft,USA,https://www.piper.com,"900+","N/A",1927,SME,General Aviation,Verified
+Commercial Aircraft Manufacturing,Avic Aircraft,China,https://www.avic.com,"N/A (Subsidiary)","N/A (State-Owned)",2008,Large Enterprise,Military Aircraft,Verified
+Commercial Aircraft Manufacturing,Sukhoi Civil Aircraft,Russia,https://www.sukhoi.org,"N/A (Subsidiary)","N/A",2000,Large Enterprise,Regional Jets,Verified
+Commercial Aircraft Manufacturing,Leonardo S.p.A.,Italy,https://www.leonardocompany.com,"49,000+","€14.7B",1948,Large Enterprise,Helicopters, Defense Systems,Verified
+Commercial Aircraft Manufacturing,De Havilland Canada,Canada,https://www.dehavilland.com,"500+","N/A",1928,SME,Turboprop Aircraft,Verified
+Commercial Aircraft Manufacturing,Cirrus Aircraft,USA,https://www.cirrusaircraft.com,"2,500+","N/A",1984,SME,Personal Aircraft,Verified
+Military Aircraft Manufacturing,Lockheed Martin,USA,https://www.lockheedmartin.com,"114,000+","$67.0B",1995,Large Enterprise,Fighter Jets, Missile Systems,Verified
+Military Aircraft Manufacturing,Northrop Grumman,USA,https://www.northropgrumman.com,"97,000+","$36.6B",1994,Large Enterprise,Stealth Technology, C4ISR,Verified
+Military Aircraft Manufacturing,Saab,Sweden,https://www.saab.com,"19,000+","$3.7B",1937,Large Enterprise,Fighter Jets, Radar Systems,Verified
+Military Aircraft Manufacturing,BAE Systems,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Military Aircraft, Electronic Systems,Verified
+Military Aircraft Manufacturing,Dassault Aviation,France,https://www.dassault-aviation.com,"12,000+","€5.5B",1936,Large Enterprise,Fighter Jets, Business Jets,Verified
+Military Aircraft Manufacturing,KAI (Korea Aerospace Industries),South Korea,https://www.koreaaero.com,"3,000+","$3.5B",1999,Large Enterprise,Trainer Aircraft, Fighter Jets,Verified
+Military Aircraft Manufacturing,HAL (Hindustan Aeronautics Ltd),India,https://www.hal-india.co.in,"29,000+","$3.0B",1940,Large Enterprise,Military Aircraft, Helicopters,Verified
+Military Aircraft Manufacturing,United Aircraft Corporation,Russia,https://www.uacrussia.ru,"100,000+","N/A (State-Owned)",2006,Large Enterprise,Military & Civil Aircraft,Verified
+Military Aircraft Manufacturing,Israel Aerospace Industries,Israel,https://www.iai.co.il,"15,000+","$4.5B",1953,Large Enterprise,UAVs, Missile Systems,Verified
+Military Aircraft Manufacturing,TAI (Turkish Aerospace),Turkey,https://www.tusas.com,"5,000+","$1.2B",1984,Large Enterprise,Unmanned Systems, Helicopters,Verified
+Military Aircraft Manufacturing,Sukhoi,Russia,https://www.sukhoi.org,"N/A (Subsidiary)","N/A",1939,Large Enterprise,Fighter Jets,Verified
+Military Aircraft Manufacturing,Embraer Defense & Security,Brazil,https://www.embraer.com,"18,000+","$5.0B",1969,Large Enterprise,Regional Jets, Military Transport,Verified
+Military Aircraft Manufacturing,AVIC (Aviation Industry Corp),China,https://www.avic.com,"500,000+","N/A (State-Owned)",2008,Conglomerate,Full-Spectrum Aerospace,Verified
+Military Aircraft Manufacturing,Leonardo S.p.A.,Italy,https://www.leonardocompany.com,"49,000+","€14.7B",1948,Large Enterprise,Helicopters, Defense Systems,Verified
+Military Aircraft Manufacturing,Mikoyan,Russia,https://www.migavia.ru,"N/A (Subsidiary)","N/A",1939,Large Enterprise,Fighter Jets,Verified
+Military Aircraft Manufacturing,Gripen International,Sweden,https://www.gripen.com,"N/A (Division)","N/A",1982,Large Enterprise,Fighter Jets,Verified
+Military Aircraft Manufacturing,Airbus Defence and Space,Netherlands,https://www.airbus.com,"130,000+","€59B",1970,Large Enterprise,Military Aircraft, Space Systems,Verified
+Military Aircraft Manufacturing,Mitsubishi Heavy Industries,Japan,https://www.mhi.com,"80,000+","$32B",1884,Conglomerate,Fighter Jets, Missiles,Verified
+Military Aircraft Manufacturing,Textron Systems,USA,https://www.textronsystems.com,"12,000+","N/A (Subsidiary)",1927,Large Enterprise,Unmanned Systems, Shadow M2,Verified
+Spacecraft & Satellite Manufacturing,SpaceX,USA,https://www.spacex.com,"12,000+","N/A (Private)",2002,Large Enterprise,Launch Vehicles, Satellites,Verified
+Spacecraft & Satellite Manufacturing,Thales Alenia Space,France,https://www.thalesgroup.com,"80,000+","€18.1B",2000,Large Enterprise,Satellites, Space Systems,Verified
+Spacecraft & Satellite Manufacturing,Northrop Grumman,USA,https://www.northropgrumman.com,"97,000+","$36.6B",1994,Large Enterprise,Space Systems, Satellites,Verified
+Spacecraft & Satellite Manufacturing,Maxar Technologies,USA,https://www.maxar.com,"4,400+","$1.7B",1969,Large Enterprise,Earth Intelligence, Satellites,Verified
+Spacecraft & Satellite Manufacturing,Airbus Defence and Space,Netherlands,https://www.airbus.com,"130,000+","€59B",1970,Large Enterprise,Satellites, Space Systems,Verified
+Spacecraft & Satellite Manufacturing,OHB SE,Germany,https://www.ohb.de,"3,000+","€1.0B",1981,Large Enterprise,Small Satellites, Space Systems,Verified
+Spacecraft & Satellite Manufacturing,Sierra Nevada Corporation,USA,https://www.sncorp.com,"5,000+","N/A (Private)",1963,Large Enterprise,Spacecraft, Dream Chaser,Verified
+Spacecraft & Satellite Manufacturing,MDA Ltd,Canada,https://www.mda.space,"2,500+","$0.6B",1969,Large Enterprise,Robotics, Satellites,Verified
+Spacecraft & Satellite Manufacturing,Israel Aerospace Industries,Israel,https://www.iai.co.il,"15,000+","$4.5B",1953,Large Enterprise,Satellites, Space Systems,Verified
+Spacecraft & Satellite Manufacturing,Mitsubishi Electric,Japan,https://www.mitsubishielectric.com,"145,000+","$42.5B",1921,Conglomerate,Electronics, Satellite Components,Verified
+Spacecraft & Satellite Manufacturing,NEC Space Technologies,Japan,https://www.nec.com,"N/A (Division)","N/A",1899,Conglomerate,Satellite Components,Verified
+Spacecraft & Satellite Manufacturing,CASC (China Aerospace),China,https://www.spacechina.com,"180,000+","N/A (State-Owned)",1999,Conglomerate,Launch Vehicles, Satellites,Verified
+Spacecraft & Satellite Manufacturing,Rocket Lab,USA,https://www.rocketlabusa.com,"1,500+","$0.3B",2006,Large Enterprise,Small Launch Vehicles,Verified
+Spacecraft & Satellite Manufacturing,Blue Origin,USA,https://www.blueorigin.com,"6,000+","N/A (Private)",2000,Large Enterprise,Launch Vehicles, Spacecraft,Verified
+Spacecraft & Satellite Manufacturing,RKK Energia,Russia,https://www.energia.ru,"20,000+","N/A",1946,Large Enterprise,Spacecraft, Space Stations,Verified
+Spacecraft & Satellite Manufacturing,Planet Labs,USA,https://www.planet.com,"1,100+","$0.2B",2010,Large Enterprise,Earth Imaging, Small Satellites,Verified
+Spacecraft & Satellite Manufacturing,Spire Global,USA,https://www.spire.com,"400+","$0.1B",2012,SME,Weather Data, Small Satellites,Verified
+Spacecraft & Satellite Manufacturing,Virgin Orbit,USA,https://virginorbit.com,"100+","N/A (Private)",2017,SME,Launch Services,Verified
+Spacecraft & Satellite Manufacturing,Ball Aerospace,USA,https://www.ball.com/aerospace,"N/A (Subsidiary)","N/A",1956,Large Enterprise,Space Optics, Satellites,Verified
+Spacecraft & Satellite Manufacturing,L3Harris Technologies,USA,https://www.l3harris.com,"50,000+","$19.4B",2019,Large Enterprise,Avionics, Space Electronics,Verified
+Defense Electronics,Raytheon Technologies,USA,https://www.rtx.com,"174,000+","$69.0B",1922,Conglomerate,Radar, Avionics, Missiles,Verified
+Defense Electronics,Thales Group,France,https://www.thalesgroup.com,"80,000+","€18.1B",2000,Large Enterprise,Avionics, C4ISR,Verified
+Defense Electronics,Honeywell Aerospace,USA,https://aerospace.honeywell.com,"99,000+","$36.7B",1906,Conglomerate,Avionics, Propulsion,Verified
+Defense Electronics,BAE Systems,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Electronic Warfare, C4ISR,Verified
+Defense Electronics,Elbit Systems,Israel,https://elbitsystems.com,"18,000+","$5.9B",1966,Large Enterprise,Avionics, UAV Systems,Verified
+Defense Electronics,Leonardo S.p.A.,Italy,https://www.leonardocompany.com,"49,000+","€14.7B",1948,Large Enterprise,Avionics, Defense Systems,Verified
+Defense Electronics,L3Harris Technologies,USA,https://www.l3harris.com,"50,000+","$19.4B",2019,Large Enterprise,Communication Systems, Electronic Warfare,Verified
+Defense Electronics,Indra Sistemas,Spain,https://www.indracompany.com,"9,000+","€4.3B",1993,Large Enterprise,Radar, C4ISR,Verified
+Defense Electronics,Rheinmetall AG,Germany,https://www.rheinmetall.com,"28,000+","€7.2B",1889,Large Enterprise,Weapon Systems, Vehicle Electronics,Verified
+Defense Electronics,Aselsan,Turkey,https://www.aselsan.com.tr,"10,000+","$2.0B",1975,Large Enterprise,Communication Systems, Radar,Verified
+Defense Electronics,Kongsberg Gruppen,Norway,https://www.kongsberg.com,"12,000+","$3.5B",1814,Large Enterprise,Missile Systems, Naval Systems,Verified
+Defense Electronics,Terma Group,Denmark,https://www.terma.com,"2,000+","$0.4B",1944,SME,Radar, Self-Protection Systems,Verified
+Defense Electronics,Collins Aerospace,USA,https://www.collinsaerospace.com,"70,000+","N/A (Subsidiary)",2018,Large Enterprise,Avionics, Interiors,Verified
+Defense Electronics,Hensoldt AG,Germany,https://www.hensoldt.net,"6,000+","€1.7B",2017,Large Enterprise,Sensors, Radar,Verified
+Defense Electronics,FLIR Systems,USA,https://www.flir.com,"4,000+","$1.9B",1978,Large Enterprise,Thermal Imaging, Sensors,Verified
+Defense Electronics,SAAB Electronic Defence,Sweden,https://www.saab.com,"19,000+","$3.7B",1937,Large Enterprise,Electronic Warfare, Radar,Verified
+Defense Electronics,General Dynamics Mission Systems,USA,https://gdmissionsystems.com,"106,000+","$42.3B",1899,Conglomerate,Communication Systems, C4ISR,Verified
+Defense Electronics,Cobham Advanced Electronic Solutions,UK,https://www.cobham.com,"10,000+","£1.9B",1934,Large Enterprise,Antennas, RF Systems,Verified
+Defense Electronics,Teledyne Technologies,USA,https://www.teledyne.com,"15,000+","$5.8B",1960,Large Enterprise,Imaging, Sensors,Verified
+Defense Electronics,Rohde & Schwarz,Germany,https://www.rohde-schwarz.com,"13,000+","€2.8B",1933,Large Enterprise,Test & Measurement, Communication,Verified
+Missile & Defense Systems,MBDA,France,https://www.mbda-systems.com,"12,000+","€4.0B",2001,Large Enterprise,Missile Systems,Verified
+Missile & Defense Systems,Rafael Advanced Defense,Israel,https://www.rafael.co.il,"8,000+","$2.9B",1948,Large Enterprise,Missile Systems, Air Defense,Verified
+Missile & Defense Systems,Roketsan,Turkey,https://www.roketsan.com.tr,"3,000+","$0.8B",1988,Large Enterprise,Missiles, Rocket Systems,Verified
+Missile & Defense Systems,Denel Dynamics,South Africa,https://www.denel.co.za,"3,000+","$0.2B",1991,Large Enterprise,Missiles, UAVs,Verified
+Missile & Defense Systems,BrahMos Aerospace,India,https://www.brahmos.com,"500+","N/A (JV)",1998,Large Enterprise,Cruise Missiles,Verified
+Missile & Defense Systems,LIG Nex1,South Korea,https://www.lignex1.com,"3,000+","$1.5B",1976,Large Enterprise,Missile Systems, Radar,Verified
+Missile & Defense Systems,Tactical Missiles Corporation,Russia,https://www.ktrv.ru,"20,000+","N/A",2002,Large Enterprise,Missiles, Precision Munitions,Verified
+Missile & Defense Systems,Makeyev Design Bureau,Russia,https://makeyev.ru,"5,000+","N/A",1947,Large Enterprise,Ballistic Missiles,Verified
+Missile & Defense Systems,Eurosam,France,https://www.eurosam.com,"N/A (Consortium)","N/A",1989,Large Enterprise,Air Defense Systems,Verified
+Missile & Defense Systems,Aerojet Rocketdyne,USA,https://www.rocket.com,"5,000+","$2.2B",1942,Large Enterprise,Rocket Propulsion,Verified
+Missile & Defense Systems,Avibras,Brazil,https://www.avibras.com.br,"1,000+","$0.2B",1961,SME,Rocket Systems, Artillery,Verified
+Missile & Defense Systems,Lockheed Martin Missiles,USA,https://www.lockheedmartin.com,"114,000+","$67.0B",1995,Large Enterprise,Missile Systems,Verified
+Missile & Defense Systems,Raytheon Missiles & Defense,USA,https://www.rtx.com,"174,000+","$69.0B",1922,Conglomerate,Missile Systems, Air Defense,Verified
+Missile & Defense Systems,Northrop Grumman Defense Systems,USA,https://www.northropgrumman.com,"97,000+","$36.6B",1994,Large Enterprise,Missile Systems,Verified
+Missile & Defense Systems,Boeing Defense, Space & Security,USA,https://www.boeing.com,"145,000+","$66.6B",1916,Large Enterprise,Missile Systems,Verified
+Missile & Defense Systems,Diehl Defence,Germany,https://www.diehl.com/defence,"17,000+","€4.1B",1902,Large Enterprise,Missiles, Munitions,Verified
+Missile & Defense Systems,IAI Missile Systems,Israel,https://www.iai.co.il,"15,000+","$4.5B",1953,Large Enterprise,Missile Systems, Air Defense,Verified
+Missile & Defense Systems,Thales Air Defence,France,https://www.thalesgroup.com,"80,000+","€18.1B",2000,Large Enterprise,Air Defense Systems,Verified
+Missile & Defense Systems,Kongsberg Defence & Aerospace,Norway,https://www.kongsberg.com,"12,000+","$3.5B",1814,Large Enterprise,Missile Systems, Naval Strike Missile,Verified
+Missile & Defense Systems,Hanwha Defense,South Korea,https://www.hanwha.com,"12,000+","$12.0B",1952,Conglomerate,Artillery, Missile Systems,Verified
+Military Vehicles & Tanks,General Dynamics Land Systems,USA,https://www.gdls.com,"106,000+","$42.3B",1899,Conglomerate,Combat Vehicles, Tanks,Verified
+Military Vehicles & Tanks,Oshkosh Defense,USA,https://www.oshkoshdefense.com,"15,000+","$9.4B",1917,Large Enterprise,Tactical Vehicles, JLTV,Verified
+Military Vehicles & Tanks,Rheinmetall Land Systems,Germany,https://www.rheinmetall-defence.com,"28,000+","€7.2B",1889,Large Enterprise,Combat Vehicles, Tanks,Verified
+Military Vehicles & Tanks,BAE Systems Land UK,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Armored Vehicles, Tanks,Verified
+Military Vehicles & Tanks,Nexter Systems,France,https://www.nexter-group.fr,"3,000+","€0.8B",1973,Large Enterprise,Artillery, Armored Vehicles,Verified
+Military Vehicles & Tanks,AM General,USA,https://www.amgeneral.com,"1,500+","N/A (Private)",1971,SME,Tactical Vehicles, HMMWV,Verified
+Military Vehicles & Tanks,Otokar,Turkey,https://www.otokar.com.tr,"2,500+","$0.6B",1963,Large Enterprise,Armored Vehicles,Verified
+Military Vehicles & Tanks,Patria,Finland,https://www.patria.fi,"3,000+","$0.5B",1921,Large Enterprise,Armored Vehicles, Aircraft,Verified
+Military Vehicles & Tanks,IVECO Defence Vehicles,Italy,https://www.iveco.com,"N/A (Division)","N/A",1975,Large Enterprise,Protected Vehicles,Verified
+Military Vehicles & Tanks,Arquus,France,https://www.arquus-defense.com,"1,500+","N/A (Subsidiary)",1997,Large Enterprise,Military Vehicles,Verified
+Military Vehicles & Tanks,Tatra Trucks,Czech Republic,https://www.tatra.cz,"1,500+","$0.3B",1850,Large Enterprise,Tactical Trucks,Verified
+Military Vehicles & Tanks,Ashok Leyland Defence,India,https://www.ashokleyland.com,"23,000+","$2.5B",1948,Large Enterprise,Military Trucks,Verified
+Military Vehicles & Tanks,Denel Land Systems,South Africa,https://www.denel.co.za,"3,000+","$0.2B",1991,Large Enterprise,Artillery, Armored Vehicles,Verified
+Military Vehicles & Tanks,Ukroboronprom,Ukraine,https://www.ukroboronprom.com.ua,"80,000+","N/A (State-Owned)",2010,Conglomerate,Armored Vehicles, Tanks,Verified
+Military Vehicles & Tanks,ST Engineering Land Systems,Singapore,https://www.stengg.com,"23,000+","$5.8B",1967,Conglomerate,Armored Vehicles,Verified
+Military Vehicles & Tanks,Textron Systems,USA,https://www.textronsystems.com,"12,000+","N/A (Subsidiary)",1927,Large Enterprise,Tactical Vehicles,Verified
+Military Vehicles & Tanks,Elbit Systems Land,Israel,https://elbitsystems.com,"18,000+","$5.9B",1966,Large Enterprise,Armored Vehicles, C4ISR,Verified
+Military Vehicles & Tanks,Krauss-Maffei Wegmann,Germany,https://www.kmweg.de,"4,000+","€1.5B",1999,Large Enterprise,Tanks, Artillery,Verified
+Military Vehicles & Tanks,John Cockerill Defense,Belgium,https://johncockerill.com,"5,000+","N/A",1817,Large Enterprise,Weapon Stations,Verified
+Military Vehicles & Tanks,Panhard Defense,France,https://www.panhard-defense.fr,"N/A (Subsidiary)","N/A",1845,Large Enterprise,Light Armored Vehicles,Verified
+Naval Systems & Shipbuilding,Huntington Ingalls Industries,USA,https://www.huntingtoningalls.com,"42,000+","$11.2B",2011,Large Enterprise,Naval Vessels, Shipbuilding,Verified
+Naval Systems & Shipbuilding,Babcock International,UK,https://www.babcockinternational.com,"30,000+","£4.5B",1891,Large Enterprise,Naval Support, Engineering,Verified
+Naval Systems & Shipbuilding,Naval Group,France,https://www.naval-group.com,"15,000+","€3.8B",2007,Large Enterprise,Warships, Submarines,Verified
+Naval Systems & Shipbuilding,Fincantieri,Italy,https://www.fincantieri.com,"19,000+","€5.7B",1959,Large Enterprise,Naval Vessels, Cruise Ships,Verified
+Naval Systems & Shipbuilding,Daewoo Shipbuilding,South Korea,https://www.dsme.co.kr,"10,000+","$10.0B",1973,Large Enterprise,Shipbuilding, Offshore,Verified
+Naval Systems & Shipbuilding,Hyundai Heavy Industries,South Korea,https://www.hhi.co.kr,"25,000+","$40.0B",1972,Conglomerate,Shipbuilding, Offshore,Verified
+Naval Systems & Shipbuilding,Thyssenkrupp Marine Systems,Germany,https://www.thyssenkrupp-marinesystems.com,"7,000+","€1.5B",2005,Large Enterprise,Submarines, Surface Vessels,Verified
+Naval Systems & Shipbuilding,BMT Group,UK,https://www.bmt.org,"1,000+","$0.2B",1985,SME,Naval Architecture, Design,Verified
+Naval Systems & Shipbuilding,Damen Shipyards,Netherlands,https://www.damen.com,"12,000+","$2.5B",1927,Large Enterprise,Shipbuilding, Workboats,Verified
+Naval Systems & Shipbuilding,PO Sevmash,Russia,https://www.sevmash.ru,"25,000+","N/A (State-Owned)",1939,Large Enterprise,Submarines, Warships,Verified
+Naval Systems & Shipbuilding,Hanwha Ocean,South Korea,https://www.hanwha.com,"12,000+","$12.0B",1977,Large Enterprise,Shipbuilding, Submarines,Verified
+Naval Systems & Shipbuilding,Austal,Australia,https://www.austal.com,"4,000+","$1.6B",1988,Large Enterprise,Aluminum Vessels,Verified
+Naval Systems & Shipbuilding,United Shipbuilding Corp,Russia,https://aoosk.ru,"80,000+","N/A (State-Owned)",2007,Conglomerate,Warships, Submarines,Verified
+Naval Systems & Shipbuilding,Mitsubishi Heavy Industries,Japan,https://www.mhi.com,"80,000+","$32B",1884,Conglomerate,Shipbuilding, Destroyers,Verified
+Naval Systems & Shipbuilding,CSSC (China State Shipbuilding),China,https://www.cssc.net.cn,"300,000+","N/A (State-Owned)",1999,Conglomerate,Warships, Commercial Ships,Verified
+Naval Systems & Shipbuilding,Rolls-Royce Naval Marine,UK,https://www.rolls-royce.com,"50,000+","£16.5B",1906,Large Enterprise,Marine Propulsion,Verified
+Naval Systems & Shipbuilding,SAAB Kockums,Sweden,https://www.saab.com,"19,000+","$3.7B",1840,Large Enterprise,Submarines, Stealth Technology,Verified
+Naval Systems & Shipbuilding,BAE Systems Maritime,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Warships, Submarines,Verified
+Naval Systems & Shipbuilding,Lockheed Martin Rotary,USA,https://www.lockheedmartin.com,"114,000+","$67.0B",1995,Large Enterprise,Combat Systems, Aegis,Verified
+Naval Systems & Shipbuilding,Garden Reach Shipbuilders,India,https://www.grse.in,"5,000+","$0.3B",1884,Large Enterprise,Warships, Patrol Vessels,Verified
+Unmanned Aerial Vehicles (UAVs),General Atomics Aeronautical,USA,https://www.ga-asi.com,"15,000+","N/A (Private)",1993,Large Enterprise,UAVs, MQ-9 Reaper,Verified
+Unmanned Aerial Vehicles (UAVs),AeroVironment,USA,https://www.avinc.com,"1,500+","$0.5B",1971,Large Enterprise,Small UAVs, Raven, Puma,Verified
+Unmanned Aerial Vehicles (UAVs),DJI,China,https://www.dji.com,"14,000+","$5.0B",2006,Large Enterprise,Commercial Drones,Verified
+Unmanned Aerial Vehicles (UAVs),Israel Aerospace Industries,Israel,https://www.iai.co.il,"15,000+","$4.5B",1953,Large Enterprise,UAVs, Heron,Verified
+Unmanned Aerial Vehicles (UAVs),Elbit Systems,Israel,https://elbitsystems.com,"18,000+","$5.9B",1966,Large Enterprise,UAVs, Hermes,Verified
+Unmanned Aerial Vehicles (UAVs),Northrop Grumman,USA,https://www.northropgrumman.com,"97,000+","$36.6B",1994,Large Enterprise,UAVs, Global Hawk,Verified
+Unmanned Aerial Vehicles (UAVs),Boeing Defense,USA,https://www.boeing.com,"145,000+","$66.6B",1916,Large Enterprise,UAVs, MQ-25,Verified
+Unmanned Aerial Vehicles (UAVs),Airbus Defence UAVs,Netherlands,https://www.airbus.com,"130,000+","€59B",1970,Large Enterprise,UAVs,Verified
+Unmanned Aerial Vehicles (UAVs),Turkish Aerospace Industries,Turkey,https://www.tai.com.tr,"5,000+","$1.2B",1984,Large Enterprise,UAVs, Anka,Verified
+Unmanned Aerial Vehicles (UAVs),Kratos Defense,USA,https://www.kratosdefense.com,"5,000+","$1.0B",1994,Large Enterprise,Target Drones, Combat UAVs,Verified
+Unmanned Aerial Vehicles (UAVs),Parrot SA,France,https://www.parrot.com,"500+","$0.2B",1994,SME,Commercial Drones,Verified
+Unmanned Aerial Vehicles (UAVs),Yuneec International,China,https://www.yuneec.com,"1,000+","N/A (Private)",1999,SME,Commercial Drones,Verified
+Unmanned Aerial Vehicles (UAVs),Textron Systems,USA,https://www.textronsystems.com,"12,000+","N/A (Subsidiary)",1927,Large Enterprise,UAVs, Aerosonde,Verified
+Unmanned Aerial Vehicles (UAVs),Insitu,USA,https://www.insitu.com,"500+","N/A (Subsidiary)",1994,SME,UAVs, ScanEagle,Verified
+Unmanned Aerial Vehicles (UAVs),Aurora Flight Sciences,USA,https://www.aurora.aero,"600+","N/A (Subsidiary)",1989,SME,UAVs, Advanced Aircraft,Verified
+Unmanned Aerial Vehicles (UAVs),Raytheon UAV Systems,USA,https://www.rtx.com,"174,000+","$69.0B",1922,Conglomerate,UAV Sensors, Payloads,Verified
+Unmanned Aerial Vehicles (UAVs),Lockheed Martin UAVs,USA,https://www.lockheedmartin.com,"114,000+","$67.0B",1995,Large Enterprise,UAVs, Advanced Programs,Verified
+Unmanned Aerial Vehicles (UAVs),Saab UAV Solutions,Sweden,https://www.saab.com,"19,000+","$3.7B",1937,Large Enterprise,UAVs,Verified
+Unmanned Aerial Vehicles (UAVs),Thales Drones,France,https://www.thalesgroup.com,"80,000+","€18.1B",2000,Large Enterprise,UAV Systems,Verified
+Unmanned Aerial Vehicles (UAVs),BAE Systems Autonomous,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Autonomous Systems,Verified
+Aircraft Engines & Components,GE Aviation,USA,https://www.geaviation.com,"40,000+","$32.0B",1917,Large Enterprise,Aircraft Engines,Verified
+Aircraft Engines & Components,Rolls-Royce plc,UK,https://www.rolls-royce.com,"50,000+","£16.5B",1906,Large Enterprise,Aircraft Engines, Power Systems,Verified
+Aircraft Engines & Components,Safran Aircraft Engines,France,https://www.safran-aircraft-engines.com,"81,000+","€23.2B",2005,Large Enterprise,Aircraft Engines,Verified
+Aircraft Engines & Components,Pratt & Whitney,USA,https://www.prattwhitney.com,"40,000+","$19.0B",1925,Large Enterprise,Aircraft Engines,Verified
+Aircraft Engines & Components,Honeywell Aerospace,USA,https://aerospace.honeywell.com,"99,000+","$36.7B",1906,Conglomerate,Engines, APUs,Verified
+Aircraft Engines & Components,MTU Aero Engines,Germany,https://www.mtu.de,"11,000+","€5.3B",1934,Large Enterprise,Engine Components, MRO,Verified
+Aircraft Engines & Components,Aviadvigatel,Russia,https://avid.ru,"10,000+","N/A",1990,Large Enterprise,Aircraft Engines,Verified
+Aircraft Engines & Components,Williams International,USA,https://www.williams-int.com,"2,000+","N/A (Private)",1954,SME,Small Turbofan Engines,Verified
+Aircraft Engines & Components,GKN Aerospace,UK,https://www.gknaerospace.com,"9,000+","£3.4B",1759,Large Enterprise,Aerostructures, Engine Components,Verified
+Aircraft Engines & Components,Spirit AeroSystems,USA,https://www.spiritaero.com,"15,000+","$5.3B",2005,Large Enterprise,Aerostructures, Fuselage,Verified
+Aircraft Engines & Components,Meggitt,UK,https://www.meggitt.com,"9,000+","$2.3B",1947,Large Enterprise,Components, Subsystems,Verified
+Aircraft Engines & Components,Safran Landing Systems,France,https://www.safran-landing-systems.com,"81,000+","€23.2B",2005,Large Enterprise,Landing Gear, Braking Systems,Verified
+Aircraft Engines & Components,Woodward, Inc.,USA,https://www.woodward.com,"7,000+","$2.5B",1870,Large Enterprise,Control Systems, Actuators,Verified
+Aircraft Engines & Components,Senior plc,UK,https://www.seniorplc.com,"9,000+","£0.9B",1931,Large Enterprise,Aerostructures, Fluid Systems,Verified
+Aircraft Engines & Components,Collins Aerospace,USA,https://www.collinsaerospace.com,"70,000+","N/A (Subsidiary)",2018,Large Enterprise,Avionics, Interiors,Verified
+Aircraft Engines & Components,Parker Aerospace,USA,https://www.parker.com,"55,000+","$19.2B",1917,Large Enterprise,Flight Control Systems, Hydraulics,Verified
+Aircraft Engines & Components,Triumph Group,USA,https://www.triumphgroup.com,"5,000+","$1.4B",1993,Large Enterprise,Aerostructures, Components,Verified
+Aircraft Engines & Components,MHI Aero Engines,Japan,https://www.mhi.com,"80,000+","$32B",1884,Conglomerate,Engine Components,Verified
+Aircraft Engines & Components,IHI Corporation,Japan,https://www.ihi.co.jp,"29,000+","$10.0B",1853,Large Enterprise,Aero Engines, Space Propulsion,Verified
+Aircraft Engines & Components,AECC (Aero Engine Corp),China,https://www.aecc.cn,"100,000+","N/A (State-Owned)",2016,Conglomerate,Aircraft Engines,Verified
+Avionics Systems,Honeywell Aerospace,USA,https://aerospace.honeywell.com,"99,000+","$36.7B",1906,Conglomerate,Avionics, Flight Systems,Verified
+Avionics Systems,Collins Aerospace,USA,https://www.collinsaerospace.com,"70,000+","N/A (Subsidiary)",2018,Large Enterprise,Avionics, Interiors,Verified
+Avionics Systems,Thales Avionics,France,https://www.thalesgroup.com,"80,000+","€18.1B",2000,Large Enterprise,Avionics, Flight Decks,Verified
+Avionics Systems,Garmin Aviation,USA,https://www.garmin.com,"20,000+","$5.3B",1989,Large Enterprise,Navigation, Communication,Verified
+Avionics Systems,BAE Systems Electronics,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Electronic Systems, Flight Controls,Verified
+Avionics Systems,Raytheon Avionics,USA,https://www.rtx.com,"174,000+","$69.0B",1922,Conglomerate,Avionics, Radar,Verified
+Avionics Systems,Safran Electronics,France,https://www.safran-group.com,"81,000+","€23.2B",2005,Large Enterprise,Avionics, Flight Controls,Verified
+Avionics Systems,Elbit Systems Avionics,Israel,https://elbitsystems.com,"18,000+","$5.9B",1966,Large Enterprise,Avionics, Displays,Verified
+Avionics Systems,L3Harris Avionics,USA,https://www.l3harris.com,"50,000+","$19.4B",2019,Large Enterprise,Communication Systems, Avionics,Verified
+Avionics Systems,Universal Avionics,USA,https://www.universalavionics.com,"500+","N/A (Subsidiary)",1981,SME,Flight Deck Systems,Verified
+Avionics Systems,Moog Inc.,USA,https://www.moog.com,"13,000+","$3.3B",1951,Large Enterprise,Flight Controls, Actuators,Verified
+Avionics Systems,Cobham Avionics,UK,https://www.cobham.com,"10,000+","£1.9B",1934,Large Enterprise,Communication, Navigation,Verified
+Avionics Systems,Curtiss-Wright Avionics,USA,https://www.curtisswright.com,"10,000+","$2.6B",1929,Large Enterprise,Avionics, Components,Verified
+Avionics Systems,GE Aviation Systems,USA,https://www.geaviation.com,"40,000+","$32.0B",1917,Large Enterprise,Avionics, Electrical Systems,Verified
+Avionics Systems,Avidyne Corporation,USA,https://www.avidyne.com,"200+","N/A (Private)",1990,SME,General Aviation Avionics,Verified
+Avionics Systems,FreeFlight Systems,USA,https://freeflightsystems.com,"100+","N/A (Private)",1998,SME,GNSS, Transponders,Verified
+Avionics Systems,Rockwell Collins,USA,https://www.rockwellcollins.com,"20,000+","$8.7B",1933,Large Enterprise,Avionics, Communication,Verified
+Avionics Systems,Meggitt Avionics,UK,https://www.meggitt.com,"9,000+","$2.3B",1947,Large Enterprise,Avionics, Sensors,Verified
+Avionics Systems,BAE Systems Platforms,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Electronic Systems,Verified
+Avionics Systems,Thales Group Canada,Canada,https://www.thalesgroup.com,"80,000+","€18.1B",2000,Large Enterprise,Avionics,Verified
+Defense IT & Cybersecurity,Leidos,USA,https://www.leidos.com,"47,000+","$15.4B",1969,Large Enterprise,IT Services, Cybersecurity,Verified
+Defense IT & Cybersecurity,Booz Allen Hamilton,USA,https://www.boozallen.com,"33,000+","$9.4B",1914,Large Enterprise,Consulting, Cybersecurity,Verified
+Defense IT & Cybersecurity,CACI International,USA,https://www.caci.com,"22,000+","$6.7B",1962,Large Enterprise,IT Services, C4ISR,Verified
+Defense IT & Cybersecurity,BAE Systems Digital,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Cyber, Electronic Warfare,Verified
+Defense IT & Cybersecurity,Northrop Grumman Cyber,USA,https://www.northropgrumman.com,"97,000+","$36.6B",1994,Large Enterprise,Cybersecurity, C4ISR,Verified
+Defense IT & Cybersecurity,Raytheon Intelligence,USA,https://www.rtx.com,"174,000+","$69.0B",1922,Conglomerate,Cybersecurity, Intelligence,Verified
+Defense IT & Cybersecurity,Lockheed Martin Rotary,USA,https://www.lockheedmartin.com,"114,000+","$67.0B",1995,Large Enterprise,Cybersecurity, IT Services,Verified
+Defense IT & Cybersecurity,Thales Cyber Security,France,https://www.thalesgroup.com,"80,000+","€18.1B",2000,Large Enterprise,Cybersecurity,Verified
+Defense IT & Cybersecurity,General Dynamics IT,USA,https://www.gdit.com,"106,000+","$42.3B",1899,Conglomerate,IT Services, Cybersecurity,Verified
+Defense IT & Cybersecurity,SAIC,USA,https://www.saic.com,"24,000+","$7.4B",1969,Large Enterprise,IT Services, Engineering,Verified
+Defense IT & Cybersecurity,DXC Technology,USA,https://www.dxc.com,"130,000+","$17.3B",2017,Large Enterprise,IT Services,Verified
+Defense IT & Cybersecurity,ManTech,USA,https://www.mantech.com,"10,000+","$2.7B",1968,Large Enterprise,Cybersecurity, IT Services,Verified
+Defense IT & Cybersecurity,Accenture Federal,USA,https://www.accenture.com,"721,000+","$64.3B",1989,Conglomerate,IT Services, Consulting,Verified
+Defense IT & Cybersecurity,IBM Security,USA,https://www.ibm.com,"288,000+","$60.5B",1911,Conglomerate,Cybersecurity,Verified
+Defense IT & Cybersecurity,Palo Alto Networks,USA,https://www.paloaltonetworks.com,"14,000+","$6.9B",2005,Large Enterprise,Cybersecurity,Verified
+Defense IT & Cybersecurity,CrowdStrike,USA,https://www.crowdstrike.com,"8,000+","$3.0B",2011,Large Enterprise,Endpoint Security,Verified
+Defense IT & Cybersecurity,FireEye,USA,https://www.fireeye.com,"3,000+","$0.9B",2004,Large Enterprise,Cyber Threat Intelligence,Verified
+Defense IT & Cybersecurity,CyberArk,USA,https://www.cyberark.com,"2,500+","$0.8B",1999,Large Enterprise,Identity Security,Verified
+Defense IT & Cybersecurity,Darktrace,UK,https://www.darktrace.com,"2,300+","$0.5B",2013,Large Enterprise,AI Cybersecurity,Verified
+Defense IT & Cybersecurity,Kaspersky,Russia,https://www.kaspersky.com,"4,000+","$0.7B",1997,Large Enterprise,Cybersecurity,Verified
+Aerospace Structures & Composites,Spirit AeroSystems,USA,https://www.spiritaero.com,"15,000+","$5.3B",2005,Large Enterprise,Aerostructures, Fuselage,Verified
+Aerospace Structures & Composites,GKN Aerospace,UK,https://www.gknaerospace.com,"9,000+","£3.4B",1759,Large Enterprise,Aerostructures, Composites,Verified
+Aerospace Structures & Composites,Leonardo Aerostructures,Italy,https://www.leonardocompany.com,"49,000+","€14.7B",1948,Large Enterprise,Aerostructures,Verified
+Aerospace Structures & Composites,Hexcel Corporation,USA,https://www.hexcel.com,"6,000+","$1.7B",1946,Large Enterprise,Composites, Materials,Verified
+Aerospace Structures & Composites,Teijin Carbon,Japan,https://www.teijincarbon.com,"20,000+","$7.0B",1918,Conglomerate,Carbon Fiber,Verified
+Aerospace Structures & Composites,Toray Industries,Japan,https://www.toray.com,"49,000+","$21.0B",1926,Conglomerate,Carbon Fiber, Composites,Verified
+Aerospace Structures & Composites,Solvay Composites,Belgium,https://www.solvay.com,"24,000+","€13.0B",1863,Conglomerate,Composites, Specialty Polymers,Verified
+Aerospace Structures & Composites,Mitsubishi Heavy Composites,Japan,https://www.mhi.com,"80,000+","$32B",1884,Conglomerate,Composites, Aerostructures,Verified
+Aerospace Structures & Composites,Ruag Group,Switzerland,https://www.ruag.com,"6,000+","$0.6B",1998,Large Enterprise,Aerostructures, Space,Verified
+Aerospace Structures & Composites,Kaman Composites,USA,https://www.kaman.com,"3,000+","$0.7B",1945,Large Enterprise,Composites, Structures,Verified
+Aerospace Structures & Composites,Victrex plc,UK,https://www.victrex.com,"1,000+","£0.3B",1993,SME,High-Performance Polymers,Verified
+Aerospace Structures & Composites,SGL Carbon,Germany,https://www.sglcarbon.com,"5,000+","$1.2B",1992,Large Enterprise,Carbon Materials, Composites,Verified
+Aerospace Structures & Composites,Triumph Structures,USA,https://www.triumphgroup.com,"5,000+","$1.4B",1993,Large Enterprise,Aerostructures,Verified
+Aerospace Structures & Composites,Alcoa Aerospace,USA,https://www.alcoa.com,"14,000+","$12.8B",1888,Large Enterprise,Aluminum, Fasteners,Verified
+Aerospace Structures & Composites,Constellium,Netherlands,https://www.constellium.com,"13,000+","€8.2B",2005,Large Enterprise,Aluminum Products,Verified
+Aerospace Structures & Composites,Cytec Solvay Group,Belgium,https://www.solvay.com,"24,000+","€13.0B",1863,Conglomerate,Composites, Adhesives,Verified
+Aerospace Structures & Composites,Senior plc,UK,https://www.seniorplc.com,"9,000+","£0.9B",1931,Large Enterprise,Aerostructures,Verified
+Aerospace Structures & Composites,Daher Aerospace,France,https://www.daher.com,"12,000+","$1.5B",1863,Large Enterprise,Aerostructures, Aircraft,Verified
+Aerospace Structures & Composites,LATéCOÈRE,France,https://www.latecoere.com,"5,000+","€0.7B",1917,Large Enterprise,Aerostructures,Verified
+Aerospace Structures & Composites,Stelia Aerospace,France,https://www.stelia-aerospace.com,"6,000+","N/A (Subsidiary)",2015,Large Enterprise,Aerostructures,Verified
+Training & Simulation Systems,CAE Inc.,Canada,https://www.cae.com,"13,000+","$3.5B",1947,Large Enterprise,Flight Simulators, Training,Verified
+Training & Simulation Systems,L3Harris Training,USA,https://www.l3harris.com,"50,000+","$19.4B",2019,Large Enterprise,Training Systems,Verified
+Training & Simulation Systems,Thales Training,France,https://www.thalesgroup.com,"80,000+","€18.1B",2000,Large Enterprise,Simulation, Training,Verified
+Training & Simulation Systems,Raytheon Training,USA,https://www.rtx.com,"174,000+","$69.0B",1922,Conglomerate,Training Systems,Verified
+Training & Simulation Systems,FlightSafety International,USA,https://www.flightsafety.com,"4,000+","N/A (Private)",1951,Large Enterprise,Flight Training,Verified
+Training & Simulation Systems,Boeing Training Services,USA,https://www.boeing.com,"145,000+","$66.6B",1916,Large Enterprise,Training, Simulation,Verified
+Training & Simulation Systems,Lockheed Martin Training,USA,https://www.lockheedmartin.com,"114,000+","$67.0B",1995,Large Enterprise,Training Systems,Verified
+Training & Simulation Systems,Northrop Grumman Training,USA,https://www.northropgrumman.com,"97,000+","$36.6B",1994,Large Enterprise,Training Systems,Verified
+Training & Simulation Systems,BAE Systems Training,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Training Systems,Verified
+Training & Simulation Systems,Saab Training,Sweden,https://www.saab.com,"19,000+","$3.7B",1937,Large Enterprise,Training, Simulation,Verified
+Training & Simulation Systems,Rheinmetall Simulation,Germany,https://www.rheinmetall-defence.com,"28,000+","€7.2B",1889,Large Enterprise,Simulation, Training,Verified
+Training & Simulation Systems,Elbit Systems Training,Israel,https://elbitsystems.com,"18,000+","$5.9B",1966,Large Enterprise,Training Systems,Verified
+Training & Simulation Systems,Indra Training,Spain,https://www.indracompany.com,"9,000+","€4.3B",1993,Large Enterprise,Simulation, Training,Verified
+Training & Simulation Systems,Textron Systems Training,USA,https://www.textronsystems.com,"12,000+","N/A (Subsidiary)",1927,Large Enterprise,Training Systems,Verified
+Training & Simulation Systems,Cubic Defense,USA,https://www.cubic.com,"8,000+","$1.5B",1951,Large Enterprise,Training, C4ISR,Verified
+Training & Simulation Systems,Moog Simulation,USA,https://www.moog.com,"13,000+","$3.3B",1951,Large Enterprise,Motion Simulation,Verified
+Training & Simulation Systems,Simthetiq,USA,https://www.simthetiq.com,"100+","N/A (Private)",2009,SME,Simulation Software,Verified
+Training & Simulation Systems,Presagis,Canada,https://www.presagis.com,"200+","N/A (Private)",1997,SME,Simulation Software,Verified
+Training & Simulation Systems,VT MAK,USA,https://www.mak.com,"100+","N/A (Private)",1990,SME,Simulation Software,Verified
+Training & Simulation Systems,Barco Simulation,Belgium,https://www.barco.com,"3,500+","$1.1B",1934,Large Enterprise,Simulation Displays,Verified
+MRO Services,Lufthansa Technik,Germany,https://www.lufthansa-technik.com,"20,000+","$6.0B",1994,Large Enterprise,Aircraft MRO,Verified
+MRO Services,AAR Corp,USA,https://www.aarcorp.com,"6,000+","$2.0B",1951,Large Enterprise,Aviation Services, MRO,Verified
+MRO Services,ST Engineering Aerospace,Singapore,https://www.stengg.com,"23,000+","$5.8B",1967,Conglomerate,Aerospace MRO,Verified
+MRO Services,SIA Engineering,Singapore,https://www.siaec.com.sg,"5,000+","$0.9B",1992,Large Enterprise,Aircraft MRO,Verified
+MRO Services,GE Aviation Services,USA,https://www.geaviation.com,"40,000+","$32.0B",1917,Large Enterprise,Engine MRO,Verified
+MRO Services,Rolls-Royce Services,UK,https://www.rolls-royce.com,"50,000+","£16.5B",1906,Large Enterprise,Engine Services,Verified
+MRO Services,Air France KLM MRO,France,https://www.afiklmem.com,"81,000+","€27.0B",2004,Large Enterprise,Aircraft MRO,Verified
+MRO Services,SR Technics,Switzerland,https://www.srtechnics.com,"3,000+","$0.8B",1931,Large Enterprise,Aircraft MRO,Verified
+MRO Services,MTU Maintenance,Germany,https://www.mtu.de,"11,000+","€5.3B",1934,Large Enterprise,Engine MRO,Verified
+MRO Services,Delta TechOps,USA,https://www.deltatechops.com,"90,000+","$50.0B",1928,Large Enterprise,Aircraft MRO,Verified
+MRO Services,HAECO,Hong Kong,https://www.haeco.com,"17,000+","$2.0B",1950,Large Enterprise,Aircraft MRO,Verified
+MRO Services,Joramco,Jordan,https://www.joramco.com,"1,500+","$0.2B",1999,Large Enterprise,Aircraft MRO,Verified
+MRO Services,Ameco Beijing,China,https://www.ameco.com.cn,"12,000+","$1.5B",1989,Large Enterprise,Aircraft MRO,Verified
+MRO Services,Turkish Technic,Turkey,https://www.turkishtechnic.com,"5,000+","$0.8B",2006,Large Enterprise,Aircraft MRO,Verified
+MRO Services,Safran Services,France,https://www.safran-group.com,"81,000+","€23.2B",2005,Large Engineering,Engine MRO,Verified
+MRO Services,Pratt & Whitney Canada,Canada,https://www.pwc.ca,"40,000+","$19.0B",1928,Large Enterprise,Engine MRO,Verified
+MRO Services,Airbus Services,Netherlands,https://www.airbus.com,"130,000+","€59B",1970,Large Enterprise,Aircraft Services,Verified
+MRO Services,Boeing Global Services,USA,https://www.boeing.com,"145,000+","$66.6B",1916,Large Enterprise,Services, Support,Verified
+MRO Services,Magnetic MRO,Estonia,https://www.magneticmro.com,"500+","$0.1B",2005,SME,Aircraft MRO,Verified
+MRO Services,StandardAero,USA,https://standardaero.com,"6,000+","$3.0B",1911,Large Enterprise,Engine MRO,Verified
+Airport Infrastructure & Services,VINCI Airports,France,https://www.vinci-airports.com,"200,000+","€57.9B",1899,Conglomerate,Airport Operations,Verified
+Airport Infrastructure & Services,Fraport AG,Germany,https://www.fraport.com,"20,000+","€4.0B",1924,Large Enterprise,Airport Operations,Verified
+Airport Infrastructure & Services,ADP Group (Paris Airports),France,https://www.parisaeroport.fr,"15,000+","€4.5B",1945,Large Enterprise,Airport Management,Verified
+Airport Infrastructure & Services,Schiphol Group,Netherlands,https://www.schiphol.nl,"2,000+","€1.2B",1916,Large Enterprise,Airport Management,Verified
+Airport Infrastructure & Services,Heathrow Airport Holdings,UK,https://www.heathrow.com,"6,000+","£2.0B",1986,Large Enterprise,Airport Operations,Verified
+Airport Infrastructure & Services,TAV Airports,Turkey,https://www.tav.aero,"15,000+","$1.5B",1997,Large Enterprise,Airport Operations,Verified
+Airport Infrastructure & Services,Munich Airport,Germany,https://www.munich-airport.de,"9,000+","€1.8B",1992,Large Enterprise,Airport Management,Verified
+Airport Infrastructure & Services,Swissport,Switzerland,https://www.swissport.com,"60,000+","$4.5B",1997,Large Enterprise,Ground Handling,Verified
+Airport Infrastructure & Services,Menzies Aviation,UK,https://www.menziesaviation.com,"40,000+","$4.0B",1833,Large Enterprise,Ground Handling,Verified
+Airport Infrastructure & Services,dnata,UAE,https://www.dnata.com,"40,000+","$4.0B",1959,Large Enterprise,Ground Handling,Verified
+Airport Infrastructure & Services,Copenhagen Airports,Denmark,https://www.cph.dk,"2,500+","$0.6B",1990,Large Enterprise,Airport Management,Verified
+Airport Infrastructure & Services,Singapore Changi Airport,Singapore,https://www.changiairport.com,"2,000+","$0.8B",1981,Large Enterprise,Airport Management,Verified
+Airport Infrastructure & Services,Hochtief AirPort,Germany,https://www.hochtief-airport.com,"40,000+","€25.0B",1875,Conglomerate,Airport Development,Verified
+Airport Infrastructure & Services,AAI (India),India,https://www.aai.aero,"17,000+","$2.0B",1995,Large Enterprise,Airport Management,Verified
+Airport Infrastructure & Services,Avia Solutions Group,Lithuania,https://www.aviasg.com,"2,000+","$0.5B",2005,Large Enterprise,Aviation Services,Verified
+Airport Infrastructure & Services,Beijing Capital Airport,China,https://www.bcia.com.cn,"10,000+","$1.2B",1999,Large Enterprise,Airport Management,Verified
+Airport Infrastructure & Services,Japan Airport Terminal,Japan,https://www.tokyo-airport-bldg.co.jp,"2,000+","$1.5B",1953,Large Enterprise,Airport Management,Verified
+Airport Infrastructure & Services,Incheon Airport,South Korea,https://www.airport.kr,"10,000+","$2.0B",2001,Large Enterprise,Airport Management,Verified
+Airport Infrastructure & Services,Airport Terminal Services,USA,https://www.atsstl.com,"5,000+","$0.5B",1979,Large Enterprise,Ground Handling,Verified
+Airport Infrastructure & Services,BBA Aviation,UK,https://www.bbaaviation.com,"10,000+","$2.0B",1879,Large Enterprise,Aviation Services,Verified
+Air Traffic Management Systems,Indra Sistemas,Spain,https://www.indracompany.com,"9,000+","€4.3B",1993,Large Enterprise,ATM Systems,Verified
+Air Traffic Management Systems,Thales ATM,France,https://www.thalesgroup.com,"80,000+","€18.1B",2000,Large Enterprise,ATM Systems,Verified
+Air Traffic Management Systems,Raytheon ATM,USA,https://www.rtx.com,"174,000+","$69.0B",1922,Conglomerate,ATM Systems,Verified
+Air Traffic Management Systems,Leonardo ATM,Italy,https://www.leonardocompany.com,"49,000+","€14.7B",1948,Large Enterprise,ATM Systems,Verified
+Air Traffic Management Systems,Honeywell ATM,USA,https://aerospace.honeywell.com,"99,000+","$36.7B",1906,Conglomerate,Avionics, ATM,Verified
+Air Traffic Management Systems,L3Harris ATM,USA,https://www.l3harris.com,"50,000+","$19.4B",2019,Large Enterprise,Communication, ATM,Verified
+Air Traffic Management Systems,NATS Holdings,UK,https://www.nats.aero,"5,000+","£1.2B",1962,Large Enterprise,Air Traffic Control,Verified
+Air Traffic Management Systems,Frequentis AG,Austria,https://www.frequentis.com,"2,000+","€0.4B",1947,Large Enterprise,Communication, ATM,Verified
+Air Traffic Management Systems,Searidge Technologies,Canada,https://www.searidge.com,"100+","N/A (Private)",2006,SME,ATM Solutions,Verified
+Air Traffic Management Systems,Saab ATM,Sweden,https://www.saab.com,"19,000+","$3.7B",1937,Large Enterprise,ATM Systems,Verified
+Air Traffic Management Systems,Lockheed Martin ATM,USA,https://www.lockheedmartin.com,"114,000+","$67.0B",1995,Large Enterprise,ATM Systems,Verified
+Air Traffic Management Systems,BAE Systems ATM,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Electronic Systems, ATM,Verified
+Air Traffic Management Systems,Northrop Grumman ATM,USA,https://www.northropgrumman.com,"97,000+","$36.6B",1994,Large Enterprise,ATM Systems,Verified
+Air Traffic Management Systems,Rohde & Schwarz ATM,Germany,https://www.rohde-schwarz.com,"13,000+","€2.8B",1933,Large Enterprise,Communication, ATM,Verified
+Air Traffic Management Systems,Harris ATM,USA,https://www.l3harris.com,"50,000+","$19.4B",2019,Large Enterprise,Communication, ATM,Verified
+Air Traffic Management Systems,Adacel Technologies,Australia,https://www.adacel.com,"200+","$0.04B",1987,SME,ATM Software,Verified
+Air Traffic Management Systems,Leidos ATM,USA,https://www.leidos.com,"47,000+","$15.4B",1969,Large Enterprise,IT, ATM,Verified
+Air Traffic Management Systems,Intelcan Technosystems,Canada,https://www.intelcan.com,"100+","N/A (Private)",1991,SME,ATM Systems,Verified
+Air Traffic Management Systems,Skysoft-ATM,Portugal,https://www.skysoft-atm.com,"100+","N/A (Private)",1990,SME,ATM Software,Verified
+Air Traffic Management Systems,Siqura B.V.,Netherlands,https://www.siqura.com,"100+","N/A (Private)",2002,SME,Surveillance, ATM,Verified
+Space Launch Services,SpaceX,USA,https://www.spacex.com,"12,000+","N/A (Private)",2002,Large Enterprise,Launch Vehicles, Satellites,Verified
+Space Launch Services,United Launch Alliance,USA,https://www.ulalaunch.com,"2,500+","$1.5B",2006,Large Enterprise,Launch Services,Verified
+Space Launch Services,Arianespace,France,https://www.arianespace.com,"300+","$1.5B",1980,Large Enterprise,Launch Services,Verified
+Space Launch Services,Roscosmos,Russia,https://www.roscosmos.ru,"250,000+","N/A (State)",1992,Conglomerate,Space Launch,Verified
+Space Launch Services,Blue Origin,USA,https://www.blueorigin.com,"6,000+","N/A (Private)",2000,Large Enterprise,Launch Vehicles, Spacecraft,Verified
+Space Launch Services,Rocket Lab,USA,https://www.rocketlabusa.com,"1,500+","$0.3B",2006,Large Enterprise,Small Launch Vehicles,Verified
+Space Launch Services,Virgin Orbit,USA,https://virginorbit.com,"100+","N/A (Private)",2017,SME,Launch Services,Verified
+Space Launch Services,Northrop Grumman Launch,USA,https://www.northropgrumman.com,"97,000+","$36.6B",1994,Large Enterprise,Launch Services,Verified
+Space Launch Services,MHI Launch Services,Japan,https://www.mhi.com,"80,000+","$32B",1884,Conglomerate,Launch Services,Verified
+Space Launch Services,ISRO Launch,India,https://www.isro.gov.in,"17,000+","$2.0B",1969,Government Agency,Space Launch,Verified
+Space Launch Services,CASC Launch,China,https://www.spacechina.com,"180,000+","N/A (State-Owned)",1999,Conglomerate,Launch Vehicles, Satellites,Verified
+Space Launch Services,Firefly Aerospace,USA,https://firefly.com,"500+","N/A (Private)",2014,SME,Small Launch Vehicles,Verified
+Space Launch Services,Relativity Space,USA,https://www.relativityspace.com,"500+","N/A (Private)",2015,SME,3D Printed Rockets,Verified
+Space Launch Services,Astra,USA,https://astra.com,"300+","$0.2B",2016,SME,Small Launch Vehicles,Verified
+Space Launch Services,JAXA Launch,Japan,https://global.jaxa.jp,"1,500+","$2.0B",2003,Government Agency,Space Launch,Verified
+Space Launch Services,Khrunichev Space Center,Russia,https://www.khrunichev.ru,"10,000+","N/A",1993,Large Enterprise,Launch Vehicles,Verified
+Space Launch Services,International Launch Services,USA,https://www.ilslaunch.com,"100+","N/A (Private)",1995,Large Enterprise,Launch Services,Verified
+Space Launch Services,Landspace,China,https://www.landspace.com,"500+","N/A (Private)",2015,SME,Launch Vehicles,Verified
+Space Launch Services,Exos Aerospace,USA,https://www.exosaero.com,"50+","N/A (Private)",2013,SME,Reusable Rockets,Verified
+Space Launch Services,Vector Launch,USA,https://www.vector-launch.com,"100+","N/A (Private)",2016,SME,Small Launch Vehicles,Verified
+Satellite Services,SES,Luxembourg,https://www.ses.com,"2,000+","$2.1B",1985,Large Enterprise,Satellite Communications,Verified
+Satellite Services,Intelsat,Luxembourg,https://www.intelsat.com,"1,000+","$2.0B",1964,Large Enterprise,Satellite Communications,Verified
+Satellite Services,Eutelsat,France,https://www.eutelsat.com,"1,000+","$1.3B",1977,Large Enterprise,Satellite Communications,Verified
+Satellite Services,Telesat,Canada,https://www.telesat.com,"500+","$0.7B",1969,Large Enterprise,Satellite Communications,Verified
+Satellite Services,Viasat,USA,https://www.viasat.com,"6,000+","$2.7B",1986,Large Enterprise,Satellite Communications,Verified
+Satellite Services,Inmarsat,UK,https://www.inmarsat.com,"1,800+","$1.5B",1979,Large Enterprise,Satellite Communications,Verified
+Satellite Services,Thuraya,UAE,https://www.thuraya.com,"300+","$0.3B",1997,Large Enterprise,Mobile Satellite Services,Verified
+Satellite Services,Iridium,USA,https://www.iridium.com,"600+","$0.7B",2001,Large Enterprise,Satellite Communications,Verified
+Satellite Services,Globalstar,USA,https://www.globalstar.com,"400+","$0.2B",1991,Large Enterprise,Satellite Communications,Verified
+Satellite Services,OneWeb,UK,https://www.oneweb.world,"600+","N/A (Private)",2012,Large Enterprise,Satellite Constellation,Verified
+Satellite Services,Planet Labs,USA,https://www.planet.com,"1,100+","$0.2B",2010,Large Enterprise,Earth Imaging, Small Satellites,Verified
+Satellite Services,Maxar Technologies,USA,https://www.maxar.com,"4,400+","$1.7B",1969,Large Enterprise,Earth Intelligence, Satellites,Verified
+Satellite Services,Spire Global,USA,https://www.spire.com,"400+","$0.1B",2012,SME,Weather Data, Small Satellites,Verified
+Satellite Services,ORBCOMM,USA,https://www.orbcomm.com,"500+","$0.3B",2001,Large Enterprise,Machine-to-Machine,Verified
+Satellite Services,Hisdesat,Spain,https://www.hisdesat.es,"100+","$0.1B",2001,Large Enterprise,Government Satellite Services,Verified
+Satellite Services,SKY Perfect JSAT,Japan,https://www.skyperfectjsat.space,"1,000+","$2.5B",1993,Large Enterprise,Satellite Communications,Verified
+Satellite Services,APT Satellite,China,https://www.apstar.com,"500+","$0.3B",1992,Large Enterprise,Satellite Communications,Verified
+Satellite Services,TurkSat,Turkey,https://www.turksat.com.tr,"1,000+","$0.3B",1985,Large Enterprise,Satellite Communications,Verified
+Satellite Services,AsiaSat,Hong Kong,https://www.asiasat.com,"500+","$0.3B",1988,Large Enterprise,Satellite Communications,Verified
+Satellite Services,EchoStar,USA,https://www.echostar.com,"5,000+","$2.0B",1980,Large Enterprise,Satellite Communications,Verified
+Defense Logistics & Support,Agility Defense,Kuwait,https://www.agility.com,"26,000+","$5.0B",1979,Large Enterprise,Logistics, Supply Chain,Verified
+Defense Logistics & Support,AECOM Defense,USA,https://www.aecom.com,"50,000+","$13.0B",1990,Large Enterprise,Engineering, Logistics,Verified
+Defense Logistics & Support,Fluor Defense,USA,https://www.fluor.com,"40,000+","$15.0B",1912,Large Enterprise,Engineering, Construction,Verified
+Defense Logistics & Support,KBR Government Solutions,USA,https://www.kbr.com,"38,000+","$7.0B",1901,Large Enterprise,Logistics, Engineering,Verified
+Defense Logistics & Support,DynCorp International,USA,https://www.dyn-intl.com,"20,000+","$3.0B",1946,Large Enterprise,Logistics, Support,Verified
+Defense Logistics & Support,Serco Defence,UK,https://www.serco.com,"50,000+","£4.5B",1929,Large Enterprise,Support Services,Verified
+Defense Logistics & Support,Bechtel National,USA,https://www.bechtel.com,"55,000+","$21.0B",1898,Large Enterprise,Engineering, Construction,Verified
+Defense Logistics & Support,Lockheed Martin Logistics,USA,https://www.lockheedmartin.com,"114,000+","$67.0B",1995,Large Enterprise,Logistics, Support,Verified
+Defense Logistics & Support,BAE Systems Support,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Support Services,Verified
+Defense Logistics & Support,Rolls-Royce Defense Services,UK,https://www.rolls-royce.com,"50,000+","£16.5B",1906,Large Enterprise,Engine Services,Verified
+Defense Logistics & Support,Northrop Grumman Logistics,USA,https://www.northropgrumman.com,"97,000+","$36.6B",1994,Large Enterprise,Logistics, Support,Verified
+Defense Logistics & Support,Honeywell Defense Services,USA,https://aerospace.honeywell.com,"99,000+","$36.7B",1906,Conglomerate,Support Services,Verified
+Defense Logistics & Support,General Dynamics Logistics,USA,https://www.gd.com,"106,000+","$42.3B",1899,Conglomerate,Logistics, Support,Verified
+Defense Logistics & Support,Raytheon Support,USA,https://www.rtx.com,"174,000+","$69.0B",1922,Conglomerate,Support Services,Verified
+Defense Logistics & Support,Airbus Defence Support,Netherlands,https://www.airbus.com,"130,000+","€59B",1970,Large Enterprise,Support Services,Verified
+Defense Logistics & Support,Thales Services,France,https://www.thalesgroup.com,"80,000+","€18.1B",2000,Large Enterprise,Support Services,Verified
+Defense Logistics & Support,Babcock Support,UK,https://www.babcockinternational.com,"30,000+","£4.5B",1891,Large Enterprise,Support Services,Verified
+Defense Logistics & Support,CAE Defense Services,Canada,https://www.cae.com,"13,000+","$3.5B",1947,Large Enterprise,Training, Support,Verified
+Defense Logistics & Support,VT Systems,USA,https://www.vt-systems.com,"5,000+","$1.5B",2003,Large Enterprise,Engineering, Support,Verified
+Defense Logistics & Support,PAE,USA,https://www.pae.com,"20,000+","$3.0B",1955,Large Enterprise,Logistics, Support,Verified
+Weapons & Ammunition,Raytheon Weapons,USA,https://www.rtx.com,"174,000+","$69.0B",1922,Conglomerate,Missiles, Munitions,Verified
+Weapons & Ammunition,Lockheed Martin Firearms,USA,https://www.lockheedmartin.com,"114,000+","$67.0B",1995,Large Enterprise,Missiles, Firearms,Verified
+Weapons & Ammunition,BAE Systems Weapons,UK,https://www.baesystems.com,"93,000+","£25.3B",1999,Large Enterprise,Weapon Systems,Verified
+Weapons & Ammunition,Rheinmetall Weapons,Germany,https://www.rheinmetall.com,"28,000+","€7.2B",1889,Large Enterprise,Weapon Systems, Ammunition,Verified
+Weapons & Ammunition,Northrop Grumman Armament,USA,https://www.northropgrumman.com,"97,000+","$36.6B",1994,Large Enterprise,Weapon Systems,Verified
+Weapons & Ammunition,General Dynamics Ordnance,USA,https://gd-ots.com,"106,000+","$42.3B",1899,Conglomerate,Ordnance, Tactical Systems,Verified
+Weapons & Ammunition,Olin Corporation,USA,https://www.olin.com,"8,000+","$2.5B",1892,Large Enterprise,Ammunition, Chemicals,Verified
+Weapons & Ammunition,Vista Outdoor,USA,https://vistaoutdoor.com,"6,000+","$3.0B",2015,Large Enterprise,Ammunition, Outdoor Sports,Verified
+Weapons & Ammunition,Nammo,Norway,https://www.nammo.com,"2,500+","$0.7B",1998,Large Enterprise,Ammunition, Rocket Propulsion,Verified
+Weapons & Ammunition,Denel SOC Ltd,South Africa,https://www.denel.co.za,"3,000+","$0.2B",1991,Large Enterprise,Weapon Systems,Verified
+Weapons & Ammunition,Poongsan Corporation,South Korea,https://www.poongsan.com,"5,000+","$3.5B",1968,Large Enterprise,Ammunition, Non-Ferrous Metals,Verified
+Weapons & Ammunition,Orbital ATK,USA,https://www.northropgrumman.com,"97,000+","$36.6B",1994,Large Enterprise,Weapon Systems,Verified
+Weapons & Ammunition,CBC Global Ammunition,Brazil,https://www.cbc.com.br,"5,000+","$0.5B",1926,Large Enterprise,Ammunition,Verified
+Weapons & Ammunition,Arsenal JSCo,Bulgaria,https://www.arsenal-bg.com,"2,000+","$0.2B",1878,Large Enterprise,Firearms, Ammunition,Verified
+Weapons & Ammunition,ST Kinetics,Singapore,https://www.stengg.com,"23,000+","$5.8B",1967,Conglomerate,Weapon Systems,Verified
+Weapons & Ammunition,IMI Systems (Elbit),Israel,https://elbitsystems.com,"18,000+","$5.9B",1966,Large Enterprise,Weapon Systems,Verified
+Weapons & Ammunition,FN Herstal,Belgium,https://www.fnherstal.com,"3,000+","$0.9B",1889,Large Enterprise,Small Arms,Verified
+Weapons & Ammunition,Heckler & Koch,Germany,https://www.heckler-koch.com,"1,000+","$0.3B",1949,Large Enterprise,Small Arms,Verified
+Weapons & Ammunition,Beretta Holding,Italy,https://www.berettaholding.com,"3,000+","$0.8B",1526,Large Enterprise,Firearms,Verified
+Weapons & Ammunition,Rostec,Russia,https://www.rostec.ru,"500,000+","N/A (State-Owned)",2007,Conglomerate,Weapon Systems,Verified
