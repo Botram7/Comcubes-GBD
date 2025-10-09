@@ -1,0 +1,430 @@
+Please let us continue this task and run smoothly this time, just like we were doing on the just completed thread/chat. Here is reminder of past conversations and where we are on this task>
+
+"✍️ A Guide for Pasting Your Data
+To make the process as efficient as possible, here is a simple guide on how to structure the data when you paste it:
+
+Sector & Industry	What to Paste	What I'll Do
+E.g., Technology > Software	Microsoft, USA, https://www.microsoft.com	I will validate the URL, add employee count, revenue estimates, founding year, and company size tags.
+E.g., Manufacturing > Automotive	Toyota, Japan, https://www.toyota.com	I will perform the same enhancement and also track geographic distribution for the sector analysis.
+A few tips for pasting:
+
+You can paste a full sector (all 20 industries with their 20 companies) in a single message.
+
+If the data is very large and you get a length warning, you can split it by industry.
+
+Plain text is perfect; there's no need for complex formatting.
+
+Once you paste a sector, I will immediately get to work on the four tasks you outlined: Data Analysis, Data Enhancement, Categorization, and Quality Validation, and then provide you with the enhanced, downloadable CSV output.
+
+I'm ready for the first sector whenever you are"
+
+I started of giving you a first sector/batch (Aerospace and Defense) and you provided all the stipulated info in the table able for this sector, like you agreed, including a summarized market context for the sector. Then we moved to the next sector/batch (Agriculture) and you repeated the same for the entire 400 companies under 20 industries there. Then I provided a third sector/batch list of 400 companies and you did furnish me with the same set of information again, well arranged in a downloadable CSV file format. This has continued smoothly for up to 16 sectors/batches.
+
+Please do a bit more or provide a bit more context for these sectors I have been providing you with by including these additional fields info (Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags)? Where this is done, I should be seeing you return all these information - Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status, even if this information is provided based on your knowledge base.
+
+Sample data from past work done/provided by you -
+
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Meat Processing,JBS S.A.,Brazil,https://www.jbs.com.br,"270,000+","$65B+",1953,Conglomerate,"Beef, Poultry, Pork",Verified
+Meat Processing,Tyson Foods,USA,https://www.tysonfoods.com,"142,000+","$53B+",1935,Conglomerate,"Chicken, Beef, Pork",Verified
+Meat Processing,Cargill Meat Solutions,USA,https://www.cargill.com,"160,000+","$165B+",1865,Conglomerate,"Beef, Poultry, Protein",Verified
+Meat Processing,WH Group (Smithfield),China,https://www.wh-group.com,"120,000+","$26B+",1958,Large Enterprise,"Pork Production & Processing",Verified
+Meat Processing,BRF S.A.,Brazil,https://www.brf-global.com,"100,000+","$8B+",1934,Large Enterprise,"Poultry, Processed Foods",Verified
+Meat Processing,NH Foods,Japan,https://www.nh-foods.com,"23,000+","$9B+",1942,Large Enterprise,"Beef, Pork, Processed Meats",Verified
+Meat Processing,Vion Food Group,Netherlands,https://vionfoodgroup.com,"12,000+","$5B+",1928,Large Enterprise,"Pork, Beef",Verified
+Meat Processing,Hormel Foods,USA,https://www.hormelfoods.com,"20,000+","$12B+",1891,Large Enterprise,"Processed Meats, Shelf-Stable Foods",Verified
+Meat Processing,Minerva Foods,Brazil,https://www.minervafoods.com,"30,000+","$3B+",1957,Large Enterprise,"Beef Exports, Leather",Verified
+Meat Processing,Seaboard Corporation,USA,https://www.seaboardcorp.com,"12,000+","$9B+",1918,Large Enterprise,"Pork, Commodity Trading",Verified
+Meat Processing,Perdue Farms,USA,https://www.perduefarms.com,"21,000+","$8B+",1920,Large Enterprise,"Poultry, Pork",Verified
+Meat Processing,Sanderson Farms,USA,https://www.sandersonfarms.com,"17,000+","$4B+",1947,Large Enterprise,"Poultry",Verified
+Meat Processing,Marfrig Global Foods,Brazil,https://www.marfrig.com,"32,000+","$5B+",2000,Large Enterprise,"Beef, Burgers",Verified
+Meat Processing,Nippon Ham,Japan,https://www.nipponham-group.com,"24,000+","$6B+",1949,Large Enterprise,"Pork, Ham, Sausages",Verified
+Meat Processing,OSI Group,USA,https://www.osigroup.com,"20,000+","$7B+",1909,Large Enterprise,"Custom Food Solutions, Value-Added Meats",Verified
+Meat Processing,Bell Food Group,Switzerland,https://www.bellfoodgroup.com,"12,000+","$4B+",1869,Large Enterprise,"Pork, Poultry, Convenience",Verified
+Meat Processing,Cranswick plc,UK,https://www.cranswick.co.uk,"13,000+","$2.5B+",1970,Large Enterprise,"Fresh Pork, Poultry, Convenience",Verified
+Meat Processing,Tönnies Group,Germany,https://www.toennies.de,"16,000+","$7B+",1971,Large Enterprise,"Pork, Sausages",Verified
+Meat Processing,Inalca (Cremonini Group),Italy,https://www.inalca.it,"9,000+","$2B+",1963,Large Enterprise,"Beef, Processed Meats",Verified
+Meat Processing,Charoen Pokphand Foods,Thailand,https://www.cpfworldwide.com,"120,000+","$17B+",1978,Conglomerate,"Aquaculture, Poultry, Livestock",Verified
+
+Now its to start and finish off Sector/Batch 17 - Technology
+
+Industry,Company Name,HQ Country,Website
+Operating Systems,Microsoft (Windows),USA,https://www.microsoft.com
+Operating Systems,Apple (macOS/iOS),USA,https://www.apple.com
+Operating Systems,Google (Android/ChromeOS),USA,https://www.google.com
+Operating Systems,Canonical (Ubuntu),UK,https://ubuntu.com
+Operating Systems,Red Hat (RHEL),USA,https://www.redhat.com
+Operating Systems,SUSE (openSUSE),Germany,https://www.suse.com
+Operating Systems,Oracle (Solaris),USA,https://www.oracle.com
+Operating Systems,IBM (z/OS),USA,https://www.ibm.com
+Operating Systems,Amazon (Amazon Linux),USA,https://aws.amazon.com
+Operating Systems,FreeBSD Foundation,USA,https://www.freebsdfoundation.org
+Operating Systems,Elementary OS,USA,https://elementary.io
+Operating Systems,Linux Mint,UK,https://linuxmint.com
+Operating Systems,Fedora Project,USA,https://getfedora.org
+Operating Systems,Debian Project,Global,https://www.debian.org
+Operating Systems,Arch Linux,Global,https://archlinux.org
+Operating Systems,Gentoo Foundation,USA,https://www.gentoo.org
+Operating Systems,Tizen (Linux Foundation),USA,https://www.tizen.org
+Operating Systems,ReactOS Foundation,Germany,https://reactos.org
+Operating Systems,Haiku Project,Global,https://www.haiku-os.org
+Operating Systems,SerenityOS,Global,https://serenityos.org
+Enterprise Software,SAP,Germany,https://www.sap.com
+Enterprise Software,Oracle,USA,https://www.oracle.com
+Enterprise Software,Salesforce,USA,https://www.salesforce.com
+Enterprise Software,Adobe,USA,https://www.adobe.com
+Enterprise Software,ServiceNow,USA,https://www.servicenow.com
+Enterprise Software,Workday,USA,https://www.workday.com
+Enterprise Software,Intuit,USA,https://www.intuit.com
+Enterprise Software,Atlassian,Australia,https://www.atlassian.com
+Enterprise Software,Sage Group,UK,https://www.sage.com
+Enterprise Software,Docusign,USA,https://www.docusign.com
+Enterprise Software,VMware,USA,https://www.vmware.com
+Enterprise Software,Zoom Video,USA,https://zoom.us
+Enterprise Software,Twilio,USA,https://www.twilio.com
+Enterprise Software,UiPath,Romania,https://www.uipath.com
+Enterprise Software,Palantir,USA,https://www.palantir.com
+Enterprise Software,Anaplan,USA,https://www.anaplan.com
+Enterprise Software,Veeva Systems,USA,https://www.veeva.com
+Enterprise Software,Pegasystems,USA,https://www.pega.com
+Enterprise Software,Qualtrics,USA,https://www.qualtrics.com
+Semiconductors,Intel,USA,https://www.intel.com
+Semiconductors,TSMC,Taiwan,https://www.tsmc.com
+Semiconductors,Samsung Foundry,South Korea,https://www.samsung.com
+Semiconductors,Qualcomm,USA,https://www.qualcomm.com
+Semiconductors,NVIDIA,USA,https://www.nvidia.com
+Semiconductors,Broadcom,USA,https://www.broadcom.com
+Semiconductors,AMD,USA,https://www.amd.com
+Semiconductors,SK Hynix,South Korea,https://www.skhynix.com
+Semiconductors,Microchip Technology,USA,https://www.microchip.com
+Semiconductors,STMicroelectronics,Switzerland,https://www.st.com
+Semiconductors,Infineon,Germany,https://www.infineon.com
+Semiconductors,NXP Semiconductors,Netherlands,https://www.nxp.com
+Semiconductors,Texas Instruments,USA,https://www.ti.com
+Semiconductors,Analog Devices,USA,https://www.analog.com
+Semiconductors,ASML,Netherlands,https://www.asml.com
+Semiconductors,Applied Materials,USA,https://www.appliedmaterials.com
+Semiconductors,Lam Research,USA,https://www.lamresearch.com
+Semiconductors,KLA Corporation,USA,https://www.kla.com
+Semiconductors,UMC,Taiwan,https://www.umc.com
+Gaming Consoles,Sony (PlayStation),Japan,https://www.playstation.com
+Gaming Consoles,Microsoft (Xbox),USA,https://www.xbox.com
+Gaming Consoles,Nintendo,Japan,https://www.nintendo.com
+Gaming Consoles,Valve (Steam Deck),USA,https://www.steamdeck.com
+Gaming Consoles,Atari,USA,https://www.atari.com
+Gaming Consoles,SEGA,Japan,https://www.sega.com
+Gaming Consoles,Razer,USA,https://www.razer.com
+Gaming Consoles,Logitech G,Switzerland,https://www.logitechg.com
+Gaming Consoles,HyperX (HP),USA,https://www.hyperx.com
+Gaming Consoles,Corsair,USA,https://www.corsair.com
+Gaming Consoles,Alienware (Dell),USA,https://www.dell.com
+Gaming Consoles,ASUS ROG,Taiwan,https://rog.asus.com
+Gaming Consoles,MSI,Taiwan,https://www.msi.com
+Gaming Consoles,GPD Win,China,https://www.gpd.hk
+Gaming Consoles,AYANEO,China,https://www.ayaneo.com
+Gaming Consoles,OneXPlayer,China,https://www.onexplayerstore.com
+Gaming Consoles,Playdate (Panic),USA,https://play.date
+Gaming Consoles,Anbernic,China,https://www.anbernic.com
+Gaming Consoles,Retroid,China,https://www.goretroid.com
+Computer Peripherals,Logitech,Switzerland,https://www.logitech.com
+Computer Peripherals,HP Inc.,USA,https://www.hp.com
+Computer Peripherals,Dell,USA,https://www.dell.com
+Computer Peripherals,Lenovo,China,https://www.lenovo.com
+Computer Peripherals,Samsung,South Korea,https://www.samsung.com
+Computer Peripherals,Apple,USA,https://www.apple.com
+Computer Peripherals,Corsair,USA,https://www.corsair.com
+Computer Peripherals,Razer,USA,https://www.razer.com
+Computer Peripherals,SteelSeries,Denmark,https://steelseries.com
+Computer Peripherals,Wacom,Japan,https://www.wacom.com
+Computer Peripherals,BenQ,Taiwan,https://www.benq.com
+Computer Peripherals,ViewSonic,USA,https://www.viewsonic.com
+Computer Peripherals,Acer,Taiwan,https://www.acer.com
+Computer Peripherals,Asus,Taiwan,https://www.asus.com
+Computer Peripherals,MSI,Taiwan,https://www.msi.com
+Computer Peripherals,XPG (ADATA),Taiwan,https://www.xpg.com
+Computer Peripherals,HyperX (HP),USA,https://www.hyperx.com
+Computer Peripherals,Kingston Technology,USA,https://www.kingston.com
+Computer Peripherals,Seagate,USA,https://www.seagate.com
+Computer Peripherals,Western Digital,USA,https://www.westerndigital.com
+Data Analytics,Tableau (Salesforce),USA,https://www.tableau.com
+Data Analytics,Palantir,USA,https://www.palantir.com
+Data Analytics,Splunk,USA,https://www.splunk.com
+Data Analytics,Alteryx,USA,https://www.alteryx.com
+Data Analytics,Looker (Google),USA,https://looker.com
+Data Analytics,Qlik,USA,https://www.qlik.com
+Data Analytics,MicroStrategy,USA,https://www.microstrategy.com
+Data Analytics,TIBCO Software,USA,https://www.tibco.com
+Data Analytics,ThoughtSpot,USA,https://www.thoughtspot.com
+Data Analytics,Databricks,USA,https://databricks.com
+Data Analytics,Snowflake,USA,https://www.snowflake.com
+Data Analytics,Elastic,Netherlands,https://www.elastic.co
+Data Analytics,Domo,USA,https://www.domo.com
+Data Analytics,Sisense,USA,https://www.sisense.com
+Data Analytics,GoodData,USA,https://www.gooddata.com
+Data Analytics,Alation,USA,https://www.alation.com
+Data Analytics,Amplitude,USA,https://amplitude.com
+Data Analytics,Mixpanel,USA,https://mixpanel.com
+Data Analytics,Heap Analytics,USA,https://heap.io
+Quantum Computing,IBM Quantum,USA,https://www.ibm.com/quantum
+Quantum Computing,Google Quantum AI,USA,https://quantumai.google
+Quantum Computing,Microsoft Quantum,USA,https://quantum.microsoft.com
+Quantum Computing,D-Wave Systems,Canada,https://www.dwavesys.com
+Quantum Computing,Rigetti Computing,USA,https://www.rigetti.com
+Quantum Computing,IonQ,USA,https://ionq.com
+Quantum Computing,Honeywell Quantum,USA,https://www.honeywell.com
+Quantum Computing,Quantinuum (Honeywell),USA,https://www.quantinuum.com
+Quantum Computing,Amazon Braket,USA,https://aws.amazon.com/braket
+Quantum Computing,Alibaba Quantum Lab,China,https://damo.alibaba.com
+Quantum Computing,Toshiba Quantum,Japan,https://www.global.toshiba
+Quantum Computing,Quantum Circuits Inc.,USA,https://quantumcircuits.com
+Quantum Computing,Xanadu Quantum,Canada,https://www.xanadu.ai
+Quantum Computing,PsiQuantum,USA,https://www.psiquantum.com
+Quantum Computing,Zapata Computing,USA,https://www.zapatacomputing.com
+Quantum Computing,QC Ware,USA,https://www.qcware.com
+Quantum Computing,1QBit,Canada,https://1qbit.com
+Quantum Computing,Quantum Motion,UK,https://quantummotion.tech
+Robotics,Boston Dynamics,USA,https://www.bostondynamics.com
+Robotics,Fanuc,Japan,https://www.fanuc.com
+Robotics,Yaskawa Electric,Japan,https://www.yaskawa.com
+Robotics,ABB Robotics,Switzerland,https://new.abb.com
+Robotics,KUKA Robotics,Germany,https://www.kuka.com
+Robotics,Universal Robots,Denmark,https://www.universal-robots.com
+Robotics,Clearpath Robotics,Canada,https://clearpathrobotics.com
+Robotics,iRobot,USA,https://www.irobot.com
+Robotics,SoftBank Robotics,Japan,https://www.softbankrobotics.com
+Robotics,Omron Automation,Japan,https://www.omron.com
+Robotics,Teradyne,USA,https://www.teradyne.com
+Robotics,Aethon (ST Engineering),USA,https://www.stengg.com
+Robotics,Locus Robotics,USA,https://locusrobotics.com
+Robotics,Blue River Technology (John Deere),USA,https://www.bluerivertechnology.com
+Robotics,Rethink Robotics,Germany,https://www.rethinkrobotics.com
+Robotics,Vecna Robotics,USA,https://www.vecnarobotics.com
+Robotics,Fetch Robotics (Zebra),USA,https://www.fetchrobotics.com
+Robotics,Robotiq,Canada,https://robotiq.com
+Robotics,Neurala,USA,https://www.neurala.com
+AR/VR Hardware,Meta Reality Labs,USA,https://www.meta.com
+AR/VR Hardware,HTC Vive,Taiwan,https://www.vive.com
+AR/VR Hardware,Sony PlayStation VR,Japan,https://www.playstation.com
+AR/VR Hardware,Microsoft HoloLens,USA,https://www.microsoft.com
+AR/VR Hardware,Magic Leap,USA,https://www.magicleap.com
+AR/VR Hardware,Pico Interactive (ByteDance),China,https://www.picoxr.com
+AR/VR Hardware,Varjo,Finland,https://varjo.com
+AR/VR Hardware,Epson Moverio,Japan,https://epson.com/moverio
+AR/VR Hardware,Nreal,China,https://www.nreal.com
+AR/VR Hardware,Vuzix,USA,https://www.vuzix.com
+AR/VR Hardware,Rokid,China,https://www.rokid.com
+AR/VR Hardware,Lynx Mixed Reality,France,https://www.lynx-r.com
+AR/VR Hardware,XREAL (formerly Nreal),China,https://www.xreal.com
+AR/VR Hardware,Shiftall (Panasonic),Japan,https://shiftall.net
+AR/VR Hardware,Ultraleap,UK,https://www.ultraleap.com
+AR/VR Hardware,Qualcomm Snapdragon Spaces,USA,https://www.qualcomm.com
+AR/VR Hardware,Mojo Vision,USA,https://www.mojo.vision
+AR/VR Hardware,Immersed,USA,https://immersed.com
+AR/VR Hardware,8th Wall,USA,https://www.8thwall.com
+Open-Source Platforms,GitHub (Microsoft),USA,https://github.com
+Open-Source Platforms,GitLab,USA,https://about.gitlab.com
+Open-Source Platforms,Apache Software Foundation,USA,https://apache.org
+Open-Source Platforms,Linux Foundation,USA,https://www.linuxfoundation.org
+Open-Source Platforms,Mozilla,USA,https://www.mozilla.org
+Open-Source Platforms,WordPress (Automattic),USA,https://wordpress.org
+Open-Source Platforms,Drupal Association,USA,https://www.drupal.org
+Open-Source Platforms,Red Hat OpenShift,USA,https://www.redhat.com
+Open-Source Platforms,CNCF (Cloud Native),USA,https://www.cncf.io
+Open-Source Platforms,OpenStack Foundation,USA,https://www.openstack.org
+Open-Source Platforms,OpenJS Foundation,USA,https://openjsf.org
+Open-Source Platforms,Eclipse Foundation,Canada,https://www.eclipse.org
+Open-Source Platforms,Free Software Foundation,USA,https://www.fsf.org
+Open-Source Platforms,Open Source Initiative,USA,https://opensource.org
+Open-Source Platforms,SUSE Rancher,Germany,https://rancher.com
+Open-Source Platforms,Elastic,Netherlands,https://www.elastic.co
+Open-Source Platforms,HashiCorp,USA,https://www.hashicorp.com
+Open-Source Platforms,Confluent (Apache Kafka),USA,https://www.confluent.io
+Open-Source Platforms,Grafana Labs,USA,https://grafana.com
+Supercomputing,Cray (HPE),USA,https://www.cray.com
+Supercomputing,IBM,USA,https://www.ibm.com
+Supercomputing,NVIDIA,USA,https://www.nvidia.com
+Supercomputing,AMD,USA,https://www.amd.com
+Supercomputing,Intel,USA,https://www.intel.com
+Supercomputing,Fujitsu,Japan,https://www.fujitsu.com
+Supercomputing,NEC Corporation,Japan,https://www.nec.com
+Supercomputing,Atos (BullSequana),France,https://atos.net
+Supercomputing,Dell EMC,USA,https://www.dell.com
+Supercomputing,Lenovo,China,https://www.lenovo.com
+Supercomputing,Huawei,China,https://www.huawei.com
+Supercomputing,Sugon,China,https://www.sugon.com
+Supercomputing,Inspur,China,https://www.inspur.com
+Supercomputing,PEZY Computing,Japan,https://www.pezy.co.jp
+Supercomputing,SGI (HPE),USA,https://www.sgi.com
+Supercomputing,ParTec,Germany,https://www.par-tec.com
+Supercomputing,Mellanox (NVIDIA),Israel,https://www.nvidia.com
+Supercomputing,ThinkParQ (BeeGFS),Germany,https://www.beegfs.io
+Supercomputing,DDN Storage,USA,https://www.ddn.com
+Wearable Tech,Apple Watch,USA,https://www.apple.com
+Wearable Tech,Fitbit (Google),USA,https://www.fitbit.com
+Wearable Tech,Garmin,USA,https://www.garmin.com
+Wearable Tech,Samsung Galaxy Watch,South Korea,https://www.samsung.com
+Wearable Tech,Xiaomi Mi Band,China,https://www.mi.com
+Wearable Tech,Huawei Watch,China,https://www.huawei.com
+Wearable Tech,Withings,France,https://www.withings.com
+Wearable Tech,Suunto,Finland,https://www.suunto.com
+Wearable Tech,Oura Ring,Finland,https://ouraring.com
+Wearable Tech,Whoop,USA,https://www.whoop.com
+Wearable Tech,Amazfit (Zepp Health),China,https://www.amazfit.com
+Wearable Tech,Fossil Group,USA,https://www.fossilgroup.com
+Wearable Tech,Mobvoi (TicWatch),China,https://www.mobvoi.com
+Wearable Tech,Polar Electro,Finland,https://www.polar.com
+Wearable Tech,Bose Frames,USA,https://www.bose.com
+Wearable Tech,Ray-Ban Stories (Meta),USA,https://www.ray-ban.com
+Wearable Tech,Magic Leap,USA,https://www.magicleap.com
+Wearable Tech,Nuheara,USA,https://nuheara.com
+Wearable Tech,Vuzix Smart Glasses,USA,https://www.vuzix.com
+3D Printing,Stratasys,USA,https://www.stratasys.com
+3D Printing,3D Systems,USA,https://www.3dsystems.com
+3D Printing,EOS GmbH,Germany,https://www.eos.info
+3D Printing,HP Multi Jet Fusion,USA,https://www.hp.com
+3D Printing,Formlabs,USA,https://formlabs.com
+3D Printing,Ultimaker,Netherlands,https://ultimaker.com
+3D Printing,Markforged,USA,https://markforged.com
+3D Printing,Desktop Metal,USA,https://www.desktopmetal.com
+3D Printing,Carbon,USA,https://www.carbon3d.com
+3D Printing,Prusa Research,Czech Republic,https://www.prusa3d.com
+3D Printing,Proto Labs,USA,https://www.protolabs.com
+3D Printing,Shapeways,USA,https://www.shapeways.com
+3D Printing,Sinterit,Poland,https://www.sinterit.com
+3D Printing,XYZprinting,Taiwan,https://www.xyzprinting.com
+3D Printing,BigRep,Germany,https://bigrep.com
+3D Printing,AnkerMake (Anker),China,https://us.anker.com
+3D Printing,Renishaw,UK,https://www.renishaw.com
+3D Printing,BCN3D,Spain,https://www.bcn3d.com
+3D Printing,TRUMPF,Germany,https://www.trumpf.com
+IoT Devices,Siemens,Germany,https://www.siemens.com
+IoT Devices,Bosch IoT,Germany,https://www.bosch-iot-suite.com
+IoT Devices,Honeywell,USA,https://www.honeywell.com
+IoT Devices,Schneider Electric,France,https://www.se.com
+IoT Devices,GE Digital,USA,https://www.ge.com/digital
+IoT Devices,PTC (ThingWorx),USA,https://www.ptc.com
+IoT Devices,Samsara,USA,https://www.samsara.com
+IoT Devices,Cisco IoT,USA,https://www.cisco.com
+IoT Devices,Verizon ThingSpace,USA,https://thingspace.verizon.com
+IoT Devices,ARM Mbed,UK,https://os.mbed.com
+IoT Devices,Sigfox,France,https://www.sigfox.com
+IoT Devices,Losant,USA,https://www.losant.com
+IoT Devices,Hologram,USA,https://hologram.io
+IoT Devices,Helium,USA,https://www.helium.com
+IoT Devices,Ayla Networks,USA,https://www.aylanetworks.com
+IoT Devices,Notion,USA,https://getnotion.com
+IoT Devices,Electric Imp,USA,https://www.electricimp.com
+IoT Devices,Ubiquiti Networks,USA,https://www.ui.com
+Biometric Systems,IDEMIA,France,https://www.idemia.com
+Biometric Systems,NEC Biometrics,Japan,https://www.nec.com
+Biometric Systems,Thales Gemalto,France,https://www.thalesgroup.com
+Biometric Systems,Cognitec Systems,Germany,https://www.cognitec.com
+Biometric Systems,Precise Biometrics,Sweden,https://precisebiometrics.com
+Biometric Systems,Synaptics,USA,https://www.synaptics.com
+Biometric Systems,Crossmatch (HID Global),USA,https://www.hidglobal.com
+Biometric Systems,FaceFirst (Allegion),USA,https://www.facefirst.com
+Biometric Systems,Fulcrum Biometrics,USA,https://www.fulcrumbiometrics.com
+Biometric Systems,BioID,Germany,https://www.bioid.com
+Biometric Systems,Daon,USA,https://www.daon.com
+Biometric Systems,Veridium,UK,https://www.veridiumid.com
+Biometric Systems,Aware Inc.,USA,https://www.aware.com
+Biometric Systems,Suprema Inc.,South Korea,https://www.supremainc.com
+Biometric Systems,Fingerprint Cards AB,Sweden,https://www.fingerprints.com
+Biometric Systems,Neurotechnology,Lithuania,https://www.neurotechnology.com
+Biometric Systems,Innovatrics,Slovakia,https://www.innovatrics.com
+Biometric Systems,Tascent,USA,https://www.tascent.com
+Biometric Systems,Hanvon Technology,China,https://www.hanvon.com
+Edge Computing,HPE Edgeline,USA,https://www.hpe.com
+Edge Computing,Dell EMC,USA,https://www.dell.com
+Edge Computing,Lenovo ThinkEdge,China,https://www.lenovo.com
+Edge Computing,Cisco IoT Edge,USA,https://www.cisco.com
+Edge Computing,Intel IoT Edge,USA,https://www.intel.com
+Edge Computing,Microsoft Azure Edge,USA,https://azure.microsoft.com
+Edge Computing,Amazon AWS IoT Greengrass,USA,https://aws.amazon.com
+Edge Computing,IBM Edge Computing,USA,https://www.ibm.com
+Edge Computing,FogHorn Systems,USA,https://www.foghorn.io
+Edge Computing,ADLINK Technology,Taiwan,https://www.adlinktech.com
+Edge Computing,ClearBlade,USA,https://www.clearblade.com
+Edge Computing,Scale Computing,USA,https://www.scalecomputing.com
+Edge Computing,Zededa,USA,https://www.zededa.com
+Edge Computing,EdgeConneX,USA,https://www.edgeconnex.com
+Edge Computing,Vapor IO,USA,https://www.vapor.io
+Edge Computing,Saguna Networks,Israel,https://www.saguna.net
+Edge Computing,Section.IO,Australia,https://www.section.io
+Edge Computing,Swim.AI,USA,https://www.swim.ai
+Edge Computing,Edge Intelligence,Canada,https://www.edgeintelligence.com
+Mainframe Systems,IBM Z Series,USA,https://www.ibm.com
+Mainframe Systems,Unisys ClearPath,USA,https://www.unisys.com
+Mainframe Systems,Fujitsu GS21,Japan,https://www.fujitsu.com
+Mainframe Systems,HPE NonStop,USA,https://www.hpe.com
+Mainframe Systems,BullSequana (Atos),France,https://atos.net
+Mainframe Systems,Stratus Technologies,USA,https://www.stratus.com
+Mainframe Systems,DXC Technology,USA,https://www.dxc.com
+Mainframe Systems,Rocket Software,USA,https://www.rocketsoftware.com
+Mainframe Systems,CA Technologies (Broadcom),USA,https://www.broadcom.com
+Mainframe Systems,BMC Software,USA,https://www.bmc.com
+Mainframe Systems,Compuware,USA,https://www.compuware.com
+Mainframe Systems,ASG Technologies,USA,https://www.asg.com
+Mainframe Systems,TmaxSoft,South Korea,https://www.tmaxsoft.com
+Mainframe Systems,LzLabs,Switzerland,https://www.lzlabs.com
+Mainframe Systems,SUSE Linux Enterprise Mainframe,Germany,https://www.suse.com
+Mainframe Systems,Micro Focus,UK,https://www.microfocus.com
+Mainframe Systems,Syncsort (Precisely),USA,https://www.precisely.com
+Mainframe Systems,Virtel (UV Software),UK,https://www.uvsoftware.com
+Mainframe Systems,GT Software,USA,https://www.gtsoftware.com
+Tech Repair Services,uBreakiFix,USA,https://www.ubreakifix.com
+Tech Repair Services,Geek Squad (Best Buy),USA,https://www.geeksquad.com
+Tech Repair Services,Staples EasyTech,USA,https://www.staples.com
+Tech Repair Services,Asurion,USA,https://www.asurion.com
+Tech Repair Services,CPR Cell Phone Repair,USA,https://www.cellphonerepair.com
+Tech RepairServices,Phone Doctor Plus,USA,https://phonedoctorplus.com
+Tech Repair Services,RockIT Repairs,USA,https://rockitrepairs.com
+Tech Repair Services,iCracked (Apple Authorized),USA,https://www.icracked.com
+Tech Repair Services,FoneLab,China,https://www.fonelab.com
+Tech Repair Services,Dr. Smartphone,Canada,https://drsmartphone.ca
+Tech Repair Services,The Phone Lab,UK,https://www.thephonelab.co.uk
+Tech Repair Services,FoneFix,Australia,https://www.fonefix.com.au
+Tech Repair Services,Fixerman,USA,https://www.fixermanme.com
+Tech Repair Services,iMend,UK,https://www.imendrepairs.co.uk
+Tech Repair Services,GadgetGuru,India,https://www.gadgetguru.in
+Tech Repair Services,Phonebitz,South Africa,https://phonebitz.co.za
+Tech Repair Services,Phone Clinic,New Zealand,https://www.phoneclinic.co.nz
+Tech Repair Services,iExperts,Singapore,https://www.iexperts.sg
+Blockchain Hardware,Bitmain,China,https://www.bitmain.com
+Blockchain Hardware,Canaan Creative,China,https://canaan.io
+Blockchain Hardware,Ebang,China,https://www.ebang.com.cn
+Blockchain Hardware,MicroBT,China,https://www.microbt.com
+Blockchain Hardware,Innosilicon,China,https://www.innosilicon.com
+Blockchain Hardware,Halong Mining,Vietnam,https://www.halongmining.com
+Blockchain Hardware,GMO Internet Group,Japan,https://www.gmo.jp
+Blockchain Hardware,Hut 8 Mining,Canada,https://hut8.com
+Blockchain Hardware,Riot Blockchain,USA,https://riotblockchain.com
+Blockchain Hardware,Marathon Digital Holdings,USA,https://marathondh.com
+Blockchain Hardware,Core Scientific,USA,https://corescientific.com
+Blockchain Hardware,Argo Blockchain,UK,https://argoblockchain.com
+Blockchain Hardware,Bitfarms,Canada,https://bitfarms.com
+Blockchain Hardware,CleanSpark,USA,https://www.cleanspark.com
+Blockchain Hardware,TeraWulf,USA,https://terawulf.com
+Blockchain Hardware,Cipher Mining,USA,https://www.ciphermining.com
+Blockchain Hardware,GRIID Infrastructure,USA,https://griid.com
+Blockchain Hardware,Bit Digital,USA,https://bit-digital.com
+Blockchain Hardware,Stronghold Digital Mining,USA,https://strongholddigitalmining.com
+Satellite Tech,SpaceX (Starlink),USA,https://www.starlink.com
+Satellite Tech,OneWeb,UK,https://www.oneweb.world
+Satellite Tech,Iridium Communications,USA,https://www.iridium.com
+Satellite Tech,Globalstar,USA,https://www.globalstar.com
+Satellite Tech,Inmarsat (Viasat),UK,https://www.inmarsat.com
+Satellite Tech,Intelsat,Luxembourg,https://www.intelsat.com
+Satellite Tech,SES S.A.,Luxembourg,https://www.ses.com
+Satellite Tech,Eutelsat,France,https://www.eutelsat.com
+Satellite Tech,Viasat,USA,https://www.viasat.com
+Satellite Tech,Telesat,Canada,https://www.telesat.com
+Satellite Tech,Maxar Technologies,USA,https://www.maxar.com
+Satellite Tech,Planet Labs,USA,https://www.planet.com
+Satellite Tech,Spire Global,USA,https://www.spire.com
+Satellite Tech,Astranis,USA,https://www.astranis.com
+Satellite Tech,Capella Space,USA,https://www.capellaspace.com
+Satellite Tech,HawkEye 360,USA,https://www.he360.com
+Satellite Tech,ICEYE,Finland,https://www.iceye.com
+Satellite Tech,Kleos Space,Luxembourg,https://kleos.space
+Satellite Tech,Swarm Technologies (SpaceX),USA,https://swarm.space
