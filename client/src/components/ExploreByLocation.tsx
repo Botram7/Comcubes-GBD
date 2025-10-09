@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -20,6 +20,7 @@ interface TopCountry {
 
 export function ExploreByLocation() {
   const [, setLocation] = useLocation();
+  const queryClient = useQueryClient();
 
   const { data: topCountries, isLoading } = useQuery<TopCountry[]>({
     queryKey: ["/api/geography/top-countries"],
@@ -32,6 +33,18 @@ export function ExploreByLocation() {
 
   const handleViewAllLocations = () => {
     setLocation('/geography');
+  };
+
+  // Prefetch country data on hover for instant navigation
+  const prefetchCountryData = (slug: string) => {
+    queryClient.prefetchQuery({
+      queryKey: [`/api/geography/countries/${slug}`],
+      staleTime: Infinity,
+    });
+    queryClient.prefetchQuery({
+      queryKey: [`/api/geography/countries/${slug}/companies?page=1`],
+      staleTime: Infinity,
+    });
   };
 
   // Helper to get flag URL from iso2 code
@@ -71,13 +84,15 @@ export function ExploreByLocation() {
               key={country.id} 
               className="group cursor-pointer hover:shadow-lg transition-all duration-200 bg-white overflow-hidden"
               onClick={() => handleCountryClick(country)}
+              onMouseEnter={() => prefetchCountryData(country.slug)}
               data-testid={`card-country-${country.id}`}
             >
-              <div className="aspect-square relative">
+              <div className="aspect-square relative bg-gray-100">
                 <img 
                   src={getFlagUrl(country.iso2)}
                   alt={`${country.name} flag`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain p-2"
+                  loading="lazy"
                   onError={(e) => {
                     // Fallback to a gradient background if flag fails to load
                     (e.target as HTMLImageElement).style.display = 'none';
