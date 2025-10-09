@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SearchBar } from "@/components/SearchBar";
 import { AnimatedExplainer } from "@/components/AnimatedExplainer";
+import { ExploreByLocation } from "@/components/ExploreByLocation";
 import { SEOHead, createBusinessDirectoryStructuredData } from "@/components/SEOHead";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { 
@@ -212,6 +213,7 @@ export default function HomePage() {
                 key={sector.id} 
                 className="group cursor-pointer hover:shadow-lg transition-all duration-200 bg-white overflow-hidden"
                 onClick={() => handleSectorClick(sector)}
+                data-testid={`card-sector-${sector.id}`}
               >
                 <div className="aspect-square relative">
                   <img 
@@ -235,6 +237,7 @@ export default function HomePage() {
               onClick={handleViewAllSectors}
               variant="outline" 
               className="px-8 py-3"
+              data-testid="button-view-all-sectors"
             >
               View All 20 Sectors
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -242,6 +245,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Explore by Location */}
+      <ExploreByLocation />
 
       {/* Animated Explainer Section */}
       <section className="py-12 md:py-20 bg-white">
