@@ -48,40 +48,32 @@ function parseFoundedYear(foundedStr: string): number | null {
 }
 
 /**
- * Find existing company by name or website
+ * Find existing company by name + sector + industry combination
+ * This allows the same company to exist in multiple industries/sectors
  */
-async function findExistingCompany(companyName: string, website: string): Promise<any | null> {
-  // Try exact name match first
-  const [exactNameMatch] = await db.select()
+async function findExistingCompany(
+  companyName: string, 
+  sectorName: string,
+  industryName: string,
+  website: string
+): Promise<any | null> {
+  // Check for exact match of name + sector + industry combination
+  // This prevents true duplicates while allowing cross-industry companies
+  const [exactMatch] = await db.select()
     .from(companies)
-    .where(eq(companies.name, companyName))
+    .where(and(
+      eq(companies.name, companyName),
+      eq(companies.sectorName, sectorName),
+      eq(companies.industryName, industryName)
+    ))
     .limit(1);
   
-  if (exactNameMatch) {
-    return exactNameMatch;
+  if (exactMatch) {
+    return exactMatch;
   }
 
-  // Try website match if provided
-  if (website && website.trim() !== '') {
-    const cleanWebsite = website.toLowerCase().replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
-    
-    const websiteMatches = await db.select()
-      .from(companies)
-      .where(ilike(companies.websiteUrl, `%${cleanWebsite}%`))
-      .limit(5);
-    
-    if (websiteMatches.length > 0) {
-      return websiteMatches[0];
-    }
-  }
-
-  // Try fuzzy name match (case-insensitive)
-  const [fuzzyMatch] = await db.select()
-    .from(companies)
-    .where(ilike(companies.name, companyName))
-    .limit(1);
-  
-  return fuzzyMatch || null;
+  // No match found - this is a new company entry for this sector/industry combination
+  return null;
 }
 
 /**
@@ -108,8 +100,13 @@ export async function importCompanyFromCSV(
       };
     }
 
-    // Find or create company
-    const existingCompany = await findExistingCompany(row.companyName, row.website);
+    // Find or create company (check for exact name + sector + industry combination)
+    const existingCompany = await findExistingCompany(
+      row.companyName, 
+      sectorName, 
+      row.industry,
+      row.website
+    );
     
     const companyData = {
       name: row.companyName,
