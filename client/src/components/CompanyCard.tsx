@@ -42,13 +42,18 @@ export function CompanyCard({ company, onClick }: CompanyCardProps) {
         {/* Company Info Section */}
         <div className="p-4">
           <div className="space-y-2">
+            {/* Industry Label - Prominent display for cross-industry companies */}
+            <div className="text-xs font-medium text-blue-600">
+              Industry: {company.industryName}
+            </div>
+            
             <h3 className="font-semibold text-sm text-gray-900 leading-tight group-hover:text-blue-600 transition-colors">
               {company.name}
             </h3>
             
             <div className="flex items-center justify-between">
               <div className="text-xs text-gray-500">
-                {company.industryName}
+                {company.sectorName}
               </div>
               
               {company.websiteUrl && (
@@ -56,36 +61,13 @@ export function CompanyCard({ company, onClick }: CompanyCardProps) {
                   onClick={openCompanyWebsite}
                   className="flex items-center space-x-1 text-xs text-blue-600 hover:text-blue-800 transition-colors"
                   title="Visit website"
+                  data-testid="button-visit-website"
                 >
                   <Globe className="h-3 w-3" />
                   <ExternalLink className="h-3 w-3" />
                 </button>
               )}
             </div>
-
-            {/* Logo Status Indicator */}
-            {company.logoStatus && company.logoStatus !== 'fetched' && (
-              <div className="flex items-center space-x-1 text-xs">
-                {company.logoStatus === 'pending' && (
-                  <>
-                    <AlertCircle className="h-3 w-3 text-yellow-500" />
-                    <span className="text-yellow-600">Logo pending</span>
-                  </>
-                )}
-                {company.logoStatus === 'failed' && (
-                  <>
-                    <AlertCircle className="h-3 w-3 text-red-500" />
-                    <span className="text-red-600">Logo unavailable</span>
-                  </>
-                )}
-                {company.logoStatus === 'removed' && (
-                  <>
-                    <AlertCircle className="h-3 w-3 text-gray-500" />
-                    <span className="text-gray-500">Logo removed</span>
-                  </>
-                )}
-              </div>
-            )}
           </div>
         </div>
       </CardContent>
