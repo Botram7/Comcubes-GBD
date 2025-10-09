@@ -1,0 +1,373 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+E-commerce Marketplaces,Amazon,USA,https://www.amazon.com,"1,608,000+","$574B+",1994,Conglomerate,"Online Marketplace, Cloud, Subscription Services",Verified
+E-commerce Marketplaces,Alibaba Group,China,https://www.alibabagroup.com,"254,941+","$130B+",1999,Conglomerate,"B2B, B2C, Cloud, Digital Media",Verified
+E-commerce Marketplaces,JD.com,China,https://www.jd.com,"459,150+","$155B+",1998,Conglomerate,"Direct Sales, Marketplace, Logistics",Verified
+E-commerce Marketplaces,eBay,USA,https://www.ebay.com,"11,600+","$10B+",1995,Large Enterprise,"Online Auctions, Marketplace",Verified
+E-commerce Marketplaces,Rakuten,Japan,https://www.rakuten.com,"15,000+","$15B+",1997,Large Enterprise,"E-commerce, FinTech, Digital Content",Verified
+E-commerce Marketplaces,Shopify,Canada,https://www.shopify.com,"11,600+","$7B+",2006,Large Enterprise,"E-commerce Platform, POS, Payments",Verified
+E-commerce Marketplaces,Mercado Libre,Argentina,https://www.mercadolibre.com,"50,000+","$14B+",1999,Large Enterprise,"Latin America Marketplace, FinTech",Verified
+E-commerce Marketplaces,Flipkart (Walmart),India,https://www.flipkart.com,"30,000+","$23B+",2007,Large Enterprise,"E-commerce, Fashion, Electronics",Verified
+E-commerce Marketplaces,Wayfair,USA,https://www.wayfair.com,"16,000+","$12B+",2002,Large Enterprise,"Home Goods, Furniture, Decor",Verified
+E-commerce Marketplaces,Etsy,USA,https://www.etsy.com,"2,300+","$2.7B+",2005,Large Enterprise,"Handmade, Vintage, Craft Supplies",Verified
+E-commerce Marketplaces,OTTO Group,Germany,https://www.otto.group,"50,000+","$16B+",1949,Large Enterprise,"Multi-channel Retail, E-commerce, Services",Verified
+E-commerce Marketplaces,Zalando,Germany,https://www.zalando.com,"17,000+","$12B+",2008,Large Enterprise,"Fashion, Shoes, Lifestyle",Verified
+E-commerce Marketplaces,Coupang,South Korea,https://www.coupang.com,"50,000+","$24B+",2010,Large Enterprise,"Rocket Delivery, E-commerce, Grocery",Verified
+E-commerce Marketplaces,Jumia,Nigeria,https://www.jumia.com,"5,000+","$200M+",2012,Large Enterprise,"Pan-Africa E-commerce, Marketplace",Verified
+E-commerce Marketplaces,Pinduoduo,China,https://www.pinduoduo.com,"10,000+","$16B+",2015,Large Enterprise,"Social Commerce, Group Buying, Agriculture",Verified
+E-commerce Marketplaces,Tokopedia (GoTo),Indonesia,https://www.tokopedia.com,"5,000+","$2B+",2009,Large Enterprise,"Indonesian Marketplace, E-commerce",Verified
+E-commerce Marketplaces,Lazada (Alibaba),Singapore,https://www.lazada.com,"10,000+","$2B+",2012,Large Enterprise,"Southeast Asia E-commerce",Verified
+E-commerce Marketplaces,Newegg,USA,https://www.newegg.com,"2,000+","$2B+",2001,Large Enterprise,"Computer Hardware, Electronics",Verified
+E-commerce Marketplaces,Wish,USA,https://www.wish.com,"1,000+","$2B+",2010,Large Enterprise,"Discount E-commerce, Global Marketplace",Verified
+E-commerce Marketplaces,ASOS,UK,https://www.asos.com,"3,000+","$4B+",2000,Large Enterprise,"Fashion, Beauty, Young Adult",Verified
+Department Stores,Macy's,USA,https://www.macys.com,"94,570+","$24B+",1858,Large Enterprise,"Apparel, Home, Beauty, Department Store",Verified
+Department Stores,Nordstrom,USA,https://www.nordstrom.com,"60,000+","$15B+",1901,Large Enterprise,"Apparel, Shoes, Beauty, Luxury",Verified
+Department Stores,Bloomingdale's,USA,https://www.bloomingdales.com,"15,000+","N/A",1861,Large Enterprise,"Luxury Department Store, Fashion",Verified
+Department Stores,JCPenney,USA,https://www.jcpenney.com,"60,000+","$8B+",1902,Large Enterprise,"Apparel, Home, Beauty, Department Store",Verified
+Department Stores,Kohl's,USA,https://www.kohls.com,"100,000+","$19B+",1962,Large Enterprise,"Apparel, Home, Beauty, Department Store",Verified
+Department Stores,Dillard's,USA,https://www.dillards.com,"38,000+","$6.5B+",1938,Large Enterprise,"Apparel, Home, Department Store",Verified
+Department Stores,Selfridges,UK,https://www.selfridges.com,"5,000+","$2B+",1909,Large Enterprise,"Luxury Department Store, Experience",Verified
+Department Stores,Harrods,UK,https://www.harrods.com,"5,000+","$1B+",1834,Large Enterprise,"Luxury Department Store, Knightsbridge",Verified
+Department Stores,Galeries Lafayette,France,https://www.galerieslafayette.com,"15,000+","$5B+",1893,Large Enterprise,"Department Store, Fashion, French",Verified
+Department Stores,El Corte Inglés,Spain,https://www.elcorteingles.es,"83,000+","$15B+",1940,Large Enterprise,"Department Store, Travel, Insurance",Verified
+Department Stores,Isetan Mitsukoshi,Japan,https://www.imhds.com,"10,000+","$8B+",1886,Large Enterprise,"Department Store, Luxury, Japan",Verified
+Department Stores,Takashimaya,Japan,https://www.takashimaya.co.jp,"8,000+","$6B+",1831,Large Enterprise,"Department Store, Luxury, Japan",Verified
+Department Stores,David Jones,Australia,https://www.davidjones.com,"7,000+","$1.5B+",1838,Large Enterprise,"Department Store, Fashion, Australia",Verified
+Department Stores,Myer,Australia,https://www.myer.com.au,"12,000+","$2B+",1900,Large Enterprise,"Department Store, Fashion, Australia",Verified
+Department Stores,Hudson's Bay Company,Canada,https://www.thebay.com,"20,000+","$7B+",1670,Large Enterprise,"Department Store, Canada, Fashion",Verified
+Department Stores,Falabella,Chile,https://www.falabella.com,"120,000+","$15B+",1889,Large Enterprise,"Department Store, Banking, Retail",Verified
+Department Stores,Lojas Americanas,Brazil,https://www.lojasamericanas.com.br,"50,000+","$5B+",1929,Large Enterprise,"Department Store, Discount, Brazil",Verified
+Department Stores,Shinsegae,South Korea,https://www.shinsegae.com,"50,000+","$10B+",1930,Large Enterprise,"Department Store, Discount, Korea",Verified
+Department Stores,Lotte Department Store,South Korea,https://www.lotteshopping.com,"30,000+","$8B+",1979,Large Enterprise,"Department Store, Korea, Luxury",Verified
+Luxury Fashion,LVMH,France,https://www.lvmh.com,"213,000+","$93B+",1987,Conglomerate,"Fashion, Leather Goods, Wines, Cosmetics",Verified
+Luxury Fashion,Kering,France,https://www.kering.com,"47,000+","$23B+",1963,Conglomerate,"Luxury Fashion, Leather Goods, Eyewear",Verified
+Luxury Fashion,Chanel,France,https://www.chanel.com,"28,000+","$17B+",1910,Large Enterprise,"Haute Couture, Fragrance, Beauty",Verified
+Luxury Fashion,Hermès,France,https://www.hermes.com,"20,600+","$15B+",1837,Large Enterprise,"Leather Goods, Silk, Fashion, Perfume",Verified
+Luxury Fashion,Richemont,Switzerland,https://www.richemont.com,"38,000+","$22B+",1988,Conglomerate,"Jewelry, Watches, Fashion",Verified
+Luxury Fashion,Prada Group,Italy,https://www.pradagroup.com,"13,000+","$5B+",1913,Large Enterprise,"Luxury Fashion, Leather Goods",Verified
+Luxury Fashion,Burberry,UK,https://www.burberry.com,"9,000+","$4B+",1856,Large Enterprise,"British Luxury Fashion, Trench Coats",Verified
+Luxury Fashion,Rolex,Switzerland,https://www.rolex.com,"30,000+","$13B+",1905,Large Enterprise,"Luxury Watches, Swiss Made",Verified
+Luxury Fashion,PVH Corp (Calvin Klein/Tommy Hilfiger),USA,https://www.pvh.com,"26,000+","$9B+",1881,Large Enterprise,"Apparel, Lifestyle Brands",Verified
+Luxury Fashion,Tapestry (Coach/Kate Spade),USA,https://www.tapestry.com,"18,000+","$7B+",1941,Large Enterprise,"Accessories, Handbags, Lifestyle",Verified
+Luxury Fashion,Ralph Lauren,USA,https://www.ralphlauren.com,"24,000+","$6B+",1967,Large Enterprise,"Lifestyle, Apparel, Home",Verified
+Luxury Fashion,Moncler,Italy,https://www.moncler.com,"4,000+","$3B+",1952,Large Enterprise,"Luxury Outerwear, Sportswear",Verified
+Luxury Fashion,Brunello Cucinelli,Italy,https://www.brunellocucinelli.com,"2,000+","$1B+",1978,Large Enterprise,"Luxury Cashmere, Italian Craftsmanship",Verified
+Luxury Fashion,Ermenegildo Zegna,Italy,https://www.zegna.com,"6,000+","$2B+",1910,Large Enterprise,"Luxury Menswear, Textiles",Verified
+Luxury Fashion,Tod's Group,Italy,https://www.todsgroup.com,"4,000+","$1B+",1920,Large Enterprise,"Luxury Shoes, Leather Goods",Verified
+Luxury Fashion,Capri Holdings (Versace/Michael Kors),USA,https://www.capriholdings.com,"18,000+","$5.5B+",1980,Large Enterprise,"Luxury Fashion, Accessories",Verified
+Luxury Fashion,Valentino,Italy,https://www.valentino.com,"4,000+","$1.5B+",1960,Large Enterprise,"Haute Couture, Luxury Fashion",Verified
+Luxury Fashion,Dolce & Gabbana,Italy,https://www.dolcegabbana.com,"5,000+","$1.7B+",1985,Large Enterprise,"Luxury Fashion, Italian Style",Verified
+Luxury Fashion,Salvatore Ferragamo,Italy,https://www.ferragamo.com,"4,000+","$1.2B+",1927,Large Enterprise,"Luxury Shoes, Leather Goods",Verified
+Fast Fashion,Zara (Inditex),Spain,https://www.inditex.com,"165,000+","$39B+",1975,Conglomerate,"Fast Fashion, Trend Replication",Verified
+Fast Fashion,H&M Group,Sweden,https://www.hmgroup.com,"155,000+","$23B+",1947,Conglomerate,"Fast Fashion, Home, Beauty",Verified
+Fast Fashion,Uniqlo (Fast Retailing),Japan,https://www.fastretailing.com,"60,000+","$19B+",1949,Conglomerate,"Casual Wear, LifeWear, Basics",Verified
+Fast Fashion,Shein,Singapore,https://www.shein.com,"10,000+","$30B+",2008,Large Enterprise,"Ultra-Fast Fashion, Direct-to-Consumer",Verified
+Fast Fashion,Fashion Nova,USA,https://www.fashionnova.com,"1,000+","$1B+",2006,Large Enterprise,"Fast Fashion, Social Media Driven",Verified
+Fast Fashion,Primark,UK,https://www.primark.com,"70,000+","$10B+",1969,Large Enterprise,"Discount Fashion, Value Retail",Verified
+Fast Fashion,Mango,Spain,https://shop.mango.com,"15,000+","$3B+",1984,Large Enterprise,"Contemporary Fashion, Women, Men",Verified
+Fast Fashion,Boohoo Group,UK,https://www.boohooplc.com,"5,000+","$2B+",2006,Large Enterprise,"Online Fast Fashion, Young Adult",Verified
+Fast Fashion,ASOS,UK,https://www.asos.com,"3,000+","$4B+",2000,Large Enterprise,"Fashion, Beauty, Young Adult",Verified
+Fast Fashion,Zalando,Germany,https://www.zalando.com,"17,000+","$12B+",2008,Large Enterprise,"Fashion, Shoes, Lifestyle",Verified
+Fast Fashion,C&A,Belgium,https://www.canda.com,"30,000+","$7B+",1841,Large Enterprise,"Family Fashion, Sustainable Focus",Verified
+Fast Fashion,Massimo Dutti (Inditex),Spain,https://www.massimodutti.com,"N/A","N/A",1985,Large Enterprise,"Premium Basics, Quality Fashion",Verified
+Fast Fashion,Urban Outfitters,USA,https://www.urbanoutfitters.com,"24,000+","$5B+",1970,Large Enterprise,"Lifestyle, Home, Apparel, Young Adult",Verified
+Fast Fashion,Forever 21,USA,https://www.forever21.com,"30,000+","$4B+",1984,Large Enterprise,"Fast Fashion, Young Adult",Verified
+Fast Fashion,Gap Inc.,USA,https://www.gapinc.com,"95,000+","$16B+",1969,Large Enterprise,"Casual Apparel, Denim, Basics",Verified
+Fast Fashion,Aeropostale,USA,https://www.aeropostale.com,"10,000+","$1.5B+",1987,Large Enterprise,"Teen Apparel, Casual Wear",Verified
+Fast Fashion,Pull & Bear (Inditex),Spain,https://www.pullandbear.com,"N/A","N/A",1991,Large Enterprise,"Casual Youth Fashion",Verified
+Fast Fashion,Stradivarius (Inditex),Spain,https://www.stradivarius.com,"N/A","N/A",1999,Large Enterprise,"Young Women's Fashion, Trendy",Verified
+Consumer Electronics Retail,Best Buy,USA,https://www.bestbuy.com,"100,000+","$46B+",1966,Large Enterprise,"Electronics, Appliances, Services",Verified
+Consumer Electronics Retail,MediaMarktSaturn,Germany,https://www.mediamarktsaturn.com,"60,000+","$28B+",1979,Large Enterprise,"Electronics, Appliances, Europe",Verified
+Consumer Electronics Retail,Yamada Denki,Japan,https://www.yamada-denki.jp,"30,000+","$15B+",1973,Large Enterprise,"Electronics, Appliances, Japan",Verified
+Consumer Electronics Retail,Yodobashi Camera,Japan,https://www.yodobashi.com,"5,000+","$4B+",1960,Large Enterprise,"Cameras, Electronics, Duty-Free",Verified
+Consumer Electronics Retail,Bic Camera,Japan,https://www.biccamera.com,"10,000+","$8B+",1953,Large Enterprise,"Electronics, Appliances, Japan",Verified
+Consumer Electronics Retail,Fnac Darty,France,https://www.fnacdarty.com,"25,000+","$9B+",1954,Large Enterprise,"Electronics, Books, Media",Verified
+Consumer Electronics Retail,Ceconomy (Euronics),Germany,https://www.ceconomy.de,"15,000+","$25B+",1996,Large Enterprise,"Electronics Retail, Europe",Verified
+Consumer Electronics Retail,Dixons Carphone,UK,https://www.dixonscarphone.com,"30,000+","$12B+",1937,Large Enterprise,"Electronics, Mobile Phones, UK",Verified
+Consumer Electronics Retail,Suning,China,https://www.suning.com,"250,000+","$35B+",1990,Large Enterprise,"Electronics, Appliances, E-commerce",Verified
+Consumer Electronics Retail,GOME,China,https://www.gome.com.hk,"50,000+","$10B+",1987,Large Enterprise,"Electronics, Appliances, China",Verified
+Consumer Electronics Retail,Harvey Norman,Australia,https://www.harveynorman.com.au,"8,000+","$3B+",1982,Large Enterprise,"Electronics, Furniture, Computers",Verified
+Consumer Electronics Retail,JB Hi-Fi,Australia,https://www.jbhifi.com.au,"13,000+","$10B+",1974,Large Enterprise,"Electronics, Entertainment, Home Appliances",Verified
+Consumer Electronics Retail,Croma (Tata),India,https://www.croma.com,"10,000+","$2B+",2006,Large Enterprise,"Electronics, Appliances, India",Verified
+Consumer Electronics Retail,Reliance Digital,India,https://www.reliancedigital.in,"15,000+","$3B+",2007,Large Enterprise,"Electronics, Appliances, India",Verified
+Consumer Electronics Retail,Eldorado.ru,Russia,https://www.eldorado.ru,"30,000+","$5B+",2006,Large Enterprise,"Electronics, Appliances, Russia",Verified
+Consumer Electronics Retail,M.video,Russia,https://www.mvideo.ru,"25,000+","$6B+",1993,Large Enterprise,"Electronics, Appliances, Russia",Verified
+Consumer Electronics Retail,Courts,Singapore,https://www.courts.com.sg,"5,000+","$1B+",1974,Large Enterprise,"Electronics, Furniture, Southeast Asia",Verified
+Consumer Electronics Retail,Power Retail,South Africa,https://www.power.co.za,"5,000+","$1B+",1963,Large Enterprise,"Electronics, Appliances, South Africa",Verified
+Consumer Electronics Retail,RT-Mart,Taiwan,https://www.rt-mart.com.tw,"10,000+","$2B+",1996,Large Enterprise,"Hypermarket, Electronics, Taiwan",Verified
+Grocery Chains,Walmart,USA,https://www.walmart.com,"2,300,000+","$648B+",1962,Conglomerate,"Hypermarkets, Discount, Grocery",Verified
+Grocery Chains,Kroger,USA,https://www.kroger.com,"465,000+","$150B+",1883,Conglomerate,"Supermarkets, Grocery, Fuel",Verified
+Grocery Chains,Aldi,Germany,https://www.aldi.com,"200,000+","$130B+",1946,Large Enterprise,"Discount Grocery, Private Label",Verified
+Grocery Chains,Lidl,Germany,https://www.lidl.com,"310,000+","$100B+",1973,Large Enterprise,"Discount Grocery, Private Label",Verified
+Grocery Chains,Tesco,UK,https://www.tesco.com,"450,000+","$85B+",1919,Conglomerate,"Supermarkets, Grocery, General Merchandise",Verified
+Grocery Chains,Carrefour,France,https://www.carrefour.com,"320,000+","$90B+",1959,Conglomerate,"Hypermarkets, Supermarkets, Convenience",Verified
+Grocery Chains,Auchan,France,https://www.auchan.fr,"350,000+","$50B+",1961,Conglomerate,"Hypermarkets, Retail, Banking",Verified
+Grocery Chains,Rewe Group,Germany,https://www.rewe-group.com,"380,000+","$75B+",1927,Conglomerate,"Supermarkets, Travel, DIY",Verified
+Grocery Chains,Edeka Group,Germany,https://www.edeka.de,"380,000+","$70B+",1907,Conglomerate,"Supermarkets, Food Service, Wholesale",Verified
+Grocery Chains,Sainsbury's,UK,https://www.sainsburys.co.uk,"189,000+","$40B+",1869,Large Enterprise,"Supermarkets, Grocery, General Merchandise",Verified
+Grocery Chains,Costco,USA,https://www.costco.com,"304,000+","$248B+",1976,Large Enterprise,"Membership Warehouse, Bulk Sales",Verified
+Grocery Chains,Target,USA,https://www.target.com,"450,000+","$109B+",1902,Large Enterprise,"General Merchandise, Grocery, Style",Verified
+Grocery Chains,Albertsons,USA,https://www.albertsons.com,"290,000+","$78B+",1866,Large Enterprise,"Supermarkets, Grocery, Pharmacy",Verified
+Grocery Chains,Ahold Delhaize,Netherlands,https://www.aholddelhaize.com,"414,000+","$94B+",2016,Conglomerate,"Supermarkets, Food Retail, E-commerce",Verified
+Grocery Chains,Seven & I (7-Eleven),Japan,https://www.7andi.com,"70,000+","$70B+",1973,Conglomerate,"Convenience Stores, Superstores",Verified
+Grocery Chains,Aeon Group,Japan,https://www.aeon.info,"500,000+","$75B+",1758,Conglomerate,"Supermarkets, Shopping Centers, Finance",Verified
+Grocery Chains,Woolworths,Australia,https://www.woolworths.com.au,"215,000+","$45B+",1924,Large Enterprise,"Supermarkets, Everyday Needs",Verified
+Grocery Chains,Coles,Australia,https://www.coles.com.au,"120,000+","$35B+",1914,Large Enterprise,"Supermarkets, Liquor, Convenience",Verified
+Grocery Chains,Loblaw Companies,Canada,https://www.loblaw.ca,"200,000+","$50B+",1956,Large Enterprise,"Supermarkets, Pharmacy, Apparel",Verified
+Discount Stores,Dollar General,USA,https://www.dollargeneral.com,"170,000+","$40B+",1939,Large Enterprise,"Discount, Convenience, Basic Goods",Verified
+Discount Stores,Dollar Tree,USA,https://www.dollartree.com,"193,000+","$28B+",1986,Large Enterprise,"Variety, Discount, Everything $1.25",Verified
+Discount Stores,Five Below,USA,https://www.fivebelow.com,"20,000+","$3B+",2002,Large Enterprise,"Teen & Pre-Teen, Trend-right, $1-$5",Verified
+Discount Stores,Family Dollar,USA,https://www.familydollar.com,"60,000+","$11B+",1959,Large Enterprise,"Discount, Neighborhood, Basic Goods",Verified
+Discount Stores,B&M Retail,UK,https://www.bmstores.co.uk,"35,000+","$6B+",1978,Large Enterprise,"Variety, General Merchandise, UK",Verified
+Discount Stores,Action,Netherlands,https://www.action.com,"80,000+","$9B+",1993,Large Enterprise,"Non-Food Discount, Europe",Verified
+Discount Stores,Daiso,Japan,https://www.daisoglobal.com,"10,000+","$4B+",1977,Large Enterprise,"100-Yen Shop, Variety, Japan",Verified
+Discount Stores,Miniso,China,https://www.miniso.com,"20,000+","$2B+",2013,Large Enterprise,"Japanese-inspired Lifestyle, Value",Verified
+Discount Stores,TJX Companies (TJ Maxx/Marshalls),USA,https://www.tjx.com,"320,000+","$54B+",1987,Large Enterprise,"Off-Price Apparel, Home Fashion",Verified
+Discount Stores,Ross Stores,USA,https://www.rossstores.com,"100,000+","$20B+",1982,Large Enterprise,"Off-Price Apparel, Home Decor",Verified
+Discount Stores,Burlington Stores,USA,https://www.burlington.com,"45,000+","$10B+",1972,Large Enterprise,"Off-Price Apparel, Baby, Home",Verified
+Discount Stores,Big Lots,USA,https://www.biglots.com,"35,000+","$6B+",1967,Large Enterprise,"Closeout, Discount, Furniture",Verified
+Discount Stores,Ollie's Bargain Outlet,USA,https://www.ollies.us,"10,000+","$2B+",1982,Large Enterprise,"Closeouts, Bargains, Good Stuff Cheap",Verified
+Discount Stores,Maxi Zoo (Fressnapf),Germany,https://www.maxizoo.fr,"N/A","N/A",2004,Mid-Market,"Pet Supplies, Discount, France",Verified
+Discount Stores,Kik Textilien,Germany,https://www.kik.de,"30,000+","$2B+",1994,Large Enterprise,"Textile Discount, Apparel, Germany",Verified
+Discount Stores,Mr Price Group,South Africa,https://www.mrpricegroup.com,"30,000+","$2B+",1985,Large Enterprise,"Apparel, Home, Discount, South Africa",Verified
+Discount Stores,The Reject Shop,Australia,https://www.rejectshop.com.au,"5,000+","$700M+",1981,Large Enterprise,"Discount Variety, Australia",Verified
+Discount Stores,Miniso Japan,Japan,https://miniso.jp,"N/A","N/A",2013,Large Enterprise,"Japanese-inspired Lifestyle, Value",Verified
+Discount Stores,Dollarama,Canada,https://www.dollarama.com,"25,000+","$5B+",1992,Large Enterprise,"Dollar Store, Variety, Canada",Verified
+Beauty Retailers,Sephora (LVMH),France,https://www.sephora.com,"45,000+","$10B+",1970,Large Enterprise,"Prestige Beauty, Skincare, Fragrance",Verified
+Beauty Retailers,Ulta Beauty,USA,https://www.ulta.com,"50,000+","$11B+",1990,Large Enterprise,"Prestige & Mass Beauty, Salon",Verified
+Beauty Retailers,Boots (Walgreens),UK,https://www.boots.com,"55,000+","$10B+",1849,Large Enterprise,"Health, Beauty, Pharmacy, UK",Verified
+Beauty Retailers,Superdrug,UK,https://www.superdrug.com,"13,000+","$2B+",1966,Large Enterprise,"Health, Beauty, UK",Verified
+Beauty Retailers,Douglas,Germany,https://www.douglas.de,"20,000+","$4B+",1910,Large Enterprise,"Prestige Beauty, Perfume, Europe",Verified
+Beauty Retailers,Watsons (AS Watson),Hong Kong,https://www.watsons.com.hk,"130,000+","$22B+",1828,Large Enterprise,"Health, Beauty, Personal Care, Asia",Verified
+Beauty Retailers,Space NK,UK,https://www.spacenk.com,"1,000+","$200M+",1993,Mid-Market,"Cult Beauty, Skincare, Apothecary",Verified
+Beauty Retailers,Feelunique (Sephora),UK,https://www.feelunique.com,"500+","$100M+",2005,Mid-Market,"Online Beauty, UK",Verified
+Beauty Retailers,Lookfantastic,UK,https://www.lookfantastic.com,"1,000+","$200M+",1996,Mid-Market,"Online Beauty, UK, Europe",Verified
+Beauty Retailers,Mecca Brands,Australia,https://www.mecca.com.au,"5,000+","$500M+",1997,Mid-Market,"Prestige Beauty, Australia, New Zealand",Verified
+Beauty Retailers,Lush,UK,https://www.lush.com,"15,000+","$1B+",1995,Large Enterprise,"Fresh Handmade Cosmetics, Ethical",Verified
+Beauty Retailers,Kiehl's (L'Oréal),USA,https://www.kiehls.com,"N/A","N/A",1851,Large Enterprise,"Apothecary Skincare, Since 1851",Verified
+Beauty Retailers,The Body Shop,Brazil,https://www.thebodyshop.com,"10,000+","$1B+",1976,Large Enterprise,"Naturally Inspired, Ethical Beauty",Verified
+Beauty Retailers,NYX Professional Makeup (L'Oréal),USA,https://www.nyxcosmetics.com,"N/A","N/A",1999,Large Enterprise,"Professional Makeup, Affordable",Verified
+Beauty Retailers,Innisfree,South Korea,https://www.innisfree.com,"5,000+","$500M+",2000,Large Enterprise,"Natural, Jeju Island Ingredients",Verified
+Beauty Retailers,Etude House,South Korea,https://www.etude.com,"3,000+","$300M+",1995,Large Enterprise,"Playful, Cute, Korean Beauty",Verified
+Beauty Retailers,Shiseido,Japan,https://www.shiseido.com,"46,000+","$8B+",1872,Large Enterprise,"Skincare, Makeup, Fragrance",Verified
+Beauty Retailers,Sally Beauty,USA,https://www.sallybeauty.com,"20,000+","$4B+",1964,Large Enterprise,"Professional Beauty, DIY Hair Color",Verified
+Furniture Outlets,IKEA,Netherlands,https://www.ikea.com,"225,000+","$50B+",1943,Conglomerate,"Flat-pack Furniture, Home Accessories",Verified
+Furniture Outlets,Ashley Furniture,USA,https://www.ashleyfurniture.com,"30,000+","$5B+",1945,Large Enterprise,"Furniture, Home Decor, Mattresses",Verified
+Furniture Outlets,Wayfair,USA,https://www.wayfair.com,"16,000+","$12B+",2002,Large Enterprise,"Home Goods, Furniture, Decor",Verified
+Furniture Outlets,Williams-Sonoma (Pottery Barn/West Elm),USA,https://www.williams-sonomainc.com,"7,000+","$9B+",1956,Large Enterprise,"Home Furnishings, Kitchenware",Verified
+Furniture Outlets,Rojo,USA,https://www.raymourflanigan.com,"7,000+","$2B+",1947,Large Enterprise,"Furniture, Mattresses, Northeast US",Verified
+Furniture Outlets,La-Z-Boy,USA,https://www.la-z-boy.com,"11,000+","$2B+",1927,Large Enterprise,"Recliners, Furniture, Upholstery",Verified
+Furniture Outlets,Restoration Hardware,USA,https://www.rh.com,"7,000+","$4B+",1979,Large Enterprise,"Luxury Home Furnishings, Galleries",Verified
+Furniture Outlets,HomeGoods (TJX),USA,https://www.homegoods.com,"N/A","N/A",1992,Large Enterprise,"Off-Price Home Decor, Furniture",Verified
+Furniture Outlets,Natuzzi,Italy,https://www.natuzzi.com,"5,000+","$500M+",1959,Large Enterprise,"Italian Leather Furniture, Design",Verified
+Furniture Outlets,Home Centre (Landmark Group),UAE,https://www.homecentre.com,"10,000+","$1B+",1995,Large Enterprise,"Home Furniture, Middle East",Verified
+Furniture Outlets,Fantastic Furniture,Australia,https://www.fantasticfurniture.com.au,"2,000+","$500M+",1990,Large Enterprise,"Value Furniture, Australia",Verified
+Furniture Outlets,Harvey Norman,Australia,https://www.harveynorman.com.au,"8,000+","$3B+",1982,Large Enterprise,"Electronics, Furniture, Computers",Verified
+Furniture Outlets,Nitori Holdings,Japan,https://www.nitori-group.com,"20,000+","$7B+",1967,Large Enterprise,"Furniture, Home Furnishings, Japan",Verified
+Furniture Outlets,Muji (Ryohin Keikaku),Japan,https://www.muji.com,"20,000+","$4B+",1980,Large Enterprise,"No-Brand Quality Goods, Simple",Verified
+Furniture Outlets,JYSK,Denmark,https://www.jysk.com,"30,000+","$5B+",1979,Large Enterprise,"Scandinavian Home Living, Global",Verified
+Furniture Outlets,Conforama,France,https://www.conforama.fr,"15,000+","$3B+",1967,Large Enterprise,"Furniture, Appliances, France",Verified
+Furniture Outlets,Leroy Merlin,France,https://www.leroymerlin.com,"90,000+","$25B+",1923,Large Enterprise,"DIY, Home Improvement, Garden",Verified
+Furniture Outlets,Made.com,UK,https://www.made.com,"500+","$200M+",2010,Mid-Market,"Designer Furniture, Online",Verified
+Furniture Outlets,BoConcept,Denmark,https://www.boconcept.com,"1,500+","$200M+",1952,Mid-Market,"Scandinavian Design, Furniture",Verified
+Sporting Goods,Nike,USA,https://www.nike.com,"83,700+","$53B+",1964,Conglomerate,"Athletic Footwear, Apparel, Equipment",Verified
+Sporting Goods,Adidas,Germany,https://www.adidas.com,"61,000+","$25B+",1949,Conglomerate,"Athletic Footwear, Apparel, Equipment",Verified
+Sporting Goods,Decathlon,France,https://www.decathlon.com,"101,000+","$16B+",1976,Large Enterprise,"Sports Equipment, Apparel, In-house Brands",Verified
+Sporting Goods,Dick's Sporting Goods,USA,https://www.dickssportinggoods.com,"50,000+","$13B+",1948,Large Enterprise,"Sporting Goods, Apparel, Footwear",Verified
+Sporting Goods,Academy Sports + Outdoors,USA,https://www.academy.com,"22,000+","$7B+",1938,Large Enterprise,"Sporting Goods, Outdoor, Family",Verified
+Sporting Goods,Foot Locker,USA,https://www.footlocker.com,"40,000+","$8B+",1974,Large Enterprise,"Athletic Footwear, Apparel",Verified
+Sporting Goods,Puma,Germany,https://www.puma.com,"19,000+","$9B+",1948,Large Enterprise,"Athletic Footwear, Apparel, Sponsorships",Verified
+Sporting Goods,JD Sports,UK,https://www.jdsports.co.uk,"60,000+","$12B+",1981,Large Enterprise,"Sports Fashion, Footwear, Global",Verified
+Sporting Goods,Under Armour,USA,https://www.underarmour.com,"8,900+","$6B+",1996,Large Enterprise,"Performance Apparel, Footwear",Verified
+Sporting Goods,Columbia Sportswear,USA,https://www.columbia.com,"7,600+","$4B+",1938,Large Enterprise,"Outdoor Apparel, Footwear, Equipment",Verified
+Sporting Goods,REI Co-op,USA,https://www.rei.com,"15,000+","$4B+",1938,Large Enterprise,"Outdoor Gear, Apparel, Co-op",Verified
+Sporting Goods,Asics,Japan,https://www.asics.com,"8,000+","$4B+",1949,Large Enterprise,"Performance Running, Footwear",Verified
+Sporting Goods,Lululemon Athletica,Canada,https://www.lululemon.com,"38,000+","$10B+",1998,Large Enterprise,"Yoga, Technical Apparel, Lifestyle",Verified
+Sporting Goods,Intersport,Switzerland,https://www.intersport.com,"70,000+","$13B+",1968,Large Enterprise,"Sporting Goods, Retail Network",Verified
+Sporting Goods,Modell's Sporting Goods,USA,https://www.modells.com,"N/A","N/A",1889,Large Enterprise,"Sporting Goods, Northeast US",Verified
+Sporting Goods,Sports Direct (Frasers Group),UK,https://www.sportsdirect.com,"30,000+","$6B+",1982,Large Enterprise,"Sports Equipment, Apparel, UK",Verified
+Sporting Goods,Big 5 Sporting Goods,USA,https://www.big5sportinggoods.com,"10,000+","$1B+",1955,Large Enterprise,"Sporting Goods, Western US",Verified
+Sporting Goods,Eastbay,USA,https://www.eastbay.com,"N/A","N/A",1980,Large Enterprise,"Team Sports, Footwear, Online",Verified
+Sporting Goods,Finish Line,USA,https://www.finishline.com,"14,000+","$2B+",1976,Large Enterprise,"Athletic Footwear, Apparel",Verified
+Toy Stores,Toys "R" Us,USA,https://www.toysrus.com,"N/A","N/A",1948,Large Enterprise,"Toy Retail, Global Brand",Verified
+Toy Stores,LEGO Store,Denmark,https://www.lego.com,"24,000+","$9B+",1932,Large Enterprise,"Construction Toys, Creative Play",Verified
+Toy Stores,Hamleys,UK,https://www.hamleys.com,"1,000+","$100M+",1760,Large Enterprise,"World's Oldest Toy Store, Flagship",Verified
+Toy Stores,FAO Schwarz,USA,https://www.faoschwarz.com,"500+","$50M+",1862,Mid-Market,"Luxury Toys, Flagship Experience",Verified
+Toy Stores,The Entertainer,UK,https://www.thetoyshop.com,"3,000+","$300M+",1981,Mid-Market,"Toy Retail, UK",Verified
+Toy Stores,Smyths Toys,UK,https://www.smythstoys.com,"5,000+","$800M+",1986,Large Enterprise,"Toy Superstores, UK, Ireland",Verified
+Toy Stores,Bandai Namco,Japan,https://www.bandainamco.co.jp,"8,000+","$7B+",2005,Large Enterprise,"Toys, Video Games, Entertainment",Verified
+Toy Stores,Mattel,USA,https://www.mattel.com,"32,000+","$5B+",1945,Large Enterprise,"Dolls, Vehicles, Games, Infant",Verified
+Toy Stores,Hasbro,USA,https://www.hasbro.com,"6,000+","$6B+",1923,Large Enterprise,"Games, Toys, Entertainment",Verified
+Toy Stores,Spin Master,Canada,https://www.spinmaster.com,"2,000+","$2B+",1994,Large Enterprise,"Innovative Toys, Games, Entertainment",Verified
+Toy Stores,Barnes & Noble,USA,https://www.barnesandnoble.com,"20,000+","$4B+",1886,Large Enterprise,"Books, Toys, Games, Cafe",Verified
+Toy Stores,Target Toys,USA,https://www.target.com,"450,000+","$109B+",1902,Large Enterprise,"General Merchandise, Grocery, Style",Verified
+Toy Stores,Walmart Toys,USA,https://www.walmart.com,"2,300,000+","$648B+",1962,Conglomerate,"Hypermarkets, Discount, Grocery",Verified
+Toy Stores,Learning Express Toys,USA,https://www.learningexpress.com,"N/A","N/A",1987,Franchise,"Educational Toys, Franchise",Verified
+Toy Stores,Mastermind Toys,Canada,https://www.mastermindtoys.com,"1,000+","$100M+",1984,Mid-Market,"Educational Toys, Canada",Verified
+Toy Stores,Imagining,USA,https://www.imaginationtoys.com,"N/A","N/A",1986,Small Enterprise,"Educational Toys, Independent",Verified
+Toy Stores,Kids II,USA,https://www.kids2.com,"1,000+","$200M+",1969,Mid-Market,"Infant & Toddler Toys, Gear",Verified
+Toy Stores,Melissa & Doug,USA,https://www.melissaanddoug.com,"500+","$100M+",1988,Mid-Market,"Wooden Toys, Educational, Creative",Verified
+Bookstores,Barnes & Noble,USA,https://www.barnesandnoble.com,"20,000+","$4B+",1886,Large Enterprise,"Books, Toys, Games, Cafe",Verified
+Bookstores,Waterstones,UK,https://www.waterstones.com,"3,000+","$400M+",1982,Large Enterprise,"Bookseller, UK, Ireland",Verified
+Bookstores,WHSmith,UK,https://www.whsmith.co.uk,"14,000+","$2B+",1792,Large Enterprise,"Books, News, Travel Retail",Verified
+Bookstores,Indigo Books,Canada,https://www.chapters.indigo.ca,"10,000+","$1B+",1996,Large Enterprise,"Books, Lifestyle, Home, Canada",Verified
+Bookstores,Foyles,UK,https://www.foyles.co.uk,"500+","$50M+",1903,Mid-Market,"Bookseller, London, Flagship",Verified
+Bookstores,Books-A-Million,USA,https://www.booksamillion.com,"5,000+","$500M+",1917,Large Enterprise,"Books, Gifts, Cafe, Southeast US",Verified
+Bookstores,Kinokuniya,Japan,https://www.kinokuniya.com,"1,000+","$200M+",1927,Large Enterprise,"Japanese Books, International, Art",Verified
+Bookstores,Dymocks,Australia,https://www.dymocks.com.au,"1,000+","$100M+",1879,Mid-Market,"Bookseller, Australia",Verified
+Bookstores,Thalia,Germany,https://www.thalia.de,"5,000+","$500M+",1919,Large Enterprise,"Books, Media, Germany",Verified
+Bookstores,Fnac,France,https://www.fnac.com,"25,000+","$9B+",1954,Large Enterprise,"Electronics, Books, Media",Verified
+Bookstores,Liber Feltrinelli,Italy,https://www.lafeltrinelli.it,"3,000+","$300M+",1954,Large Enterprise,"Bookseller, Italy",Verified
+Bookstores,Standaard Boekhandel,Belgium,https://www.standaardboekhandel.be,"500+","$50M+",1925,Mid-Market,"Bookseller, Belgium",Verified
+Bookstores,Adlibris,Sweden,https://www.adlibris.com,"200+","$50M+",1997,Mid-Market,"Online Bookseller, Scandinavia",Verified
+Bookstores,Akademibokhandeln,Sweden,https://www.akademibokhandeln.se,"1,000+","$100M+",1963,Mid-Market,"Bookseller, Sweden",Verified
+Bookstores,Popular Bookstore,Singapore,https://www.popular.com.sg,"2,000+","$200M+",1934,Mid-Market,"Books, Educational, Southeast Asia",Verified
+Bookstores,Eslite Bookstore,Taiwan,https://www.eslitecorp.com,"1,000+","$100M+",1989,Mid-Market,"24-hour Bookstore, Lifestyle, Taiwan",Verified
+Bookstores,Kyobo Book Centre,South Korea,https://www.kyobobook.co.kr,"5,000+","$500M+",1981,Large Enterprise,"Bookseller, Korea",Verified
+Bookstores,Book Depository,UK,https://www.bookdepository.com,"200+","$50M+",2004,Mid-Market,"Online Books, Free Shipping",Verified
+Jewelry Retail,Tiffany & Co. (LVMH),USA,https://www.tiffany.com,"14,000+","$5B+",1837,Large Enterprise,"Luxury Jewelry, Diamonds, Silver",Verified
+Jewelry Retail,Swarovski,Austria,https://www.swarovski.com,"34,000+","$3B+",1895,Large Enterprise,"Crystal Jewelry, Figurines, Home",Verified
+Jewelry Retail,Pandora,Denmark,https://www.pandora.net,"26,000+","$4B+",1982,Large Enterprise,"Charm Bracelets, Jewelry, Affordable",Verified
+Jewelry Retail,Signet Jewelers (Kay/Zales),UK,https://www.signetjewelers.com,"21,000+","$8B+",1950,Large Enterprise,"Jewelry, Diamonds, Bridal, US",Verified
+Jewelry Retail,Chow Tai Fook,Hong Kong,https://www.chowtaifook.com,"30,000+","$10B+",1929,Large Enterprise,"Jewelry, Gold, China, Hong Kong",Verified
+Jewelry Retail,Luk Fook,Hong Kong,https://www.lukfook.com,"10,000+","$2B+",1991,Large Enterprise,"Jewelry, Gold, Hong Kong",Verified
+Jewelry Retail,Chow Sang Sang,Hong Kong,https://www.chowsangsang.com,"8,000+","$2B+",1934,Large Enterprise,"Jewelry, Gold, Hong Kong",Verified
+Jewelry Retail,Bvlgari (LVMH),Italy,https://www.bulgari.com,"5,000+","$2B+",1884,Large Enterprise,"Luxury Jewelry, Watches, Perfumes",Verified
+Jewelry Retail,Cartier (Richemont),France,https://www.cartier.com,"8,000+","$7B+",1847,Large Enterprise,"Luxury Jewelry, Watches, Accessories",Verified
+Jewelry Retail,Buccellati (Richemont),Italy,https://www.buccellati.com,"500+","$100M+",1919,Mid-Market,"High Jewelry, Italian Craftsmanship",Verified
+Jewelry Retail,Graff Diamonds,UK,https://www.graff.com,"2,000+","$500M+",1960,Large Enterprise,"Ultra-High Jewelry, Diamonds",Verified
+Jewelry Retail,Harry Winston,USA,https://www.harrywinston.com,"1,000+","$500M+",1932,Large Enterprise,"High Jewelry, Diamonds, Timepieces",Verified
+Jewelry Retail,Blue Nile,USA,https://www.bluenile.com,"500+","$500M+",1999,Mid-Market,"Online Diamond Jewelry, Engagement",Verified
+Jewelry Retail,James Allen,USA,https://www.jamesallen.com,"300+","$200M+",2006,Mid-Market,"Online Diamond Jewelry, Engagement",Verified
+Jewelry Retail,Birks Group,Canada,https://www.birks.com,"1,000+","$100M+",1879,Mid-Market,"Jewelry, Timepieces, Canada",Verified
+Jewelry Retail,Tanishq (Titan),India,https://www.tanishq.co.in,"5,000+","$2B+",1994,Large Enterprise,"Jewelry, Gold, Diamonds, India",Verified
+Jewelry Retail,Kalyan Jewellers,India,https://www.kalyanjewellers.net,"5,000+","$2B+",1993,Large Enterprise,"Jewelry, Gold, India, Middle East",Verified
+Jewelry Retail,Joyalukkas,India,https://www.joyalukkas.com,"5,000+","$1B+",1966,Large Enterprise,"Jewelry, Gold, India, Middle East",Verified
+Jewelry Retail,Mejuri,Canada,https://www.mejuri.com,"500+","$100M+",2015,Mid-Market,"Fine Jewelry, Everyday, DTC",Verified
+Automotive Parts Retail,AutoZone,USA,https://www.autozone.com,"105,000+","$17B+",1979,Large Enterprise,"Auto Parts, Accessories, DIY",Verified
+Automotive Parts Retail,Advance Auto Parts,USA,https://www.advanceautoparts.com,"74,000+","$11B+",1932,Large Enterprise,"Auto Parts, Professional, DIY",Verified
+Automotive Parts Retail,O'Reilly Auto Parts,USA,https://www.oreillyauto.com,"90,000+","$16B+",1957,Large Enterprise,"Auto Parts, Professional, DIY",Verified
+Automotive Parts Retail,NAPA Auto Parts,USA,https://www.napaonline.com,"N/A","N/A",1925,Large Enterprise,"Auto Parts, Professional, Network",Verified
+Automotive Parts Retail,Carquest (Advance),USA,https://www.carquest.com,"N/A","N/A",1974,Large Enterprise,"Auto Parts, Professional, Network",Verified
+Automotive Parts Retail,Genuine Parts Company,USA,https://www.genpt.com,"58,000+","$23B+",1928,Large Enterprise,"Automotive, Industrial Parts",Verified
+Automotive Parts Retail,Euro Car Parts,UK,https://www.eurocarparts.com,"10,000+","$1B+",1978,Large Enterprise,"Car Parts, UK",Verified
+Automotive Parts Retail,Halfords,UK,https://www.halfords.com,"12,000+","$2B+",1892,Large Enterprise,"Auto Parts, Cycling, Retail",Verified
+Automotive Parts Retail,Repco,Australia,https://www.repco.com.au,"4,000+","$500M+",1922,Large Enterprise,"Auto Parts, Australia, New Zealand",Verified
+Automotive Parts Retail,Supercheap Auto,Australia,https://www.supercheapauto.com.au,"7,000+","$1B+",1972,Large Enterprise,"Auto Parts, Australia, New Zealand",Verified
+Automotive Parts Retail,Bapcor,Australia,https://www.bapcor.com.au,"5,000+","$1B+",1972,Large Enterprise,"Auto Parts, Trade, Australia",Verified
+Automotive Parts Retail,Mister Auto,France,https://www.mister-auto.com,"500+","$100M+",2007,Mid-Market,"Online Auto Parts, Europe",Verified
+Automotive Parts Retail,Autodoc,Germany,https://www.autodoc.de,"5,000+","$1B+",2008,Large Enterprise,"Online Auto Parts, Europe",Verified
+Automotive Parts Retail,Buy Auto Parts,USA,https://www.buyautoparts.com,"200+","$50M+",1999,Small Enterprise,"Online Auto Parts, US",Verified
+Automotive Parts Retail,CarParts.com,USA,https://www.carparts.com,"1,000+","$100M+",1995,Mid-Market,"Online Auto Parts, US",Verified
+Automotive Parts Retail,1A Auto,USA,https://www.1aauto.com,"500+","$100M+",1999,Mid-Market,"Online Auto Parts, How-To Videos",Verified
+Automotive Parts Retail,RockAuto,USA,https://www.rockauto.com,"500+","$100M+",1999,Mid-Market,"Online Auto Parts, Discount",Verified
+Automotive Parts Retail,Pep Boys,USA,https://www.pepboys.com,"9,000+","$2B+",1921,Large Enterprise,"Auto Parts, Service, Tires",Verified
+Automotive Parts Retail,Canadian Tire,Canada,https://www.canadiantire.ca,"58,000+","$15B+",1922,Large Enterprise,"Automotive, Hardware, Sports",Verified
+Pet Supplies,Petco,USA,https://www.petco.com,"27,000+","$6B+",1965,Large Enterprise,"Pet Food, Supplies, Grooming, Vet",Verified
+Pet Supplies,Petsmart,USA,https://www.petsmart.com,"56,000+","$7B+",1986,Large Enterprise,"Pet Food, Supplies, Grooming, Training",Verified
+Pet Supplies,Chewy,USA,https://www.chewy.com,"21,000+","$11B+",2011,Large Enterprise,"Online Pet Food, Supplies, Pharmacy",Verified
+Pet Supplies,Zoomark (Zoo Plus),Germany,https://www.zooplus.com,"1,000+","$1B+",1999,Large Enterprise,"Online Pet Supplies, Europe",Verified
+Pet Supplies,Fressnapf,Germany,https://www.fressnapf.com,"15,000+","$3B+",1990,Large Enterprise,"Pet Supplies, Europe",Verified
+Pet Supplies,PetSmart Canada,Canada,https://www.petsmart.ca,"N/A","N/A",1996,Large Enterprise,"Pet Food, Supplies, Canada",Verified
+Pet Supplies,Petbarn,Australia,https://www.petbarn.com.au,"2,000+","$200M+",1993,Mid-Market,"Pet Supplies, Australia",Verified
+Pet Supplies,Pet Valu,Canada,https://www.petvalu.com,"5,000+","$500M+",1976,Large Enterprise,"Pet Food, Supplies, Canada",Verified
+Pet Supplies,Pet Supermarket,USA,https://www.petsupermarket.com,"2,000+","$200M+",1973,Mid-Market,"Pet Supplies, Southeast US",Verified
+Pet Supplies,Pet Supplies Plus,USA,https://www.petsuppliesplus.com,"5,000+","$500M+",1988,Large Enterprise,"Pet Food, Supplies, Franchise",Verified
+Pet Supplies,Petland,USA,https://www.petland.com,"2,000+","$200M+",1967,Mid-Market,"Puppies, Pet Supplies, Franchise",Verified
+Pet Supplies,Chuck & Don's,USA,https://www.chuckanddons.com,"1,000+","$100M+",1990,Mid-Market,"Pet Supplies, Midwest US",Verified
+Pet Supplies,Petstock,Australia,https://www.petstock.com.au,"3,000+","$300M+",2002,Mid-Market,"Pet Supplies, Australia",Verified
+Pet Supplies,Koko's,Australia,https://www.kokospet.com,"500+","$50M+",2007,Small Enterprise,"Pet Supplies, Australia",Verified
+Pet Supplies,Animates,New Zealand,https://www.animates.co.nz,"1,000+","$100M+",1994,Mid-Market,"Pet Supplies, New Zealand",Verified
+Pet Supplies,Jollyes,UK,https://www.jollyes.co.uk,"1,000+","$100M+",1971,Mid-Market,"Pet Supplies, UK",Verified
+Pet Supplies,Holly & Lil,UK,https://www.hollyandlil.com,"N/A","N/A",2008,Small Enterprise,"Pet Accessories, UK",Verified
+Pet Supplies,Pets at Home,UK,https://www.petsathome.com,"10,000+","$2B+",1991,Large Enterprise,"Pet Food, Supplies, Vet, Grooming",Verified
+Outlet Malls,Simon Property Group,USA,https://www.simon.com,"4,500+","$5B+",1960,Large Enterprise,"Malls, Premium Outlets, Retail REIT",Verified
+Outlet Malls,McArthurGlen Group,UK,https://www.mcarthurglen.com,"1,000+","$200M+",1993,Mid-Market,"Designer Outlets, Europe",Verified
+Outlet Malls,Chelsea Premium Outlets (Simon),USA,https://www.premiumoutlets.com,"N/A","N/A",1989,Large Enterprise,"Luxury Outlet Centers, US",Verified
+Outlet Malls,Tanger Outlets,USA,https://www.tangeroutlet.com,"500+","$500M+",1981,Large Enterprise,"Outlet Centers, US",Verified
+Outlet Malls,Value Retail (Bicester Village),UK,https://www.valuetail.com,"1,000+","$200M+",1992,Mid-Market,"Luxury Outlet Villages, Europe",Verified
+Outlet Malls,Neinver (Fashion Outlet),Spain,https://www.neinver.com,"500+","$100M+",1967,Mid-Market,"Outlet Centers, Europe",Verified
+Outlet Malls,Las Rozas Village,Spain,https://www.lasrozasvillage.com,"N/A","N/A",2000,Mid-Market,"Luxury Outlet, Madrid",Verified
+Outlet Malls,Designer Outlets Canada,Canada,https://www.designeroutletcanada.ca,"N/A","N/A",2013,Mid-Market,"Designer Outlets, Canada",Verified
+Outlet Malls,Gotemba Premium Outlets,Japan,https://www.premiumoutlets.co.jp,"N/A","N/A",2000,Mid-Market,"Outlet Center, Japan",Verified
+Outlet Malls,Serravalle Designer Outlet,Italy,https://www.mcarthurglen.com,"N/A","N/A",2000,Mid-Market,"Designer Outlet, Italy",Verified
+Outlet Malls,La Vallée Village,France,https://www.lavalleevillage.com,"N/A","N/A",2000,Mid-Market,"Luxury Outlet, Paris",Verified
+Outlet Malls,Ingolstadt Village,Germany,https://www.ingolstadtvillage.com,"N/A","N/A",2003,Mid-Market,"Luxury Outlet, Germany",Verified
+Outlet Malls,Maasmechelen Village,Belgium,https://www.maasmechelenvillage.com,"N/A","N/A",2001,Mid-Market,"Luxury Outlet, Belgium",Verified
+Outlet Malls,Barberino Designer Outlet,Italy,https://www.mcarthurglen.com,"N/A","N/A",2011,Mid-Market,"Designer Outlet, Tuscany",Verified
+Outlet Malls,Las Americas Premium Outlets,USA,https://www.premiumoutlets.com,"N/A","N/A",1998,Mid-Market,"Outlet Center, California",Verified
+Outlet Malls,Woodbury Common Premium Outlets,USA,https://www.premiumoutlets.com,"N/A","N/A",1985,Mid-Market,"Outlet Center, New York",Verified
+Outlet Malls,Desert Hills Premium Outlets,USA,https://www.premiumoutlets.com,"N/A","N/A",1990,Mid-Market,"Outlet Center, California",Verified
+Outlet Malls,Ashford Designer Outlet,UK,https://www.mcarthurglen.com,"N/A","N/A",2000,Mid-Market,"Designer Outlet, UK",Verified
+Vending Machines,Coca-Cola Freestyle,USA,https://www.coca-colafreestyle.com,"N/A","N/A",2009,Mid-Market,"Beverage Dispensing, Touchscreen",Verified
+Vending Machines,Crane Co.,USA,https://www.craneco.com,"11,000+","$3B+",1855,Large Enterprise,"Vending, Payment Solutions, Engineering",Verified
+Vending Machines,Fuji Electric,Japan,https://www.fujielectric.com,"28,000+","$7B+",1923,Large Enterprise,"Vending Machines, Food Service, Electronics",Verified
+Vending Machines,SandenVendo,Japan,https://www.sandenvendo.com,"5,000+","$1B+",1947,Large Enterprise,"Vending Machines, Refrigeration",Verified
+Vending Machines,Bianchi Vending Group,Italy,https://www.bianchivending.com,"200+","$50M+",1965,Small Enterprise,"Vending Machines, Italy",Verified
+Vending Machines,Royal Vendors,USA,https://www.royalvendors.com,"500+","$100M+",1948,Mid-Market,"Beverage Vending, US",Verified
+Vending Machines,Azkoyen Group,Spain,https://www.azkoyen.com,"1,000+","$200M+",1967,Mid-Market,"Vending, Payment Systems, Spain",Verified
+Vending Machines,Seaga Manufacturing,USA,https://www.seaga.com,"200+","$50M+",1985,Small Enterprise,"Vending Machines, Manufacturing",Verified
+Vending Machines,FAS International,USA,https://www.fasint.com,"100+","$20M+",1980,Small Enterprise,"Vending Machine Parts, US",Verified
+Vending Machines,AMS Vending,USA,https://www.amsvend.com,"100+","$20M+",1985,Small Enterprise,"Vending Machines, US",Verified
+Vending Machines,Automatic Products,USA,https://www.apvending.com,"N/A","N/A",1955,Mid-Market,"Vending Machines, US",Verified
+Vending Machines,N&W Global Vending,Italy,https://www.nwglobalvending.com,"1,000+","$200M+",1990,Mid-Market,"Vending Machines, Global",Verified
+Vending Machines,Jofemar Corporation,Spain,https://www.jofemar.com,"300+","$50M+",1978,Small Enterprise,"Vending Machines, Spain",Verified
+Vending Machines,Evoca Group,Italy,https://www.evocagroup.com,"2,000+","$500M+",2019,Mid-Market,"Coffee Machines, Vending, Group",Verified
+Vending Machines,Sielaff GmbH,Germany,https://www.sielaff.com,"1,000+","$200M+",1948,Mid-Market,"Vending Machines, Germany",Verified
+Vending Machines,Deutsche Wurlitzer,Germany,https://www.wurlitzer.de,"100+","$20M+",1910,Small Enterprise,"Jukeboxes, Vending, Germany",Verified
+Vending Machines,Westomatic Vending,UK,https://www.westomatic.co.uk,"200+","$50M+",1958,Small Enterprise,"Vending Machines, UK",Verified
+Vending Machines,Coin Acceptors Inc.,USA,https://www.coinco.com,"500+","$100M+",1928,Mid-Market,"Coin Mechanisms, Payment Systems",Verified
+Vending Machines,Crane Payment Innovations,USA,https://www.cranepi.com,"1,000+","$200M+",1990,Mid-Market,"Payment Solutions, Vending",Verified
+Duty-Free Shops,Dufry (Avolta),Switzerland,https://www.dufry.com,"40,000+","$5B+",1865,Large Enterprise,"Travel Retail, Duty-Free, Global",Verified
+Duty-Free Shops,Lotte Duty Free,South Korea,https://kr.lottedfs.com,"10,000+","$10B+",1980,Large Enterprise,"Duty-Free, Korea, Travel Retail",Verified
+Duty-Free Shops,Shilla Duty Free,South Korea,https://www.shilladfs.com,"5,000+","$7B+",1986,Large Enterprise,"Duty-Free, Korea, Luxury",Verified
+Duty-Free Shops,Lagardère Travel Retail,France,https://www.lagardere-tr.com,"30,000+","$5B+",1992,Large Enterprise,"Travel Retail, Food Service, Duty-Free",Verified
+Duty-Free Shops,China Duty Free Group,China,https://www.cdfg.com.cn,"10,000+","$10B+",1984,Large Enterprise,"Duty-Free, China, Travel Retail",Verified
+Duty-Free Shops,DFS Group (LVMH),Hong Kong,https://www.dfs.com,"10,000+","$3B+",1960,Large Enterprise,"Luxury Duty-Free, Travel Retail",Verified
+Duty-Free Shops,Heinemann,Germany,https://www.heinemann-dutyfree.com,"5,000+","$2B+",1879,Large Enterprise,"Duty-Free, Travel Retail, Germany",Verified
+Duty-Free Shops,Gebr. Heinemann,Germany,https://www.gbh.com,"5,000+","$2B+",1879,Large Enterprise,"Duty-Free, Travel Retail, Global",Verified
+Duty-Free Shops,King Power,Thailand,https://www.kingpower.com,"10,000+","$2B+",1989,Large Enterprise,"Duty-Free, Thailand, Travel Retail",Verified
+Duty-Free Shops,Delhi Duty Free,India,https://www.delhidutyfree.in,"1,000+","$100M+",2006,Mid-Market,"Duty-Free, India",Verified
+Duty-Free Shops,Flemingo International,Dubai,https://www.flemingodf.com,"5,000+","$500M+",1998,Mid-Market,"Travel Retail, Duty-Free, Emerging Markets",Verified
+Duty-Free Shops,3Sixty Duty Free (Lotte),South Korea,https://www.lottedfs.com,"N/A","N/A",2014,Mid-Market,"Cruise Ship Duty-Free",Verified
+Duty-Free Shops,Aer Rianta International,Ireland,https://www.ari.ie,"2,000+","$500M+",1988,Mid-Market,"Travel Retail, Duty-Free, Ireland",Verified
+Duty-Free Shops,The Nuance Group (Dufry),Switzerland,https://www.dufry.com,"N/A","N/A",1990,Large Enterprise,"Travel Retail, Duty-Free (Acquired)",Verified
+Duty-Free Shops,Starboard Cruise Services,USA,https://www.starboardcruise.com,"2,000+","$500M+",1988,Mid-Market,"Cruise Ship Retail, Duty-Free",Verified
+Duty-Free Shops,InMotion,USA,https://www.inmotionstores.com,"1,000+","$100M+",1999,Mid-Market,"Electronics, Airport Retail",Verified
+Duty-Free Shops,James Richardson Corporation,Australia,https://www.jamesrichardson.com.au,"1,000+","$100M+",1892,Mid-Market,"Duty-Free, Australia, Travel Retail",Verified
+Subscription Boxes,Stitch Fix,USA,https://www.stitchfix.com,"8,000+","$2B+",2011,Large Enterprise,"Personalized Styling, Apparel",Verified
+Subscription Boxes,Blue Apron,USA,https://www.blueapron.com,"1,500+","$500M+",2012,Mid-Market,"Meal Kits, Recipe Delivery",Verified
+Subscription Boxes,HelloFresh,Germany,https://www.hellofresh.com,"20,000+","$8B+",2011,Large Enterprise,"Meal Kits, Global",Verified
+Subscription Boxes,BarkBox,USA,https://www.barkbox.com,"500+","$400M+",2011,Mid-Market,"Dog Toys, Treats, Monthly Box",Verified
+Subscription Boxes,IPSY,USA,https://www.ipsy.com,"500+","$500M+",2011,Mid-Market,"Beauty Products, Monthly Bag",Verified
+Subscription Boxes,FabFitFun,USA,https://fabfitfun.com,"500+","$200M+",2010,Mid-Market,"Seasonal Box, Beauty, Wellness, Home",Verified
+Subscription Boxes,Alltrue,USA,https://www.alltrue.com,"100+","$50M+",2010,Small Enterprise,"Ethically Sourced, Lifestyle",Verified
+Subscription Boxes,Birchbox,USA,https://www.birchbox.com,"200+","$50M+",2010,Small Enterprise,"Beauty Samples, Monthly Box",Verified
+Subscription Boxes,Graze,UK,https://www.graze.com,"500+","$100M+",2008,Mid-Market,"Healthy Snacks, Subscription",Verified
+Subscription Boxes,Dollar Shave Club,USA,https://www.dollarshaveclub.com,"500+","$200M+",2011,Mid-Market,"Razors, Grooming, Subscription",Verified
+Subscription Boxes,Causebox (Alltrue),USA,https://www.alltrue.com,"N/A","N/A",2015,Small Enterprise,"Ethically Sourced, Lifestyle",Verified
+Subscription Boxes,Loot Crate,USA,https://www.lootcrate.com,"200+","$100M+",2012,Small Enterprise,"Geek, Gaming, Pop Culture",Verified
+Subscription Boxes,Book of the Month,USA,https://www.bookofthemonth.com,"100+","$50M+",1926,Small Enterprise,"Curated Books, Monthly",Verified
+Subscription Boxes,Glossybox,Germany,https://www.glossybox.com,"200+","$50M+",2011,Small Enterprise,"Beauty Samples, Global",Verified
+Subscription Boxes,Bespoke Post,USA,https://www.bespokepost.com,"100+","$20M+",2011,Small Enterprise,"Men's Grooming, Lifestyle",Verified
+Subscription Boxes,ButcherBox,USA,https://www.butcherbox.com,"200+","$100M+",2015,Small Enterprise,"Meat Delivery, Subscription",Verified
+Subscription Boxes,Universal Yums,USA,https://www.universalyums.com,"50+","$10M+",2014,Small Enterprise,"International Snacks, Monthly",Verified
+Subscription Boxes,Vinebox,USA,https://www.vinebox.com,"20+","$5M+",2015,Small Enterprise,"Wine, Curated, Subscription",Verified
+Subscription Boxes,Cratejoy,USA,https://www.cratejoy.com,"100+","$20M+",2014,Small Enterprise,"Subscription Box Marketplace, Platform",Verified
+Pop-Up Retail,STORY (acquired by Macy's),USA,https://www.macys.com,"N/A","N/A",2011,Small Enterprise,"Retail Storytelling, Themed Merchandising",Verified
+Pop-Up Retail,Showfields,USA,https://showfields.com,"100+","$20M+",2018,Small Enterprise,"Most Interesting Store, DTC Brands",Verified
+Pop-Up Retail,Brandless,USA,https://www.brandless.com,"N/A","N/A",2015,Small Enterprise,"Better-for-You, Direct-to-Consumer",Verified
+Pop-Up Retail,The Edit LDN,UK,https://www.theeditldn.com,"20+","$5M+",2015,Small Enterprise,"Luxury Fashion, Pop-Up Events",Verified
+Pop-Up Retail,Boxpark,UK,https://www.boxpark.co.uk,"100+","$20M+",2011,Small Enterprise,"Pop-Up Mall, Shipping Containers",Verified
+Pop-Up Retail,The Market Building,USA,https://themarketbuilding.com,"N/A","N/A",2018,Small Enterprise,"Rotating Retail, Food Hall",Verified
+Pop-Up Retail,Neighborhood Goods,USA,https://www.neighborhoodgoods.com,"100+","$20M+",2016,Small Enterprise,"Modern Department Store, Rotating Brands",Verified
+Pop-Up Retail,The Canvas,USA,https://www.thecanvas.com,"N/A","N/A",2017,Small Enterprise,"Pop-Up Space, NYC, Events",Verified
+Pop-Up Retail,PopUp Republic,USA,https://popuprepublic.com,"N/A","N/A",2010,Small Enterprise,"Pop-Up Retail Education, Resources",Verified
+Pop-Up Retail,PopUp Mob,USA,https://www.popupmob.com,"N/A","N/A",2014,Small Enterprise,"Pop-Up Marketplace, US",Verified
+Pop-Up Retail,Scoop NYC Pop-Ups,USA,https://www.scoopnyc.com,"N/A","N/A",1996,Small Enterprise,"Luxury Fashion, Pop-Up Stores",Verified
+Pop-Up Retail,The Line,USA,https://www.theline.com,"N/A","N/A",2013,Small Enterprise,"Luxury Home, Fashion, Pop-Up",Verified
+Pop-Up Retail,Ministry of Retail,USA,https://www.ministryofretail.com,"N/A","N/A",2015,Small Enterprise,"Pop-Up Retail Consulting",Verified
+Pop-Up Retail,Poppins,USA,https://poppinshops.com,"N/A","N/A",2015,Small Enterprise,"Pop-Up Space Rental, Platform",Verified
+Pop-Up Retail,PopUp Retail Asia,Singapore,https://www.popupretail.asia,"N/A","N/A",2013,Small Enterprise,"Pop-Up Retail, Asia",Verified
+Pop-Up Retail,PopUp Shop Singapore,Singapore,https://www.popupshopsg.com,"N/A","N/A",2015,Small Enterprise,"Short-Term Retail, Singapore",Verified
+Pop-Up Retail,Temporary Shop,France,https://www.temporary-shop.com,"N/A","N/A",2012,Small Enterprise,"Pop-Up Retail, France",Verified
+Pop-Up Retail,The Pop-Up Agency,France,https://www.thepopupagency.com,"N/A","N/A",2010,Small Enterprise,"Pop-Up Retail Agency, Europe",Verified

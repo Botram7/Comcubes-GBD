@@ -1,0 +1,370 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Higher Education (Universities),Harvard University,USA,https://www.harvard.edu,"21,000+","$6B Endowment $53B+",1636,Large Enterprise,"Ivy League, Research, Liberal Arts",Verified
+Higher Education (Universities),Stanford University,USA,https://www.stanford.edu,"16,000+","$8B Endowment $37B+",1885,Large Enterprise,"Technology, Entrepreneurship, Research",Verified
+Higher Education (Universities),University of Oxford,UK,https://www.ox.ac.uk,"18,000+","$3B Endowment $7B+",1096,Large Enterprise,"Humanities, Sciences, Research",Verified
+Higher Education (Universities),ETH Zurich,Switzerland,https://www.ethz.ch,"11,000+","$2B+",1855,Large Enterprise,"Engineering, Technology, Natural Sciences",Verified
+Higher Education (Universities),University of Tokyo,Japan,https://www.u-tokyo.ac.jp,"8,000+","$3B+",1877,Large Enterprise,"Comprehensive Research, National University",Verified
+Higher Education (Universities),Peking University,China,https://english.pku.edu.cn,"12,000+","$2B+",1898,Large Enterprise,"C9 League, Humanities, Sciences",Verified
+Higher Education (Universities),National University of Singapore,Singapore,https://nus.edu.sg,"10,000+","$3B+",1905,Large Enterprise,"Comprehensive Research, Global Rankings",Verified
+Higher Education (Universities),University of Toronto,Canada,https://www.utoronto.ca,"15,000+","$4B+",1827,Large Enterprise,"Research, Medicine, Innovation",Verified
+Higher Education (Universities),University of Melbourne,Australia,https://www.unimelb.edu.au,"9,000+","$3B+",1853,Large Enterprise,"Group of Eight, Research, Arts",Verified
+Higher Education (Universities),Sorbonne University,France,https://www.sorbonne-universite.fr,"7,000+","$1B+",2018,Large Enterprise,"Humanities, Medicine, Sciences",Verified
+Higher Education (Universities),Lomonosov Moscow State University,Russia,https://www.msu.ru,"10,000+","$1B+",1755,Large Enterprise,"Fundamental Sciences, Research",Verified
+Higher Education (Universities),Seoul National University,South Korea,https://en.snu.ac.kr,"5,000+","$1B+",1946,Large Enterprise,"SKY Universities, Engineering, Medicine",Verified
+Higher Education (Universities),University of Cape Town,South Africa,https://www.uct.ac.za,"5,000+","$400M+",1829,Large Enterprise,"Research, Africa's Leading University",Verified
+Higher Education (Universities),Tecnológico de Monterrey,Mexico,https://tec.mx,"9,000+","$1B+",1943,Large Enterprise,"Private, Engineering, Business",Verified
+Higher Education (Universities),University of São Paulo,Brazil,https://www5.usp.br,"15,000+","$2B+",1934,Large Enterprise,"Public, Research, Largest in Brazil",Verified
+Higher Education (Universities),LMU Munich,Germany,https://www.lmu.de,"7,000+","$800M+",1472,Large Enterprise,"Comprehensive, Research, Excellence Initiative",Verified
+Higher Education (Universities),Delft University of Technology,Netherlands,https://www.tudelft.nl,"5,000+","$600M+",1842,Large Enterprise,"Engineering, Technology, Design",Verified
+Higher Education (Universities),Karolinska Institute,Sweden,https://ki.se,"5,000+","$800M+",1810,Large Enterprise,"Medicine, Health Sciences, Nobel Assembly",Verified
+Higher Education (Universities),University of Copenhagen,Denmark,https://www.ku.dk,"10,000+","$900M+",1479,Large Enterprise,"Research, Health Sciences, Humanities",Verified
+Higher Education (Universities),University of Auckland,New Zealand,https://www.auckland.ac.nz,"5,000+","$1B+",1883,Large Enterprise,"Research, Largest in New Zealand",Verified
+K-12 Education (Private Schools),Nord Anglia Education,UK,https://www.nordangliaeducation.com,"15,000+","$1B+",1972,Large Enterprise,"International Schools, STEAM, Juilliard Collaboration",Verified
+K-12 Education (Private Schools),GEMS Education,UAE,https://www.gemseducation.com,"10,000+","$500M+",1959,Large Enterprise,"Private K-12, UAE & Global, Diverse Curricula",Verified
+K-12 Education (Private Schools),Cognita Schools,UK,https://www.cognita.com,"10,000+","$800M+",2004,Large Enterprise,"Global Private Schools, Holistic Education",Verified
+K-12 Education (Private Schools),Bright Scholar Education Holdings,China,https://www.brightscholar.com,"15,000+","$600M+",1994,Large Enterprise,"Bilingual Schools, International Curriculum",Verified
+K-12 Education (Private Schools),MAPLE Bear Global Schools,Canada,https://www.maplebear.ca,"2,000+","$100M+",2005,Medium Enterprise,"Bilingual Early Childhood, Elementary",Verified
+K-12 Education (Private Schools),K12 Inc.,USA,https://www.k12.com,"3,000+","$1B+",2000,Large Enterprise,"Online Public & Private Schools, Curriculum",Verified
+K-12 Education (Private Schools),Stride Inc.,USA,https://www.stridelearning.com,"5,000+","$1.6B+",2000,Large Enterprise,"Career Learning, Online Education",Verified
+K-12 Education (Private Schools),ACS International Schools,UK,https://www.acs-schools.com,"1,000+","$100M+",1967,Medium Enterprise,"IB Curriculum, International Community",Verified
+K-12 Education (Private Schools),International Schools Partnership,Spain,https://www.internationalschoolspartnership.com,"5,000+","$300M+",2013,Large Enterprise,"Global Network, Quality Assurance",Verified
+K-12 Education (Private Schools),Dulwich College International,China,https://www.dulwich.org,"2,000+","$200M+",2003,Medium Enterprise,"British Curriculum, International Boarding",Verified
+K-12 Education (Private Schools),Nordic International School,Sweden,https://www.nordicinternational.se,"500+","$50M+",2014,Small Enterprise,"Independent Schools, Swedish Curriculum",Verified
+K-12 Education (Private Schools),SEK Education Group,Spain,https://www.sek.es,"1,000+","$100M+",1892,Medium Enterprise,"IB World Schools, Spain & International",Verified
+K-12 Education (Private Schools),Yew Chung Education Foundation,Hong Kong,https://www.ycef.com,"1,000+","$100M+",1932,Medium Enterprise,"Bilingual Education, Early Childhood to Secondary",Verified
+K-12 Education (Private Schools),UWC Schools,Singapore,https://www.uwc.org,"N/A","N/A",1962,Medium Enterprise,"IB Diploma, Mission-Driven, Global Movement",Verified
+K-12 Education (Private Schools),Aoba Japan International School,Japan,https://www.aij.ac.jp,"200+","$20M+",1976,Small Enterprise,"International Baccalaureate, Multicultural",Verified
+K-12 Education (Private Schools),Keystone Academy,China,https://www.keystoneacademy.cn,"300+","$30M+",2014,Small Enterprise,"Blended Chinese & Western Curriculum, Boarding",Verified
+K-12 Education (Private Schools),Harrow International Schools,UK,https://www.harrowschool.hk,"1,000+","$100M+",1998,Medium Enterprise,"British Independent School Model, Boarding",Verified
+K-12 Education (Private Schools),Tanglin Trust School,Singapore,https://www.tts.edu.sg,"500+","$50M+",1925,Small Enterprise,"British Curriculum, Not-for-Profit",Verified
+Online Learning Platforms,Coursera,USA,https://www.coursera.org,"1,500+","$600M+",2012,Large Enterprise,"University Partners, Degrees, Certificates",Verified
+Online Learning Platforms,edX,USA,https://www.edx.org,"500+","$200M+",2012,Medium Enterprise,"University Courses, MicroMasters, Open Source",Verified
+Online Learning Platforms,Udemy,USA,https://www.udemy.com,"2,000+","$700M+",2010,Large Enterprise,"Marketplace, Wide Topic Variety, Personal & Professional",Verified
+Online Learning Platforms,Khan Academy,USA,https://www.khanacademy.org,"300+","$50M+",2008,Medium Enterprise,"Free, K-14, Non-Profit, Mastery Learning",Verified
+Online Learning Platforms,Pluralsight,USA,https://www.pluralsight.com,"1,500+","$400M+",2004,Large Enterprise,"Technology Skills, Cloud, IT Ops",Verified
+Online Learning Platforms,FutureLearn,UK,https://www.futurelearn.com,"200+","$50M+",2012,Small Enterprise,"UK University Partners, Short Courses, Degrees",Verified
+Online Learning Platforms,Udacity,USA,https://www.udacity.com,"500+","$100M+",2011,Medium Enterprise,"Nanodegrees, Tech Skills, Corporate Training",Verified
+Online Learning Platforms,Skillshare,USA,https://www.skillshare.com,"200+","$100M+",2010,Small Enterprise,"Creative Skills, Community, Subscription",Verified
+Online Learning Platforms,Domestika,Spain,https://www.domestika.org,"500+","$100M+",2010,Medium Enterprise,"Creative Courses, Spanish & English, Community",Verified
+Online Learning Platforms,MasterClass,USA,https://www.masterclass.com,"300+","$100M+",2015,Medium Enterprise,"Celebrity Instructors, Production Quality, Inspiration",Verified
+Online Learning Platforms,Alison,Ireland,https://alison.com,"100+","$10M+",2007,Small Enterprise,"Free Certificates & Diplomas, Workplace Skills",Verified
+Online Learning Platforms,Byju's,India,https://byjus.com,"10,000+","$1B+",2011,Large Enterprise,"K-12, Test Prep, Adaptive Learning, Acquisitions",Verified
+Online Learning Platforms,Vedantu,India,https://www.vedantu.com,"2,000+","$100M+",2014,Medium Enterprise,"Live Online Tutoring, K-12, Test Prep",Verified
+Online Learning Platforms,OpenClassrooms,France,https://openclassrooms.com,"300+","$50M+",1999,Small Enterprise,"Project-Based, Career Paths, Mentorship",Verified
+Online Learning Platforms,Duolingo,USA,https://www.duolingo.com,"600+","$400M+",2011,Medium Enterprise,"Language Learning, Gamification, Freemium",Verified
+Online Learning Platforms,Codecademy,USA,https://www.codecademy.com,"200+","$50M+",2011,Small Enterprise,"Interactive Coding, Paths, Pro Subscription",Verified
+Online Learning Platforms,Babbel,Germany,https://www.babbel.com,"500+","$150M+",2007,Medium Enterprise,"Language Learning, Subscription-Based",Verified
+Online Learning Platforms,LinkedIn Learning,USA,https://www.linkedin.com/learning,"20,000+","$15B+",2003,Large Enterprise,"Business, Creative, Technology Courses",Verified
+Educational Publishing,Pearson PLC,UK,https://www.pearson.com,"20,000+","$4B+",1844,Large Enterprise,"K-12, Higher Ed, Assessment, Digital First",Verified
+Educational Publishing,McGraw Hill Education,USA,https://www.mheducation.com,"4,500+","$2B+",1888,Large Enterprise,"K-12, Higher Ed, Professional, Digital Platforms",Verified
+Educational Publishing,Houghton Mifflin Harcourt,USA,https://www.hmhco.com,"4,000+","$1B+",1832,Large Enterprise,"K-12 Core Curriculum, Intervention, Trade Publishing",Verified
+Educational Publishing,Cengage Learning,USA,https://www.cengage.com,"5,000+","$1.5B+",2007,Large Enterprise,"Higher Education, Digital Subscription (Cengage Unlimited)",Verified
+Educational Publishing,Scholastic Corporation,USA,https://www.scholastic.com,"7,000+","$1.5B+",1920,Large Enterprise,"Children's Books, Book Fairs, Classroom Magazines",Verified
+Educational Publishing,Wiley Education Services,USA,https://www.wiley.com,"5,000+","$2B+",1807,Large Enterprise,"Academic Publishing, Research, Education Services",Verified
+Educational Publishing,O'Reilly Media,USA,https://www.oreilly.com,"500+","$200M+",1978,Medium Enterprise,"Technology, Business, Online Learning (Safari)",Verified
+Educational Publishing,Oxford University Press,UK,https://global.oup.com/education,"6,000+","$1B+",1586,Large Enterprise,"Academic, English Language Teaching, K-12",Verified
+Educational Publishing,Cambridge University Press,UK,https://www.cambridge.org/education,"3,000+","$500M+",1534,Large Enterprise,"Academic, Assessment, English Language Teaching",Verified
+Educational Publishing,Springer Nature Education,Germany,https://www.springernature.com,"10,000+","$2B+",2015,Large Enterprise,"Scientific Research, Academic Books, Journals",Verified
+Educational Publishing,Sanoma Learning,Finland,https://sanomalearning.com,"500+","$200M+",1889,Medium Enterprise,"K-12 Learning Materials, Digital Platforms, Finland & NL",Verified
+Educational Publishing,Follett Corporation,USA,https://www.follett.com,"5,000+","$2B+",1873,Large Enterprise,"School & Library Content, Technology, Retail",Verified
+Educational Publishing,Klett Group,Germany,https://www.klett-gruppe.de,"3,000+","$600M+",1897,Large Enterprise,"Educational Media, Schools, Vocational Training",Verified
+Educational Publishing,Hachette Livre Education,France,https://www.hachette.com,"7,000+","$2.5B+",1826,Large Enterprise,"Trade & Educational Publishing, France & International",Verified
+Educational Publishing,Egmont Group,Denmark,https://www.egmont.com,"1,000+","$300M+",1878,Medium Enterprise,"Children's Books, Magazines, Media",Verified
+Educational Publishing,Marshall Cavendish Education,Singapore,https://www.mceducation.com,"500+","$100M+",1968,Small Enterprise,"K-12, Singapore Math, International Schools",Verified
+Educational Publishing,Shueisha Education,Japan,https://www.shueisha.co.jp,"1,000+","$200M+",1925,Medium Enterprise,"Manga, Magazines, Educational References",Verified
+Educational Publishing,Sapna Online,India,https://www.sapnaonline.com,"100+","$20M+",1967,Small Enterprise,"Online Bookstore, Indian Languages, Academic",Verified
+Test Preparation Services,Kaplan Inc.,USA,https://www.kaplan.com,"12,000+","$1.5B+",1938,Large Enterprise,"Test Prep, Professional Licensing, Higher Education",Verified
+Test Preparation Services,Princeton Review,USA,https://www.princetonreview.com,"2,000+","$200M+",1981,Medium Enterprise,"Test Prep, Tutoring, Admissions Services",Verified
+Test Preparation Services,ETS (Educational Testing Service),USA,https://www.ets.org,"2,500+","$1B+",1947,Large Enterprise,"TOEFL, GRE, Praxis, Assessment Research",Verified
+Test Preparation Services,College Board,USA,https://www.collegeboard.org,"1,500+","$1B+",1900,Large Enterprise,"SAT, AP, College Readiness, Non-Profit",Verified
+Test Preparation Services,ACT Inc.,USA,https://www.act.org,"1,000+","$400M+",1959,Large Enterprise,"ACT Test, Workforce Solutions, Non-Profit",Verified
+Test Preparation Services,TATA Studi,India,https://www.tatastudi.com,"500+","$50M+",2017,Small Enterprise,"K-12 Learning App, Test Prep, TATA Brand",Verified
+Test Preparation Services,Manhattan Prep,USA,https://www.manhattanprep.com,"200+","$50M+",2000,Small Enterprise,"GMAT, GRE, LSAT Prep, Kaplan Subsidiary",Verified
+Test Preparation Services,Varsity Tutors,USA,https://www.varsitytutors.com,"1,000+","$200M+",2007,Medium Enterprise,"Tutoring, Test Prep, Instant Tutoring Platform",Verified
+Test Preparation Services,Barrons Educational Series,USA,https://www.barronseduc.com,"100+","$20M+",1941,Small Enterprise,"Test Prep Books, Study Guides",Verified
+Test Preparation Services,CliffsNotes,USA,https://www.cliffsnotes.com,"N/A","N/A",1958,Small Enterprise,"Study Guides, Literature Summaries",Verified
+Test Preparation Services,TestDEN,Canada,https://www.testden.com,"N/A","N/A",1995,Small Enterprise,"TOEFL, IELTS Online Preparation",Verified
+Test Preparation Services,Magoosh,USA,https://magoosh.com,"100+","$20M+",2009,Small Enterprise,"GMAT, GRE, SAT, Affordable Online Prep",Verified
+Test Preparation Services,ArborBridge,USA,https://www.arborbridge.com,"100+","$20M+",2013,Small Enterprise,"Test Prep, Tutoring, Admissions Consulting",Verified
+Test Preparation Services,PrepScholar,USA,https://www.prepscholar.com,"50+","$10M+",2012,Small Enterprise,"SAT, ACT, Online Prep, Harvard Alumni Founded",Verified
+Test Preparation Services,BenchPrep,USA,https://www.benchprep.com,"100+","$20M+",2010,Small Enterprise,"Test Prep Platform, Association & Publisher Partner",Verified
+Test Preparation Services,Testive,USA,https://www.testive.com,"50+","$10M+",2013,Small Enterprise,"SAT, ACT, Personalized Online Tutoring",Verified
+Test Preparation Services,Udemy Test Prep,USA,https://www.udemy.com,"2,000+","$700M+",2010,Large Enterprise,"Marketplace for Test Prep Courses",Verified
+Test Preparation Services,Shmoop,USA,https://www.shmoop.com,"50+","$10M+",2006,Small Enterprise,"Humor-Based Study Guides, Test Prep, Digital Content",Verified
+Early Childhood Education,Bright Horizons,USA,https://www.brighthorizons.com,"30,000+","$2B+",1986,Large Enterprise,"Employer-Sponsored Childcare, Early Education",Verified
+Early Childhood Education,KinderCare Education,USA,https://www.kindercare.com,"35,000+","$2B+",1969,Large Enterprise,"Childcare Centers, Early Learning Programs",Verified
+Early Childhood Education,Goddard Systems,USA,https://www.goddardschool.com,"10,000+","$500M+",1988,Large Enterprise,"Franchised Preschools, Play-Based Learning",Verified
+Early Childhood Education,Learning Care Group,USA,https://www.learningcaregroup.com,"20,000+","$1B+",1967,Large Enterprise,"Childcare Brands (Tutor Time, Everbrook)",Verified
+Early Childhood Education,Primrose Schools,USA,https://www.primroseschools.com,"5,000+","$400M+",1982,Medium Enterprise,"Franchised Preschools, Balanced Learning®",Verified
+Early Childhood Education,Busy Bees Nurseries,UK,https://www.busybees.com,"20,000+","$500M+",1983,Large Enterprise,"UK & Global Nurseries, Childcare",Verified
+Early Childhood Education,Only About Children,Australia,https://www.oac.edu.au,"2,000+","$100M+",2002,Medium Enterprise,"Early Childhood Education & Care, Australia",Verified
+Early Childhood Education,Goodstart Early Learning,Australia,https://www.goodstart.org.au,"15,000+","$1B+",2009,Large Enterprise,"Not-for-Profit, Early Learning, Australia",Verified
+Early Childhood Education,Willowbrae Academy,Canada,https://willowbrae.com,"500+","$20M+",2004,Small Enterprise,"Childcare Centers, Early Education",Verified
+Early Childhood Education,Guidepost Montessori,USA,https://www.guidepostmontessori.com,"2,000+","$100M+",2016,Medium Enterprise,"Montessori Schools, At-Home Programs",Verified
+Early Childhood Education,Nobel Learning Communities,USA,https://www.nobellearning.com,"5,000+","$200M+",1984,Medium Enterprise,"Private Schools, Preschools, After-School",Verified
+Early Childhood Education,The Learning Experience,USA,https://thelearningexperience.com,"10,000+","$300M+",2002,Medium Enterprise,"Franchised Childcare Centers, L.E.A.P. Curriculum",Verified
+Early Childhood Education,Spring Education Group,USA,https://springeducationgroup.com,"10,000+","$500M+",1979,Large Enterprise,"Private Schools (Stratford, BASIS), Preschools",Verified
+Early Childhood Education,Childcare Network,USA,https://www.childcarenetwork.com,"5,000+","$200M+",1988,Medium Enterprise,"Childcare Centers, School-Age Programs",Verified
+Early Childhood Education,Whitby School,USA,https://www.whitbyschool.org,"100+","$10M+",1958,Small Enterprise,"Independent School, Montessori & IB",Verified
+Early Childhood Education,EduKids Early Childhood Education,USA,https://edukidsny.com,"500+","$20M+",1998,Small Enterprise,"Childcare Centers, New York",Verified
+Early Childhood Education,Young Explorers,New Zealand,https://www.youngexplorers.co.nz,"200+","$10M+",2001,Small Enterprise,"Early Childhood Education, New Zealand",Verified
+Early Childhood Education,Magic Years International Preschool,Thailand,https://www.magicyears.org,"100+","$5M+",1985,Small Enterprise,"Preschool, International Curriculum, Bangkok",Verified
+Early Childhood Education,Maple Bear Global Schools,Canada,https://www.maplebear.ca,"2,000+","$100M+",2005,Medium Enterprise,"Bilingual Early Childhood, Elementary",Verified
+Vocational Training,City & Guilds Group,UK,https://www.cityandguildsgroup.com,"1,500+","$300M+",1878,Medium Enterprise,"Vocational Qualifications, Skills Development",Verified
+Vocational Training,IL&FS Skills Development Corporation,India,https://www.ilfsskills.com,"1,000+","$50M+",2011,Medium Enterprise,"Skill India, Vocational Training, Employability",Verified
+Vocational Training,ManpowerGroup Solutions,USA,https://www.manpowergroupsolutions.com,"25,000+","$20B+",1948,Large Enterprise,"Employment, Staffing, Workforce Solutions",Verified
+Vocational Training,Randstad RiseSmart,Netherlands,https://www.randstadrisesmart.com,"40,000+","$25B+",1960,Large Enterprise,"Outplacement, Career Coaching, Workforce Mobility",Verified
+Vocational Training,GA (General Assembly),USA,https://generalassemb.ly,"500+","$100M+",2011,Medium Enterprise,"Tech Bootcamps, Digital Skills, Corporate Training",Verified
+Vocational Training,Udacity Nanodegree,USA,https://www.udacity.com,"500+","$100M+",2011,Medium Enterprise,"Tech-Focused Nanodegrees, Corporate Partnerships",Verified
+Vocational Training,Pluralsight Skills,USA,https://www.pluralsight.com,"1,500+","$400M+",2004,Large Enterprise,"Technology Skills Platform, Cloud, Data",Verified
+Vocational Training,Simplilearn,USA,https://www.simplilearn.com,"1,000+","$100M+",2010,Medium Enterprise,"Digital Skills Bootcamps, Certification Courses",Verified
+Vocational Training,ITC Learning,Australia,https://www.itclearning.edu.au,"100+","$10M+",2005,Small Enterprise,"Vocational Education, Business, Technology",Verified
+Vocational Training,NSDC (National Skill Development Corporation),India,https://www.nsdcindia.org,"500+","$200M+",2008,Medium Enterprise,"Public-Private Partnership, Skill India Mission",Verified
+Vocational Training,Apprenticeship.gov,USA,https://www.apprenticeship.gov,"N/A","N/A",,Government,Government Portal,Verified
+Vocational Training,Coursera for Business,USA,https://www.coursera.org/business,"1,500+","$600M+",2012,Large Enterprise,"Upskilling, Enterprise Learning Platform",Verified
+Vocational Training,Correlation One,USA,https://www.correlation-one.com,"200+","$50M+",2015,Small Enterprise,"Data Science Training, Fellowships, Diversity Focus",Verified
+Vocational Training,Per Scholas,USA,https://perscholas.org,"200+","$20M+",1995,Small Enterprise,"Tech Training for Underrepresented Groups, Non-Profit",Verified
+Vocational Training,TAFE Directors Australia,Australia,https://www.tda.edu.au,"N/A","N/A",,Association,Vocational Education Advocacy,Verified
+Vocational Training,Skills Future Singapore,Singapore,https://www.skillsfuture.gov.sg,"N/A","N/A",,Government,National Skills Development Program,Verified
+Vocational Training,Learnet Academy,Canada,https://www.learnetacademy.com,"N/A","N/A",,Unknown,Unknown,Unverified
+Vocational Training,The Training Room UK,UK,https://www.thetrainingroom.com,"100+","$10M+",2005,Small Enterprise,"Fitness Instructor, IT, Hospitality Training",Verified
+Language Learning,Rosetta Stone,USA,https://www.rosettastone.com,"500+","$200M+",1992,Medium Enterprise,"Language Learning Software, Subscriptions",Verified
+Language Learning,Duolingo,USA,https://www.duolingo.com,"600+","$400M+",2011,Medium Enterprise,"Gamified Language App, Freemium",Verified
+Language Learning,Babbel,Germany,https://www.babbel.com,"500+","$150M+",2007,Medium Enterprise,"Subscription-Based Language App",Verified
+Language Learning,Busuu,UK,https://www.busuu.com,"200+","$50M+",2008,Small Enterprise,"Language Learning, Community Features",Verified
+Language Learning,Memrise,UK,https://www.memrise.com,"100+","$20M+",2010,Small Enterprise,"Vocabulary, Spaced Repetition, Video Clips",Verified
+Language Learning,italki,Hong Kong,https://www.italki.com,"100+","$20M+",2007,Small Enterprise,"Marketplace for Language Tutors, 1-on-1 Lessons",Verified
+Language Learning,Pimsleur,USA,https://www.pimsleur.com,"100+","$20M+",1963,Small Enterprise,"Audio-Based Language Method, Simon & Schuster",Verified
+Language Learning,Open English,USA,https://www.openenglish.com,"500+","$100M+",2007,Medium Enterprise,"Live Online English Classes, Latin America Focus",Verified
+Language Learning,Lingoda,Germany,https://www.lingoda.com,"500+","$50M+",2013,Small Enterprise,"Live Online Language Classes, Sprint Challenges",Verified
+Language Learning,Verbling,USA,https://www.verbling.com,"50+","$10M+",2011,Small Enterprise,"Marketplace for Language Tutors, Video Platform",Verified
+Language Learning,Mondly,Romania,https://www.mondly.com,"100+","$20M+",2013,Small Enterprise,"Language Learning App, AR/VR",Verified
+Language Learning,FluentU,USA,https://www.fluentu.com,"50+","$10M+",2011,Small Enterprise,"Language Learning with Real-World Videos",Verified
+Language Learning,Lingvist,Estonia,https://lingvist.com,"50+","$10M+",2013,Small Enterprise,"AI-Powered Vocabulary, Adaptive Learning",Verified
+Language Learning,Drops,Hungary,https://languagedrops.com,"50+","$10M+",2016,Small Enterprise,"Visual Vocabulary App, 5-Minute Sessions",Verified
+Language Learning,Cambly,USA,https://www.cambly.com,"100+","$20M+",2012,Small Enterprise,"On-Demand English Tutoring with Native Speakers",Verified
+Language Learning,Preply,USA,https://preply.com,"500+","$100M+",2012,Medium Enterprise,"Tutor Marketplace for Languages & Academic Subjects",Verified
+Language Learning,LingQ,Canada,https://www.lingq.com,"50+","$5M+",2002,Small Enterprise,"Language Learning through Content Immersion",Verified
+Language Learning,Glossika,Taiwan,https://ai.glossika.com,"50+","$5M+",2016,Small Enterprise,"Spaced Repetition, Mass Sentences Method",Verified
+Language Learning,Tandem,Germany,https://www.tandem.net,"50+","$10M+",2015,Small Enterprise,"Language Exchange Community, Peer-to-Peer",Verified
+STEM Education,Code.org,USA,https://code.org,"100+","$20M+",2013,Small Enterprise,"K-12 Computer Science, Hour of Code, Non-Profit",Verified
+STEM Education,Tynker,USA,https://www.tynker.com,"100+","$20M+",2012,Small Enterprise,"Coding for Kids, Game-Based Learning",Verified
+STEM Education,Scratch Foundation,USA,https://scratch.mit.edu,"50+","$10M+",2002,Small Enterprise,"Creative Coding for Kids, MIT, Free Platform",Verified
+STEM Education,Lego Education,Denmark,https://education.lego.com,"1,000+","$200M+",1980,Medium Enterprise,"Hands-On STEAM Learning, Robotics (SPIKE)",Verified
+STEM Education,Arduino Education,Italy,https://www.arduino.cc/education,"100+","$20M+",2005,Small Enterprise,"STEAM Kits, Open-Source Electronics",Verified
+STEM Education,Makeblock,China,https://www.makeblock.com,"500+","$100M+",2013,Small Enterprise,"STEAM Robotics, mBot, Codey Rocky",Verified
+STEM Education,Robolink,USA,https://robolink.com,"50+","$5M+",2012,Small Enterprise,"Educational Robotics Kits, Drones",Verified
+STEM Education,Sphero,USA,https://sphero.com,"200+","$50M+",2010,Small Enterprise,"Programmable Robots, STEAM, Computer Science",Verified
+STEM Education,Pi-Top,UK,https://www.pi-top.com,"100+","$20M+",2014,Small Enterprise,"Raspberry Pi Laptops, STEAM Projects",Verified
+STEM Education,Micro:bit Educational Foundation,UK,https://microbit.org,"50+","$10M+",2016,Small Enterprise,"Pocket-Sized Computer, Global Coding Initiative",Verified
+STEM Education,Adafruit Industries,USA,https://www.adafruit.com,"100+","$20M+",2005,Small Enterprise,"Open-Source Electronics, DIY Kits, Learning Resources",Verified
+STEM Education,Arbor Scientific,USA,https://www.arborsci.com,"50+","$10M+",1979,Small Enterprise,"Physics & Physical Science Teaching Equipment",Verified
+STEM Education,Vernier Software & Technology,USA,https://www.vernier.com,"200+","$50M+",1981,Small Enterprise,"Science Data Collection, Sensors, Software",Verified
+STEM Education,PASCO Scientific,USA,https://www.pasco.com,"200+","$50M+",1964,Small Enterprise,"Physics & Engineering Lab Equipment",Verified
+STEM Education,Thames & Kosmos,USA,https://www.thamesandkosmos.com,"100+","$20M+",2001,Small Enterprise,"Science Kits, Physics, Chemistry, Biology",Verified
+STEM Education,ELENCO Electronics,USA,https://www.elenco.com,"100+","$20M+",1972,Small Enterprise,"Electronics Kits, Snap Circuits",Verified
+STEM Education,KIWI Co.,Japan,https://www.kiwico.com,"500+","$100M+",2011,Medium Enterprise,"STEAM Subscription Crates for Kids",Verified
+STEM Education,Science Buddies,USA,https://www.sciencebuddies.org,"50+","$5M+",2001,Small Enterprise,"Free Science Project Ideas, Resources, Non-Profit",Verified
+Corporate Training,LinkedIn Learning,USA,https://www.linkedin.com/learning,"20,000+","$15B+",2003,Large Enterprise,"Business, Creative, Technology Courses",Verified
+Corporate Training,Coursera for Business,USA,https://www.coursera.org/business,"1,500+","$600M+",2012,Large Enterprise,"Upskilling, Enterprise Learning Platform",Verified
+Corporate Training,Udemy Business,USA,https://business.udemy.com,"2,000+","$700M+",2010,Large Enterprise,"Curated Course Collection for Teams",Verified
+Corporate Training,Pluralsight Skills,USA,https://www.pluralsight.com,"1,500+","$400M+",2004,Large Enterprise,"Technology Skills Platform, Cloud, Data",Verified
+Corporate Training,Skillsoft,USA,https://www.skillsoft.com,"2,000+","$500M+",1998,Large Enterprise,"Leadership, Business, IT, Compliance Training",Verified
+Corporate Training,Degreed,USA,https://www.degreed.com,"200+","$50M+",2012,Small Enterprise,"Learning Experience Platform (LXP), Skill Tracking",Verified
+Corporate Training,Cornerstone OnDemand,USA,https://www.cornerstoneondemand.com,"4,000+","$800M+",1999,Large Enterprise,"Talent Management, Learning, LMS",Verified
+Corporate Training,Docebo,Canada,https://www.docebo.com,"500+","$100M+",2005,Medium Enterprise,"AI-Powered LMS, Extended Enterprise",Verified
+Corporate Training,SAP Litmos,USA,https://www.litmos.com,"500+","$100M+",2007,Medium Enterprise,"LMS, Compliance Training, Customer Training",Verified
+Corporate Training,Lattice,USA,https://lattice.com,"500+","$100M+",2015,Medium Enterprise,"Performance Management, Employee Engagement",Verified
+Corporate Training,Grovo (Cornerstone),USA,https://www.cornerstoneondemand.com,"4,000+","$800M+",1999,Large Enterprise,"Microlearning, Now Part of Cornerstone",Verified
+Corporate Training,CrossKnowledge,France,https://www.crossknowledge.com,"500+","$100M+",2000,Medium Enterprise,"Leadership & Soft Skills, Multilingual",Verified
+Corporate Training,GP Strategies,USA,https://www.gpstrategies.com,"4,000+","$500M+",1959,Large Enterprise,"Transformation & Training Services, Consulting",Verified
+Corporate Training,AllenComm,USA,https://www.allencomm.com,"200+","$50M+",1981,Small Enterprise,"Custom Learning Design, Development",Verified
+Corporate Training,Articulate,USA,https://articulate.com,"300+","$100M+",2002,Small Enterprise,"E-Learning Authoring Tools (Storyline, Rise)",Verified
+Corporate Training,BizLibrary,USA,https://www.bizlibrary.com,"200+","$50M+",1996,Small Enterprise,"Soft Skills, Microlearning, LMS",Verified
+Corporate Training,Learning Technologies Group (LTG),UK,https://www.ltgplc.com,"1,000+","$200M+",2013,Medium Enterprise,"E-Learning Platforms & Content (Rustici, Open LMS)",Verified
+Corporate Training,Talentsoft,France,https://www.talentsoft.com,"1,000+","$200M+",2007,Medium Enterprise,"Talent Management, Learning, HRIS",Verified
+Corporate Training,Lessonly,USA,https://www.lessonly.com,"200+","$50M+",2012,Small Enterprise,"Lesson-Based Training, Sales Enablement",Verified
+Tutoring Services,Varsity Tutors,USA,https://www.varsitytutors.com,"1,000+","$200M+",2007,Medium Enterprise,"Tutoring, Test Prep, Instant Tutoring Platform",Verified
+Tutoring Services,Chegg Tutors,USA,https://www.chegg.com/tutors,"1,500+","$800M+",2005,Large Enterprise,"Homework Help, Online Tutoring, Textbook Rentals",Verified
+Tutoring Services,Wyzant,USA,https://www.wyzant.com,"200+","$50M+",2005,Small Enterprise,"Tutor Marketplace, In-Person & Online",Verified
+Tutoring Services,Club Z! Tutoring,USA,https://clubztutoring.com,"1,000+","$50M+",2000,Medium Enterprise,"In-Home & Online Tutoring, Franchise",Verified
+Tutoring Services,Kumon Institute,Japan,https://www.kumon.com,"10,000+","$500M+",1958,Large Enterprise,"After-School Math & Reading, Franchise",Verified
+Tutoring Services,Mathnasium,USA,https://www.mathnasium.com,"5,000+","$200M+",2002,Large Enterprise,"Math-Only Tutoring Centers, Franchise",Verified
+Tutoring Services,Sylvan Learning,USA,https://www.sylvanlearning.com,"5,000+","$200M+",1979,Large Enterprise,"Personalized Tutoring, Franchise",Verified
+Tutoring Services,Huntington Learning Center,USA,https://huntingtonhelps.com,"2,000+","$100M+",1977,Medium Enterprise,"Tutoring, Test Prep, Franchise",Verified
+Tutoring Services,Tutor Doctor,Canada,https://www.tutordoctor.com,"2,000+","$100M+",2000,Medium Enterprise,"In-Home Tutoring, Franchise",Verified
+Tutoring Services,Oxford Learning,Canada,https://www.oxfordlearning.com,"500+","$20M+",1984,Small Enterprise,"After-School Tutoring, Cognitive Learning",Verified
+Tutoring Services,EF Education First Tutoring,Switzerland,https://www.ef.com,"52,000+","$1B+",1965,Large Enterprise,"Language Training, Study Abroad, Cultural Exchange",Verified
+Tutoring Services,Byju's Tutoring,India,https://byjus.com,"10,000+","$1B+",2011,Large Enterprise,"K-12, Test Prep, Adaptive Learning, Acquisitions",Verified
+Tutoring Services,Vedantu Online Tutoring,India,https://www.vedantu.com,"2,000+","$100M+",2014,Medium Enterprise,"Live Online Tutoring, K-12, Test Prep",Verified
+Tutoring Services,Gauthmath,China,https://www.gauthmath.com,"500+","$50M+",2019,Small Enterprise,"AI Math Solver, Homework Help",Verified
+Tutoring Services,Snapask,Hong Kong,https://snapask.com,"500+","$50M+",2015,Small Enterprise,"On-Demand Tutoring App, Asia Focus",Verified
+Tutoring Services,GoStudent,Austria,https://www.gostudent.org,"1,000+","$100M+",2016,Medium Enterprise,"Online Tutoring, Subscription Model, Europe",Verified
+Tutoring Services,Tutorful,UK,https://tutorful.co.uk,"100+","$10M+",2015,Small Enterprise,"Tutor Marketplace, UK",Verified
+Tutoring Services,TutorOcean,Canada,https://www.tutorocean.com,"50+","$5M+",2015,Small Enterprise,"Tutor Marketplace, Canada & Global",Verified
+Tutoring Services,Tutoring Club,USA,https://tutoringclub.com,"500+","$20M+",1991,Small Enterprise,"Supplemental Education, Franchise",Verified
+Learning Management Systems,Canvas (Instructure),USA,https://www.instructure.com,"1,500+","$400M+",2008,Large Enterprise,"K-12 & Higher Ed LMS, Open API",Verified
+Learning Management Systems,Blackboard Learn,USA,https://www.blackboard.com,"3,000+","$700M+",1997,Large Enterprise,"LMS, Virtual Classroom, Community Engagement",Verified
+Learning Management Systems,Moodle,UK,https://moodle.com,"100+","$20M+",2001,Small Enterprise,"Open-Source LMS, Global Partner Network",Verified
+Learning Management Systems,D2L Brightspace,Canada,https://www.d2l.com,"1,000+","$200M+",1999,Medium Enterprise,"LMS, K-12, Higher Ed, Corporate",Verified
+Learning Management Systems,Schoology (PowerSchool),USA,https://www.powerschool.com,"3,000+","$500M+",2009,Large Enterprise,"K-12 LMS, SIS Integration",Verified
+Learning Management Systems,Google Classroom,USA,https://edu.google.com,"174,000+","$283B+",1998,Conglomerate,"Free for Education, G Suite Integration",Verified
+Learning Management Systems,SAP Litmos LMS,USA,https://www.litmos.com,"500+","$100M+",2007,Medium Enterprise,"LMS, Compliance Training, Customer Training",Verified
+Learning Management Systems,Adobe Captivate Prime,USA,https://www.adobe.com/products/captivateprime.html,"28,000+","$16B+",1982,Large Enterprise,"LMS, Authoring Tool Integration",Verified
+Learning Management Systems,TalentLMS,Greece,https://www.talentlms.com,"100+","$20M+",2012,Small Enterprise,"Cloud LMS, User-Friendly, Small Businesses",Verified
+Learning Management Systems,Docebo LMS,Canada,https://www.docebo.com,"500+","$100M+",2005,Medium Enterprise,"AI-Powered LMS, Extended Enterprise",Verified
+Learning Management Systems,Cornerstone Learning,USA,https://www.cornerstoneondemand.com,"4,000+","$800M+",1999,Large Enterprise,"LMS, Talent Management Suite",Verified
+Learning Management Systems,Thinkific,Canada,https://www.thinkific.com,"200+","$50M+",2012,Small Enterprise,"Course Creation Platform, Creators & Businesses",Verified
+Learning Management Systems,LearnWorlds,Cyprus,https://www.learnworlds.com,"100+","$20M+",2014,Small Enterprise,"Course Creation, Interactive Video, Social Learning",Verified
+Learning Management Systems,Totara Learn,New Zealand,https://www.totaralearning.com,"100+","$20M+",2011,Small Enterprise,"Open-Source LMS for Corporate & Government",Verified
+Learning Management Systems,Itslearning,Norway,https://itslearning.com,"200+","$50M+",1999,Small Enterprise,"K-12 LMS, Personalized Learning",Verified
+Learning Management Systems,Edmodo,USA,https://www.edmodo.com,"50+","$10M+",2008,Small Enterprise,"K-12 Social Learning Network, Communication",Verified
+Learning Management Systems,Scholastic Learning Zone,USA,https://digital.scholastic.com,"7,000+","$1.5B+",1920,Large Enterprise,"Digital Content Management for Schools",Verified
+Learning Management Systems,Open LMS,USA,https://www.openlms.net,"100+","$20M+",2005,Small Enterprise,"Moodle-Based SaaS, LTG Subsidiary",Verified
+EdTech Hardware & Software,Promethean World,UK,https://www.prometheanworld.com,"1,000+","$200M+",1997,Medium Enterprise,"Interactive Displays (ActivPanel), Lesson Delivery",Verified
+EdTech Hardware & Software,SMART Technologies,Canada,https://www.smarttech.com,"1,000+","$200M+",1987,Medium Enterprise,"Interactive Whiteboards, Displays, Software",Verified
+EdTech Hardware & Software,BenQ Education,Taiwan,https://www.benq.com,"1,000+","$3B+",1984,Large Enterprise,"Interactive Projectors, Displays, Classroom Lighting",Verified
+EdTech Hardware & Software,ViewSonic Education,USA,https://www.viewsonic.com,"1,000+","$1B+",1987,Large Enterprise,"Interactive Displays, Projectors, myViewBoard",Verified
+EdTech Hardware & Software,Epson Education Projectors,Japan,https://epson.com,"80,000+","$10B+",1942,Large Enterprise,"Projectors, Document Cameras",Verified
+EdTech Hardware & Software,Cisco Education,USA,https://www.cisco.com,"80,000+","$50B+",1984,Large Enterprise,"Networking, Webex, Collaboration",Verified
+EdTech Hardware & Software,Lenovo Education,China,https://www.lenovo.com,"63,000+","$70B+",1984,Large Enterprise,"Laptops, Tablets, Chromebooks",Verified
+EdTech Hardware & Software,Dell Education,USA,https://www.dell.com,"165,000+","$100B+",1984,Large Enterprise,"Laptops, Desktops, IT Infrastructure",Verified
+EdTech Hardware & Software,HP Education,USA,https://www.hp.com,"61,000+","$63B+",1939,Large Enterprise,"Laptops, Printers, Chromebooks",Verified
+EdTech Hardware & Software,Microsoft Education,USA,https://www.microsoft.com/education,"221,000+","$200B+",1975,Large Enterprise,"Windows, Office 365, Teams, Azure",Verified
+EdTech Hardware & Software,Apple Education,USA,https://www.apple.com/education,"164,000+","$383B+",1976,Large Enterprise,"iPad, Mac, Apple Teacher, Swift Playgrounds",Verified
+EdTech Hardware & Software,Promethean ActivPanel,UK,https://www.prometheanworld.com,"1,000+","$200M+",1997,Medium Enterprise,"Interactive Flat Panel Displays",Verified
+EdTech Hardware & Software,Clevertouch Technologies,UK,https://www.clevertouch.com,"100+","$20M+",2012,Small Enterprise,"Interactive Displays, Software (Lynx)",Verified
+EdTech Hardware & Software,Newline Interactive,USA,https://www.newline-interactive.com,"100+","$20M+",2012,Small Enterprise,"Interactive Displays, Cloud Collaboration",Verified
+EdTech Hardware & Software,Boxlight Corporation,USA,https://www.boxlight.com,"500+","$100M+",1985,Small Enterprise,"Interactive Displays, Projectors, STEM Solutions",Verified
+EdTech Hardware & Software,HoverCam,USA,https://www.hovercam.com,"100+","$20M+",2006,Small Enterprise,"Document Cameras, Digital Podiums",Verified
+EdTech Hardware & Software,Avocor,UK,https://www.avocor.com,"100+","$20M+",2011,Small Enterprise,"Collaborative Displays, Enterprise & Education",Verified
+EdTech Hardware & Software,Kaltura Video Cloud,USA,https://corp.kaltura.com,"500+","$100M+",2006,Medium Enterprise,"Video Platform, Lecture Capture, Media Management",Verified
+Special Education Services,Special Olympics,USA,https://www.specialolympics.org,"5,000+","$200M+",1968,Medium Enterprise,"Sports Training & Competition, Inclusion",Verified
+Special Education Services,Easterseals,USA,https://www.easterseals.com,"20,000+","$500M+",1919,Large Enterprise,"Disability Services, Early Intervention, Therapy",Verified
+Special Education Services,Linden Learning,USA,https://www.lindenlearning.org,"N/A","N/A",,Unknown,Unknown,Unverified
+Special Education Services,Understood,USA,https://www.understood.org,"200+","$20M+",2014,Small Enterprise,"Resources for Learning & Thinking Differences, Non-Profit",Verified
+Special Education Services,National Autistic Society,UK,https://www.autism.org.uk,"5,000+","$100M+",1962,Large Enterprise,"Autism Support, Schools, Advocacy",Verified
+Special Education Services,Dyslexia Action,UK,https://dyslexiaaction.org.uk,"500+","$10M+",1999,Small Enterprise,"Dyslexia Assessment, Tutoring, Training",Verified
+Special Education Services,Down Syndrome Education International,UK,https://www.dseinternational.org,"100+","$5M+",1987,Small Enterprise,"Research, Resources, Support",Verified
+Special Education Services,Perkins School for the Blind,USA,https://www.perkins.org,"500+","$50M+",1829,Small Enterprise,"Education for Blind & Visually Impaired",Verified
+Special Education Services,Rosslyn Academy,Kenya,https://www.rosslynacademy.org,"200+","$5M+",1947,Small Enterprise,"International Christian School, Learning Support",Verified
+Special Education Services,Child Mind Institute,USA,https://childmind.org,"300+","$30M+",2009,Small Enterprise,"Child Mental Health, Resources, Clinical Care",Verified
+Special Education Services,CAST,USA,https://www.cast.org,"100+","$10M+",1984,Small Enterprise,"Universal Design for Learning (UDL) Framework",Verified
+Special Education Services,Landmark School,USA,https://www.landmarkschool.org,"500+","$20M+",1971,Small Enterprise,"Language-Based Learning Disabilities",Verified
+Special Education Services,The New England Center for Children,USA,https://www.necc.org,"1,000+","$50M+",1975,Medium Enterprise,"Autism Education & Research",Verified
+Special Education Services,Beacon College,USA,https://www.beaconcollege.edu,"200+","$10M+",1989,Small Enterprise,"College for Students with Learning Disabilities",Verified
+Special Education Services,May Institute,USA,https://www.mayinstitute.org,"2,000+","$100M+",1955,Medium Enterprise,"Autism Services, Behavioral Healthcare",Verified
+Special Education Services,Camphill Communities,UK,https://www.camphill.org.uk,"N/A","N/A",,Association,Intentional Communities, Disability Support,Verified
+Special Education Services,Brookville Center for Children's Services,USA,https://www.brookvillecenter.org,"500+","$20M+",1955,Small Enterprise,"Early Intervention, Education, Therapy",Verified
+Special Education Services,ACCESS Dubai,UAE,https://www.access.org.ae,"N/A","N/A",,Association,Special Needs Support, UAE,Verified
+Educational Toys & Games,Lego Education,Denmark,https://education.lego.com,"1,000+","$200M+",1980,Medium Enterprise,"Hands-On STEAM Learning, Robotics (SPIKE)",Verified
+Educational Toys & Games,Melissa & Doug,USA,https://www.melissaanddoug.com,"500+","$100M+",1988,Medium Enterprise,"Wooden Toys, Puzzles, Arts & Crafts",Verified
+Educational Toys & Games,Osmo,USA,https://www.playosmo.com,"100+","$20M+",2013,Small Enterprise,"Tangible Play, iPad Games, STEAM",Verified
+Educational Toys & Games,ThinkFun,USA,https://www.thinkfun.com,"100+","$20M+",1985,Small Enterprise,"Logic Games, Brain Teasers, STEM",Verified
+Educational Toys & Games,Educational Insights,USA,https://www.educationalinsights.com,"200+","$50M+",1962,Small Enterprise,"Hands-On Learning Products, Games",Verified
+Educational Toys & Games,Learning Resources,USA,https://www.learningresources.com,"500+","$100M+",1984,Medium Enterprise,"Hands-On Learning, Manipulatives, STEM",Verified
+Educational Toys & Games,VTech Electronics,Hong Kong,https://www.vtech.com,"30,000+","$2B+",1976,Large Enterprise,"Electronic Learning Toys, Kid Tablets",Verified
+Educational Toys & Games,LeapFrog Enterprises,USA,https://www.leapfrog.com,"500+","$100M+",1995,Medium Enterprise,"Electronic Learning, Reading Systems, VTech Subsidiary",Verified
+Educational Toys & Games,Fat Brain Toys,USA,https://www.fatbraintoys.com,"100+","$20M+",2002,Small Enterprise,"Curated Educational Toys, Online Retail",Verified
+Educational Toys & Games,SmartGames,Belgium,https://www.smartgames.eu,"100+","$20M+",1992,Small Enterprise,"Single-Player Logic Games",Verified
+Educational Toys & Games,Blue Orange Games,France,https://www.blueorangegames.com,"50+","$10M+",2000,Small Enterprise,"Award-Winning Board Games",Verified
+Educational Toys & Games,Hape Toys,Germany,https://www.hapetoys.com,"1,000+","$100M+",1986,Medium Enterprise,"Wooden Toys, Eco-Friendly",Verified
+Educational Toys & Games,PlanToys,Thailand,https://www.plantoys.com,"500+","$50M+",1981,Small Enterprise,"Sustainable Wooden Toys",Verified
+Educational Toys & Games,Tegu Magnetic Wooden Toys,Honduras,https://tegu.com,"50+","$5M+",2009,Small Enterprise,"Magnetic Wooden Blocks, Social Enterprise",Verified
+Educational Toys & Games,Thames & Kosmos,Germany,https://www.thamesandkosmos.com,"100+","$20M+",2001,Small Enterprise,"Science Kits, Physics, Chemistry, Biology",Verified
+Educational Toys & Games,Guidecraft,USA,https://www.guidecraft.com,"100+","$20M+",1966,Small Enterprise,"Educational Furniture, Blocks, Manipulatives",Verified
+Educational Toys & Games,BanBao Toys,China,https://www.banbaotoys.com,"1,000+","$100M+",1993,Medium Enterprise,"Construction Blocks, Compatible Bricks",Verified
+Educational Toys & Games,PlayShifu,India,https://www.playshifu.com,"200+","$20M+",2016,Small Enterprise,"AR-Based Educational Games & Toys",Verified
+Educational Toys & Games,Orboot (PlayShifu),India,https://www.orbot.com,"200+","$20M+",2016,Small Enterprise,"AR Globe, Geography & Culture",Verified
+School Management Software,PowerSchool,USA,https://www.powerschool.com,"3,000+","$500M+",1997,Large Enterprise,"SIS, LMS, Analytics, K-12",Verified
+School Management Software,Ellucian,USA,https://www.ellucian.com,"2,500+","$500M+",1968,Large Enterprise,"ERP, SIS for Higher Education",Verified
+School Management Software,Blackbaud Education,USA,https://www.blackbaud.com,"3,000+","$1B+",1981,Large Enterprise,"SIS, Financial Management, K-12",Verified
+School Management Software,Alma SIS,USA,https://www.getalma.com,"100+","$20M+",2015,Small Enterprise,"Student Information System, K-12",Verified
+School Management Software,Gradelink,USA,https://www.gradelink.com,"100+","$10M+",1993,Small Enterprise,"SIS, Gradebook, Reporting",Verified
+School Management Software,Veracross,USA,https://www.veracross.com,"200+","$50M+",2005,Small Enterprise,"SIS for Independent Schools",Verified
+School Management Software,Senior Systems,USA,https://seniorsystems.com,"100+","$20M+",1984,Small Enterprise,"SIS for K-12 Independent Schools",Verified
+School Management Software,Classe365,Australia,https://www.classe365.com,"100+","$10M+",2014,Small Enterprise,"SIS, LMS, CRM, All-in-One",Verified
+School Management Software,Fedena,India,https://fedena.com,"100+","$10M+",2010,Small Enterprise,"School ERP, Open Source & Cloud",Verified
+School Management Software,Sycamore Education,USA,https://www.sycamoreschool.com,"100+","$10M+",1999,Small Enterprise,"SIS, School Management, K-12",Verified
+School Management Software,OpenEduCat,India,https://openeducat.org,"100+","$10M+",2014,Small Enterprise,"Open Source ERP for Education",Verified
+School Management Software,ThinkWave,USA,https://www.thinkwave.com,"N/A","N/A",1997,Small Enterprise,"Cloud-Based SIS, Gradebook",Verified
+School Management Software,Rediker Software,USA,https://www.rediker.com,"100+","$20M+",1980,Small Enterprise,"SIS, School Administration",Verified
+School Management Software,Edsby,Canada,https://edsby.com,"100+","$10M+",2010,Small Enterprise,"Learning Management & Analytics, K-12",Verified
+School Management Software,School Time,New Zealand,https://www.schooltime.co.nz,"N/A","N/A",,Unknown,Unknown,Unverified
+School Management Software,WCBS (Access Group),UK,https://www.wcbs.co.uk,"100+","$20M+",1984,Small Enterprise,"School Management Information Systems, UK",Verified
+School Management Software,MySchool,UK,https://www.myschool.co.uk,"N/A","N/A",,Unknown,Unknown,Unverified
+School Management Software,iSAMS,UK,https://www.isams.com,"100+","$20M+",2005,Small Enterprise,"Management Information System, Independent Schools",Verified
+Study Abroad Services,EF Education First,Switzerland,https://www.ef.com,"52,000+","$1B+",1965,Large Enterprise,"Language Travel, Cultural Exchange, Degree Programs",Verified
+Study Abroad Services,CIEE (Council on International Educational Exchange),USA,https://www.ciee.org,"500+","$100M+",1947,Medium Enterprise,"Study Abroad, Work & Travel, Teach Abroad",Verified
+Study Abroad Services,ISEP (International Student Exchange Programs),USA,https://www.isep.org,"100+","$20M+",1979,Small Enterprise,"Network of Universities, Direct & Exchange",Verified
+Study Abroad Services,AIFS Abroad,USA,https://www.aifsabroad.com,"200+","$50M+",1964,Small Enterprise,"Study Abroad, Internships, Cultural Exchange",Verified
+Study Abroad Services,CEA CAPA Education Abroad,USA,https://www.ceacapa.org,"200+","$50M+",1997,Small Enterprise,"Study Abroad, Internships, Faculty-Led Programs",Verified
+Study Abroad Services,API Abroad (Academic Programs International),USA,https://apiabroad.com,"200+","$50M+",1997,Small Enterprise,"Study Abroad, Internships, Service-Learning",Verified
+Study Abroad Services,IES Abroad,USA,https://www.iesabroad.org,"500+","$100M+",1950,Medium Enterprise,"Study Abroad, Internships, Customized Programs",Verified
+Study Abroad Services,CIS Abroad,USA,https://www.cisabroad.com,"100+","$20M+",2007,Small Enterprise,"Study Abroad, Internships, Affordable Options",Verified
+Study Abroad Services,ISA (International Studies Abroad),USA,https://www.studiesabroad.com,"200+","$50M+",1987,Small Enterprise,"Study Abroad, Internships, Service-Learning",Verified
+Study Abroad Services,SIT Study Abroad,USA,https://studyabroad.sit.edu,"500+","$100M+",1964,Medium Enterprise,"Critical Global Issues Focus, Field-Based Study",Verified
+Study Abroad Services,GoAbroad.com,USA,https://www.goabroad.com,"50+","$5M+",1997,Small Enterprise,"Online Directory, Program Search, Resources",Verified
+Study Abroad Services,StudyPortals,Netherlands,https://www.studyportals.com,"200+","$20M+",2007,Small Enterprise,"Masters & Bachelors Program Search Engine",Verified
+Study Abroad Services,British Council,UK,https://study-uk.britishcouncil.org,"10,000+","$1.5B+",1934,Large Enterprise,"Cultural Relations, English Teaching, Education Promotion",Verified
+Study Abroad Services,DAAD (German Academic Exchange Service),Germany,https://www.daad.de,"1,000+","$500M+",1925,Large Enterprise,"German Scholarships, Research Funding, Information",Verified
+Study Abroad Services,Campus France,France,https://www.campusfrance.org,"N/A","N/A",,Government,Promotion of French Higher Education,Verified
+Study Abroad Services,Study in Australia,Australia,https://www.studyinaustralia.gov.au,"N/A","N/A",,Government,Official Government Resource,Verified
+Study Abroad Services,Education New Zealand,New Zealand,https://www.studywithnewzealand.govt.nz,"N/A","N/A",,Government,Official Government Resource,Verified
+Study Abroad Services,Study in Canada,Canada,https://www.educanada.ca,"N/A","N/A",,Government,Official Government Resource,Verified
+Study Abroad Services,Study in Japan,Japan,https://www.studyinjapan.go.jp,"N/A","N/A",,Government,Official Government Resource,Verified
+Educational Consulting,Parthenon-EY,UK,https://www.parthenon.ey.com,"300,000+","$45B+",1989,Large Enterprise,"Strategy Consulting, Education Practice",Verified
+Educational Consulting,Bain & Company Education Practice,USA,https://www.bain.com,"13,000+","$5B+",1973,Large Enterprise,"Management Consulting, Education Practice",Verified
+Educational Consulting,McKinsey Education Practice,USA,https://www.mckinsey.com,"38,000+","$12B+",1926,Large Enterprise,"Management Consulting, Education Practice",Verified
+Educational Consulting,Boston Consulting Group (BCG) Education,USA,https://www.bcg.com,"25,000+","$11B+",1963,Large Enterprise,"Management Consulting, Education Practice",Verified
+Educational Consulting,Huron Consulting Group Education,USA,https://www.huronconsultinggroup.com,"3,000+","$1B+",2002,Large Enterprise,"Higher Education Consulting, Operations",Verified
+Educational Consulting,Rnwl Education Consulting,USA,https://www.rnwl.org,"N/A","N/A",,Unknown,Unknown,Unverified
+Educational Consulting,Carney Sandoe & Associates,USA,https://www.carneysandoe.com,"100+","$20M+",1977,Small Enterprise,"Search Firm for Independent & Private Schools",Verified
+Educational Consulting,Greenwood Asher & Associates,USA,https://greenwoodsearch.com,"50+","$5M+",1992,Small Enterprise,"Executive Search for Higher Education",Verified
+Educational Consulting,Academic Search,USA,https://www.academicsearch.org,"50+","$5M+",1976,Small Enterprise,"Higher Education Executive Search",Verified
+Educational Consulting,The Education Group,USA,https://www.educationgroup.com,"N/A","N/A",,Unknown,Unknown,Unverified
+Educational Consulting,ISC Research,UK,https://www.iscresearch.com,"50+","$5M+",1994,Small Enterprise,"Data & Intelligence on International Schools",Verified
+Educational Consulting,Keystone Academic Solutions,Norway,https://keystoneacademic.com,"100+","$10M+",2003,Small Enterprise,"Student Recruitment, Marketing Services",Verified
+Educational Consulting,IDP Education,Australia,https://www.idp.com,"5,000+","$500M+",1969,Large Enterprise,"Student Placement, IELTS Testing",Verified
+Educational Consulting,Study Group,UK,https://www.studygroup.com,"2,000+","$300M+",1994,Medium Enterprise,"Pathway Programs, University Partnerships",Verified
+Educational Consulting,Navitas,Australia,https://www.navitas.com,"5,000+","$800M+",1994,Large Enterprise,"Pathway Programs, University Partnerships",Verified
+Educational Consulting,Kaplan International Pathways,UK,https://www.kaplanpathways.com,"12,000+","$1.5B+",1938,Large Enterprise,"Pathway Programs, University Partnerships",Verified
+Educational Consulting,Shorelight Education,USA,https://shorelight.com,"1,000+","$100M+",2013,Medium Enterprise,"University Partnerships, International Student Recruitment",Verified
+Educational Consulting,ApplyBoard,Canada,https://www.applyboard.com,"1,500+","$200M+",2015,Medium Enterprise,"Platform for International Student Recruitment",Verified
+Open Courseware Providers,OpenStax (Rice University),USA,https://openstax.org,"50+","$10M+",2012,Small Enterprise,"Free Peer-Reviewed Textbooks, Non-Profit",Verified
+Open Courseware Providers,Khan Academy,USA,https://www.khanacademy.org,"300+","$50M+",2008,Medium Enterprise,"Free, K-14, Non-Profit, Mastery Learning",Verified
+Open Courseware Providers,edX Open Courses,USA,https://www.edx.org,"500+","$200M+",2012,Medium Enterprise,"Free & Paid Courses, University Partners",Verified
+Open Courseware Providers,Coursera Free Courses,USA,https://www.coursera.org,"1,500+","$600M+",2012,Large Enterprise,"Free Audit Option, Paid Certificates",Verified
+Open Courseware Providers,MIT OpenCourseWare,USA,https://ocw.mit.edu,"N/A","N/A",2000,Small Enterprise,"Free MIT Course Materials",Verified
+Open Courseware Providers,OpenLearn (Open University),UK,https://www.open.edu/openlearn,"N/A","N/A",2006,Small Enterprise,"Free Courses from The Open University",Verified
+Open Courseware Providers,Stanford Online,USA,https://online.stanford.edu,"N/A","N/A",,Small Enterprise,"Free & Paid Online Courses, Stanford",Verified
+Open Courseware Providers,Harvard Online Learning,USA,https://online-learning.harvard.edu,"N/A","N/A",,Small Enterprise,"Free & Paid Online Courses, Harvard",Verified
+Open Courseware Providers,Open Yale Courses,USA,https://oyc.yale.edu,"N/A","N/A",2007,Small Enterprise,"Free Yale Course Materials",Verified
+Open Courseware Providers,UC Berkeley Webcasts,USA,https://webcast.berkeley.edu,"N/A","N/A",2001,Small Enterprise,"Free Course Webcasts, UC Berkeley",Verified
+Open Courseware Providers,Saylor Academy,USA,https://www.saylor.org,"N/A","N/A",1999,Small Enterprise,"Free Courses, Credit Recommendations",Verified
+Open Courseware Providers,ALISON,Ireland,https://alison.com,"100+","$10M+",2007,Small Enterprise,"Free Certificates & Diplomas, Workplace Skills",Verified
+Open Courseware Providers,OER Commons,USA,https://www.oercommons.org,"N/A","N/A",2007,Small Enterprise,"Open Educational Resources Hub, ISKME",Verified
+Open Courseware Providers,FutureLearn Free Courses,UK,https://www.futurelearn.com,"200+","$50M+",2012,Small Enterprise,"Free & Paid Courses, UK University Partners",Verified
+Open Courseware Providers,Academic Earth,USA,https://academicearth.org,"N/A","N/A",2009,Small Enterprise,"Aggregator of Free Online Courses",Verified
+Open Courseware Providers,Open Culture,USA,https://www.openculture.com,"N/A","N/A",2006,Small Enterprise,"Aggregator of Free Cultural & Educational Media",Verified
+Open Courseware Providers,Merlot (CSU),USA,https://www.merlot.org,"N/A","N/A",1997,Small Enterprise,"OER Repository, California State University",Verified
+Open Courseware Providers,Open Education Consortium,USA,https://www.oeconsortium.org,"N/A","N/A",2008,Small Enterprise,"Global OER Network, Advocacy",Verified
+Educational Nonprofits,Bill & Melinda Gates Foundation Education,USA,https://www.gatesfoundation.org,"1,600+","$6B Annual Grant Budget",2000,Large Enterprise,"K-12, Postsecondary, Global Development",Verified
+Educational Nonprofits,Chan Zuckerberg Initiative Education,USA,https://chanzuckerberg.com/education,"300+","$1B+ Pledged",2015,Medium Enterprise,"Whole Child, Personalized Learning, Science",Verified
+Educational Nonprofits,UNESCO Education,France,https://en.unesco.org/themes/education,"2,000+","$1B+ Budget",1945,Large Enterprise,"Global Education, Literacy, Teacher Development",Verified
+Educational Nonprofits,Teach For All,USA,https://teachforall.org,"500+","$100M+",2007,Medium Enterprise,"Global Network, Education Equity, Leadership",Verified
+Educational Nonprofits,Room to Read,USA,https://www.roomtoread.org,"1,000+","$50M+",2000,Medium Enterprise,"Literacy, Girls' Education, Developing Countries",Verified
+Educational Nonprofits,CARE Education,USA,https://www.care.org,"10,000+","$600M+",1945,Large Enterprise,"Poverty, Gender Equality, Education Programs",Verified
+Educational Nonprofits,Save the Children Education,UK,https://www.savethechildren.org,"25,000+","$2B+",1919,Large Enterprise,"Emergency Response, Education, Child Protection",Verified
+Educational Nonprofits,Pratham Education Foundation,India,https://www.pratham.org,"1,000+","$20M+",1994,Medium Enterprise,"Large-Scale Learning Interventions, India",Verified
+Educational Nonprofits,British Council,UK,https://www.britishcouncil.org,"10,000+","$1.5B+",1934,Large Enterprise,"Cultural Relations, English Teaching, Exams",Verified
+Educational Nonprofits,World Learning,USA,https://www.worldlearning.org,"500+","$100M+",1932,Medium Enterprise,"Study Abroad, Exchange, Development",Verified
+Educational Nonprofits,Education Development Center (EDC),USA,https://www.edc.org,"1,500+","$200M+",1958,Large Enterprise,"Global Health, Education, Economic Development",Verified
+Educational Nonprofits,FHI 360 Education,USA,https://www.fhi360.org,"4,000+","$500M+",1971,Large Enterprise,"Human Development, Education, Health",Verified
+Educational Nonprofits,Acumen Academy,USA,https://acumenacademy.org,"100+","$10M+",2001,Small Enterprise,"Impact Investing, Leadership Development",Verified
+Educational Nonprofits,Ashoka Education,USA,https://www.ashoka.org,"300+","$30M+",1980,Small Enterprise,"Social Entrepreneurship, Fellow Network",Verified
+Educational Nonprofits,KA Lite (Foundation for Learning Equality),USA,https://learningequality.org,"50+","$5M+",2013,Small Enterprise,"Offline Digital Learning Platform (Kolibri)",Verified
+Educational Nonprofits,One Laptop per Child,USA,https://www.laptop.org,"N/A","N/A",2005,Small Enterprise,"Low-Cost Laptops for Children in Developing Countries",Verified
+Educational Nonprofits,Education Above All Foundation,Qatar,https://www.educationaboveall.org,"100+","$100M+",2012,Medium Enterprise,"Out-of-School Children, Protection, Advocacy",Verified
+Educational Nonprofits,Global Partnership for Education,USA,https://www.globalpartnership.org,"100+","$1B+ Funding",2002,Medium Enterprise,"Multilateral Partnership, Developing Countries",Verified
+Educational Nonprofits,Malala Fund,UK,https://malala.org,"50+","$10M+",2013,Small Enterprise,"Girls' Education, Advocacy, Grantmaking",Verified

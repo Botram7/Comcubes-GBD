@@ -1,0 +1,375 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Wireless Carriers,Verizon Communications,USA,https://www.verizon.com,"117,100+","$137B+",1983,Conglomerate,"5G, Fios, Wireless, Enterprise",Verified
+Wireless Carriers,AT&T,USA,https://www.att.com,"160,700+","$122B+",1885,Conglomerate,"Wireless, Fiber, HBO Max, DirecTV",Verified
+Wireless Carriers,China Mobile,China,https://www.chinamobileltd.com,"450,000+","$110B+",1997,Conglomerate,"Mobile, Broadband, Digital Services",Verified
+Wireless Carriers,Vodafone Group,UK,https://www.vodafone.com,"104,000+","$50B+",1991,Conglomerate,"Mobile, IoT, M-Pesa, Enterprise",Verified
+Wireless Carriers,Deutsche Telekom,Germany,https://www.telekom.com,"216,000+","$121B+",1995,Conglomerate,"Mobile, MagentaTV, T-Mobile US, Fiber",Verified
+Wireless Carriers,NTT Docomo,Japan,https://www.nttdocomo.co.jp,"20,000+","$45B+",1991,Large Enterprise,"Mobile, Payment, Digital Services",Verified
+Wireless Carriers,Orange S.A.,France,https://www.orange.com,"136,000+","$47B+",1994,Conglomerate,"Mobile, Fixed, Banking, IT Services",Verified
+Wireless Carriers,Telefónica,Spain,https://www.telefonica.com,"102,000+","$43B+",1924,Conglomerate,"Mobile, Fiber, Movistar+, Hispam",Verified
+Wireless Carriers,SoftBank Corp.,Japan,https://www.softbank.jp,"20,000+","$40B+",1981,Large Enterprise,"Mobile, Yahoo Japan, PayPay",Verified
+Wireless Carriers,T-Mobile US,USA,https://www.t-mobile.com,"76,000+","$80B+",1994,Large Enterprise,"5G, Un-carrier, Magenta",Verified
+Wireless Carriers,America Movil,Mexico,https://www.americamovil.com,"190,000+","$53B+",2000,Conglomerate,"Wireless, Fixed, Claro, Telmex",Verified
+Wireless Carriers,Bharti Airtel,India,https://www.airtel.com,"18,000+","$14B+",1995,Large Enterprise,"Mobile, Airtel Xstream, Payments",Verified
+Wireless Carriers,SK Telecom,South Korea,https://www.sktelecom.com,"4,800+","$13B+",1984,Large Enterprise,"5G, AI, Media, Security",Verified
+Wireless Carriers,Telstra,Australia,https://www.telstra.com,"29,000+","$18B+",1975,Large Enterprise,"Mobile, Fixed, Network APIs, Telstra Purple",Verified
+Wireless Carriers,Rogers Communications,Canada,https://www.rogers.com,"24,000+","$12B+",1960,Large Enterprise,"Wireless, Cable, Media, Sports",Verified
+Wireless Carriers,MTN Group,South Africa,https://www.mtn.com,"17,000+","$11B+",1994,Large Enterprise,"Pan-Africa Mobile, Mobile Money",Verified
+Wireless Carriers,Saudi Telecom Company,Saudi Arabia,https://www.stc.com.sa,"20,000+","$15B+",1998,Large Enterprise,"Mobile, stc pay, Enterprise, Fiber",Verified
+Wireless Carriers,Singtel,Singapore,https://www.singtel.com,"22,000+","$11B+",1992,Large Enterprise,"Mobile, NCS, Optus, Digital",Verified
+Wireless Carriers,Swisscom,Switzerland,https://www.swisscom.ch,"19,000+","$12B+",1998,Large Enterprise,"Mobile, Fixed, TV, IT Services",Verified
+Wireless Carriers,Turkcell,Turkey,https://www.turkcell.com.tr,"13,000+","$3B+",1994,Large Enterprise,"Mobile, BiP, Paycell, Digital Services",Verified
+Fiber Optics,Corning Inc.,USA,https://www.corning.com,"61,000+","$14B+",1851,Large Enterprise,"Optical Fiber, Cable, Gorilla Glass",Verified
+Fiber Optics,Prysmian Group,Italy,https://www.prysmiangroup.com,"30,000+","$16B+",2005,Large Enterprise,"Optical Cables, Submarine, Energy",Verified
+Fiber Optics,Sumitomo Electric,Japan,https://global.sei.co.jp,"280,000+","$29B+",1897,Conglomerate,"Optical Fiber, Automotive, Electronics",Verified
+Fiber Optics,Furukawa Electric,Japan,https://www.furukawa.co.jp,"48,000+","$8B+",1884,Large Enterprise,"Optical Fiber, Metals, Electronics",Verified
+Fiber Optics,YOFC (Yangtze Optical),China,https://www.yofc.com,"15,000+","$1.5B+",1998,Large Enterprise,"Optical Fiber, Preform, Cable",Verified
+Fiber Optics,CommScope,USA,https://www.commscope.com,"30,000+","$9B+",1976,Large Enterprise,"Fiber, Cable, Antennas, Ruckus",Verified
+Fiber Optics,Hengtong Optic-Electric,China,https://www.hengtonggroup.com,"15,000+","$6B+",1993,Large Enterprise,"Optical Fiber, Cable, Smart Grid",Verified
+Fiber Optics,Sterlite Technologies,India,https://www.stl.tech,"5,000+","$1B+",2000,Large Enterprise,"Optical Fiber, Network Integration",Verified
+Fiber Optics,Fujikura Ltd.,Japan,https://www.fujikura.co.jp,"58,000+","$6B+",1885,Large Enterprise,"Optical Fiber, Automotive, Electronics",Verified
+Fiber Optics,Nexans,France,https://www.nexans.com,"26,000+","$8B+",2000,Large Enterprise,"Optical Cables, Submarine, Electrification",Verified
+Fiber Optics,Finisar (II-VI),USA,https://www.ii-vi.com,"25,000+ (II-VI)","$3B+ (II-VI)",1988,Large Enterprise,"Optical Components, Lasers, VCSELs",Verified
+Fiber Optics,Infinera Corporation,USA,https://www.infinera.com,"2,500+","$1.5B+",2001,Large Enterprise,"Optical Transport, ICE6, GX",Verified
+Fiber Optics,Lumentum,USA,https://www.lumentum.com,"5,000+","$1.7B+",2015,Large Enterprise,"Optical Components, Lasers, ROADMs",Verified
+Fiber Optics,ADTRAN,USA,https://www.adtran.com,"1,700+","$700M+",1985,Large Enterprise,"Fiber Access, PON, NG-PON2",Verified
+Fiber Optics,Ciena Corporation,USA,https://www.ciena.com,"8,000+","$4B+",1992,Large Enterprise,"Optical Networking, Packet, Software",Verified
+Fiber Optics,Accelink Technology,China,https://en.accelink.com,"3,000+","$500M+",2001,Medium Enterprise,"Optical Chips, Modules, Devices",Verified
+Fiber Optics,FiberHome,China,https://www.fiberhome.com,"14,000+","$4B+",1999,Large Enterprise,"Optical Comms, Network Security, Data",Verified
+Fiber Optics,Huber+Suhner,Switzerland,https://www.hubersuhner.com,"4,500+","$800M+",1864,Large Enterprise,"Fiber Optics Connectors, Cable Systems",Verified
+Fiber Optics,Siemon,USA,https://www.siemon.com,"1,000+","$200M+",1903,Medium Enterprise,"Structured Cabling, Data Centers",Verified
+Satellite Communications,SpaceX (Starlink),USA,https://www.starlink.com,"13,000+","$4B+",2002,Large Enterprise,"LEO Constellation, Satellite Internet",Verified
+Satellite Communications,OneWeb,UK,https://www.oneweb.world,"600+","$100M+",2012,Medium Enterprise,"LEO Constellation, Global Broadband",Verified
+Satellite Communications,Intelsat,Luxembourg,https://www.intelsat.com,"1,000+","$2B+",1964,Large Enterprise,"GEO Satellites, Media, Network Services",Verified
+Satellite Communications,SES S.A.,Luxembourg,https://www.ses.com,"2,000+","$2B+",1985,Large Enterprise,"GEO/MEO Constellation, Video & Data",Verified
+Satellite Communications,Eutelsat,France,https://www.eutelsat.com,"1,000+","$1B+",1977,Large Enterprise,"Broadcast, Broadband, Data Services",Verified
+Satellite Communications,Viasat,USA,https://www.viasat.com,"6,000+","$3B+",1986,Large Enterprise,"Satellite Comms, In-Flight WiFi",Verified
+Satellite Communications,Telesat,Canada,https://www.telesat.com,"500+","$600M+",1969,Medium Enterprise,"Telesat Lightspeed LEO, GEO Services",Verified
+Satellite Communications,Inmarsat (Viasat),UK,https://www.inmarsat.com,"1,800+ (Viasat)","$3B+ (Viasat)",1979,Large Enterprise,"GX Aviation, Maritime, Government",Verified
+Satellite Communications,Globalstar,USA,https://www.globalstar.com,"300+","$150M+",1991,Medium Enterprise,"Satellite Voice, Data, SPOT",Verified
+Satellite Communications,Iridium Communications,USA,https://www.iridium.com,"600+","$800M+",2001,Medium Enterprise,"Iridium NEXT, Satellite Phone & Data",Verified
+Satellite Communications,Thuraya,UAE,https://www.thuraya.com,"200+","$100M+",1997,Medium Enterprise,"Mobile Satellite Services, GSM",Verified
+Satellite Communications,ORBCOMM,USA,https://www.orbcomm.com,"500+","$200M+",2001,Medium Enterprise,"M2M, IoT, Asset Tracking",Verified
+Satellite Communications,Planet Labs,USA,https://www.planet.com,"1,000+","$200M+",2010,Medium Enterprise,"Dove Satellites, Daily Earth Imaging",Verified
+Satellite Communications,Spire Global,USA,https://www.spire.com,"400+","$100M+",2012,Medium Enterprise,"Lemur Cubesats, Weather, AIS, ADS-B",Verified
+Satellite Communications,Maxar Technologies,USA,https://www.maxar.com,"4,500+","$2B+",1969,Large Enterprise,"Earth Intelligence, Space Infrastructure",Verified
+Satellite Communications,AST SpaceMobile,USA,https://www.ast-science.com,"300+","$50M+",2017,Medium Enterprise,"Space-Based Cellular Broadband",Verified
+Satellite Communications,Hughes Network Systems,USA,https://www.hughes.com,"2,000+","$2B+",1971,Large Enterprise,"VSAT, Satellite Broadband, JUPITER",Verified
+Satellite Communications,Gilat Satellite Networks,Israel,https://www.gilat.com,"800+","$200M+",1987,Medium Enterprise,"VSAT, Satellite Networking",Verified
+Satellite Communications,Avanti Communications,UK,https://www.avanti.space,"200+","$50M+",2002,Medium Enterprise,"HTS, Broadband, EMEA Coverage",Verified
+5G Infrastructure,Ericsson,Sweden,https://www.ericsson.com,"105,000+","$26B+",1876,Large Enterprise,"5G RAN, Core, OSS/BSS",Verified
+5G Infrastructure,Nokia,Finland,https://www.nokia.com,"87,000+","$25B+",1865,Large Enterprise,"5G RAN, Core, Fixed Networks",Verified
+5G Infrastructure,Huawei,China,https://www.huawei.com,"207,000+","$99B+",1987,Conglomerate,"5G End-to-End, Antennas, CloudCore",Verified
+5G Infrastructure,ZTE Corporation,China,https://www.zte.com.cn,"74,000+","$17B+",1985,Large Enterprise,"5G RAN, Core, Mobile Devices",Verified
+5G Infrastructure,Samsung Networks,South Korea,https://www.samsung.com,"287,000+ (Samsung)","$245B+ (Samsung)",1938,Conglomerate,"5G RAN, vRAN, Chipsets",Verified
+5G Infrastructure,Cisco Systems,USA,https://www.cisco.com,"84,900+","$57B+",1984,Conglomerate,"5G Transport, IP, Security",Verified
+5G Infrastructure,NEC Corporation,Japan,https://www.nec.com,"112,000+","$27B+",1899,Conglomerate,"5G Open RAN, Core, Submarine",Verified
+5G Infrastructure,Fujitsu,Japan,https://www.fujitsu.com,"126,000+","$28B+",1935,Conglomerate,"5G RAN, vDU, O-RAN",Verified
+5G Infrastructure,Qualcomm,USA,https://www.qualcomm.com,"51,000+","$38B+",1985,Conglomerate,"5G Modems, RF Front-End, Chipsets",Verified
+5G Infrastructure,Mavenir,USA,https://www.mavenir.com,"3,000+","$500M+",2005,Large Enterprise,"Cloud-Native 5G Core, Open RAN",Verified
+5G Infrastructure,Parallel Wireless,USA,https://www.parallelwireless.com,"200+","$50M+",2012,Medium Enterprise,"Open RAN, 2G-5G Software",Verified
+5G Infrastructure,Airspan Networks,USA,https://www.airspan.com,"500+","$100M+",1992,Medium Enterprise,"5G RAN, Fixed Wireless, Small Cells",Verified
+5G Infrastructure,Comba Telecom,Hong Kong,https://www.comba-telecom.com,"5,000+","$1B+",1997,Large Enterprise,"Antennas, Base Stations, Small Cells",Verified
+5G Infrastructure,Ceragon Networks,Israel,https://www.ceragon.com,"500+","$100M+",1996,Medium Enterprise,"5G Wireless Backhaul, Microwave",Verified
+5G Infrastructure,Druid Software,Ireland,https://www.druidsoftware.com,"50-100","$10M+",2001,Small Enterprise,"Private 5G/4G Core, Raemis",Verified
+5G Infrastructure,Athonet,Italy,https://www.athonet.com,"100+","$20M+",2005,Small Enterprise,"Mobile Core, Private LTE/5G",Verified
+5G Infrastructure,Altiostar (Rakuten),USA,https://www.altiostar.com,"200+","N/A (Acquired)",2011,Medium Enterprise,"Open vRAN, 4G/5G Software",Verified
+5G Infrastructure,Affirmed Networks (Microsoft),USA,https://www.affirmednetworks.com,"500+","N/A (Acquired)",2010,Medium Enterprise,"5G Core, Virtualized EPC",Verified
+5G Infrastructure,Metaswitch Networks (Microsoft),UK,https://www.metaswitch.com,"700+","N/A (Acquired)",1981,Medium Enterprise,"Cloud-Native Core, IMS",Verified
+IoT Solutions,Sierra Wireless,Canada,https://www.sierrawireless.com,"1,000+","$500M+",1993,Medium Enterprise,"IoT Modules, Gateways, Connectivity",Verified
+IoT Solutions,Telit,UK,https://www.telit.com,"800+","$300M+",1986,Medium Enterprise,"IoT Modules, Platforms, Services",Verified
+IoT Solutions,Thales Group,France,https://www.thalesgroup.com,"81,000+","$20B+",1893,Conglomerate,"IoT, Cinterion, Aerospace, Defense",Verified
+IoT Solutions,Quectel,China,https://www.quectel.com,"3,000+","$1.5B+",2010,Large Enterprise,"IoT Modules, GNSS, Antennas",Verified
+IoT Solutions,Sequans Communications,France,https://www.sequans.com,"200+","$50M+",2003,Medium Enterprise,"5G/4G IoT Chips, Monarch",Verified
+IoT Solutions,U-blox,Switzerland,https://www.u-blox.com,"1,200+","$500M+",1997,Medium Enterprise,"GNSS, Cellular, Short Range Modules",Verified
+IoT Solutions,Actility,France,https://www.actility.com,"200+","$50M+",2010,Medium Enterprise,"ThingPark LPWAN Platform, LoRaWAN",Verified
+IoT Solutions,Sigfox,France,https://www.sigfox.com,"400+","$100M+",2010,Medium Enterprise,"0G Network, LPWAN, Global IoT",Verified
+IoT Solutions,Losant,USA,https://www.losant.com,"50-100","$10M+",2014,Small Enterprise,"Enterprise IoT Platform, Application Enablement",Verified
+IoT Solutions,Software AG,Germany,https://www.softwareag.com,"5,000+","$1B+",1969,Large Enterprise,"Cumulocity IoT, Integration",Verified
+IoT Solutions,Altair,USA,https://www.altair.com,"3,000+","$500M+",1985,Large Enterprise,"IoT, Data Analytics, Simulation",Verified
+IoT Solutions,C3.ai,USA,https://c3.ai,"800+","$200M+",2009,Medium Enterprise,"Enterprise AI, IoT Applications",Verified
+IoT Solutions,ClearBlade,USA,https://www.clearblade.com,"50-100","$10M+",2007,Small Enterprise,"Edge Computing Platform, IoT",Verified
+IoT Solutions,Ayla Networks,USA,https://www.aylanetworks.com,"100-200","$20M+",2010,Small Enterprise,"IoT Platform, Agile IoT",Verified
+IoT Solutions,Carriots,Spain,https://www.carriots.com,"<50","$5M+",2011,Small Enterprise,"IoT Platform (Acquired by Altair)",Verified
+IoT Solutions,ThingWorx (PTC),USA,https://www.ptc.com,"7,000+ (PTC)","$2B+ (PTC)",1998,Large Enterprise,"Industrial IoT, AR, PLM",Verified
+IoT Solutions,Octonion SA,Switzerland,https://www.octonion.com,"<50","$5M+",2015,Small Enterprise,"Edge AI Software for IoT",Verified
+IoT Solutions,DevicePilot,UK,https://www.devicepilot.com,"<50","$5M+",2015,Small Enterprise,"IoT Service Monitoring, SaaS",Verified
+IoT Solutions,Relayr (Munich Re),Germany,https://relayr.io,"200+","$50M+",2012,Medium Enterprise,"Industrial IoT, Analytics, Middleware",Verified
+Unified Communications,Mitel Networks,Canada,https://www.mitel.com,"3,500+","$1.3B+",1971,Large Enterprise,"UCaaS, Contact Center, Collaboration",Verified
+Unified Communications,RingCentral,USA,https://www.ringcentral.com,"5,000+","$2B+",1999,Large Enterprise,"RingCentral MVP, UCaaS, Video",Verified
+Unified Communications,8x8 Inc.,USA,https://www.8x8.com,"2,000+","$600M+",1987,Large Enterprise,"X Series, UCaaS, Contact Center",Verified
+Unified Communications,Avaya Holdings,USA,https://www.avaya.com,"9,000+","$3B+",2000,Large Enterprise,"UCaaS, CCaaS, CPaaS",Verified
+Unified Communications,Microsoft Teams,USA,https://www.microsoft.com,"221,000+ (Microsoft)","$211B+ (Microsoft)",1975,Conglomerate,"Teams, Collaboration, Voice",Verified
+Unified Communications,Zoom Video Communications,USA,https://zoom.us,"7,400+","$4.5B+",2011,Large Enterprise,"Zoom Phone, Meetings, Chat",Verified
+Unified Communications,Cisco Webex,USA,https://www.webex.com,"84,900+ (Cisco)","$57B+ (Cisco)",1984,Conglomerate,"Webex, Calling, Meetings",Verified
+Unified Communications,LogMeIn (GoTo),USA,https://www.logmein.com,"4,000+","$1.3B+",2003,Large Enterprise,"GoToConnect, GoToMeeting",Verified
+Unified Communications,Alcatel-Lucent Enterprise,France,https://www.al-enterprise.com,"2,700+","$700M+",2014,Large Enterprise,"UC, Networking, Rainbow",Verified
+Unified Communications,Fuze,USA,https://www.fuze.com,"500+","$200M+",2006,Medium Enterprise,"UCaaS, Contact Center",Verified
+Unified Communications,StarLeaf,UK,https://www.starleaf.com,"200+","$50M+",2008,Medium Enterprise,"Video Conferencing, Meetings",Verified
+Unified Communications,Dialpad,USA,https://www.dialpad.com,"1,000+","$200M+",2011,Medium Enterprise,"Ai-Powered UCaaS, Contact Center",Verified
+Unified Communications,Nextiva,USA,https://www.nextiva.com,"1,000+","$200M+",2006,Medium Enterprise,"UCaaS, CRM, CCaaS",Verified
+Unified Communications,Unify (Atos),Germany,https://www.unify.com,"3,000+","N/A",2008,Large Enterprise,"Circuit, OpenScape (Legacy)",Verified
+Unified Communications,Windstream Enterprise,USA,https://www.windstreamenterprise.com,"500+","N/A",2006,Medium Enterprise,"UCaaS, SD-WAN, SASE",Verified
+Unified Communications,Intermedia,USA,https://www.intermedia.com,"1,000+","$200M+",1991,Medium Enterprise,"Unite, UCaaS, Email",Verified
+Unified Communications,Vonage,USA,https://www.vonage.com,"2,200+","$1.4B+",2001,Large Enterprise,"Vonage Business, UCaaS, CPaaS",Verified
+Unified Communications,BlueJeans (Verizon),USA,https://www.bluejeans.com,"N/A (Verizon)","$137B+ (Verizon)",2009,Large Enterprise,"Meetings, Events, Interop",Verified
+Data Centers,Equinix,USA,https://www.equinix.com,"12,000+","$8B+",1998,Large Enterprise,"Colocation, Interconnection, IX",Verified
+Data Centers,Digital Realty,USA,https://www.digitalrealty.com,"3,000+","$5B+",2004,Large Enterprise,"Colocation, Pervasive Datacenter",Verified
+Data Centers,NTT Communications,Japan,https://www.ntt.com,"140,000+ (NTT)","$105B+ (NTT)",1999,Conglomerate,"Colocation, Cloud, Global DCs",Verified
+Data Centers,CyrusOne,USA,https://cyrusone.com,"600+","$1B+",2001,Large Enterprise,"Colocation, Hyperscale",Verified
+Data Centers,QTS Realty Trust,USA,https://www.qtsdatacenters.com,"800+","$600M+",2005,Large Enterprise,"Hyperscale, Colocation, Managed",Verified
+Data Centers,CoreSite Realty,USA,https://www.coresite.com,"500+","$700M+",2001,Large Enterprise,"Colocation, Interconnection Campuses",Verified
+Data Centers,China Telecom,China,https://www.chinatelecomglobal.com,"280,000+","$65B+",2002,Conglomerate,"IDC, Cloud, Carrier",Verified
+Data Centers,China Unicom,China,https://www.chinaunicom.com,"240,000+","$45B+",1994,Conglomerate,"IDC, Cloud, Carrier",Verified
+Data Centers,GDS Holdings,China,https://www.gds-services.com,"2,000+","$1B+",2001,Large Enterprise,"Hyperscale Data Centers, Colocation",Verified
+Data Centers,Switch,USA,https://www.switch.com,"800+","$500M+",2000,Large Enterprise,"PREMIER Tier 5, Colocation",Verified
+Data Centers,ST Telemedia Global DCs,Singapore,https://www.sttelemediagdc.com,"1,000+","$500M+",2000,Large Enterprise,"Colocation, Asia-Pacific, Europe",Verified
+Data Centers,Colt DCS,UK,https://www.colt.net,"5,000+ (Colt)","$2B+ (Colt)",1992,Large Enterprise,"Carrier-Neutral, Hyperscale",Verified
+Data Centers,Cyxtera Technologies,USA,https://www.cyxtera.com,"1,000+","$700M+",2017,Large Enterprise,"Colocation, Interconnection",Verified
+Data Centers,EdgeConneX,USA,https://www.edgeconnex.com,"200+","$50M+",2013,Medium Enterprise,"Edge Data Centers, Infrastructure",Verified
+Data Centers,Keppel DC REIT,Singapore,https://www.keppeldcreit.com,"N/A (REIT)","$200M+ (Revenue)",2014,Medium Enterprise,"Data Center Real Estate Investment",Verified
+Data Centers,AirTrunk,Australia,https://www.airtrunk.com,"200+","$200M+",2015,Medium Enterprise,"Hyperscale Data Centers, APAC",Verified
+Data Centers,Global Switch,UK,https://www.globalswitch.com,"500+","$700M+",1998,Large Enterprise,"Colocation, European Focus",Verified
+Data Centers,NextDC,Australia,https://www.nextdc.com,"500+","$200M+",2010,Medium Enterprise,"Colocation, Cloud Connectivity",Verified
+Network Security,Palo Alto Networks,USA,https://www.paloaltonetworks.com,"14,000+","$6B+",2005,Large Enterprise,"Next-Gen Firewall, Cortex, Prisma",Verified
+Network Security,Fortinet,USA,https://www.fortinet.com,"12,000+","$4B+",2000,Large Enterprise,"Unified Threat Management, FortiGate",Verified
+Network Security,Cisco Systems,USA,https://www.cisco.com,"84,900+","$57B+",1984,Conglomerate,"Firepower, Umbrella, AnyConnect",Verified
+Network Security,Check Point Software,Israel,https://www.checkpoint.com,"6,000+","$2.3B+",1993,Large Enterprise,"Firewall, SandBlast, Harmony",Verified
+Network Security,Juniper Networks,USA,https://www.juniper.net,"10,000+","$5B+",1996,Large Enterprise,"SRX, Mist AI, Contrail",Verified
+Network Security,Symantec (Broadcom),USA,https://www.broadcom.com,"20,000+ (Broadcom)","$36B+ (Broadcom)",1982,Large Enterprise,"Endpoint, Web Security, DLP",Verified
+Network Security,FireEye (Trellix),USA,https://www.trellix.com,"3,500+","$1B+",2004,Large Enterprise,"XDR, Threat Intelligence",Verified
+Network Security,Sophos,UK,https://www.sophos.com,"3,500+","$1B+",1985,Large Enterprise,"Next-Gen Endpoint, Firewall",Verified
+Network Security,F5 Networks,USA,https://www.f5.com,"6,800+","$2.7B+",1996,Large Enterprise,"Application Security, Load Balancing",Verified
+Network Security,Zscaler,USA,https://www.zscaler.com,"5,000+","$1.5B+",2007,Large Enterprise,"Zero Trust Exchange, ZIA, ZPA",Verified
+Network Security,Akamai Technologies,USA,https://www.akamai.com,"9,800+","$3.6B+",1998,Large Enterprise,"Web Application Firewall, CDN",Verified
+Network Security,Cloudflare,USA,https://www.cloudflare.com,"3,200+","$1B+",2009,Large Enterprise,"DDoS Mitigation, WAF, CDN",Verified
+Network Security,Barracuda Networks,USA,https://www.barracuda.com,"1,700+","$500M+",2003,Medium Enterprise,"Email Security, Network Security",Verified
+Network Security,Radware,Israel,https://www.radware.com,"1,200+","$300M+",1997,Medium Enterprise,"DDoS Protection, ADC",Verified
+Network Security,WatchGuard Technologies,USA,https://www.watchguard.com,"1,000+","$300M+",1996,Medium Enterprise,"UTM, Firewall, Endpoint",Verified
+Network Security,SonicWall,USA,https://www.sonicwall.com,"1,000+","$300M+",1991,Medium Enterprise,"Firewall, Email Security",Verified
+Network Security,Forcepoint,USA,https://www.forcepoint.com,"1,500+","$400M+",1994,Medium Enterprise,"CASB, DLP, SASE",Verified
+Network Security,McAfee Enterprise,USA,https://www.mcafee.com,"7,000+","$2B+",1987,Large Enterprise,"Endpoint, Data Security, MVISION",Verified
+Cloud Telephony,Telnyx,USA,https://telnyx.com,"200+","$50M+",2018,Medium Enterprise,"CPaaS, Elastic SIP, Global Numbers",Verified
+Cloud Telephony,Twilio,USA,https://www.twilio.com,"7,800+","$4B+",2008,Large Enterprise,"CPaaS, Segment, Flex",Verified
+Cloud Telephony,Vonage,USA,https://www.vonage.com,"2,200+","$1.4B+",2001,Large Enterprise,"Vonage API, CPaaS, UCaaS",Verified
+Cloud Telephony,Bandwidth Inc.,USA,https://www.bandwidth.com,"1,100+","$600M+",1999,Medium Enterprise,"CPaaS, API, Numbers",Verified
+Cloud Telephony,Plivo,USA,https://www.plivo.com,"200+","$50M+",2011,Medium Enterprise,"CPaaS, SMS, Voice API",Verified
+Cloud Telephony,MessageBird,Netherlands,https://www.messagebird.com,"500+","$500M+",2011,Medium Enterprise,"CPaaS, Omnichannel, Inbox",Verified
+Cloud Telephony,Aircall,France,https://aircall.io,"500+","$100M+",2014,Medium Enterprise,"Cloud Call Center, Phone System",Verified
+Cloud Telephony,JustCall,USA,https://justcall.io,"200+","$50M+",2016,Medium Enterprise,"Cloud Phone, SMS, Contact Center",Verified
+Cloud Telephony,Dialpad,USA,https://www.dialpad.com,"1,000+","$200M+",2011,Medium Enterprise,"Ai-Powered UCaaS, Contact Center",Verified
+Cloud Telephony,RingCentral,USA,https://www.ringcentral.com,"5,000+","$2B+",1999,Large Enterprise,"RingCentral MVP, UCaaS, Video",Verified
+Cloud Telephony,Nextiva,USA,https://www.nextiva.com,"1,000+","$200M+",2006,Medium Enterprise,"UCaaS, CRM, CCaaS",Verified
+Cloud Telephony,8x8 Inc.,USA,https://www.8x8.com,"2,000+","$600M+",1987,Large Enterprise,"X Series, UCaaS, Contact Center",Verified
+Cloud Telephony,Freshcaller (Freshworks),USA,https://www.freshworks.com,"5,000+ (Freshworks)","$500M+ (Freshworks)",2010,Large Enterprise,"Cloud Contact Center, ITSM",Verified
+Cloud Telephony,VoiceSage,Ireland,https://www.voicesage.com,"<50","$5M+",2004,Small Enterprise,"Proactive Customer Communications",Verified
+Cloud Telephony,Infobip,Croatia,https://www.infobip.com,"3,000+","$1B+",2006,Large Enterprise,"CPaaS, Omnichannel, Numbers",Verified
+Cloud Telephony,Kaleyra,India,https://www.kaleyra.com,"500+","$100M+",2001,Medium Enterprise,"CPaaS, Mobile Marketing",Verified
+Cloud Telephony,Voximplant,USA,https://voximplant.com,"<100","$10M+",2012,Small Enterprise,"CPaaS, WebRTC, Contact Center",Verified
+Cloud Telephony,Agara,India,https://www.agara.ai,"100+","$20M+",2017,Small Enterprise,"AI-Powered Voice Bots, Automation",Verified
+VoIP Services,Skype (Microsoft),USA,https://www.skype.com,"221,000+ (Microsoft)","$211B+ (Microsoft)",2003,Conglomerate,"VoIP, Messaging, Video Calls",Verified
+VoIP Services,WhatsApp Calling (Meta),USA,https://www.whatsapp.com,"86,000+ (Meta)","$135B+ (Meta)",2009,Conglomerate,"Encrypted VoIP, Messaging",Verified
+VoIP Services,Viber (Rakuten),Japan,https://www.viber.com,"20,000+ (Rakuten)","$40B+ (Rakuten)",2010,Large Enterprise,"VoIP, Messaging, Communities",Verified
+VoIP Services,Google Voice,USA,https://voice.google.com,"190,234+ (Google)","$307B+ (Google)",2009,Conglomerate,"Free VoIP, Number, SMS",Verified
+VoIP Services,Line Corporation,Japan,https://line.me,"8,000+","$2B+",2000,Large Enterprise,"LINE App, VoIP, Social",Verified
+VoIP Services,Discord,USA,https://discord.com,"600+","$300M+",2015,Medium Enterprise,"Voice, Video, Text Chat",Verified
+VoIP Services,MagicJack,USA,https://www.magicjack.com,"100+","$50M+",2007,Small Enterprise,"VoIP Device, App, Service",Verified
+VoIP Services,Ooma,USA,https://www.ooma.com,"1,000+","$200M+",2004,Medium Enterprise,"Residential & Business VoIP",Verified
+VoIP Services,Grasshopper,USA,https://www.grasshopper.com,"N/A (Citrix)","$3.2B+ (Citrix)",2003,Medium Enterprise,"Virtual Phone System",Verified
+VoIP Services,Phone.com,USA,https://www.phone.com,"100+","$20M+",2007,Small Enterprise,"Business VoIP, Virtual PBX",Verified
+VoIP Services,CallHippo,India,https://callhippo.com,"200+","$50M+",2016,Medium Enterprise,"Virtual Phone System, Sales",Verified
+VoIP Services,Jive Communications (LogMeIn),USA,https://www.logmein.com,"4,000+ (LogMeIn)","$1.3B+ (LogMeIn)",2006,Large Enterprise,"Hosted VoIP, UC (GoTo)",Verified
+VoIP Services,Fonality (NetFortris),USA,https://www.netfortris.com,"200+","$50M+",2004,Small Enterprise,"UCaaS, Business VoIP",Verified
+VoIP Services,Intermedia Unite,USA,https://www.intermedia.com,"1,000+","$200M+",1991,Medium Enterprise,"UCaaS, Hosted PBX",Verified
+VoIP Services,MightyCall,USA,https://www.mightycall.com,"100+","$20M+",2011,Small Enterprise,"Virtual Phone System, VoIP",Verified
+VoIP Services,OnSIP,USA,https://www.onsip.com,"<100","$10M+",2004,Small Enterprise,"Hosted PBX, Business VoIP",Verified
+VoIP Services,VoIP.ms,Canada,https://voip.ms,"<50","$5M+",2007,Small Enterprise,"VoIP Termination, DID",Verified
+VoIP Services,3CX,Cyprus,https://www.3cx.com,"100+","$20M+",2005,Small Enterprise,"Software PBX, UC",Verified
+VoIP Services,Grandstream,USA,https://www.grandstream.com,"500+","$100M+",2002,Medium Enterprise,"IP Phones, VoIP Gateways",Verified
+Telecom Equipment,Huawei,China,https://www.huawei.com,"207,000+","$99B+",1987,Conglomerate,"RAN, Core, Transmission, Devices",Verified
+Telecom Equipment,Nokia,Finland,https://www.nokia.com,"87,000+","$25B+",1865,Large Enterprise,"RAN, Core, Fixed Networks",Verified
+Telecom Equipment,Ericsson,Sweden,https://www.ericsson.com,"105,000+","$26B+",1876,Large Enterprise,"5G RAN, Core, OSS/BSS",Verified
+Telecom Equipment,ZTE Corporation,China,https://www.zte.com.cn,"74,000+","$17B+",1985,Large Enterprise,"5G RAN, Core, Mobile Devices",Verified
+Telecom Equipment,Cisco Systems,USA,https://www.cisco.com,"84,900+","$57B+",1984,Conglomerate,"Routers, Switches, Optics",Verified
+Telecom Equipment,Samsung Networks,South Korea,https://www.samsung.com,"287,000+ (Samsung)","$245B+ (Samsung)",1938,Conglomerate,"5G RAN, vRAN, Chipsets",Verified
+Telecom Equipment,Fujitsu,Japan,https://www.fujitsu.com,"126,000+","$28B+",1935,Conglomerate,"5G RAN, vDU, O-RAN",Verified
+Telecom Equipment,NEC Corporation,Japan,https://www.nec.com,"112,000+","$27B+",1899,Conglomerate,"5G Open RAN, Core, Submarine",Verified
+Telecom Equipment,Juniper Networks,USA,https://www.juniper.net,"10,000+","$5B+",1996,Large Enterprise,"Routers, Switches, Security",Verified
+Telecom Equipment,Ciena Corporation,USA,https://www.ciena.com,"8,000+","$4B+",1992,Large Enterprise,"Optical Networking, Packet, Software",Verified
+Telecom Equipment,CommScope,USA,https://www.commscope.com,"30,000+","$9B+",1976,Large Enterprise,"Antennas, Cable, Ruckus",Verified
+Telecom Equipment,Arris International (CommScope),USA,https://www.commscope.com,"30,000+ (CommScope)","$9B+ (CommScope)",1995,Large Enterprise,"Cable Modems, Set-Top Boxes",Verified
+Telecom Equipment,Ribbon Communications,USA,https://rbbn.com,"3,500+","$800M+",1997,Large Enterprise,"Session Border Controllers, Switching",Verified
+Telecom Equipment,ADVA Optical Networking,Germany,https://www.adva.com,"1,800+","$700M+",1994,Medium Enterprise,"Optical Transport, Timing",Verified
+Telecom Equipment,Mavenir,USA,https://www.mavenir.com,"3,000+","$500M+",2005,Large Enterprise,"Cloud-Native 5G Core, Open RAN",Verified
+Telecom Equipment,Casa Systems,USA,https://www.casa-systems.com,"500+","$200M+",2003,Medium Enterprise,"Cable, 5G RAN, Fixed Mobile",Verified
+Telecom Equipment,Calix,USA,https://www.calix.com,"1,400+","$600M+",1999,Medium Enterprise,"Broadband Access, Cloud, AXOS",Verified
+Telecom Equipment,Ceragon Networks,Israel,https://www.ceragon.com,"500+","$100M+",1996,Medium Enterprise,"5G Wireless Backhaul, Microwave",Verified
+Telecom Equipment,Airspan Networks,USA,https://www.airspan.com,"500+","$100M+",1992,Medium Enterprise,"5G RAN, Fixed Wireless, Small Cells",Verified
+Broadband Providers,Comcast Xfinity,USA,https://www.xfinity.com,"190,000+","$121B+",1963,Conglomerate,"Cable, Internet, Xfinity Mobile",Verified
+Broadband Providers,Charter Spectrum,USA,https://www.spectrum.com,"101,000+","$54B+",1993,Large Enterprise,"Cable, Internet, Spectrum Mobile",Verified
+Broadband Providers,BT Group,UK,https://www.bt.com,"100,000+","$28B+",1969,Conglomerate,"Openreach, EE, BT Business",Verified
+Broadband Providers,Deutsche Telekom,Germany,https://www.telekom.com,"216,000+","$121B+",1995,Conglomerate,"Fiber, VDSL, Magenta",Verified
+Broadband Providers,Orange S.A.,France,https://www.orange.com,"136,000+","$47B+",1994,Conglomerate,"Fiber, DSL, Fixed",Verified
+Broadband Providers,Proximus,Belgium,https://www.proximus.com,"13,000+","$6B+",1930,Large Enterprise,"Fiber, DSL, Mobile",Verified
+Broadband Providers,Rogers Communications,Canada,https://www.rogers.com,"24,000+","$12B+",1960,Large Enterprise,"Cable, Internet, Wireless",Verified
+Broadband Providers,Shaw Communications,Canada,https://www.shaw.ca,"10,000+","$4B+",1966,Large Enterprise,"Cable, Internet, Freedom Mobile",Verified
+Broadband Providers,Telstra,Australia,https://www.telstra.com.au,"29,000+","$18B+",1975,Large Enterprise,"Mobile, Fixed, NBN",Verified
+Broadband Providers,Spark New Zealand,New Zealand,https://www.spark.co.nz,"5,000+","$3B+",1987,Large Enterprise,"Fiber, Wireless, ICT",Verified
+Broadband Providers,KT Corporation,South Korea,https://www.kt.com,"60,000+","$20B+",1981,Large Enterprise,"Fiber, 5G, GiGA",Verified
+Broadband Providers,PLDT,Philippines,https://www.pldt.com,"19,000+","$3B+",1928,Large Enterprise,"Fiber, Fixed, Wireless",Verified
+Broadband Providers,StarHub,Singapore,https://www.starhub.com,"2,500+","$1.5B+",1998,Medium Enterprise,"Fiber, 5G, Pay TV",Verified
+Broadband Providers,Tata Communications,India,https://www.tatacommunications.com,"6,000+","$3B+",1986,Large Enterprise,"Global Network, IZO, Ethernet",Verified
+Broadband Providers,Jio Platforms,India,https://www.jio.com,"N/A (Reliance)","$100B+ (Reliance)",2007,Conglomerate,"Fiber, 4G/5G, JioFiber",Verified
+Broadband Providers,Turk Telekom,Turkey,https://www.turktelekom.com.tr,"40,000+","$4B+",1995,Large Enterprise,"Fiber, DSL, TTNET",Verified
+Broadband Providers,Altice USA,USA,https://www.alticeusa.com,"10,000+","$9B+",2016,Large Enterprise,"Optimum, Suddenlink",Verified
+Broadband Providers,Cox Communications,USA,https://www.cox.com,"20,000+","$13B+",1962,Large Enterprise,"Cable, Internet, Homelife",Verified
+Broadband Providers,Virgin Media O2,UK,https://www.virginmedia.com,"15,000+","$12B+",2007,Large Enterprise,"Cable, Mobile, Fiber",Verified
+Mobile Virtual Networks,TracFone Wireless,USA,https://www.tracfone.com,"1,000+","$8B+",1996,Medium Enterprise,"Prepaid, MVNO, Straight Talk",Verified
+Mobile Virtual Networks,Boost Mobile,USA,https://www.boostmobile.com,"N/A (DISH)","$16B+ (DISH)",2000,Medium Enterprise,"Prepaid, MVNO",Verified
+Mobile Virtual Networks,Mint Mobile,USA,https://www.mintmobile.com,"200+","$500M+",2016,Medium Enterprise,"Prepaid, Low-Cost, eSIM",Verified
+Mobile Virtual Networks,Visible (Verizon),USA,https://www.visible.com,"N/A (Verizon)","$137B+ (Verizon)",2018,Medium Enterprise,"Digital-First, Unlimited",Verified
+Mobile Virtual Networks,Google Fi,USA,https://fi.google.com,"190,234+ (Google)","$307B+ (Google)",2015,Conglomerate,"MVNO, Multi-Network, Data SIM",Verified
+Mobile Virtual Networks,Lycamobile,UK,https://www.lycamobile.com,"1,000+","$2B+",2006,Medium Enterprise,"International Calling, Prepaid",Verified
+Mobile Virtual Networks,Lebara Mobile,UK,https://www.lebara.com,"500+","$500M+",2001,Medium Enterprise,"International Calling, Prepaid",Verified
+Mobile Virtual Networks,Giffgaff (O2),UK,https://www.giffgaff.com,"N/A (O2)","$12B+ (O2)",2009,Medium Enterprise,"Member-Run, Pay-As-You-Go",Verified
+Mobile Virtual Networks,Ting Mobile,USA,https://ting.com,"100+","$100M+",2012,Small Enterprise,"Flexible, Pay-for-What-You-Use",Verified
+Mobile Virtual Networks,Consumer Cellular,USA,https://www.consumercellular.com,"2,500+","$1B+",1995,Medium Enterprise,"Senior Focused, No Contract",Verified
+Mobile Virtual Networks,Red Pocket Mobile,USA,https://www.redpocket.com,"100+","$100M+",2006,Small Enterprise,"GSMA, CDMA, Prepaid",Verified
+Mobile Virtual Networks,Ultra Mobile,USA,https://www.ultramobile.com,"100+","$100M+",2011,Small Enterprise,"International, Prepaid",Verified
+Mobile Virtual Networks,Tello Mobile,USA,https://tello.com,"<50","$10M+",2016,Small Enterprise,"Customizable, No Contract",Verified
+Mobile Virtual Networks,Republic Wireless,USA,https://www.republicwireless.com,"<100","$50M+",2010,Small Enterprise,"Wi-Fi First, Custom Plans",Verified
+Mobile Virtual Networks,Xfinity Mobile (Comcast),USA,https://www.xfinity.com/mobile,"190,000+ (Comcast)","$121B+ (Comcast)",2017,Large Enterprise,"Cable MVNO, By-the-Gig",Verified
+Mobile Virtual Networks,US Mobile,USA,https://www.usmobile.com,"100+","$50M+",2015,Small Enterprise,"Custom Plans, Super LTE, GSM",Verified
+Mobile Virtual Networks,TextNow,Canada,https://www.textnow.com,"500+","$100M+",2009,Medium Enterprise,"Free Ad-Supported, Data",Verified
+Mobile Virtual Networks,FreedomPop,USA,https://www.freedompop.com,"<100","$50M+",2011,Small Enterprise,"Freemium, Free Basic Plan",Verified
+Telecom Consulting,Accenture,USA,https://www.accenture.com,"738,000+","$64B+",1989,Conglomerate,"Digital Transformation, Strategy, Operations",Verified
+Telecom Consulting,IBM Global Services,USA,https://www.ibm.com,"288,000+","$61B+",1911,Conglomerate,"IT Services, Cloud, AI",Verified
+Telecom Consulting,Deloitte,UK,https://www.deloitte.com,"415,000+","$59B+",1845,Conglomerate,"Audit, Consulting, Tax, Advisory",Verified
+Telecom Consulting,Capgemini,France,https://www.capgemini.com,"340,000+","$22B+",1967,Conglomerate,"Technology, Outsourcing, Consulting",Verified
+Telecom Consulting,EY,UK,https://www.ey.com,"365,000+","$45B+",1989,Conglomerate,"Assurance, Consulting, Strategy",Verified
+Telecom Consulting,KPMG,Netherlands,https://www.kpmg.com,"265,000+","$35B+",1987,Conglomerate,"Audit, Tax, Advisory",Verified
+Telecom Consulting,PwC,UK,https://www.pwc.com,"328,000+","$50B+",1998,Conglomerate,"Assurance, Advisory, Tax",Verified
+Telecom Consulting,Wipro,India,https://www.wipro.com,"240,000+","$11B+",1945,Conglomerate,"IT, Consulting, Business Process",Verified
+Telecom Consulting,Tata Consultancy Services,India,https://www.tcs.com,"614,000+","$28B+",1968,Conglomerate,"IT Services, Consulting, Digital",Verified
+Telecom Consulting,Boston Consulting Group,USA,https://www.bcg.com,"25,000+","$11B+",1963,Large Enterprise,"Strategy, Digital, Transformation",Verified
+Telecom Consulting,Bain & Company,USA,https://www.bain.com,"15,000+","$5B+",1973,Large Enterprise,"Strategy, Performance Improvement",Verified
+Telecom Consulting,McKinsey & Company,USA,https://www.mckinsey.com,"38,000+","$12B+",1926,Large Enterprise,"Strategy, Operations, Digital",Verified
+Telecom Consulting,Analysys Mason,UK,https://www.analysysmason.com,"300+","$100M+",1985,Medium Enterprise,"Telecoms, Media, Technology",Verified
+Telecom Consulting,TM Forum,USA,https://www.tmforum.org,"N/A (Industry Body)","N/A",1988,Small Enterprise,"Standards, Best Practices, Collaboration",Verified
+Telecom Consulting,Altman Solon,USA,https://www.altmansolon.com,"100+","$50M+",2020,Medium Enterprise,"Strategy Consulting, TMT",Verified
+Telecom Consulting,Celent,USA,https://www.celent.com,"N/A (Division)","N/A",1999,Small Enterprise,"Financial Services, Technology",Verified
+Telecom Consulting,Delta Partners,UAE,https://www.deltapartnersgroup.com,"100+","$50M+",2003,Medium Enterprise,"TMT Advisory, Investment",Verified
+Telecom Consulting,NTT DATA,Japan,https://www.nttdata.com,"140,000+","$24B+",1995,Conglomerate,"IT Services, Digital Business",Verified
+Telecom Consulting,Arthur D. Little,UK,https://www.adlittle.com,"1,500+","$700M+",1886,Large Enterprise,"Management Consulting, Technology",Verified
+Submarine Cables,SubCom,USA,https://www.subcom.com,"5,000+","$1B+",1955,Large Enterprise,"Submarine Cable System Supplier",Verified
+Submarine Cables,NEC Corporation,Japan,https://www.nec.com,"112,000+","$27B+",1899,Conglomerate,"Submarine Cable Systems, OCC",Verified
+Submarine Cables,ASN (Alcatel Submarine Networks),France,https://www.asn.com,"1,000+","$500M+",1994,Large Enterprise,"Submarine Cable Systems",Verified
+Submarine Cables,Prysmian Group,Italy,https://www.prysmiangroup.com,"30,000+","$16B+",2005,Large Enterprise,"Submarine Cables, Energy",Verified
+Submarine Cables,HMN Tech,China,https://www.hmnte.com,"2,000+","$500M+",1995,Medium Enterprise,"Submarine Cable Systems, Maintenance",Verified
+Submarine Cables,Google,USA,https://cloud.google.com,"190,234+ (Google)","$307B+ (Google)",1998,Conglomerate,"Curie, Dunant, Equiano, Grace Hopper",Verified
+Submarine Cables,Facebook (Meta),USA,https://about.fb.com,"86,000+ (Meta)","$135B+ (Meta)",2004,Conglomerate,"2Africa, Marea, Jupiter",Verified
+Submarine Cables,Microsoft,USA,https://www.microsoft.com,"221,000+","$211B+",1975,Conglomerate,"Marea, AEC, New Cross Pacific",Verified
+Submarine Cables,Amazon,USA,https://aws.amazon.com,"1,608,000+ (Amazon)","$574B+ (Amazon)",1994,Conglomerate,"Havfrue, Bifrost",Verified
+Submarine Cables,China Mobile,China,https://www.chinamobileltd.com,"450,000+","$110B+",1997,Conglomerate,"PEACE, SEA-ME-WE",Verified
+Submarine Cables,China Telecom,China,https://www.chinatelecom-h.com,"280,000+","$65B+",2002,Conglomerate,"Asia-Pacific, Trans-Pacific",Verified
+Submarine Cables,China Unicom,China,https://www.chinaunicom.com,"240,000+","$45B+",1994,Conglomerate,"Asia-America Gateway, TPE",Verified
+Submarine Cables,Vodafone,UK,https://www.vodafone.com,"104,000+","$50B+",1991,Conglomerate,"Sea-Me-We, EIG, AAE-1",Verified
+Submarine Cables,Orange Marine,France,https://www.orange.com,"136,000+ (Orange)","$47B+ (Orange)",1994,Conglomerate,"Cable Ship Fleet, Maintenance",Verified
+Submarine Cables,Tata Communications,India,https://www.tatacommunications.com,"6,000+","$3B+",1986,Large Enterprise,"TGN, SEACOM, i2i",Verified
+Submarine Cables,TE SubCom (SubCom),USA,https://www.subcom.com,"5,000+ (SubCom)","$1B+ (SubCom)",2007,Large Enterprise,"Legacy Brand, Submarine Systems",Verified
+Submarine Cables,Global Marine Group,UK,https://www.globalmarinesystems.com,"500+","$100M+",2008,Medium Enterprise,"Cable Maintenance, Installation",Verified
+Submarine Cables,Seaborn Networks,USA,https://seabornnetworks.com,"100+","$50M+",2011,Small Enterprise,"SEABRAS, Americas",Verified
+Enterprise Networking,Cisco Systems,USA,https://www.cisco.com,"84,900+","$57B+",1984,Conglomerate,"Catalyst, Meraki, SD-WAN",Verified
+Enterprise Networking,Juniper Networks,USA,https://www.juniper.net,"10,000+","$5B+",1996,Large Enterprise,"Mist AI, EX, MX, SRX",Verified
+Enterprise Networking,Arista Networks,USA,https://www.arista.com,"3,500+","$3B+",2004,Large Enterprise,"Cloud Networking, EOS, Campus",Verified
+Enterprise Networking,Extreme Networks,USA,https://www.extremenetworks.com,"2,000+","$1B+",1996,Large Enterprise,"Cloud-Managed, Wi-Fi, Switching",Verified
+Enterprise Networking,HPE (Aruba),USA,https://www.arubanetworks.com,"60,000+ (HPE)","$29B+ (HPE)",2002,Conglomerate,"Aruba ESP, Central, ClearPass",Verified
+Enterprise Networking,Dell Technologies,USA,https://www.dell.com,"133,000+","$102B+",1984,Conglomerate,"PowerSwitch, Networking",Verified
+Enterprise Networking,Fortinet,USA,https://www.fortinet.com,"12,000+","$4B+",2000,Large Enterprise,"FortiSwitch, FortiGate",Verified
+Enterprise Networking,Palo Alto Networks,USA,https://www.paloaltonetworks.com,"14,000+","$6B+",2005,Large Enterprise,"Prisma SD-WAN, Next-Gen Firewall",Verified
+Enterprise Networking,Huawei,China,https://www.huawei.com,"207,000+","$99B+",1987,Conglomerate,"CloudCampus, Data Center",Verified
+Enterprise Networking,Nokia,Finland,https://www.nokia.com,"87,000+","$25B+",1865,Large Enterprise,"Nuage Networks, SD-WAN",Verified
+Enterprise Networking,Ubiquiti Networks,USA,https://www.ui.com,"1,800+","$2B+",2005,Medium Enterprise,"UniFi, EdgeMAX, Cost-Effective",Verified
+Enterprise Networking,Check Point Software,Israel,https://www.checkpoint.com,"6,000+","$2.3B+",1993,Large Enterprise,"Security, Network Segmentation",Verified
+Enterprise Networking,ZTE Corporation,China,https://www.zte.com.cn,"74,000+","$17B+",1985,Large Enterprise,"Data Center, Campus",Verified
+Enterprise Networking,Ruckus Networks (CommScope),USA,https://www.commscope.com,"30,000+ (CommScope)","$9B+ (CommScope)",2002,Large Enterprise,"Wi-Fi, ICX Switching",Verified
+Enterprise Networking,Citrix Systems,USA,https://www.citrix.com,"9,000+","$3.2B+",1989,Large Enterprise,"SD-WAN, NetScaler, Workspace",Verified
+Enterprise Networking,F5 Networks,USA,https://www.f5.com,"6,800+","$2.7B+",1996,Large Enterprise,"Application Delivery, NGINX",Verified
+Enterprise Networking,Radware,Israel,https://www.radware.com,"1,200+","$300M+",1997,Medium Enterprise,"ADC, Security, Cloud",Verified
+Enterprise Networking,A10 Networks,USA,https://www.a10networks.com,"700+","$200M+",2004,Medium Enterprise,"Thunder ADC, CGN, Security",Verified
+Enterprise Networking,Riverbed Technology,USA,https://www.riverbed.com,"1,200+","$500M+",2002,Medium Enterprise,"SD-WAN, WAN Optimization",Verified
+Contact Center Solutions,Genesys,USA,https://www.genesys.com,"6,000+","$2B+",1990,Large Enterprise,"Cloud CX, PureConnect, Multicloud",Verified
+Contact Center Solutions,Five9,USA,https://www.five9.com,"2,500+","$800M+",2001,Large Enterprise,"Cloud Contact Center, AI",Verified
+Contact Center Solutions,NICE inContact,USA,https://www.nice.com,"7,500+","$2.3B+",1986,Large Enterprise,"CXone, Workforce Optimization",Verified
+Contact Center Solutions,Avaya,USA,https://www.avaya.com,"9,000+","$3B+",2000,Large Enterprise,"Aura, IX, CCaaS",Verified
+Contact Center Solutions,Cisco Contact Center,USA,https://www.cisco.com,"84,900+ (Cisco)","$57B+ (Cisco)",1984,Conglomerate,"Webex Contact Center, UCCE",Verified
+Contact Center Solutions,8x8 Contact Center,USA,https://www.8x8.com,"2,000+","$600M+",1987,Large Enterprise,"8x8 Contact Center, XCaaS",Verified
+Contact Center Solutions,Twilio Flex,USA,https://www.twilio.com,"7,800+ (Twilio)","$4B+ (Twilio)",2008,Large Enterprise,"Programmable Contact Center",Verified
+Contact Center Solutions,Amazon Connect,USA,https://aws.amazon.com,"1,608,000+ (Amazon)","$574B+ (Amazon)",1994,Conglomerate,"Cloud Contact Center, Pay-as-you-go",Verified
+Contact Center Solutions,Mitel MiContact Center,Canada,https://www.mitel.com,"3,500+ (Mitel)","$1.3B+ (Mitel)",1971,Large Enterprise,"Omnichannel, On-prem/Cloud",Verified
+Contact Center Solutions,Enghouse Interactive,Canada,https://www.enghouse.com,"1,000+","$300M+",1998,Medium Enterprise,"Contact Center, IVR",Verified
+Contact Center Solutions,Talkdesk,USA,https://www.talkdesk.com,"2,000+","$500M+",2011,Large Enterprise,"Cloud CC, CX, AI",Verified
+Contact Center Solutions,Zendesk Talk,USA,https://www.zendesk.com,"5,000+ (Zendesk)","$1.7B+ (Zendesk)",2007,Large Enterprise,"Integrated Voice, Sunshine",Verified
+Contact Center Solutions,Serenova (Lifesize),USA,https://serenova.com,"200+","$50M+",2004,Medium Enterprise,"CxEngage, Omnichannel",Verified
+Contact Center Solutions,Content Guru,UK,https://www.contentguru.com,"500+","$100M+",2005,Medium Enterprise,"storm, Omnichannel, Cloud",Verified
+Contact Center Solutions,Connect First,USA,https://www.connectfirst.com,"<100","$10M+",2004,Small Enterprise,"Cloud Contact Center, IVR",Verified
+Contact Center Solutions,Sharpen Technologies,USA,https://www.sharpen.com,"<100","$10M+",2010,Small Enterprise,"Agent-First, Cloud",Verified
+Contact Center Solutions,3CLogic,USA,https://www.3clogic.com,"<100","$10M+",2006,Small Enterprise,"ServiceNow Voice, Cloud",Verified
+Contact Center Solutions,LiveOps Cloud,USA,https://www.liveops.com,"1,000+","$200M+",2000,Medium Enterprise,"Flexible Workforce, Cloud",Verified
+Contact Center Solutions,UJET,USA,https://www.ujet.com,"200+","$50M+",2017,Medium Enterprise,"Digital-First, Contextual",Verified
+SIM Manufacturing,Gemalto (Thales),France,https://www.thalesgroup.com,"81,000+ (Thales)","$20B+ (Thales)",1988,Large Enterprise,"eSIM, Embedded SIM, Security",Verified
+SIM Manufacturing,Giesecke+Devrient,Germany,https://www.gi-de.com,"12,000+","$3B+",1852,Large Enterprise,"SIM, eSIM, Payment, Security",Verified
+SIM Manufacturing,IDEMIA,France,https://www.idemia.com,"15,000+","$3B+",2007,Large Enterprise,"SIM, eSIM, Digital Identity",Verified
+SIM Manufacturing,Valid, Brazil,https://www.valid.com,"7,000+","$500M+",1956,Large Enterprise,"SIM, Cards, Digital Solutions",Verified
+SIM Manufacturing,Eastcompeace,China,https://www.eastcompeace.com,"3,000+","$500M+",1998,Medium Enterprise,"SIM, IC Cards, Telecom",Verified
+SIM Manufacturing,Watchdata,Singapore,https://www.watchdata.com,"500+","$100M+",1995,Medium Enterprise,"SIM, eSIM, POS",Verified
+SIM Manufacturing,STMicroelectronics,Switzerland,https://www.st.com,"51,000+","$17B+",1987,Large Enterprise,"Secure MCUs, eSIM Chips",Verified
+SIM Manufacturing,Infineon Technologies,Germany,https://www.infineon.com,"56,200+","$17B+",1999,Large Enterprise,"Security Chips, eSIM",Verified
+SIM Manufacturing,NXP Semiconductors,Netherlands,https://www.nxp.com,"34,500+","$13B+",2006,Large Enterprise,"Secure Elements, eSIM",Verified
+SIM Manufacturing,Samsung SDS,South Korea,https://www.samsungsds.com,"12,000+","$10B+",1985,Large Enterprise,"eSIM, Blockchain, Cloud",Verified
+SIM Manufacturing,Kona I,South Korea,https://www.konai.com,"<100","$10M+",2002,Small Enterprise,"SIM, IoT Modules",Verified
+SIM Manufacturing,Taisys Technologies,Taiwan,https://www.taisys.com,"200+","$50M+",2004,Medium Enterprise,"SIM, Super SIM, IoT",Verified
+SIM Manufacturing,Workz Group,UAE,https://workz.com,"1,000+","$200M+",1998,Medium Enterprise,"SIM, eSIM, Cards",Verified
+SIM Manufacturing,Datang Telecom,China,https://en.datanggroup.cn,"5,000+","$1B+",1998,Large Enterprise,"SIM, Smart Cards, Telecom",Verified
+SIM Manufacturing,Hengbao Co.,China,https://www.hengbao.com,"1,000+","$200M+",1995,Medium Enterprise,"SIM, IC Cards, Financial",Verified
+SIM Manufacturing,Goldpac Group,China,https://www.goldpac.com,"2,000+","$300M+",1994,Medium Enterprise,"SIM, Cards, Payment",Verified
+SIM Manufacturing,Atlantic Zeiser,Greece,https://www.atlanticzeiser.com,"200+","$50M+",1969,Small Enterprise,"SIM Personalization, Card Issuance",Verified
+SIM Manufacturing,Perfect Plastic Printing,USA,https://www.pppcards.com,"100+","$20M+",1988,Small Enterprise,"SIM Cards, Card Printing",Verified
+Rural Connectivity,Viasat,USA,https://www.viasat.com,"6,000+","$3B+",1986,Large Enterprise,"Satellite Broadband, Community Wi-Fi",Verified
+Rural Connectivity,Hughes Network Systems,USA,https://www.hughes.com,"2,000+","$2B+",1971,Large Enterprise,"VSAT, Satellite Broadband",Verified
+Rural Connectivity,Starlink (SpaceX),USA,https://www.starlink.com,"13,000+","$4B+",2002,Large Enterprise,"LEO Satellite Internet",Verified
+Rural Connectivity,OneWeb,UK,https://www.oneweb.world,"600+","$100M+",2012,Medium Enterprise,"LEO Constellation, Global Broadband",Verified
+Rural Connectivity,Inmarsat (Viasat),UK,https://www.inmarsat.com,"1,800+ (Viasat)","$3B+ (Viasat)",1979,Large Enterprise,"Global Xpress, BGAN",Verified
+Rural Connectivity,Gilat Satellite Networks,Israel,https://www.gilat.com,"800+","$200M+",1987,Medium Enterprise,"VSAT, Rural Connectivity",Verified
+Rural Connectivity,Avanti Communications,UK,https://www.avanti.space,"200+","$50M+",2002,Medium Enterprise,"HTS, Broadband, EMEA",Verified
+Rural Connectivity,Intelsat,Luxembourg,https://www.intelsat.com,"1,000+","$2B+",1964,Large Enterprise,"GEO Satellites, Rural Services",Verified
+Rural Connectivity,Eutelsat,France,https://www.eutelsat.com,"1,000+","$1B+",1977,Large Enterprise,"Broadband, Broadcast, Rural",Verified
+Rural Connectivity,Telesat,Canada,https://www.telesat.com,"500+","$600M+",1969,Medium Enterprise,"Telesat Lightspeed LEO, GEO",Verified
+Rural Connectivity,Rise Broadband,USA,https://www.risebroadband.com,"1,000+","$200M+",2003,Medium Enterprise,"Fixed Wireless, Rural Internet",Verified
+Rural Connectivity,Farmers Telephone Cooperative,USA,https://www.ftc.net,"200+","$50M+",1952,Small Enterprise,"Cooperative, Fiber, Rural",Verified
+Rural Connectivity,Consolidated Communications,USA,https://consolidated.com,"3,000+","$1B+",1894,Large Enterprise,"Fiber, Copper, Rural",Verified
+Rural Connectivity,Windstream Kinetic,USA,https://www.windstream.com,"9,000+","$5B+",2006,Large Enterprise,"Fiber, Copper, Rural",Verified
+Rural Connectivity,Cooperative Network Services,USA,https://www.cnsmail.net,"<100","$10M+",1997,Small Enterprise,"Cooperative, Broadband",Verified
+Rural Connectivity,Rural Wireless,USA,https://www.ruralwireless.org,"N/A (Association)","N/A",2003,Small Enterprise,"Industry Association, Advocacy",Verified
+Rural Connectivity,Ubiquiti Networks,USA,https://www.ui.com,"1,800+","$2B+",2005,Medium Enterprise,"WISP Equipment, AirFiber",Verified
+Rural Connectivity,Cambium Networks,USA,https://www.cambiumnetworks.com,"700+","$200M+",2011,Medium Enterprise,"Fixed Wireless, PMP, ePMP",Verified
+Rural Connectivity,BLiNQ Networks,Canada,https://blinqnetworks.com,"<100","$10M+",2010,Small Enterprise,"Fixed Wireless, 5G",Verified
+Telecom Tower Management,American Tower,USA,https://www.americantower.com,"6,000+","$10B+",1995,Large Enterprise,"Tower REIT, Global, Small Cells",Verified
+Telecom Tower Management,Crown Castle,USA,https://www.crowncastle.com,"5,200+","$7B+",1994,Large Enterprise,"Tower REIT, Small Cells, Fiber",Verified
+Telecom Tower Management,SBA Communications,USA,https://www.sbasite.com,"1,800+","$2.5B+",1989,Large Enterprise,"Tower REIT, Americas",Verified
+Telecom Tower Management,Cellnex Telecom,Spain,https://www.cellnextelecom.com,"3,000+","$3B+",2015,Large Enterprise,"Tower REIT, Europe",Verified
+Telecom Tower Management,Indus Towers,India,https://www.industowers.com,"1,000+","$1B+",2007,Large Enterprise,"Towerco, India",Verified
+Telecom Tower Management,Bharti Infratel,India,https://www.bharti-infratel.com,"1,500+","$2B+",2007,Large Enterprise,"Towerco, India (Merged)",Verified
+Telecom Tower Management,IHS Towers,UK,https://www.ihstowers.com,"2,000+","$2B+",2001,Large Enterprise,"Towerco, Africa, LatAm, Middle East",Verified
+Telecom Tower Management,T-Mobile Towers,USA,https://www.t-mobile.com,"76,000+ (T-Mobile)","$80B+ (T-Mobile)",1994,Large Enterprise,"Tower Portfolio, US",Verified
+Telecom Tower Management,ATC Telecom Infrastructure,USA,https://www.atctowers.com,"N/A (American Tower)","N/A (American Tower)",1995,Large Enterprise,"Legacy Brand, American Tower",Verified
+Telecom Tower Management,CTI Towers,USA,https://www.ctitowers.com,"<100","$10M+",1985,Small Enterprise,"Towerco, US",Verified
+Telecom Tower Management,Vertical Bridge,USA,https://www.verticalbridge.com,"200+","$500M+",2014,Medium Enterprise,"Private Towerco, US",Verified
+Telecom Tower Management,InSite Wireless Group,USA,https://www.insitewireless.com,"200+","$100M+",2001,Medium Enterprise,"Towerco, US, DAS",Verified
+Telecom Tower Management,Pinnacle Towers,USA,https://www.pinnacletowers.com,"<100","$50M+",2003,Small Enterprise,"Towerco, US",Verified
+Telecom Tower Management,Global Tower Partners,USA,https://www.globaltowerpartners.com,"N/A (American Tower)","N/A (American Tower)",2002,Large Enterprise,"Legacy Brand, American Tower",Verified
+Telecom Tower Management,Phoenix Tower International,USA,https://www.phoenixintnl.com,"200+","$200M+",2013,Medium Enterprise,"Towerco, Americas, Europe",Verified
+Telecom Tower Management,Edotco Group,Malaysia,https://www.edotcogroup.com,"2,000+","$500M+",2012,Large Enterprise,"Towerco, Asia",Verified
+Telecom Tower Management,Digicel Group,Jamaica,https://www.digicelgroup.com,"6,000+","$2B+",2001,Large Enterprise,"Towerco, Caribbean, Pacific",Verified
+Telecom Tower Management,Helios Towers,UK,https://www.heliostowers.com,"1,000+","$500M+",2009,Medium Enterprise,"Towerco, Africa",Verified
+Telecom Tower Management,Super Tower,Thailand,https://www.supertower.co.th,"200+","$100M+",2006,Medium Enterprise,"Towerco, Thailand",Verified

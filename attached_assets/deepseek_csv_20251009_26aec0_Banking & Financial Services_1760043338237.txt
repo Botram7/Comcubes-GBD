@@ -1,0 +1,369 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Commercial Banking,JPMorgan Chase & Co.,USA,https://www.jpmorganchase.com,"293,000+","$158B+",1799,Conglomerate,"Consumer Banking, Investment Banking, Asset Management",Verified
+Commercial Banking,Industrial and Commercial Bank of China,China,https://www.icbc-ltd.com,"445,000+","$135B+",1984,Conglomerate,"Corporate Banking, Retail Banking, Global",Verified
+Commercial Banking,Bank of America,USA,https://www.bankofamerica.com,"217,000+","$98B+",1784,Conglomerate,"Consumer Banking, Wealth Management, Global Banking",Verified
+Commercial Banking,HSBC Holdings,UK,https://www.hsbc.com,"219,000+","$66B+",1865,Conglomerate,"Global Banking, Commercial Banking, Wealth",Verified
+Commercial Banking,BNP Paribas,France,https://www.bnpparibas.com,"190,000+","$54B+",1848,Conglomerate,"Retail Banking, Corporate Banking, CIB",Verified
+Commercial Banking,Mitsubishi UFJ Financial Group,Japan,https://www.mufg.jp,"160,000+","$47B+",2005,Conglomerate,"Commercial Banking, Trust Banking, Global",Verified
+Commercial Banking,Citigroup,USA,https://www.citigroup.com,"240,000+","$78B+",1812,Conglomerate,"Institutional Banking, Consumer Banking, Global",Verified
+Commercial Banking,Wells Fargo,USA,https://www.wellsfargo.com,"227,000+","$82B+",1852,Conglomerate,"Consumer Banking, Commercial Banking, Lending",Verified
+Commercial Banking,Santander Group,Spain,https://www.santander.com,"193,000+","$58B+",1857,Conglomerate,"Retail Banking, Europe, Latin America",Verified
+Commercial Banking,Barclays,UK,https://www.barclays.com,"83,000+","$28B+",1690,Conglomerate,"Investment Banking, Consumer Banking, Cards",Verified
+Commercial Banking,Deutsche Bank,Germany,https://www.db.com,"84,000+","$28B+",1870,Conglomerate,"Corporate Bank, Investment Bank, Private Bank",Verified
+Commercial Banking,TD Bank Group,Canada,https://www.td.com,"95,000+","$48B+",1855,Conglomerate,"Retail Banking, North America, Wholesale",Verified
+Commercial Banking,Commonwealth Bank,Australia,https://www.commbank.com.au,"49,000+","$25B+",1911,Conglomerate,"Retail Banking, Business Banking, Institutional",Verified
+Commercial Banking,UBS Group,Switzerland,https://www.ubs.com,"74,000+","$39B+",1862,Conglomerate,"Wealth Management, Investment Banking, Asset Mgmt",Verified
+Commercial Banking,Crédit Agricole,France,https://www.credit-agricole.com,"142,000+","$30B+",1894,Conglomerate,"Retail Banking, Insurance, Asset Management",Verified
+Commercial Banking,ING Group,Netherlands,https://www.ing.com,"57,000+","$21B+",1991,Conglomerate,"Retail Banking, Wholesale Banking, Digital",Verified
+Commercial Banking,Société Générale,France,https://www.societegenerale.com,"117,000+","$29B+",1864,Conglomerate,"Retail Banking, Financial Services, CIB",Verified
+Commercial Banking,Standard Chartered,UK,https://www.sc.com,"85,000+","$18B+",1969,Conglomerate,"Corporate & Institutional Banking, Retail",Verified
+Commercial Banking,UniCredit,Italy,https://www.unicreditgroup.eu,"74,000+","$22B+",1998,Conglomerate,"Commercial Banking, CIB, Central & Eastern Europe",Verified
+Commercial Banking,Scotiabank,Canada,https://www.scotiabank.com,"91,000+","$31B+",1832,Conglomerate,"International Banking, Canadian Banking, Global",Verified
+Investment Banking,Goldman Sachs,USA,https://www.goldmansachs.com,"45,000+","$47B+",1869,Conglomerate,"M&A, Securities, Asset Management, Consumer",Verified
+Investment Banking,Morgan Stanley,USA,https://www.morganstanley.com,"82,000+","$54B+",1935,Conglomerate,"Wealth Management, Investment Banking, Sales & Trading",Verified
+Investment Banking,Lazard,USA,https://www.lazard.com,"3,400+","$3B+",1848,Large Enterprise,"Financial Advisory, Asset Management",Verified
+Investment Banking,Jefferies Financial Group,USA,https://www.jefferies.com,"5,800+","$8B+",1962,Large Enterprise,"Full-Service Investment Banking, Equities",Verified
+Investment Banking,Rothschild & Co,UK,https://www.rothschildandco.com,"3,800+","$3B+",1810,Large Enterprise,"M&A Advisory, Restructuring, Private Equity",Verified
+Investment Banking,Moelis & Company,USA,https://www.moelis.com,"950+","$1B+",2007,Medium Enterprise,"Independent Advisory, Restructuring",Verified
+Investment Banking,PJT Partners,USA,https://www.pjtpartners.com,"600+","$1B+",2015,Medium Enterprise,"Strategic Advisory, Restructuring, Fund Placement",Verified
+Investment Banking,Evercore,USA,https://www.evercore.com,"2,100+","$2.7B+",1995,Large Enterprise,"Advisory, Equities, Investment Management",Verified
+Investment Banking,Centerview Partners,USA,https://www.centerviewpartners.com,"400+","$1B+",2006,Medium Enterprise,"M&A Advisory, Restructuring",Verified
+Investment Banking,Perella Weinberg Partners,USA,https://www.pwpartners.com,"700+","$700M+",2006,Medium Enterprise,"Advisory, Restructuring",Verified
+Investment Banking,Greenhill & Co.,USA,https://www.greenhill.com,"400+","$300M+",1996,Medium Enterprise,"Independent Financial Advisory",Verified
+Investment Banking,Houlihan Lokey,USA,https://www.hl.com,"2,700+","$2B+",1972,Large Enterprise,"M&A, Restructuring, Financial Opinions",Verified
+Investment Banking,Guggenheim Partners,USA,https://www.guggenheimpartners.com,"3,200+","$2B+",1999,Large Enterprise,"Investment Banking, Investment Management",Verified
+Investment Banking,Cowen Inc.,USA,https://www.cowen.com,"1,400+","$1B+",1918,Large Enterprise,"Investment Banking, Research, Sales & Trading",Verified
+Investment Banking,Piper Sandler,USA,https://www.pipersandler.com,"1,500+","$1B+",1895,Large Enterprise,"Investment Banking, Asset Management",Verified
+Investment Banking,William Blair,USA,https://www.williamblair.com,"1,800+","$1B+",1935,Large Enterprise,"Investment Banking, Asset Management",Verified
+Investment Banking,Stifel Financial,USA,https://www.stifel.com,"9,000+","$4B+",1890,Large Enterprise,"Wealth Management, Investment Banking",Verified
+Investment Banking,Raymond James,USA,https://www.raymondjames.com,"18,000+","$12B+",1962,Large Enterprise,"Wealth Management, Investment Banking, Asset Mgmt",Verified
+Investment Banking,Canaccord Genuity,Canada,https://www.canaccordgenuity.com,"3,600+","$1.5B+",1950,Large Enterprise,"Wealth Management, Investment Banking",Verified
+Asset Management,BlackRock,USA,https://www.blackrock.com,"19,800+","$18B+",1988,Conglomerate,"iShares, Aladdin, Institutional, ETFs",Verified
+Asset Management,Vanguard Group,USA,https://www.vanguard.com,"20,000+","$8B+",1975,Conglomerate,"Index Funds, ETFs, Low-Cost Investing",Verified
+Asset Management,Fidelity Investments,USA,https://www.fidelity.com,"74,000+","$25B+",1946,Conglomerate,"Retail Brokerage, Fund Management, 401(k)",Verified
+Asset Management,State Street Global Advisors,USA,https://www.ssga.com,"42,000+ (State Street)","$13B+ (State Street)",1978,Large Enterprise,"SPDR ETFs, Institutional Asset Management",Verified
+Asset Management,PIMCO,USA,https://www.pimco.com,"3,100+","$4B+",1971,Large Enterprise,"Fixed Income, ETFs, Alternatives",Verified
+Asset Management,Capital Group,USA,https://www.capitalgroup.com,"9,000+","$8B+",1931,Large Enterprise,"American Funds, Active Equity, Fixed Income",Verified
+Asset Management,Franklin Templeton,USA,https://www.franklintempleton.com,"10,000+","$8B+",1947,Large Enterprise,"Mutual Funds, Alternatives, ETFs",Verified
+Asset Management,T. Rowe Price,USA,https://www.troweprice.com,"8,000+","$7B+",1937,Large Enterprise,"Mutual Funds, Retirement Services, Active Mgmt",Verified
+Asset Management,Amundi,France,https://www.amundi.com,"5,300+","$3B+",2010,Large Enterprise,"ETF, Indexing, Active Management, Europe",Verified
+Asset Management,Nuveen,USA,https://www.nuveen.com,"2,300+","$2B+",1898,Large Enterprise,"TIAA Affiliate, Alternatives, Municipal",Verified
+Asset Management,Invesco,USA,https://www.invesco.com,"8,000+","$6B+",1935,Large Enterprise,"Active, Passive, Alternatives, QQQ",Verified
+Asset Management,Schroders,UK,https://www.schroders.com,"6,000+","$3B+",1804,Large Enterprise,"Active Management, Private Assets, Wealth",Verified
+Asset Management,AXA Investment Managers,France,https://www.axa-im.com,"2,500+","$1B+",1994,Large Enterprise,"Fixed Income, Equities, Alternatives",Verified
+Asset Management,Nomura Asset Management,Japan,https://www.nomura.com,"29,000+ (Nomura)","$16B+ (Nomura)",1925,Conglomerate,"Equity, Fixed Income, Real Estate",Verified
+Asset Management,AllianceBernstein,USA,https://www.alliancebernstein.com,"4,600+","$4B+",1967,Large Enterprise,"Active Management, Research, Private Wealth",Verified
+Asset Management,Legg Mason,USA,https://www.leggmason.com,"3,300+","$3B+",1899,Large Enterprise,"(Acquired by Franklin Templeton)",Verified
+Asset Management,Man Group,UK,https://www.man.com,"1,400+","$1B+",1783,Large Enterprise,"Alternative Investments, Quant, Long-Only",Verified
+Asset Management,DWS Group,Germany,https://www.dws.com,"4,200+","$2.5B+",1956,Large Enterprise,"Active, Passive, Alternatives, ESG",Verified
+Asset Management,Janus Henderson,UK,https://www.janushenderson.com,"2,200+","$2B+",1934,Large Enterprise,"Active Investment Management, Equities",Verified
+Insurance Underwriting,Allianz,Germany,https://www.allianz.com,"155,000+","$150B+",1890,Conglomerate,"P&C, Life, Health, Asset Management",Verified
+Insurance Underwriting,AXA,France,https://www.axa.com,"92,000+","$110B+",1816,Conglomerate,"P&C, Life, Savings, Health",Verified
+Insurance Underwriting,Ping An Insurance,China,https://www.pingan.com,"362,000+","$165B+",1988,Conglomerate,"Life, P&C, Banking, Tech",Verified
+Insurance Underwriting,Prudential Financial,USA,https://www.prudential.com,"40,000+","$60B+",1875,Conglomerate,"Life Insurance, Annuities, Retirement",Verified
+Insurance Underwriting,MetLife,USA,https://www.metlife.com,"45,000+","$70B+",1868,Conglomerate,"Life, Annuities, Employee Benefits",Verified
+Insurance Underwriting,China Life Insurance,China,https://www.chinalife.com.cn,"183,000+","$135B+",1949,Conglomerate,"Life, Health, Annuity, Asset Management",Verified
+Insurance Underwriting,Munich Re,Germany,https://www.munichre.com,"40,000+","$70B+",1880,Conglomerate,"Reinsurance, Primary Insurance, ERGO",Verified
+Insurance Underwriting,Zurich Insurance Group,Switzerland,https://www.zurich.com,"55,000+","$55B+",1872,Conglomerate,"P&C, Life, Farmers",Verified
+Insurance Underwriting,Generali Group,Italy,https://www.generali.com,"82,000+","$95B+",1831,Conglomerate,"Life, P&C, Asset Management",Verified
+Insurance Underwriting,AIA Group,Hong Kong,https://www.aia.com,"23,000+","$40B+",1919,Conglomerate,"Life, Health, Retirement, Asia",Verified
+Insurance Underwriting,Aviva,UK,https://www.aviva.com,"22,000+","$20B+",1696,Conglomerate,"Life, General, Health, UK & Canada",Verified
+Insurance Underwriting,Prudential plc,UK,https://www.prudentialplc.com,"45,000+","$20B+",1848,Conglomerate,"Life, Health, Asia & Africa",Verified
+Insurance Underwriting,New York Life,USA,https://www.newyorklife.com,"12,000+","$25B+",1845,Large Enterprise,"Mutual Company, Life Insurance, Annuities",Verified
+Insurance Underwriting,Swiss Re,Switzerland,https://www.swissre.com,"14,000+","$45B+",1863,Large Enterprise,"Property & Casualty Reinsurance, Life Re",Verified
+Insurance Underwriting,Tokio Marine,Japan,https://www.tokiomarinehd.com,"40,000+","$40B+",1879,Conglomerate,"P&C, Life, International",Verified
+Insurance Underwriting,Legal & General,UK,https://www.legalandgeneral.com,"9,500+","$80B+",1836,Conglomerate,"Life, Pensions, Investment Management",Verified
+Insurance Underwriting,Nippon Life,Japan,https://www.nissay.co.jp,"72,000+","$90B+",1889,Conglomerate,"Life, Annuity, Health, Asset Management",Verified
+Insurance Underwriting,Manulife,Canada,https://www.manulife.com,"38,000+","$50B+",1887,Conglomerate,"Insurance, Wealth, Asset Management",Verified
+FinTech,Stripe,USA,https://stripe.com,"8,000+","$14B+",2010,Large Enterprise,"Payments Processing, APIs, Treasury",Verified
+FinTech,Square,USA,https://squareup.com,"12,000+","$17B+",2009,Large Enterprise,"POS, Business Software, Banking",Verified
+FinTech,Adyen,Netherlands,https://www.adyen.com,"3,000+","$1.5B+",2006,Large Enterprise,"Unified Payments, Global Enterprise",Verified
+FinTech,PayPal,USA,https://www.paypal.com,"29,000+","$27B+",1998,Conglomerate,"Digital Wallets, Online Payments, Venmo",Verified
+FinTech,Ant Group,China,https://www.antgroup.com,"10,000+","$20B+",2014,Conglomerate,"Alipay, Digital Payments, Credit Scoring",Verified
+FinTech,Klarna,Sweden,https://www.klarna.com,"5,000+","$2B+",2005,Large Enterprise,"BNPL, Shopping, Banking",Verified
+FinTech,Robinhood,USA,https://robinhood.com,"2,300+","$2B+",2013,Large Enterprise,"Commission-Free Trading, Retail Investing",Verified
+FinTech,Revolut,UK,https://www.revolut.com,"8,000+","$1B+",2015,Large Enterprise,"Neobank, FX, Trading, Crypto",Verified
+FinTech,Chime,USA,https://www.chime.com,"1,400+","$1B+",2013,Medium Enterprise,"Neobank, Fee-Free Banking, Early Pay",Verified
+FinTech,Plaid,USA,https://plaid.com,"1,200+","$300M+",2013,Medium Enterprise,"Financial Data APIs, Open Banking",Verified
+FinTech,SoFi,USA,https://www.sofi.com,"4,800+","$2B+",2011,Large Enterprise,"Neobank, Lending, Investing, Refinancing",Verified
+FinTech,TransferWise (Wise),UK,https://wise.com,"5,000+","$1B+",2011,Large Enterprise,"International Money Transfers, Borderless",Verified
+FinTech,Blockchain.com,UK,https://www.blockchain.com,"300+","$200M+",2011,Medium Enterprise,"Crypto Wallet, Exchange, Data",Verified
+FinTech,Coinbase,USA,https://www.coinbase.com,"4,900+","$3B+",2012,Large Enterprise,"Crypto Exchange, Custody, Institutional",Verified
+FinTech,Nubank,Brazil,https://nubank.com.br,"8,000+","$5B+",2013,Large Enterprise,"Neobank, Credit Cards, Latin America",Verified
+FinTech,Ripple,USA,https://ripple.com,"600+","$500M+",2012,Medium Enterprise,"Blockchain, Cross-Border Payments, XRP",Verified
+FinTech,Affirm,USA,https://www.affirm.com,"2,500+","$2B+",2012,Large Enterprise,"Point-of-Sale Loans, BNPL",Verified
+FinTech,Marqeta,USA,https://www.marqeta.com,"600+","$500M+",2010,Medium Enterprise,"Modern Card Issuing, APIs",Verified
+Stock Exchanges,NYSE (Intercontinental Exchange),USA,https://www.nyse.com,"9,000+","$8B+",1817,Large Enterprise,"Equities, Listings, Data, Fixed Income",Verified
+Stock Exchanges,Nasdaq,USA,https://www.nasdaq.com,"6,000+","$6B+",1971,Large Enterprise,"Technology, Listings, Data, Analytics",Verified
+Stock Exchanges,London Stock Exchange Group,UK,https://www.lseg.com,"25,000+","$10B+",1801,Conglomerate,"Capital Markets, Data, Analytics, Post-Trade",Verified
+Stock Exchanges,Japan Exchange Group,Japan,https://www.jpx.co.jp,"1,800+","$2B+",2013,Large Enterprise,"Tokyo Stock Exchange, Osaka Exchange",Verified
+Stock Exchanges,Shanghai Stock Exchange,China,https://english.sse.com.cn,"1,000+","$1B+",1990,Large Enterprise,"Equities, Bonds, Derivatives",Verified
+Stock Exchanges,Hong Kong Exchanges,China,https://www.hkex.com.hk,"2,500+","$2B+",1891,Large Enterprise,"Listings, Securities, Derivatives, Clearing",Verified
+Stock Exchanges,Euronext,Netherlands,https://www.euronext.com,"2,000+","$1.5B+",2000,Large Enterprise,"Pan-European Exchange, Amsterdam, Paris",Verified
+Stock Exchanges,Deutsche Börse,Germany,https://www.deutsche-boerse.com,"6,000+","$4B+",1992,Large Enterprise,"Xetra, Eurex, Clearstream, Market Data",Verified
+Stock Exchanges,SIX Swiss Exchange,Switzerland,https://www.six-group.com,"4,500+","$2B+",1850,Large Enterprise,"Swiss Exchange, Securities Services, Payments",Verified
+Stock Exchanges,TMX Group,Canada,https://www.tmx.com,"1,200+","$1B+",1852,Large Enterprise,"Toronto Stock Exchange, Derivatives, Clearing",Verified
+Stock Exchanges,BSE India,India,https://www.bseindia.com,"1,000+","$200M+",1875,Large Enterprise,"Equities, Derivatives, SME Platform",Verified
+Stock Exchanges,ASX Australia,Australia,https://www.asx.com.au,"600+","$700M+",1987,Large Enterprise,"Listings, Trading, Clearing, Settlement",Verified
+Stock Exchanges,Korea Exchange,South Korea,https://global.krx.co.kr,"800+","$500M+",1956,Large Enterprise,"KOSPI, KOSDAQ, Derivatives",Verified
+Stock Exchanges,B3 Brazil,Brazil,https://www.b3.com.br,"2,500+","$2B+",1890,Large Enterprise,"Equities, Fixed Income, Derivatives",Verified
+Stock Exchanges,Saudi Stock Exchange,Saudi Arabia,https://www.saudiexchange.sa,"500+","$300M+",2007,Medium Enterprise,"Tadawul, Equities, Debt",Verified
+Stock Exchanges,Singapore Exchange,Singapore,https://www.sgx.com,"1,000+","$800M+",1999,Large Enterprise,"Securities, Derivatives, FX, Commodities",Verified
+Stock Exchanges,National Stock Exchange India,India,https://www.nseindia.com,"1,200+","$300M+",1992,Large Enterprise,"Equities, Derivatives, India VIX",Verified
+Stock Exchanges,Bolsa Mexicana,Mexico,https://www.bmv.com.mx,"500+","$200M+",1894,Medium Enterprise,"Mexican Stock Exchange, Derivatives",Verified
+Private Equity,Blackstone,USA,https://www.blackstone.com,"4,500+","$10B+",1985,Conglomerate,"Real Estate, Private Equity, Credit, Hedge Funds",Verified
+Private Equity,KKR & Co.,USA,https://www.kkr.com,"4,000+","$5B+",1976,Conglomerate,"Private Equity, Real Estate, Credit",Verified
+Private Equity,Carlyle Group,USA,https://www.carlyle.com,"1,900+","$3B+",1987,Large Enterprise,"Private Equity, Credit, Real Estate, Solutions",Verified
+Private Equity,TPG Capital,USA,https://www.tpg.com,"1,600+","$2B+",1992,Large Enterprise,"Private Equity, Impact, Real Estate",Verified
+Private Equity,Apollo Global Management,USA,https://www.apollo.com,"2,600+","$5B+",1990,Conglomerate,"Private Equity, Credit, Real Estate",Verified
+Private Equity,CVC Capital Partners,Luxembourg,https://www.cvc.com,"700+","$1B+",1981,Large Enterprise,"Private Equity, Credit",Verified
+Private Equity,Warburg Pincus,USA,https://www.warburgpincus.com,"600+","$1B+",1966,Large Enterprise,"Growth Investing, Private Equity",Verified
+Private Equity,EQT Partners,Sweden,https://www.eqtgroup.com,"1,200+","$2B+",1994,Large Enterprise,"Private Equity, Infrastructure, Real Estate",Verified
+Private Equity,Advent International,USA,https://www.adventinternational.com,"500+","$1B+",1984,Large Enterprise,"Private Equity, Global",Verified
+Private Equity,Bain Capital,USA,https://www.baincapital.com,"1,500+","$2B+",1984,Large Enterprise,"Private Equity, Venture, Credit, Public",Verified
+Private Equity,Vista Equity Partners,USA,https://www.vistaequitypartners.com,"900+","$1B+",2000,Large Enterprise,"Enterprise Software, Technology, Data",Verified
+Private Equity,Thoma Bravo,USA,https://www.thomabravo.com,"200+","$1B+",2008,Large Enterprise,"Software, Technology-Enabled",Verified
+Private Equity,Hellman & Friedman,USA,https://www.hf.com,"200+","$1B+",1984,Large Enterprise,"Private Equity, Growth",Verified
+Private Equity,Permira,UK,https://www.permira.com,"300+","$1B+",1985,Large Enterprise,"Private Equity, Technology, Consumer",Verified
+Private Equity,Silver Lake,USA,https://www.silverlake.com,"500+","$1B+",1999,Large Enterprise,"Technology, Tech-Enabled",Verified
+Private Equity,General Atlantic,USA,https://www.generalatlantic.com,"600+","$1B+",1980,Large Enterprise,"Growth Equity, Global",Verified
+Private Equity,Clayton Dubilier & Rice,USA,https://www.cdr-inc.com,"100+","$1B+",1978,Large Enterprise,"Corporate Carve-Outs, Industrials",Verified
+Private Equity,Leonard Green & Partners,USA,https://www.leonardgreen.com,"100+","$1B+",1989,Large Enterprise,"Consumer, Retail, Healthcare, Services",Verified
+Private Equity,Neuberger Berman,USA,https://www.nb.com,"2,700+","$3B+",1939,Large Enterprise,"Asset Management, Private Equity",Verified
+Hedge Funds,Bridgewater Associates,USA,https://www.bridgewater.com,"1,500+","$5B+",1975,Large Enterprise,"Global Macro, Pure Alpha, All Weather",Verified
+Hedge Funds,Renaissance Technologies,USA,https://www.rentec.com,"300+","$7B+",1982,Large Enterprise,"Quantitative, Systematic, Medallion Fund",Verified
+Hedge Funds,Man Group,UK,https://www.man.com,"1,400+","$1B+",1783,Large Enterprise,"Alternative Investments, Quant, Long-Only",Verified
+Hedge Funds,Citadel,USA,https://www.citadel.com,"4,000+","$22B+",1990,Conglomerate,"Multi-Strategy, Securities, Citadel Securities",Verified
+Hedge Funds,Two Sigma,USA,https://www.twosigma.com,"1,800+","$2B+",2001,Large Enterprise,"Quantitative, Data Science",Verified
+Hedge Funds,Millennium Management,USA,https://www.mlp.com,"5,000+","$6B+",1989,Large Enterprise,"Multi-Strategy, Relative Value",Verified
+Hedge Funds,DE Shaw & Co.,USA,https://www.deshaw.com,"2,300+","$3B+",1988,Large Enterprise,"Quantitative, Multi-Strategy",Verified
+Hedge Funds,Elliott Management,USA,https://www.elliotmgmt.com,"500+","$3B+",1977,Large Enterprise,"Activist, Distressed, Multi-Strategy",Verified
+Hedge Funds,Paulson & Co.,USA,https://www.paulson.com,"100+","$1B+",1994,Medium Enterprise,"Merger Arbitrage, Credit, Event-Driven",Verified
+Hedge Funds,Point72 Asset Management,USA,https://www.point72.com,"2,200+","$2B+",2014,Large Enterprise,"Long/Short Equity, Multi-Strategy",Verified
+Hedge Funds,Third Point,USA,https://www.thirdpoint.com,"100+","$1B+",1995,Medium Enterprise,"Activist, Event-Driven, Value",Verified
+Hedge Funds,Farallon Capital,USA,https://www.faralloncapital.com,"200+","$1B+",1986,Medium Enterprise,"Value, Event-Driven, Multi-Strategy",Verified
+Hedge Funds,Caxton Associates,USA,https://www.caxton.com,"200+","$1B+",1983,Medium Enterprise,"Global Macro, Discretionary",Verified
+Hedge Funds,Marshall Wace,UK,https://www.marshallwace.com,"500+","$1B+",1997,Medium Enterprise,"Long/Short Equity, Quantitative, TOPS",Verified
+Hedge Funds,BlueCrest Capital,UK,https://www.bluecrestcapital.com,"400+","$1B+",2000,Medium Enterprise,"Systematic, Discretionary, Multi-Strategy",Verified
+Hedge Funds,TCI Fund Management,UK,https://www.tcifund.com,"50+","$1B+",2003,Small Enterprise,"Concentrated, Activist, Long-Only",Verified
+Hedge Funds,AQR Capital Management,USA,https://www.aqr.com,"1,000+","$1B+",1998,Large Enterprise,"Quantitative, Alternative, Risk Premia",Verified
+Hedge Funds,Appaloosa Management,USA,https://www.appaloosamanagement.com,"50+","$1B+",1993,Small Enterprise,"Deep Value, Distressed, Event-Driven",Verified
+Hedge Funds,Baupost Group,USA,https://www.baupost.com,"300+","$1B+",1982,Medium Enterprise,"Value, Distressed, Opportunistic",Verified
+Consumer Finance,American Express,USA,https://www.americanexpress.com,"77,000+","$60B+",1850,Conglomerate,"Charge Cards, Network, Travel, Loyalty",Verified
+Consumer Finance,Discover Financial,USA,https://www.discover.com,"17,000+","$15B+",1985,Large Enterprise,"Credit Cards, Student Loans, Personal Loans",Verified
+Consumer Finance,Synchrony Financial,USA,https://www.synchrony.com,"16,000+","$12B+",1932,Large Enterprise,"Private Label Credit Cards, Consumer Finance",Verified
+Consumer Finance,Ally Financial,USA,https://www.ally.com,"11,000+","$9B+",1919,Large Enterprise,"Auto Finance, Digital Banking, Insurance",Verified
+Consumer Finance,OneMain Financial,USA,https://www.onemainfinancial.com,"9,000+","$4B+",1920,Large Enterprise,"Personal Loans, Branch Network",Verified
+Consumer Finance,Nationstar Mortgage,USA,https://www.nationstarmtg.com,"8,000+","$3B+",1994,Large Enterprise,"Mortgage Servicing, Origination",Verified
+Consumer Finance,SoFi,USA,https://www.sofi.com,"4,800+","$2B+",2011,Large Enterprise,"Student Loan Refinancing, Personal Loans",Verified
+Consumer Finance,LendingClub,USA,https://www.lendingclub.com,"1,200+","$1B+",2006,Medium Enterprise,"Peer-to-Peer Lending, Personal Loans",Verified
+Consumer Finance,Upstart,USA,https://www.upstart.com,"600+","$500M+",2012,Medium Enterprise,"AI-Powered Lending, Personal Loans",Verified
+Consumer Finance,Affirm,USA,https://www.affirm.com,"2,500+","$2B+",2012,Large Enterprise,"Point-of-Sale Loans, BNPL",Verified
+Consumer Finance,KreditBee,India,https://www.kreditbee.in,"500+","$100M+",2018,Medium Enterprise,"Instant Personal Loans, India",Verified
+Consumer Finance,Afterpay,Australia,https://www.afterpay.com,"1,500+","$1B+",2014,Medium Enterprise,"BNPL, Retail Payments",Verified
+Consumer Finance,Klarna,Sweden,https://www.klarna.com,"5,000+","$2B+",2005,Large Enterprise,"BNPL, Shopping, Banking",Verified
+Consumer Finance,Greensky,USA,https://www.greensky.com,"500+","$500M+",2006,Medium Enterprise,"Home Improvement Loans, POS Credit",Verified
+Consumer Finance,Upgrade,USA,https://www.upgrade.com,"500+","$500M+",2016,Medium Enterprise,"Personal Credit, BNPL, Rewards",Verified
+Consumer Finance,Best Egg,USA,https://www.bestegg.com,"500+","$500M+",2014,Medium Enterprise,"Personal Loans, Financial Health",Verified
+Consumer Finance,Prosper Marketplace,USA,https://www.prosper.com,"300+","$200M+",2005,Medium Enterprise,"Peer-to-Peer Lending, Personal Loans",Verified
+Consumer Finance,Avant,USA,https://www.avant.com,"500+","$500M+",2012,Medium Enterprise,"Personal Loans, Credit Cards",Verified
+Credit Cards,Visa,USA,https://www.visa.com,"26,500+","$32B+",1958,Conglomerate,"Payments Network, Digital, Data",Verified
+Credit Cards,Mastercard,USA,https://www.mastercard.com,"33,000+","$25B+",1966,Conglomerate,"Payments Network, Services, Technology",Verified
+Credit Cards,American Express,USA,https://www.americanexpress.com,"77,000+","$60B+",1850,Conglomerate,"Charge Cards, Network, Travel, Loyalty",Verified
+Credit Cards,Discover Financial,USA,https://www.discover.com,"17,000+","$15B+",1985,Large Enterprise,"Credit Cards, Student Loans, Personal Loans",Verified
+Credit Cards,Capital One,USA,https://www.capitalone.com,"55,000+","$38B+",1988,Conglomerate,"Credit Cards, Banking, Auto Loans",Verified
+Credit Cards,JCB Co.,Japan,https://www.global.jcb,"4,000+","$2B+",1961,Large Enterprise,"Payment Network, Japan, Asia",Verified
+Credit Cards,UnionPay International,China,https://www.unionpayintl.com,"5,000+","$3B+",2002,Large Enterprise,"Payment Network, China, Global",Verified
+Credit Cards,Diners Club International,USA,https://www.dinersclub.com,"N/A (Discover)","N/A (Discover)",1950,Medium Enterprise,"(Owned by Discover)",Verified
+Credit Cards,Marqeta,USA,https://www.marqeta.com,"600+","$500M+",2010,Medium Enterprise,"Modern Card Issuing, APIs",Verified
+Credit Cards,Green Dot,USA,https://www.greendot.com,"1,200+","$1B+",1999,Medium Enterprise,"Prepaid Cards, Banking as a Service",Verified
+Credit Cards,Netspend,USA,https://www.netspend.com,"1,000+","$500M+",1999,Medium Enterprise,"Prepaid Cards, Financial Services",Verified
+Credit Cards,Comdata,USA,https://www.comdata.com,"4,000+","$1B+",1969,Medium Enterprise,"Fleet Cards, Payment Solutions",Verified
+Credit Cards,WEX Inc.,USA,https://www.wexinc.com,"5,800+","$2B+",1983,Large Enterprise,"Fleet, Corporate, Health Payments",Verified
+Credit Cards,FleetCor,USA,https://www.fleetcor.com,"8,000+","$3B+",2000,Large Enterprise,"Fuel Cards, Business Payments",Verified
+Credit Cards,Bread Financial,USA,https://www.breadfinancial.com,"7,000+","$4B+",2015,Large Enterprise,"Private Label Credit, Co-Brand Cards",Verified
+Credit Cards,Deserve,USA,https://www.deserve.com,"100+","$50M+",2014,Small Enterprise,"Credit Cards for Students, Professionals",Verified
+Credit Cards,Petal Card,USA,https://www.petalcard.com,"200+","$100M+",2016,Small Enterprise,"Credit Cards for No/Low Credit History",Verified
+Microfinance,Grameen Bank,Bangladesh,https://www.grameen.com,"25,000+","$200M+",1983,Medium Enterprise,"Microcredit, Rural Lending, Social Business",Verified
+Microfinance,BRAC,Bangladesh,https://www.brac.net,"100,000+","$1B+",1972,Conglomerate,"Microfinance, Development, Health, Education",Verified
+Microfinance,Kiva,USA,https://www.kiva.org,"100+","$10M+",2005,Small Enterprise,"Crowdfunded Micro-Loans, Non-Profit",Verified
+Microfinance,Accion,USA,https://www.accion.org,"200+","$50M+",1961,Small Enterprise,"Microfinance Network, Investment, Advisory",Verified
+Microfinance,Opportunity International,Australia,https://opportunity.org,"1,000+","$100M+",1971,Medium Enterprise,"Microfinance, Savings, Insurance, Training",Verified
+Microfinance,Compartamos Banco,Mexico,https://compartamos.com,"15,000+","$1B+",1990,Large Enterprise,"Microfinance, Group Lending, Mexico",Verified
+Microfinance,SKS Microfinance,India,https://www.basixindia.com,"10,000+","$500M+",1997,Medium Enterprise,"Microfinance, Livelihood Services, India",Verified
+Microfinance,Equitas Small Finance Bank,India,https://www.equitasbank.com,"8,000+","$300M+",2007,Medium Enterprise,"Microfinance, Small Finance Bank, India",Verified
+Microfinance,ASA International,Netherlands,https://www.asainternational.com,"20,000+","$200M+",2007,Medium Enterprise,"Microfinance, Asia, Africa",Verified
+Microfinance,ProCredit Group,Germany,https://www.procredit-group.com,"7,000+","$200M+",1998,Medium Enterprise,"Development-Oriented Commercial Bank",Verified
+Microfinance,BlueOrchard Finance,Switzerland,https://www.blueorchard.com,"100+","$50M+",2001,Small Enterprise,"Impact Investing, Microfinance Debt",Verified
+Microfinance,ResponsAbility,Switzerland,https://www.responsability.com,"100+","$50M+",2003,Small Enterprise,"Impact Investing, Debt, Equity",Verified
+Microfinance,MicroVest,USA,https://www.microvest.com,"50+","$10M+",2003,Small Enterprise,"Microfinance Investment, Debt Funds",Verified
+Microfinance,LiftFund,USA,https://www.liftfund.com,"100+","$10M+",1994,Small Enterprise,"Small Business Lending, US South",Verified
+Microfinance,Endeavor Microfinance,USA,https://endeavor.org,"200+","$20M+",1997,Small Enterprise,"(Part of Endeavor Global)",Verified
+Microfinance,Al Majmoua,Lebanon,https://www.almajmoua.org,"500+","$10M+",1994,Small Enterprise,"Microfinance, Lebanon",Verified
+Microfinance,FINCA Impact Finance,USA,https://finca.org,"7,000+","$100M+",1984,Medium Enterprise,"Microfinance, Micro-Entrepreneurs, Global",Verified
+Cryptocurrency Exchanges,Binance,Global,https://www.binance.com,"8,000+","$20B+",2017,Conglomerate,"Spot, Derivatives, NFT, BNB Chain",Verified
+Cryptocurrency Exchanges,Coinbase,USA,https://www.coinbase.com,"4,900+","$3B+",2012,Large Enterprise,"Spot, Custody, Institutional, Retail",Verified
+Cryptocurrency Exchanges,Kraken,USA,https://www.kraken.com,"3,000+","$1B+",2011,Large Enterprise,"Spot, Futures, OTC, Staking",Verified
+Cryptocurrency Exchanges,Bitstamp,Luxembourg,https://www.bitstamp.net,"500+","$100M+",2011,Medium Enterprise,"Spot, Euro Focus, Institutional",Verified
+Cryptocurrency Exchanges,Gemini,USA,https://www.gemini.com,"1,000+","$200M+",2014,Medium Enterprise,"Spot, Custody, NFT, US Focus",Verified
+Cryptocurrency Exchanges,Bitfinex,Hong Kong,https://www.bitfinex.com,"200+","$100M+",2012,Medium Enterprise,"Spot, Margin, Derivatives",Verified
+Cryptocurrency Exchanges,KuCoin,Seychelles,https://www.kucoin.com,"1,000+","$500M+",2017,Medium Enterprise,"Spot, Derivatives, Global",Verified
+Cryptocurrency Exchanges,OKX,Seychelles,https://www.okx.com,"2,000+","$1B+",2017,Large Enterprise,"Spot, Derivatives, OKB Token",Verified
+Cryptocurrency Exchanges,Bybit,Seychelles,https://www.bybit.com,"2,000+","$1B+",2018,Large Enterprise,"Derivatives, Copy Trading, Options",Verified
+Cryptocurrency Exchanges,FTX,Bahamas,https://www.ftx.com,"300+","$1B+",2019,Medium Enterprise,"(Bankrupt)",Verified
+Cryptocurrency Exchanges,Huobi,Singapore,https://www.huobi.com,"2,000+","$1B+",2013,Large Enterprise,"Spot, Derivatives, HT Token",Verified
+Cryptocurrency Exchanges,Crypto.com,Hong Kong,https://crypto.com,"5,000+","$1B+",2016,Large Enterprise,"Spot, Exchange Token, Visa Card, NFT",Verified
+Cryptocurrency Exchanges,BitMEX,Seychelles,https://www.bitmex.com,"200+","$100M+",2014,Medium Enterprise,"Perpetual Swaps, Derivatives",Verified
+Cryptocurrency Exchanges,Deribit,Netherlands,https://www.deribit.com,"100+","$50M+",2016,Small Enterprise,"Options, Futures, Crypto Derivatives",Verified
+Cryptocurrency Exchanges,Luno,UK,https://www.luno.com,"500+","$100M+",2013,Medium Enterprise,"Spot, Easy On-Ramp, Emerging Markets",Verified
+Cryptocurrency Exchanges,Bitso,Mexico,https://bitso.com,"700+","$100M+",2014,Medium Enterprise,"Spot, Latin America, Remittances",Verified
+Cryptocurrency Exchanges,Upbit,South Korea,https://upbit.com,"500+","$1B+",2017,Medium Enterprise,"Spot, South Korea, Major Pairs",Verified
+Cryptocurrency Exchanges,WazirX,India,https://wazirx.com,"200+","$50M+",2018,Small Enterprise,"Spot, P2P, India",Verified
+Venture Capital,Sequoia Capital,USA,https://www.sequoiacap.com,"300+","$2B+",1972,Large Enterprise,"Early & Growth Stage, Technology, Healthcare",Verified
+Venture Capital,Andreessen Horowitz,USA,https://a16z.com,"500+","$3B+",2009,Large Enterprise,"Early & Growth Stage, Crypto, Bio",Verified
+Venture Capital,Accel,USA,https://www.accel.com,"200+","$1B+",1983,Large Enterprise,"Early Stage, Technology",Verified
+Venture Capital,Kleiner Perkins,USA,https://www.kleinerperkins.com,"100+","$1B+",1972,Large Enterprise,"Early Stage, Technology, Healthcare",Verified
+Venture Capital,Benchmark,USA,https://benchmark.com,"50+","$1B+",1995,Medium Enterprise,"Early Stage, Technology",Verified
+Venture Capital,Greylock Partners,USA,https://greylock.com,"100+","$1B+",1965,Large Enterprise,"Early Stage, Enterprise, Consumer",Verified
+Venture Capital,Index Ventures,UK,https://indexventures.com,"100+","$1B+",1996,Large Enterprise,"Early & Growth Stage, Technology, Bio",Verified
+Venture Capital,Bessemer Venture Partners,USA,https://www.bvp.com,"150+","$1B+",1911,Large Enterprise,"Early & Growth Stage, Technology, Cloud",Verified
+Venture Capital,New Enterprise Associates,USA,https://www.nea.com,"100+","$1B+",1977,Large Enterprise,"Early & Growth Stage, Technology, Healthcare",Verified
+Venture Capital,Lightspeed Venture Partners,USA,https://lsvp.com,"200+","$1B+",2000,Large Enterprise,"Early & Growth Stage, Technology, Consumer",Verified
+Venture Capital,Canaan Partners,USA,https://www.canaan.com,"100+","$1B+",1987,Large Enterprise,"Early Stage, Technology, Healthcare",Verified
+Venture Capital,First Round Capital,USA,https://firstround.com,"50+","$500M+",2004,Medium Enterprise,"Early Stage, Technology, Community",Verified
+Venture Capital,Founders Fund,USA,https://foundersfund.com,"50+","$1B+",2005,Medium Enterprise,"Early Stage, Technology, Deep Tech",Verified
+Venture Capital,Union Square Ventures,USA,https://www.usv.com,"50+","$1B+",2003,Medium Enterprise,"Early Stage, Network Effects",Verified
+Venture Capital,General Catalyst,USA,https://www.generalcatalyst.com,"200+","$1B+",2000,Large Enterprise,"Early & Growth Stage, Technology",Verified
+Venture Capital,Insight Partners,USA,https://www.insightpartners.com,"500+","$1B+",1995,Large Enterprise,"Growth Stage, Software",Verified
+Venture Capital,Redpoint Ventures,USA,https://www.redpoint.com,"100+","$1B+",1999,Large Enterprise,"Early Stage, Technology",Verified
+Venture Capital,Battery Ventures,USA,https://www.battery.com,"150+","$1B+",1983,Large Enterprise,"Technology, Software, Industrial",Verified
+Wealth Management,UBS Global Wealth Mgmt,Switzerland,https://www.ubs.com,"74,000+","$39B+",1862,Conglomerate,"Ultra-High Net Worth, Global Families",Verified
+Wealth Management,Julius Baer,Switzerland,https://www.juliusbaer.com,"6,800+","$4B+",1890,Large Enterprise,"Private Banking, Wealth Management",Verified
+Wealth Management,Goldman Sachs Wealth Mgmt,USA,https://www.goldmansachs.com,"45,000+","$47B+",1869,Conglomerate,"Ultra-High Net Worth, Ayco, Personal Finance",Verified
+Wealth Management,Morgan Stanley Wealth Mgmt,USA,https://www.morganstanley.com,"82,000+","$54B+",1935,Conglomerate,"E*TRADE, Workplace, Ultra-High Net Worth",Verified
+Wealth Management,BNP Paribas Wealth Mgmt,France,https://wealthmanagement.bnpparibas,"190,000+ (BNP)","$54B+ (BNP)",1848,Conglomerate,"Private Banking, Europe, Asia",Verified
+Wealth Management,Credit Suisse Wealth Mgmt,Switzerland,https://www.credit-suisse.com,"50,000+","$20B+",1856,Conglomerate,"(Acquired by UBS)",Verified
+Wealth Management,Charles Schwab,USA,https://www.schwab.com,"35,000+","$21B+",1971,Conglomerate,"Discount Brokerage, RIA Custodian, Banking",Verified
+Wealth Management,Edward Jones,USA,https://www.edwardjones.com,"52,000+","$13B+",1922,Large Enterprise,"Branch Network, Financial Advisors",Verified
+Wealth Management,Raymond James,USA,https://www.raymondjames.com,"18,000+","$12B+",1962,Large Enterprise,"Wealth Management, Investment Banking",Verified
+Wealth Management,LPL Financial,USA,https://www.lpl.com,"6,000+","$9B+",1989,Large Enterprise,"Independent Broker-Dealer, RIA Support",Verified
+Wealth Management,Fisher Investments,USA,https://www.fisherinvestments.com,"5,000+","$2B+",1979,Large Enterprise,"Discretionary Portfolio Management",Verified
+Wealth Management,Northern Trust Wealth Mgmt,USA,https://www.northerntrust.com,"22,000+","$7B+",1889,Large Enterprise,"Wealth Management, Asset Servicing",Verified
+Wealth Management,Bessemer Trust,USA,https://www.bessemertrust.com,"1,200+","$1B+",1907,Medium Enterprise,"Multi-Generational Wealth, Families",Verified
+Wealth Management,CIBC Private Wealth,Canada,https://www.cibc.com,"49,000+ (CIBC)","$18B+ (CIBC)",1867,Conglomerate,"Private Banking, Investment Management",Verified
+Wealth Management,RBC Wealth Management,Canada,https://www.rbcwealthmanagement.com,"97,000+ (RBC)","$50B+ (RBC)",1864,Conglomerate,"Private Banking, Investment Management",Verified
+Wealth Management,Pictet Wealth Mgmt,Switzerland,https://www.group.pictet,"5,000+","$3B+",1805,Large Enterprise,"Private Banking, Asset Management",Verified
+Wealth Management,Lombard Odier,Switzerland,https://www.lombardodier.com,"2,600+","$2B+",1796,Large Enterprise,"Private Banking, Asset Management",Verified
+Wealth Management,HSBC Private Banking,UK,https://www.privatebanking.hsbc.com,"219,000+ (HSBC)","$66B+ (HSBC)",1865,Conglomerate,"Private Banking, Global",Verified
+Mortgage Lending,Rocket Mortgage,USA,https://www.rocketmortgage.com,"26,000+","$14B+",1985,Large Enterprise,"Digital Mortgage, Purchase, Refinance",Verified
+Mortgage Lending,Wells Fargo Home Lending,USA,https://www.wellsfargo.com,"227,000+ (Wells)","$82B+ (Wells)",1852,Conglomerate,"Mortgage Origination, Servicing",Verified
+Mortgage Lending,Chase Home Lending,USA,https://www.chase.com,"293,000+ (JPM)","$158B+ (JPM)",1799,Conglomerate,"Mortgage Origination, Servicing",Verified
+Mortgage Lending,Bank of America Home Loans,USA,https://www.bankofamerica.com,"217,000+ (BofA)","$98B+ (BofA)",1784,Conglomerate,"Mortgage Origination, Servicing",Verified
+Mortgage Lending,Fairway Independent Mortgage,USA,https://fairwayindependentmc.com,"11,000+","$2B+",1996,Large Enterprise,"Mortgage Origination, Retail",Verified
+Mortgage Lending,Guaranteed Rate,USA,https://www.rate.com,"5,000+","$1B+",2000,Large Enterprise,"Digital Mortgage, Purchase",Verified
+Mortgage Lending,United Wholesale Mortgage,USA,https://www.uwm.com,"9,000+","$2B+",1986,Large Enterprise,"Wholesale Lending, Mortgage Brokers",Verified
+Mortgage Lending,Pennymac,USA,https://www.pennymac.com,"6,000+","$2B+",2008,Large Enterprise,"Mortgage Servicing, Origination, MSR",Verified
+Mortgage Lending,Freedom Mortgage,USA,https://www.freedommortgage.com,"7,000+","$2B+",1990,Large Enterprise,"FHA, VA, Refinance",Verified
+Mortgage Lending,loanDepot,USA,https://www.loandepot.com,"6,000+","$1B+",2010,Large Enterprise,"Digital Mortgage, Purchase, Refinance",Verified
+Mortgage Lending,Caliber Home Loans,USA,https://www.caliberhomeloans.com,"8,000+","$1B+",2008,Large Enterprise,"Mortgage Origination, Servicing",Verified
+Mortgage Lending,Newrez LLC,USA,https://www.newrez.com,"7,000+","$2B+",2008,Large Enterprise,"Mortgage Origination, Servicing",Verified
+Mortgage Lending,Guild Mortgage,USA,https://www.guildmortgage.com,"4,000+","$1B+",1960,Large Enterprise,"Purchase-Focused, Community Lending",Verified
+Mortgage Lending,Mutual of Omaha Mortgage,USA,https://www.mutualmortgage.com,"1,000+","$500M+",1909,Medium Enterprise,"Retail Mortgage, Banking Affiliate",Verified
+Mortgage Lending,CrossCountry Mortgage,USA,https://crosscountrymortgage.com,"7,000+","$1B+",2003,Large Enterprise,"Retail Mortgage, Branches",Verified
+Mortgage Lending,Homepoint Financial,USA,https://homepoint.com,"2,000+","$500M+",2015,Medium Enterprise,"Wholesale Lending, Correspondent",Verified
+Mortgage Lending,Movement Mortgage,USA,https://movement.com,"4,000+","$1B+",2008,Large Enterprise,"Retail Mortgage, Community Focus",Verified
+Mortgage Lending,Academy Mortgage,USA,https://academymortgage.com,"2,000+","$500M+",1988,Medium Enterprise,"Retail Mortgage, Purchase Focus",Verified
+Payment Processing,Stripe,USA,https://stripe.com,"8,000+","$14B+",2010,Large Enterprise,"Payments Processing, APIs, Treasury",Verified
+Payment Processing,Adyen,Netherlands,https://www.adyen.com,"3,000+","$1.5B+",2006,Large Enterprise,"Unified Payments, Global Enterprise",Verified
+Payment Processing,Square,USA,https://squareup.com,"12,000+","$17B+",2009,Large Enterprise,"POS, Business Software, Banking",Verified
+Payment Processing,PayPal,USA,https://www.paypal.com,"29,000+","$27B+",1998,Conglomerate,"Digital Wallets, Online Payments, Venmo",Verified
+Payment Processing,Worldpay,UK,https://www.worldpay.com,"N/A (FIS)","$5B+ (FIS)",1989,Large Enterprise,"(Part of FIS)",Verified
+Payment Processing,Fiserv,USA,https://www.fiserv.com,"42,000+","$19B+",1984,Conglomerate,"Clover, Card Services, Core Banking",Verified
+Payment Processing,Global Payments,USA,https://www.globalpayments.com,"24,000+","$9B+",1967,Conglomerate,"Merchant Solutions, TSYS",Verified
+Payment Processing,Authorize.Net,USA,https://www.authorize.net,"N/A (Visa)","N/A (Visa)",1996,Medium Enterprise,"(Owned by Visa)",Verified
+Payment Processing,2Checkout (Verifone),USA,https://www.2checkout.com,"500+","$100M+",2006,Medium Enterprise,"Digital Commerce, Global Payments",Verified
+Payment Processing,PayU,Netherlands,https://payu.com,"3,000+","$500M+",2002,Medium Enterprise,"Emerging Markets, E-commerce",Verified
+Payment Processing,Braintree,USA,https://www.braintreepayments.com,"N/A (PayPal)","N/A (PayPal)",2007,Medium Enterprise,"(Owned by PayPal)",Verified
+Payment Processing,WePay,USA,https://go.wepay.com,"N/A (JPM)","N/A (JPM)",2008,Medium Enterprise,"(Owned by JPMorgan Chase)",Verified
+Payment Processing,BlueSnap,USA,https://www.bluesnap.com,"300+","$100M+",2001,Medium Enterprise,"Global Payment Platform, E-commerce",Verified
+Payment Processing,Checkout.com,UK,https://www.checkout.com,"1,800+","$500M+",2012,Large Enterprise,"Enterprise-Focused, Full-Stack",Verified
+Payment Processing,Rapyd,UK,https://www.rapyd.net,"1,200+","$100M+",2016,Medium Enterprise,"Fintech as a Service, Global",Verified
+Payment Processing,Paysafe,UK,https://www.paysafe.com,"3,500+","$1.5B+",1996,Large Enterprise,"Digital Wallets, E-cash, Integrated",Verified
+Payment Processing,Skrill,UK,https://www.skrill.com,"3,500+ (Paysafe)","$1.5B+ (Paysafe)",2001,Medium Enterprise,"(Part of Paysafe)",Verified
+Payment Processing,Neteller,UK,https://www.neteller.com,"3,500+ (Paysafe)","$1.5B+ (Paysafe)",1999,Medium Enterprise,"(Part of Paysafe)",Verified
+Trade Finance,Standard Chartered Trade,UK,https://www.sc.com,"85,000+ (SC)","$18B+ (SC)",1969,Conglomerate,"Letters of Credit, Supply Chain Finance",Verified
+Trade Finance,HSBC Trade Solutions,UK,https://www.business.hsbc.com,"219,000+ (HSBC)","$66B+ (HSBC)",1865,Conglomerate,"Global Trade, Receivables Finance",Verified
+Trade Finance,Citi Trade Services,USA,https://www.citigroup.com,"240,000+ (Citi)","$78B+ (Citi)",1812,Conglomerate,"Documentary Trade, Supply Chain",Verified
+Trade Finance,BNP Paribas Trade Finance,France,https://www.bnpparibas.com,"190,000+ (BNP)","$54B+ (BNP)",1848,Conglomerate,"Commodity Trade, Structured Trade",Verified
+Trade Finance,Société Générale Trade Finance,France,https://www.societegenerale.com,"117,000+ (SG)","$29B+ (SG)",1864,Conglomerate,"Structured Commodity Finance",Verified
+Trade Finance,Mizuho Trade Finance,Japan,https://www.mizuhogroup.com,"60,000+ (Mizuho)","$20B+ (Mizuho)",2003,Conglomerate,"Corporate Banking, Trade",Verified
+Trade Finance,MUFG Trade Finance,Japan,https://www.mufg.jp,"160,000+ (MUFG)","$47B+ (MUFG)",2005,Conglomerate,"Letters of Credit, Guarantees",Verified
+Trade Finance,ING Trade Finance,Netherlands,https://www.ing.com,"57,000+ (ING)","$21B+ (ING)",1991,Conglomerate,"Working Capital Solutions",Verified
+Trade Finance,Deutsche Bank Trade Finance,Germany,https://www.db.com,"84,000+ (DB)","$28B+ (DB)",1870,Conglomerate,"Documentary Collections, Guarantees",Verified
+Trade Finance,ANZ Trade Finance,Australia,https://www.anz.com,"40,000+ (ANZ)","$18B+ (ANZ)",1835,Conglomerate,"Trade, Supply Chain, Australia & Asia",Verified
+Trade Finance,Commerzbank Trade Finance,Germany,https://www.commerzbank.com,"40,000+","$10B+",1870,Large Enterprise,"Export Finance, Guarantees",Verified
+Trade Finance,Rabobank Trade Finance,Netherlands,https://www.rabobank.com,"42,000+","$15B+",1898,Large Enterprise,"Agri-Commodity Trade Finance",Verified
+Trade Finance,Credit Agricole Trade Finance,France,https://www.ca-cib.com,"142,000+ (CA)","$30B+ (CA)",1894,Conglomerate,"Commodities, Structured Trade",Verified
+Trade Finance,ABN AMRO Trade Finance,Netherlands,https://www.abnamro.com,"19,000+","$8B+",1991,Large Enterprise,"Commodity Finance, Sustainable Trade",Verified
+Trade Finance,DBS Trade Finance,Singapore,https://www.dbs.com,"36,000+","$15B+",1968,Large Enterprise,"Digital Trade, Supply Chain, Asia",Verified
+Trade Finance,ICBC Trade Finance,China,https://www.icbc-ltd.com,"445,000+ (ICBC)","$135B+ (ICBC)",1984,Conglomerate,"Global Trade Services, L/Cs",Verified
+Trade Finance,Bank of China Trade,China,https://www.boc.cn,"310,000+","$90B+",1912,Conglomerate,"Trade Services, International",Verified
+Trade Finance,China Construction Bank Trade,China,https://www.ccb.com,"370,000+","$110B+",1954,Conglomerate,"Trade Finance, Supply Chain",Verified
+Trade Finance,Afreximbank Trade Finance,Egypt,https://www.afreximbank.com,"400+","$1B+",1993,Medium Enterprise,"African Trade, Intra-African",Verified
+Forex Services,OANDA,USA,https://www.oanda.com,"200+","$100M+",1996,Medium Enterprise,"Retail FX, CFD, Corporate FX",Verified
+Forex Services,FXCM,UK,https://www.fxcm.com,"200+","$100M+",1999,Medium Enterprise,"Retail FX, CFD, Trading Platforms",Verified
+Forex Services,Saxo Bank,Denmark,https://www.home.saxo,"2,500+","$500M+",1992,Large Enterprise,"Multi-Asset Trading, FX, CFDs, Stocks",Verified
+Forex Services,IG Group,UK,https://www.ig.com,"2,200+","$1B+",1974,Large Enterprise,"CFD, FX, Spread Betting, Trading",Verified
+Forex Services,FOREX.com,USA,https://www.forex.com,"N/A (StoneX)","$50B+ (StoneX)",1999,Large Enterprise,"(Part of StoneX Group)",Verified
+Forex Services,Pepperstone,Australia,https://pepperstone.com,"300+","$100M+",2010,Medium Enterprise,"Retail FX, CFD, ECN",Verified
+Forex Services,TD Ameritrade Forex,USA,https://www.tdameritrade.com,"N/A (Schwab)","$21B+ (Schwab)",1975,Conglomerate,"(Part of Charles Schwab)",Verified
+Forex Services,Interactive Brokers,USA,https://www.interactivebrokers.com,"2,500+","$3B+",1978,Large Enterprise,"Professional Trading, Multi-Asset, FX",Verified
+Forex Services,XM Group,Cyprus,https://www.xm.com,"500+","$100M+",2009,Medium Enterprise,"Retail FX, CFD",Verified
+Forex Services,Plus500,Israel,https://www.plus500.com,"400+","$700M+",2008,Medium Enterprise,"CFD, FX, Online Trading",Verified
+Forex Services,GAIN Capital,USA,https://www.gaincapital.com,"500+","$300M+",1999,Medium Enterprise,"(Acquired by StoneX)",Verified
+Forex Services,City Index,UK,https://www.cityindex.com,"N/A (StoneX)","$50B+ (StoneX)",1983,Medium Enterprise,"(Part of StoneX Group)",Verified
+Forex Services,Swissquote,Switzerland,https://www.swissquote.com,"700+","$300M+",1996,Medium Enterprise,"Online Banking, Trading, FX",Verified
+Forex Services,CMC Markets,UK,https://www.cmcmarkets.com,"1,500+","$400M+",1989,Large Enterprise,"Spread Betting, CFD, FX",Verified
+Forex Services,AvaTrade,Ireland,https://www.avatrade.com,"300+","$100M+",2006,Medium Enterprise,"Retail FX, CFD, Options",Verified
+Forex Services,eToro,Israel,https://www.etoro.com,"1,700+","$1B+",2007,Large Enterprise,"Social Trading, Copy Trading, Crypto",Verified
+Forex Services,Alpari,Russia,https://alpari.com,"200+","$50M+",1998,Medium Enterprise,"Retail FX, International",Verified
+Forex Services,FBS,Cyprus,https://fbs.com,"500+","$100M+",2009,Medium Enterprise,"Retail FX, CFD, Global",Verified
+Forex Services,Admiral Markets,Estonia,https://admiralmarkets.com,"300+","$100M+",2001,Medium Enterprise,"Retail FX, CFD",Verified
+Pension Funds,Government Pension Investment,Japan,https://www.gpif.go.jp,"100+","$1.5T AUM",2006,Medium Enterprise,"Japanese Public Pension, Largest Global",Verified
+Pension Funds,Norwegian Govt Pension Fund,Norway,https://www.nbim.no,"600+","$1.4T AUM",1990,Large Enterprise,"Sovereign Wealth Fund, Oil Revenues",Verified
+Pension Funds,ABP Netherlands,Netherlands,https://www.abp.nl,"3,000+","$500B AUM",1922,Large Enterprise,"Civil Servants, Healthcare, Education",Verified
+Pension Funds,Canada Pension Plan,Canada,https://www.cppinvestments.com,"2,000+","$500B AUM",1997,Large Enterprise,"Canadian Public Pension, Global",Verified
+Pension Funds,CalPERS,USA,https://www.calpers.ca.gov,"3,000+","$450B AUM",1932,Large Enterprise,"Public Employees, California",Verified
+Pension Funds,CalSTRS,USA,https://www.calstrs.com,"1,000+","$300B AUM",1913,Large Enterprise,"Teachers, California",Verified
+Pension Funds,New York State Common,USA,https://www.osc.state.ny.us,"500+","$280B AUM",1938,Large Enterprise,"State Employees, New York",Verified
+Pension Funds,PFZW Netherlands,Netherlands,https://www.pfzw.nl,"3,000+","$250B AUM",1969,Large Enterprise,"Healthcare, Welfare",Verified
+Pension Funds,ATP Denmark,Denmark,https://www.atp.dk,"1,000+","$150B AUM",1964,Large Enterprise,"Danish Labor Market, Universal",Verified
+Pension Funds,National Pension Service Korea,South Korea,https://fund.nps.or.kr,"1,000+","$800B AUM",1988,Large Enterprise,"Korean National Pension, Global",Verified
+Pension Funds,AP4 Sweden,Sweden,https://www.ap4.se,"150+","$50B AUM",1974,Medium Enterprise,"Swedish National Pension, Sustainable",Verified
+Pension Funds,OTPP Canada,Canada,https://www.otpp.com,"1,500+","$200B AUM",1990,Large Enterprise,"Teachers, Ontario, Direct Investing",Verified
+Pension Funds,PSP Investments Canada,Canada,https://www.investpsp.com,"2,000+","$200B AUM",1999,Large Enterprise,"Public Service, Federal",Verified
+Pension Funds,Ontario Teachers' Pension,Canada,https://www.otpp.com,"1,500+","$200B AUM",1917,Large Enterprise,"Teachers, Ontario, Direct Investing",Verified
+Pension Funds,AustralianSuper,Australia,https://www.australiansuper.com,"1,500+","$150B AUM",2006,Large Enterprise,"Industry Super, Australia",Verified
+Pension Funds,Universities Superannuation,UK,https://www.uss.co.uk,"800+","$100B AUM",1974,Large Enterprise,"University Staff, UK",Verified
+Pension Funds,TIAA,USA,https://www.tiaa.org,"16,000+","$30B+",1918,Conglomerate,"Non-Profit, Academic, Medical",Verified
+Pension Funds,Vanguard Retirement,USA,https://retirementplans.vanguard.com,"20,000+ (Vanguard)","$8B+ (Vanguard)",1975,Conglomerate,"401(k), 403(b), IRA",Verified
+Pension Funds,Fidelity Retirement,USA,https://www.fidelity.com,"74,000+ (Fidelity)","$25B+ (Fidelity)",1946,Conglomerate,"401(k), 403(b), IRA",Verified
+Credit Rating Agencies,S&P Global Ratings,USA,https://www.spglobal.com,"44,000+","$13B+",1860,Large Enterprise,Financial Intelligence, Credit Ratings,Verified
+Credit Rating Agencies,Moody's Investors Service,USA,https://www.moodys.com,"14,500+","$6B+",1909,Large Enterprise,Credit Ratings, Risk Assessment,Verified
+Credit Rating Agencies,Fitch Ratings,USA,https://www.fitchratings.com,"4,500+","$1.5B+",1913,Large Enterprise,Credit Ratings, Financial Research,Verified
+Credit Rating Agencies,DBRS Morningstar,Canada,https://www.dbrsmorningstar.com,"10,000+","$3B+",1976,Large Enterprise,Credit Ratings, Data Analytics,Verified
+Credit Rating Agencies,AM Best,USA,https://www.ambest.com,"1,500+","$500M+",1899,Medium Enterprise,Insurance Industry Ratings,Verified
+Credit Rating Agencies,China Chengxin,China,https://www.ccxi.com.cn,"700+","$200M+",1992,Medium Enterprise,Domestic Credit Ratings, China Market,Verified
+Credit Rating Agencies,JCR Japan,Japan,https://www.jcr.co.jp,"300+","$100M+",1985,Medium Enterprise,Japanese Bond Ratings,Verified
+Credit Rating Agencies,Korea Ratings,South Korea,https://www.korearatings.com,"200+","$80M+",1988,Medium Enterprise,South Korean Securities Ratings,Verified
+Credit Rating Agencies,ICRA India,India,https://www.icra.in,"400+","$50M+",1991,Medium Enterprise,Indian Credit Ratings,Verified
+Credit Rating Agencies,ARC Ratings,Portugal,https://www.arcratings.com,"100+","$25M+",2013,Small Enterprise,European Credit Ratings,Verified
+Credit Rating Agencies,Scope Ratings,Germany,https://www.scoperatings.com,"200+","$40M+",2002,Small Enterprise,European Credit Ratings, ESG,Verified
+Credit Rating Agencies,Egan-Jones,USA,https://www.egan-jones.com,"50+","$15M+",1995,Small Enterprise,Independent Credit Ratings,Verified
+Credit Rating Agencies,HR Ratings,Mexico,https://hrratings.com,"150+","$30M+",1995,Small Enterprise,Mexican Credit Ratings,Verified
+Credit Rating Agencies,RAM Ratings,Malaysia,https://www.ram.com.my,"100+","$20M+",1990,Small Enterprise,Malaysian Credit Ratings,Verified
+Credit Rating Agencies,ACRA Singapore,Singapore,https://www.acra.com.sg,"N/A","N/A",2016,Small Enterprise,ASEAN Credit Ratings,Verified
+Credit Rating Agencies,CRISIL India,India,https://www.crisil.com,"5,000+","$700M+",1987,Large Enterprise,Ratings, Research, Risk Advisory,Verified
+Credit Rating Agencies,Big 3 Ratings,Global,https://www.spglobal.com,"63,000+","$20B+",1860,Large Enterprise,Global Credit Rating Oligopoly,Verified
+Credit Rating Agencies,Japan Credit Rating,Japan,https://www.jcr.co.jp,"300+","$100M+",1985,Medium Enterprise,Japanese Credit Ratings,Verified
+Credit Rating Agencies,SMERA India,India,https://www.smera.in,"N/A","N/A",2005,Small Enterprise,MSME Ratings,Verified

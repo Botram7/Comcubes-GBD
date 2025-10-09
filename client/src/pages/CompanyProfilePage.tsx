@@ -19,7 +19,10 @@ import {
   ExternalLink,
   ArrowLeft,
   Star,
-  TrendingUp
+  TrendingUp,
+  DollarSign,
+  Briefcase,
+  Tag
 } from "lucide-react";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import type { Company, SearchResults } from "@/lib/types";
@@ -27,6 +30,7 @@ import { useState, useEffect } from "react";
 import { generateCompanyDescription } from "@/utils/companyDescriptionGenerator";
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
+import { DataAccuracyDisclaimer } from "@/components/DataAccuracyDisclaimer";
 
 export default function CompanyProfilePage() {
   const { companyId } = useParams();
@@ -247,7 +251,7 @@ export default function CompanyProfilePage() {
                       </div>
                       {company.websiteUrl && (
                         <Button 
-                          onClick={() => window.open(company.websiteUrl, '_blank')}
+                          onClick={() => window.open(company.websiteUrl!, '_blank')}
                           className="flex items-center gap-2"
                         >
                           <Globe className="h-4 w-4" />
@@ -329,6 +333,98 @@ export default function CompanyProfilePage() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Company Intelligence Section */}
+            {(company.employeeCount || company.revenueEstimate || company.foundedYear || company.companySize || company.specializationTags) && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Briefcase className="h-5 w-5" />
+                    Company Intelligence
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {/* Data Accuracy Disclaimer */}
+                    <DataAccuracyDisclaimer variant="compact" />
+
+                    {/* Company Intelligence Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                      {company.employeeCount && (
+                        <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                          <Users className="h-5 w-5 text-gray-500 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-gray-900 mb-1">Employee Count</p>
+                            <p className="text-sm text-gray-600">{company.employeeCount}</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {company.revenueEstimate && (
+                        <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                          <DollarSign className="h-5 w-5 text-gray-500 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-gray-900 mb-1">Revenue Estimate</p>
+                            <p className="text-sm text-gray-600">{company.revenueEstimate}</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {company.foundedYear && (
+                        <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                          <Calendar className="h-5 w-5 text-gray-500 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-gray-900 mb-1">Founded</p>
+                            <p className="text-sm text-gray-600">{company.foundedYear}</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {company.companySize && (
+                        <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                          <Building2 className="h-5 w-5 text-gray-500 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-gray-900 mb-1">Company Size</p>
+                            <p className="text-sm text-gray-600">{company.companySize}</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Specialization Tags */}
+                    {company.specializationTags && (
+                      <div className="pt-2">
+                        <div className="flex items-start gap-3">
+                          <Tag className="h-5 w-5 text-gray-500 mt-1" />
+                          <div className="flex-1">
+                            <p className="font-medium text-gray-900 mb-2">Specializations</p>
+                            <div className="flex flex-wrap gap-2">
+                              {company.specializationTags.split(',').map((tag, index) => (
+                                <Badge key={index} variant="outline" className="text-xs">
+                                  {tag.trim()}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Verification Status Badge */}
+                    {company.verificationStatus && company.verificationStatus !== 'unverified' && (
+                      <div className="flex items-center gap-2 pt-2">
+                        <Badge 
+                          variant={company.verificationStatus === 'verified' ? 'default' : 'secondary'}
+                          className="text-xs"
+                        >
+                          {company.verificationStatus === 'verified' ? '✓ Verified Information' : 'Pending Verification'}
+                        </Badge>
+                      </div>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
 
             {/* Contact Information */}
             <Card>

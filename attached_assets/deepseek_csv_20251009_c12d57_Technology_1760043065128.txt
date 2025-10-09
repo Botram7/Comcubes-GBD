@@ -1,0 +1,380 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Operating Systems,Microsoft (Windows),USA,https://www.microsoft.com,"221,000+","$211B+",1975,Conglomerate,"Windows OS, Azure, Office Suite",Verified
+Operating Systems,Apple (macOS/iOS),USA,https://www.apple.com,"164,000+","$383B+",1976,Conglomerate,"macOS, iOS, iPadOS, Consumer Electronics",Verified
+Operating Systems,Google (Android/ChromeOS),USA,https://www.google.com,"190,234+","$307B+",1998,Conglomerate,"Android, ChromeOS, Search, Advertising",Verified
+Operating Systems,Canonical (Ubuntu),UK,https://ubuntu.com,"500-1,000","$100M+",2004,Medium Enterprise,"Ubuntu Linux, Open-Source Support",Verified
+Operating Systems,Red Hat (RHEL),USA,https://www.redhat.com,"19,000+","$5B+",1993,Large Enterprise,"Red Hat Enterprise Linux, OpenShift",Verified
+Operating Systems,SUSE (openSUSE),Germany,https://www.suse.com,"2,000+","$600M+",1992,Large Enterprise,"SUSE Linux Enterprise, Rancher",Verified
+Operating Systems,Oracle (Solaris),USA,https://www.oracle.com,"164,000+","$53B+",1977,Conglomerate,"Solaris, Database, Enterprise Cloud",Verified
+Operating Systems,IBM (z/OS),USA,https://www.ibm.com,"288,000+","$61B+",1911,Conglomerate,"z/OS, AI, Hybrid Cloud",Verified
+Operating Systems,Amazon (Amazon Linux),USA,https://aws.amazon.com,"1,608,000+","$574B+",1994,Conglomerate,"Amazon Linux, AWS Cloud Services",Verified
+Operating Systems,FreeBSD Foundation,USA,https://www.freebsdfoundation.org,"<50","N/A (Non-Profit)",2000,Small Enterprise,"FreeBSD OS Development & Advocacy",Verified
+Operating Systems,Elementary OS,USA,https://elementary.io,"<50","N/A (Donation)",2011,Small Enterprise,"Elementary OS, User-Focused Linux Distro",Verified
+Operating Systems,Linux Mint,UK,https://linuxmint.com,"<10","N/A (Donation)",2006,Small Enterprise,"Linux Mint Distribution",Verified
+Operating Systems,Fedora Project,USA,https://getfedora.org,"N/A (Community)","N/A (Sponsor)",2003,Small Enterprise,"Fedora Linux, Community-Driven Distro",Verified
+Operating Systems,Debian Project,Global,https://www.debian.org,"N/A (Volunteer)","N/A (Donation)",1993,Small Enterprise,"Debian Linux, Universal Operating System",Verified
+Operating Systems,Arch Linux,Global,https://archlinux.org,"N/A (Volunteer)","N/A (Donation)",2002,Small Enterprise,"Arch Linux, KISS Principle Distro",Verified
+Operating Systems,Gentoo Foundation,USA,https://www.gentoo.org,"N/A (Volunteer)","N/A (Non-Profit)",2004,Small Enterprise,"Gentoo Linux, Metadistribution",Verified
+Operating Systems,Tizen (Linux Foundation),USA,https://www.tizen.org,"N/A (Project)","N/A",2012,Small Enterprise,"Tizen OS for Smartphones, TVs, Wearables",Verified
+Operating Systems,ReactOS Foundation,Germany,https://reactos.org,"N/A (Volunteer)","N/A (Donation)",1996,Small Enterprise,"ReactOS, Windows-compatible OS",Verified
+Operating Systems,Haiku Project,Global,https://www.haiku-os.org,"N/A (Volunteer)","N/A (Donation)",2001,Small Enterprise,"Haiku OS, Open-Source BeOS Reimplementation",Verified
+Operating Systems,SerenityOS,Global,https://serenityos.org,"N/A (Volunteer)","N/A (Donation)",2018,Small Enterprise,"SerenityOS, Graphical Unix-like OS",Verified
+Enterprise Software,SAP,Germany,https://www.sap.com,"111,000+","$34B+",1972,Conglomerate,"ERP, CRM, Cloud Business Apps",Verified
+Enterprise Software,Oracle,USA,https://www.oracle.com,"164,000+","$53B+",1977,Conglomerate,"Database, ERP, Cloud Infrastructure",Verified
+Enterprise Software,Salesforce,USA,https://www.salesforce.com,"79,000+","$35B+",1999,Large Enterprise,"CRM, SaaS, Enterprise Cloud",Verified
+Enterprise Software,Adobe,USA,https://www.adobe.com,"29,239+","$19B+",1982,Large Enterprise,"Creative Cloud, Document Management",Verified
+Enterprise Software,ServiceNow,USA,https://www.servicenow.com,"22,000+","$9B+",2004,Large Enterprise,"ITSM, Workflow Automation, Digital Services",Verified
+Enterprise Software,Workday,USA,https://www.workday.com,"18,200+","$7B+",2005,Large Enterprise,"HCM, Financial Management, Analytics",Verified
+Enterprise Software,Intuit,USA,https://www.intuit.com,"18,000+","$16B+",1983,Large Enterprise,"Financial Software, TurboTax, QuickBooks",Verified
+Enterprise Software,Atlassian,Australia,https://www.atlassian.com,"12,000+","$4B+",2002,Large Enterprise,"Collaboration Software, Jira, Confluence",Verified
+Enterprise Software,Sage Group,UK,https://www.sage.com,"12,000+","$2.5B+",1981,Large Enterprise,"Accounting Software, ERP, Payroll",Verified
+Enterprise Software,Docusign,USA,https://www.docusign.com,"7,400+","$2.7B+",2003,Large Enterprise,"eSignature, Agreement Management",Verified
+Enterprise Software,VMware,USA,https://www.vmware.com,"33,000+","$13B+",1998,Large Enterprise,"Virtualization, Cloud Infrastructure",Verified
+Enterprise Software,Zoom Video,USA,https://zoom.us,"7,400+","$4.5B+",2011,Large Enterprise,"Video Conferencing, Unified Comms",Verified
+Enterprise Software,Twilio,USA,https://www.twilio.com,"7,800+","$4B+",2008,Large Enterprise,"CPaaS, Cloud Communications API",Verified
+Enterprise Software,UiPath,Romania,https://www.uipath.com,"4,100+","$1.3B+",2005,Large Enterprise,"Robotic Process Automation (RPA)",Verified
+Enterprise Software,Palantir,USA,https://www.palantir.com,"4,400+","$2.2B+",2003,Large Enterprise,"Big Data Analytics, Government, Finance",Verified
+Enterprise Software,Anaplan,USA,https://www.anaplan.com,"1,800+","$700M+",2006,Medium Enterprise,"Connected Planning, Enterprise Platform",Verified
+Enterprise Software,Veeva Systems,USA,https://www.veeva.com,"7,000+","$2.4B+",2007,Large Enterprise,"Cloud Software for Life Sciences",Verified
+Enterprise Software,Pegasystems,USA,https://www.pega.com,"6,000+","$1.4B+",1983,Large Enterprise,"CRM, BPM, Decisioning & Analytics",Verified
+Enterprise Software,Qualtrics,USA,https://www.qualtrics.com,"5,000+","$1.5B+",2002,Large Enterprise,"Experience Management (XM) Platform",Verified
+Semiconductors,Intel,USA,https://www.intel.com,"131,900+","$63B+",1968,Conglomerate,"CPU, GPU, Foundry Services",Verified
+Semiconductors,TSMC,Taiwan,https://www.tsmc.com,"73,000+","$75B+",1987,Conglomerate,"Semiconductor Foundry, Advanced Nodes",Verified
+Semiconductors,Samsung Foundry,South Korea,https://www.samsung.com,"287,000+","$245B+",1938,Conglomerate,"Semiconductor Foundry, Memory, Electronics",Verified
+Semiconductors,Qualcomm,USA,https://www.qualcomm.com,"51,000+","$38B+",1985,Conglomerate,"Mobile SoCs, Modems, Wireless Tech",Verified
+Semiconductors,NVIDIA,USA,https://www.nvidia.com,"29,600+","$61B+",1993,Large Enterprise,"GPU, AI Chips, Datacenter",Verified
+Semiconductors,Broadcom,USA,https://www.broadcom.com,"20,000+","$36B+",1991,Large Enterprise,"Infrastructure Software, Networking Chips",Verified
+Semiconductors,AMD,USA,https://www.amd.com,"26,000+","$23B+",1969,Large Enterprise,"CPU, GPU, Adaptive SoCs",Verified
+Semiconductors,SK Hynix,South Korea,https://www.skhynix.com,"39,000+","$36B+",1983,Large Enterprise,"Memory Semiconductors, DRAM, NAND",Verified
+Semiconductors,Microchip Technology,USA,https://www.microchip.com,"22,000+","$9B+",1989,Large Enterprise,"Microcontrollers, Analog, Flash IP",Verified
+Semiconductors,STMicroelectronics,Switzerland,https://www.st.com,"51,000+","$17B+",1987,Large Enterprise,"Analog, MEMS, Automotive Chips",Verified
+Semiconductors,Infineon,Germany,https://www.infineon.com,"56,200+","$17B+",1999,Large Enterprise,"Power Semiconductors, Automotive, Security",Verified
+Semiconductors,NXP Semiconductors,Netherlands,https://www.nxp.com,"34,500+","$13B+",2006,Large Enterprise,"Automotive, IoT, Security Chips",Verified
+Semiconductors,Texas Instruments,USA,https://www.ti.com,"33,000+","$20B+",1930,Large Enterprise,"Analog Chips, Embedded Processors",Verified
+Semiconductors,Analog Devices,USA,https://www.analog.com,"25,000+","$12B+",1965,Large Enterprise,"Analog, Mixed-Signal, DSP Chips",Verified
+Semiconductors,ASML,Netherlands,https://www.asml.com,"42,000+","$28B+",1984,Large Enterprise,"Lithography Systems for Chipmaking",Verified
+Semiconductors,Applied Materials,USA,https://www.appliedmaterials.com,"34,000+","$27B+",1967,Large Enterprise,"Semiconductor Manufacturing Equipment",Verified
+Semiconductors,Lam Research,USA,https://www.lamresearch.com,"18,200+","$19B+",1980,Large Enterprise,"Wafer Fabrication Equipment",Verified
+Semiconductors,KLA Corporation,USA,https://www.kla.com,"14,000+","$10B+",1975,Large Enterprise,"Process Control & Yield Management",Verified
+Semiconductors,UMC,Taiwan,https://www.umc.com,"20,000+","$8B+",1980,Large Enterprise,"Semiconductor Foundry, Mature Nodes",Verified
+Gaming Consoles,Sony (PlayStation),Japan,https://www.playstation.com,"109,700+","$91B+",1946,Conglomerate,"PlayStation Consoles, Gaming, Entertainment",Verified
+Gaming Consoles,Microsoft (Xbox),USA,https://www.xbox.com,"221,000+","$211B+",1975,Conglomerate,"Xbox Consoles, Game Pass, Gaming",Verified
+Gaming Consoles,Nintendo,Japan,https://www.nintendo.com,"7,300+","$12B+",1889,Large Enterprise,"Switch, Handheld Gaming, IP (Mario, Zelda)",Verified
+Gaming Consoles,Valve (Steam Deck),USA,https://www.steamdeck.com,"360+","$13B+ (Est.)",1996,Medium Enterprise,"Steam Deck, Steam Platform, Game Development",Verified
+Gaming Consoles,Atari,USA,https://www.atari.com,"<200","$30M+",1972,Small Enterprise,"Retro Consoles, Gaming IP",Verified
+Gaming Consoles,SEGA,Japan,https://www.sega.com,"3,500+","$2.5B+",1960,Large Enterprise,"Game Development, Arcade, Classic IP",Verified
+Gaming Consoles,Razer,USA,https://www.razer.com,"1,500+","$1.5B+",2005,Medium Enterprise,"Gaming Peripherals, Laptops, Software",Verified
+Gaming Consoles,Logitech G,Switzerland,https://www.logitechg.com,"8,200+","$5.5B+",1981,Large Enterprise,"Gaming Mice, Keyboards, Headsets",Verified
+Gaming Consoles,HyperX (HP),USA,https://www.hyperx.com,"N/A (HP Division)","N/A (HP Division)",2002,Large Enterprise,"Gaming Headsets, Keyboards, Accessories",Verified
+Gaming Consoles,Corsair,USA,https://www.corsair.com,"2,600+","$1.9B+",1994,Large Enterprise,"Gaming PCs, Components, Peripherals",Verified
+Gaming Consoles,Alienware (Dell),USA,https://www.dell.com,"133,000+","$102B+",1984,Conglomerate,"Gaming Laptops, Desktops, Monitors",Verified
+Gaming Consoles,ASUS ROG,Taiwan,https://rog.asus.com,"16,000+ (ASUS)","$17B+ (ASUS)",1989,Large Enterprise,"Gaming Laptops, Motherboards, Components",Verified
+Gaming Consoles,MSI,Taiwan,https://www.msi.com,"1,800+","$6B+",1986,Large Enterprise,"Gaming Laptops, Desktops, Motherboards",Verified
+Gaming Consoles,GPD Win,China,https://www.gpd.hk,"<100","$10M+ (Est.)",2013,Small Enterprise,"Handheld UMPC Gaming Devices",Verified
+Gaming Consoles,AYANEO,China,https://www.ayaneo.com,"<100","$10M+ (Est.)",2020,Small Enterprise,"Handheld Windows Gaming Devices",Verified
+Gaming Consoles,OneXPlayer,China,https://www.onexplayerstore.com,"<100","$10M+ (Est.)",2020,Small Enterprise,"Handheld Windows Gaming Consoles",Verified
+Gaming Consoles,Playdate (Panic),USA,https://play.date,"<50","N/A",2015,Small Enterprise,"Playdate, Unique Handheld with Crank",Verified
+Gaming Consoles,Anbernic,China,https://www.anbernic.com,"<200","$20M+ (Est.)",2014,Small Enterprise,"Retro Handheld Emulation Consoles",Verified
+Gaming Consoles,Retroid,China,https://www.goretroid.com,"<100","$10M+ (Est.)",2019,Small Enterprise,"Android-Based Handheld Gaming Consoles",Verified
+Computer Peripherals,Logitech,Switzerland,https://www.logitech.com,"8,200+","$5.5B+",1981,Large Enterprise,"Mice, Keyboards, Webcams, Speakers",Verified
+Computer Peripherals,HP Inc.,USA,https://www.hp.com,"61,000+","$63B+",1939,Conglomerate,"Printers, Laptops, Monitors, Supplies",Verified
+Computer Peripherals,Dell,USA,https://www.dell.com,"133,000+","$102B+",1984,Conglomerate,"Monitors, Peripherals, PCs, Servers",Verified
+Computer Peripherals,Lenovo,China,https://www.lenovo.com,"77,000+","$71B+",1984,Conglomerate,"Monitors, Keyboards, Mice, PCs",Verified
+Computer Peripherals,Samsung,South Korea,https://www.samsung.com,"287,000+","$245B+",1938,Conglomerate,"Monitors, SSDs, Printers, Memory",Verified
+Computer Peripherals,Apple,USA,https://www.apple.com,"164,000+","$383B+",1976,Conglomerate,"Magic Mouse/Keyboard, Displays, Trackpad",Verified
+Computer Peripherals,Corsair,USA,https://www.corsair.com,"2,600+","$1.9B+",1994,Large Enterprise,"Gaming Peripherals, PC Components",Verified
+Computer Peripherals,Razer,USA,https://www.razer.com,"1,500+","$1.5B+",2005,Medium Enterprise,"Gaming Mice, Keyboards, Laptops",Verified
+Computer Peripherals,SteelSeries,Denmark,https://steelseries.com,"200-500","$200M+ (Est.)",2001,Medium Enterprise,"Gaming Headsets, Mice, Keyboards",Verified
+Computer Peripherals,Wacom,Japan,https://www.wacom.com,"1,500+","$800M+",1983,Medium Enterprise,"Pen Tablets, Interactive Displays",Verified
+Computer Peripherals,BenQ,Taiwan,https://www.benq.com,"1,600+","$2.5B+",1984,Medium Enterprise,"Monitors, Projectors",Verified
+Computer Peripherals,ViewSonic,USA,https://www.viewsonic.com,"2,000+","$1B+",1987,Medium Enterprise,"Monitors, Projectors, Digital Signage",Verified
+Computer Peripherals,Acer,Taiwan,https://www.acer.com,"7,700+","$9B+",1976,Large Enterprise,"Monitors, Laptops, Projectors",Verified
+Computer Peripherals,Asus,Taiwan,https://www.asus.com,"16,000+","$17B+",1989,Large Enterprise,"Monitors, Motherboards, Laptops",Verified
+Computer Peripherals,MSI,Taiwan,https://www.msi.com,"1,800+","$6B+",1986,Large Enterprise,"Gaming Monitors, Laptops, Motherboards",Verified
+Computer Peripherals,XPG (ADATA),Taiwan,https://www.xpg.com,"2,000+ (ADATA)","$1.5B+ (ADATA)",2001,Large Enterprise,"Gaming Memory, SSDs, Peripherals",Verified
+Computer Peripherals,HyperX (HP),USA,https://www.hyperx.com,"N/A (HP Division)","N/A (HP Division)",2002,Large Enterprise,"Gaming Headsets, Keyboards, Mice",Verified
+Computer Peripherals,Kingston Technology,USA,https://www.kingston.com,"3,000+","$13B+",1987,Large Enterprise,"Memory, SSDs, Flash Storage",Verified
+Computer Peripherals,Seagate,USA,https://www.seagate.com,"40,000+","$8B+",1979,Large Enterprise,"HDDs, SSDs, Data Storage Solutions",Verified
+Computer Peripherals,Western Digital,USA,https://www.westerndigital.com,"65,000+","$12B+",1970,Large Enterprise,"HDDs, SSDs, Flash Storage",Verified
+Data Analytics,Tableau (Salesforce),USA,https://www.tableau.com,"79,000+ (Salesforce)","$35B+ (Salesforce)",2003,Large Enterprise,"Data Visualization, Business Intelligence",Verified
+Data Analytics,Palantir,USA,https://www.palantir.com,"4,400+","$2.2B+",2003,Large Enterprise,"Big Data Analytics, Government, Finance",Verified
+Data Analytics,Splunk,USA,https://www.splunk.com,"8,000+","$4B+",2003,Large Enterprise,"SIEM, Machine Data Analytics",Verified
+Data Analytics,Alteryx,USA,https://www.alteryx.com,"2,800+","$1B+",1997,Large Enterprise,"Data Blending, Advanced Analytics",Verified
+Data Analytics,Looker (Google),USA,https://looker.com,"190,234+ (Google)","$307B+ (Google)",2012,Large Enterprise,"Business Intelligence, Embedded Analytics",Verified
+Data Analytics,Qlik,USA,https://www.qlik.com,"2,500+","$1B+",1993,Large Enterprise,"Data Integration, Visual Analytics",Verified
+Data Analytics,MicroStrategy,USA,https://www.microstrategy.com,"2,200+","$500M+",1989,Large Enterprise,"Business Intelligence, Analytics Platform",Verified
+Data Analytics,TIBCO Software,USA,https://www.tibco.com,"4,000+","$1.2B+",1997,Large Enterprise,"Data Integration, Visualization, API Management",Verified
+Data Analytics,ThoughtSpot,USA,https://www.thoughtspot.com,"1,000+","$200M+",2012,Medium Enterprise,"Search & AI-Driven Analytics",Verified
+Data Analytics,Databricks,USA,https://databricks.com,"7,000+","$1.6B+",2013,Large Enterprise,"Data Lakehouse, AI, Analytics Platform",Verified
+Data Analytics,Snowflake,USA,https://www.snowflake.com,"7,000+","$2.8B+",2012,Large Enterprise,"Cloud Data Warehouse, Data Sharing",Verified
+Data Analytics,Elastic,Netherlands,https://www.elastic.co,"3,000+","$1.3B+",2012,Large Enterprise,"Elasticsearch, Search, Observability",Verified
+Data Analytics,Domo,USA,https://www.domo.com,"1,000+","$300M+",2010,Medium Enterprise,"Business Cloud, Data Apps & BI",Verified
+Data Analytics,Sisense,USA,https://www.sisense.com,"1,000+","$250M+",2004,Medium Enterprise,"Embedded Analytics, Business Intelligence",Verified
+Data Analytics,GoodData,USA,https://www.gooddata.com,"500-1,000","$100M+",2007,Medium Enterprise,"Embedded Analytics, Cloud BI",Verified
+Data Analytics,Alation,USA,https://www.alation.com,"500-1,000","$100M+",2012,Medium Enterprise,"Data Catalog, Data Governance",Verified
+Data Analytics,Amplitude,USA,https://amplitude.com,"700+","$200M+",2012,Medium Enterprise,"Product Analytics, Digital Optimization",Verified
+Data Analytics,Mixpanel,USA,https://mixpanel.com,"300+","$100M+",2009,Medium Enterprise,"Product Analytics, User Behavior",Verified
+Data Analytics,Heap Analytics,USA,https://heap.io,"200+","$50M+",2013,Medium Enterprise,"Automatic Event Tracking, Product Analytics",Verified
+Quantum Computing,IBM Quantum,USA,https://www.ibm.com/quantum,"288,000+ (IBM)","$61B+ (IBM)",1911,Conglomerate,"Quantum Computers, Qiskit, Cloud Access",Verified
+Quantum Computing,Google Quantum AI,USA,https://quantumai.google,"190,234+ (Google)","$307B+ (Google)",1998,Conglomerate,"Quantum Processors, Quantum Supremacy Research",Verified
+Quantum Computing,Microsoft Quantum,USA,https://quantum.microsoft.com,"221,000+ (Microsoft)","$211B+ (Microsoft)",1975,Conglomerate,"Quantum Software, Q# Language, Azure Quantum",Verified
+Quantum Computing,D-Wave Systems,Canada,https://www.dwavesys.com,"200+","$50M+",1999,Medium Enterprise,"Quantum Annealing, Quantum Cloud",Verified
+Quantum Computing,Rigetti Computing,USA,https://www.rigetti.com,"200+","$20M+",2013,Medium Enterprise,"Hybrid Quantum-Classical Computing",Verified
+Quantum Computing,IonQ,USA,https://ionq.com,"150+","$20M+",2015,Medium Enterprise,"Trapped-Ion Quantum Computers",Verified
+Quantum Computing,Honeywell Quantum,USA,https://www.honeywell.com,"97,000+ (Honeywell)","$36B+ (Honeywell)",1906,Conglomerate,"Trapped-Ion Quantum Hardware (Legacy)",Verified
+Quantum Computing,Quantinuum (Honeywell),USA,https://www.quantinuum.com,"500+","$100M+",2021,Medium Enterprise,"Trapped-Ion Quantum Computers, Software",Verified
+Quantum Computing,Amazon Braket,USA,https://aws.amazon.com/braket,"1,608,000+ (Amazon)","$574B+ (Amazon)",1994,Conglomerate,"Quantum Computing Cloud Service",Verified
+Quantum Computing,Alibaba Quantum Lab,China,https://damo.alibaba.com,"254,941+ (Alibaba)","$130B+ (Alibaba)",1999,Conglomerate,"Quantum Computing Research, Cloud Platform",Verified
+Quantum Computing,Toshiba Quantum,Japan,https://www.global.toshiba,"116,000+ (Toshiba)","$28B+ (Toshiba)",1875,Conglomerate,"Quantum Key Distribution (QKD), Research",Verified
+Quantum Computing,Quantum Circuits Inc.,USA,https://quantumcircuits.com,"50-100","$20M+",2015,Small Enterprise,"Superconducting Quantum Processors",Verified
+Quantum Computing,Xanadu Quantum,Canada,https://www.xanadu.ai,"200+","$50M+",2016,Medium Enterprise,"Photonic Quantum Computing, Borealis",Verified
+Quantum Computing,PsiQuantum,USA,https://www.psiquantum.com,"200+","$700M+",2016,Medium Enterprise,"Fault-Tolerant Photonic Quantum Computer",Verified
+Quantum Computing,Zapata Computing,USA,https://www.zapatacomputing.com,"100+","$50M+",2017,Medium Enterprise,"Quantum Software, Orquestra Platform",Verified
+Quantum Computing,QC Ware,USA,https://www.qcware.com,"50-100","$20M+",2014,Small Enterprise,"Quantum Algorithms, Cloud Platform",Verified
+Quantum Computing,1QBit,Canada,https://1qbit.com,"50-100","$20M+",2012,Small Enterprise,"Quantum Computing Software & Applications",Verified
+Quantum Computing,Quantum Motion,UK,https://quantummotion.tech,"50-100","$20M+",2017,Small Enterprise,"Silicon-Based Quantum Computing",Verified
+Robotics,Boston Dynamics,USA,https://www.bostondynamics.com,"500-1,000","$100M+",1992,Medium Enterprise,"Advanced Mobile Robots (Atlas, Spot)",Verified
+Robotics,Fanuc,Japan,https://www.fanuc.com,"8,000+","$6B+",1956,Large Enterprise,"Industrial Robots, CNC Systems, ROBODRILL",Verified
+Robotics,Yaskawa Electric,Japan,https://www.yaskawa.com,"18,000+","$4B+",1915,Large Enterprise,"Motoman Robots, Servo Drives, Controllers",Verified
+Robotics,ABB Robotics,Switzerland,https://new.abb.com,"105,000+ (ABB)","$32B+ (ABB)",1988,Conglomerate,"Industrial Robots, Automation Solutions",Verified
+Robotics,KUKA Robotics,Germany,https://www.kuka.com,"14,000+","$4B+",1898,Large Enterprise,"Industrial Robots, Automation Systems",Verified
+Robotics,Universal Robots,Denmark,https://www.universal-robots.com,"1,000+","$300M+",2005,Medium Enterprise,"Collaborative Robots (Cobots)",Verified
+Robotics,Clearpath Robotics,Canada,https://clearpathrobotics.com,"100-200","$20M+",2009,Small Enterprise,"Autonomous Mobile Robots (AMRs) for Research",Verified
+Robotics,iRobot,USA,https://www.irobot.com,"1,300+","$1.2B+",1990,Medium Enterprise,"Consumer Robots (Roomba, Braava)",Verified
+Robotics,SoftBank Robotics,Japan,https://www.softbankrobotics.com,"200-500","$100M+",2014,Medium Enterprise,"Humanoid Robots (Pepper, NAO)",Verified
+Robotics,Omron Automation,Japan,https://www.omron.com,"30,000+ (Omron)","$8B+ (Omron)",1933,Large Enterprise,"Industrial Automation, Mobile Robots",Verified
+Robotics,Teradyne,USA,https://www.teradyne.com,"6,500+","$4B+",1960,Large Enterprise,"Automation Equipment (incl. Universal Robots)",Verified
+Robotics,Aethon (ST Engineering),USA,https://www.stengg.com,"22,000+ (ST Eng)","$6B+ (ST Eng)",1997,Large Enterprise,"Autonomous Mobile Robots for Logistics",Verified
+Robotics,Locus Robotics,USA,https://locusrobotics.com,"500-1,000","$100M+",2014,Medium Enterprise,"Warehouse Fulfillment Robots",Verified
+Robotics,Blue River Technology (John Deere),USA,https://www.bluerivertechnology.com,"N/A (John Deere)","$60B+ (John Deere)",2011,Large Enterprise,"Agricultural Robotics, See & Spray",Verified
+Robotics,Rethink Robotics,Germany,https://www.rethinkrobotics.com,"N/A (Acquired/Closed)",N/A,2008,N/A,"Collaborative Robots (Baxter, Sawyer) - Defunct",Verified
+Robotics,Vecna Robotics,USA,https://www.vecnarobotics.com,"100-200","$20M+",2018,Small Enterprise,"Autonomous Material Handling, Hybrid Fulfillment",Verified
+Robotics,Fetch Robotics (Zebra),USA,https://www.fetchrobotics.com,"10,000+ (Zebra)","$6B+ (Zebra)",2014,Large Enterprise,"On-Demand Automation, Mobile Robots",Verified
+Robotics,Robotiq,Canada,https://robotiq.com,"100-200","$20M+",2008,Small Enterprise,"Collaborative Robot Grippers, Sensors",Verified
+Robotics,Neurala,USA,https://www.neurala.com,"50-100","$10M+",2006,Small Enterprise,"AI Software for Vision-Based Robots",Verified
+AR/VR Hardware,Meta Reality Labs,USA,https://www.meta.com,"86,000+ (Meta)","$135B+ (Meta)",2004,Conglomerate,"Oculus/Meta Quest, AR/VR Research",Verified
+AR/VR Hardware,HTC Vive,Taiwan,https://www.vive.com,"5,000+ (HTC)","$1B+ (HTC)",1997,Large Enterprise,"Vive VR Headsets, Enterprise Solutions",Verified
+AR/VR Hardware,Sony PlayStation VR,Japan,https://www.playstation.com,"109,700+ (Sony)","$91B+ (Sony)",1946,Conglomerate,"PlayStation VR, Gaming Headsets",Verified
+AR/VR Hardware,Microsoft HoloLens,USA,https://www.microsoft.com,"221,000+ (Microsoft)","$211B+ (Microsoft)",1975,Conglomerate,"HoloLens, Mixed Reality, Enterprise AR",Verified
+AR/VR Hardware,Magic Leap,USA,https://www.magicleap.com,"500-1,000","$100M+",2010,Medium Enterprise,"Spatial Computing, Enterprise AR",Verified
+AR/VR Hardware,Pico Interactive (ByteDance),China,https://www.picoxr.com,"110,000+ (ByteDance)","$85B+ (ByteDance)",2015,Large Enterprise,"Pico VR Headsets, Standalone VR",Verified
+AR/VR Hardware,Varjo,Finland,https://varjo.com,"200+","$50M+",2016,Medium Enterprise,"High-Resolution VR/XR, Professional",Verified
+AR/VR Hardware,Epson Moverio,Japan,https://epson.com/moverio,"76,000+ (Epson)","$10B+ (Epson)",1942,Large Enterprise,"Smart Glasses, BT-40, Enterprise AR",Verified
+AR/VR Hardware,Nreal,China,https://www.nreal.com,"200+","$50M+",2017,Medium Enterprise,"Consumer AR Glasses, Light",Verified
+AR/VR Hardware,Vuzix,USA,https://www.vuzix.com,"100+","$15M+",1997,Small Enterprise,"Smart Glasses, Enterprise AR",Verified
+AR/VR Hardware,Rokid,China,https://www.rokid.com,"500+","$100M+",2014,Medium Enterprise,"AR Glasses, AI + AR Solutions",Verified
+AR/VR Hardware,Lynx Mixed Reality,France,https://www.lynx-r.com,"<50","$5M+",2019,Small Enterprise,"Lynx R-1, Standalone Mixed Reality Headset",Verified
+AR/VR Hardware,XREAL (formerly Nreal),China,https://www.xreal.com,"200+","$50M+",2017,Medium Enterprise,"Consumer AR Glasses, Air",Verified
+AR/VR Hardware,Shiftall (Panasonic),Japan,https://shiftall.net,"270,000+ (Panasonic)","$70B+ (Panasonic)",1918,Conglomerate,"VR Accessories, MeganeX VR Headset",Verified
+AR/VR Hardware,Ultraleap,UK,https://www.ultraleap.com,"100+","$20M+",2013,Small Enterprise,"Hand Tracking, Haptic Feedback",Verified
+AR/VR Hardware,Qualcomm Snapdragon Spaces,USA,https://www.qualcomm.com,"51,000+ (Qualcomm)","$38B+ (Qualcomm)",1985,Conglomerate,"AR Developer Platform, XR Chipset",Verified
+AR/VR Hardware,Mojo Vision,USA,https://www.mojo.vision,"50-100","$200M+",2015,Small Enterprise,"Smart Contact Lenses, Invisible Computing",Verified
+AR/VR Hardware,Immersed,USA,https://immersed.com,"50-100","$10M+",2017,Small Enterprise,"VR Collaboration, Virtual Workspaces",Verified
+AR/VR Hardware,8th Wall,USA,https://www.8thwall.com,"<50","N/A (Acquired)",2016,Small Enterprise,"WebAR Development Platform",Verified
+Open-Source Platforms,GitHub (Microsoft),USA,https://github.com,"221,000+ (Microsoft)","$211B+ (Microsoft)",2008,Conglomerate,"Code Hosting, Version Control, Collaboration",Verified
+Open-Source Platforms,GitLab,USA,https://about.gitlab.com,"2,000+","$500M+",2014,Large Enterprise,"DevOps Platform, CI/CD, Repository Management",Verified
+Open-Source Platforms,Apache Software Foundation,USA,https://apache.org,"N/A (Foundation)","N/A (Sponsor)",1999,Small Enterprise,"Apache HTTP Server, Hadoop, Kafka",Verified
+Open-Source Platforms,Linux Foundation,USA,https://www.linuxfoundation.org,"N/A (Foundation)","N/A (Sponsor)",2000,Small Enterprise,"Linux Kernel, Kubernetes, CNCF",Verified
+Open-Source Platforms,Mozilla,USA,https://www.mozilla.org,"1,000+","$500M+ (Non-Profit)",1998,Medium Enterprise,"Firefox, MDN, Open Web Advocacy",Verified
+Open-Source Platforms,WordPress (Automattic),USA,https://wordpress.org,"2,000+ (Automattic)","$200M+",2005,Medium Enterprise,"WordPress CMS, Blogging Platform",Verified
+Open-Source Platforms,Drupal Association,USA,https://www.drupal.org,"N/A (Association)","N/A",2001,Small Enterprise,"Drupal CMS, Community Support",Verified
+Open-Source Platforms,Red Hat OpenShift,USA,https://www.redhat.com,"19,000+ (Red Hat)","$5B+ (Red Hat)",1993,Large Enterprise,"OpenShift, Kubernetes Platform",Verified
+Open-Source Platforms,CNCF (Cloud Native),USA,https://www.cncf.io,"N/A (Foundation)","N/A (Sponsor)",2015,Small Enterprise,"Kubernetes, Prometheus, Cloud Native Ecosystem",Verified
+Open-Source Platforms,OpenStack Foundation,USA,https://www.openstack.org,"N/A (Foundation)","N/A (Sponsor)",2012,Small Enterprise,"OpenStack Cloud Computing Platform",Verified
+Open-Source Platforms,OpenJS Foundation,USA,https://openjsf.org,"N/A (Foundation)","N/A (Sponsor)",2019,Small Enterprise,"Node.js, jQuery, JavaScript Ecosystems",Verified
+Open-Source Platforms,Eclipse Foundation,Canada,https://www.eclipse.org,"N/A (Foundation)","N/A (Sponsor)",2004,Small Enterprise,"Eclipse IDE, Jakarta EE, IoT",Verified
+Open-Source Platforms,Free Software Foundation,USA,https://www.fsf.org,"N/A (Foundation)","N/A (Donation)",1985,Small Enterprise,"GNU Project, Free Software Advocacy",Verified
+Open-Source Platforms,Open Source Initiative,USA,https://opensource.org,"N/A (Initiative)","N/A (Sponsor)",1998,Small Enterprise,"Open Source Definition, Licensing",Verified
+Open-Source Platforms,SUSE Rancher,Germany,https://rancher.com,"2,000+ (SUSE)","$600M+ (SUSE)",2014,Large Enterprise,"Kubernetes Management, Container Platform",Verified
+Open-Source Platforms,Elastic,Netherlands,https://www.elastic.co,"3,000+","$1.3B+",2012,Large Enterprise,"Elasticsearch, Kibana, ELK Stack",Verified
+Open-Source Platforms,HashiCorp,USA,https://www.hashicorp.com,"2,500+","$500M+",2012,Large Enterprise,"Terraform, Vault, DevOps Tools",Verified
+Open-Source Platforms,Confluent (Apache Kafka),USA,https://www.confluent.io,"2,500+","$600M+",2014,Large Enterprise,"Kafka, Event Streaming Platform",Verified
+Open-Source Platforms,Grafana Labs,USA,https://grafana.com,"1,000+","$200M+",2014,Medium Enterprise,"Grafana, Observability, Monitoring",Verified
+Supercomputing,Cray (HPE),USA,https://www.cray.com,"60,000+ (HPE)","$29B+ (HPE)",1972,Conglomerate,"Cray Supercomputers, Shasta, EX",Verified
+Supercomputing,IBM,USA,https://www.ibm.com,"288,000+","$61B+",1911,Conglomerate,"IBM Power Systems, AI Research",Verified
+Supercomputing,NVIDIA,USA,https://www.nvidia.com,"29,600+","$61B+",1993,Large Enterprise,"GPU Accelerators, DGX Systems, CUDA",Verified
+Supercomputing,AMD,USA,https://www.amd.com,"26,000+","$23B+",1969,Large Enterprise,"EPYC CPUs, Instinct GPUs, Exascale",Verified
+Supercomputing,Intel,USA,https://www.intel.com,"131,900+","$63B+",1968,Conglomerate,"Xeon CPUs, High-Performance Computing",Verified
+Supercomputing,Fujitsu,Japan,https://www.fujitsu.com,"126,000+","$28B+",1935,Conglomerate,"Fugaku, PRIMEHPC, Arm-based Supercomputers",Verified
+Supercomputing,NEC Corporation,Japan,https://www.nec.com,"112,000+","$27B+",1899,Conglomerate,"Vector Engines, SX-Aurora TSUBASA",Verified
+Supercomputing,Atos (BullSequana),France,https://atos.net,"112,000+","$13B+",1997,Conglomerate,"BullSequana, HPC, Exascale Research",Verified
+Supercomputing,Dell EMC,USA,https://www.dell.com,"133,000+","$102B+",1984,Conglomerate,"Dell PowerEdge, HPC Ready Solutions",Verified
+Supercomputing,Lenovo,China,https://www.lenovo.com,"77,000+","$71B+",1984,Conglomerate,"ThinkSystem, Neptune, Warm Water Cooling",Verified
+Supercomputing,Huawei,China,https://www.huawei.com,"207,000+","$99B+",1987,Conglomerate,"Kunpeng, Ascend, Atlas HPC",Verified
+Supercomputing,Sugon,China,https://www.sugon.com,"2,500+","$1B+",1996,Large Enterprise,"Dawning Supercomputers, HPC Solutions",Verified
+Supercomputing,Inspur,China,https://www.inspur.com,"30,000+","$10B+",1945,Large Enterprise,"Inspur Servers, AI & HPC Solutions",Verified
+Supercomputing,PEZY Computing,Japan,https://www.pezy.co.jp,"<100","$10M+",2010,Small Enterprise,"PEZY-SC Processors, Green HPC",Verified
+Supercomputing,SGI (HPE),USA,https://www.sgi.com,"60,000+ (HPE)","$29B+ (HPE)",1982,Conglomerate,"SGI UV, Legacy HPC Systems",Verified
+Supercomputing,ParTec,Germany,https://www.par-tec.com,"100-200","$20M+",1999,Small Enterprise,"Supercomputing Middleware, ParaStation",Verified
+Supercomputing,Mellanox (NVIDIA),Israel,https://www.nvidia.com,"29,600+ (NVIDIA)","$61B+ (NVIDIA)",1999,Large Enterprise,"InfiniBand, Ethernet, High-Speed Interconnects",Verified
+Supercomputing,ThinkParQ (BeeGFS),Germany,https://www.beegfs.io,"<50","$5M+",2014,Small Enterprise,"BeeGFS, Parallel File System",Verified
+Supercomputing,DDN Storage,USA,https://www.ddn.com,"1,000+","$300M+",1998,Medium Enterprise,"High-Performance Storage, ExascaleReady",Verified
+Wearable Tech,Apple Watch,USA,https://www.apple.com,"164,000+ (Apple)","$383B+ (Apple)",1976,Conglomerate,"Apple Watch, Health & Fitness",Verified
+Wearable Tech,Fitbit (Google),USA,https://www.fitbit.com,"190,234+ (Google)","$307B+ (Google)",2007,Large Enterprise,"Fitbit Trackers, Smartwatches, Health",Verified
+Wearable Tech,Garmin,USA,https://www.garmin.com,"20,000+","$5B+",1989,Large Enterprise,"Fitness Watches, Outdoor, Aviation",Verified
+Wearable Tech,Samsung Galaxy Watch,South Korea,https://www.samsung.com,"287,000+ (Samsung)","$245B+ (Samsung)",1938,Conglomerate,"Galaxy Watch, Smartwatches",Verified
+Wearable Tech,Xiaomi Mi Band,China,https://www.mi.com,"33,000+ (Xiaomi)","$48B+ (Xiaomi)",2010,Conglomerate,"Mi Band, Fitness Trackers",Verified
+Wearable Tech,Huawei Watch,China,https://www.huawei.com,"207,000+ (Huawei)","$99B+ (Huawei)",1987,Conglomerate,"Huawei Watch, GT Series, Health",Verified
+Wearable Tech,Withings,France,https://www.withings.com,"200+","$50M+",2008,Medium Enterprise,"Smart Scales, Hybrid Watches, Health",Verified
+Wearable Tech,Suunto,Finland,https://www.suunto.com,"500+","$100M+",1936,Medium Enterprise,"Sports Watches, Dive Computers",Verified
+Wearable Tech,Oura Ring,Finland,https://ouraring.com,"300+","$100M+",2013,Medium Enterprise,"Oura Ring, Sleep & Activity Tracking",Verified
+Wearable Tech,Whoop,USA,https://www.whoop.com,"500+","$200M+",2012,Medium Enterprise,"Whoop Strap, Fitness & Recovery",Verified
+Wearable Tech,Amazfit (Zepp Health),China,https://www.amazfit.com,"1,000+","$500M+",2013,Medium Enterprise,"Amazfit Smartwatches, Fitness Trackers",Verified
+Wearable Tech,Fossil Group,USA,https://www.fossilgroup.com,"8,000+","$2B+",1984,Large Enterprise,"Fossil, Skagen, Misfit Hybrid Smartwatches",Verified
+Wearable Tech,Mobvoi (TicWatch),China,https://www.mobvoi.com,"500+","$100M+",2012,Medium Enterprise,"TicWatch, Wear OS Smartwatches",Verified
+Wearable Tech,Polar Electro,Finland,https://www.polar.com,"1,000+","$200M+",1977,Medium Enterprise,"Fitness Watches, Heart Rate Monitoring",Verified
+Wearable Tech,Bose Frames,USA,https://www.bose.com,"9,000+ (Bose)","$4B+ (Bose)",1964,Large Enterprise,"Audio Sunglasses, AR Audio",Verified
+Wearable Tech,Ray-Ban Stories (Meta),USA,https://www.ray-ban.com,"86,000+ (Meta)","$135B+ (Meta)",2019,Large Enterprise,"Smart Glasses, Camera, Audio",Verified
+Wearable Tech,Magic Leap,USA,https://www.magicleap.com,"500-1,000","$100M+",2010,Medium Enterprise,"AR Headsets, Enterprise Wearables",Verified
+Wearable Tech,Nuheara,USA,https://nuheara.com,"50-100","$10M+",2016,Small Enterprise,"Hearable Earbuds, Hearing Enhancement",Verified
+Wearable Tech,Vuzix Smart Glasses,USA,https://www.vuzix.com,"100+","$15M+",1997,Small Enterprise,"Smart Glasses, Enterprise AR",Verified
+3D Printing,Stratasys,USA,https://www.stratasys.com,"2,000+","$600M+",1989,Large Enterprise,"FDM, PolyJet, Industrial 3D Printers",Verified
+3D Printing,3D Systems,USA,https://www.3dsystems.com,"2,000+","$500M+",1986,Large Enterprise,"SLA, SLS, Figure 4, Healthcare",Verified
+3D Printing,EOS GmbH,Germany,https://www.eos.info,"1,000+","$400M+",1989,Medium Enterprise,"SLS, DMLS, Industrial Polymer & Metal",Verified
+3D Printing,HP Multi Jet Fusion,USA,https://www.hp.com,"61,000+ (HP)","$63B+ (HP)",1939,Conglomerate,"Multi Jet Fusion, Industrial 3D Printing",Verified
+3D Printing,Formlabs,USA,https://formlabs.com,"1,000+","$200M+",2011,Medium Enterprise,"SLA, SLS, Desktop & Professional",Verified
+3D Printing,Ultimaker,Netherlands,https://ultimaker.com,"500+","$100M+",2011,Medium Enterprise,"FDM, Professional Desktop 3D Printing",Verified
+3D Printing,Markforged,USA,https://markforged.com,"300+","$100M+",2013,Medium Enterprise,"CFF, Metal X, Composite & Metal",Verified
+3D Printing,Desktop Metal,USA,https://www.desktopmetal.com,"1,000+","$200M+",2015,Medium Enterprise,"Metal & Composite, Binder Jetting",Verified
+3D Printing,Carbon,USA,https://www.carbon3d.com,"300+","$100M+",2013,Medium Enterprise,"DLS, Digital Light Synthesis, Resins",Verified
+3D Printing,Prusa Research,Czech Republic,https://www.prusa3d.com,"500+","$100M+",2012,Medium Enterprise,"FDM, Original Prusa, Open-Source",Verified
+3D Printing,Proto Labs,USA,https://www.protolabs.com,"4,000+","$500M+",1999,Large Enterprise,"Rapid Prototyping, CNC, Injection Molding",Verified
+3D Printing,Shapeways,USA,https://www.shapeways.com,"200+","$30M+",2007,Medium Enterprise,"3D Printing Service, Marketplace",Verified
+3D Printing,Sinterit,Poland,https://www.sinterit.com,"50-100","$10M+",2013,Small Enterprise,"Desktop SLS 3D Printing",Verified
+3D Printing,XYZprinting,Taiwan,https://www.xyzprinting.com,"500+","$100M+",2013,Medium Enterprise,"Consumer & Professional FDM, DLP",Verified
+3D Printing,BigRep,Germany,https://bigrep.com,"100+","$20M+",2014,Small Enterprise,"Large-Format FDM, Industrial",Verified
+3D Printing,AnkerMake (Anker),China,https://us.anker.com,"1,000+ (Anker)","$2B+ (Anker)",2011,Medium Enterprise,"Consumer FDM 3D Printers",Verified
+3D Printing,Renishaw,UK,https://www.renishaw.com,"5,000+","$800M+",1973,Large Enterprise,"Additive Manufacturing, Metal 3D Printing",Verified
+3D Printing,BCN3D,Spain,https://www.bcn3d.com,"100+","$20M+",2012,Small Enterprise,"IDEX Technology, Professional FDM",Verified
+3D Printing,TRUMPF,Germany,https://www.trumpf.com,"16,500+","$5B+",1923,Large Enterprise,"Metal 3D Printing, Laser Melting",Verified
+IoT Devices,Siemens,Germany,https://www.siemens.com,"311,000+","$78B+",1847,Conglomerate,"MindSphere, Industrial IoT, Automation",Verified
+IoT Devices,Bosch IoT,Germany,https://www.bosch-iot-suite.com,"421,000+ (Bosch)","$92B+ (Bosch)",1886,Conglomerate,"Bosch IoT Suite, Sensors, Connectivity",Verified
+IoT Devices,Honeywell,USA,https://www.honeywell.com,"97,000+","$36B+",1906,Conglomerate,"Building IoT, Forge, Connected Assets",Verified
+IoT Devices,Schneider Electric,France,https://www.se.com,"162,000+","$39B+",1836,Conglomerate,"EcoStruxure, Building & Grid Management",Verified
+IoT Devices,GE Digital,USA,https://www.ge.com/digital,"172,000+ (GE)","$76B+ (GE)",1892,Conglomerate,"Predix, Industrial IoT Platform",Verified
+IoT Devices,PTC (ThingWorx),USA,https://www.ptc.com,"7,000+","$2B+",1985,Large Enterprise,"ThingWorx, Vuforia, CAD & IoT",Verified
+IoT Devices,Samsara,USA,https://www.samsara.com,"2,500+","$900M+",2015,Large Enterprise,"Connected Operations, Vehicle Telematics",Verified
+IoT Devices,Cisco IoT,USA,https://www.cisco.com,"84,900+","$57B+",1984,Conglomerate,"IoT Networking, Edge, Security",Verified
+IoT Devices,Verizon ThingSpace,USA,https://thingspace.verizon.com,"118,000+ (Verizon)","$137B+ (Verizon)",1983,Conglomerate,"ThingSpace, IoT Connectivity & Management",Verified
+IoT Devices,ARM Mbed,UK,https://os.mbed.com,"6,000+ (Arm)","$2B+ (Arm)",1990,Large Enterprise,"Mbed OS, IoT Device Platform",Verified
+IoT Devices,Sigfox,France,https://www.sigfox.com,"400+","$100M+",2010,Medium Enterprise,"0G Network, LPWAN, Global IoT",Verified
+IoT Devices,Losant,USA,https://www.losant.com,"50-100","$10M+",2014,Small Enterprise,"Enterprise IoT Platform, Application Enablement",Verified
+IoT Devices,Hologram,USA,https://hologram.io,"50-100","$10M+",2014,Small Enterprise,"IoT Connectivity, Global SIM",Verified
+IoT Devices,Helium,USA,https://www.helium.com,"50-100","$10M+",2013,Small Enterprise,"Decentralized Wireless Network, IoT",Verified
+IoT Devices,Ayla Networks,USA,https://www.aylanetworks.com,"100-200","$20M+",2010,Small Enterprise,"IoT Platform, Agile IoT",Verified
+IoT Devices,Notion,USA,https://getnotion.com,"50-100","$10M+",2013,Small Enterprise,"Home Monitoring, DIY Security",Verified
+IoT Devices,Electric Imp,USA,https://www.electricimp.com,"50-100","$10M+",2011,Small Enterprise,"Secure IoT Connectivity, Platform",Verified
+IoT Devices,Ubiquiti Networks,USA,https://www.ui.com,"1,800+","$2B+",2005,Medium Enterprise,"mFi, IoT Networking, Smart Home",Verified
+Biometric Systems,IDEMIA,France,https://www.idemia.com,"15,000+","$3B+",2007,Large Enterprise,"Fingerprint, Facial Recognition, Secure Identity",Verified
+Biometric Systems,NEC Biometrics,Japan,https://www.nec.com,"112,000+ (NEC)","$27B+ (NEC)",1899,Conglomerate,"NeoFace, Facial Recognition, Biometric Solutions",Verified
+Biometric Systems,Thales Gemalto,France,https://www.thalesgroup.com,"81,000+ (Thales)","$20B+ (Thales)",1893,Conglomerate,"Biometric ID, Digital Security, eDocuments",Verified
+Biometric Systems,Cognitec Systems,Germany,https://www.cognitec.com,"100+","$20M+",2002,Small Enterprise,"Face Recognition, Video Analytics",Verified
+Biometric Systems,Precise Biometrics,Sweden,https://precisebiometrics.com,"50-100","$10M+",1997,Small Enterprise,"Fingerprint Recognition, Algorithm Software",Verified
+Biometric Systems,Synaptics,USA,https://www.synaptics.com,"1,500+","$1B+",1986,Medium Enterprise,"Fingerprint Sensors, Touch, Display",Verified
+Biometric Systems,Crossmatch (HID Global),USA,https://www.hidglobal.com,"4,500+ (HID)","$1B+ (HID)",1991,Large Enterprise,"Fingerprint Scanners, Biometric Authentication",Verified
+Biometric Systems,FaceFirst (Allegion),USA,https://www.facefirst.com,"N/A (Allegion)","$3B+ (Allegion)",2007,Large Enterprise,"Facial Recognition, Security & Access Control",Verified
+Biometric Systems,Fulcrum Biometrics,USA,https://www.fulcrumbiometrics.com,"50-100","$10M+",2005,Small Enterprise,"Fingerprint Hardware & Software",Verified
+Biometric Systems,BioID,Germany,https://www.bioid.com,"<50","$5M+",1997,Small Enterprise,"Biometric Authentication as a Service",Verified
+Biometric Systems,Daon,USA,https://www.daon.com,"500+","$100M+",2000,Medium Enterprise,"IdentityX, Mobile Biometric Platform",Verified
+Biometric Systems,Veridium,UK,https://www.veridiumid.com,"50-100","$10M+",2015,Small Enterprise,"Passwordless Authentication, Biometric Platform",Verified
+Biometric Systems,Aware Inc.,USA,https://www.aware.com,"100+","$20M+",1993,Small Enterprise,"Biometric Software, Knomi, SDKs",Verified
+Biometric Systems,Suprema Inc.,South Korea,https://www.supremainc.com,"500+","$100M+",2001,Medium Enterprise,"Fingerprint Scanners, Access Control",Verified
+Biometric Systems,Fingerprint Cards AB,Sweden,https://www.fingerprints.com,"300+","$100M+",1997,Medium Enterprise,"Fingerprint Sensors, Mobile & Smart Cards",Verified
+Biometric Systems,Neurotechnology,Lithuania,https://www.neurotechnology.com,"200+","$20M+",1990,Small Enterprise,"MegaMatcher, Biometric SDKs, AFIS",Verified
+Biometric Systems,Innovatrics,Slovakia,https://www.innovatrics.com,"200+","$20M+",2004,Small Enterprise,"Facial Recognition, ABIS, Digital Onboarding",Verified
+Biometric Systems,Tascent,USA,https://www.tascent.com,"50-100","$10M+",2015,Small Enterprise,"Biometric Solutions, Travel & Identity",Verified
+Biometric Systems,Hanvon Technology,China,https://www.hanvon.com,"1,000+","$200M+",1998,Medium Enterprise,"OCR, Handwriting, Facial Recognition",Verified
+Edge Computing,HPE Edgeline,USA,https://www.hpe.com,"60,000+","$29B+",2015,Conglomerate,"Edgeline Converged Edge Systems",Verified
+Edge Computing,Dell EMC,USA,https://www.dell.com,"133,000+","$102B+",1984,Conglomerate,"Dell PowerEdge XR, Rugged Servers",Verified
+Edge Computing,Lenovo ThinkEdge,China,https://www.lenovo.com,"77,000+","$71B+",1984,Conglomerate,"ThinkEdge, Edge AI & Computing",Verified
+Edge Computing,Cisco IoT Edge,USA,https://www.cisco.com,"84,900+","$57B+",1984,Conglomerate,"Cisco IoT, Edge Intelligence",Verified
+Edge Computing,Intel IoT Edge,USA,https://www.intel.com,"131,900+","$63B+",1968,Conglomerate,"Intel Xeon, Core, Atom for Edge",Verified
+Edge Computing,Microsoft Azure Edge,USA,https://azure.microsoft.com,"221,000+ (Microsoft)","$211B+ (Microsoft)",1975,Conglomerate,"Azure Edge Zones, IoT Edge Runtime",Verified
+Edge Computing,Amazon AWS IoT Greengrass,USA,https://aws.amazon.com,"1,608,000+ (Amazon)","$574B+ (Amazon)",1994,Conglomerate,"AWS Greengrass, Local Compute",Verified
+Edge Computing,IBM Edge Computing,USA,https://www.ibm.com,"288,000+","$61B+",1911,Conglomerate,"IBM Edge Application Manager",Verified
+Edge Computing,FogHorn Systems,USA,https://www.foghorn.io,"100-200","$20M+",2014,Small Enterprise,"Edge Intelligence, Lightweight ML",Verified
+Edge Computing,ADLINK Technology,Taiwan,https://www.adlinktech.com,"1,000+","$300M+",1995,Medium Enterprise,"Edge Hardware, Modules, Solutions",Verified
+Edge Computing,ClearBlade,USA,https://www.clearblade.com,"50-100","$10M+",2007,Small Enterprise,"Edge Computing Platform, IoT",Verified
+Edge Computing,Scale Computing,USA,https://www.scalecomputing.com,"200+","$50M+",2007,Small Enterprise,"Hyperconverged Edge Computing",Verified
+Edge Computing,Zededa,USA,https://www.zededa.com,"100+","$20M+",2016,Small Enterprise,"Edge Virtualization, Orchestration",Verified
+Edge Computing,EdgeConneX,USA,https://www.edgeconnex.com,"200+","$50M+",2013,Small Enterprise,"Edge Data Centers, Infrastructure",Verified
+Edge Computing,Vapor IO,USA,https://www.vapor.io,"50-100","$10M+",2015,Small Enterprise,"Kinetic Edge, Colocation",Verified
+Edge Computing,Saguna Networks,Israel,https://www.saguna.net,"50-100","$10M+",2008,Small Enterprise,"Multi-Access Edge Computing (MEC)",Verified
+Edge Computing,Section.IO,Australia,https://www.section.io,"<50","$5M+",2014,Small Enterprise,"Edge Compute for Web Applications",Verified
+Edge Computing,Swim.AI,USA,https://www.swim.ai,"50-100","$10M+",2015,Small Enterprise,"SWIM EDX, Continuous Intelligence",Verified
+Edge Computing,Edge Intelligence,Canada,https://www.edgeintelligence.com,"<50","$5M+",2016,Small Enterprise,"IoT, Edge Analytics, Asset Tracking",Verified
+Mainframe Systems,IBM Z Series,USA,https://www.ibm.com,"288,000+","$61B+",1911,Conglomerate,"IBM Z, z16, Secure Enterprise Computing",Verified
+Mainframe Systems,Unisys ClearPath,USA,https://www.unisys.com,"16,000+","$2B+",1986,Large Enterprise,"ClearPath Forward, OS 2200, MCP",Verified
+Mainframe Systems,Fujitsu GS21,Japan,https://www.fujitsu.com,"126,000+","$28B+",1935,Conglomerate,"GS21, BS2000/OSD, Mainframe Servers",Verified
+Mainframe Systems,HPE NonStop,USA,https://www.hpe.com,"60,000+","$29B+",1974,Conglomerate,"HPE NonStop, Fault-Tolerant Systems",Verified
+Mainframe Systems,BullSequana (Atos),France,https://atos.net,"112,000+","$13B+",1997,Conglomerate,"BullSequana Mainframes, GCOS",Verified
+Mainframe Systems,Stratus Technologies,USA,https://www.stratus.com,"500+","$100M+",1980,Medium Enterprise,"ftServer, Continuous Availability",Verified
+Mainframe Systems,DXC Technology,USA,https://www.dxc.com,"130,000+","$17B+",2017,Large Enterprise,"Mainframe Modernization, IT Services",Verified
+Mainframe Systems,Rocket Software,USA,https://www.rocketsoftware.com,"2,500+","$500M+",1990,Large Enterprise,"Mainframe Data & Application Tools",Verified
+Mainframe Systems,CA Technologies (Broadcom),USA,https://www.broadcom.com,"20,000+ (Broadcom)","$36B+ (Broadcom)",1976,Large Enterprise,"CA Mainframe Software, DevOps, Security",Verified
+Mainframe Systems,BMC Software,USA,https://www.bmc.com,"6,000+","$2B+",1980,Large Enterprise,"Mainframe Automation, Control-M",Verified
+Mainframe Systems,Compuware,USA,https://www.compuware.com,"1,000+","$200M+",1973,Medium Enterprise,"Topaz, Mainframe DevOps Tools",Verified
+Mainframe Systems,ASG Technologies,USA,https://www.asg.com,"1,000+","$200M+",1986,Medium Enterprise,"ASG-Zenith, Content & Metadata Management",Verified
+Mainframe Systems,TmaxSoft,South Korea,https://www.tmaxsoft.com,"1,000+","$200M+",1997,Medium Enterprise,"Tibero, OpenFrame, Mainframe Modernization",Verified
+Mainframe Systems,LzLabs,Switzerland,https://www.lzlabs.com,"50-100","$10M+",2015,Small Enterprise,"Software-Defined Mainframe (LzSDM)",Verified
+Mainframe Systems,SUSE Linux Enterprise Mainframe,Germany,https://www.suse.com,"2,000+ (SUSE)","$600M+ (SUSE)",1992,Large Enterprise,"SUSE Linux Enterprise Server for Mainframe",Verified
+Mainframe Systems,Micro Focus,UK,https://www.microfocus.com,"11,000+","$3B+",1976,Large Enterprise,"COBOL, Application Modernization",Verified
+Mainframe Systems,Syncsort (Precisely),USA,https://www.precisely.com,"2,000+","$500M+",1968,Large Enterprise,"Data Integration, Sort, Mainframe Tools",Verified
+Mainframe Systems,Virtel (UV Software),UK,https://www.uvsoftware.com,"<50","$5M+",1981,Small Enterprise,"Web Access, 3270 Modernization",Verified
+Mainframe Systems,GT Software,USA,https://www.gtsoftware.com,"<100","$10M+",1982,Small Enterprise,"Mainframe Integration, SOAP/REST",Verified
+Tech Repair Services,uBreakiFix,USA,https://www.ubreakifix.com,"2,000+","$500M+",2009,Large Enterprise,"Phone, Tablet, Computer Repair",Verified
+Tech Repair Services,Geek Squad (Best Buy),USA,https://www.geeksquad.com,"100,000+ (Best Buy)","$46B+ (Best Buy)",1994,Large Enterprise,"In-Home & In-Store Tech Support",Verified
+Tech Repair Services,Staples EasyTech,USA,https://www.staples.com,"35,000+ (Staples)","$20B+ (Staples)",1986,Large Enterprise,"Computer Repair, Tech Support",Verified
+Tech Repair Services,Asurion,USA,https://www.asurion.com,"20,000+","$10B+",1994,Large Enterprise,"Device Insurance, Repair, Replacement",Verified
+Tech Repair Services,CPR Cell Phone Repair,USA,https://www.cellphonerepair.com,"1,000+","$200M+",1997,Medium Enterprise,"Franchise, Phone & Device Repair",Verified
+Tech Repair Services,Phone Doctor Plus,USA,https://phonedoctorplus.com,"<50","$5M+",2007,Small Enterprise,"Local Phone & Tablet Repair",Verified
+Tech Repair Services,RockIT Repairs,USA,https://rockitrepairs.com,"<50","$5M+",2012,Small Enterprise,"Phone, Tablet, Game Console Repair",Verified
+Tech Repair Services,iCracked (Apple Authorized),USA,https://www.icracked.com,"N/A (Acquired/Closed)",N/A,2010,N/A,"On-Demand Repair - Defunct",Verified
+Tech Repair Services,FoneLab,China,https://www.fonelab.com,"<100","$10M+",2008,Small Enterprise,"Data Recovery Software, iOS/Android",Verified
+Tech Repair Services,Dr. Smartphone,Canada,https://drsmartphone.ca,"<50","$5M+",2012,Small Enterprise,"Local Canadian Phone Repair",Verified
+Tech Repair Services,The Phone Lab,UK,https://www.thephonelab.co.uk,"<50","$5M+",2010,Small Enterprise,"UK Phone & Tablet Repair",Verified
+Tech Repair Services,FoneFix,Australia,https://www.fonefix.com.au,"<50","$5M+",2014,Small Enterprise,"Australian Phone Repair",Verified
+Tech Repair Services,Fixerman,USA,https://www.fixermanme.com,"<50","$5M+",2015,Small Enterprise,"Mail-In & Local Phone Repair",Verified
+Tech Repair Services,iMend,UK,https://www.imendrepairs.co.uk,"<50","$5M+",2011,Small Enterprise,"UK Phone & Laptop Repair",Verified
+Tech Repair Services,GadgetGuru,India,https://www.gadgetguru.in,"<100","$10M+",2013,Small Enterprise,"Indian Multi-Brand Device Repair",Verified
+Tech Repair Services,Phonebitz,South Africa,https://phonebitz.co.za,"<50","$5M+",2012,Small Enterprise,"South African Phone Repair",Verified
+Tech Repair Services,Phone Clinic,New Zealand,https://www.phoneclinic.co.nz,"<50","$5M+",2014,Small Enterprise,"New Zealand Phone & Tablet Repair",Verified
+Tech Repair Services,iExperts,Singapore,https://www.iexperts.sg,"<50","$5M+",2013,Small Enterprise,"Singaporean Apple & Phone Repair",Verified
+Blockchain Hardware,Bitmain,China,https://www.bitmain.com,"1,000+","$4B+",2013,Medium Enterprise,"Antminer ASICs, Mining Pools",Verified
+Blockchain Hardware,Canaan Creative,China,https://canaan.io,"500+","$200M+",2013,Medium Enterprise,"Avalon Miners, ASIC Chips",Verified
+Blockchain Hardware,Ebang,China,https://www.ebang.com.cn,"200+","$50M+",2010,Small Enterprise,"Ebit Miners, ASIC Manufacturing",Verified
+Blockchain Hardware,MicroBT,China,https://www.microbt.com,"500+","$2B+",2016,Medium Enterprise,"Whatsminer ASICs",Verified
+Blockchain Hardware,Innosilicon,China,https://www.innosilicon.com,"200+","$100M+",2006,Small Enterprise,"ASIC Miners for Crypto & AI",Verified
+Blockchain Hardware,Halong Mining,Vietnam,https://www.halongmining.com,"<100","$10M+",2017,Small Enterprise,"DragonMint Miners",Verified
+Blockchain Hardware,GMO Internet Group,Japan,https://www.gmo.jp,"6,000+","$1B+",1991,Large Enterprise,"B3 Miners, Cloud Mining",Verified
+Blockchain Hardware,Hut 8 Mining,Canada,https://hut8.com,"100+","$50M+",2017,Small Enterprise,"Bitcoin Mining, Digital Asset Mining",Verified
+Blockchain Hardware,Riot Blockchain,USA,https://riotblockchain.com,"500+","$300M+",2000,Medium Enterprise,"Bitcoin Mining, Whinstone Facility",Verified
+Blockchain Hardware,Marathon Digital Holdings,USA,https://marathondh.com,"200+","$200M+",2010,Small Enterprise,"Bitcoin Mining, Self-Mining",Verified
+Blockchain Hardware,Core Scientific,USA,https://corescientific.com,"500+","$500M+",2017,Medium Enterprise,"Blockchain Hosting, Digital Asset Mining",Verified
+Blockchain Hardware,Argo Blockchain,UK,https://argoblockchain.com,"100+","$50M+",2017,Small Enterprise,"Cryptocurrency Mining, Green Energy",Verified
+Blockchain Hardware,Bitfarms,Canada,https://bitfarms.com,"100+","$50M+",2017,Small Enterprise,"Bitcoin Mining, Hydroelectric Power",Verified
+Blockchain Hardware,CleanSpark,USA,https://www.cleanspark.com,"100+","$200M+",2014,Small Enterprise,"Bitcoin Mining, Energy & Technology",Verified
+Blockchain Hardware,TeraWulf,USA,https://terawulf.com,"100+","$50M+",2021,Small Enterprise,"Nuclear-Powered Bitcoin Mining",Verified
+Blockchain Hardware,Cipher Mining,USA,https://www.ciphermining.com,"100+","$50M+",2021,Small Enterprise,"Bitcoin Mining, Data Centers",Verified
+Blockchain Hardware,GRIID Infrastructure,USA,https://griid.com,"<100","$10M+",2018,Small Enterprise,"Bitcoin Mining, Vertical Integration",Verified
+Blockchain Hardware,Bit Digital,USA,https://bit-digital.com,"<100","$50M+",2015,Small Enterprise,"Bitcoin Mining, US & Canada Operations",Verified
+Blockchain Hardware,Stronghold Digital Mining,USA,https://strongholddigitalmining.com,"100+","$50M+",2021,Small Enterprise,"Bitcoin Mining, Coal Refuse Power",Verified
+Satellite Tech,SpaceX (Starlink),USA,https://www.starlink.com,"13,000+","$4B+",2002,Large Enterprise,"Starlink Constellation, Satellite Internet",Verified
+Satellite Tech,OneWeb,UK,https://www.oneweb.world,"600+","$100M+",2012,Medium Enterprise,"LEO Constellation, Global Broadband",Verified
+Satellite Tech,Iridium Communications,USA,https://www.iridium.com,"600+","$800M+",2001,Medium Enterprise,"Iridium NEXT, Satellite Phone & Data",Verified
+Satellite Tech,Globalstar,USA,https://www.globalstar.com,"300+","$150M+",1991,Medium Enterprise,"Satellite Voice, Data, SPOT",Verified
+Satellite Tech,Inmarsat (Viasat),UK,https://www.inmarsat.com,"1,800+ (Viasat)","$3B+ (Viasat)",1979,Large Enterprise,"GX Aviation, Maritime, Government",Verified
+Satellite Tech,Intelsat,Luxembourg,https://www.intelsat.com,"1,000+","$2B+",1964,Large Enterprise,"GEO Satellites, Media, Network Services",Verified
+Satellite Tech,SES S.A.,Luxembourg,https://www.ses.com,"2,000+","$2B+",1985,Large Enterprise,"GEO/MEO Constellation, Video & Data",Verified
+Satellite Tech,Eutelsat,France,https://www.eutelsat.com,"1,000+","$1B+",1977,Large Enterprise,"Broadcast, Broadband, Data Services",Verified
+Satellite Tech,Viasat,USA,https://www.viasat.com,"6,000+","$3B+",1986,Large Enterprise,"Satellite Communications, In-Flight WiFi",Verified
+Satellite Tech,Telesat,Canada,https://www.telesat.com,"500+","$600M+",1969,Medium Enterprise,"Telesat Lightspeed LEO, GEO Services",Verified
+Satellite Tech,Maxar Technologies,USA,https://www.maxar.com,"4,500+","$2B+",1969,Large Enterprise,"Earth Intelligence, Space Infrastructure",Verified
+Satellite Tech,Planet Labs,USA,https://www.planet.com,"1,000+","$200M+",2010,Medium Enterprise,"Dove Satellites, Daily Earth Imaging",Verified
+Satellite Tech,Spire Global,USA,https://www.spire.com,"400+","$100M+",2012,Medium Enterprise,"Lemur Cubesats, Weather, AIS, ADS-B",Verified
+Satellite Tech,Astranis,USA,https://www.astranis.com,"200+","$50M+",2015,Small Enterprise,"Small GEO Satellites, Internet",Verified
+Satellite Tech,Capella Space,USA,https://www.capellaspace.com,"200+","$50M+",2016,Small Enterprise,"SAR Satellites, Earth Observation",Verified
+Satellite Tech,HawkEye 360,USA,https://www.he360.com,"200+","$50M+",2015,Small Enterprise,"RF Monitoring, Signal Intelligence",Verified
+Satellite Tech,ICEYE,Finland,https://www.iceye.com,"500+","$100M+",2014,Medium Enterprise,"SAR Satellites, Natural Disaster Monitoring",Verified
+Satellite Tech,Kleos Space,Luxembourg,https://kleos.space,"50-100","$10M+",2017,Small Enterprise,"RF Reconnaissance, Maritime Domain",Verified
+Satellite Tech,Swarm Technologies (SpaceX),USA,https://swarm.space,"N/A (SpaceX)","$4B+ (SpaceX)",2016,Large Enterprise,"Low-Bandwidth IoT Satellites",Verified

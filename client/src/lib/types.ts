@@ -15,6 +15,12 @@ export interface Company {
   websiteUrl: string | null;
   industryName: string;
   sectorName: string;
+  employeeCount: string | null;
+  revenueEstimate: string | null;
+  foundedYear: number | null;
+  companySize: string | null;
+  specializationTags: string | null;
+  verificationStatus: string | null;
 }
 
 export interface SearchResults {

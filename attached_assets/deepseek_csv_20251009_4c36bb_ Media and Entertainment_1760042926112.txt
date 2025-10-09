@@ -1,0 +1,335 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Film Production,Warner Bros. Pictures,USA,https://www.warnerbros.com,"8,000+","$12B+",1923,Large Enterprise,"Film Production, Distribution, Franchise Management",Verified
+Film Production,Universal Pictures,USA,https://www.universalpictures.com,"5,000+","$4B+",1912,Large Enterprise,"Film Production, Distribution, Theme Park Integration",Verified
+Film Production,Paramount Pictures,USA,https://www.paramount.com,"3,500+","$3B+",1912,Large Enterprise,"Film Production, Distribution, Library Content",Verified
+Film Production,Sony Pictures Entertainment,USA,https://www.sonypictures.com,"9,000+","$8B+",1987,Large Enterprise,"Film Production, Television, Game Shows",Verified
+Film Production,Walt Disney Studios,USA,https://www.waltdisneystudios.com,"10,000+","$9B+",1923,Conglomerate,"Film Production, Franchises (Marvel, Star Wars), Animation",Verified
+Film Production,Lionsgate Films,USA,https://www.lionsgate.com,"1,600+","$3.5B+",1997,Large Enterprise,"Film Production, Television Series, Acquisitions",Verified
+Film Production,MGM Studios,USA,https://www.mgm.com,"800+","$1B+",1924,Large Enterprise,"Film Production, Library, Episodic Content",Verified
+Film Production,Legendary Entertainment,USA,https://www.legendary.com,"400+","$1B+",2000,Mid-Market,"Film Production, Blockbuster Franchises",Verified
+Film Production,StudioCanal,France,https://www.studiocanal.com,"800+","$1B+",1988,Large Enterprise,"Film Production, Distribution, European Content",Verified
+Film Production,A24 Films,USA,https://a24films.com,"200+","$500M+",2012,Mid-Market,"Independent Film, Acclaimed Cinema",Verified
+Film Production,Pathé,France,https://www.pathe.com,"1,500+","$1.5B+",1896,Large Enterprise,"Film Production, Distribution, Cinema Operation",Verified
+Film Production,Gaumont Film Company,France,https://www.gaumont.com,"500+","$400M+",1895,Large Enterprise,"Film Production, Oldest Film Company",Verified
+Film Production,Toho Company,Japan,https://www.toho.co.jp,"2,000+","$2B+",1932,Large Enterprise,"Film Production, Distribution, Godzilla Franchise",Verified
+Film Production,CJ ENM,South Korea,https://www.cjenm.com,"5,000+","$5B+",1995,Large Enterprise,"Film Production, K-Drama, Music, Content",Verified
+Film Production,Yash Raj Films,India,https://www.yashrajfilms.com,"1,000+","$300M+",1970,Large Enterprise,"Bollywood Production, Music, Distribution",Verified
+Film Production,Mosfilm,Russia,https://www.mosfilm.ru,"1,000+","N/A",1920,Large Enterprise,"Film Production, Historic Russian Library",Verified
+Film Production,Working Title Films,UK,https://www.workingtitlefilms.com,"50+","N/A",1983,Small Enterprise,"British Film Production, Co-Productions",Verified
+Film Production,New Regency Productions,USA,https://www.newregency.com,"100+","$1B+",1991,Mid-Market,"Film Production, Financing",Verified
+Film Production,Annapurna Pictures,USA,https://annapurna.pictures,"80+","N/A",2011,Small Enterprise,"Independent Film Production",Verified
+Film Production,STX Entertainment,USA,https://www.stxfilms.com,"200+","$500M+",2014,Mid-Market,"Film Production, Financing, Distribution",Verified
+Television Broadcasting,BBC,UK,https://www.bbc.com,"22,000+","$6B+",1922,Public Broadcaster,"Public Service Broadcasting, News, Entertainment",Verified
+Television Broadcasting,NBCUniversal Television,USA,https://www.nbcuniversal.com,"35,000+","$39B+",1939,Conglomerate,"Broadcast Network, Cable Channels, Production",Verified
+Television Broadcasting,CBS Television Studios,USA,https://www.cbs.com,"25,000+","$30B+",1927,Large Enterprise,"Broadcast Network, News, Prime Time",Verified
+Television Broadcasting,ABC Television Network,USA,https://abc.com,"8,000+","$75B+ (Parent)",1943,Large Enterprise,"Broadcast Network, Entertainment, News",Verified
+Television Broadcasting,ITV plc,UK,https://www.itv.com,"5,000+","$4.5B+",1955,Large Enterprise,"Commercial Broadcasting, Production",Verified
+Television Broadcasting,ProSiebenSat.1 Media,Germany,https://www.prosiebensat1.com,"4,000+","$5B+",1986,Large Enterprise,"Commercial TV, Digital Media",Verified
+Television Broadcasting,TF1 Group,France,https://www.groupe-tf1.fr,"3,500+","$3B+",1975,Large Enterprise,"Commercial Broadcasting, Production",Verified
+Television Broadcasting,RTL Group,Luxembourg,https://www.rtlgroup.com,"17,000+","$8B+",1931,Large Enterprise,"European TV & Radio Broadcasting",Verified
+Television Broadcasting,RAI Radiotelevisione Italiana,Italy,https://www.rai.it,"12,000+","$2.5B+",1924,Public Broadcaster,"Public Service Broadcasting",Verified
+Television Broadcasting,ARD (Germany),Germany,https://www.ard.de,"23,000+","$9B+",1950,Public Broadcaster,"Public Service Broadcasting Consortium",Verified
+Television Broadcasting,ZDF (Germany),Germany,https://www.zdf.de,"3,600+","$3B+",1963,Public Broadcaster,"Public Service Broadcasting",Verified
+Television Broadcasting,TelevisaUnivision,Mexico,https://www.televisaunivision.com,"10,000+","$5B+",1955,Large Enterprise,"Spanish-Language Content, Broadcasting",Verified
+Television Broadcasting,Globo Group,Brazil,https://redeglobo.globo.com,"20,000+","$4B+",1965,Large Enterprise,"Portuguese-Language Content, Telenovelas",Verified
+Television Broadcasting,NHK (Japan),Japan,https://www.nhk.or.jp,"10,000+","$6B+",1926,Public Broadcaster,"Public Service Broadcasting",Verified
+Television Broadcasting,CCTV (China),China,https://www.cctv.com,"10,000+","N/A",1958,State-Owned,"State Media, National Broadcasting",Verified
+Television Broadcasting,Channel 4,UK,https://www.channel4.com,"1,000+","$1.2B+",1982,Publicly-Owned,"Public Service, Commercial Broadcasting",Verified
+Television Broadcasting,Disney Television Studios,USA,https://www.disneytelevisionstudios.com,"5,000+","N/A (Parent)",1983,Large Enterprise,"TV Production, ABC, Disney+ Content",Verified
+Television Broadcasting,Sony Pictures Television,USA,https://www.sonypictures.com,"7,000+","$8B+ (Parent)",1991,Large Enterprise,"TV Production, Game Shows, Distribution",Verified
+Television Broadcasting,Endemol Shine Group,Netherlands,https://www.endemolshinegroup.com,"4,000+","$2B+",1994,Large Enterprise,"Format Development, Reality TV",Verified
+Music Labels,Universal Music Group,Netherlands,https://www.universalmusic.com,"9,000+","$11B+",1934,Large Enterprise,"Music Publishing, Recording, Distribution",Verified
+Music Labels,Sony Music Entertainment,Japan,https://www.sonymusic.com,"8,500+","$9B+",1929,Large Enterprise,"Music Publishing, Recording, Artist Management",Verified
+Music Labels,Warner Music Group,USA,https://www.wmg.com,"6,500+","$6B+",1958,Large Enterprise,"Music Publishing, Recording, Digital",Verified
+Music Labels,BMG Rights Management,Germany,https://www.bmg.com,"1,000+","$700M+",2008,Mid-Market,"Music Rights Management, Publishing",Verified
+Music Labels,Kobalt Music Group,UK,https://www.kobaltmusic.com,"600+","$500M+",2000,Mid-Market,"Music Publishing, Neighboring Rights",Verified
+Music Labels,Believe Digital,France,https://www.believe.com,"1,700+","$800M+",2005,Large Enterprise,"Digital Music Distribution, Label Services",Verified
+Music Labels,Huayi Brothers Media,China,https://www.huayimedia.com,"1,000+","$300M+",1994,Large Enterprise,"Music, Film Production, Entertainment",Verified
+Music Labels,HYBE Corporation,South Korea,https://hybecorp.com,"1,000+","$1B+",2005,Large Enterprise,"K-Pop, Artist Management, BTS",Verified
+Music Labels,SM Entertainment,South Korea,https://www.smtown.com,"500+","$400M+",1995,Mid-Market,"K-Pop, Artist Training, Production",Verified
+Music Labels,JYP Entertainment,South Korea,https://www.jype.com,"300+","$200M+",1997,Mid-Market,"K-Pop, Artist Management, Production",Verified
+Music Labels,YG Entertainment,South Korea,https://www.ygfamily.com,"600+","$300M+",1996,Mid-Market,"K-Pop, Hip-Hop, Artist Management",Verified
+Music Labels,EMI Music Publishing,USA,https://www.emimusicpub.com,"500+","$600M+",1989,Large Enterprise,"Music Publishing, Catalog Management",Verified
+Music Labels,Concord Music,USA,https://www.concord.com,"600+","$600M+",1995,Mid-Market,"Music Publishing, Recorded Music, Theatrical",Verified
+Music Labels,PIAS Group,Belgium,https://www.pias.com,"200+","$200M+",1982,Mid-Market,"Independent Music Distribution & Services",Verified
+Music Labels,Spinnin' Records,Netherlands,https://www.spinninrecords.com,"100+","N/A",1999,Small Enterprise,"Electronic Dance Music (EDM)",Verified
+Music Labels,Ministry of Sound,UK,https://www.ministryofsound.com,"150+","$100M+",1991,Small Enterprise,"Electronic Music, Compilations, Events",Verified
+Music Labels,Island Records,UK,https://www.islandrecords.com,"N/A","N/A",1959,Small Enterprise,"Record Label (Universal Subsidiary)",Verified
+Music Labels,Def Jam Recordings,USA,https://www.defjam.com,"N/A","N/A",1983,Small Enterprise,"Hip-Hop, R&B (Universal Subsidiary)",Verified
+Video Streaming,Netflix,USA,https://www.netflix.com,"12,000+","$33B+",1997,Large Enterprise,"SVOD, Original Content, Global",Verified
+Video Streaming,Amazon Prime Video,USA,https://www.primevideo.com,"1.6M+ (Parent)","$574B+ (Parent)",2006,Conglomerate,"SVOD, Part of Prime, Originals",Verified
+Video Streaming,Disney+,USA,https://www.disneyplus.com,"225K+ (Parent)","$89B+ (Parent)",2019,Large Enterprise,"SVOD, Franchise Content (Disney, Marvel, Star Wars)",Verified
+Video Streaming,HBO Max,USA,https://www.hbomax.com,"30K+ (Parent)","$12B+ (Parent)",2020,Large Enterprise,"SVOD, Premium Originals, Library",Verified
+Video Streaming,Apple TV+,USA,https://www.apple.com/apple-tv-plus,"164K+ (Parent)","$383B+ (Parent)",2019,Conglomerate,"SVOD, High-Budget Originals",Verified
+Video Streaming,Hulu,USA,https://www.hulu.com,"1,500+","$10B+",2007,Large Enterprise,"SVOD/AVOD, TV Content, Originals",Verified
+Video Streaming,Paramount+,USA,https://www.paramountplus.com,"25K+ (Parent)","$30B+ (Parent)",2021,Large Enterprise,"SVOD, Live TV, CBS/Paramount Content",Verified
+Video Streaming,Peacock (NBCUniversal),USA,https://www.peacocktv.com,"35K+ (Parent)","$39B+ (Parent)",2020,Large Enterprise,"SVOD/AVOD, Live Sports, NBCU Library",Verified
+Video Streaming,YouTube Premium,USA,https://www.youtube.com/premium,"190K+ (Parent)","$282B+ (Parent)",2015,Conglomerate,"AVOD/SVOD, User-Generated Content",Verified
+Video Streaming,Dazn,UK,https://www.dazn.com,"2,500+","$2B+",2016,Large Enterprise,"Sports-Focused Streaming, Live Events",Verified
+Video Streaming,Starzplay,USA,https://www.starz.com,"1,000+","$500M+",1994,Mid-Market,"Premium Content, Lionsgate Library",Verified
+Video Streaming,Viu (PCCW Media),Hong Kong,https://www.viu.com,"500+","$100M+",2015,Mid-Market,"Asian Content, AVOD/SVOD",Verified
+Video Streaming,Tencent Video,China,https://v.qq.com,"113K+ (Parent)","$82B+ (Parent)",2011,Conglomerate,"SVOD/AVOD, Chinese Content, Gaming",Verified
+Video Streaming,iQIYI,China,https://www.iq.com,"8,000+","$5B+",2010,Large Enterprise,"Chinese SVOD, Original Content",Verified
+Video Streaming,Bilibili,China,https://www.bilibili.com,"12,000+","$3B+",2009,Large Enterprise,"Video Sharing, Anime, Gaming Community",Verified
+Video Streaming,Crunchyroll (Sony),USA,https://www.crunchyroll.com,"1,000+","$1B+",2006,Large Enterprise,"Anime Streaming, Simulcasts",Verified
+Video Streaming,Rakuten TV,Japan,https://rakuten.tv,"300+","N/A",2011,Mid-Market,"AVOD, TVOD, Japanese Content",Verified
+Video Streaming,Canal+,France,https://www.canalplus.com,"7,000+","$7B+",1984,Large Enterprise,"Premium TV, Streaming, Original Content",Verified
+Video Games,Electronic Arts (EA),USA,https://www.ea.com,"12,900+","$7B+",1982,Large Enterprise,"Sports Games (FIFA, Madden), Action",Verified
+Video Games,Activision Blizzard,USA,https://www.activisionblizzard.com,"9,500+","$8.8B+",1979,Large Enterprise,"Call of Duty, World of Warcraft, Candy Crush",Verified
+Video Games,Tencent Games,China,https://game.qq.com,"113K+ (Parent)","$82B+ (Parent)",2003,Conglomerate,"Game Publishing, Esports, Investments",Verified
+Video Games,Sony Interactive Entertainment,Japan,https://www.sie.com,"9,000+","$27B+",1993,Large Enterprise,"PlayStation, Console, Exclusive Titles",Verified
+Video Games,Nintendo,Japan,https://www.nintendo.com,"6,700+","$12B+",1889,Large Enterprise,"Switch, Mario, Zelda, Family Entertainment",Verified
+Video Games,Microsoft Gaming (Xbox),USA,https://www.xbox.com,"221K+ (Parent)","$211B+ (Parent)",2001,Conglomerate,"Xbox, Game Pass, PC Gaming",Verified
+Video Games,Epic Games,USA,https://www.epicgames.com,"3,300+","$6B+",1991,Large Enterprise,"Fortnite, Unreal Engine, Epic Games Store",Verified
+Video Games,Ubisoft,France,https://www.ubisoft.com,"21,000+","$2.5B+",1986,Large Enterprise,"Assassin's Creed, Far Cry, Open World",Verified
+Video Games,Take-Two Interactive,USA,https://www.take2games.com,"6,500+","$5.3B+",1993,Large Enterprise,"Grand Theft Auto, NBA 2K, Red Dead",Verified
+Video Games,NetEase Games,China,https://www.neteasegames.com,"33,000+","$14B+",1997,Large Enterprise,"PC & Mobile Games, Diablo Immortal",Verified
+Video Games,Bandai Namco Entertainment,Japan,https://www.bandainamcoent.com,"8,000+","$7B+",2006,Large Enterprise,"Gundam, Tekken, Pac-Man, Anime Games",Verified
+Video Games,Square Enix,Japan,https://www.jp.square-enix.com,"5,600+","$3B+",1975,Large Enterprise,"Final Fantasy, Dragon Quest, RPGs",Verified
+Video Games,Capcom,Japan,https://www.capcom.com,"3,200+","$1B+",1979,Large Enterprise,"Resident Evil, Street Fighter, Monster Hunter",Verified
+Video Games,Sega Sammy Holdings,Japan,https://www.segasammy.co.jp,"7,000+","$3.5B+",2004,Large Enterprise,"Sonic, Yakuza, Arcade Games",Verified
+Video Games,CD Projekt,Poland,https://www.cdprojekt.com,"1,200+","$300M+",1994,Mid-Market,"The Witcher, Cyberpunk 2077",Verified
+Video Games,Rockstar Games,USA,https://www.rockstargames.com,"2,000+","N/A",1998,Large Enterprise,"Grand Theft Auto, Red Dead Redemption",Verified
+Video Games,Roblox Corporation,USA,https://www.roblox.com,"2,100+","$2.7B+",2004,Large Enterprise,"Roblox Platform, User-Generated Games",Verified
+Video Games,Supercell,Finland,https://supercell.com,"400+","$2B+",2010,Mid-Market,"Mobile Games (Clash of Clans, Brawl Stars)",Verified
+Video Games,Mojang Studios (Microsoft),Sweden,https://www.minecraft.net,"100+","N/A",2009,Small Enterprise,"Minecraft, Franchise Management",Verified
+Publishing,Penguin Random House,Germany,https://www.penguinrandomhouse.com,"10,000+","$4B+",2013,Large Enterprise,"Trade Book Publishing, Global Imprints",Verified
+Publishing,Hachette Livre,France,https://www.hachette.com,"7,000+","$2.8B+",1826,Large Enterprise,"Trade Book Publishing, Educational",Verified
+Publishing,HarperCollins Publishers,USA,https://www.harpercollins.com,"4,000+","$2B+",1817,Large Enterprise,"Trade Book Publishing, Children's Books",Verified
+Publishing,Simon & Schuster,USA,https://www.simonandschuster.com,"1,500+","$1.1B+",1924,Large Enterprise,"Trade Book Publishing, Bestsellers",Verified
+Publishing,Macmillan Publishers,USA,https://us.macmillan.com,"1,500+","$1.5B+",1843,Large Enterprise,"Trade, Educational, Academic Publishing",Verified
+Publishing,Scholastic Corporation,USA,https://www.scholastic.com,"5,600+","$1.7B+",1920,Large Enterprise,"Children's Books, Book Fairs, Educational",Verified
+Publishing,Bertelsmann SE & Co. KGaA,Germany,https://www.bertelsmann.com,"145,000+","$23B+",1835,Conglomerate,"Media Services, Education, Publishing",Verified
+Publishing,Springer Nature,Germany,https://www.springernature.com,"13,000+","$2B+",2015,Large Enterprise,"Scientific, Technical, Medical Journals",Verified
+Publishing,RELX Group (Elsevier),UK,https://www.relx.com,"33,000+","$10B+",1993,Conglomerate,"Scientific & Medical Information, Analytics",Verified
+Publishing,Thomson Reuters,Canada,https://www.thomsonreuters.com,"26,000+","$6.7B+",2008,Large Enterprise,"Legal, Tax, Accounting, News Information",Verified
+Publishing,John Wiley & Sons,USA,https://www.wiley.com,"5,300+","$2B+",1807,Large Enterprise,"Academic Publishing, Research, Education",Verified
+Publishing,Bloomberg L.P.,USA,https://www.bloomberg.com,"21,000+","$12B+",1981,Large Enterprise,"Financial Data, News, Terminal Services",Verified
+Publishing,News Corp (HarperCollins),USA,https://www.newscorp.com,"24,000+","$10B+",2013,Conglomerate,"News, Book Publishing, Digital Real Estate",Verified
+Publishing,Pearson PLC,UK,https://www.pearson.com,"20,000+","$4.5B+",1844,Large Enterprise,"Educational Publishing, Assessment",Verified
+Publishing,Oxford University Press,UK,https://global.oup.com,"6,000+","$1B+",1586,Large Enterprise,"Academic Publishing, Dictionaries",Verified
+Publishing,Cambridge University Press,UK,https://www.cambridge.org,"2,500+","$400M+",1534,Large Enterprise,"Academic Publishing, Assessment",Verified
+Publishing,Egmont Group,Denmark,https://www.egmont.com,"6,500+","$2B+",1878,Large Enterprise,"Children's Books, Magazines, Media",Verified
+Publishing,Shueisha,Japan,https://www.shueisha.co.jp,"800+","$1B+",1925,Large Enterprise,"Manga Publishing (Shonen Jump)",Verified
+Publishing,Kodansha,Japan,https://www.kodansha.co.jp,"1,000+","$1B+",1909,Large Enterprise,"Manga, Book Publishing, Magazines",Verified
+Social Media,Facebook (Meta),USA,https://www.meta.com,"86,000+","$134B+",2004,Conglomerate,"Social Networking, Metaverse, Advertising",Verified
+Social Media,YouTube (Google),USA,https://www.youtube.com,"190K+ (Parent)","$282B+ (Parent)",2005,Conglomerate,"Video Sharing, UGC, Live Streaming",Verified
+Social Media,TikTok (ByteDance),China,https://www.tiktok.com,"150K+ (Parent)","$85B+ (Parent)",2016,Conglomerate,"Short-Form Video, Algorithmic Feed",Verified
+Social Media,Instagram (Meta),USA,https://www.instagram.com,"86K+ (Parent)","$134B+ (Parent)",2010,Conglomerate,"Photo & Video Sharing, Stories, Reels",Verified
+Social Media,Twitter (X Corp),USA,https://twitter.com,"2,500+","$3.4B+",2006,Large Enterprise,"Microblogging, Real-Time News",Verified
+Social Media,LinkedIn (Microsoft),USA,https://www.linkedin.com,"221K+ (Parent)","$211B+ (Parent)",2003,Conglomerate,"Professional Networking, Recruitment",Verified
+Social Media,Snapchat (Snap Inc.),USA,https://www.snapchat.com,"5,400+","$4.6B+",2011,Large Enterprise,"Ephemeral Messaging, AR Lenses",Verified
+Social Media,Pinterest,USA,https://www.pinterest.com,"3,800+","$3B+",2010,Large Enterprise,"Visual Discovery, Idea Collection",Verified
+Social Media,Reddit,USA,https://www.reddit.com,"2,000+","$800M+",2005,Large Enterprise,"Online Communities, Forum-Based",Verified
+Social Media,WeChat (Tencent),China,https://www.wechat.com,"113K+ (Parent)","$82B+ (Parent)",2011,Conglomerate,"Super App, Messaging, Payments",Verified
+Social Media,QQ (Tencent),China,https://im.qq.com,"113K+ (Parent)","$82B+ (Parent)",1999,Conglomerate,"Instant Messaging, Gaming, Social",Verified
+Social Media,LINE Corporation,Japan,https://linecorp.com,"4,000+","$2B+",2000,Large Enterprise,"Messaging, Mobile Payments, Content",Verified
+Social Media,VKontakte (VK),Russia,https://vk.com,"10,000+","$2B+",2006,Large Enterprise,"Social Networking, Russian Market",Verified
+Social Media,Telegram Messenger,Dubai,https://telegram.org,"500+","N/A",2013,Mid-Market,"Encrypted Messaging, Channels",Verified
+Social Media,Discord,USA,https://discord.com,"700+","$500M+",2015,Mid-Market,"Gaming Communication, Communities",Verified
+Social Media,Tumblr,USA,https://www.tumblr.com,"200+","N/A",2007,Small Enterprise,"Microblogging, Social Networking",Verified
+Social Media,Twitch (Amazon),USA,https://www.twitch.tv,"1.6M+ (Parent)","$574B+ (Parent)",2011,Conglomerate,"Live Game Streaming, Esports",Verified
+Social Media,Weibo Corporation,China,https://www.weibo.com,"5,000+","$2.5B+",2009,Large Enterprise,"Microblogging, Chinese Social Media",Verified
+Advertising & Marketing,WPP plc,UK,https://www.wpp.com,"109,000+","$17B+",1985,Conglomerate,"Advertising, PR, Media Buying",Verified
+Advertising & Marketing,Omnicom Group,USA,https://www.omnicomgroup.com,"71,000+","$15B+",1986,Conglomerate,"Advertising, Marketing, Corporate Communications",Verified
+Advertising & Marketing,Publicis Groupe,France,https://www.publicisgroupe.com,"101,000+","$15B+",1926,Conglomerate,"Digital Transformation, Creative, Media",Verified
+Advertising & Marketing,Interpublic Group (IPG),USA,https://www.interpublic.com,"54,000+","$11B+",1902,Conglomerate,"Advertising, Digital Marketing, PR",Verified
+Advertising & Marketing,Dentsu Group,Japan,https://www.group.dentsu.com,"65,000+","$9B+",1901,Conglomerate,"Advertising, Japanese Market, Digital",Verified
+Advertising & Marketing,Havas Group,France,https://www.havas.com,"20,000+","$3B+",1835,Large Enterprise,"Creative Advertising, Media, Health",Verified
+Advertising & Marketing,Accenture Interactive,Ireland,https://www.accenture.com,"721,000+ (Parent)","$64B+ (Parent)",2009,Conglomerate,"Digital Marketing, Customer Experience",Verified
+Advertising & Marketing,Deluxe Media,USA,https://www.bydeluxe.com,"4,000+","$600M+",1915,Large Enterprise,"Content Localization, Distribution",Verified
+Advertising & Marketing,MDC Partners,USA,https://www.mdc-partners.com,"5,000+","$1.5B+",1980,Large Enterprise,"Creative Agencies, Marketing Services",Verified
+Advertising & Marketing,Hakuhodo DY Holdings,Japan,https://www.hakuhodody.com,"15,000+","$7B+",1895,Large Enterprise,"Advertising, Japanese Market, Research",Verified
+Advertising & Marketing,Cheil Worldwide,South Korea,https://www.cheil.com,"6,000+","$2B+",1973,Large Enterprise,"Advertising, Samsung Affiliate, Global",Verified
+Advertising & Marketing,BlueFocus Communication Group,China,https://www.bluefocusgroup.com,"8,000+","$6B+",1996,Large Enterprise,"Digital Marketing, PR, Chinese Market",Verified
+Advertising & Marketing,Focus Media Network,China,https://www.focusmedia.cn,"5,000+","$2B+",2003,Large Enterprise,"Out-of-Home Advertising, Elevator Screens",Verified
+Advertising & Marketing,The Trade Desk,USA,https://www.thetradedesk.com,"2,500+","$2B+",2009,Large Enterprise,"Programmatic Advertising, DSP",Verified
+Advertising & Marketing,R/GA (Interpublic),USA,https://www.rga.com,"1,500+","N/A",1977,Large Enterprise,"Digital Advertising, Innovation Consulting",Verified
+Advertising & Marketing,BBDO Worldwide,USA,https://www.bbdo.com,"15,000+","N/A",1891,Large Enterprise,"Creative Advertising, Global Network",Verified
+Advertising & Marketing,Ogilvy,UK,https://www.ogilvy.com,"20,000+","N/A",1948,Large Enterprise,"Advertising, Marketing, PR",Verified
+Advertising & Marketing,Saatchi & Saatchi,USA,https://www.saatchi.com,"6,000+","N/A",1970,Large Enterprise,"Creative Advertising, Brand Building",Verified
+Advertising & Marketing,McCann Worldgroup,USA,https://www.mccannworldgroup.com,"20,000+","N/A",1930,Large Enterprise,"Creative Advertising, Global Campaigns",Verified
+News Agencies,Reuters (Thomson Reuters),Canada,https://www.reuters.com,"26,000+ (Parent)","$6.7B+ (Parent)",1851,Large Enterprise,"Financial News, International Wire Service",Verified
+News Agencies,Associated Press (AP),USA,https://www.ap.org,"3,700+","$600M+",1846,Non-Profit Cooperative,"News Wire Service, Photo Journalism",Verified
+News Agencies,Agence France-Presse (AFP),France,https://www.afp.com,"2,300+","$400M+",1835,Non-Profit,"International News Wire Service",Verified
+News Agencies,Bloomberg News,USA,https://www.bloomberg.com,"21,000+","$12B+",1990,Large Enterprise,"Financial News, Data, Terminal",Verified
+News Agencies,CNN,USA,https://www.cnn.com,"4,000+","$5B+",1980,Large Enterprise,"Cable News, Digital News, International",Verified
+News Agencies,BBC News,UK,https://www.bbc.com/news,"22,000+ (Parent)","$6B+ (Parent)",1922,Public Broadcaster,"International News, Public Service",Verified
+News Agencies,Al Jazeera Media Network,Qatar,https://www.aljazeera.com,"4,000+","$600M+",1996,Large Enterprise,"International News, Middle East Focus",Verified
+News Agencies,Xinhua News Agency,China,https://www.xinhuanet.com,"10,000+","N/A",1931,State-Owned,"Official State News Agency of China",Verified
+News Agencies,TASS (Russia),Russia,https://tass.com,"3,000+","N/A",1904,State-Owned,"Official State News Agency of Russia",Verified
+News Agencies,ANI (India),India,https://www.aninews.in,"500+","N/A",1971,Mid-Market,"Multimedia News Wire Service, India",Verified
+News Agencies,Kyodo News,Japan,https://english.kyodonews.net,"1,500+","N/A",1945,Non-Profit Cooperative,"Japanese News Cooperative, Wire Service",Verified
+News Agencies,DPA (Germany),Germany,https://www.dpa.com,"1,000+","$200M+",1949,Cooperative,"German News Wire Service",Verified
+News Agencies,EFE (Spain),Spain,https://www.efe.com,"3,000+","$300M+",1939,State-Owned,"Spanish Language News Wire Service",Verified
+News Agencies,Press Trust of India (PTI),India,https://www.ptinews.com,"400+","N/A",1947,Non-Profit Cooperative,"Indian News Cooperative, Wire Service",Verified
+News Agencies,The New York Times Company,USA,https://www.nytimes.com,"5,700+","$2.4B+",1851,Large Enterprise,"Newspaper, Digital Subscription",Verified
+News Agencies,The Washington Post,USA,https://www.washingtonpost.com,"1,000+","N/A",1877,Large Enterprise,"Newspaper, Digital Media",Verified
+News Agencies,The Guardian,UK,https://www.theguardian.com,"1,500+","$300M+",1821,Trust-Owned,"Newspaper, Digital Media, Membership",Verified
+News Agencies,Wall Street Journal (News Corp),USA,https://www.wsj.com,"24K+ (Parent)","$10B+ (Parent)",1889,Conglomerate,"Financial Newspaper, Digital Subscription",Verified
+Animation & VFX,The Walt Disney Animation Studios,USA,https://www.disneyanimation.com,"800+","N/A",1923,Large Enterprise,"Feature Animation, CGI, Legacy IP",Verified
+Animation & VFX,Pixar Animation Studios,USA,https://www.pixar.com,"1,200+","N/A",1986,Large Enterprise,"CGI Feature Films, Rendering Technology",Verified
+Animation & VFX,DreamWorks Animation,USA,https://www.dreamworks.com,"2,800+","$1.2B+",1994,Large Enterprise,"CGI Feature Films, Franchises",Verified
+Animation & VFX,Industrial Light & Magic (ILM),USA,https://www.ilm.com,"2,000+","N/A",1975,Large Enterprise,"Visual Effects (VFX), Film",Verified
+Animation & VFX,Weta Digital,New Zealand,https://www.wetafx.co.nz,"1,700+","N/A",1993,Large Enterprise,"VFX, Motion Capture, Avatar, LOTR",Verified
+Animation & VFX,Studio Ghibli,Japan,https://www.ghibli.jp,"300+","$100M+",1985,Mid-Market,"Hand-Drawn Anime, Feature Films",Verified
+Animation & VFX,Sony Pictures Imageworks,USA,https://www.imageworks.com,"1,000+","N/A",1992,Large Enterprise,"VFX, Animation, Spider-Verse",Verified
+Animation & VFX,Blue Sky Studios (Disney),USA,https://www.blueskystudios.com,"450+","N/A",1987,Mid-Market,"CGI Animation (Closed 2021)",Verified
+Animation & VFX,Framestore,UK,https://www.framestore.com,"3,000+","$300M+",1986,Large Enterprise,"VFX, Animation, Advertising",Verified
+Animation & VFX,MPC (Moving Picture Company),UK,https://www.mpcfilm.com,"2,500+","N/A",1970,Large Enterprise,"VFX, Film, Advertising",Verified
+Animation & VFX,DNEG (Double Negative),UK,https://www.dneg.com,"10,000+","$400M+",1998,Large Enterprise,"Oscar-Winning VFX, Feature Films",Verified
+Animation & VFX,Bardel Entertainment,Canada,https://www.bardel.ca,"400+","N/A",1991,Mid-Market,"TV Animation, CGI, Service Work",Verified
+Animation & VFX,Cartoon Network Studios,USA,https://www.cartoonnetwork.com,"300+","N/A",1994,Large Enterprise,"TV Animation, Original Series",Verified
+Animation & VFX,Nickelodeon Animation Studio,USA,https://www.nickanimation.com,"500+","N/A",1990,Large Enterprise,"TV Animation, Kids & Family",Verified
+Animation & VFX,Bardel Entertainment,Canada,https://www.bardel.ca,"400+","N/A",1991,Mid-Market,"TV Animation, CGI, Service Work",Verified
+Animation & VFX,Toei Animation,Japan,https://www.toei-anim.co.jp,"500+","$200M+",1948,Large Enterprise,"Anime Production, Long-Running Series",Verified
+Animation & VFX,Bones Inc.,Japan,https://www.bones.co.jp,"150+","N/A",1998,Small Enterprise,"High-Quality Anime, Original & Adaptation",Verified
+Animation & VFX,Trigger Inc.,Japan,https://www.st-trigger.co.jp,"50+","N/A",2011,Small Enterprise,"Anime, Original Action Series",Verified
+Animation & VFX,Mappa Co., Ltd,Japan,https://www.mappa.co.jp,"300+","N/A",2011,Mid-Market,"Anime Production, High-Profile Series",Verified
+Talent Agencies,CAA (Creative Artists Agency),USA,https://www.caa.com,"2,500+","$500M+",1975,Large Enterprise,"Talent, Sports, Brand Representation",Verified
+Talent Agencies,WME (William Morris Endeavor),USA,https://www.wmeagency.com,"2,000+","$6B+ (Parent)",2009,Large Enterprise,"Talent, Media, Events",Verified
+Talent Agencies,ICM Partners,USA,https://www.icmpartners.com,"300+","$200M+",1975,Mid-Market,"Talent, Literary, Sports",Verified
+Talent Agencies,UTA (United Talent Agency),USA,https://www.unitedtalent.com,"1,000+","$300M+",1991,Large Enterprise,"Talent, Branding, Ventures",Verified
+Talent Agencies,Gersh Agency,USA,https://www.gersh.com,"150+","N/A",1949,Mid-Market,"Talent, Literary Representation",Verified
+Talent Agencies,Paradigm Talent Agency,USA,https://www.paradigmagency.com,"300+","N/A",1996,Mid-Market,"Talent, Music, Literary",Verified
+Talent Agencies,YG Entertainment,South Korea,https://www.ygfamily.com,"600+","$300M+",1996,Mid-Market,"K-Pop, Artist Management, Production",Verified
+Talent Agencies,HoriPro Inc.,Japan,https://www.horipro.co.jp,"200+","$100M+",1960,Mid-Market,"Talent, Music, Production, Japan",Verified
+Talent Agencies,Johnny & Associates,Japan,https://www.johnnys-net.jp,"200+","N/A",1975,Mid-Market,"Male Idol Groups, Talent, Japan",Verified
+Talent Agencies,Amoeba Culture,South Korea,https://www.amoeba-culture.com,"50+","N/A",2006,Small Enterprise,"Hip-Hop Music Label & Management",Verified
+Talent Agencies,Innovative Artists,USA,https://www.innovativeartists.com,"100+","N/A",1981,Small Enterprise,"Talent, Literary, Commercial",Verified
+Talent Agencies,A3 Artists Agency,USA,https://a3artistsagency.com,"150+","N/A",2019,Small Enterprise,"Talent, Branding, Digital",Verified
+Talent Agencies,APA Agency,USA,https://www.apa-agency.com,"200+","N/A",1962,Mid-Market,"Talent, Literary, Packaging",Verified
+Talent Agencies,Buchwald Agency,USA,https://www.buchwald.com,"100+","N/A",1977,Small Enterprise,"Talent, Commercial, Voiceover",Verified
+Talent Agencies,The Mirisch Agency,USA,https://www.mirischagency.com,"N/A","N/A",1957,Small Enterprise,"Literary, Film & TV Packaging",Verified
+Talent Agencies,DHOLIC Entertainment,South Korea,https://www.dholicent.com,"30+","N/A",2018,Small Enterprise,"K-Pop, Actor Management",Verified
+Talent Agencies,Artist Company,Japan,https://www.the-artist.co.jp,"50+","N/A",1973,Small Enterprise,"Actor Management, Japan",Verified
+Talent Agencies,IMPA (India),India,https://www.impamodels.com,"100+","N/A",1999,Small Enterprise,"Model Management, India",Verified
+Theme Parks,Walt Disney Parks & Resorts,USA,https://disneyparks.disney.go.com,"130,000+","$28B+",1971,Conglomerate,"Theme Parks, Resorts, Cruise Line",Verified
+Theme Parks,Universal Parks & Resorts,USA,https://www.universalparks.com,"25,000+","$5B+",1964,Large Enterprise,"Theme Parks, Resorts, IP Integration",Verified
+Theme Parks,Merlin Entertainments,UK,https://www.merlinentertainments.biz,"28,000+","$2B+",1999,Large Enterprise,"LEGOLAND, Madame Tussauds, Attractions",Verified
+Theme Parks,Ocean Park Corporation,Hong Kong,https://www.oceanpark.com.hk,"2,000+","$200M+",1977,Large Enterprise,"Marine Park, Attractions, Hong Kong",Verified
+Theme Parks,Chimelong Group,China,https://www.chimelong.com,"10,000+","$1B+",1989,Large Enterprise,"Theme Parks, Resorts, Chinese Market",Verified
+Theme Parks,Everland Resort,South Korea,https://www.everland.com,"5,000+","$500M+",1976,Large Enterprise,"Theme Park, Zoo, Water Park",Verified
+Theme Parks,Lotte World,South Korea,https://adventure.lotteworld.com,"3,000+","$300M+",1989,Large Enterprise,"Indoor Theme Park, Complex",Verified
+Theme Parks,Europa-Park,Germany,https://www.europapark.de,"4,500+","$500M+",1975,Large Enterprise,"Theme Park, European Themed Areas",Verified
+Theme Parks,PortAventura World,Spain,https://www.portaventuraworld.com,"4,000+","$400M+",1995,Large Enterprise,"Theme Park, Resorts, Europe",Verified
+Theme Parks,Tivoli Gardens,Denmark,https://www.tivoli.dk,"1,000+","$100M+",1843,Large Enterprise,"Amusement Park, Gardens, Copenhagen",Verified
+Theme Parks,Parques Reunidos,Spain,https://www.parquesreunidos.com,"15,000+","$1B+",1967,Large Enterprise,"Amusement Parks, Water Parks, Zoos",Verified
+Theme Parks,Six Flags Entertainment,USA,https://www.sixflags.com,"2,500+","$1.5B+",1961,Large Enterprise,"Thrill Rides, Regional Parks",Verified
+Theme Parks,Cedar Fair Entertainment,USA,https://www.cedarfair.com,"4,500+","$1.5B+",1983,Large Enterprise,"Amusement Parks, Water Parks",Verified
+Theme Parks,Hersheypark,USA,https://www.hersheypark.com,"2,000+","$300M+",1906,Large Enterprise,"Chocolate-Themed Park, Pennsylvania",Verified
+Theme Parks,SeaWorld Parks & Entertainment,USA,https://seaworld.com,"4,500+","$1.7B+",1964,Large Enterprise,"Marine Life Parks, Thrill Rides",Verified
+Theme Parks,Busch Gardens,USA,https://buschgardens.com,"2,000+","N/A",1959,Large Enterprise,"Adventure Parks, Themed Areas",Verified
+Theme Parks,Legoland Parks (Merlin),UK,https://www.legoland.com,"28K+ (Parent)","$2B+ (Parent)",1996,Large Enterprise,"LEGO-Themed Parks, Family Rides",Verified
+Theme Parks,Tokyo Disney Resort,Japan,https://www.tokyodisneyresort.jp,"20,000+","$4B+",1983,Large Enterprise,"Disney-Themed Parks, Oriental Land Co.",Verified
+Radio Broadcasting,iHeartMedia,USA,https://www.iheartmedia.com,"12,500+","$4B+",2008,Large Enterprise,"Radio Stations, Podcasting, Events",Verified
+Radio Broadcasting,Cumulus Media,USA,https://www.cumulusmedia.com,"4,500+","$1B+",1997,Large Enterprise,"Radio Stations, Digital Audio",Verified
+Radio Broadcasting,Sirius XM Holdings,USA,https://www.siriusxm.com,"4,000+","$9B+",1990,Large Enterprise,"Satellite Radio, Streaming",Verified
+Radio Broadcasting,BBC Radio,UK,https://www.bbc.co.uk/sounds,"22K+ (Parent)","$6B+ (Parent)",1922,Public Broadcaster,"Public Service Radio, National Stations",Verified
+Radio Broadcasting,Radio France,France,https://www.radiofrance.com,"4,500+","$700M+",1975,Public Broadcaster,"Public Service Radio, French Market",Verified
+Radio Broadcasting,ARD Radio (Germany),Germany,https://www.ard.de,"23K+ (Parent)","$9B+ (Parent)",1950,Public Broadcaster,"Public Service Radio, National Network",Verified
+Radio Broadcasting,RAI Radio,Italy,https://www.raiplayradio.it,"12K+ (Parent)","$2.5B+ (Parent)",1924,Public Broadcaster,"Public Service Radio, Italian Market",Verified
+Radio Broadcasting,NRK Radio,Norway,https://radio.nrk.no,"3,500+","$700M+",1933,Public Broadcaster,"Public Service Radio, Norway",Verified
+Radio Broadcasting,SBS Radio (Australia),Australia,https://www.sbs.com.au/radio,"1,500+","$300M+",1975,Public Broadcaster,"Multicultural Broadcasting, Australia",Verified
+Radio Broadcasting,CBC Radio,Canada,https://www.cbc.ca/radio,"7,500+","$1B+",1936,Public Broadcaster,"Public Service Radio, Canada",Verified
+Radio Broadcasting,NPR (National Public Radio),USA,https://www.npr.org,"900+","$300M+",1970,Non-Profit,"Public Radio, News, Cultural Programming",Verified
+Radio Broadcasting,TalkSport (Wireless Group),UK,https://talksport.com,"500+","$100M+",2000,Mid-Market,"Sports Radio, Live Commentary",Verified
+Radio Broadcasting,Entercom Communications,USA,https://www.audacy.com,"4,500+","$1.5B+",1968,Large Enterprise,"Radio Broadcasting, Sports News",Verified
+Radio Broadcasting,Radio Free Europe/Radio Liberty,Czech Republic,https://www.rferl.org,"500+","$100M+",1949,Non-Profit,"International Broadcasting, News",Verified
+Radio Broadcasting,ABC Radio (Australia),Australia,https://www.abc.net.au/radio,"4,500+","$1B+",1932,Public Broadcaster,"Public Service Radio, Australia",Verified
+Radio Broadcasting,NHK Radio Japan,Japan,https://www.nhk.or.jp/radio,"10K+ (Parent)","$6B+ (Parent)",1926,Public Broadcaster,"Public Service Radio, Japan",Verified
+Radio Broadcasting,Radio Mirchi (Entertainment Network),India,https://www.radiomirchi.com,"500+","$100M+",2001,Mid-Market,"FM Radio, Indian Market",Verified
+Radio Broadcasting,RTÉ Radio,Ireland,https://www.rte.ie/radio,"1,800+","$400M+",1926,Public Broadcaster,"Public Service Radio, Ireland",Verified
+Podcasting,Spotify Studios,Sweden,https://newsroom.spotify.com,"9,200+","$13B+",2006,Large Enterprise,"Music, Podcasts, Original Content",Verified
+Podcasting,Apple Podcasts,USA,https://www.apple.com/apple-podcasts,"164K+ (Parent)","$383B+ (Parent)",2014,Conglomerate,"Podcast Distribution, Platform",Verified
+Podcasting,NPR Podcasts,USA,https://www.npr.org/podcasts,"900+","$300M+",2005,Non-Profit,"News, Cultural, In-House Podcasts",Verified
+Podcasting,Wondery (Amazon),USA,https://wondery.com,"100+","N/A",2016,Small Enterprise,"Premium Podcast Network, Originals",Verified
+Podcasting,Gimlet Media (Spotify),USA,https://www.gimletmedia.com,"100+","N/A",2014,Small Enterprise,"Narrative Podcasts, Originals",Verified
+Podcasting,The Ringer (Spotify),USA,https://www.theringer.com,"100+","N/A",2016,Small Enterprise,"Sports, Pop Culture, Podcast Network",Verified
+Podcasting,Barstool Sports,USA,https://www.barstoolsports.com,"300+","$200M+",2003,Mid-Market,"Sports, Comedy, Podcasts, Blog",Verified
+Podcasting,Luminary Media,USA,https://www.luminary.com,"50+","N/A",2018,Small Enterprise,"Podcast Subscription Service, Originals",Verified
+Podcasting,iHeartPodcasts,USA,https://www.iheart.com/podcast-network,"12.5K+ (Parent)","$4B+ (Parent)",2018,Large Enterprise,"Podcast Network, Radio Talent",Verified
+Podcasting,Stitcher Media (SiriusXM),USA,https://www.stitcher.com,"100+","N/A",2007,Small Enterprise,"Podcast App, Network, Production",Verified
+Podcasting,Radiotopia,USA,https://www.radiotopia.fm,"N/A","N/A",2014,Small Enterprise,"Independent Podcast Collective",Verified
+Podcasting,Crooked Media,USA,https://crooked.com,"100+","$50M+",2017,Small Enterprise,"Political Podcasts, Progressive Voices",Verified
+Podcasting,Parcast (Spotify),USA,https://www.parcast.com,"100+","N/A",2016,Small Enterprise,"Scripted Podcasts, True Crime",Verified
+Podcasting,The Daily Wire,USA,https://www.dailywire.com,"300+","$200M+",2015,Mid-Market,"Conservative Commentary, Podcasts",Verified
+Podcasting,The Athletic (New York Times),USA,https://theathletic.com,"600+","N/A",2016,Mid-Market,"Sports Journalism, Podcasts",Verified
+Podcasting,TED Audio Collective,USA,https://www.ted.com/about/programs-initiatives/ted-audio-collective,"500+","N/A",1984,Mid-Market,"Ideas, Talks, Educational Content",Verified
+Podcasting,The Joe Rogan Experience,USA,https://open.spotify.com/show/4rOoJ6Egrf8K2IrywzwOMk,"N/A","N/A",2009,Small Enterprise,"Long-Form Conversations, Comedy",Verified
+Podcasting,Call Her Daddy (Spotify),USA,https://open.spotify.com/show/0St5YrSJsaFZW3d1f0XaCj,"N/A","N/A",2018,Small Enterprise,"Comedy, Relationships, Pop Culture",Verified
+Online Content,BuzzFeed,USA,https://www.buzzfeed.com,"1,200+","$500M+",2006,Large Enterprise,"Digital Media, Quizzes, Listicles",Verified
+Online Content,Vice Media,USA,https://www.vice.com,"3,000+","$600M+",1994,Large Enterprise,"Digital Media, Documentary, Youth Culture",Verified
+Online Content,Vox Media,USA,https://www.voxmedia.com,"500+","$200M+",2011,Mid-Market,"Digital Journalism, Explanatory News",Verified
+Online Content,The Huffington Post,USA,https://www.huffpost.com,"700+","N/A",2005,Mid-Market,"Digital News, Blogging, Opinion",Verified
+Online Content,Refinery29 (Vice),USA,https://www.refinery29.com,"500+","N/A",2005,Mid-Market,"Women's Lifestyle, Digital Media",Verified
+Online Content,Insider Inc.,USA,https://www.insider.com,"1,000+","$100M+",2007,Mid-Market,"Digital Journalism, Business News",Verified
+Online Content,Business Insider,USA,https://www.businessinsider.com,"1,000+","$100M+",2007,Mid-Market,"Financial News, Digital Media",Verified
+Online Content,Mashable,USA,https://mashable.com,"200+","$50M+",2005,Small Enterprise,"Tech News, Digital Culture",Verified
+Online Content,Medium,USA,https://medium.com,"300+","$100M+",2012,Mid-Market,"Blogging Platform, User-Generated Content",Verified
+Online Content,Quora,USA,https://www.quora.com,"200+","$50M+",2009,Small Enterprise,"Q&A Platform, Knowledge Sharing",Verified
+Online Content,Genius Media Group,USA,https://genius.com,"100+","N/A",2009,Small Enterprise,"Lyrics Annotation, Music Knowledge",Verified
+Online Content,IGN Entertainment,USA,https://www.ign.com,"500+","$100M+",1996,Mid-Market,"Video Game News, Reviews, Entertainment",Verified
+Online Content,Fandom,USA,https://www.fandom.com,"500+","$200M+",2004,Mid-Market,"Wiki Platform, Fan Communities",Verified
+Online Content,Screen Rant,Canada,https://screenrant.com,"100+","N/A",2003,Small Enterprise,"Movie & TV News, Reviews, Features",Verified
+Online Content,PopSugar,USA,https://www.popsugar.com,"200+","$100M+",2006,Small Enterprise,"Lifestyle, Beauty, Fashion, Entertainment",Verified
+Online Content,Bleacher Report,USA,https://bleacherreport.com,"400+","N/A",2005,Mid-Market,"Sports News, Digital Media",Verified
+Online Content,The Dodo,USA,https://www.thedodo.com,"100+","N/A",2014,Small Enterprise,"Animal Content, Viral Videos",Verified
+Online Content,Complex Networks,USA,https://www.complex.com,"300+","$100M+",2002,Mid-Market,"Youth Culture, Music, Style, Sneakers",Verified
+Media Conglomerates,Comcast Corporation (NBCUniversal),USA,https://www.comcastcorporation.com,"190,000+","$121B+",1963,Conglomerate,"Telecom, Media, Broadcasting, Theme Parks",Verified
+Media Conglomerates,The Walt Disney Company,USA,https://www.thewaltdisneycompany.com,"225,000+","$89B+",1923,Conglomerate,"Film, TV, Streaming, Theme Parks, Merchandise",Verified
+Media Conglomerates,Warner Bros. Discovery,USA,https://www.wbd.com,"35,000+","$42B+",2022,Conglomerate,"Film, TV, Streaming, News, Sports",Verified
+Media Conglomerates,News Corp,USA,https://www.newscorp.com,"24,000+","$10B+",2013,Conglomerate,"Publishing, Newspapers, Digital Real Estate",Verified
+Media Conglomerates,Bertelsmann SE & Co. KGaA,Germany,https://www.bertelsmann.com,"145,000+","$23B+",1835,Conglomerate,"Publishing, TV, Music, Media Services",Verified
+Media Conglomerates,ViacomCBS (Paramount Global),USA,https://www.paramount.com,"24,000+","$30B+",2019,Conglomerate,"Film, TV, Streaming, Publishing",Verified
+Media Conglomerates,Sony Group Corporation,Japan,https://www.sony.com,"114,000+","$86B+",1946,Conglomerate,"Electronics, Gaming, Film, Music, Financial",Verified
+Media Conglomerates,Lagardère Group,France,https://www.lagardere.com,"28,000+","$8B+",1992,Conglomerate,"Publishing, Travel Retail, Broadcasting",Verified
+Media Conglomerates,Vivendi,France,https://www.vivendi.com,"30,000+","$13B+",1853,Conglomerate,"Music, TV, Film, Publishing, Telecom",Verified
+Media Conglomerates,ProSiebenSat.1 Media,Germany,https://www.prosiebensat1.com,"4,000+","$5B+",1986,Large Enterprise,"Commercial TV, Digital Media",Verified
+Media Conglomerates,Schibsted Media Group,Norway,https://www.schibsted.com,"5,000+","$1B+",1839,Large Enterprise,"Newspapers, Online Classifieds",Verified
+Media Conglomerates,Reliance Industries Media,India,https://www.ril.com,"250K+ (Parent)","$109B+ (Parent)",1966,Conglomerate,"Telecom, Media, Entertainment",Verified
+Media Conglomerates,Baidu (China),China,https://www.baidu.com,"41,000+","$19B+",2000,Conglomerate,"Search Engine, AI, Streaming, Autonomous Driving",Verified
+Media Conglomerates,Alibaba Digital Media,China,https://www.alibabagroup.com,"254,000+","$130B+",1999,Conglomerate,"E-commerce, Cloud, Digital Media, Entertainment",Verified
+Media Conglomerates,Modern Times Group (MTG),Sweden,https://www.mtg.com,"1,000+","$300M+",1987,Large Enterprise,"Gaming, Esports, Digital Entertainment",Verified
+Media Conglomerates,Mediaset Group,Italy,https://www.mediaset.it,"4,000+","$4B+",1978,Large Enterprise,"Commercial Broadcasting, TV Production",Verified
+Media Conglomerates,TelevisaUnivision,Mexico,https://www.televisaunivision.com,"10,000+","$5B+",1955,Large Enterprise,"Spanish-Language Content, Broadcasting",Verified
+Media Conglomerates,Globo Group,Brazil,https://redeglobo.globo.com,"20,000+","$4B+",1965,Large Enterprise,"Portuguese-Language Content, Telenovelas",Verified
+Media Conglomerates,Seven West Media,Australia,https://www.sevenwestmedia.com.au,"4,000+","$1B+",1994,Large Enterprise,"Television, Newspaper, Digital Media",Verified
+Live Events,Live Nation Entertainment,USA,https://www.livenationentertainment.com,"10,000+","$23B+",2010,Large Enterprise,"Concert Promotion, Ticketing, Venue Operation",Verified
+Live Events,AEG Presents,USA,https://www.aegpresents.com,"5,000+","$5B+",2002,Large Enterprise,"Concert Promotion, Festival Production",Verified
+Live Events,Feld Entertainment,USA,https://www.feldentertainment.com,"600+","$500M+",1970,Mid-Market,"Live Family Entertainment, Circus, Ice Shows",Verified
+Live Events,Cirque du Soleil,Canada,https://www.cirquedusoleil.com,"4,000+","$1B+",1984,Large Enterprise,"Contemporary Circus, Theatrical Productions",Verified
+Live Events,TEG Live,Australia,https://www.teg.com.au,"1,000+","$200M+",1930,Mid-Market,"Ticketing, Live Entertainment Promotion",Verified
+Live Events,CTS Eventim,Germany,https://www.eventim.de,"2,000+","$2B+",1989,Large Enterprise,"Ticketing, Live Event Promotion",Verified
+Live Events,Ed Sheeran Ltd (Promoter),UK,https://www.edsheeran.com,"N/A","N/A",2005,Small Enterprise,"Artist-Led Touring & Promotion",Verified
+Live Events,Messina Touring Group,USA,https://www.messinatouring.com,"50+","N/A",2000,Small Enterprise,"Concert Promotion, Tour Management",Verified
+Live Events,TNA (Talent Nation Australia),Australia,https://www.tna.agency,"20+","N/A",2009,Small Enterprise,"Artist Management, Event Production",Verified
+Live Events,Frontier Touring,Australia,https://www.frontiertouring.com,"50+","N/A",1979,Small Enterprise,"Concert Promotion, Artist Tours",Verified
+Live Events,SFX Entertainment,USA,https://www.sfx.com,"N/A","N/A",2012,Small Enterprise,"Electronic Music Festivals, Events",Verified
+Live Events,CMC Live,China,https://www.cmclive.com,"200+","N/A",2005,Small Enterprise,"Concert Promotion, Chinese Market",Verified
+Live Events,Goldenvoice (AEG),USA,https://www.goldenvoice.com,"200+","N/A",1980,Small Enterprise,"Music Festivals (Coachella, Stagecoach)",Verified
+Live Events,Madison Square Garden Company,USA,https://www.msg.com,"5,000+","$1B+",1879,Large Enterprise,"Venue Management, Sports, Entertainment",Verified
+Live Events,Olympia Entertainment,USA,https://www.olympiaentertainment.com,"500+","N/A",1927,Small Enterprise,"Venue Management, Event Promotion",Verified
+Live Events,Round Room Live,USA,https://www.roundroomlive.com,"50+","N/A",2015,Small Enterprise,"Family Entertainment, Theatrical Tours",Verified
+Live Events,Bass Events,Netherlands,https://www.bassevents.nl,"30+","N/A",2001,Small Enterprise,"Electronic Music Events, Festival Production",Verified
+Live Events,Good Sport Entertainment,USA,https://www.goodsportent.com,"20+","N/A",2010,Small Enterprise,"Sports Marketing, Event Management",Verified
+Live Events,TEG Live,Australia,https://www.teg.com.au,"1,000+","$200M+",1930,Mid-Market,"Ticketing, Live Entertainment Promotion",Verified
+Sports Leagues,NFL (National Football League),USA,https://www.nfl.com,"1,200+","$20B+",1920,Large Enterprise,"American Football, Professional Sports League",Verified
+Sports Leagues,MLB (Major League Baseball),USA,https://www.mlb.com,"800+","$11B+",1903,Large Enterprise,"Baseball, Professional Sports League",Verified
+Sports Leagues,NBA (National Basketball Association),USA,https://www.nba.com,"1,100+","$10B+",1946,Large Enterprise,"Basketball, Professional Sports League",Verified
+Sports Leagues,NHL (National Hockey League),USA,https://www.nhl.com,"600+","$6B+",1917,Large Enterprise,"Ice Hockey, Professional Sports League",Verified
+Sports Leagues,FIFA (Fédération Internationale de Football Association),Switzerland,https://www.fifa.com,"800+","$5B+",1904,Large Enterprise,"International Football Governance, World Cup",Verified
+Sports Leagues,UEFA (Union of European Football Associations),Switzerland,https://www.uefa.com,"600+","$4B+",1954,Large Enterprise,"European Football Governance, Champions League",Verified
+Sports Leagues,Premier League,UK,https://www.premierleague.com,"200+","$7B+",1992,Large Enterprise,"English Football, Top-Flight League",Verified
+Sports Leagues,ICC (International Cricket Council),UAE,https://www.icc-cricket.com,"100+","$500M+",1909,Mid-Market,"International Cricket Governance, World Cup",Verified
+Sports Leagues,Formula One Group,UK,https://www.formula1.com,"1,000+","$3B+",1950,Large Enterprise,"Motorsport, Grand Prix Racing",Verified
+Sports Leagues,WWE (World Wrestling Entertainment),USA,https://www.wwe.com,"800+","$1B+",1953,Large Enterprise,"Sports Entertainment, Professional Wrestling",Verified
+Sports Leagues,ATP Tour,UK,https://www.atptour.com,"200+","$200M+",1972,Mid-Market,"Men's Professional Tennis, Tournaments",Verified
+Sports Leagues,WTA (Women's Tennis Association),USA,https://www.wtatennis.com,"150+","$150M+",1973,Mid-Market,"Women's Professional Tennis, Tournaments",Verified
+Sports Leagues,LPGA (Ladies Professional Golf Association),USA,https://www.lpga.com,"100+","$100M+",1950,Mid-Market,"Women's Professional Golf, Tournaments",Verified
+Sports Leagues,PGA Tour,USA,https://www.pgatour.com,"600+","$2B+",1929,Large Enterprise,"Men's Professional Golf, Tournaments",Verified
+Sports Leagues,ESPN (Disney),USA,https://www.espn.com,"4,000+","N/A (Parent)",1979,Large Enterprise,"Sports Broadcasting, Multimedia Platform",Verified
+Sports Leagues,Manchester United plc,UK,https://www.manutd.com,"1,000+","$700M+",1878:cite[1],Large Enterprise,"Football Club, Premier League":cite[1],Verified
+Sports Leagues,FC Barcelona,Spain,https://www.fcbarcelona.com,"500+","$600M+",1899:cite[7],Large Enterprise,"Football Club, La Liga, Multi-Sport Club":cite[7],Verified
+Sports Leagues,Real Madrid CF,Spain,https://www.realmadrid.com,"1,000+","$900M+",1902:cite[5],Large Enterprise,"Football Club, La Liga":cite[5],Verified
+Sports Leagues,Dallas Cowboys (NFL),USA,https://www.dallascowboys.com,"200+","$1B+",1960,Large Enterprise,"American Football, NFL Team",Verified

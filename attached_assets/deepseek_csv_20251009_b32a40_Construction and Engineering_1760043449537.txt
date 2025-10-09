@@ -1,0 +1,376 @@
+Industry,Company Name,HQ Country,Website,Employee Count,Revenue Estimate,Founded,Company Size,Specialization Tags,Status
+Residential Construction,Lennar Corporation,USA,https://www.lennar.com,"12,000+","$34B+",1954,Large Enterprise,"Homebuilding, Financial Services",Verified
+Residential Construction,D.R. Horton,USA,https://www.drhorton.com,"11,000+","$36B+",1978,Large Enterprise,"Single-Family Homes, First-Time Buyers",Verified
+Residential Construction,PulteGroup,USA,https://www.pultegroup.com,"6,000+","$16B+",1950,Large Enterprise,"Homebuilding, Mortgage Services",Verified
+Residential Construction,Toll Brothers,USA,https://www.tollbrothers.com,"5,500+","$10B+",1967,Large Enterprise,"Luxury Homes, Urban Development",Verified
+Residential Construction,Taylor Wimpey,UK,https://www.taylorwimpey.co.uk,"4,500+","$5B+",1880,Large Enterprise,"Residential Development, Land Planning",Verified
+Residential Construction,Barratt Developments,UK,https://www.barrattdevelopments.co.uk,"6,500+","$6B+",1958,Large Enterprise,"Housebuilding, Commercial Development",Verified
+Residential Construction,Sekisui House,Japan,https://www.sekisuihouse.co.jp,"27,000+","$22B+",1960,Large Enterprise,"Prefabricated Homes, Urban Development",Verified
+Residential Construction,Mitsui Fudosan Residential,Japan,https://www.mitsuifudosan.co.jp,"17,000+","$15B+",1941,Large Enterprise,"Real Estate Development, Property Management",Verified
+Residential Construction,Mirvac Group,Australia,https://www.mirvac.com,"1,200+","$2B+",1972,Medium Enterprise,"Residential, Commercial, Funds Management",Verified
+Residential Construction,Stockland,Australia,https://www.stockland.com.au,"1,500+","$2B+",1952,Medium Enterprise,"Residential Communities, Retail Town Centers",Verified
+Residential Construction,Lendlease Residential,Australia,https://www.lendlease.com,"9,000+","$8B+",1958,Large Enterprise,"Urban Regeneration, Apartments",Verified
+Residential Construction,Bouygues Immobilier,France,https://www.bouygues-immobilier.com,"5,000+","$6B+",1952,Large Enterprise,"Residential, Commercial, Urban Planning",Verified
+Residential Construction,Vinci Construction France,France,https://www.vinci-construction.fr,"115,000+","$53B+",1891,Large Enterprise,"Construction, Concessions, Energy",Verified
+Residential Construction,Vonovia SE,Germany,https://www.vonovia.de,"15,000+","$7B+",2001,Large Enterprise,"Residential Property Management, Development",Verified
+Residential Construction,China Vanke,China,https://www.vanke.com,"140,000+","$70B+",1984,Large Enterprise,"Property Development, Property Management",Verified
+Residential Construction,Country Garden,China,https://www.countrygarden.com.cn,"80,000+","$80B+",1992,Large Enterprise,"Property Development, Construction",Verified
+Residential Construction,DLF Limited,India,https://www.dlf.in,"4,000+","$2B+",1946,Medium Enterprise,"Residential, Commercial, SEZs",Verified
+Residential Construction,Emaar Properties,UAE,https://www.emaar.com,"5,000+","$7B+",1997,Large Enterprise,"Luxury Real Estate, Malls, Hospitality",Verified
+Residential Construction,Sobha Limited,India,https://www.sobha.com,"4,500+","$700M+",1995,Medium Enterprise,"Luxury Residential, Contracting",Verified
+Residential Construction,Cadillac Fairview,Canada,https://www.cadillacfairview.com,"2,000+","$2B+",1954,Medium Enterprise,"Commercial Real Estate, Property Management",Verified
+Commercial Construction,Skanska AB,Sweden,https://www.skanska.com,"30,000+","$17B+",1887,Large Enterprise,"Commercial Construction, Infrastructure",Verified
+Commercial Construction,Bechtel Corporation,USA,https://www.bechtel.com,"55,000+","$17B+",1898,Large Enterprise,"Engineering, Procurement, Construction",Verified
+Commercial Construction,Turner Construction,USA,https://www.turnerconstruction.com,"10,000+","$15B+",1902,Large Enterprise,"Commercial Buildings, Green Building",Verified
+Commercial Construction,AECOM,USA,https://www.aecom.com,"51,000+","$13B+",1990,Large Enterprise,"Design, Consulting, Construction",Verified
+Commercial Construction,Hochtief AG,Germany,https://www.hochtief.com,"55,000+","$28B+",1874,Large Enterprise,"Construction, Development, Concessions",Verified
+Commercial Construction,ACS Group,Spain,https://www.grupoacs.com,"150,000+","$40B+",1997,Large Enterprise,"Construction, Industrial Services, Concessions",Verified
+Commercial Construction,Balfour Beatty,UK,https://www.balfourbeatty.com,"26,000+","$10B+",1909,Large Enterprise,"Infrastructure, Support Services",Verified
+Commercial Construction,Bouygues Construction,France,https://www.bouygues-construction.com,"56,000+","$15B+",1952,Large Enterprise,"Building, Civil Works, Energy",Verified
+Commercial Construction,Obayashi Corporation,Japan,https://www.obayashi.co.jp,"16,000+","$15B+",1892,Large Enterprise,"General Contracting, Engineering",Verified
+Commercial Construction,Shimizu Corporation,Japan,https://www.shimz.co.jp,"11,000+","$13B+",1804,Large Enterprise,"Construction, Engineering, Design",Verified
+Commercial Construction,Lendlease Commercial,Australia,https://www.lendlease.com,"9,000+","$8B+",1958,Large Enterprise,"Commercial Development, PPPs",Verified
+Commercial Construction,Multiplex Constructions,Australia,https://www.multiplex.global,"2,500+","$3B+",1962,Medium Enterprise,"Commercial, Residential, Mixed-Use",Verified
+Commercial Construction,Clark Construction,USA,https://www.clarkconstruction.com,"4,500+","$5B+",1906,Large Enterprise,"Building, Civil, Green Construction",Verified
+Commercial Construction,PCL Construction,Canada,https://www.pcl.com,"4,500+","$8B+",1906,Large Enterprise,"General Contracting, Construction Management",Verified
+Commercial Construction,Samsung C&T Corporation,South Korea,https://www.samsungcnt.com,"7,000+","$25B+",1938,Large Enterprise,"Trading & Investment, Construction",Verified
+Commercial Construction,China State Construction Engineering,China,https://www.cscec.com,"356,000+","$300B+",1957,Large Enterprise,"Building Construction, Infrastructure",Verified
+Commercial Construction,Larsen & Toubro Construction,India,https://www.larsentoubro.com,"50,000+","$23B+",1938,Large Enterprise,"EPC, Technology, Engineering",Verified
+Commercial Construction,ASGC Construction,UAE,https://www.asgc.ae,"5,000+","$1B+",1989,Large Enterprise,"Building, Infrastructure, Fit-Out",Verified
+Commercial Construction,Arabtec Holding,UAE,https://www.arabtecholding.com,"40,000+","$3B+",1975,Large Enterprise,"Construction, Engineering, Infrastructure",Verified
+Civil Engineering,Fluor Corporation,USA,https://www.fluor.com,"40,000+","$14B+",1912,Large Enterprise,"EPC, Life Sciences, Infrastructure",Verified
+Civil Engineering,Jacobs Engineering Group,USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Professional Services, Construction",Verified
+Civil Engineering,KBR Inc.,USA,https://www.kbr.com,"29,000+","$6B+",1901,Large Enterprise,"Technology, Engineering, Solutions",Verified
+Civil Engineering,WSP Global,Canada,https://www.wsp.com,"67,000+","$11B+",1959,Large Enterprise,"Professional Services, Consulting",Verified
+Civil Engineering,Stantec,Canada,https://www.stantec.com,"26,000+","$5B+",1954,Large Enterprise,"Design, Engineering, Architecture",Verified
+Civil Engineering,SNC-Lavalin,Canada,https://www.snclavalin.com,"30,000+","$7B+",1911,Large Enterprise,"Engineering, Procurement, Construction",Verified
+Civil Engineering,Vinci SA,France,https://www.vinci.com,"272,000+","$62B+",1891,Large Enterprise,"Concessions, Contracting, Energy",Verified
+Civil Engineering,Ferrovial Agroman,Spain,https://www.ferrovial.com,"90,000+","$7B+",1952,Large Enterprise,"Infrastructure, Construction, Services",Verified
+Civil Engineering,Webuild Group,Italy,https://www.webuildgroup.com,"85,000+","$8B+",1906,Large Enterprise,"Large Infrastructure, Dams, Tunnels",Verified
+Civil Engineering,Acciona Construcción,Spain,https://www.acciona.com,"45,000+","$9B+",1997,Large Enterprise,"Sustainable Infrastructure, Water",Verified
+Civil Engineering,Sacyr,Spain,https://www.sacyr.com,"45,000+","$5B+",1986,Large Enterprise,"Construction, Concessions, Services",Verified
+Civil Engineering,McConnell Dowell,Australia,https://www.mcconnelldowell.com,"2,000+","$1B+",1961,Medium Enterprise,"Marine, Tunneling, Pipeline",Verified
+Civil Engineering,John Holland Group,Australia,https://www.johnholland.com.au,"5,000+","$3B+",1949,Large Enterprise,"Rail, Transport, Building",Verified
+Civil Engineering,Gammon Construction,Hong Kong,https://www.gammonconstruction.com,"3,000+","$1B+",1958,Medium Enterprise,"Buildings, Civil Engineering, Foundations",Verified
+Civil Engineering,HCC Limited,India,https://www.hccindia.com,"3,000+","$500M+",1926,Medium Enterprise,"Hydropower, Transport, Tunnels",Verified
+Civil Engineering,Hyundai Engineering & Construction,South Korea,https://www.hdec.kr,"8,000+","$15B+",1947,Large Enterprise,"Plant Construction, Civil Engineering",Verified
+Civil Engineering,China Communications Construction,China,https://en.ccccltd.cn,"150,000+","$100B+",2005,Large Enterprise,"Transportation Infrastructure, Dredging",Verified
+Civil Engineering,China Railway Construction Corporation,China,https://www.crcc.cn,"370,000+","$150B+",2007,Large Enterprise,"Railway Construction, Engineering",Verified
+Civil Engineering,Power Construction Corporation of China,China,https://www.powerchina.cn,"140,000+","$70B+",2011,Large Enterprise,"Hydropower, Infrastructure",Verified
+Industrial Construction,McDermott International,USA,https://www.mcdermott.com,"30,000+","$7B+",1923,Large Enterprise,"Offshore Oil & Gas, LNG",Verified
+Industrial Construction,Technip Energies,France,https://www.technipenergies.com,"15,000+","$7B+",2019,Large Enterprise,"Energy Projects, LNG, Hydrogen",Verified
+Industrial Construction,Saipem,Italy,https://www.saipem.com,"32,000+","$9B+",1957,Large Enterprise,"Offshore, Onshore, Drilling",Verified
+Industrial Construction,Petrofac,UK,https://www.petrofac.com,"8,500+","$4B+",1981,Large Enterprise,"Oil & Gas Services, Engineering",Verified
+Industrial Construction,Wood Group,UK,https://www.woodplc.com,"40,000+","$7B+",1912,Large Enterprise,"Consulting, Projects, Operations",Verified
+Industrial Construction,Chiyoda Corporation,Japan,https://www.chiyoda-corp.com,"5,000+","$3B+",1948,Large Enterprise,"LNG, Oil & Gas, Chemicals",Verified
+Industrial Construction,JGC Holdings,Japan,https://www.jgc.com,"7,000+","$6B+",1928,Large Enterprise,"Plant Engineering, Procurement, Construction",Verified
+Industrial Construction,GS Engineering & Construction,South Korea,https://www.gsenc.com,"5,000+","$10B+",1969,Large Enterprise,"Plant, Building, Civil Works",Verified
+Industrial Construction,SK Engineering & Construction,South Korea,https://www.skec.com,"4,000+","$8B+",1977,Large Enterprise,"Plant, Housing, Civil Engineering",Verified
+Industrial Construction,Daewoo Engineering & Construction,South Korea,https://www.daewooenc.com,"4,000+","$7B+",1973,Large Enterprise,"Plant, Civil, Building Construction",Verified
+Industrial Construction,Maire Tecnimont,Italy,https://www.mairetecnimont.com,"8,000+","$4B+",1928,Large Enterprise,"Energy, Petrochemicals, Fertilizers",Verified
+Industrial Construction,Linde Engineering,UK,https://www.linde-engineering.com,"5,000+","$3B+",1879,Large Enterprise,"Process Plants, Cryogenics",Verified
+Industrial Construction,Bechtel Industrial,USA,https://www.bechtel.com,"55,000+","$17B+",1898,Large Enterprise,"Mining & Metals, Industrial Plants",Verified
+Industrial Construction,KBR Industrial,USA,https://www.kbr.com,"29,000+","$6B+",1901,Large Enterprise,"Ammonia, Fertilizers, Petrochemicals",Verified
+Industrial Construction,Fluor Industrial,USA,https://www.fluor.com,"40,000+","$14B+",1912,Large Enterprise,"Life Sciences, Advanced Manufacturing",Verified
+Industrial Construction,Bilfinger SE,Germany,https://www.bilfinger.com,"35,000+","$5B+",1880,Large Enterprise,"Industrial Services, Engineering",Verified
+Industrial Construction,Amec Foster Wheeler (Wood Group),UK,https://www.woodplc.com,"40,000+","$7B+",1912,Large Enterprise,"Energy, Environment, Infrastructure",Verified
+Industrial Construction,Kiewit Corporation,USA,https://www.kiewit.com,"28,000+","$13B+",1884,Large Enterprise,"Heavy Civil, Industrial, Mining",Verified
+Industrial Construction,Black & Veatch,USA,https://www.bv.com,"10,000+","$4B+",1915,Large Enterprise,"Energy, Water, Telecommunications",Verified
+Construction Materials,LafargeHolcim,Switzerland,https://www.lafargeholcim.com,"72,000+","$30B+",2015,Large Enterprise,"Cement, Aggregates, Ready-Mix Concrete",Verified
+Construction Materials,HeidelbergCement,Germany,https://www.heidelbergcement.com,"51,000+","$22B+",1873,Large Enterprise,"Cement, Aggregates, Ready-Mix Concrete",Verified
+Construction Materials,CRH plc,Ireland,https://www.crh.com,"78,000+","$33B+",1970,Large Enterprise,"Building Materials, Products, Distribution",Verified
+Construction Materials,Cemex,Mexico,https://www.cemex.com,"42,000+","$15B+",1906,Large Enterprise,"Cement, Ready-Mix Concrete, Aggregates",Verified
+Construction Materials,Vulcan Materials,USA,https://www.vulcanmaterials.com,"12,000+","$7B+",1909,Large Enterprise,"Aggregates, Asphalt, Concrete",Verified
+Construction Materials,Martin Marietta Materials,USA,https://www.martinmarietta.com,"10,000+","$6B+",1939,Large Enterprise,"Aggregates, Cement, Magnesia Specialties",Verified
+Construction Materials,James Hardie Industries,Ireland,https://www.jameshardie.com,"5,000+","$4B+",1888,Large Enterprise,"Fiber Cement Siding, Backerboard",Verified
+Construction Materials,Knauf,Germany,https://www.knauf.com,"42,000+","$15B+",1932,Large Enterprise,"Gypsum, Insulation, Drywall Systems",Verified
+Construction Materials,Saint-Gobain,France,https://www.saint-gobain.com,"167,000+","$55B+",1665,Conglomerate,"Building Materials, Distribution, High-Performance",Verified
+Construction Materials,USG Corporation,USA,https://www.usg.com,"7,000+","$3B+",1901,Large Enterprise,"Drywall, Ceilings, Building Envelope",Verified
+Construction Materials,Boral Limited,Australia,https://www.boral.com,"9,000+","$3B+",1946,Large Enterprise,"Construction Materials, Fly Ash",Verified
+Construction Materials,Sumitomo Osaka Cement,Japan,https://www.soc.co.jp,"2,000+","$2B+",1907,Medium Enterprise,"Cement, Concrete, Construction Chemicals",Verified
+Construction Materials,Anhui Conch Cement,China,https://www.conch.cn,"50,000+","$30B+",1997,Large Enterprise,"Cement, Clinker, Concrete",Verified
+Construction Materials,UltraTech Cement,India,https://www.ultratechcement.com,"23,000+","$7B+",1983,Large Enterprise,"Grey Cement, White Cement, RMC",Verified
+Construction Materials,Asia Cement Corporation,Taiwan,https://www.acc.com.tw,"3,000+","$1B+",1957,Medium Enterprise,"Cement, Ready-Mix Concrete",Verified
+Construction Materials,Eagle Materials,USA,https://www.eaglematerials.com,"2,000+","$2B+",1963,Medium Enterprise,"Cement, Gypsum Wallboard, Paperboard",Verified
+Construction Materials,Steel Dynamics,USA,https://www.steeldynamics.com,"11,000+","$19B+",1993,Large Enterprise,"Steel Production, Fabrication, Recycling",Verified
+Construction Materials,ArcelorMittal Construction,Luxembourg,https://construction.arcelormittal.com,"166,000+","$76B+",2006,Large Enterprise,"Steel Sections, Building Solutions",Verified
+Heavy Equipment,Caterpillar Inc.,USA,https://www.caterpillar.com,"107,000+","$67B+",1925,Conglomerate,"Construction, Mining Equipment, Engines",Verified
+Heavy Equipment,Komatsu Ltd.,Japan,https://www.komatsu.com,"60,000+","$25B+",1921,Large Enterprise,"Construction, Mining, Utility Equipment",Verified
+Heavy Equipment,Volvo Construction Equipment,Sweden,https://www.volvoce.com,"14,000+","$9B+",1832,Large Enterprise,"Excavators, Loaders, Haulers",Verified
+Heavy Equipment,John Deere Construction,USA,https://www.deere.com,"82,000+","$52B+",1837,Conglomerate,"Excavators, Loaders, Backhoes",Verified
+Heavy Equipment,Hitachi Construction Machinery,Japan,https://www.hitachicm.com,"24,000+","$9B+",1970,Large Enterprise,"Excavators, Mining Equipment, Cranes",Verified
+Heavy Equipment,Liebherr Group,Switzerland,https://www.liebherr.com,"50,000+","$13B+",1949,Large Enterprise,"Cranes, Excavators, Mining Trucks",Verified
+Heavy Equipment,Sany Heavy Industry,China,https://www.sanyglobal.com,"20,000+","$15B+",1989,Large Enterprise,"Excavators, Cranes, Concrete Machinery",Verified
+Heavy Equipment,XCMG Group,China,https://www.xcmg.com,"16,000+","$15B+",1943,Large Enterprise,"Cranes, Earthmoving, Road Machinery",Verified
+Heavy Equipment,Doosan Infracore,South Korea,https://www.doosaninfracore.com,"4,000+","$4B+",1937,Large Enterprise,"Excavators, Loaders, Attachments",Verified
+Heavy Equipment,JCB,UK,https://www.jcb.com,"15,000+","$6B+",1945,Large Enterprise,"Excavators, Loaders, Telehandlers",Verified
+Heavy Equipment,CNH Industrial (Case CE),UK,https://www.cnhindustrial.com,"40,000+","$29B+",2012,Large Enterprise,"Construction, Agriculture Equipment",Verified
+Heavy Equipment,Terex Corporation,USA,https://www.terex.com,"7,000+","$4B+",1933,Large Enterprise,"Aerial Work Platforms, Cranes, Materials Processing",Verified
+Heavy Equipment,Kobelco Construction Machinery,Japan,https://www.kobelco.co.jp,"3,000+","$2B+",1930,Medium Enterprise,"Excavators, Cranes, Foundation Equipment",Verified
+Heavy Equipment,Atlas Copco,Sweden,https://www.atlascopco.com,"49,000+","$15B+",1873,Large Enterprise,"Compressors, Vacuum Solutions, Power Tools",Verified
+Heavy Equipment,Sandvik Mining and Rock Technology,Sweden,https://www.rocktechnology.sandvik,"44,000+","$11B+",1862,Large Enterprise,"Drill Rigs, Breakers, Loaders",Verified
+Heavy Equipment,Hyundai Construction Equipment,South Korea,https://www.hyundai-ce.com,"2,000+","$1B+",1985,Medium Enterprise,"Excavators, Wheel Loaders",Verified
+Heavy Equipment,Kubota Construction Machinery,Japan,https://www.kubota.com,"42,000+","$19B+",1890,Large Enterprise,"Mini Excavators, Compact Tractors",Verified
+Heavy Equipment,Zoomlion Heavy Industry,China,https://en.zoomlion.com,"20,000+","$8B+",1992,Large Enterprise,"Concrete Machinery, Cranes, Earthmoving",Verified
+Heavy Equipment,Manitou Group,France,https://www.manitou-group.com,"4,500+","$2B+",1958,Medium Enterprise,"Rough Terrain Forklifts, Telehandlers",Verified
+Construction Services,Quanta Services,USA,https://www.quantaservices.com,"48,000+","$20B+",1997,Large Enterprise,"Electrical, Pipeline, Industrial Services",Verified
+Construction Services,Mastec Inc.,USA,https://www.mastec.com,"23,000+","$9B+",1929,Large Enterprise,"Communications, Energy, Infrastructure",Verified
+Construction Services,Emcor Group,USA,https://www.emcorgroup.com,"33,000+","$11B+",1946,Large Enterprise,"Electrical, Mechanical, Facility Services",Verified
+Construction Services,APi Group Corporation,USA,https://www.apigroupinc.com,"17,000+","$4B+",1926,Large Enterprise,"Safety, Specialty, Industrial Services",Verified
+Construction Services,Great Lakes Dredge & Dock,USA,https://www.gldd.com,"200+","$600M+",1890,Medium Enterprise,"Dredging, Land Reclamation, Marine Construction",Verified
+Construction Services,Primoris Services Corporation,USA,https://www.prim.com,"12,000+","$4B+",1960,Large Enterprise,"Pipeline, Utilities, Energy",Verified
+Construction Services,WillScot Mobile Mini,USA,https://www.willscotmobilemini.com,"6,000+","$2B+",2017,Large Enterprise,"Modular Space, Portable Storage",Verified
+Construction Services,TopBuild Corp.,USA,https://www.topbuild.com,"10,000+","$5B+",1990,Large Enterprise,"Insulation Installation, Building Services",Verified
+Construction Services,Arcosa Inc.,USA,https://www.arcosa.com,"6,000+","$2B+",2018,Large Enterprise,"Aggregates, Construction Products, Wind Towers",Verified
+Construction Services,Northwest Pipe Company,USA,https://www.nwpipe.com,"1,000+","$400M+",1966,Medium Enterprise,"Water Transmission, Storm Drainage",Verified
+Construction Services,Globalvia Infraestructuras,Spain,https://www.globalvia.com,"2,000+","$1B+",2007,Medium Enterprise,"Transportation Infrastructure Management",Verified
+Construction Services,Keller Group,UK,https://www.keller.com,"10,000+","$3B+",1860,Large Enterprise,"Ground Engineering, Piling, Foundations",Verified
+Construction Services,Van Oord,Netherlands,https://www.vanoord.com,"5,000+","$2B+",1868,Large Enterprise,"Dredging, Marine Engineering, Offshore",Verified
+Construction Services,Boskalis,Netherlands,https://www.boskalis.com,"10,000+","$3B+",1910,Large Enterprise,"Dredging, Maritime Services, Offshore Energy",Verified
+Construction Services,DEME Group,Belgium,https://www.deme-group.com,"5,000+","$3B+",1991,Large Enterprise,"Dredging, Environmental, Marine Engineering",Verified
+Construction Services,Jan De Nul Group,Luxembourg,https://www.jandenul.com,"7,000+","$2B+",1938,Large Enterprise,"Dredging, Marine Works, Civil Engineering",Verified
+Construction Services,Huta Stalowa Wola,Poland,https://www.hsw.pl,"2,000+","$500M+",1937,Medium Enterprise,"Heavy Equipment, Steel Structures",Verified
+Construction Services,China Harbour Engineering,China,https://en.chec.bj,"10,000+","$7B+",1980,Large Enterprise,"Ports, Marine Engineering, Dredging",Verified
+Construction Services,Shapoorji Pallonji Group,India,https://www.shapoorjipallonji.com,"50,000+","$2B+",1865,Large Enterprise,"Construction, Engineering, Real Estate",Verified
+Infrastructure Development,Macquarie Group (Infrastructure),Australia,https://www.macquarie.com,"20,000+","$8B+",1969,Large Enterprise,"Infrastructure Asset Management, Banking",Verified
+Infrastructure Development,Brookfield Infrastructure Partners,Canada,https://www.brookfield.com,"200,000+","$90B+",1899,Conglomerate,"Utilities, Transport, Energy, Data",Verified
+Infrastructure Development,VINCI Concessions,France,https://www.vinci-concessions.com,"272,000+","$62B+",1891,Large Enterprise,"Motorways, Airports, Stadiums",Verified
+Infrastructure Development,Meridiam Infrastructure,France,https://www.meridiam.com,"200+","$20B+",2005,Medium Enterprise,"PPP, Sustainable Infrastructure Funds",Verified
+Infrastructure Development,Global Infrastructure Partners,USA,https://www.global-infra.com,"150+","$80B+",2006,Medium Enterprise,"Infrastructure Private Equity, Investments",Verified
+Infrastructure Development,John Laing Group,UK,https://www.laing.com,"200+","$500M+",1848,Medium Enterprise,"Infrastructure Project Investment, Management",Verified
+Infrastructure Development,Plenary Group,Australia,https://www.plenarygroup.com,"200+","$1B+",2004,Small Enterprise,"PPP Advisory, Project Delivery",Verified
+Infrastructure Development,Atkins Global Infrastructure,UK,https://www.atkinsglobal.com,"18,000+","$2B+",1938,Large Enterprise,"Design, Engineering, Project Management",Verified
+Infrastructure Development,OHL Concesiones,Spain,https://www.ohlconcesiones.com,"20,000+","$3B+",1999,Large Enterprise,"Transport, Social Infrastructure Concessions",Verified
+Infrastructure Development,Isolux Corsán (Grupo ACS),Spain,https://www.grupoacs.com,"150,000+","$40B+",1997,Large Enterprise,"Construction, Concessions, Energy",Verified
+Infrastructure Development,Grupo ACS Infraestructuras,Spain,https://www.grupoacs.com,"150,000+","$40B+",1997,Large Enterprise,"Infrastructure Development, Construction",Verified
+Infrastructure Development,IRB Infrastructure Developers,India,https://www.irb.co.in,"2,000+","$500M+",1998,Medium Enterprise,"Highways, Toll Roads, Construction",Verified
+Infrastructure Development,Adani Infrastructure,India,https://www.adanienterprises.com,"23,000+","$30B+",1988,Large Enterprise,"Ports, Airports, Power, Data Centers",Verified
+Infrastructure Development,Cintra (Ferrovial),Spain,https://www.cintra.com,"90,000+","$7B+",1952,Large Enterprise,"Toll Roads, Transportation Infrastructure",Verified
+Infrastructure Development,Transurban Group,Australia,https://www.transurban.com,"1,500+","$2B+",1996,Medium Enterprise,"Toll Roads, Urban Mobility",Verified
+Infrastructure Development,Atlantia SpA,Italy,https://www.atlantia.com,"11,000+","$7B+",1950,Large Enterprise,"Motorways, Airports, Mobility Services",Verified
+Infrastructure Development,Eiffage Concessions,France,https://www.eiffage.com,"72,000+","$22B+",1844,Large Enterprise,"PPP, Transport, Energy Concessions",Verified
+Infrastructure Development,Acciona Concesiones,Spain,https://www.acciona.com,"45,000+","$9B+",1997,Large Enterprise,"Renewable Energy, Water, Transport Concessions",Verified
+Engineering Design,Arup Group,UK,https://www.arup.com,"18,000+","$2B+",1946,Large Enterprise,"Design, Engineering, Planning, Advisory",Verified
+Engineering Design,Gensler,USA,https://www.gensler.com,"7,000+","$2B+",1965,Large Enterprise,"Architecture, Design, Planning",Verified
+Engineering Design,HOK Group,USA,https://www.hok.com,"1,800+","$1B+",1955,Large Enterprise,"Architecture, Engineering, Planning",Verified
+Engineering Design,Perkins and Will,USA,https://perkinswill.com,"2,500+","$700M+",1935,Large Enterprise,"Architecture, Interiors, Consulting",Verified
+Engineering Design,Jacobs Engineering Design,USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Design, Engineering, Construction",Verified
+Engineering Design,WSP Engineering Design,Canada,https://www.wsp.com,"67,000+","$11B+",1959,Large Enterprise,"Engineering, Design, Environmental",Verified
+Engineering Design,Stantec Design,Canada,https://www.stantec.com,"26,000+","$5B+",1954,Large Enterprise,"Design, Engineering, Architecture",Verified
+Engineering Design,Ramboll Group,Denmark,https://ramboll.com,"17,000+","$2B+",1945,Large Enterprise,"Engineering, Design, Consulting",Verified
+Engineering Design,Sweco Group,Sweden,https://www.sweco.com,"18,000+","$2B+",1997,Large Enterprise,"Engineering, Architecture, Environmental",Verified
+Engineering Design,Arcadis NV,Netherlands,https://www.arcadis.com,"36,000+","$4B+",1888,Large Enterprise,"Design, Consultancy, Engineering",Verified
+Engineering Design,Tetra Tech,USA,https://www.tetratech.com,"21,000+","$3B+",1966,Large Enterprise,"Water, Environment, Infrastructure",Verified
+Engineering Design,Black & Veatch Engineering,USA,https://www.bv.com,"10,000+","$4B+",1915,Large Enterprise,"Energy, Water, Telecommunications",Verified
+Engineering Design,Mott MacDonald,UK,https://www.mottmac.com,"18,000+","$2B+",1902,Large Enterprise,"Engineering, Management, Development",Verified
+Engineering Design,KEO International Consultants,Kuwait,https://www.keoic.com,"2,000+","$200M+",1964,Medium Enterprise,"Architecture, Engineering, Planning",Verified
+Engineering Design,Dar Al-Handasah,Lebanon,https://www.dar.com,"19,000+","$1B+",1956,Large Enterprise,"Engineering, Design, Project Management",Verified
+Engineering Design,Parsons Corporation,USA,https://www.parsons.com,"16,000+","$4B+",1944,Large Enterprise,"Engineering, Construction, Defense",Verified
+Engineering Design,Fluor Engineering,USA,https://www.fluor.com,"40,000+","$14B+",1912,Large Enterprise,"EPC, Life Sciences, Infrastructure",Verified
+Engineering Design,Bechtel Engineering,USA,https://www.bechtel.com,"55,000+","$17B+",1898,Large Enterprise,"Engineering, Procurement, Construction",Verified
+Engineering Design,SNC-Lavalin Engineering,Canada,https://www.snclavalin.com,"30,000+","$7B+",1911,Large Enterprise,"Engineering, Procurement, Construction",Verified
+Building Maintenance,CBRE Group Facility Services,USA,https://www.cbre.com,"105,000+","$32B+",1906,Large Enterprise,"Facility Management, Project Management",Verified
+Building Maintenance,JLL Facilities Management,UK,https://www.jll.com,"105,000+","$21B+",1783,Large Enterprise,"Property Management, Facility Services",Verified
+Building Maintenance,Sodexo Facility Management,France,https://www.sodexo.com,"412,000+","$24B+",1966,Conglomerate,"Facility Management, Food Services",Verified
+Building Maintenance,ISS Facility Services,Denmark,https://www.issworld.com,"350,000+","$11B+",1901,Large Enterprise,"Facility Services, Cleaning, Catering",Verified
+Building Maintenance,Compass Group Facility Services,UK,https://www.compass-group.com,"500,000+","$32B+",1941,Conglomerate,"Food Services, Support Services",Verified
+Building Maintenance,Aramark Facility Services,USA,https://www.aramark.com,"270,000+","$17B+",1959,Large Enterprise,"Food, Facilities, Uniform Services",Verified
+Building Maintenance,OCS Group,UK,https://www.ocs.com,"120,000+","$2B+",1900,Large Enterprise,"Cleaning, Security, Facilities",Verified
+Building Maintenance,Cushman & Wakefield Facility Services,USA,https://www.cushmanwakefield.com,"51,000+","$10B+",1917,Large Enterprise,"Facility Management, Project Services",Verified
+Building Maintenance,ABM Industries,USA,https://www.abm.com,"100,000+","$8B+",1909,Large Enterprise,"Facility Services, Engineering, Cleaning",Verified
+Building Maintenance,Engie Services,France,https://www.engie.com,"160,000+","$66B+",1946,Large Enterprise,"Energy Services, Facility Management",Verified
+Building Maintenance,Johnson Controls Building Solutions,USA,https://www.johnsoncontrols.com,"100,000+","$27B+",1885,Large Enterprise,"HVAC, Fire, Security, Building Management",Verified
+Building Maintenance,ServiceMaster Brands,USA,https://www.servicemaster.com,"13,000+","$3B+",1929,Large Enterprise,"Restoration, Cleaning, Pest Control",Verified
+Building Maintenance,Planon Software,Netherlands,https://www.planonsoftware.com,"500+","$100M+",1982,Small Enterprise,"IWMS, Facility Management Software",Verified
+Building Maintenance,Facilio Inc.,USA,https://facilio.com,"200+","$50M+",2017,Small Enterprise,"IoT, Facility Management, CMMS",Verified
+Building Maintenance,FacilityONE Technologies,USA,https://www.facilityone.com,"100+","$20M+",1995,Small Enterprise,"CMMS, Facility Management Software",Verified
+Building Maintenance,MaintainX,USA,https://www.getmaintainx.com,"200+","$50M+",2018,Small Enterprise,"CMMS, Work Order Management",Verified
+Building Maintenance,UpKeep Maintenance Management,USA,https://www.onupkeep.com,"200+","$50M+",2014,Small Enterprise,"CMMS, Maintenance Management",Verified
+Building Maintenance,FiiX Software,Canada,https://www.fiixsoftware.com,"200+","$50M+",2009,Small Enterprise,"CMMS, Maintenance Software",Verified
+Building Maintenance,SAP Facility Management,Germany,https://www.sap.com,"107,400+","$33B+",1972,Large Enterprise,"ERP, IWMS, Enterprise Software",Verified
+Demolition & Decommissioning,NorthStar Group Services,USA,https://www.northstargroupservices.com,"5,000+","$1B+",1985,Large Enterprise,"Environmental, Demolition, Decommissioning",Verified
+Demolition & Decommissioning,Erith Group,UK,https://www.erith.com,"500+","$100M+",1895,Small Enterprise,"Demolition, Remediation, Recycling",Verified
+Demolition & Decommissioning,DSM Demolition,UK,https://www.dsmdemolition.com,"200+","$50M+",1979,Small Enterprise,"Demolition, Asbestos Removal",Verified
+Demolition & Decommissioning,ATI Demolition,USA,https://www.atidemolition.com,"100+","$20M+",1994,Small Enterprise,"Industrial Demolition, Decontamination",Verified
+Demolition & Decommissioning,Prospect Industries,USA,https://www.prospectus.com,"N/A","N/A",,Unknown,Unknown,Unverified
+Demolition & Decommissioning,Veolia Decommissioning Services,France,https://www.veolia.com,"220,000+","$34B+",1853,Large Enterprise,"Nuclear Decommissioning, Waste Management",Verified
+Demolition & Decommissioning,Bechtel Decommissioning,USA,https://www.bechtel.com,"55,000+","$17B+",1898,Large Enterprise,"Nuclear, Environmental, Decommissioning",Verified
+Demolition & Decommissioning,Fluor Decommissioning,USA,https://www.fluor.com,"40,000+","$14B+",1912,Large Enterprise,"Environmental, Nuclear Decommissioning",Verified
+Demolition & Decommissioning,Jacobs Decommissioning,USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Nuclear, Environmental, Decommissioning",Verified
+Demolition & Decommissioning,AECOM Decommissioning,USA,https://www.aecom.com,"51,000+","$13B+",1990,Large Enterprise,"Environmental, Nuclear Services",Verified
+Demolition & Decommissioning,Babcock International Group,UK,https://www.babcockinternational.com,"30,000+","$5B+",1891,Large Enterprise,"Defense, Nuclear Engineering, Decommissioning",Verified
+Demolition & Decommissioning,Studsvik AB,Sweden,https://www.studsvik.com,"600+","$100M+",1947,Small Enterprise,"Nuclear Services, Waste Management",Verified
+Demolition & Decommissioning,Westinghouse Electric Company,USA,https://www.westinghousenuclear.com,"9,000+","$5B+",1886,Large Enterprise,"Nuclear Technology, Fuel, Services",Verified
+Demolition & Decommissioning,GE Hitachi Nuclear Decommissioning,USA,https://nuclear.gepower.com,"2,000+","$1B+",2007,Medium Enterprise,"Nuclear Reactor Technology, Services",Verified
+Demolition & Decommissioning,Orano Decommissioning,France,https://www.orano.group,"16,000+","$5B+",1976,Large Enterprise,"Nuclear Fuel Cycle, Decommissioning",Verified
+Demolition & Decommissioning,Sellafield Ltd,UK,https://www.sellafieldsites.com,"11,000+","$3B+",1947,Large Enterprise,"Nuclear Decommissioning, Waste Management",Verified
+Demolition & Decommissioning,EnergySolutions,USA,https://www.energysolutions.com,"1,500+","$500M+",1995,Medium Enterprise,"Nuclear Services, Waste Management",Verified
+Demolition & Decommissioning,Ansaldo Nucleare,Italy,https://www.ansaldonucleare.it,"1,000+","$200M+",1853,Medium Enterprise,"Nuclear Engineering, Services",Verified
+Demolition & Decommissioning,TUV SUD Decommissioning,Germany,https://www.tuvsud.com,"26,000+","$3B+",1866,Large Enterprise,"Testing, Inspection, Certification",Verified
+Environmental Engineering,Tetra Tech Environmental,USA,https://www.tetratech.com,"21,000+","$3B+",1966,Large Enterprise,"Water, Environment, Resource Management",Verified
+Environmental Engineering,AECOM Environment,USA,https://www.aecom.com,"51,000+","$13B+",1990,Large Enterprise,"Environmental Planning, Remediation",Verified
+Environmental Engineering,Stantec Environmental,Canada,https://www.stantec.com,"26,000+","$5B+",1954,Large Enterprise,"Environmental Services, Water, Ecology",Verified
+Environmental Engineering,Arcadis Environmental,Netherlands,https://www.arcadis.com,"36,000+","$4B+",1888,Large Enterprise,"Environmental Consulting, Remediation",Verified
+Environmental Engineering,Wood Environment,UK,https://www.woodplc.com,"40,000+","$7B+",1912,Large Enterprise,"Environmental Consulting, Remediation",Verified
+Environmental Engineering,Jacobs Environment,USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Environmental Consulting, Remediation",Verified
+Environmental Engineering,ERM Group,UK,https://www.erm.com,"7,000+","$2B+",1971,Large Enterprise,"Sustainability, Environmental Consulting",Verified
+Environmental Engineering,Geosyntec Consultants,USA,https://www.geosyntec.com,"1,500+","$300M+",1983,Medium Enterprise,"Environmental, Geotechnical, Water",Verified
+Environmental Engineering,Golder Associates (WSP),Canada,https://www.golder.com,"7,000+","$1B+",1960,Large Enterprise,"Environmental, Geotechnical, Mining",Verified
+Environmental Engineering,Ramboll Environment,Denmark,https://ramboll.com,"17,000+","$2B+",1945,Large Enterprise,"Environment & Health, Water, Energy",Verified
+Environmental Engineering,WSP Environment,Canada,https://www.wsp.com,"67,000+","$11B+",1959,Large Enterprise,"Environmental Consulting, Planning",Verified
+Environmental Engineering,SLR Consulting,UK,https://www.slrconsulting.com,"1,500+","$200M+",1994,Medium Enterprise,"Environmental, Advisory, Sustainability",Verified
+Environmental Engineering,TRC Companies,USA,https://www.trccompanies.com,"6,000+","$600M+",1969,Large Enterprise,"Environmental, Engineering, Consulting",Verified
+Environmental Engineering,CH2M HILL (Jacobs),USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Water, Environment, Transportation",Verified
+Environmental Engineering,AECOM Water,USA,https://www.aecom.com,"51,000+","$13B+",1990,Large Enterprise,"Water Resources, Treatment, Conveyance",Verified
+Environmental Engineering,Black & Veatch Water,USA,https://www.bv.com,"10,000+","$4B+",1915,Large Enterprise,"Water Treatment, Resource Recovery",Verified
+Environmental Engineering,Mott MacDonald Water,UK,https://www.mottmac.com,"18,000+","$2B+",1902,Large Enterprise,"Water, Environment, Management",Verified
+Environmental Engineering,Atkins Water,UK,https://www.atkinsglobal.com,"18,000+","$2B+",1938,Large Enterprise,"Water, Environment, Infrastructure",Verified
+Environmental Engineering,GHD Group,Australia,https://www.ghd.com,"10,000+","$2B+",1928,Large Enterprise,"Engineering, Architecture, Environmental",Verified
+Architectural Services,Gensler,USA,https://www.gensler.com,"7,000+","$2B+",1965,Large Enterprise,"Architecture, Design, Planning",Verified
+Architectural Services,HOK Group,USA,https://www.hok.com,"1,800+","$1B+",1955,Large Enterprise,"Architecture, Engineering, Planning",Verified
+Architectural Services,Perkins and Will,USA,https://perkinswill.com,"2,500+","$700M+",1935,Large Enterprise,"Architecture, Interiors, Consulting",Verified
+Architectural Services,IBI Group,Canada,https://ibigroup.com,"3,000+","$300M+",1974,Medium Enterprise,"Architecture, Planning, Technology",Verified
+Architectural Services,Aecom Architecture,USA,https://www.aecom.com,"51,000+","$13B+",1990,Large Enterprise,"Architecture, Design, Planning",Verified
+Architectural Services,Jacobs Architecture,USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Architecture, Engineering, Design",Verified
+Architectural Services,Stantec Architecture,Canada,https://www.stantec.com,"26,000+","$5B+",1954,Large Enterprise,"Architecture, Engineering, Design",Verified
+Architectural Services,SOM (Skidmore Owings & Merrill),USA,https://www.som.com,"1,200+","$500M+",1936,Large Enterprise,"Architecture, Urban Planning, Engineering",Verified
+Architectural Services,Foster + Partners,UK,https://www.fosterandpartners.com,"1,500+","$300M+",1967,Large Enterprise,"Architecture, Integrated Design",Verified
+Architectural Services,Zaha Hadid Architects,UK,https://www.zaha-hadid.com,"500+","$100M+",1979,Small Enterprise,"Architecture, Urbanism, Design",Verified
+Architectural Services,BIG (Bjarke Ingels Group),Denmark,https://big.dk,"600+","$100M+",2005,Small Enterprise,"Architecture, Urban Planning, Product Design",Verified
+Architectural Services,Nikken Sekkei,Japan,https://www.nikken.co.jp,"2,500+","$500M+",1900,Large Enterprise,"Architecture, Engineering, Planning",Verified
+Architectural Services,Gensler Asia,Hong Kong,https://www.gensler.com,"7,000+","$2B+",1965,Large Enterprise,"Architecture, Design, Planning",Verified
+Architectural Services,Aedas,Hong Kong,https://www.aedas.com,"1,400+","$200M+",2002,Medium Enterprise,"Architecture, Master Planning",Verified
+Architectural Services,Woods Bagot,Australia,https://www.woodsbagot.com,"1,000+","$200M+",1869,Medium Enterprise,"Architecture, Consulting, Master Planning",Verified
+Architectural Services,Hassell Studio,Australia,https://www.hassellstudio.com,"500+","$100M+",1938,Small Enterprise,"Architecture, Landscape Architecture, Urban Design",Verified
+Architectural Services,DP Architects,Singapore,https://www.dpa.com.sg,"1,200+","$150M+",1967,Medium Enterprise,"Architecture, Engineering, Planning",Verified
+Architectural Services,RTKL Associates (Arcadis),USA,https://www.arcadis.com,"36,000+","$4B+",1888,Large Enterprise,"Architecture, Planning, Design",Verified
+Project Management,Turner & Townsend,UK,https://www.turnerandtownsend.com,"10,000+","$800M+",1946,Large Enterprise,"Cost Management, Project Management",Verified
+Project Management,Mace Group,UK,https://www.macegroup.com,"7,000+","$2B+",1990,Large Enterprise,"Project Management, Construction",Verified
+Project Management,AECOM Project Management,USA,https://www.aecom.com,"51,000+","$13B+",1990,Large Enterprise,"Program Management, Construction Management",Verified
+Project Management,Jacobs Project Management,USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Project Management, Construction Management",Verified
+Project Management,Stantec PM,Canada,https://www.stantec.com,"26,000+","$5B+",1954,Large Enterprise,"Project Management, Construction Services",Verified
+Project Management,WSP Project Management,Canada,https://www.wsp.com,"67,000+","$11B+",1959,Large Enterprise,"Project Management, Advisory",Verified
+Project Management,Arcadis Project Management,Netherlands,https://www.arcadis.com,"36,000+","$4B+",1888,Large Enterprise,"Project Management, Program Management",Verified
+Project Management,CH2M HILL Project Management,USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Program Management, Construction Management",Verified
+Project Management,Fluor Project Management,USA,https://www.fluor.com,"40,000+","$14B+",1912,Large Enterprise,"Project Management, Construction Management",Verified
+Project Management,Bechtel Project Management,USA,https://www.bechtel.com,"55,000+","$17B+",1898,Large Enterprise,"Project Management, Engineering",Verified
+Project Management,Hill International,USA,https://www.hillintl.com,"500+","$100M+",1976,Small Enterprise,"Project Management, Risk Management",Verified
+Project Management,Currie & Brown,UK,https://www.curriebrown.com,"2,000+","$200M+",1885,Medium Enterprise,"Cost Management, Project Management",Verified
+Project Management,Rider Levett Bucknall,UK,https://www.rlb.com,"4,000+","$400M+",1947,Medium Enterprise,"Cost Management, Project Management",Verified
+Project Management,EC Harris (Arcadis),UK,https://www.arcadis.com,"36,000+","$4B+",1888,Large Enterprise,"Project Management, Cost Consultancy",Verified
+Project Management,Gleeds,UK,https://www.gleeds.com,"2,500+","$300M+",1885,Medium Enterprise,"Project Management, Cost Management",Verified
+Project Management,Project Control Group,USA,https://www.projectcontrol.com,"100+","$20M+",1990,Small Enterprise,"Project Controls, Consulting",Verified
+Project Management,PM Group,Ireland,https://www.pmgroup-global.com,"3,500+","$500M+",1973,Medium Enterprise,"Project Management, Engineering, Architecture",Verified
+Project Management,Colliers Project Leaders,Canada,https://www.colliersprojectleaders.com,"500+","$100M+",1976,Small Enterprise,"Project Management, Advisory",Verified
+Project Management,Linea5 Group,Italy,https://www.linea5group.com,"100+","$20M+",2001,Small Enterprise,"Project Management, Engineering",Verified
+Real Estate Development,Brookfield Properties,Canada,https://www.brookfieldproperties.com,"200,000+","$90B+",1899,Conglomerate,"Commercial, Residential, Retail",Verified
+Real Estate Development,Simon Property Group,USA,https://www.simon.com,"4,500+","$5B+",1993,Large Enterprise,"Malls, Premium Outlets, Mixed-Use",Verified
+Real Estate Development,Tishman Speyer,USA,https://www.tishmanspeyer.com,"2,000+","$2B+",1978,Medium Enterprise,"Commercial, Residential, Real Estate",Verified
+Real Estate Development,Related Companies,USA,https://www.related.com,"4,000+","$5B+",1972,Large Enterprise,"Mixed-Use, Affordable Housing, Luxury",Verified
+Real Estate Development,Hines,USA,https://www.hines.com,"5,000+","$4B+",1957,Large Enterprise,"Commercial, Residential, Industrial",Verified
+Real Estate Development,Swire Properties,Hong Kong,https://www.swireproperties.com,"30,000+","$3B+",1972,Large Enterprise,"Mixed-Use, Retail, Commercial",Verified
+Real Estate Development,CapitaLand,Singapore,https://www.capitaland.com,"13,000+","$4B+",2000,Large Enterprise,"Real Estate Investment, Development",Verified
+Real Estate Development,Mitsubishi Estate,Japan,https://www.mec.co.jp,"5,000+","$10B+",1937,Large Enterprise,"Office, Retail, Residential Development",Verified
+Real Estate Development,Mitsui Fudosan,Japan,https://www.mitsuifudosan.co.jp,"17,000+","$15B+",1941,Large Enterprise,"Real Estate Development, Leasing",Verified
+Real Estate Development,Suntec Real Estate Investment Trust,Singapore,https://www.suntecreit.com,"100+","$500M+",2004,Small Enterprise,"REIT, Commercial Property",Verified
+Real Estate Development,Unibail-Rodamco-Westfield,France,https://www.urw.com,"3,500+","$5B+",2018,Large Enterprise,"Shopping Centers, Convention Centers",Verified
+Real Estate Development,Klépierre,France,https://www.klepierre.com,"1,500+","$1B+",1990,Medium Enterprise,"Shopping Center Owner, Manager",Verified
+Real Estate Development,Link REIT,Hong Kong,https://www.linkreit.com,"500+","$1B+",2005,Small Enterprise,"REIT, Retail, Parking Facilities",Verified
+Real Estate Development,Westfield Corporation (Unibail),Australia,https://www.westfield.com,"3,500+","$5B+",2018,Large Enterprise,"Shopping Centers, Retail Destinations",Verified
+Real Estate Development,Ivanhoé Cambridge,Canada,https://www.ivanhoecambridge.com,"1,500+","$80B+",1953,Large Enterprise,"Real Estate Investment, Development",Verified
+Real Estate Development,Forest City Realty Trust,USA,https://www.forestcity.net,"1,000+","$800M+",1920,Medium Enterprise,"Mixed-Use, Office, Residential",Verified
+Real Estate Development,Howard Hughes Corporation,USA,https://www.howardhughes.com,"500+","$1B+",2010,Small Enterprise,"Master-Planned Communities, Mixed-Use",Verified
+Real Estate Development,Oxley Holdings,Singapore,https://www.oxley.com.sg,"500+","$500M+",2000,Small Enterprise,"Residential, Commercial, Industrial",Verified
+Specialty Contracting,Quanta Services Specialty,USA,https://www.quantaservices.com,"48,000+","$20B+",1997,Large Enterprise,"Electrical, Specialty Contracting",Verified
+Specialty Contracting,Emcor Specialty Contracting,USA,https://www.emcorgroup.com,"33,000+","$11B+",1946,Large Enterprise,"Mechanical, Electrical, Plumbing",Verified
+Specialty Contracting,APi Group Specialty,USA,https://www.apigroupinc.com,"17,000+","$4B+",1926,Large Enterprise,"Specialty Services, Safety",Verified
+Specialty Contracting,Trade Construction Group,USA,https://www.tradeconstruction.com,"N/A","N/A",,Unknown,Unknown,Unverified
+Specialty Contracting,Performance Contracting Inc.,USA,https://www.pci.com,"5,000+","$1B+",1926,Large Enterprise,"Insulation, Firestopping, Specialty Contracting",Verified
+Specialty Contracting,Primoris Services Specialty,USA,https://www.prim.com,"12,000+","$4B+",1960,Large Enterprise,"Pipeline, Utilities, Energy",Verified
+Specialty Contracting,The Yates Companies Inc.,USA,https://www.yates.com,"2,000+","$1B+",1922,Medium Enterprise,"Industrial, Commercial, Heavy Civil",Verified
+Specialty Contracting,Brasfield & Gorrie Specialty,USA,https://www.brasfieldgorrie.com,"3,000+","$3B+",1964,Medium Enterprise,"General Contracting, Construction Management",Verified
+Specialty Contracting,McCarthy Holdings,USA,https://www.mccarthy.com,"2,000+","$4B+",1864,Medium Enterprise,"Healthcare, Education, Civil",Verified
+Specialty Contracting,Whiting-Turner Contracting,USA,https://www.whiting-turner.com,"2,000+","$6B+",1909,Medium Enterprise,"Construction Management, Design-Build",Verified
+Specialty Contracting,Roger Bullivant (Ground Engineering),UK,https://www.roger-bullivant.co.uk,"500+","$100M+",1987,Small Enterprise,"Piling, Ground Engineering",Verified
+Specialty Contracting,Keller Ground Engineering,UK,https://www.keller.com,"10,000+","$3B+",1860,Large Enterprise,"Ground Improvement, Piling, Foundations",Verified
+Specialty Contracting,Bauer Group,Germany,https://www.bauer.de,"12,000+","$2B+",1790,Large Enterprise,"Foundations, Construction, Equipment",Verified
+Specialty Contracting,Soletanche Bachy,France,https://www.soletanche-bachy.com,"15,000+","$2B+",1924,Large Enterprise,"Geotechnical Engineering, Foundations",Verified
+Specialty Contracting,BESIX Group,Belgium,https://www.besix.com,"15,000+","$3B+",1909,Large Enterprise,"Construction, Concessions, Environment",Verified
+Specialty Contracting,Van Elle Holdings,UK,https://www.van-elle.com,"500+","$100M+",1984,Small Enterprise,"Piling, Ground Engineering",Verified
+Specialty Contracting,Keller Australia,Australia,https://www.keller.com,"10,000+","$3B+",1860,Large Enterprise,"Ground Engineering, Piling, Foundations",Verified
+Specialty Contracting,Menard Group,France,https://www.menard-group.com,"1,500+","$300M+",1975,Medium Enterprise,"Ground Improvement, Soil Mechanics",Verified
+Surveying & Mapping,Fugro,Netherlands,https://www.fugro.com,"9,000+","$2B+",1962,Large Enterprise,"Geotechnical, Survey, Geoscience",Verified
+Surveying & Mapping,AECOM Surveying,USA,https://www.aecom.com,"51,000+","$13B+",1990,Large Enterprise,"Land Surveying, Geospatial",Verified
+Surveying & Mapping,Jacobs Surveying,USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Surveying, Mapping, Geospatial",Verified
+Surveying & Mapping,Stantec Surveying,Canada,https://www.stantec.com,"26,000+","$5B+",1954,Large Enterprise,"Surveying, Geomatics, Mapping",Verified
+Surveying & Mapping,WSP Surveying,Canada,https://www.wsp.com,"67,000+","$11B+",1959,Large Enterprise,"Surveying, Geospatial, Mapping",Verified
+Surveying & Mapping,Trimble Geospatial,USA,https://geospatial.trimble.com,"12,000+","$4B+",1978,Large Enterprise,"GPS, Laser Scanning, Software",Verified
+Surveying & Mapping,Hexagon Geosystems,Sweden,https://www.hexagongeosystems.com,"22,000+","$5B+",1992,Large Enterprise,"Geospatial Sensors, Software, Solutions",Verified
+Surveying & Mapping,Topcon Positioning Systems,Japan,https://www.topcon.com,"1,500+","$1B+",1932,Medium Enterprise,"GPS, Machine Control, Sokkia",Verified
+Surveying & Mapping,Leica Geosystems (Hexagon),Switzerland,https://leica-geosystems.com,"22,000+","$5B+",1992,Large Enterprise,"Total Stations, Laser Scanners, GNSS",Verified
+Surveying & Mapping,Ramboll Geomatics,Denmark,https://ramboll.com,"17,000+","$2B+",1945,Large Enterprise,"Surveying, Geomatics, Engineering",Verified
+Surveying & Mapping,CGG Geoscience,France,https://www.cgg.com,"4,000+","$1B+",1931,Large Enterprise,"Geoscience, Geophysics, Geology",Verified
+Surveying & Mapping,Petrofac Surveying,UK,https://www.petrofac.com,"8,500+","$4B+",1981,Large Enterprise,"Surveying, Positioning, Engineering",Verified
+Surveying & Mapping,McElhanney Group,Canada,https://www.mcelhanney.com,"1,000+","$200M+",1910,Medium Enterprise,"Surveying, Mapping, Engineering",Verified
+Surveying & Mapping,Seabed Geosolutions,Netherlands,https://www.seabed-geosolutions.com,"N/A","N/A",,Unknown,Unknown,Unverified
+Surveying & Mapping,Fugro Australia,Australia,https://www.fugro.com,"9,000+","$2B+",1962,Large Enterprise,"Geotechnical, Survey, Geoscience",Verified
+Surveying & Mapping,Geocomp Corporation,USA,https://www.geocomp.com,"100+","$20M+",1981,Small Enterprise,"Geotechnical Instrumentation, Monitoring",Verified
+Surveying & Mapping,SGS Surveying,Switzerland,https://www.sgs.com,"89,000+","$7B+",1878,Large Enterprise,"Testing, Inspection, Certification",Verified
+Surveying & Mapping,Surveying Solutions Group,UK,https://www.surveyingsolutionsgroup.com,"100+","$20M+",2001,Small Enterprise,"Land, Utility, Measured Building Surveys",Verified
+Urban Planning,Arup Urban Design,UK,https://www.arup.com,"18,000+","$2B+",1946,Large Enterprise,"Urban Design, Master Planning, Regeneration",Verified
+Urban Planning,Sweco Urban Planning,Sweden,https://www.sweco.com,"18,000+","$2B+",1997,Large Enterprise,"Urban Planning, Engineering, Architecture",Verified
+Urban Planning,Jacobs Urban Planning,USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Urban Planning, Design, Consulting",Verified
+Urban Planning,AECOM Urbanism,USA,https://www.aecom.com,"51,000+","$13B+",1990,Large Enterprise,"Urban Design, Planning, Economics",Verified
+Urban Planning,Stantec Community Development,Canada,https://www.stantec.com,"26,000+","$5B+",1954,Large Enterprise,"Community Development, Urban Planning",Verified
+Urban Planning,WSP Urban Planning,Canada,https://www.wsp.com,"67,000+","$11B+",1959,Large Enterprise,"Urban Planning, Transportation, Environment",Verified
+Urban Planning,Arcadis Urban Development,Netherlands,https://www.arcadis.com,"36,000+","$4B+",1888,Large Enterprise,"Urban Development, Planning, Design",Verified
+Urban Planning,Gensler Cities & Urban Design,USA,https://www.gensler.com,"7,000+","$2B+",1965,Large Enterprise,"Urban Design, City Planning, Architecture",Verified
+Urban Planning,HOK Urban Design,USA,https://www.hok.com,"1,800+","$1B+",1955,Large Enterprise,"Urban Design, Planning, Architecture",Verified
+Urban Planning,Perkins and Will Urban Design,USA,https://perkinswill.com,"2,500+","$700M+",1935,Large Enterprise,"Urban Design, Planning, Architecture",Verified
+Urban Planning,IBI Group Planning,Canada,https://ibigroup.com,"3,000+","$300M+",1974,Medium Enterprise,"Urban Planning, Technology, Design",Verified
+Urban Planning,BDP (Architecture & Planning),UK,https://www.bdp.com,"1,200+","$200M+",1961,Medium Enterprise,"Architecture, Engineering, Planning",Verified
+Urban Planning,Mott MacDonald Planning,UK,https://www.mottmac.com,"18,000+","$2B+",1902,Large Enterprise,"Urban Planning, Development, Transport",Verified
+Urban Planning,Atkins Urban Planning,UK,https://www.atkinsglobal.com,"18,000+","$2B+",1938,Large Enterprise,"Urban Planning, Design, Engineering",Verified
+Urban Planning,Sasaki Associates,USA,https://www.sasaki.com,"300+","$50M+",1953,Small Enterprise,"Urban Design, Landscape Architecture, Planning",Verified
+Urban Planning,Skidmore Owings & Merrill Urban Design,USA,https://www.som.com,"1,200+","$500M+",1936,Large Enterprise,"Urban Design, Master Planning, Architecture",Verified
+Urban Planning,Calthorpe Associates,USA,https://www.calthorpe.com,"50+","$10M+",1983,Small Enterprise,"Urban Design, Sustainable Planning",Verified
+Urban Planning,Gehl Architects,Denmark,https://gehlpeople.com,"50+","$10M+",2000,Small Enterprise,"Public Space, Urban Strategy, People-Centric Design",Verified
+Urban Planning,Jan Gehl Urban Design,Denmark,https://gehlpeople.com,"50+","$10M+",2000,Small Enterprise,"Public Life, Urban Quality, Design",Verified
+Construction Software,Autodesk Construction Solutions,USA,https://construction.autodesk.com,"13,000+","$5B+",1982,Large Enterprise,"BIM, CAD, Construction Management Software",Verified
+Construction Software,Trimble Construction Software,USA,https://construction.trimble.com,"12,000+","$4B+",1978,Large Enterprise,"Field Management, Estimating, BIM",Verified
+Construction Software,Procore Technologies,USA,https://www.procore.com,"4,000+","$800M+",2002,Large Enterprise,"Construction Management, Quality & Safety, Financials",Verified
+Construction Software,Oracle Construction & Engineering,USA,https://www.oracle.com,"164,000+","$50B+",1977,Conglomerate,"ERP, Project Management, Primavera",Verified
+Construction Software,SAP Construction Management,Germany,https://www.sap.com,"107,400+","$33B+",1972,Large Enterprise,"ERP, Enterprise Asset Management",Verified
+Construction Software,Bentley Systems,USA,https://www.bentley.com,"5,000+","$1B+",1984,Large Enterprise,"Infrastructure Engineering Software, BIM",Verified
+Construction Software,PlanGrid (Autodesk),USA,https://www.plangrid.com,"13,000+","$5B+",1982,Large Enterprise,"Field Collaboration, Document Management",Verified
+Construction Software,Bluebeam Software,USA,https://www.bluebeam.com,"500+","$100M+",2002,Small Enterprise,"PDF Markup, Collaboration, Quantity Takeoff",Verified
+Construction Software,Viewpoint (Trimble),USA,https://www.viewpoint.com,"12,000+","$4B+",1978,Large Enterprise,"ERP, Project Management, Collaboration",Verified
+Construction Software,Buildertrend,USA,https://buildertrend.com,"1,000+","$200M+",2006,Medium Enterprise,"Residential Construction Management",Verified
+Construction Software,Fieldwire,USA,https://www.fieldwire.com,"200+","$50M+",2013,Small Enterprise,"Field Management, Plan Viewing, Task Management",Verified
+Construction Software,Raken,USA,https://www.rakenapp.com,"100+","$20M+",2012,Small Enterprise,"Daily Reporting, Time Cards, Toolbox Talks",Verified
+Construction Software,HCSS Construction Software,USA,https://www.hcss.com,"300+","$50M+",1986,Small Enterprise,"Estimating, Dispatching, Field Tracking",Verified
+Construction Software,Jonas Construction Software,Canada,https://www.jonasconstruction.com,"500+","$100M+",1986,Small Enterprise,"ERP, Service Management, Accounting",Verified
+Construction Software,CMiC,Canada,https://www.cmicglobal.com,"500+","$100M+",1978,Small Enterprise,"ERP, Project Management, Financials",Verified
+Construction Software,InEight,USA,https://ineight.com,"500+","$100M+",1986,Small Enterprise,"Project Controls, Estimating, Management",Verified
+Construction Software,eSUB Construction Software,USA,https://esub.com,"200+","$50M+",2006,Small Enterprise,"Project Management, Document Control",Verified
+Construction Software,Assignar,USA,https://www.assignar.com,"100+","$20M+",2014,Small Enterprise,"Operations, Scheduling, Compliance",Verified
+Construction Software,Bridgit Solutions,Canada,https://www.bridgitsolutions.com,"100+","$20M+",2012,Small Enterprise,"Workforce Management, Task Tracking",Verified
+Green Building Consulting,ARUP Sustainability,UK,https://www.arup.com,"18,000+","$2B+",1946,Large Enterprise,"Sustainability Consulting, Net Zero, ESG",Verified
+Green Building Consulting,Stantec Sustainability,Canada,https://www.stantec.com,"26,000+","$5B+",1954,Large Enterprise,"Sustainable Design, Green Infrastructure",Verified
+Green Building Consulting,WSP Sustainability,Canada,https://www.wsp.com,"67,000+","$11B+",1959,Large Enterprise,"Sustainability, Climate Resilience, ESG",Verified
+Green Building Consulting,Atkins Sustainability,UK,https://www.atkinsglobal.com,"18,000+","$2B+",1938,Large Enterprise,"Sustainable Design, Low Carbon",Verified
+Green Building Consulting,Jacobs Sustainability,USA,https://www.jacobs.com,"60,000+","$15B+",1947,Large Enterprise,"Climate Response, Sustainable Solutions",Verified
+Green Building Consulting,AECOM Sustainable Development,USA,https://www.aecom.com,"51,000+","$13B+",1990,Large Enterprise,"Sustainable Development, ESG Advisory",Verified
+Green Building Consulting,Arcadis Sustainability,Netherlands,https://www.arcadis.com,"36,000+","$4B+",1888,Large Enterprise,"Sustainability, Carbon Management",Verified
+Green Building Consulting,Ramboll Sustainability,Denmark,https://ramboll.com,"17,000+","$2B+",1945,Large Enterprise,"Sustainability, Energy, Environment",Verified
+Green Building Consulting,Sweco Sustainability,Sweden,https://www.sweco.com,"18,000+","$2B+",1997,Large Enterprise,"Sustainable Urban Development, Engineering",Verified
+Green Building Consulting,ERM Sustainability,UK,https://www.erm.com,"7,000+","$2B+",1971,Large Enterprise,"Sustainability Consulting, ESG, EHS",Verified
+Green Building Consulting,Gensler Sustainable Design,USA,https://www.gensler.com,"7,000+","$2B+",1965,Large Enterprise,"Sustainable Architecture, Design",Verified
+Green Building Consulting,HOK Sustainable Design,USA,https://www.hok.com,"1,800+","$1B+",1955,Large Enterprise,"Sustainable Design, High-Performance Buildings",Verified
+Green Building Consulting,Perkins and Will Sustainability,USA,https://perkinswill.com,"2,500+","$700M+",1935,Large Enterprise,"Sustainable Design, Health, Resilience",Verified
+Green Building Consulting,Buro Happold Sustainability,UK,https://www.burohappold.com,"2,000+","$300M+",1976,Medium Enterprise,"Sustainable Engineering, Consulting",Verified
+Green Building Consulting,Cundall Sustainability,UK,https://www.cundall.com,"1,000+","$100M+",1976,Medium Enterprise,"Sustainable Engineering, Building Services",Verified
+Green Building Consulting,Mott MacDonald Sustainability,UK,https://www.mottmac.com,"18,000+","$2B+",1902,Large Enterprise,"Sustainable Development, Climate Change",Verified
+Green Building Consulting,SRL Planning & Design Sustainability,UK,https://www.srlplanning.com,"N/A","N/A",,Unknown,Unknown,Unverified
+Green Building Consulting,Transsolar Climate Engineering,Germany,https://transsolar.com,"50+","$10M+",1992,Small Enterprise,"Climate Engineering, Energy Concepts",Verified
+Green Building Consulting,Green Building Council (Global),USA,https://www.worldgbc.org,"100+","$20M+",1999,Small Enterprise,"Green Building Certification, Advocacy, Network",Verified
