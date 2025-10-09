@@ -19,6 +19,13 @@ export const companies = pgTable('companies', {
   websiteUrl: text('website_url'),
   industryName: text('industry_name').notNull(),
   sectorName: text('sector_name').notNull(),
+  // Enhanced company intelligence fields
+  employeeCount: text('employee_count'), // e.g., "145,000+", "1,500+", "50-200"
+  revenueEstimate: text('revenue_estimate'), // e.g., "$66.6B", "€59B", "$1.5B-$3B"
+  foundedYear: integer('founded_year'), // e.g., 1916, 2008
+  companySize: text('company_size'), // e.g., "Large Enterprise", "SME", "Conglomerate"
+  specializationTags: text('specialization_tags'), // Comma-separated: "Film Production, Distribution, Franchise Management"
+  verificationStatus: text('verification_status').default('unverified'), // 'verified', 'unverified', 'pending'
 });
 
 // Contact Messages table
@@ -183,7 +190,10 @@ export const companyLocations = pgTable('company_locations', {
   state: text('state'), // Optional: e.g., 'Lagos State', 'NY'
   isPrimary: boolean('is_primary').default(true).notNull(), // Primary location for company
   confidence: text('confidence').default('low').notNull(), // 'high', 'medium', 'low', 'unassigned'
-  source: text('source'), // 'tld', 'name_pattern', 'default_hub', 'manual'
+  source: text('source'), // 'tld', 'name_pattern', 'default_hub', 'manual', 'verified_csv'
+  // Backup columns for old geocoding data (temporary during transition)
+  oldCountryId: integer('old_country_id'), // Backup of original country assignment
+  oldConfidence: text('old_confidence'), // Backup of original confidence level
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
 
