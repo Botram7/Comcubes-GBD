@@ -1103,13 +1103,13 @@ export class DatabaseStorage implements IStorage {
       const topCountries = await db
         .select({
           countryName: countries.name,
-          companyCount: sql<number>`count(*)`
+          companyCount: sql<number>`count(DISTINCT company_id)`
         })
         .from(countries)
         .innerJoin(companyLocations, eq(countries.id, companyLocations.countryId))
         .where(eq(countries.regionId, regionId))
         .groupBy(countries.name)
-        .orderBy(sql`count(*) DESC`)
+        .orderBy(sql`count(DISTINCT company_id) DESC`)
         .limit(10);
 
       const totalCompanies = topCountries.reduce((sum, c) => sum + Number(c.companyCount), 0);
