@@ -2,8 +2,6 @@ import { db } from "../db";
 import { companies, industries, sectors, companyLocations } from "@shared/schema";
 import { sql } from "drizzle-orm";
 import * as fs from "fs";
-import * as path from "path";
-import { normalizeCountryName } from "./countryNormalizer";
 
 interface AggregatedRow {
   sn: string;
@@ -108,8 +106,7 @@ export async function purgeFreshImport(aggregatedFilePath: string) {
   const sectorNames = Array.from(sectorsMap.keys());
   for (const sectorName of sectorNames) {
     await db.insert(sectors).values({
-      name: sectorName,
-      description: `${sectorName} sector companies`
+      name: sectorName
     });
     console.log(`✓ Inserted sector: ${sectorName}`);
   }
@@ -121,13 +118,12 @@ export async function purgeFreshImport(aggregatedFilePath: string) {
   console.log("-".repeat(80));
 
   let totalIndustries = 0;
-  for (const [sectorName, industriesSet] of sectorsMap.entries()) {
+  for (const [sectorName, industriesSet] of Array.from(sectorsMap.entries())) {
     const industryNames = Array.from(industriesSet);
     for (const industryName of industryNames) {
       await db.insert(industries).values({
         name: industryName,
-        sector_name: sectorName,
-        description: `${industryName} in ${sectorName}`
+        sectorName: sectorName
       });
       totalIndustries++;
     }
@@ -173,33 +169,44 @@ export async function purgeFreshImport(aggregatedFilePath: string) {
       .replace(/^"|"$/g, "")
       .trim();
 
+    // Parse founded year
+    const foundedYear = row.founded ? parseInt(row.founded, 10) : null;
+    
     // Insert company
     const [company] = await db.insert(companies).values({
       name: row.companyName,
-      industry_name: row.industry,
-      sector_name: row.sector,
-      website: row.website || null,
-      employee_count: cleanEmployeeCount || null,
-      revenue_estimate: row.revenueEstimate || null,
-      founded_year: row.founded || null,
-      company_size: row.companySize || null,
-      specialization_tags: cleanTags || null,
-      verification_status: row.status || "Unverified"
+      industryName: row.industry,
+      sectorName: row.sector,
+      websiteUrl: row.website || null,
+      employeeCount: cleanEmployeeCount || null,
+      revenueEstimate: row.revenueEstimate || null,
+      foundedYear: foundedYear,
+      companySize: row.companySize || null,
+      specializationTags: cleanTags || null,
+      verificationStatus: row.status || "Unverified"
     }).returning({ id: companies.id });
 
     stats.total++;
     stats.bySector.set(row.sector, (stats.bySector.get(row.sector) || 0) + 1);
 
-    // Geocode
-    const normalizedCountry = normalizeCountryName(row.hqCountry);
+    // Geocode - use simple country name lookup with common aliases
+    const countryAliases: Record<string, string> = {
+      'USA': 'United States',
+      'US': 'United States',
+      'UK': 'United Kingdom',
+      'UAE': 'United Arab Emirates'
+    };
+    
+    const normalizedCountry = countryAliases[row.hqCountry] || row.hqCountry;
     const countryId = countryMap.get(normalizedCountry.toLowerCase());
 
     if (countryId) {
       await db.insert(companyLocations).values({
-        company_id: company.id,
-        country_id: countryId,
-        is_primary: true,
-        confidence_level: "high"
+        companyId: company.id,
+        countryId: countryId,
+        isPrimary: true,
+        confidence: "high",
+        source: "verified_csv"
       });
       stats.geocoded++;
       stats.byCountry.set(normalizedCountry, (stats.byCountry.get(normalizedCountry) || 0) + 1);
