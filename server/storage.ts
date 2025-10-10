@@ -1057,7 +1057,7 @@ export class DatabaseStorage implements IStorage {
       const [continentCount] = await db.select({ count: sql<number>`count(*)` }).from(continents);
       const [regionCount] = await db.select({ count: sql<number>`count(*)` }).from(regions);
       const [countryCount] = await db.select({ count: sql<number>`count(*)` }).from(countries);
-      const [companyLocationCount] = await db.select({ count: sql<number>`count(*)` }).from(companyLocations);
+      const [companyLocationCount] = await db.select({ count: sql<number>`count(DISTINCT company_id)` }).from(companyLocations);
       
       const confidenceDistribution = await db
         .select({
