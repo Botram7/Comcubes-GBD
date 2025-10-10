@@ -1244,6 +1244,7 @@ export class DatabaseStorage implements IStorage {
           currency: countries.currency,
           regionId: countries.regionId,
           continentId: countries.continentId,
+          flagEmoji: countries.flagEmoji,
           companyCount: sql<number>`count(DISTINCT company_id)`
         })
         .from(countries)
@@ -1258,7 +1259,8 @@ export class DatabaseStorage implements IStorage {
           countries.capital,
           countries.currency,
           countries.regionId,
-          countries.continentId
+          countries.continentId,
+          countries.flagEmoji
         )
         .orderBy(sql`count(DISTINCT company_id) DESC`)
         .limit(limit);
@@ -1274,6 +1276,7 @@ export class DatabaseStorage implements IStorage {
         currency: c.currency,
         regionId: c.regionId,
         continentId: c.continentId,
+        flagEmoji: c.flagEmoji,
         companyCount: Number(c.companyCount)
       }));
     } catch (error) {
