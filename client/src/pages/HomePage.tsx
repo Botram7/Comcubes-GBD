@@ -20,6 +20,7 @@ import {
   Shield,
   Zap
 } from "lucide-react";
+import { FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 import type { Sector, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
@@ -493,19 +494,21 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
-            <div>
-              <div className="flex items-center mb-4">
-                <div className="w-16 h-16 mr-3 flex items-center justify-center">
-                  <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
-                </div>
-                <span className="text-xl font-bold" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</span>
+          {/* Logo and Description */}
+          <div className="mb-8">
+            <div className="flex items-center mb-4">
+              <div className="w-16 h-16 mr-3 flex items-center justify-center">
+                <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
               </div>
-              <p className="text-gray-400 text-sm">
-                Global Business Directory for comprehensive business intelligence.
-              </p>
+              <span className="text-xl font-bold" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</span>
             </div>
-            
+            <p className="text-gray-400 text-sm max-w-md">
+              Global Business Directory for comprehensive business intelligence.
+            </p>
+          </div>
+
+          {/* Footer Links - 4 Equal Columns */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
             <div>
               <h3 className="font-semibold mb-4">Browse Directory</h3>
               <ul className="space-y-2 text-sm text-gray-400">
@@ -542,10 +545,27 @@ export default function HomePage() {
             
             <div>
               <h3 className="font-semibold mb-4">Follow Us</h3>
-              <div className="flex space-x-4">
-                <div className="w-8 h-8 bg-gray-800 rounded flex items-center justify-center">
-                  <Globe className="h-4 w-4" />
-                </div>
+              <div className="flex space-x-3">
+                <a 
+                  href="https://www.instagram.com/comcubes/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pink-600 transition-colors"
+                  aria-label="Follow us on Instagram"
+                  data-testid="link-instagram"
+                >
+                  <FaInstagram className="h-5 w-5" />
+                </a>
+                <a 
+                  href="https://x.com/comcubes195980" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-black transition-colors"
+                  aria-label="Follow us on X (Twitter)"
+                  data-testid="link-twitter"
+                >
+                  <FaXTwitter className="h-5 w-5" />
+                </a>
               </div>
             </div>
           </div>
