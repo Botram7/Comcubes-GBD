@@ -1139,7 +1139,7 @@ export class DatabaseStorage implements IStorage {
   }> {
     try {
       const [totalCompanies] = await db
-        .select({ count: sql<number>`count(*)` })
+        .select({ count: sql<number>`count(DISTINCT company_id)` })
         .from(companyLocations)
         .where(eq(companyLocations.countryId, countryId));
 
