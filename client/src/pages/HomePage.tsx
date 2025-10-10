@@ -494,19 +494,6 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Logo and Description */}
-          <div className="mb-8">
-            <div className="flex items-center mb-4">
-              <div className="w-16 h-16 mr-3 flex items-center justify-center">
-                <img src={comcubesIcon} alt="COMCUBES" className="w-16 h-16" />
-              </div>
-              <span className="text-xl font-bold" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 500 }}>COMCUBES</span>
-            </div>
-            <p className="text-gray-400 text-sm max-w-md">
-              Global Business Directory for comprehensive business intelligence.
-            </p>
-          </div>
-
           {/* Footer Links - 4 Equal Columns */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
             <div>
@@ -570,10 +557,27 @@ export default function HomePage() {
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center">
-            <p className="text-gray-400 text-sm">
-              © 2024 COMCUBES. All rights reserved.
-            </p>
+          <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <p className="text-gray-400 text-sm">
+                © 2024 COMCUBES. All rights reserved.
+              </p>
+              <a 
+                href="https://replit.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
+                data-testid="link-replit-badge"
+              >
+                <span>Built with</span>
+                <img 
+                  src="https://replit.com/public/images/logo-small.png" 
+                  alt="Replit" 
+                  className="h-5 inline-block"
+                />
+                <span className="font-semibold">Replit</span>
+              </a>
+            </div>
           </div>
         </div>
       </footer>
