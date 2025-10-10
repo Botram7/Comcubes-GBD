@@ -1244,7 +1244,7 @@ export class DatabaseStorage implements IStorage {
           currency: countries.currency,
           regionId: countries.regionId,
           continentId: countries.continentId,
-          companyCount: sql<number>`count(*)`
+          companyCount: sql<number>`count(DISTINCT company_id)`
         })
         .from(countries)
         .innerJoin(companyLocations, eq(countries.id, companyLocations.countryId))
@@ -1260,7 +1260,7 @@ export class DatabaseStorage implements IStorage {
           countries.regionId,
           countries.continentId
         )
-        .orderBy(sql`count(*) DESC`)
+        .orderBy(sql`count(DISTINCT company_id) DESC`)
         .limit(limit);
 
       return topCountriesData.map(c => ({
