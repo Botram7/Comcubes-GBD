@@ -813,6 +813,12 @@ Please contact this potential advertiser within 24 hours.
         websiteUrl: listing.websiteUrl,
         industryName: listing.industryName,
         sectorName: listing.sectorName,
+        employeeCount: null,
+        revenueEstimate: null,
+        foundedYear: null,
+        companySize: null,
+        specializationTags: null,
+        verificationStatus: 'unverified'
       });
 
       // Send approval email

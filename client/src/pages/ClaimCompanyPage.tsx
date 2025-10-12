@@ -118,7 +118,13 @@ export default function ClaimCompanyPage() {
         name: companyName,
         industryName: industryName || '',
         websiteUrl: '',
-        sectorName: sectorName || ''
+        sectorName: sectorName || '',
+        employeeCount: null,
+        revenueEstimate: null,
+        foundedYear: null,
+        companySize: null,
+        specializationTags: null,
+        verificationStatus: null
       };
       
       setSelectedCompany(mockCompany);
@@ -238,7 +244,7 @@ export default function ClaimCompanyPage() {
 
       // Debug: Log FormData contents
       console.log("FormData contents:");
-      for (const [key, value] of formDataToSend.entries()) {
+      for (const [key, value] of Array.from(formDataToSend.entries())) {
         console.log(key, value);
       }
 
