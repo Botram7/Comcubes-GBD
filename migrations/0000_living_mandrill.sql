@@ -1,0 +1,5 @@
+-- Baseline migration for existing database
+-- This migration establishes the starting point for the database schema.
+-- All tables already exist in the database with the correct structure.
+-- This file serves as a baseline to enable proper migration tracking for future schema changes.
+-- No SQL statements needed - database schema is already up to date.
