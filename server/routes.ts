@@ -11,6 +11,7 @@ import { paystackService } from "./paystackService";
 import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/schema";
 import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
 import { registerGeographicRoutes } from "./routes/geographicRoutes";
+import { registerFixGeocodingRoute } from "./routes/fixGeocodingRoute";
 import multer from 'multer';
 import { requireAdminAuth } from "./adminAuth";
 import { objectStorageService } from "./objectStorageService";
@@ -1542,6 +1543,9 @@ Crawl-delay: 1`;
 
   // Register geographic routes
   registerGeographicRoutes(app);
+
+  // Register geocoding fix route (admin only)
+  registerFixGeocodingRoute(app);
 
   const httpServer = createServer(app);
   return httpServer;
