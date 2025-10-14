@@ -173,14 +173,15 @@ export default function HomePage() {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             
-            <Button 
+            {/* Geography button temporarily hidden due to data issues */}
+            {/* <Button 
               onClick={() => setLocation('/geography')}
               className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-3 rounded-lg font-medium"
               data-testid="button-explore-geography"
             >
               <Globe className="mr-2 h-4 w-4" />
               Browse By Location
-            </Button>
+            </Button> */}
             
             <Button 
               onClick={() => setLocation('/search')}
