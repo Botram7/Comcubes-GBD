@@ -10,11 +10,6 @@ import { companyLocations } from "../../shared/schema";
 import { sql } from "drizzle-orm";
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 interface GeocodingRow {
   id: string;
@@ -40,7 +35,7 @@ export interface GeocodingFixResult {
  */
 export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
   try {
-    const csvPath = path.resolve(__dirname, "../data/correct_geocoding.csv");
+    const csvPath = path.resolve(import.meta.dirname, "../data/correct_geocoding.csv");
     
     if (!fs.existsSync(csvPath)) {
       return {
