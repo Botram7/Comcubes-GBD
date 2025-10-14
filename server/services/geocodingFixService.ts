@@ -35,7 +35,8 @@ export interface GeocodingFixResult {
  */
 export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
   try {
-    const csvPath = path.resolve(import.meta.dirname, "../data/correct_geocoding.csv");
+    // Use process.cwd() for reliable path resolution in both dev and production
+    const csvPath = path.join(process.cwd(), "server", "data", "correct_geocoding.csv");
     
     if (!fs.existsSync(csvPath)) {
       return {
