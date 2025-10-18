@@ -6,8 +6,8 @@
  */
 
 import { db } from "../db";
-import { companyLocations } from "../../shared/schema";
-import { sql } from "drizzle-orm";
+import { companyLocations, companies } from "../../shared/schema";
+import { sql, eq } from "drizzle-orm";
 import fs from "fs";
 import path from "path";
 
@@ -23,9 +23,11 @@ export interface GeocodingFixResult {
   message: string;
   stats?: {
     rowsLoaded: number;
+    companiesMatched: number;
     previousRows: number;
     insertedRows: number;
     backupCreated: boolean;
+    unmatchedCompanies: number;
   };
   error?: string;
 }
@@ -101,6 +103,47 @@ export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
       };
     }
 
+    // CRITICAL: Look up company IDs from production database by name
+    // The CSV has development IDs which don't match production IDs
+    console.log(`Looking up ${geocodingData.length} companies in production database...`);
+    
+    const companyNameToId = new Map<string, number>();
+    const allCompanies = await db.select({ id: companies.id, name: companies.name }).from(companies);
+    
+    for (const company of allCompanies) {
+      companyNameToId.set(company.name.toLowerCase().trim(), company.id);
+    }
+    
+    console.log(`Found ${allCompanies.length} companies in production database`);
+
+    // Match CSV companies to production companies
+    const matchedLocations: Array<{ companyId: number; countryId: number }> = [];
+    const unmatchedCompanies: string[] = [];
+    
+    for (const row of geocodingData) {
+      const companyKey = row.name.toLowerCase().trim();
+      const productionId = companyNameToId.get(companyKey);
+      
+      if (productionId) {
+        matchedLocations.push({
+          companyId: productionId,
+          countryId: parseInt(row.country_id)
+        });
+      } else {
+        unmatchedCompanies.push(row.name);
+      }
+    }
+    
+    console.log(`Matched ${matchedLocations.length} companies, ${unmatchedCompanies.length} unmatched`);
+    
+    if (matchedLocations.length === 0) {
+      return {
+        success: false,
+        message: "No companies could be matched",
+        error: "Company names in CSV don't match production database. This suggests the databases have different data."
+      };
+    }
+
     // Check current state
     const currentCount = await db.select().from(companyLocations).then(rows => rows.length);
     
@@ -120,11 +163,11 @@ export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
     const batchSize = 500;
     let inserted = 0;
 
-    for (let i = 0; i < geocodingData.length; i += batchSize) {
-      const batch = geocodingData.slice(i, i + batchSize);
+    for (let i = 0; i < matchedLocations.length; i += batchSize) {
+      const batch = matchedLocations.slice(i, i + batchSize);
       const valuesToInsert = batch.map(row => ({
-        companyId: parseInt(row.id),
-        countryId: parseInt(row.country_id),
+        companyId: row.companyId,
+        countryId: row.countryId,
         isPrimary: true,
         confidence: 'high' as const,
         source: 'verified_csv'
@@ -136,11 +179,11 @@ export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
     
     // Verify insertion
     const newCount = await db.select().from(companyLocations).then(rows => rows.length);
-    if (newCount !== geocodingData.length) {
+    if (newCount !== matchedLocations.length) {
       return {
         success: false,
         message: "Insertion verification failed",
-        error: `Expected ${geocodingData.length} but found ${newCount} rows`
+        error: `Expected ${matchedLocations.length} but found ${newCount} rows`
       };
     }
 
@@ -149,9 +192,11 @@ export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
       message: "Geocoding fixed successfully",
       stats: {
         rowsLoaded: geocodingData.length,
+        companiesMatched: matchedLocations.length,
         previousRows: currentCount,
         insertedRows: inserted,
-        backupCreated: true
+        backupCreated: true,
+        unmatchedCompanies: unmatchedCompanies.length
       }
     };
 
