@@ -50,12 +50,12 @@ export function registerDatabaseSyncRoute(app: Express) {
       }
       // Option 3: Use default file location
       else {
-        const defaultPath = '/tmp/clean_database_export.json';
+        const defaultPath = path.join(__dirname, '..', 'data', 'clean_database_export.json');
         
         if (!fs.existsSync(defaultPath)) {
           return res.status(400).json({
             success: false,
-            message: 'No sync data provided. Either include syncData in request body or provide syncDataPath',
+            message: `No sync data provided. Clean data file not found at: ${defaultPath}`,
           });
         }
 
