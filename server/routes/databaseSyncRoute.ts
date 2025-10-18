@@ -50,7 +50,8 @@ export function registerDatabaseSyncRoute(app: Express) {
       }
       // Option 3: Use default file location
       else {
-        const defaultPath = path.join(__dirname, '..', 'data', 'clean_database_export.json');
+        // Use process.cwd() to get project root, works in both dev and production
+        const defaultPath = path.join(process.cwd(), 'server', 'data', 'clean_database_export.json');
         
         if (!fs.existsSync(defaultPath)) {
           return res.status(400).json({
