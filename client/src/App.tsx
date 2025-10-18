@@ -28,6 +28,7 @@ import GeographyPage from "@/pages/GeographyPage";
 import ContinentPage from "@/pages/ContinentPage";
 import RegionPage from "@/pages/RegionPage";
 import CountryPage from "@/pages/CountryPage";
+import AdminSyncPage from "@/pages/AdminSyncPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -63,6 +64,7 @@ function Router() {
       <Route path="/resume-payment" component={ResumePaymentPage} />
       <Route path="/claim-company" component={ClaimCompanyPage} />
       <Route path="/admin" component={ComprehensiveAdminDashboard} />
+      <Route path="/admin-sync" component={AdminSyncPage} />
 {/* Logo management removed - using fallback icons only */}
       <Route path="/privacy-policy" component={PrivacyPolicyPage} />
       <Route path="/terms-of-service" component={TermsOfServicePage} />
