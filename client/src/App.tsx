@@ -38,11 +38,10 @@ function Router() {
       <Route path="/industries" component={IndustriesPage} />
       <Route path="/sector/:sectorName" component={SectorPage} />
       <Route path="/industry/:industryName" component={IndustryPage} />
-      {/* Geography routes temporarily disabled due to data issues */}
-      {/* <Route path="/geography" component={GeographyPage} /> */}
-      {/* <Route path="/geography/continent/:slug" component={ContinentPage} /> */}
-      {/* <Route path="/geography/region/:slug" component={RegionPage} /> */}
-      {/* <Route path="/geography/country/:slug" component={CountryPage} /> */}
+      <Route path="/geography" component={GeographyPage} />
+      <Route path="/geography/continent/:slug" component={ContinentPage} />
+      <Route path="/geography/region/:slug" component={RegionPage} />
+      <Route path="/geography/country/:slug" component={CountryPage} />
       <Route path="/companies" component={CompanyPage} />
       <Route path="/company/:companyId" component={CompanyProfilePage} />
       <Route path="/search" component={SearchPage} />
