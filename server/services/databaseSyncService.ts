@@ -168,6 +168,44 @@ export class DatabaseSyncService {
   }
 
   /**
+   * Insert records in batches for performance
+   */
+  private async batchInsert(
+    client: any,
+    tableName: string,
+    columns: string[],
+    records: any[],
+    batchSize: number = 300
+  ): Promise<void> {
+    const totalBatches = Math.ceil(records.length / batchSize);
+    
+    for (let batchIndex = 0; batchIndex < totalBatches; batchIndex++) {
+      const startIdx = batchIndex * batchSize;
+      const endIdx = Math.min(startIdx + batchSize, records.length);
+      const batch = records.slice(startIdx, endIdx);
+      
+      // Build multi-row VALUES clause
+      const valuesClauses: string[] = [];
+      const params: any[] = [];
+      let paramIndex = 1;
+      
+      for (const record of batch) {
+        const placeholders = columns.map(() => `$${paramIndex++}`).join(', ');
+        valuesClauses.push(`(${placeholders})`);
+        
+        for (const col of columns) {
+          params.push(record[col]);
+        }
+      }
+      
+      const sql = `INSERT INTO ${tableName} (${columns.join(', ')}) VALUES ${valuesClauses.join(', ')}`;
+      await client.query(sql, params);
+      
+      console.log(`  ✓ Batch ${batchIndex + 1}/${totalBatches} (${batch.length} rows)`);
+    }
+  }
+
+  /**
    * Perform complete database synchronization using proper Pool/Client transactions
    * This ensures ACID guarantees - all changes commit or roll back as one unit
    */
@@ -212,78 +250,78 @@ export class DatabaseSyncService {
         
         console.log('✅ Purge complete');
 
-        console.log('📥 Step 4: Importing clean data...');
+        console.log('📥 Step 4: Importing clean data with batch inserts...');
         
-        // Import continents
-        for (const continent of data.tables.continents) {
-          await client.query(
-            'INSERT INTO continents (id, name, code, description) VALUES ($1, $2, $3, $4)',
-            [continent.id, continent.name, continent.code, continent.description]
-          );
-        }
+        // Import continents (7 rows - small, single batch)
+        console.log(`  Importing ${data.tables.continents.length} continents...`);
+        await this.batchInsert(
+          client,
+          'continents',
+          ['id', 'name', 'code', 'description'],
+          data.tables.continents,
+          100
+        );
         console.log(`  ✓ Imported ${data.tables.continents.length} continents`);
 
-        // Import regions
-        for (const region of data.tables.regions) {
-          await client.query(
-            'INSERT INTO regions (id, name, continent_id, description) VALUES ($1, $2, $3, $4)',
-            [region.id, region.name, region.continent_id, region.description]
-          );
-        }
+        // Import regions (22 rows - small, single batch)
+        console.log(`  Importing ${data.tables.regions.length} regions...`);
+        await this.batchInsert(
+          client,
+          'regions',
+          ['id', 'name', 'continent_id', 'description'],
+          data.tables.regions,
+          100
+        );
         console.log(`  ✓ Imported ${data.tables.regions.length} regions`);
 
-        // Import countries
-        for (const country of data.tables.countries) {
-          await client.query(
-            'INSERT INTO countries (id, name, code, region_id, continent_id) VALUES ($1, $2, $3, $4, $5)',
-            [country.id, country.name, country.code, country.region_id, country.continent_id]
-          );
-        }
+        // Import countries (200 rows - batched)
+        console.log(`  Importing ${data.tables.countries.length} countries...`);
+        await this.batchInsert(
+          client,
+          'countries',
+          ['id', 'name', 'code', 'region_id', 'continent_id'],
+          data.tables.countries,
+          100
+        );
         console.log(`  ✓ Imported ${data.tables.countries.length} countries`);
 
-        // Import sectors
-        for (const sector of data.tables.sectors) {
-          await client.query(
-            'INSERT INTO sectors (id, name, description, image_url) VALUES ($1, $2, $3, $4)',
-            [sector.id, sector.name, sector.description, sector.image_url]
-          );
-        }
+        // Import sectors (20 rows - small, single batch)
+        console.log(`  Importing ${data.tables.sectors.length} sectors...`);
+        await this.batchInsert(
+          client,
+          'sectors',
+          ['id', 'name', 'description', 'image_url'],
+          data.tables.sectors,
+          100
+        );
         console.log(`  ✓ Imported ${data.tables.sectors.length} sectors`);
 
-        // Import industries
-        for (const industry of data.tables.industries) {
-          await client.query(
-            'INSERT INTO industries (id, name, sector_name, description, image_url) VALUES ($1, $2, $3, $4, $5)',
-            [industry.id, industry.name, industry.sector_name, industry.description, industry.image_url]
-          );
-        }
+        // Import industries (398 rows - batched)
+        console.log(`  Importing ${data.tables.industries.length} industries...`);
+        await this.batchInsert(
+          client,
+          'industries',
+          ['id', 'name', 'sector_name', 'description', 'image_url'],
+          data.tables.industries,
+          200
+        );
         console.log(`  ✓ Imported ${data.tables.industries.length} industries`);
 
-        // Import companies in batches
-        console.log(`  Importing ${data.tables.companies.length} companies...`);
-        for (let i = 0; i < data.tables.companies.length; i++) {
-          const company = data.tables.companies[i];
-          await client.query(
-            `INSERT INTO companies (
-              id, name, sector_name, industry_name, description, website,
-              headquarters, country_name, employee_count, revenue_estimate,
-              founded_year, company_size, specialization_tags, verification_status,
-              old_geocoding_country, old_geocoding_confidence, old_geocoding_source
-            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)`,
-            [
-              company.id, company.name, company.sector_name, company.industry_name,
-              company.description, company.website, company.headquarters,
-              company.country_name, company.employee_count, company.revenue_estimate,
-              company.founded_year, company.company_size, company.specialization_tags,
-              company.verification_status, company.old_geocoding_country,
-              company.old_geocoding_confidence, company.old_geocoding_source
-            ]
-          );
-          
-          if ((i + 1) % 1000 === 0 || i + 1 === data.tables.companies.length) {
-            console.log(`  ✓ Imported ${i + 1}/${data.tables.companies.length} companies`);
-          }
-        }
+        // Import companies (7,487 rows - LARGE, batched in chunks of 300)
+        console.log(`  Importing ${data.tables.companies.length} companies in batches...`);
+        await this.batchInsert(
+          client,
+          'companies',
+          [
+            'id', 'name', 'sector_name', 'industry_name', 'description', 'website',
+            'headquarters', 'country_name', 'employee_count', 'revenue_estimate',
+            'founded_year', 'company_size', 'specialization_tags', 'verification_status',
+            'old_geocoding_country', 'old_geocoding_confidence', 'old_geocoding_source'
+          ],
+          data.tables.companies,
+          300 // Batch size optimized for 17 columns
+        );
+        console.log(`  ✓ Imported ${data.tables.companies.length} companies`);
 
         await client.query('COMMIT');
         console.log('✅ Transaction committed successfully');
