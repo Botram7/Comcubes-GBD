@@ -234,7 +234,9 @@ export class DatabaseSyncService {
       await client.query('BEGIN');
       
       try {
-        // Delete in reverse dependency order
+        // Delete in reverse dependency order (children before parents)
+        console.log('  Deleting company_locations (child of companies & countries)...');
+        await client.query('DELETE FROM company_locations');
         console.log('  Deleting companies...');
         await client.query('DELETE FROM companies');
         console.log('  Deleting industries...');
@@ -257,7 +259,7 @@ export class DatabaseSyncService {
         await this.batchInsert(
           client,
           'continents',
-          ['id', 'name', 'code', 'description'],
+          ['id', 'name', 'slug', 'code', 'description'],
           data.tables.continents,
           100
         );
@@ -268,7 +270,7 @@ export class DatabaseSyncService {
         await this.batchInsert(
           client,
           'regions',
-          ['id', 'name', 'continent_id', 'description'],
+          ['id', 'name', 'slug', 'continent_id', 'description'],
           data.tables.regions,
           100
         );
@@ -279,7 +281,7 @@ export class DatabaseSyncService {
         await this.batchInsert(
           client,
           'countries',
-          ['id', 'name', 'code', 'region_id', 'continent_id'],
+          ['id', 'name', 'slug', 'iso2', 'iso3', 'phone_code', 'capital', 'currency', 'region_id', 'continent_id', 'flag_emoji'],
           data.tables.countries,
           100
         );
@@ -290,7 +292,7 @@ export class DatabaseSyncService {
         await this.batchInsert(
           client,
           'sectors',
-          ['id', 'name', 'description', 'image_url'],
+          ['id', 'name'],
           data.tables.sectors,
           100
         );
@@ -301,7 +303,7 @@ export class DatabaseSyncService {
         await this.batchInsert(
           client,
           'industries',
-          ['id', 'name', 'sector_name', 'description', 'image_url'],
+          ['id', 'name', 'sector_name'],
           data.tables.industries,
           200
         );
@@ -313,13 +315,12 @@ export class DatabaseSyncService {
           client,
           'companies',
           [
-            'id', 'name', 'sector_name', 'industry_name', 'description', 'website',
-            'headquarters', 'country_name', 'employee_count', 'revenue_estimate',
-            'founded_year', 'company_size', 'specialization_tags', 'verification_status',
-            'old_geocoding_country', 'old_geocoding_confidence', 'old_geocoding_source'
+            'id', 'name', 'website_url', 'industry_name', 'sector_name',
+            'employee_count', 'revenue_estimate', 'founded_year', 'company_size',
+            'specialization_tags', 'verification_status'
           ],
           data.tables.companies,
-          300 // Batch size optimized for 17 columns
+          300 // Batch size optimized for 11 columns
         );
         console.log(`  ✓ Imported ${data.tables.companies.length} companies`);
 
@@ -375,11 +376,20 @@ export class DatabaseSyncService {
 
     } catch (error) {
       const duration = ((Date.now() - startTime) / 1000).toFixed(2);
+      console.error('❌❌❌ CRITICAL SYNC EXCEPTION ❌❌❌');
+      console.error('Error type:', error?.constructor?.name);
+      console.error('Error message:', error instanceof Error ? error.message : String(error));
+      console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+      console.error('Full error object:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+      
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      const errorStack = error instanceof Error ? error.stack : undefined;
+      
       return {
         success: false,
-        message: 'Sync failed with exception',
+        message: `Sync failed with exception: ${errorMessage}`,
         duration: `${duration}s`,
-        errors: [error instanceof Error ? error.message : String(error)],
+        errors: [errorMessage, ...(errorStack ? [errorStack] : [])],
       };
     } finally {
       client.release();
