@@ -1,13 +1,13 @@
 /**
  * Geocoding Fix Service
  * 
- * Provides reusable function to fix incorrect geocoding data in the database.
- * Uses composite key (name + sector + industry) for reliable matching across environments.
+ * Environment-independent geocoding fix using natural keys (names) only.
+ * No reliance on auto-increment IDs that differ between dev and production.
  */
 
 import { db } from "../db";
-import { companyLocations, companies } from "../../shared/schema";
-import { sql, and, eq } from "drizzle-orm";
+import { companyLocations, companies, countries } from "../../shared/schema";
+import { sql } from "drizzle-orm";
 import fs from "fs";
 import path from "path";
 
@@ -15,7 +15,7 @@ interface GeocodingRow {
   name: string;
   sectorName: string;
   industryName: string;
-  countryId: string;
+  countryId: string; // Will be ignored - we use countryName instead
   countryName: string;
 }
 
@@ -25,18 +25,23 @@ export interface GeocodingFixResult {
   stats?: {
     rowsLoaded: number;
     companiesMatched: number;
+    countriesMatched: number;
     previousRows: number;
     insertedRows: number;
     backupCreated: boolean;
     unmatchedCompanies: number;
+    unmatchedCountries: number;
   };
   error?: string;
-  unmatchedDetails?: string[];
+  unmatchedDetails?: {
+    companies: string[];
+    countries: string[];
+  };
 }
 
 /**
- * Fixes production geocoding by replacing all company_locations with correct data
- * Uses composite key (name, sector, industry) which is guaranteed unique per schema
+ * Fixes production geocoding using only natural keys (names).
+ * Completely independent of environment-specific auto-increment IDs.
  */
 export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
   try {
@@ -51,7 +56,7 @@ export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
       };
     }
 
-    console.log("📄 Reading geocoding data with composite keys...");
+    console.log("📄 Reading geocoding data...");
 
     // Read and parse CSV
     const csvContent = fs.readFileSync(csvPath, "utf-8");
@@ -82,18 +87,11 @@ export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
       
       // CSV format: name, sector_name, industry_name, country_id, country_name
       if (parts.length >= 5) {
-        const countryId = parts[3];
-        
-        // Validate numeric country ID
-        if (!/^\d+$/.test(countryId)) {
-          continue;
-        }
-        
         geocodingData.push({
           name: parts[0],
           sectorName: parts[1],
           industryName: parts[2],
-          countryId: countryId,
+          countryId: parts[3], // Ignored - using countryName instead
           countryName: parts[4]
         });
       }
@@ -111,11 +109,10 @@ export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
       };
     }
 
-    // Build composite key map from production database
-    // This respects the unique constraint: (name, sector_name, industry_name)
-    console.log("🔍 Building composite key map from production database...");
+    // Build composite key map for companies from PRODUCTION database
+    console.log("🔍 Building company lookup map from production database...");
     
-    const compositeKeyToId = new Map<string, number>();
+    const companyCompositeKeyToId = new Map<string, number>();
     const allCompanies = await db.select({
       id: companies.id,
       name: companies.name,
@@ -125,43 +122,72 @@ export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
     
     for (const company of allCompanies) {
       const compositeKey = `${company.name.toLowerCase().trim()}|${company.sectorName.toLowerCase().trim()}|${company.industryName.toLowerCase().trim()}`;
-      compositeKeyToId.set(compositeKey, company.id);
+      companyCompositeKeyToId.set(compositeKey, company.id);
     }
     
     console.log(`✅ Found ${allCompanies.length} companies in production database`);
 
-    // Match CSV companies to production companies using composite key
-    const matchedLocations: Array<{ companyId: number; countryId: number }> = [];
-    const unmatchedCompanies: string[] = [];
+    // Build country name-to-ID map from PRODUCTION database
+    console.log("🌍 Building country lookup map from production database...");
     
-    for (const row of geocodingData) {
-      const compositeKey = `${row.name.toLowerCase().trim()}|${row.sectorName.toLowerCase().trim()}|${row.industryName.toLowerCase().trim()}`;
-      const productionId = compositeKeyToId.get(compositeKey);
-      
-      if (productionId) {
-        matchedLocations.push({
-          companyId: productionId,
-          countryId: parseInt(row.countryId)
-        });
-      } else {
-        unmatchedCompanies.push(`${row.name} (${row.sectorName} > ${row.industryName})`);
-      }
+    const countryNameToId = new Map<string, number>();
+    const allCountries = await db.select({
+      id: countries.id,
+      name: countries.name
+    }).from(countries);
+    
+    for (const country of allCountries) {
+      countryNameToId.set(country.name.toLowerCase().trim(), country.id);
     }
     
-    console.log(`✅ Matched ${matchedLocations.length} companies`);
+    console.log(`✅ Found ${allCountries.length} countries in production database`);
+
+    // Match CSV data to production using NATURAL KEYS ONLY
+    const matchedLocations: Array<{ companyId: number; countryId: number }> = [];
+    const unmatchedCompanies: string[] = [];
+    const unmatchedCountries = new Set<string>();
+    
+    for (const row of geocodingData) {
+      const companyKey = `${row.name.toLowerCase().trim()}|${row.sectorName.toLowerCase().trim()}|${row.industryName.toLowerCase().trim()}`;
+      const countryKey = row.countryName.toLowerCase().trim();
+      
+      const productionCompanyId = companyCompositeKeyToId.get(companyKey);
+      const productionCountryId = countryNameToId.get(countryKey);
+      
+      if (!productionCompanyId) {
+        unmatchedCompanies.push(`${row.name} (${row.sectorName} > ${row.industryName})`);
+        continue;
+      }
+      
+      if (!productionCountryId) {
+        unmatchedCountries.add(row.countryName);
+        continue;
+      }
+      
+      matchedLocations.push({
+        companyId: productionCompanyId,
+        countryId: productionCountryId
+      });
+    }
+    
+    console.log(`✅ Matched ${matchedLocations.length} company-country pairs`);
     if (unmatchedCompanies.length > 0) {
       console.log(`⚠️  ${unmatchedCompanies.length} companies could not be matched`);
-      if (unmatchedCompanies.length <= 10) {
-        console.log("Unmatched companies:", unmatchedCompanies);
-      }
+    }
+    if (unmatchedCountries.size > 0) {
+      console.log(`⚠️  ${unmatchedCountries.size} countries could not be matched`);
+      console.log(`   Unmatched countries: ${Array.from(unmatchedCountries).join(', ')}`);
     }
     
     if (matchedLocations.length === 0) {
       return {
         success: false,
-        message: "No companies could be matched",
-        error: "Company composite keys in CSV don't match production database. This suggests significant data divergence.",
-        unmatchedDetails: unmatchedCompanies.slice(0, 100)
+        message: "No company-country pairs could be matched",
+        error: "Data in CSV doesn't match production database. Significant divergence detected.",
+        unmatchedDetails: {
+          companies: unmatchedCompanies.slice(0, 50),
+          countries: Array.from(unmatchedCountries)
+        }
       };
     }
 
@@ -197,7 +223,7 @@ export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
       await db.insert(companyLocations).values(valuesToInsert);
       inserted += valuesToInsert.length;
       
-      if (i % 1000 === 0 && i > 0) {
+      if (i % 2000 === 0 && i > 0) {
         console.log(`  Progress: ${i}/${matchedLocations.length} rows inserted...`);
       }
     }
@@ -218,16 +244,21 @@ export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
 
     return {
       success: true,
-      message: "Geocoding fixed successfully using composite key matching",
+      message: "Geocoding fixed successfully using natural key matching (environment-independent)",
       stats: {
         rowsLoaded: geocodingData.length,
         companiesMatched: matchedLocations.length,
+        countriesMatched: allCountries.length,
         previousRows: currentCount,
         insertedRows: inserted,
         backupCreated: true,
-        unmatchedCompanies: unmatchedCompanies.length
+        unmatchedCompanies: unmatchedCompanies.length,
+        unmatchedCountries: unmatchedCountries.size
       },
-      unmatchedDetails: unmatchedCompanies.length > 0 ? unmatchedCompanies.slice(0, 20) : undefined
+      unmatchedDetails: {
+        companies: unmatchedCompanies.length > 0 ? unmatchedCompanies.slice(0, 20) : [],
+        countries: Array.from(unmatchedCountries)
+      }
     };
 
   } catch (error) {
