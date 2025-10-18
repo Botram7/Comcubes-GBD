@@ -56,10 +56,10 @@ export async function registerFixGeocodingRoute(app: Express) {
   });
 
   // Fix endpoint - apply the geocoding corrections
-  app.get("/api/admin/fix-geocoding", async (req, res) => {
+  app.post("/api/admin/fix-geocoding", async (req, res) => {
     try {
-      // Check for admin secret
-      const providedSecret = req.query.secret;
+      // Check for admin secret (supports both query param and body)
+      const providedSecret = req.query.secret || req.body?.secret;
       const adminSecret = process.env.ADMIN_SECRET;
 
       if (!adminSecret) {
@@ -81,19 +81,33 @@ export async function registerFixGeocodingRoute(app: Express) {
       // Call the geocoding fix service
       const result = await fixProductionGeocoding();
 
-      if (result.success) {
+      if (result.success && result.stats) {
         console.log("✅ Geocoding fix completed successfully");
+        
+        // Transform stats to match frontend expectations
+        const totalCompanies = result.stats.rowsLoaded || 0;
+        const matchedCompanies = result.stats.companiesMatched || 0;
+        const unmatchedCompanies = result.stats.unmatchedCompanies || 0;
+        const matchRate = totalCompanies > 0 
+          ? `${((matchedCompanies / totalCompanies) * 100).toFixed(1)}%`
+          : '0%';
+        
         return res.json({
           success: true,
           message: result.message,
-          stats: result.stats
+          results: {
+            totalCompanies,
+            matchedCompanies,
+            unmatchedCompanies,
+            matchRate
+          }
         });
       } else {
         console.error("❌ Geocoding fix failed:", result.error);
         return res.status(500).json({
           success: false,
           error: result.error,
-          message: result.message
+          message: result.message || 'Geocoding fix failed'
         });
       }
     } catch (error) {
