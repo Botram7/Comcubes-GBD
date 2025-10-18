@@ -32,6 +32,7 @@ interface SyncResult {
   };
   duration?: string;
   error?: string;
+  errors?: string[];
 }
 
 interface StatusResponse {
@@ -425,9 +426,20 @@ export default function AdminSyncPage() {
                       </div>
                     )}
 
-                    {syncResult.error && (
-                      <div className="mt-2 text-sm text-red-600 dark:text-red-400">
-                        Error: {syncResult.error}
+                    {(syncResult.error || syncResult.errors) && (
+                      <div className="mt-2 space-y-1">
+                        {syncResult.error && (
+                          <div className="text-sm text-red-600 dark:text-red-400 font-mono">
+                            Error: {syncResult.error}
+                          </div>
+                        )}
+                        {syncResult.errors && syncResult.errors.length > 0 && (
+                          <div className="text-sm text-red-600 dark:text-red-400 font-mono space-y-1">
+                            {syncResult.errors.map((err, idx) => (
+                              <div key={idx}>• {err}</div>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
