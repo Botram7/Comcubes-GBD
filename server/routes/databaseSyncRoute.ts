@@ -4,7 +4,14 @@ import fs from 'fs';
 import path from 'path';
 
 export function registerDatabaseSyncRoute(app: Express) {
-  const ADMIN_SECRET = process.env.ADMIN_SECRET || '9167_fix_geocoding_2025_secure_key_007';
+  const ADMIN_SECRET = process.env.ADMIN_SECRET;
+  
+  if (!ADMIN_SECRET) {
+    console.error('⚠️  WARNING: ADMIN_SECRET environment variable is not set!');
+    console.error('   Database sync endpoints will not be available.');
+    console.error('   Set ADMIN_SECRET to enable admin functions.');
+    return; // Skip registering endpoints if secret not set
+  }
 
   app.post('/api/admin/sync-database', async (req, res) => {
     try {
@@ -70,18 +77,22 @@ export function registerDatabaseSyncRoute(app: Express) {
 
       const syncService = new DatabaseSyncService(databaseUrl);
 
-      console.log('🚀 Starting database synchronization...');
-      const result = await syncService.synchronizeDatabase(syncData);
+      try {
+        console.log('🚀 Starting database synchronization...');
+        const result = await syncService.synchronizeDatabase(syncData);
 
-      console.log('====================================');
-      if (result.success) {
-        console.log('✅ SYNC COMPLETE');
-      } else {
-        console.log('❌ SYNC FAILED');
+        console.log('====================================');
+        if (result.success) {
+          console.log('✅ SYNC COMPLETE');
+        } else {
+          console.log('❌ SYNC FAILED');
+        }
+        console.log('====================================');
+
+        return res.json(result);
+      } finally {
+        await syncService.close();
       }
-      console.log('====================================');
-
-      return res.json(result);
 
     } catch (error) {
       console.error('❌ Sync endpoint error:', error);
@@ -113,28 +124,33 @@ export function registerDatabaseSyncRoute(app: Express) {
       }
 
       const syncService = new DatabaseSyncService(databaseUrl);
-      const stats = await syncService.getStats();
 
-      return res.json({
-        success: true,
-        message: 'Current database statistics',
-        stats,
-        expectedStats: {
-          continents: 7,
-          regions: 22,
-          countries: 200,
-          sectors: 20,
-          industries: 398,
-          companies: 7487,
-        },
-        inSync: 
-          stats.continents === 7 &&
-          stats.regions === 22 &&
-          stats.countries === 200 &&
-          stats.sectors === 20 &&
-          stats.industries === 398 &&
-          stats.companies === 7487,
-      });
+      try {
+        const stats = await syncService.getStats();
+
+        return res.json({
+          success: true,
+          message: 'Current database statistics',
+          stats,
+          expectedStats: {
+            continents: 7,
+            regions: 22,
+            countries: 200,
+            sectors: 20,
+            industries: 398,
+            companies: 7487,
+          },
+          inSync: 
+            stats.continents === 7 &&
+            stats.regions === 22 &&
+            stats.countries === 200 &&
+            stats.sectors === 20 &&
+            stats.industries === 398 &&
+            stats.companies === 7487,
+        });
+      } finally {
+        await syncService.close();
+      }
 
     } catch (error) {
       console.error('Status check error:', error);

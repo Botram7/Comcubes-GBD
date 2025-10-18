@@ -1,4 +1,10 @@
-import { neon } from '@neondatabase/serverless';
+import { Pool, neonConfig } from '@neondatabase/serverless';
+import ws from 'ws';
+
+// Configure Neon for WebSocket mode (required for transactions)
+neonConfig.webSocketConstructor = ws;
+neonConfig.useSecureWebSocket = true;
+neonConfig.pipelineConnect = false;
 
 interface SyncData {
   exportedAt: string;
@@ -53,10 +59,15 @@ interface SyncResult {
 }
 
 export class DatabaseSyncService {
-  private sql: ReturnType<typeof neon>;
+  private pool: Pool;
 
   constructor(databaseUrl: string) {
-    this.sql = neon(databaseUrl);
+    this.pool = new Pool({
+      connectionString: databaseUrl,
+      max: 10,
+      idleTimeoutMillis: 30000,
+      connectionTimeoutMillis: 10000,
+    });
   }
 
   /**
@@ -70,21 +81,33 @@ export class DatabaseSyncService {
    * Get current database statistics
    */
   private async getDatabaseStats() {
-    const continentsResult = await this.sql`SELECT COUNT(*)::int as count FROM continents`;
-    const regionsResult = await this.sql`SELECT COUNT(*)::int as count FROM regions`;
-    const countriesResult = await this.sql`SELECT COUNT(*)::int as count FROM countries`;
-    const sectorsResult = await this.sql`SELECT COUNT(*)::int as count FROM sectors`;
-    const industriesResult = await this.sql`SELECT COUNT(*)::int as count FROM industries`;
-    const companiesResult = await this.sql`SELECT COUNT(*)::int as count FROM companies`;
+    const client = await this.pool.connect();
+    try {
+      const continentsResult = await client.query('SELECT COUNT(*)::int as count FROM continents');
+      const regionsResult = await client.query('SELECT COUNT(*)::int as count FROM regions');
+      const countriesResult = await client.query('SELECT COUNT(*)::int as count FROM countries');
+      const sectorsResult = await client.query('SELECT COUNT(*)::int as count FROM sectors');
+      const industriesResult = await client.query('SELECT COUNT(*)::int as count FROM industries');
+      const companiesResult = await client.query('SELECT COUNT(*)::int as count FROM companies');
 
-    return {
-      continents: (continentsResult[0] as any).count,
-      regions: (regionsResult[0] as any).count,
-      countries: (countriesResult[0] as any).count,
-      sectors: (sectorsResult[0] as any).count,
-      industries: (industriesResult[0] as any).count,
-      companies: (companiesResult[0] as any).count,
-    };
+      return {
+        continents: continentsResult.rows[0].count,
+        regions: regionsResult.rows[0].count,
+        countries: countriesResult.rows[0].count,
+        sectors: sectorsResult.rows[0].count,
+        industries: industriesResult.rows[0].count,
+        companies: companiesResult.rows[0].count,
+      };
+    } finally {
+      client.release();
+    }
+  }
+
+  /**
+   * Cleanup pool connections
+   */
+  async close() {
+    await this.pool.end();
   }
 
   /**
@@ -114,6 +137,9 @@ export class DatabaseSyncService {
     if (data.tables.sectors.length !== 20) {
       errors.push(`Expected 20 sectors, got ${data.tables.sectors.length}`);
     }
+    if (data.tables.industries.length !== 398) {
+      errors.push(`Expected 398 industries, got ${data.tables.industries.length}`);
+    }
     if (data.tables.companies.length !== 7487) {
       errors.push(`Expected 7487 companies, got ${data.tables.companies.length}`);
     }
@@ -142,17 +168,13 @@ export class DatabaseSyncService {
   }
 
   /**
-   * Perform complete database synchronization
-   * This will:
-   * 1. Validate source data
-   * 2. Take pre-sync snapshot
-   * 3. Purge all existing data (in transaction)
-   * 4. Import clean data (in transaction)
-   * 5. Verify post-sync state
+   * Perform complete database synchronization using proper Pool/Client transactions
+   * This ensures ACID guarantees - all changes commit or roll back as one unit
    */
   async synchronizeDatabase(data: SyncData): Promise<SyncResult> {
     const startTime = Date.now();
     const errors: string[] = [];
+    const client = await this.pool.connect();
 
     try {
       console.log('🔍 Step 1: Validating sync data...');
@@ -170,17 +192,23 @@ export class DatabaseSyncService {
       const preSync = await this.getDatabaseStats();
       console.log('Pre-sync stats:', preSync);
 
-      console.log('🗑️  Step 3: Purging existing data...');
-      await this.sql`BEGIN`;
+      console.log('🗑️  Step 3: Starting transaction...');
+      await client.query('BEGIN');
       
       try {
         // Delete in reverse dependency order
-        await this.sql`DELETE FROM companies`;
-        await this.sql`DELETE FROM industries`;
-        await this.sql`DELETE FROM sectors`;
-        await this.sql`DELETE FROM countries`;
-        await this.sql`DELETE FROM regions`;
-        await this.sql`DELETE FROM continents`;
+        console.log('  Deleting companies...');
+        await client.query('DELETE FROM companies');
+        console.log('  Deleting industries...');
+        await client.query('DELETE FROM industries');
+        console.log('  Deleting sectors...');
+        await client.query('DELETE FROM sectors');
+        console.log('  Deleting countries...');
+        await client.query('DELETE FROM countries');
+        console.log('  Deleting regions...');
+        await client.query('DELETE FROM regions');
+        console.log('  Deleting continents...');
+        await client.query('DELETE FROM continents');
         
         console.log('✅ Purge complete');
 
@@ -188,82 +216,80 @@ export class DatabaseSyncService {
         
         // Import continents
         for (const continent of data.tables.continents) {
-          await this.sql`
-            INSERT INTO continents (id, name, code, description)
-            VALUES (${continent.id}, ${continent.name}, ${continent.code}, ${continent.description})
-          `;
+          await client.query(
+            'INSERT INTO continents (id, name, code, description) VALUES ($1, $2, $3, $4)',
+            [continent.id, continent.name, continent.code, continent.description]
+          );
         }
         console.log(`  ✓ Imported ${data.tables.continents.length} continents`);
 
         // Import regions
         for (const region of data.tables.regions) {
-          await this.sql`
-            INSERT INTO regions (id, name, continent_id, description)
-            VALUES (${region.id}, ${region.name}, ${region.continent_id}, ${region.description})
-          `;
+          await client.query(
+            'INSERT INTO regions (id, name, continent_id, description) VALUES ($1, $2, $3, $4)',
+            [region.id, region.name, region.continent_id, region.description]
+          );
         }
         console.log(`  ✓ Imported ${data.tables.regions.length} regions`);
 
         // Import countries
         for (const country of data.tables.countries) {
-          await this.sql`
-            INSERT INTO countries (id, name, code, region_id, continent_id)
-            VALUES (${country.id}, ${country.name}, ${country.code}, ${country.region_id}, ${country.continent_id})
-          `;
+          await client.query(
+            'INSERT INTO countries (id, name, code, region_id, continent_id) VALUES ($1, $2, $3, $4, $5)',
+            [country.id, country.name, country.code, country.region_id, country.continent_id]
+          );
         }
         console.log(`  ✓ Imported ${data.tables.countries.length} countries`);
 
         // Import sectors
         for (const sector of data.tables.sectors) {
-          await this.sql`
-            INSERT INTO sectors (id, name, description, image_url)
-            VALUES (${sector.id}, ${sector.name}, ${sector.description}, ${sector.image_url})
-          `;
+          await client.query(
+            'INSERT INTO sectors (id, name, description, image_url) VALUES ($1, $2, $3, $4)',
+            [sector.id, sector.name, sector.description, sector.image_url]
+          );
         }
         console.log(`  ✓ Imported ${data.tables.sectors.length} sectors`);
 
         // Import industries
         for (const industry of data.tables.industries) {
-          await this.sql`
-            INSERT INTO industries (id, name, sector_name, description, image_url)
-            VALUES (${industry.id}, ${industry.name}, ${industry.sector_name}, ${industry.description}, ${industry.image_url})
-          `;
+          await client.query(
+            'INSERT INTO industries (id, name, sector_name, description, image_url) VALUES ($1, $2, $3, $4, $5)',
+            [industry.id, industry.name, industry.sector_name, industry.description, industry.image_url]
+          );
         }
         console.log(`  ✓ Imported ${data.tables.industries.length} industries`);
 
-        // Import companies in batches for better performance
-        const batchSize = 100;
-        for (let i = 0; i < data.tables.companies.length; i += batchSize) {
-          const batch = data.tables.companies.slice(i, i + batchSize);
+        // Import companies in batches
+        console.log(`  Importing ${data.tables.companies.length} companies...`);
+        for (let i = 0; i < data.tables.companies.length; i++) {
+          const company = data.tables.companies[i];
+          await client.query(
+            `INSERT INTO companies (
+              id, name, sector_name, industry_name, description, website,
+              headquarters, country_name, employee_count, revenue_estimate,
+              founded_year, company_size, specialization_tags, verification_status,
+              old_geocoding_country, old_geocoding_confidence, old_geocoding_source
+            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)`,
+            [
+              company.id, company.name, company.sector_name, company.industry_name,
+              company.description, company.website, company.headquarters,
+              company.country_name, company.employee_count, company.revenue_estimate,
+              company.founded_year, company.company_size, company.specialization_tags,
+              company.verification_status, company.old_geocoding_country,
+              company.old_geocoding_confidence, company.old_geocoding_source
+            ]
+          );
           
-          for (const company of batch) {
-            await this.sql`
-              INSERT INTO companies (
-                id, name, sector_name, industry_name, description, website,
-                headquarters, country_name, employee_count, revenue_estimate,
-                founded_year, company_size, specialization_tags, verification_status,
-                old_geocoding_country, old_geocoding_confidence, old_geocoding_source
-              ) VALUES (
-                ${company.id}, ${company.name}, ${company.sector_name}, ${company.industry_name},
-                ${company.description}, ${company.website}, ${company.headquarters},
-                ${company.country_name}, ${company.employee_count}, ${company.revenue_estimate},
-                ${company.founded_year}, ${company.company_size}, ${company.specialization_tags},
-                ${company.verification_status}, ${company.old_geocoding_country},
-                ${company.old_geocoding_confidence}, ${company.old_geocoding_source}
-              )
-            `;
-          }
-          
-          if ((i + batchSize) % 1000 === 0 || i + batchSize >= data.tables.companies.length) {
-            console.log(`  ✓ Imported ${Math.min(i + batchSize, data.tables.companies.length)}/${data.tables.companies.length} companies`);
+          if ((i + 1) % 1000 === 0 || i + 1 === data.tables.companies.length) {
+            console.log(`  ✓ Imported ${i + 1}/${data.tables.companies.length} companies`);
           }
         }
 
-        await this.sql`COMMIT`;
+        await client.query('COMMIT');
         console.log('✅ Transaction committed successfully');
 
       } catch (error) {
-        await this.sql`ROLLBACK`;
+        await client.query('ROLLBACK');
         console.error('❌ Transaction rolled back due to error');
         throw error;
       }
@@ -317,6 +343,8 @@ export class DatabaseSyncService {
         duration: `${duration}s`,
         errors: [error instanceof Error ? error.message : String(error)],
       };
+    } finally {
+      client.release();
     }
   }
 }
