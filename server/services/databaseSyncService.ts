@@ -60,23 +60,30 @@ export class DatabaseSyncService {
   }
 
   /**
+   * Public method to get database statistics
+   */
+  async getStats() {
+    return this.getDatabaseStats();
+  }
+
+  /**
    * Get current database statistics
    */
   private async getDatabaseStats() {
-    const [continents] = await this.sql`SELECT COUNT(*)::int as count FROM continents`;
-    const [regions] = await this.sql`SELECT COUNT(*)::int as count FROM regions`;
-    const [countries] = await this.sql`SELECT COUNT(*)::int as count FROM countries`;
-    const [sectors] = await this.sql`SELECT COUNT(*)::int as count FROM sectors`;
-    const [industries] = await this.sql`SELECT COUNT(*)::int as count FROM industries`;
-    const [companies] = await this.sql`SELECT COUNT(*)::int as count FROM companies`;
+    const continentsResult = await this.sql`SELECT COUNT(*)::int as count FROM continents`;
+    const regionsResult = await this.sql`SELECT COUNT(*)::int as count FROM regions`;
+    const countriesResult = await this.sql`SELECT COUNT(*)::int as count FROM countries`;
+    const sectorsResult = await this.sql`SELECT COUNT(*)::int as count FROM sectors`;
+    const industriesResult = await this.sql`SELECT COUNT(*)::int as count FROM industries`;
+    const companiesResult = await this.sql`SELECT COUNT(*)::int as count FROM companies`;
 
     return {
-      continents: continents.count,
-      regions: regions.count,
-      countries: countries.count,
-      sectors: sectors.count,
-      industries: industries.count,
-      companies: companies.count,
+      continents: (continentsResult[0] as any).count,
+      regions: (regionsResult[0] as any).count,
+      countries: (countriesResult[0] as any).count,
+      sectors: (sectorsResult[0] as any).count,
+      industries: (industriesResult[0] as any).count,
+      companies: (companiesResult[0] as any).count,
     };
   }
 
@@ -114,19 +121,19 @@ export class DatabaseSyncService {
     // Validate referential integrity
     const regionContinents = new Set(data.tables.regions.map(r => r.continent_id));
     const validContinents = new Set(data.tables.continents.map(c => c.id));
-    for (const continentId of regionContinents) {
+    Array.from(regionContinents).forEach(continentId => {
       if (!validContinents.has(continentId)) {
         errors.push(`Region references invalid continent_id: ${continentId}`);
       }
-    }
+    });
 
     const countryRegions = new Set(data.tables.countries.map(c => c.region_id));
     const validRegions = new Set(data.tables.regions.map(r => r.id));
-    for (const regionId of countryRegions) {
+    Array.from(countryRegions).forEach(regionId => {
       if (!validRegions.has(regionId)) {
         errors.push(`Country references invalid region_id: ${regionId}`);
       }
-    }
+    });
 
     return {
       valid: errors.length === 0,

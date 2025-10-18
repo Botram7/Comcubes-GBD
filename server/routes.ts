@@ -1547,6 +1547,10 @@ Crawl-delay: 1`;
   // Register geocoding fix route (admin only)
   registerFixGeocodingRoute(app);
 
+  // Register database sync route (admin only)
+  const { registerDatabaseSyncRoute } = await import('./routes/databaseSyncRoute');
+  registerDatabaseSyncRoute(app);
+
   const httpServer = createServer(app);
   return httpServer;
 }
