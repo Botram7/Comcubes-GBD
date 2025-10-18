@@ -1,0 +1,100 @@
+2025-10-18 00:23:24.44
+e0822809
+User
+✅ Geographic data already seeded, skipping
+2025-10-18 00:23:24.47
+e0822809
+User
+✅ Companies already geocoded, skipping
+2025-10-18 00:23:24.47
+e0822809
+User
+🎉 Database bootstrap initialization completed successfully!
+2025-10-18 00:23:24.56
+e0822809
+User
+11:23:24 PM [express] serving on port 5000
+2025-10-18 00:58:56.12
+e0822809
+System
+system: received signal terminated
+2025-10-18 01:08:34.82
+e0822809
+System
+starting up user application
+2025-10-18 01:08:34.82
+e0822809
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-10-18 01:08:36.76
+e0822809
+User
+> rest-express@1.0.0 start
+2025-10-18 01:08:36.76
+e0822809
+User
+> NODE_ENV=production node dist/index.js
+2025-10-18 01:08:38.35
+e0822809
+User
+✅ Email service initialized with Namecheap SMTP
+2025-10-18 01:08:38.35
+e0822809
+User
+Host: mail.comcubes.com, Port: 465
+2025-10-18 01:08:38.51
+e0822809
+User
+🚀 Starting database bootstrap initialization...
+2025-10-18 01:08:39.21
+e0822809
+User
+✅ appInitMeta table is available
+2025-10-18 01:08:39.27
+e0822809
+User
+✅ Core data already seeded, skipping
+2025-10-18 01:08:39.30
+e0822809
+User
+✅ Banner ads already seeded, skipping
+2025-10-18 01:08:39.34
+e0822809
+User
+✅ Geographic data already seeded, skipping
+2025-10-18 01:08:39.37
+e0822809
+User
+✅ Companies already geocoded, skipping
+2025-10-18 01:08:39.37
+e0822809
+User
+🎉 Database bootstrap initialization completed successfully!
+2025-10-18 01:08:39.46
+e0822809
+User
+12:08:39 AM [express] serving on port 5000
+2025-10-18 01:15:45.91
+e0822809
+User
+12:15:45 AM [express] GET /api/.env 200 in 2ms
+2025-10-18 01:15:46.05
+e0822809
+User
+12:15:46 AM [express] GET /api/.env.save 200 in 2ms
+2025-10-18 01:15:46.18
+e0822809
+User
+12:15:46 AM [express] GET /api/.env.bak 200 in 2ms
+2025-10-18 01:15:46.32
+e0822809
+User
+12:15:46 AM [express] GET /api/.env.old 200 in 2ms
+2025-10-18 01:40:31.33
+e0822809
+User
+12:40:31 AM [express] GET /api/industries 200 in 654ms :: {"industries":[{"id":133,"name":"3D Printin…
+2025-10-18 01:40:32.21
+e0822809
+User
+12:40:32 AM [express] GET /api/companies 200 in 1506ms :: {"companies":[{"id":1389,"name":"10x Genomi…
