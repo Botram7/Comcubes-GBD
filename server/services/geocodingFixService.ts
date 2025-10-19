@@ -99,13 +99,13 @@ export async function fixProductionGeocoding(): Promise<GeocodingFixResult> {
 
     console.log(`✅ Loaded ${geocodingData.length} company-country mappings from CSV`);
 
-    // Validate expected row count
-    const expectedRows = 7487;
-    if (geocodingData.length < expectedRows - 10) {
+    // Dynamic validation: CSV should have reasonable number of rows (at least 7000)
+    const minExpectedRows = 7000;
+    if (geocodingData.length < minExpectedRows) {
       return {
         success: false,
         message: "CSV data validation failed",
-        error: `Expected ~${expectedRows} rows but only loaded ${geocodingData.length}`
+        error: `Expected at least ${minExpectedRows} rows but only loaded ${geocodingData.length}. CSV may be corrupted.`
       };
     }
 

@@ -12,6 +12,7 @@ import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/
 import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
 import { registerGeographicRoutes } from "./routes/geographicRoutes";
 import { registerFixGeocodingRoute } from "./routes/fixGeocodingRoute";
+import { registerExportDatabaseRoute } from "./routes/exportDatabaseRoute";
 import multer from 'multer';
 import { requireAdminAuth } from "./adminAuth";
 import { objectStorageService } from "./objectStorageService";
@@ -1546,6 +1547,9 @@ Crawl-delay: 1`;
 
   // Register geocoding fix route (admin only)
   registerFixGeocodingRoute(app);
+
+  // Register database export route (admin only)
+  registerExportDatabaseRoute(app);
 
   // Register database sync route (admin only)
   const { registerDatabaseSyncRoute } = await import('./routes/databaseSyncRoute');
