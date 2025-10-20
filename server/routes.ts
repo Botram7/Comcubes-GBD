@@ -760,7 +760,7 @@ Please contact this potential advertiser within 24 hours.
       }
 
       if (method === 'paypal') {
-        // PayPal payment flow - clean USD only
+        // PayPal payment flow
         const reference = paypalService.generateReference();
         
         const paymentData = await paypalService.initializePayment({

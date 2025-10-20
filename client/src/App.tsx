@@ -29,6 +29,8 @@ import ContinentPage from "@/pages/ContinentPage";
 import RegionPage from "@/pages/RegionPage";
 import CountryPage from "@/pages/CountryPage";
 import AdminSyncPage from "@/pages/AdminSyncPage";
+import PaymentSuccessPage from "@/pages/PaymentSuccessPage";
+import PaymentCancelPage from "@/pages/PaymentCancelPage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -63,6 +65,8 @@ function Router() {
       <Route path="/list-company" component={ListCompanyPage} />
       <Route path="/resume-payment" component={ResumePaymentPage} />
       <Route path="/claim-company" component={ClaimCompanyPage} />
+      <Route path="/payment/success" component={PaymentSuccessPage} />
+      <Route path="/payment/cancel" component={PaymentCancelPage} />
       <Route path="/admin" component={ComprehensiveAdminDashboard} />
       <Route path="/admin-sync" component={AdminSyncPage} />
 {/* Logo management removed - using fallback icons only */}
