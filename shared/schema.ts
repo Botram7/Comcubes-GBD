@@ -57,6 +57,10 @@ export const companyListings = pgTable('company_listings', {
   paymentStatus: text('payment_status').default('pending').notNull(), // 'pending', 'completed', 'failed'
   paymentReference: text('payment_reference'),
   submittedAt: timestamp('submitted_at').defaultNow().notNull(),
+  // Multi-currency payment fields
+  currency: text('currency').default('USD'),
+  currencyAmount: text('currency_amount'),
+  paymentMethod: text('payment_method'),
 });
 
 // Waitlist for full industries
@@ -71,6 +75,12 @@ export const industryWaitlist = pgTable('industry_waitlist', {
   logoUrl: text('logo_url'),
   submittedAt: timestamp('submitted_at').defaultNow().notNull(),
   notified: timestamp('notified'),
+  // Multi-currency payment fields
+  currency: text('currency').default('USD'),
+  currencyAmount: text('currency_amount'),
+  paymentMethod: text('payment_method'),
+  paymentReference: text('payment_reference'),
+  paymentStatus: text('payment_status').default('pending'),
 });
 
 // Company Claims table (for claiming existing company listings)
@@ -94,6 +104,12 @@ export const companyClaims = pgTable('company_claims', {
   verificationCode: text('verification_code'),
   verificationSentAt: timestamp('verification_sent_at'),
   verificationExpiresAt: timestamp('verification_expires_at'),
+  // Multi-currency payment fields
+  currency: text('currency').default('USD'), // ISO currency code: USD, EUR, GBP, NGN, etc.
+  currencyAmount: text('currency_amount'), // Amount in selected currency (stored as string for precision)
+  paymentMethod: text('payment_method'), // 'paypal', 'paystack'
+  paymentReference: text('payment_reference'),
+  paymentStatus: text('payment_status').default('pending'), // 'pending', 'completed', 'failed'
 });
 
 // Banner Ads table for persistent banner ad management
