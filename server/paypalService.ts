@@ -87,8 +87,12 @@ export class PayPalService {
             },
           ],
           applicationContext: {
-            returnUrl: `${process.env.REPLIT_DEV_DOMAIN || 'http://localhost:5000'}/payment/success`,
-            cancelUrl: `${process.env.REPLIT_DEV_DOMAIN || 'http://localhost:5000'}/payment/cancel`,
+            returnUrl: process.env.REPLIT_DEV_DOMAIN 
+              ? `https://${process.env.REPLIT_DEV_DOMAIN}/payment/success`
+              : 'http://localhost:5000/payment/success',
+            cancelUrl: process.env.REPLIT_DEV_DOMAIN
+              ? `https://${process.env.REPLIT_DEV_DOMAIN}/payment/cancel`
+              : 'http://localhost:5000/payment/cancel',
             brandName: "COMCUBES",
             userAction: "PAY_NOW",
           },
