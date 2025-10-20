@@ -1,11 +1,22 @@
-// PayPal Service for clean USD payment processing
-// No currency conversion - pure USD handling only
+// PayPal Service for multi-currency payment processing
+// PayPal automatically handles currency conversion to merchant's base currency (USD)
 
 import {
   Client,
   Environment,
   OrdersController,
 } from "@paypal/paypal-server-sdk";
+
+// Currency configurations for proper decimal handling
+const CURRENCY_DECIMALS: Record<string, number> = {
+  // Zero-decimal currencies (amounts are in whole units)
+  'JPY': 0, 'KRW': 0, 'VND': 0, 'CLP': 0, 'ISK': 0, 'UGX': 0,
+  // Two-decimal currencies (most common)
+  'USD': 2, 'EUR': 2, 'GBP': 2, 'CAD': 2, 'AUD': 2, 'NGN': 2,
+  'ZAR': 2, 'INR': 2, 'BRL': 2, 'MXN': 2, 'CNY': 2, 'HKD': 2,
+  // Three-decimal currencies (rare)
+  'BHD': 3, 'JOD': 3, 'KWD': 3, 'OMR': 3, 'TND': 3,
+};
 
 export class PayPalService {
   private readonly clientId: string;
@@ -36,13 +47,31 @@ export class PayPalService {
   }
 
   /**
-   * Initialize PayPal payment (create order)
+   * Convert amount based on currency decimal places
+   * @param amount - Amount in smallest units (cents/pence/etc)
+   * @param currency - ISO currency code
+   * @returns Formatted amount string for PayPal API
+   */
+  private formatAmount(amount: number, currency: string): string {
+    const decimals = CURRENCY_DECIMALS[currency] ?? 2;
+    if (decimals === 0) {
+      // Zero-decimal currencies: amount is already in whole units
+      return amount.toString();
+    }
+    // Convert from smallest units to currency units
+    const divisor = Math.pow(10, decimals);
+    return (amount / divisor).toFixed(decimals);
+  }
+
+  /**
+   * Initialize PayPal payment (create order) - Multi-currency support
    * @param data - Payment data
    * @returns PayPal order details with approval URL
    */
   async initializePayment(data: {
     email: string;
-    amount: number; // Amount in USD cents
+    amount: number; // Amount in smallest currency units (cents for USD, kobo for NGN, etc)
+    currency: string; // ISO currency code (USD, EUR, GBP, NGN, etc)
     reference: string;
     metadata?: any;
   }): Promise<{ approval_url: string; order_id: string; reference: string }> {
@@ -57,15 +86,23 @@ export class PayPalService {
     }
 
     try {
-      // Convert cents to dollars for PayPal (PayPal expects dollar amounts)
-      const amountInDollars = (data.amount / 100).toFixed(2);
+      // Format amount based on currency decimal rules
+      const formattedAmount = this.formatAmount(data.amount, data.currency);
 
-      console.log('=== PayPal Request Debug ===');
-      console.log('Amount in cents:', data.amount);
-      console.log('Amount in USD:', amountInDollars);
+      console.log('=== PayPal Multi-Currency Request ===');
+      console.log('Amount (smallest units):', data.amount);
+      console.log('Currency:', data.currency);
+      console.log('Formatted Amount:', formattedAmount);
       console.log('Email:', data.email);
       console.log('Reference:', data.reference);
-      console.log('===============================');
+      console.log('=====================================');
+
+      // Truncate metadata to fit within PayPal's 127-character limit for customId
+      const truncatedMetadata = {
+        type: data.metadata?.type,
+        email: data.email.substring(0, 30),
+        ref: data.reference.substring(0, 30)
+      };
 
       // Create PayPal order
       const collect = {
@@ -75,15 +112,11 @@ export class PayPalService {
             {
               referenceId: data.reference,
               amount: {
-                currencyCode: "USD",
-                value: amountInDollars,
+                currencyCode: data.currency,
+                value: formattedAmount,
               },
               description: data.metadata?.purpose || "COMCUBES Payment",
-              customId: JSON.stringify({
-                ...data.metadata,
-                email: data.email,
-                reference: data.reference
-              }),
+              customId: JSON.stringify(truncatedMetadata).substring(0, 127),
             },
           ],
           applicationContext: {
@@ -130,13 +163,13 @@ export class PayPalService {
   }
 
   /**
-   * Verify and capture PayPal payment
+   * Verify and capture PayPal payment - Multi-currency support
    * @param orderId - PayPal order ID
    * @returns Payment verification details
    */
   async verifyPayment(orderId: string): Promise<{
     status: string;
-    amount: number; // Amount in cents
+    amount: number; // Amount in smallest currency units
     currency: string;
     metadata: any;
   }> {
@@ -144,7 +177,7 @@ export class PayPalService {
       console.log('PayPal payment verification (dummy):', orderId);
       return {
         status: 'success',
-        amount: 10000, // $100 in cents
+        amount: 10000,
         currency: 'USD',
         metadata: {}
       };
@@ -187,8 +220,13 @@ export class PayPalService {
         throw new Error('No capture data in PayPal response');
       }
 
+      const currency = capture.amount.currencyCode;
       const amountValue = parseFloat(capture.amount.value);
-      const amountInCents = Math.round(amountValue * 100); // Convert dollars to cents
+      
+      // Convert to smallest currency units based on decimal places
+      const decimals = CURRENCY_DECIMALS[currency] ?? 2;
+      const multiplier = decimals === 0 ? 1 : Math.pow(10, decimals);
+      const amountInSmallestUnits = Math.round(amountValue * multiplier);
 
       // Parse custom metadata
       let metadata = {};
@@ -202,8 +240,8 @@ export class PayPalService {
 
       return {
         status: 'success',
-        amount: amountInCents,
-        currency: capture.amount.currencyCode,
+        amount: amountInSmallestUnits,
+        currency: currency,
         metadata
       };
     } catch (error) {

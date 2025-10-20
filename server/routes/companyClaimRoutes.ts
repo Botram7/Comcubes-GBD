@@ -310,10 +310,10 @@ export function registerCompanyClaimRoutes(app: Express) {
     }
   });
 
-  // Initialize payment for company claim (supports PayPal and Paystack)
+  // Initialize payment for company claim (supports PayPal and Paystack with multi-currency)
   app.post("/api/claims/payment/initialize", async (req, res) => {
     try {
-      const { claimId, paymentMethod } = req.body;
+      const { claimId, paymentMethod, currency } = req.body;
 
       if (!claimId) {
         return res.status(400).json({ error: "Claim ID is required" });
@@ -330,7 +330,11 @@ export function registerCompanyClaimRoutes(app: Express) {
         return res.status(400).json({ error: "Claim payment can only be made for pending claims" });
       }
 
+      // Default currency to USD if not provided
+      const selectedCurrency = currency || 'USD';
+
       // Calculate amount based on plan (annual billing: Basic $360, Premium $600)
+      // Amounts are in smallest currency units (cents for USD, kobo for NGN, pence for GBP, etc.)
       const amounts = {
         basic: 36000, // $360 in cents
         premium: 60000, // $600 in cents
@@ -348,10 +352,12 @@ export function registerCompanyClaimRoutes(app: Express) {
       const reference = `claim_${claimId}_${timestamp}`;
 
       if (method === 'paypal') {
-        // PayPal payment flow - clean USD only
+        // PayPal payment flow - Multi-currency support
+        // PayPal will automatically convert to merchant's base currency (USD)
         const paymentData = await paypalService.initializePayment({
           email: claim.contactEmail,
           amount: amount,
+          currency: selectedCurrency,
           reference: reference,
           metadata: {
             type: 'claim',
@@ -362,13 +368,22 @@ export function registerCompanyClaimRoutes(app: Express) {
           }
         });
 
+        // Update claim with payment details
+        await storage.updateCompanyClaimPaymentInfo(claimId, {
+          currency: selectedCurrency,
+          currencyAmount: amount.toString(),
+          paymentMethod: 'paypal',
+          paymentReference: reference
+        });
+
         res.json({
           success: true,
           paymentMethod: 'paypal',
           approval_url: paymentData.approval_url,
           order_id: paymentData.order_id,
           reference: paymentData.reference,
-          amount: amount
+          amount: amount,
+          currency: selectedCurrency
         });
       } else {
         // Paystack payment flow (fallback option)

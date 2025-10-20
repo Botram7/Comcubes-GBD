@@ -49,6 +49,13 @@ export interface IStorage {
   getCompanyClaims(status?: string): Promise<CompanyClaim[]>;
   getAllCompanyClaims(): Promise<CompanyClaim[]>;
   updateCompanyClaimStatus(id: number, status: string, adminNotes?: string): Promise<CompanyClaim | undefined>;
+  updateCompanyClaimPaymentInfo(id: number, paymentInfo: {
+    currency?: string;
+    currencyAmount?: string;
+    paymentMethod?: string;
+    paymentReference?: string;
+    paymentStatus?: string;
+  }): Promise<CompanyClaim | undefined>;
   getCompanyClaimStats(): Promise<any>;
   getPendingClaimsCount(): Promise<number>;
   updateCompanyOwnership(companyId: number, ownershipData: {
@@ -521,6 +528,21 @@ export class DatabaseStorage implements IStorage {
     
     const [updatedClaim] = await db.update(companyClaims)
       .set(updateData)
+      .where(eq(companyClaims.id, id))
+      .returning();
+    return updatedClaim;
+  }
+
+  async updateCompanyClaimPaymentInfo(id: number, paymentInfo: {
+    currency?: string;
+    currencyAmount?: string;
+    paymentMethod?: string;
+    paymentReference?: string;
+    paymentStatus?: string;
+  }): Promise<CompanyClaim | undefined> {
+
+    const [updatedClaim] = await db.update(companyClaims)
+      .set(paymentInfo)
       .where(eq(companyClaims.id, id))
       .returning();
     return updatedClaim;
