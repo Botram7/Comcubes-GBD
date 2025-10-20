@@ -79,6 +79,7 @@ export default function ClaimCompanyPage() {
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
   const [claimId, setClaimId] = useState<number | null>(null);
+  const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'paystack'>('paypal');
   const [formData, setFormData] = useState<ClaimFormData>({
     companyId: '',
     companyName: '',
@@ -271,12 +272,15 @@ export default function ClaimCompanyPage() {
 
   // Payment mutation for company claims
   const paymentMutation = useMutation({
-    mutationFn: async (data: { claimId: number }) => {
+    mutationFn: async (data: { claimId: number; paymentMethod: string }) => {
       const response = await apiRequest('POST', '/api/claims/payment/initialize', data);
       return response.json();
     },
     onSuccess: (result) => {
-      if (result.authorization_url) {
+      if (result.paymentMethod === 'paypal' && result.approval_url) {
+        // Redirect to PayPal payment page
+        window.location.href = result.approval_url;
+      } else if (result.paymentMethod === 'paystack' && result.authorization_url) {
         // Redirect to Paystack payment page
         window.location.href = result.authorization_url;
       } else {
@@ -300,7 +304,8 @@ export default function ClaimCompanyPage() {
   const handlePayment = () => {
     if (claimId) {
       paymentMutation.mutate({
-        claimId: claimId, // Use dedicated claims payment endpoint
+        claimId: claimId,
+        paymentMethod: paymentMethod,
       });
     }
   };
@@ -888,7 +893,7 @@ export default function ClaimCompanyPage() {
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                     <h4 className="font-medium text-yellow-900 mb-2">Ready to proceed?</h4>
                     <p className="text-sm text-yellow-800">
-                      Submit your claim and proceed to secure payment with Paystack.
+                      Submit your claim and proceed to secure payment with PayPal or Paystack.
                     </p>
                   </div>
 
@@ -931,6 +936,30 @@ export default function ClaimCompanyPage() {
                     </div>
                   </div>
 
+                  <div className="space-y-4">
+                    <Label className="text-base font-medium">Select Payment Method</Label>
+                    <RadioGroup 
+                      value={paymentMethod} 
+                      onValueChange={(value) => setPaymentMethod(value as 'paypal' | 'paystack')}
+                      className="space-y-3"
+                    >
+                      <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paypal')}>
+                        <RadioGroupItem value="paypal" id="claim-paypal" data-testid="radio-claim-paypal" />
+                        <Label htmlFor="claim-paypal" className="flex-1 cursor-pointer">
+                          <div className="font-medium">PayPal</div>
+                          <div className="text-sm text-gray-500">Pay securely with PayPal (USD only)</div>
+                        </Label>
+                      </div>
+                      <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paystack')}>
+                        <RadioGroupItem value="paystack" id="claim-paystack" data-testid="radio-claim-paystack" />
+                        <Label htmlFor="claim-paystack" className="flex-1 cursor-pointer">
+                          <div className="font-medium">Paystack</div>
+                          <div className="text-sm text-gray-500">Alternative payment option (a Stripe subsidiary)</div>
+                        </Label>
+                      </div>
+                    </RadioGroup>
+                  </div>
+
                   <div className="flex gap-4 pt-4">
                     <Button 
                       onClick={() => setStep('form')} 
@@ -943,9 +972,17 @@ export default function ClaimCompanyPage() {
                       onClick={handlePayment}
                       disabled={paymentMutation.isPending}
                       className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700"
+                      data-testid="button-proceed-claim-payment"
                     >
-                      {paymentMutation.isPending ? 'Initializing...' : 'Pay with Paystack (a Stripe subsidiary)'}
+                      {paymentMutation.isPending ? 'Initializing...' : `Proceed with ${paymentMethod === 'paypal' ? 'PayPal' : 'Paystack'}`}
                     </Button>
+                  </div>
+                  
+                  <div className="text-sm text-gray-500 text-center">
+                    {paymentMethod === 'paypal' 
+                      ? 'Secure payment powered by PayPal. All transactions in USD.'
+                      : 'Secure payment powered by Paystack. Supports cards, bank transfers, and mobile money.'
+                    }
                   </div>
                 </>
               )}

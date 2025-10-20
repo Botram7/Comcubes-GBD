@@ -14,6 +14,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { apiRequest } from '@/lib/queryClient';
@@ -59,6 +61,7 @@ export default function ListCompanyPage() {
   const [selectedPlan, setSelectedPlan] = useState<'basic' | 'premium' | null>(null);
   const [selectedSector, setSelectedSector] = useState<string>('');
   const [isWaitlisted, setIsWaitlisted] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'paystack'>('paypal');
   
   // URL validation state
   const [urlToCheck, setUrlToCheck] = useState<string>('');
@@ -194,12 +197,15 @@ export default function ListCompanyPage() {
   });
 
   const paymentMutation = useMutation({
-    mutationFn: async (data: { listingId: number; amount: number }) => {
+    mutationFn: async (data: { listingId: number; amount: number; paymentMethod: string }) => {
       const response = await apiRequest('POST', '/api/payment/initialize', data);
       return response.json();
     },
     onSuccess: (result) => {
-      if (result.authorization_url) {
+      if (result.paymentMethod === 'paypal' && result.approval_url) {
+        // Redirect to PayPal payment page
+        window.location.href = result.approval_url;
+      } else if (result.paymentMethod === 'paystack' && result.authorization_url) {
         // Redirect to Paystack payment page
         window.location.href = result.authorization_url;
       } else {
@@ -235,6 +241,7 @@ export default function ListCompanyPage() {
       paymentMutation.mutate({
         listingId,
         amount,
+        paymentMethod,
       });
     }
   };
@@ -316,18 +323,49 @@ export default function ListCompanyPage() {
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <Label className="text-base font-medium">Select Payment Method</Label>
+                <RadioGroup 
+                  value={paymentMethod} 
+                  onValueChange={(value) => setPaymentMethod(value as 'paypal' | 'paystack')}
+                  className="space-y-3"
+                >
+                  <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paypal')}>
+                    <RadioGroupItem value="paypal" id="paypal" data-testid="radio-paypal" />
+                    <Label htmlFor="paypal" className="flex-1 cursor-pointer">
+                      <div className="font-medium">PayPal</div>
+                      <div className="text-sm text-gray-500">Pay securely with PayPal (USD only)</div>
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paystack')}>
+                    <RadioGroupItem value="paystack" id="paystack" data-testid="radio-paystack" />
+                    <Label htmlFor="paystack" className="flex-1 cursor-pointer">
+                      <div className="font-medium">Paystack</div>
+                      <div className="text-sm text-gray-500">Alternative payment option (a Stripe subsidiary)</div>
+                    </Label>
+                  </div>
+                </RadioGroup>
+              </div>
+
               <Button 
                 onClick={handlePayment}
                 size="lg"
                 className="w-full"
                 disabled={paymentMutation.isPending}
+                data-testid="button-proceed-payment"
               >
-                {paymentMutation.isPending ? 'Processing...' : 'Pay with Paystack (a Stripe subsidiary)'}
+                {paymentMutation.isPending 
+                  ? 'Processing...' 
+                  : `Proceed with ${paymentMethod === 'paypal' ? 'PayPal' : 'Paystack'}`
+                }
               </Button>
               
-              <div className="text-sm text-gray-500">
-                Secure payment powered by Paystack. Supports cards, bank transfers, and mobile money.
+              <div className="text-sm text-gray-500 text-center">
+                {paymentMethod === 'paypal' 
+                  ? 'Secure payment powered by PayPal. All transactions in USD.'
+                  : 'Secure payment powered by Paystack. Supports cards, bank transfers, and mobile money.'
+                }
               </div>
             </div>
           </CardContent>
