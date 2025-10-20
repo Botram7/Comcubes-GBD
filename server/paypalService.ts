@@ -5,6 +5,10 @@ import {
   Client,
   Environment,
   OrdersController,
+  CheckoutPaymentIntent,
+  OrderApplicationContextLandingPage,
+  OrderApplicationContextShippingPreference,
+  OrderApplicationContextUserAction,
 } from "@paypal/paypal-server-sdk";
 
 // Currency configurations for proper decimal handling
@@ -104,10 +108,10 @@ export class PayPalService {
         ref: data.reference.substring(0, 30)
       };
 
-      // Create PayPal order
+      // Create PayPal order with guest checkout enabled
       const collect = {
         body: {
-          intent: "CAPTURE" as const,
+          intent: CheckoutPaymentIntent.Capture,
           purchaseUnits: [
             {
               referenceId: data.reference,
@@ -127,7 +131,9 @@ export class PayPalService {
               ? `https://${process.env.REPLIT_DEV_DOMAIN}/payment/cancel`
               : 'http://localhost:5000/payment/cancel',
             brandName: "COMCUBES",
-            userAction: "PAY_NOW",
+            userAction: OrderApplicationContextUserAction.PayNow,
+            landingPage: OrderApplicationContextLandingPage.Billing,
+            shippingPreference: OrderApplicationContextShippingPreference.NoShipping,
           },
         },
         prefer: "return=representation",
