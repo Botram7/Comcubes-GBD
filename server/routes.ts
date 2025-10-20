@@ -8,6 +8,8 @@ import { SitemapGenerator } from "./sitemapGenerator";
 import { googleSearchService } from "./services/googleSearchService";
 import { EmailService } from "./emailService";
 import { paystackService } from "./paystackService";
+import { paypalService } from "./paypalService";
+import { createPaypalOrder, capturePaypalOrder, loadPaypalDefault } from "./paypal";
 import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/schema";
 import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
 import { registerGeographicRoutes } from "./routes/geographicRoutes";
@@ -739,15 +741,15 @@ Please contact this potential advertiser within 24 hours.
   // Initialize payment for company listing
   app.post('/api/payment/initialize', async (req, res) => {
     try {
-      const { listingId, amount } = req.body;
+      const { listingId, amount, paymentMethod } = req.body;
       
       if (!listingId || !amount) {
         return res.status(400).json({ error: 'Listing ID and amount are required' });
       }
 
-      // Generate payment reference
-      const reference = paystackService.generateReference();
-      const amountInCents = amount; // Frontend now sends cents directly
+      // Default to PayPal if no payment method specified (PayPal is primary)
+      const method = paymentMethod || 'paypal';
+      const amountInCents = amount; // Frontend sends cents directly
       
       // Get listing details for email
       const listings = await storage.getCompanyListings();
@@ -757,24 +759,52 @@ Please contact this potential advertiser within 24 hours.
         return res.status(404).json({ error: 'Listing not found' });
       }
 
-      const paymentData = await paystackService.initializePayment({
-        email: listing.contactEmail,
-        amount: amountInCents,
-        currency: 'USD', // Specify USD currency for international business
-        reference,
-        metadata: {
-          listingId,
-          companyName: listing.companyName,
-          purpose: 'COMCUBES Company Listing Fee'
-        }
-      });
+      if (method === 'paypal') {
+        // PayPal payment flow - clean USD only
+        const reference = paypalService.generateReference();
+        
+        const paymentData = await paypalService.initializePayment({
+          email: listing.contactEmail,
+          amount: amountInCents,
+          reference,
+          metadata: {
+            listingId,
+            companyName: listing.companyName,
+            purpose: 'COMCUBES Company Listing Fee'
+          }
+        });
 
-      res.json({
-        success: true,
-        authorization_url: paymentData.authorization_url,
-        access_code: paymentData.access_code,
-        reference: paymentData.reference
-      });
+        res.json({
+          success: true,
+          paymentMethod: 'paypal',
+          approval_url: paymentData.approval_url,
+          order_id: paymentData.order_id,
+          reference: paymentData.reference
+        });
+      } else {
+        // Paystack payment flow (fallback option)
+        const reference = paystackService.generateReference();
+        
+        const paymentData = await paystackService.initializePayment({
+          email: listing.contactEmail,
+          amount: amountInCents,
+          currency: 'USD',
+          reference,
+          metadata: {
+            listingId,
+            companyName: listing.companyName,
+            purpose: 'COMCUBES Company Listing Fee'
+          }
+        });
+
+        res.json({
+          success: true,
+          paymentMethod: 'paystack',
+          authorization_url: paymentData.authorization_url,
+          access_code: paymentData.access_code,
+          reference: paymentData.reference
+        });
+      }
     } catch (error) {
       console.error('Payment initialization error:', error);
       res.status(500).json({ error: 'Failed to initialize payment' });
@@ -1278,70 +1308,105 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
-  // Verify payment
+  // Verify payment (supports both PayPal and Paystack)
   app.post('/api/payment/verify', async (req, res) => {
     try {
-      const { reference } = req.body;
+      const { reference, orderId, paymentMethod } = req.body;
       
-      if (!reference) {
-        return res.status(400).json({ error: 'Payment reference is required' });
+      if (!reference && !orderId) {
+        return res.status(400).json({ error: 'Payment reference or order ID is required' });
       }
 
-      const verification = await paystackService.verifyPayment(reference);
-      
-      if (verification.status === 'success') {
-        // Update listing with payment information
-        const { listingId, fallbackPayment, originalAmount } = verification.metadata;
+      let verification;
+      let amount: number;
+      let paymentReference: string;
+
+      // Determine payment method and verify accordingly
+      if (orderId || paymentMethod === 'paypal') {
+        // PayPal payment verification
+        const paypalOrderId = orderId || reference;
+        verification = await paypalService.verifyPayment(paypalOrderId);
         
-        // Handle both USD and NGN fallback payments
-        let amount: number;
-        if (fallbackPayment && originalAmount) {
-          // This was a fallback payment, use the original USD amount
-          amount = paystackService.convertToUSD(originalAmount);
-          console.log(`Payment verified with NGN fallback, using original USD amount: $${amount}`);
+        if (verification.status === 'success') {
+          amount = paypalService.convertToUSD(verification.amount);
+          paymentReference = verification.metadata.reference || paypalOrderId;
+          
+          const listingId = verification.metadata.listingId;
+          await storage.updateCompanyListingPayment(listingId, paymentReference, amount);
+          
+          // Send confirmation emails
+          const listings = await storage.getCompanyListings();
+          const listing = listings.find(l => l.id === listingId);
+          
+          if (listing) {
+            const emailService = new EmailService();
+            await Promise.all([
+              emailService.sendListingConfirmation({
+                companyName: listing.companyName,
+                contactEmail: listing.contactEmail,
+                paymentReference: paymentReference
+              }),
+              emailService.sendAdminNotification(listing)
+            ]);
+          }
+          
+          res.json({ 
+            success: true, 
+            message: 'PayPal payment verified successfully',
+            amount: amount,
+            paymentMethod: 'paypal'
+          });
         } else {
-          // Regular USD payment
-          amount = paystackService.convertToUSD(verification.amount);
-        }
-        
-        await storage.updateCompanyListingPayment(listingId, reference, amount);
-        
-        // Send confirmation email and admin notification
-        const listings = await storage.getCompanyListings();
-        const listing = listings.find(l => l.id === listingId);
-        
-        if (listing) {
-          // Send notifications
-          const emailService = new EmailService();
-          await Promise.all([
-            emailService.sendListingConfirmation({
-              companyName: listing.companyName,
-              contactEmail: listing.contactEmail,
-              paymentReference: reference
-            }),
-            emailService.sendAdminNotification(listing)
-          ]);
-        }
-        
-        if (listing) {
-          const emailService = new EmailService();
-          await emailService.sendListingConfirmation({
-            companyName: listing.companyName,
-            contactEmail: listing.contactEmail,
-            paymentReference: reference
+          res.status(400).json({ 
+            success: false, 
+            message: 'PayPal payment verification failed' 
           });
         }
-        
-        res.json({ 
-          success: true, 
-          message: 'Payment verified successfully',
-          amount: amount 
-        });
       } else {
-        res.status(400).json({ 
-          success: false, 
-          message: 'Payment verification failed' 
-        });
+        // Paystack payment verification
+        verification = await paystackService.verifyPayment(reference);
+        
+        if (verification.status === 'success') {
+          const { listingId, fallbackPayment, originalAmount } = verification.metadata;
+          
+          // Handle both USD and NGN fallback payments
+          if (fallbackPayment && originalAmount) {
+            amount = paystackService.convertToUSD(originalAmount);
+            console.log(`Payment verified with NGN fallback, using original USD amount: $${amount}`);
+          } else {
+            amount = paystackService.convertToUSD(verification.amount);
+          }
+          
+          await storage.updateCompanyListingPayment(listingId, reference, amount);
+          
+          // Send confirmation emails
+          const listings = await storage.getCompanyListings();
+          const listing = listings.find(l => l.id === listingId);
+          
+          if (listing) {
+            const emailService = new EmailService();
+            await Promise.all([
+              emailService.sendListingConfirmation({
+                companyName: listing.companyName,
+                contactEmail: listing.contactEmail,
+                paymentReference: reference
+              }),
+              emailService.sendAdminNotification(listing)
+            ]);
+          }
+          
+          res.json({ 
+            success: true, 
+            message: 'Paystack payment verified successfully',
+            amount: amount,
+            paymentMethod: 'paystack'
+          });
+        } else {
+          res.status(400).json({ 
+            success: false, 
+            message: 'Paystack payment verification failed' 
+          });
+        }
       }
     } catch (error) {
       console.error('Payment verification error:', error);
@@ -1537,6 +1602,19 @@ Crawl-delay: 1`;
       console.error('Error generating OG image:', error);
       res.status(500).send('Error generating image');
     }
+  });
+
+  // PayPal routes (from blueprint)
+  app.get("/api/paypal/setup", async (req, res) => {
+    await loadPaypalDefault(req, res);
+  });
+
+  app.post("/api/paypal/order", async (req, res) => {
+    await createPaypalOrder(req, res);
+  });
+
+  app.post("/api/paypal/order/:orderID/capture", async (req, res) => {
+    await capturePaypalOrder(req, res);
   });
 
   // Register company claim routes

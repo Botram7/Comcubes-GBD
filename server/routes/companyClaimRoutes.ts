@@ -6,6 +6,7 @@ import crypto from "crypto";
 import { storage } from "../storage";
 import { EmailService } from "../emailService";
 import { PaystackService } from "../paystackService";
+import { paypalService } from "../paypalService";
 
 // Configure multer for file uploads
 const upload = multer({
@@ -309,10 +310,10 @@ export function registerCompanyClaimRoutes(app: Express) {
     }
   });
 
-  // Initialize payment for company claim
+  // Initialize payment for company claim (supports PayPal and Paystack)
   app.post("/api/claims/payment/initialize", async (req, res) => {
     try {
-      const { claimId } = req.body;
+      const { claimId, paymentMethod } = req.body;
 
       if (!claimId) {
         return res.status(400).json({ error: "Claim ID is required" });
@@ -341,35 +342,60 @@ export function registerCompanyClaimRoutes(app: Express) {
         return res.status(400).json({ error: "Invalid plan type" });
       }
 
-      // Generate payment reference
+      // Default to PayPal if no payment method specified (PayPal is primary)
+      const method = paymentMethod || 'paypal';
       const timestamp = Date.now();
       const reference = `claim_${claimId}_${timestamp}`;
 
-      // Initialize payment with Paystack
-      const paystackService = new PaystackService();
-      const paymentData = await paystackService.initializePayment({
-        email: claim.contactEmail,
-        amount: amount,
-        reference: reference,
-        currency: 'USD',
-        metadata: {
-          type: 'claim',
-          claimId: claimId,
-          companyId: claim.companyId,
-          plan: claim.plan,
-          companyName: claim.companyName
-        }
-      });
+      if (method === 'paypal') {
+        // PayPal payment flow - clean USD only
+        const paymentData = await paypalService.initializePayment({
+          email: claim.contactEmail,
+          amount: amount,
+          reference: reference,
+          metadata: {
+            type: 'claim',
+            claimId: claimId,
+            companyId: claim.companyId,
+            plan: claim.plan,
+            companyName: claim.companyName
+          }
+        });
 
-      // Store payment reference in the claim (optional - you might want to add this to storage)
-      // await storage.updateClaimPaymentReference(claimId, reference);
+        res.json({
+          success: true,
+          paymentMethod: 'paypal',
+          approval_url: paymentData.approval_url,
+          order_id: paymentData.order_id,
+          reference: paymentData.reference,
+          amount: amount
+        });
+      } else {
+        // Paystack payment flow (fallback option)
+        const paystackService = new PaystackService();
+        const paymentData = await paystackService.initializePayment({
+          email: claim.contactEmail,
+          amount: amount,
+          reference: reference,
+          currency: 'USD',
+          metadata: {
+            type: 'claim',
+            claimId: claimId,
+            companyId: claim.companyId,
+            plan: claim.plan,
+            companyName: claim.companyName
+          }
+        });
 
-      res.json({
-        authorization_url: paymentData.authorization_url,
-        access_code: paymentData.access_code,
-        reference: paymentData.reference,
-        amount: amount
-      });
+        res.json({
+          success: true,
+          paymentMethod: 'paystack',
+          authorization_url: paymentData.authorization_url,
+          access_code: paymentData.access_code,
+          reference: paymentData.reference,
+          amount: amount
+        });
+      }
 
     } catch (error) {
       console.error("Error initializing claim payment:", error);
@@ -379,46 +405,76 @@ export function registerCompanyClaimRoutes(app: Express) {
     }
   });
 
-  // Verify payment for company claim
+  // Verify payment for company claim (supports both PayPal and Paystack)
   app.post("/api/claims/payment/verify", async (req, res) => {
     try {
-      const { reference } = req.body;
+      const { reference, orderId, paymentMethod } = req.body;
 
-      if (!reference) {
-        return res.status(400).json({ error: "Payment reference is required" });
+      if (!reference && !orderId) {
+        return res.status(400).json({ error: "Payment reference or order ID is required" });
       }
 
-      // Verify payment with Paystack
-      const paystackService = new PaystackService();
-      const paymentResult = await paystackService.verifyPayment(reference);
+      let paymentResult;
+      let claimId: number;
 
-      if (paymentResult.status === 'success') {
-        // Extract claimId from reference (format: claim_123_timestamp)
-        const claimIdMatch = reference.match(/^claim_(\d+)_/);
-        if (!claimIdMatch) {
-          return res.status(400).json({ error: "Invalid payment reference format" });
+      // Determine payment method and verify accordingly
+      if (orderId || paymentMethod === 'paypal') {
+        // PayPal payment verification
+        const paypalOrderId = orderId || reference;
+        paymentResult = await paypalService.verifyPayment(paypalOrderId);
+
+        if (paymentResult.status === 'success') {
+          // Extract claimId from metadata or reference
+          claimId = paymentResult.metadata.claimId;
+          
+          // Update claim status to paid
+          await storage.updateCompanyClaimStatus(claimId, 'paid');
+
+          res.json({
+            message: "PayPal payment verified successfully",
+            status: "success",
+            paymentMethod: 'paypal',
+            claimId: claimId,
+            data: paymentResult
+          });
+        } else {
+          res.status(400).json({
+            message: "PayPal payment verification failed",
+            status: paymentResult.status,
+            data: paymentResult
+          });
         }
-
-        const claimId = parseInt(claimIdMatch[1]);
-        
-        // Update claim status to paid
-        await storage.updateCompanyClaimStatus(claimId, 'paid');
-
-        // TODO: Optionally create/attach enhanced details to the company profile here
-
-        res.json({
-          message: "Payment verified successfully",
-          status: "success",
-          claimId: claimId,
-          data: paymentResult
-        });
-
       } else {
-        res.status(400).json({
-          message: "Payment verification failed",
-          status: paymentResult.status,
-          data: paymentResult
-        });
+        // Paystack payment verification
+        const paystackService = new PaystackService();
+        paymentResult = await paystackService.verifyPayment(reference);
+
+        if (paymentResult.status === 'success') {
+          // Extract claimId from reference (format: claim_123_timestamp)
+          const claimIdMatch = reference.match(/^claim_(\d+)_/);
+          if (!claimIdMatch) {
+            return res.status(400).json({ error: "Invalid payment reference format" });
+          }
+
+          claimId = parseInt(claimIdMatch[1]);
+          
+          // Update claim status to paid
+          await storage.updateCompanyClaimStatus(claimId, 'paid');
+
+          res.json({
+            message: "Paystack payment verified successfully",
+            status: "success",
+            paymentMethod: 'paystack',
+            claimId: claimId,
+            data: paymentResult
+          });
+        } else {
+          res.status(400).json({
+            message: "Paystack payment verification failed",
+            status: paymentResult.status,
+            data: paymentResult
+          });
+        }
       }
 
     } catch (error) {
