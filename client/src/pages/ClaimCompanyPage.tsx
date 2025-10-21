@@ -79,7 +79,7 @@ export default function ClaimCompanyPage() {
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
   const [claimId, setClaimId] = useState<number | null>(null);
-  const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'paystack'>('paypal');
+  const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'paystack'>('paystack');
   const [formData, setFormData] = useState<ClaimFormData>({
     companyId: '',
     companyName: '',
@@ -943,18 +943,18 @@ export default function ClaimCompanyPage() {
                       onValueChange={(value) => setPaymentMethod(value as 'paypal' | 'paystack')}
                       className="space-y-3"
                     >
-                      <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paypal')}>
-                        <RadioGroupItem value="paypal" id="claim-paypal" data-testid="radio-claim-paypal" />
-                        <Label htmlFor="claim-paypal" className="flex-1 cursor-pointer">
-                          <div className="font-medium">PayPal</div>
-                          <div className="text-sm text-gray-500">Pay securely with PayPal</div>
-                        </Label>
-                      </div>
                       <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paystack')}>
                         <RadioGroupItem value="paystack" id="claim-paystack" data-testid="radio-claim-paystack" />
                         <Label htmlFor="claim-paystack" className="flex-1 cursor-pointer">
                           <div className="font-medium">Paystack</div>
-                          <div className="text-sm text-gray-500">Alternative payment option (a Stripe subsidiary)</div>
+                          <div className="text-sm text-gray-500">Pay securely with Paystack (a Stripe subsidiary)</div>
+                        </Label>
+                      </div>
+                      <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paypal')}>
+                        <RadioGroupItem value="paypal" id="claim-paypal" data-testid="radio-claim-paypal" />
+                        <Label htmlFor="claim-paypal" className="flex-1 cursor-pointer">
+                          <div className="font-medium">PayPal (Account may be required)</div>
+                          <div className="text-sm text-gray-500">Alternative payment option</div>
                         </Label>
                       </div>
                     </RadioGroup>
