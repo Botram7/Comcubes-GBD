@@ -80,6 +80,8 @@ export default function ClaimCompanyPage() {
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
   const [claimId, setClaimId] = useState<number | null>(null);
   const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'paystack'>('paystack');
+  const [exchangeRate, setExchangeRate] = useState<number | null>(null);
+  const [isLoadingRate, setIsLoadingRate] = useState(false);
   const [formData, setFormData] = useState<ClaimFormData>({
     companyId: '',
     companyName: '',
@@ -94,6 +96,29 @@ export default function ClaimCompanyPage() {
   // URL validation state
   const [urlToCheck, setUrlToCheck] = useState<string>('');
   const [urlCheckDebounceTimer, setUrlCheckDebounceTimer] = useState<NodeJS.Timeout | null>(null);
+
+  // Fetch exchange rate when payment method changes to Paystack
+  useEffect(() => {
+    const fetchExchangeRate = async () => {
+      if (paymentMethod === 'paystack' && claimId) {
+        setIsLoadingRate(true);
+        try {
+          const response = await fetch('/api/currency/usd-to-ngn');
+          const data = await response.json();
+          if (data.rate) {
+            setExchangeRate(data.rate);
+          }
+        } catch (error) {
+          console.error('Failed to fetch exchange rate:', error);
+          setExchangeRate(null);
+        } finally {
+          setIsLoadingRate(false);
+        }
+      }
+    };
+    
+    fetchExchangeRate();
+  }, [paymentMethod, claimId]);
 
   // Check for URL parameters and auto-populate form data
   useEffect(() => {
@@ -959,6 +984,30 @@ export default function ClaimCompanyPage() {
                       </div>
                     </RadioGroup>
                   </div>
+
+                  {/* Currency Conversion Notice for Paystack */}
+                  {paymentMethod === 'paystack' && (
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                      <div className="flex items-start gap-2">
+                        <AlertCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                        <div className="flex-1">
+                          <h4 className="font-medium text-amber-900 mb-1">Currency Conversion Notice</h4>
+                          <p className="text-sm text-amber-800">
+                            You're paying <strong>${CLAIM_PRICING[formData.plan].annualPrice} USD</strong>
+                            {isLoadingRate && <span className="ml-1">(fetching exchange rate...)</span>}
+                            {!isLoadingRate && exchangeRate && (
+                              <span>
+                                , which equals approximately <strong>₦{(CLAIM_PRICING[formData.plan].annualPrice * exchangeRate).toLocaleString('en-NG', { maximumFractionDigits: 0 })} NGN</strong> at the current exchange rate of ₦{exchangeRate.toFixed(2)}/USD.
+                              </span>
+                            )}
+                          </p>
+                          <p className="text-xs text-amber-700 mt-2">
+                            The Paystack checkout page will display the NGN amount, but rest assured you're being charged the correct equivalent of your USD payment.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   <div className="flex gap-4 pt-4">
                     <Button 
