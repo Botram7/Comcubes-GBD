@@ -62,6 +62,8 @@ export default function ListCompanyPage() {
   const [selectedSector, setSelectedSector] = useState<string>('');
   const [isWaitlisted, setIsWaitlisted] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'paystack'>('paystack');
+  const [exchangeRate, setExchangeRate] = useState<number | null>(null);
+  const [isLoadingRate, setIsLoadingRate] = useState(false);
   
   // URL validation state
   const [urlToCheck, setUrlToCheck] = useState<string>('');
@@ -133,6 +135,29 @@ export default function ListCompanyPage() {
     
     setUrlCheckDebounceTimer(timer);
   }, [urlCheckDebounceTimer]);
+
+  // Fetch exchange rate when payment method changes to Paystack
+  useEffect(() => {
+    const fetchExchangeRate = async () => {
+      if (paymentMethod === 'paystack' && listingId) {
+        setIsLoadingRate(true);
+        try {
+          const response = await fetch('/api/currency/usd-to-ngn');
+          const data = await response.json();
+          if (data.rate) {
+            setExchangeRate(data.rate);
+          }
+        } catch (error) {
+          console.error('Failed to fetch exchange rate:', error);
+          setExchangeRate(null);
+        } finally {
+          setIsLoadingRate(false);
+        }
+      }
+    };
+    
+    fetchExchangeRate();
+  }, [paymentMethod, listingId]);
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -347,6 +372,30 @@ export default function ListCompanyPage() {
                   </div>
                 </RadioGroup>
               </div>
+
+              {/* Currency Conversion Notice for Paystack */}
+              {paymentMethod === 'paystack' && selectedPlan && (
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                  <div className="flex items-start gap-2">
+                    <AlertCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <div className="flex-1">
+                      <h4 className="font-medium text-amber-900 mb-1">Currency Conversion Notice</h4>
+                      <p className="text-sm text-amber-800">
+                        You're paying <strong>${selectedPlan === 'basic' ? '60.00' : '90.00'} USD</strong>
+                        {isLoadingRate && <span className="ml-1">(fetching exchange rate...)</span>}
+                        {!isLoadingRate && exchangeRate && (
+                          <span>
+                            , which equals approximately <strong>₦{((selectedPlan === 'basic' ? 60 : 90) * exchangeRate).toLocaleString('en-NG', { maximumFractionDigits: 0 })} NGN</strong> at the current exchange rate of ₦{exchangeRate.toFixed(2)}/USD.
+                          </span>
+                        )}
+                      </p>
+                      <p className="text-xs text-amber-700 mt-2">
+                        The Paystack checkout page will display the NGN amount, but rest assured you're being charged the correct equivalent of your USD payment.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <Button 
                 onClick={handlePayment}

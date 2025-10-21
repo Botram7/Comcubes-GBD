@@ -9,6 +9,7 @@ import { googleSearchService } from "./services/googleSearchService";
 import { EmailService } from "./emailService";
 import { paystackService } from "./paystackService";
 import { paypalService } from "./paypalService";
+import { currencyService } from "./currencyService";
 import { createPaypalOrder, capturePaypalOrder, loadPaypalDefault } from "./paypal";
 import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/schema";
 import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
@@ -117,6 +118,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
+  // Get USD to NGN exchange rate
+  app.get("/api/currency/usd-to-ngn", async (req, res) => {
+    try {
+      const rate = await currencyService.getExchangeRate('USD', 'NGN');
+      res.json({ 
+        rate: rate.rate,
+        source: rate.source,
+        timestamp: new Date().toISOString()
+      });
+    } catch (error) {
+      console.error("Error fetching exchange rate:", error);
+      res.status(500).json({ error: "Failed to fetch exchange rate" });
+    }
+  });
+
   // Get all sectors
   app.get("/api/sectors", async (req, res) => {
     try {
