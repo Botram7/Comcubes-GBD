@@ -61,7 +61,7 @@ export default function ListCompanyPage() {
   const [selectedPlan, setSelectedPlan] = useState<'basic' | 'premium' | null>(null);
   const [selectedSector, setSelectedSector] = useState<string>('');
   const [isWaitlisted, setIsWaitlisted] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'paystack'>('paypal');
+  const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'paystack'>('paystack');
   
   // URL validation state
   const [urlToCheck, setUrlToCheck] = useState<string>('');
@@ -331,18 +331,18 @@ export default function ListCompanyPage() {
                   onValueChange={(value) => setPaymentMethod(value as 'paypal' | 'paystack')}
                   className="space-y-3"
                 >
-                  <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paypal')}>
-                    <RadioGroupItem value="paypal" id="paypal" data-testid="radio-paypal" />
-                    <Label htmlFor="paypal" className="flex-1 cursor-pointer">
-                      <div className="font-medium">PayPal</div>
-                      <div className="text-sm text-gray-500">Pay securely with PayPal</div>
-                    </Label>
-                  </div>
                   <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paystack')}>
                     <RadioGroupItem value="paystack" id="paystack" data-testid="radio-paystack" />
                     <Label htmlFor="paystack" className="flex-1 cursor-pointer">
                       <div className="font-medium">Paystack</div>
-                      <div className="text-sm text-gray-500">Alternative payment option (a Stripe subsidiary)</div>
+                      <div className="text-sm text-gray-500">Pay securely with Paystack (a Stripe subsidiary)</div>
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paypal')}>
+                    <RadioGroupItem value="paypal" id="paypal" data-testid="radio-paypal" />
+                    <Label htmlFor="paypal" className="flex-1 cursor-pointer">
+                      <div className="font-medium">PayPal (Account may be required)</div>
+                      <div className="text-sm text-gray-500">Alternative payment option</div>
                     </Label>
                   </div>
                 </RadioGroup>
