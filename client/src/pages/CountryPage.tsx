@@ -59,6 +59,7 @@ export default function CountryPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [viewMode, setViewMode] = useState<'companies' | 'grouped' | 'industries'>('companies');
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
+  const [selectedSector, setSelectedSector] = useState<string | null>(null);
   const countrySlug = params?.slug || "";
 
   useEffect(() => {
@@ -70,9 +71,10 @@ export default function CountryPage() {
     setCurrentPage(1);
   }, [viewMode]);
 
-  // Reset industry filter only when changing country
+  // Reset filters only when changing country
   useEffect(() => {
     setSelectedIndustry(null);
+    setSelectedSector(null);
   }, [countrySlug]);
 
   const { data: countryData, isLoading: isLoadingCountry, error: countryError } = useQuery<CountryWithStats>({
@@ -232,13 +234,33 @@ export default function CountryPage() {
     );
   }
 
-  // Filter companies by selected industry if active
+  // Filter companies by selected industry and/or sector if active
   let companies: Company[] = [];
   let totalCompanies = countryData.stats.totalCompanies;
   
-  if (selectedIndustry && allCompaniesData) {
-    // When filtering, use all companies and filter by industry
-    companies = allCompaniesData.companies.filter(c => c.industryName === selectedIndustry);
+  if ((selectedIndustry || selectedSector) && allCompaniesData) {
+    // When filtering, use all companies and filter by industry and/or sector
+    let filteredCompanies = allCompaniesData.companies.filter(c => {
+      const matchesIndustry = !selectedIndustry || c.industryName === selectedIndustry;
+      const matchesSector = !selectedSector || c.sectorName === selectedSector;
+      return matchesIndustry && matchesSector;
+    });
+    
+    // If filtering by industry only (no sector), deduplicate by company name
+    // to avoid showing same company multiple times from different sectors
+    if (selectedIndustry && !selectedSector) {
+      const uniqueCompanies = new Map<string, Company>();
+      filteredCompanies.forEach(c => {
+        // Keep first occurrence of each company name
+        if (!uniqueCompanies.has(c.name)) {
+          uniqueCompanies.set(c.name, c);
+        }
+      });
+      companies = Array.from(uniqueCompanies.values());
+    } else {
+      companies = filteredCompanies;
+    }
+    
     totalCompanies = companies.length;
   } else {
     // When not filtering, use paginated data
@@ -442,20 +464,33 @@ export default function CountryPage() {
                   </Button>
                 </div>
 
-                {/* Industry Filter Indicator */}
-                {selectedIndustry && viewMode === 'companies' && (
+                {/* Industry/Sector Filter Indicator */}
+                {(selectedIndustry || selectedSector) && viewMode === 'companies' && (
                   <Alert className="mb-6 bg-blue-50 border-blue-200">
                     <AlertDescription className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <Building2 className="h-4 w-4 text-blue-600" />
                         <span className="text-blue-900">
-                          Showing companies in <strong>{selectedIndustry}</strong> industry in {countryData.name}
+                          Showing companies in 
+                          {selectedSector && selectedIndustry && (
+                            <> <strong>{selectedIndustry}</strong> industry (<strong>{selectedSector}</strong> sector)</>
+                          )}
+                          {selectedIndustry && !selectedSector && (
+                            <> <strong>{selectedIndustry}</strong> industry</>
+                          )}
+                          {selectedSector && !selectedIndustry && (
+                            <> <strong>{selectedSector}</strong> sector</>
+                          )}
+                          {' '}in {countryData.name}
                         </span>
                       </div>
                       <Button
                         variant="ghost"
                         size="sm"
-                        onClick={() => setSelectedIndustry(null)}
+                        onClick={() => {
+                          setSelectedIndustry(null);
+                          setSelectedSector(null);
+                        }}
                         className="h-auto p-1 hover:bg-blue-100"
                         data-testid="button-clear-industry-filter"
                       >
@@ -531,6 +566,7 @@ export default function CountryPage() {
                                         key={industry.industryName}
                                         onClick={() => {
                                           setSelectedIndustry(industry.industryName);
+                                          setSelectedSector(sector.sectorName);
                                           setViewMode('companies');
                                           setCurrentPage(1);
                                         }}
