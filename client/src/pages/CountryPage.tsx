@@ -63,7 +63,7 @@ export default function CountryPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [currentPage, countrySlug]);
+  }, [currentPage, countrySlug, selectedIndustry]);
 
   // Reset page when switching views
   useEffect(() => {
