@@ -6,7 +6,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Pagination } from "@/components/Pagination";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AlertCircle, Building2, ArrowLeft, LayoutGrid, Layers, List } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { AlertCircle, Building2, ArrowLeft, LayoutGrid, Layers, List, X } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { BannerAd } from "@/components/BannerAd";
@@ -57,6 +58,7 @@ export default function CountryPage() {
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [viewMode, setViewMode] = useState<'companies' | 'grouped' | 'industries'>('companies');
+  const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
   const countrySlug = params?.slug || "";
 
   useEffect(() => {
@@ -68,23 +70,28 @@ export default function CountryPage() {
     setCurrentPage(1);
   }, [viewMode]);
 
+  // Reset industry filter only when changing country
+  useEffect(() => {
+    setSelectedIndustry(null);
+  }, [countrySlug]);
+
   const { data: countryData, isLoading: isLoadingCountry, error: countryError } = useQuery<CountryWithStats>({
     queryKey: [`/api/geography/countries/${countrySlug}`],
     enabled: !!countrySlug,
     staleTime: Infinity,
   });
 
-  // Fetch paginated companies for "companies" view
-  const { data: companiesData, isLoading: isLoadingCompanies } = useQuery<CompaniesResponse>({
-    queryKey: [`/api/geography/countries/${countrySlug}/companies?page=${currentPage}`, currentPage],
-    enabled: !!countrySlug && viewMode === 'companies',
+  // Always fetch all companies for filtering purposes (cached with staleTime: Infinity)
+  const { data: allCompaniesData, isLoading: isLoadingAllCompanies } = useQuery<CompaniesResponse>({
+    queryKey: [`/api/geography/countries/${countrySlug}/companies`],
+    enabled: !!countrySlug,
     staleTime: Infinity,
   });
 
-  // Fetch all companies for "grouped" view
-  const { data: allCompaniesData, isLoading: isLoadingAllCompanies } = useQuery<CompaniesResponse>({
-    queryKey: [`/api/geography/countries/${countrySlug}/companies`],
-    enabled: !!countrySlug && viewMode === 'grouped',
+  // Fetch paginated companies for "companies" view (only when no filter)
+  const { data: companiesData, isLoading: isLoadingCompanies } = useQuery<CompaniesResponse>({
+    queryKey: [`/api/geography/countries/${countrySlug}/companies?page=${currentPage}`, currentPage],
+    enabled: !!countrySlug && viewMode === 'companies' && !selectedIndustry,
     staleTime: Infinity,
   });
 
@@ -102,7 +109,7 @@ export default function CountryPage() {
     setCurrentPage(page);
   };
 
-  const isLoading = isLoadingCountry || isLoadingCompanies;
+  const isLoading = isLoadingCountry || (selectedIndustry ? isLoadingAllCompanies : isLoadingCompanies);
   const error = countryError;
 
   if (isLoading) {
@@ -225,8 +232,19 @@ export default function CountryPage() {
     );
   }
 
-  const companies = companiesData?.companies || [];
-  const totalCompanies = countryData.stats.totalCompanies;
+  // Filter companies by selected industry if active
+  let companies: Company[] = [];
+  let totalCompanies = countryData.stats.totalCompanies;
+  
+  if (selectedIndustry && allCompaniesData) {
+    // When filtering, use all companies and filter by industry
+    companies = allCompaniesData.companies.filter(c => c.industryName === selectedIndustry);
+    totalCompanies = companies.length;
+  } else {
+    // When not filtering, use paginated data
+    companies = companiesData?.companies || [];
+  }
+  
   const totalPages = Math.ceil(totalCompanies / 20);
 
   const breadcrumbs = [
@@ -424,6 +442,29 @@ export default function CountryPage() {
                   </Button>
                 </div>
 
+                {/* Industry Filter Indicator */}
+                {selectedIndustry && viewMode === 'companies' && (
+                  <Alert className="mb-6 bg-blue-50 border-blue-200">
+                    <AlertDescription className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Building2 className="h-4 w-4 text-blue-600" />
+                        <span className="text-blue-900">
+                          Showing companies in <strong>{selectedIndustry}</strong> industry in {countryData.name}
+                        </span>
+                      </div>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => setSelectedIndustry(null)}
+                        className="h-auto p-1 hover:bg-blue-100"
+                        data-testid="button-clear-industry-filter"
+                      >
+                        <X className="h-4 w-4 text-blue-600" />
+                      </Button>
+                    </AlertDescription>
+                  </Alert>
+                )}
+
                 {viewMode === 'companies' && (
                   <>
                     <BusinessGrid 
@@ -488,7 +529,11 @@ export default function CountryPage() {
                                     {sectorIndustries.map((industry) => (
                                       <button
                                         key={industry.industryName}
-                                        onClick={() => setLocation(`/industry/${encodeURIComponent(industry.industryName)}`)}
+                                        onClick={() => {
+                                          setSelectedIndustry(industry.industryName);
+                                          setViewMode('companies');
+                                          setCurrentPage(1);
+                                        }}
                                         className="text-left p-4 rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 hover:from-blue-50 hover:to-blue-100 hover:shadow-lg transition-all border border-gray-200 hover:border-blue-400"
                                         data-testid={`industry-link-${industry.industryName.toLowerCase().replace(/\s+/g, '-')}`}
                                       >
@@ -538,7 +583,11 @@ export default function CountryPage() {
                             <Card
                               key={industry.industryName}
                               className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-                              onClick={() => setLocation(`/industry/${encodeURIComponent(industry.industryName)}`)}
+                              onClick={() => {
+                                setSelectedIndustry(industry.industryName);
+                                setViewMode('companies');
+                                setCurrentPage(1);
+                              }}
                               data-testid={`industry-card-${industry.industryName.toLowerCase().replace(/\s+/g, '-')}`}
                             >
                               <div className={`h-32 bg-gradient-to-br ${randomGradient} flex items-center justify-center`}>
