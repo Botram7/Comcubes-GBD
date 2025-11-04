@@ -11,11 +11,30 @@ interface GoogleAdSenseProps {
 
 // Ad format to size mapping
 const AD_FORMATS = {
-  vertical: { width: 160, height: 600, style: 'display:inline-block;width:160px;height:600px' },
-  horizontal: { width: 728, height: 90, style: 'display:inline-block;width:728px;height:90px' },
-  rectangle: { width: 300, height: 250, style: 'display:inline-block;width:300px;height:250px' },
-  responsive: { width: 'auto', height: 'auto', style: 'display:block' },
+  vertical: { 
+    width: 160, 
+    height: 600, 
+    style: { display: 'inline-block', width: '160px', height: '600px' } 
+  },
+  horizontal: { 
+    width: 728, 
+    height: 90, 
+    style: { display: 'inline-block', width: '728px', height: '90px' } 
+  },
+  rectangle: { 
+    width: 300, 
+    height: 250, 
+    style: { display: 'inline-block', width: '300px', height: '250px' } 
+  },
+  responsive: { 
+    width: 'auto', 
+    height: 'auto', 
+    style: { display: 'block' } 
+  },
 };
+
+// AdSense configuration - will be replaced with environment variables
+const ADSENSE_CLIENT_ID = import.meta.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-XXXXXXXXXX';
 
 declare global {
   interface Window {
@@ -34,13 +53,19 @@ export function GoogleAdSense({
   const [adError, setAdError] = useState(false);
 
   useEffect(() => {
+    // Skip if no valid client ID configured
+    if (!ADSENSE_CLIENT_ID || ADSENSE_CLIENT_ID === 'ca-pub-XXXXXXXXXX') {
+      console.warn('AdSense client ID not configured');
+      setAdError(true);
+      return;
+    }
+
     // Load AdSense script if not already loaded
     if (!document.querySelector('script[src*="adsbygoogle.js"]')) {
       const script = document.createElement('script');
-      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`;
       script.async = true;
       script.crossOrigin = 'anonymous';
-      script.setAttribute('data-ad-client', 'ca-pub-XXXXXXXXXX'); // Will be replaced with env var
       document.head.appendChild(script);
     }
 
@@ -92,8 +117,8 @@ export function GoogleAdSense({
     <div className={className} ref={adRef} onClick={handleAdClick}>
       <ins 
         className="adsbygoogle"
-        style={{ ...(formatConfig.style as any) }}
-        data-ad-client="ca-pub-XXXXXXXXXX"
+        style={formatConfig.style}
+        data-ad-client={ADSENSE_CLIENT_ID}
         data-ad-slot={slot}
         data-ad-format={format === 'responsive' ? 'auto' : undefined}
         data-full-width-responsive={format === 'responsive' ? 'true' : undefined}
