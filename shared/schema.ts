@@ -217,6 +217,44 @@ export const companyLocations = pgTable('company_locations', {
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
 
+// Ad Purchases table for direct advertising purchases
+export const adPurchases = pgTable('ad_purchases', {
+  id: serial('id').primaryKey(),
+  companyName: text('company_name').notNull(),
+  contactName: text('contact_name').notNull(),
+  contactEmail: text('contact_email').notNull(),
+  contactPhone: text('contact_phone'),
+  website: text('website'),
+  // Ad specifications
+  adFormat: text('ad_format').notNull(), // 'vertical_160x600', 'horizontal_728x90', 'rectangle_300x250', 'responsive'
+  adPosition: text('ad_position').notNull(), // 'left_sidebar', 'right_sidebar', 'in_content_top', 'in_content_bottom'
+  campaignDuration: text('campaign_duration').notNull(), // '1_week', '2_weeks', '1_month', '3_months', '6_months', '12_months'
+  startDate: timestamp('start_date'),
+  endDate: timestamp('end_date'),
+  // Creative assets
+  adImages: json('ad_images').$type<string[]>().default([]).notNull(), // Uploaded ad image URLs
+  adClickUrl: text('ad_click_url').notNull(), // Where the ad should link to
+  // Pricing
+  basePrice: text('base_price').notNull(), // Base pricing in USD
+  currency: text('currency').default('USD').notNull(), // Customer's payment currency
+  currencyAmount: text('currency_amount').notNull(), // Amount in customer's currency
+  exchangeRate: text('exchange_rate'), // Exchange rate at time of purchase
+  // Payment details
+  paymentMethod: text('payment_method').notNull(), // 'paystack', 'paypal'
+  paymentReference: text('payment_reference'),
+  paymentStatus: text('payment_status').default('pending').notNull(), // 'pending', 'completed', 'failed', 'refunded'
+  paymentProcessedAt: timestamp('payment_processed_at'),
+  // Campaign status
+  campaignStatus: text('campaign_status').default('draft').notNull(), // 'draft', 'pending_approval', 'active', 'paused', 'completed', 'cancelled'
+  approvalStatus: text('approval_status').default('pending').notNull(), // 'pending', 'approved', 'rejected'
+  adminNotes: text('admin_notes'),
+  // Metadata
+  submittedAt: timestamp('submitted_at').defaultNow().notNull(),
+  approvedAt: timestamp('approved_at'),
+  activatedAt: timestamp('activated_at'),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+});
+
 // Type exports
 export type Sector = typeof sectors.$inferSelect;
 export type Industry = typeof industries.$inferSelect;
@@ -234,6 +272,7 @@ export type Continent = typeof continents.$inferSelect;
 export type Region = typeof regions.$inferSelect;
 export type Country = typeof countries.$inferSelect;
 export type CompanyLocation = typeof companyLocations.$inferSelect;
+export type AdPurchase = typeof adPurchases.$inferSelect;
 
 export type InsertSector = typeof sectors.$inferInsert;
 export type InsertIndustry = typeof industries.$inferInsert;
@@ -251,6 +290,7 @@ export type InsertContinent = typeof continents.$inferInsert;
 export type InsertRegion = typeof regions.$inferInsert;
 export type InsertCountry = typeof countries.$inferInsert;
 export type InsertCompanyLocation = typeof companyLocations.$inferInsert;
+export type InsertAdPurchase = typeof adPurchases.$inferInsert;
 
 // Zod schemas for validation
 export const insertSectorSchema = createInsertSchema(sectors);
@@ -284,3 +324,5 @@ export const insertCountrySchema = createInsertSchema(countries);
 export const selectCountrySchema = createSelectSchema(countries);
 export const insertCompanyLocationSchema = createInsertSchema(companyLocations);
 export const selectCompanyLocationSchema = createSelectSchema(companyLocations);
+export const insertAdPurchaseSchema = createInsertSchema(adPurchases);
+export const selectAdPurchaseSchema = createSelectSchema(adPurchases);
