@@ -20,6 +20,8 @@ import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { apiRequest } from '@/lib/queryClient';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
+import paystackLogo from "@assets/stock_images/paystack_payment_gat_1a8599d9.jpg";
+import paypalLogo from "@assets/stock_images/paypal_payment_gatew_5f9e6261.jpg";
 import { normalizeUrl } from '@/lib/urlUtils';
 
 const companyListingSchema = z.object({
@@ -358,6 +360,7 @@ export default function ListCompanyPage() {
                 >
                   <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paystack')}>
                     <RadioGroupItem value="paystack" id="paystack" data-testid="radio-paystack" />
+                    <img src={paystackLogo} alt="Paystack" className="h-6 w-auto object-contain" />
                     <Label htmlFor="paystack" className="flex-1 cursor-pointer">
                       <div className="font-medium">Paystack</div>
                       <div className="text-sm text-gray-500">Pay securely with Paystack (a Stripe subsidiary)</div>
@@ -365,6 +368,7 @@ export default function ListCompanyPage() {
                   </div>
                   <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paypal')}>
                     <RadioGroupItem value="paypal" id="paypal" data-testid="radio-paypal" />
+                    <img src={paypalLogo} alt="PayPal" className="h-6 w-auto object-contain" />
                     <Label htmlFor="paypal" className="flex-1 cursor-pointer">
                       <div className="font-medium">PayPal (Account may be required)</div>
                       <div className="text-sm text-gray-500">Alternative payment option</div>
