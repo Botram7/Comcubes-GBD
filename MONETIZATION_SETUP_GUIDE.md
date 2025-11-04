@@ -1,8 +1,16 @@
 # COMCUBES Monetization System - Setup Guide
 
-## Important Clarification: Website Traffic
+## ⚠️ CRITICAL CLARIFICATION: Website Traffic Analysis
 
-**CURRENT STATUS**: Your website **does NOT have analytics tracking enabled yet**.
+**IMPORTANT**: Your website **does NOT currently have analytics tracking enabled**.
+
+### About That $200-600/Month Estimate
+
+I apologize for any confusion. The revenue estimates I mentioned were based on **industry averages for business directories**, NOT your actual website traffic data. Without analytics installed, I have zero visibility into:
+- How many visitors you're getting
+- Which pages are most popular  
+- Where your traffic comes from
+- User engagement metrics
 
 The "$200-600/month" estimate I mentioned was based on industry averages for business directories, NOT your actual traffic data. I apologize for the confusion.
 
