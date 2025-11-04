@@ -19,6 +19,8 @@ import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { apiRequest } from '@/lib/queryClient';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
+import paystackLogo from "@assets/stock_images/paystack_payment_gat_1a8599d9.jpg";
+import paypalLogo from "@assets/stock_images/paypal_payment_gatew_5f9e6261.jpg";
 import { Badge } from '@/components/ui/badge';
 
 const adPurchaseSchema = z.object({
@@ -510,6 +512,7 @@ export default function AdvertisePage() {
                               >
                                 <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50">
                                   <RadioGroupItem value="paystack" id="paystack" />
+                                  <img src={paystackLogo} alt="Paystack" className="h-6 w-auto object-contain" />
                                   <Label htmlFor="paystack" className="flex-1 cursor-pointer">
                                     <div className="flex items-center justify-between">
                                       <div>
@@ -522,6 +525,7 @@ export default function AdvertisePage() {
                                 </div>
                                 <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50">
                                   <RadioGroupItem value="paypal" id="paypal" />
+                                  <img src={paypalLogo} alt="PayPal" className="h-6 w-auto object-contain" />
                                   <Label htmlFor="paypal" className="flex-1 cursor-pointer">
                                     <div className="flex items-center justify-between">
                                       <div>
