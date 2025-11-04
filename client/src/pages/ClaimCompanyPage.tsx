@@ -26,6 +26,8 @@ import {
 } from "lucide-react";
 import { normalizeUrl } from '@/lib/urlUtils';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
+import paystackLogo from "@assets/stock_images/paystack_payment_gat_1a8599d9.jpg";
+import paypalLogo from "@assets/stock_images/paypal_payment_gatew_5f9e6261.jpg";
 import { SEOHead } from "@/components/SEOHead";
 import type { Sector, Industry, Company, SearchResults } from "@/lib/types";
 
@@ -970,6 +972,7 @@ export default function ClaimCompanyPage() {
                     >
                       <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paystack')}>
                         <RadioGroupItem value="paystack" id="claim-paystack" data-testid="radio-claim-paystack" />
+                        <img src={paystackLogo} alt="Paystack" className="h-6 w-auto object-contain" />
                         <Label htmlFor="claim-paystack" className="flex-1 cursor-pointer">
                           <div className="font-medium">Paystack</div>
                           <div className="text-sm text-gray-500">Pay securely with Paystack (a Stripe subsidiary)</div>
@@ -977,6 +980,7 @@ export default function ClaimCompanyPage() {
                       </div>
                       <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paypal')}>
                         <RadioGroupItem value="paypal" id="claim-paypal" data-testid="radio-claim-paypal" />
+                        <img src={paypalLogo} alt="PayPal" className="h-6 w-auto object-contain" />
                         <Label htmlFor="claim-paypal" className="flex-1 cursor-pointer">
                           <div className="font-medium">PayPal (Account may be required)</div>
                           <div className="text-sm text-gray-500">Alternative payment option</div>
