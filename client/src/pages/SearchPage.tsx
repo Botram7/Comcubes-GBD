@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { SearchBar } from '@/components/SearchBar';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { BannerAd } from '@/components/BannerAd';
+import { GoogleAdSense } from '@/components/GoogleAdSense';
 import { AffiliateDisclosureBanner } from '@/components/AffiliateDisclosureBanner';
 import { BusinessGrid } from '@/components/BusinessGrid';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
@@ -155,9 +156,10 @@ export default function SearchPage() {
       <div className="flex gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Left Sidebar - Advertisement Banner - 160x600 */}
         <div className="hidden lg:block flex-shrink-0">
-          <BannerAd 
-            className="sticky top-24" 
-            position="left"
+          <GoogleAdSense 
+            format="vertical"
+            className="sticky top-24"
+            position="search-page-left-sidebar"
           />
         </div>
 
