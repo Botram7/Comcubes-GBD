@@ -359,6 +359,15 @@ export default function IndustriesPage() {
               </div>
             </div>
 
+            {/* In-content Advertisement - Responsive */}
+            <div className="my-8 flex justify-center">
+              <GoogleAdSense 
+                format="responsive"
+                className="w-full max-w-4xl"
+                position="industries-page-in-content"
+              />
+            </div>
+
             <BusinessGrid items={industries} type="industry" onItemClick={(item) => handleIndustryClick(item as Industry)} />
 
             {totalPages > 1 && (

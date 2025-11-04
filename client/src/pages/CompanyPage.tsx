@@ -326,6 +326,15 @@ export default function CompanyPage() {
               </div>
             </div>
 
+            {/* In-content Advertisement - Responsive */}
+            <div className="my-8 flex justify-center">
+              <GoogleAdSense 
+                format="responsive"
+                className="w-full max-w-4xl"
+                position="company-page-in-content"
+              />
+            </div>
+
             <BusinessGrid items={(companyData as any)?.companies || []} type="company" onItemClick={(company) => handleCompanyClick(company as Company)} showClaimButtons={true} />
 
             <Pagination 
