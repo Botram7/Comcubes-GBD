@@ -648,6 +648,148 @@ Please contact this potential advertiser within 24 hours.
     }
   });
 
+  // Ad purchase request endpoint (self-service platform)
+  app.post('/api/ad-purchase/request', async (req, res) => {
+    try {
+      const { 
+        companyName, 
+        contactName, 
+        contactEmail, 
+        contactPhone, 
+        website,
+        adFormat,
+        adPosition,
+        campaignDuration,
+        adClickUrl,
+        paymentMethod,
+        currency,
+        basePrice,
+        message
+      } = req.body;
+
+      // Send email to admin for ad purchase review
+      const emailService = new EmailService();
+      
+      const formatLabels: Record<string, string> = {
+        'vertical_160x600': 'Vertical Skyscraper (160×600px)',
+        'horizontal_728x90': 'Horizontal Leaderboard (728×90px)',
+        'rectangle_300x250': 'Medium Rectangle (300×250px)',
+        'responsive': 'Responsive Ad (Flexible)',
+      };
+
+      const positionLabels: Record<string, string> = {
+        'left_sidebar': 'Left Sidebar',
+        'right_sidebar': 'Right Sidebar',
+        'in_content_top': 'In-Content Top',
+        'in_content_bottom': 'In-Content Bottom',
+      };
+
+      const durationLabels: Record<string, string> = {
+        '1_week': '1 Week',
+        '2_weeks': '2 Weeks',
+        '1_month': '1 Month',
+        '3_months': '3 Months (10% discount)',
+        '6_months': '6 Months (15% discount)',
+        '12_months': '12 Months (20% discount)',
+      };
+
+      const success = await emailService.sendEmail({
+        to: 'admin@comcubes.com',
+        subject: `New Ad Purchase Request - ${companyName} - $${basePrice}`,
+        text: `
+New ad purchase request received:
+
+COMPANY INFORMATION:
+- Company Name: ${companyName}
+- Contact Name: ${contactName}
+- Email: ${contactEmail}
+- Phone: ${contactPhone}
+- Website: ${website}
+
+AD SPECIFICATIONS:
+- Format: ${formatLabels[adFormat] || adFormat}
+- Position: ${positionLabels[adPosition] || adPosition}
+- Duration: ${durationLabels[campaignDuration] || campaignDuration}
+- Destination URL: ${adClickUrl}
+
+PRICING & PAYMENT:
+- Base Price: $${basePrice} USD
+- Preferred Currency: ${currency}
+- Payment Method: ${paymentMethod === 'paystack' ? 'Paystack (Primary)' : 'PayPal (Secondary)'}
+
+${message ? `ADDITIONAL NOTES:\n${message}\n` : ''}
+---
+ACTION REQUIRED:
+1. Review ad specifications
+2. Prepare payment link for customer
+3. Contact customer within 24 hours at ${contactEmail}
+
+This is an automated notification from the COMCUBES self-service advertising platform.
+        `,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #1f2937; border-bottom: 2px solid #3b82f6; padding-bottom: 10px;">New Ad Purchase Request</h2>
+            
+            <div style="background: #f9fafb; padding: 15px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="color: #059669; margin-top: 0;">💰 Total: $${basePrice} USD</h3>
+              <p style="color: #6b7280; margin: 0;">Payment Method: <strong>${paymentMethod === 'paystack' ? 'Paystack' : 'PayPal'}</strong></p>
+            </div>
+
+            <h3 style="color: #1f2937;">Company Information</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;"><strong>Company:</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">${companyName}</td></tr>
+              <tr><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;"><strong>Contact:</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">${contactName}</td></tr>
+              <tr><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;"><strong>Email:</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">${contactEmail}</td></tr>
+              <tr><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;"><strong>Phone:</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">${contactPhone}</td></tr>
+              <tr><td style="padding: 8px 0;"><strong>Website:</strong></td><td style="padding: 8px 0;">${website}</td></tr>
+            </table>
+
+            <h3 style="color: #1f2937; margin-top: 30px;">Ad Specifications</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;"><strong>Format:</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">${formatLabels[adFormat] || adFormat}</td></tr>
+              <tr><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;"><strong>Position:</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">${positionLabels[adPosition] || adPosition}</td></tr>
+              <tr><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;"><strong>Duration:</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">${durationLabels[campaignDuration] || campaignDuration}</td></tr>
+              <tr><td style="padding: 8px 0;"><strong>Destination:</strong></td><td style="padding: 8px 0;"><a href="${adClickUrl}" style="color: #3b82f6;">${adClickUrl}</a></td></tr>
+            </table>
+
+            ${message ? `
+            <h3 style="color: #1f2937; margin-top: 30px;">Additional Notes</h3>
+            <div style="background: #f9fafb; padding: 15px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+              <p style="margin: 0; color: #4b5563;">${message}</p>
+            </div>
+            ` : ''}
+
+            <div style="background: #dbeafe; padding: 15px; border-radius: 8px; margin-top: 30px; border-left: 4px solid #3b82f6;">
+              <h4 style="margin-top: 0; color: #1e40af;">⚡ Action Required</h4>
+              <ol style="margin: 10px 0; padding-left: 20px; color: #1e3a8a;">
+                <li>Review ad specifications and confirm availability</li>
+                <li>Prepare payment link for customer (${currency})</li>
+                <li>Contact <strong>${contactEmail}</strong> within 24 hours</li>
+              </ol>
+            </div>
+
+            <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
+            <p style="color: #9ca3af; font-size: 12px; text-align: center;">
+              This is an automated notification from the COMCUBES self-service advertising platform.
+            </p>
+          </div>
+        `,
+      });
+
+      res.json({
+        success: true,
+        message: 'Ad purchase request submitted successfully'
+      });
+
+    } catch (error) {
+      console.error('Error submitting ad purchase request:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Failed to submit ad purchase request'
+      });
+    }
+  });
+
   // Get industries by sector endpoint
   app.get('/api/sectors/:sectorName/industries', async (req, res) => {
     try {
