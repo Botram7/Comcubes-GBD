@@ -3,6 +3,7 @@ import { useLocation, useRoute } from "wouter";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BannerAd } from "@/components/BannerAd";
+import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -196,7 +197,7 @@ export default function RegionPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="hidden lg:block lg:col-span-2">
-              <BannerAd position="left" className="sticky top-24" />
+              <GoogleAdSense format="vertical" className="sticky top-24" position="region-page-left-sidebar" />
             </div>
 
             <div className="lg:col-span-8">
@@ -294,7 +295,7 @@ export default function RegionPage() {
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="hidden lg:block lg:col-span-2">
-              <BannerAd position="left" className="sticky top-24" />
+              <GoogleAdSense format="vertical" className="sticky top-24" position="region-page-left-sidebar" />
             </div>
 
             <div className="lg:col-span-8">

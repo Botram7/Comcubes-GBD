@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BannerAd } from "@/components/BannerAd";
+import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -142,9 +143,10 @@ export default function GeographyPage() {
       <div className="flex gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Left Sidebar - Advertisement Banner - 160x600 */}
         <div className="hidden lg:block flex-shrink-0">
-          <BannerAd 
-            className="sticky top-24" 
-            position="left"
+          <GoogleAdSense 
+            format="vertical"
+            className="sticky top-24"
+            position="geography-page-left-sidebar"
           />
         </div>
 
