@@ -17,6 +17,7 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { BannerAd } from '@/components/BannerAd';
+import { GoogleAdSense } from '@/components/GoogleAdSense';
 import { apiRequest } from '@/lib/queryClient';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 
@@ -566,9 +567,10 @@ export default function CompanyListingPage() {
       <div className="flex gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Left Sidebar - Banner Ad */}
         <div className="hidden lg:block flex-shrink-0">
-          <BannerAd 
-            className="sticky top-24" 
-            position="left"
+          <GoogleAdSense 
+            format="vertical"
+            className="sticky top-24"
+            position="listing-page-left-sidebar"
           />
         </div>
 

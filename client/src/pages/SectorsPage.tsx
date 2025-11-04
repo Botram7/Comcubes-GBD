@@ -10,6 +10,7 @@ import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { BannerAd } from "@/components/BannerAd";
+import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { getActiveBannerImages, getBannerClickUrl } from "@/config/bannerAds";
 import type { Sector, SearchResults } from "@/lib/types";
@@ -240,9 +241,10 @@ export default function SectorsPage() {
         <div className="flex gap-6">
           {/* Left Advertisement Banner - 160x600 */}
           <div className="hidden lg:block flex-shrink-0">
-            <BannerAd 
-              className="sticky top-24" 
-              position="left"
+            <GoogleAdSense 
+              format="vertical"
+              className="sticky top-24"
+              position="sectors-page-left-sidebar"
             />
           </div>
 

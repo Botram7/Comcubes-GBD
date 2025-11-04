@@ -11,6 +11,7 @@ import { AlertCircle, Building2 } from "lucide-react";
 
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { BannerAd } from "@/components/BannerAd";
+import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
@@ -258,9 +259,10 @@ export default function CompanyPage() {
         <div className="flex gap-6">
           {/* Left Advertisement Banner - 160x600 */}
           <div className="hidden lg:block flex-shrink-0">
-            <BannerAd 
-              className="sticky top-24" 
-              position="left"
+            <GoogleAdSense 
+              format="vertical"
+              className="sticky top-24"
+              position="company-page-left-sidebar"
             />
           </div>
 
