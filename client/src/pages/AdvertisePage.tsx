@@ -19,8 +19,8 @@ import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { apiRequest } from '@/lib/queryClient';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
-import paystackLogo from "@assets/stock_images/paystack_payment_gat_1a8599d9.jpg";
-import paypalLogo from "@assets/stock_images/paypal_payment_gatew_5f9e6261.jpg";
+import paystackLogo from "@assets/Paystack Icon_1762301215124.jpg";
+import paypalLogo from "@assets/Paypal Icon_1762300482205.jpg";
 import { Badge } from '@/components/ui/badge';
 
 const adPurchaseSchema = z.object({

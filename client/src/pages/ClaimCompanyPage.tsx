@@ -26,8 +26,8 @@ import {
 } from "lucide-react";
 import { normalizeUrl } from '@/lib/urlUtils';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
-import paystackLogo from "@assets/stock_images/paystack_payment_gat_1a8599d9.jpg";
-import paypalLogo from "@assets/stock_images/paypal_payment_gatew_5f9e6261.jpg";
+import paystackLogo from "@assets/Paystack Icon_1762301215124.jpg";
+import paypalLogo from "@assets/Paypal Icon_1762300482205.jpg";
 import { SEOHead } from "@/components/SEOHead";
 import type { Sector, Industry, Company, SearchResults } from "@/lib/types";
 
