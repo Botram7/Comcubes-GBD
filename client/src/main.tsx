@@ -13,13 +13,13 @@ const initializeAnalytics = () => {
     script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
     document.head.appendChild(script);
 
-    // Initialize dataLayer
+    // Initialize dataLayer and gtag function
     window.dataLayer = window.dataLayer || [];
-    const gtag = (...args: any[]) => {
+    window.gtag = function(...args: any[]) {
       window.dataLayer?.push(args);
     };
-    gtag('js', new Date());
-    gtag('config', gaId, {
+    window.gtag('js', new Date());
+    window.gtag('config', gaId, {
       send_page_view: true,
       anonymize_ip: true,
       cookie_flags: 'SameSite=None;Secure',
