@@ -124,14 +124,14 @@ export default function HomePage() {
     <div className="min-h-screen bg-white  ">
       <AffiliateDisclosureBanner />
       <SEOHead 
-        title="COMCUBES - Global Business Directory | Find Companies, Industries & Business Sectors"
-        description="Discover thousands of companies across all business sectors and industries worldwide. COMCUBES is your comprehensive global business directory for everything and anything business."
+        title="COMCUBES - Discover Everything Business | Global Companies, Brands & Industries"
+        description="Find universities, global brands, employers, and businesses near you or worldwide. Students, shoppers, job seekers—explore 7,400+ companies across 400+ industries. From automotive to fashion, education to entertainment, discover what matters to you."
         keywords={[
-          'business directory', 'global companies', 'business sectors', 'industries', 
-          'company listings', 'business search', 'commercial directory', 'worldwide businesses', 
-          'corporate directory', 'industry directory', 'business database', 'company finder',
-          'business networking', 'B2B directory', 'commercial cubes', 'global business search',
-          'business intelligence', 'company profiles', 'industry analysis', 'business sectors list'
+          'business directory', 'global companies', 'find businesses', 'discover brands', 
+          'company search', 'universities worldwide', 'global brands', 'business discovery',
+          'find employers', 'shopping brands', 'automotive companies', 'fashion brands',
+          'education institutions', 'entertainment companies', 'local businesses', 'company finder',
+          'business search', 'worldwide companies', 'industry directory', 'commercial directory'
         ]}
         canonicalUrl={`${window.location.origin}/`}
         structuredData={createBusinessDirectoryStructuredData()}
@@ -154,13 +154,11 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6" style={{ fontFamily: 'IBM Plex Serif', fontWeight: 600 }}>
-            Global Business Directory
+            Your Gateway to Discover Everything Business
           </h1>
           
           <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
-            Navigate the world's most comprehensive business ecosystem. Discover 20 major business sectors,
-            explore 400+ specialized industries, and connect with 7,400+ leading global companies—all organized
-            in an intuitive hierarchical structure designed for business professionals.
+            Whether you're a student exploring universities, a shopper discovering global brands, a job seeker researching employers, or simply curious about businesses near you or anywhere in the world—COMCUBES brings you 20 major sectors, 400+ specialized industries, and 7,400+ companies at your fingertips. From automotive giants to local boutiques, education institutions to entertainment brands, find exactly what you're looking for.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
