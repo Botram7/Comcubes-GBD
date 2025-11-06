@@ -111,12 +111,12 @@ export default function GeographyPage() {
     <div className="min-h-screen bg-gray-50">
       <AffiliateDisclosureBanner />
       <SEOHead
-        title="Browse by Geography - Global Business Directory | COMCUBES"
-        description="Explore businesses worldwide by continent, region, and country. Navigate our comprehensive global business directory organized by geographic location. Discover companies across all continents and countries."
-        keywords={["global business directory", "companies by country", "geographic business search", "worldwide companies", "international business directory", "businesses by continent", "geographic navigation"]}
+        title="Find Businesses Near You or Worldwide | Browse by Location - COMCUBES"
+        description="Discover local businesses in your city or explore companies globally. Search by continent, region, or country to find services near you or brands anywhere in the world. Your local and global business discovery starts here."
+        keywords={["find businesses near me", "local businesses", "companies by location", "businesses worldwide", "geographic search", "businesses by country", "local services", "global companies", "business location finder", "international directory"]}
         canonicalUrl="/geography"
-        ogTitle="Global Business Geography | COMCUBES GBD"
-        ogDescription="Browse businesses worldwide by continent, region, and country. Comprehensive geographic navigation across our global business directory."
+        ogTitle="Find Local & Global Businesses | COMCUBES Geography"
+        ogDescription="Discover businesses near you or anywhere in the world. Browse by location to find local services and global companies organized by geography."
         structuredData={structuredData}
       />
 
@@ -163,7 +163,7 @@ export default function GeographyPage() {
               </h1>
             </div>
             <p className="text-lg text-gray-600 max-w-3xl">
-              Explore businesses worldwide by continent, region, and country. Discover companies across the globe organized by geographic location.
+              Find businesses near you or discover companies anywhere in the world. Whether you're searching for local services in your city, exploring brands in another country, or researching international companies, navigate through continents, regions, and countries to find exactly what you need—right in your neighborhood or halfway around the globe.
             </p>
           </div>
 

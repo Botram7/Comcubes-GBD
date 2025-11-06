@@ -139,13 +139,13 @@ export default function SectorsPage() {
     <div className="page-with-sticky-footer bg-gray-50  font-inter ">
       <AffiliateDisclosureBanner />
       <SEOHead 
-        title={`Browse ${sectors?.length || 20} Business Sectors Directory | COMCUBES Global Business Directory`}
-        description={`Explore ${sectors?.length || 20} major business sectors including Technology, Healthcare, Finance, Manufacturing, and more. Access specialized industries and thousands of companies within each sector worldwide through our comprehensive business directory.`}
+        title={`Explore ${sectors?.length || 20} Business Sectors | Find Universities, Brands, Companies & More - COMCUBES`}
+        description={`Find what you're looking for across ${sectors?.length || 20} sectors: Education (universities), Retail (fashion, shopping), Automotive (car brands), Healthcare, Entertainment, Food & Beverages, and more. 400+ industries, 7,400+ companies worldwide.`}
         keywords={[
-          "business sectors", "industry sectors", "business categories", "sector directory",
-          "technology sector", "healthcare sector", "finance sector", "manufacturing sector",
-          "business classification", "industry categories", "commercial sectors",
-          "global business sectors", "sector listings", "business taxonomy", "industry classification"
+          "business sectors", "find universities", "global brands", "shopping brands", 
+          "automotive companies", "fashion brands", "healthcare providers", "entertainment companies",
+          "food and beverages", "retail stores", "education institutions", "discover businesses",
+          "company directory", "brand discovery", "business categories", "industry sectors"
         ]}
         canonicalUrl={`${window.location.origin}/sectors`}
         structuredData={{
@@ -300,9 +300,9 @@ export default function SectorsPage() {
             ) : (
               <>
                 <div className="mb-6">
-                  <h1 className="text-3xl font-bold text-gray-900">Global Business Sectors Directory</h1>
+                  <h1 className="text-3xl font-bold text-gray-900">Explore {sectors?.length || 20} Business Sectors</h1>
                   <p className="text-gray-600 mt-2">
-                    Discover {sectors?.length || 20} comprehensive business sectors spanning the global economy. Each sector contains specialized industries with leading companies worldwide. Navigate through our structured directory to find businesses in Technology, Healthcare, Finance, Manufacturing, Energy, and more.
+                    Whatever you're looking for—universities in Education, fashion brands in Retail, car manufacturers in Automotive, hospitals in Healthcare, streaming services in Entertainment, or restaurants in Food & Beverages—start here. Each sector opens doors to specialized industries and thousands of companies. Whether you're shopping, studying, job hunting, or just curious, find what matters to you across {sectors?.length || 20} major sectors.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
                     <span>📊 {sectors?.length || 20} Business Sectors</span>
