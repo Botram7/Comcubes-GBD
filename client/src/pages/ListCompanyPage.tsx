@@ -1051,7 +1051,7 @@ export default function ListCompanyPage() {
                     <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
                     <div>
                       <p className="font-medium text-gray-900">Targeted Traffic</p>
-                      <p className="text-sm text-gray-600">Business professionals seeking services</p>
+                      <p className="text-sm text-gray-600">Reach professionals, students, shoppers, and more</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
