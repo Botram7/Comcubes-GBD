@@ -212,8 +212,8 @@ export default function AdvertisePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead 
-        title="Advertise with COMCUBES - Reach Thousands of Business Professionals"
-        description="Advertise on COMCUBES global business directory. Reach thousands of business professionals daily with strategic ad placements. Self-service platform with competitive pricing starting at $140/month."
+        title="Advertise with COMCUBES - Reach Thousands of Engaged Users Daily"
+        description="Advertise on COMCUBES global business directory. Reach thousands of engaged users daily—from business professionals and researchers to students and shoppers. Strategic ad placements with competitive pricing starting at $140/month."
       />
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -247,7 +247,7 @@ export default function AdvertisePage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Advertise With COMCUBES</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Reach thousands of business professionals daily through our global business directory platform.
+            Reach thousands of engaged users daily—from business professionals and researchers to students, job seekers, and shoppers—through our global business directory platform.
           </p>
         </div>
 
@@ -261,7 +261,7 @@ export default function AdvertisePage() {
           <Card className="p-6 text-center">
             <TrendingUp className="h-8 w-8 text-green-600 mx-auto mb-4" />
             <h3 className="font-bold text-lg mb-2">Targeted Audience</h3>
-            <p className="text-gray-600 text-sm">Connect with business professionals actively searching for products and services.</p>
+            <p className="text-gray-600 text-sm">Connect with engaged users—professionals, students, shoppers—actively searching for products, services, and information.</p>
           </Card>
           <Card className="p-6 text-center">
             <Star className="h-8 w-8 text-yellow-600 mx-auto mb-4" />

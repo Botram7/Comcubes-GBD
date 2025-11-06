@@ -125,13 +125,14 @@ export default function HomePage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title="COMCUBES - Discover Everything Business | Global Companies, Brands & Industries"
-        description="Find universities, global brands, employers, and businesses near you or worldwide. Students, shoppers, job seekers—explore 7,400+ companies across 400+ industries. From automotive to fashion, education to entertainment, discover what matters to you."
+        description="Your gateway to everything business. Professionals, researchers, job seekers, shoppers, students—access 7,400+ curated companies across 400+ industries PLUS global search for millions worldwide. From Fortune 500 to local businesses, find exactly what you're looking for."
         keywords={[
           'business directory', 'global companies', 'find businesses', 'discover brands', 
           'company search', 'universities worldwide', 'global brands', 'business discovery',
           'find employers', 'shopping brands', 'automotive companies', 'fashion brands',
           'education institutions', 'entertainment companies', 'local businesses', 'company finder',
-          'business search', 'worldwide companies', 'industry directory', 'commercial directory'
+          'business search', 'worldwide companies', 'industry directory', 'commercial directory',
+          'business research', 'company intelligence', 'global search', 'business professionals'
         ]}
         canonicalUrl={`${window.location.origin}/`}
         structuredData={createBusinessDirectoryStructuredData()}
@@ -158,7 +159,7 @@ export default function HomePage() {
           </h1>
           
           <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
-            Whether you're a student exploring universities, a shopper discovering global brands, a job seeker researching employers, or simply curious about businesses near you or anywhere in the world—COMCUBES brings you 20 major sectors, 400+ specialized industries, and 7,400+ companies at your fingertips. From automotive giants to local boutiques, education institutions to entertainment brands, find exactly what you're looking for.
+            Whether you're a business professional conducting research, a job seeker exploring employers, a shopper discovering global brands, a student researching universities, or simply curious about businesses near you or anywhere in the world—COMCUBES is your gateway. Instantly access our curated directory of 7,400+ companies across 20 major sectors and 400+ specialized industries. Plus, tap into our powerful global search to discover millions of businesses worldwide. From Fortune 500 giants to local boutiques, find exactly what you're looking for.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -309,8 +310,7 @@ export default function HomePage() {
               Why Choose Comcubes GBD?
             </h2>
             <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-              The most organized and comprehensive business directory designed for professionals,
-              researchers, and decision makers worldwide.
+              The most organized and comprehensive business directory designed for professionals, researchers, decision makers, students, job seekers, shoppers, and anyone seeking reliable business information worldwide.
             </p>
           </div>
 
@@ -466,8 +466,7 @@ export default function HomePage() {
             Ready to Explore the Global Business Ecosystem?
           </h2>
           <p className="text-base md:text-lg text-blue-100 mb-6 md:mb-8 max-w-2xl mx-auto">
-            Join thousands of professionals who rely on COMCUBES for comprehensive
-            business intelligence and industry insights.
+            Join thousands of professionals, researchers, and decision makers worldwide—along with students, job seekers, and shoppers—who rely on COMCUBES for comprehensive business intelligence, research, and discovery.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
