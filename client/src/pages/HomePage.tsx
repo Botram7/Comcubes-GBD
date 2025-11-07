@@ -8,6 +8,7 @@ import { AnimatedExplainer } from "@/components/AnimatedExplainer";
 import { ExploreByLocation } from "@/components/ExploreByLocation";
 import { SEOHead, createBusinessDirectoryStructuredData } from "@/components/SEOHead";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
+import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { 
   BarChart3, 
   Users, 
@@ -194,6 +195,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Ad Placement 1: Above-the-fold - Responsive horizontal ad */}
+      <section className="py-6 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center">
+            <GoogleAdSense 
+              format="responsive"
+              position="homepage-above-fold"
+              className="w-full max-w-3xl"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Explore by Category */}
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -358,6 +372,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Ad Placement 2: Mid-content after Why Choose section - Responsive */}
+      <section className="py-8 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center">
+            <GoogleAdSense 
+              format="responsive"
+              position="homepage-mid-content"
+              className="w-full max-w-3xl"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Explore Our Directory Section */}
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -455,6 +482,19 @@ export default function HomePage() {
                 </button>
               </div>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Ad Placement 3: Before final CTA - Responsive */}
+      <section className="py-8 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center">
+            <GoogleAdSense 
+              format="responsive"
+              position="homepage-before-cta"
+              className="w-full max-w-3xl"
+            />
           </div>
         </div>
       </section>

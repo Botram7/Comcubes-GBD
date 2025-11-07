@@ -342,6 +342,17 @@ export default function IndustryPage() {
               </div>
             </div>
 
+            {/* Mobile-friendly in-content ad - shows on all screen sizes */}
+            <div className="my-8 lg:hidden">
+              <div className="flex justify-center">
+                <GoogleAdSense 
+                  format="responsive"
+                  position="industry-page-mobile-content"
+                  className="w-full max-w-2xl"
+                />
+              </div>
+            </div>
+
             <BusinessGrid 
               items={companies} 
               type="company" 
