@@ -218,8 +218,8 @@ export default function CompanyProfilePage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Left Sidebar - Advertisement */}
-          <div className="lg:col-span-1 space-y-4">
+          {/* Left Sidebar - Advertisement (Desktop only) */}
+          <div className="lg:col-span-1 space-y-4 hidden lg:block">
             <GoogleAdSense 
               format="vertical"
               className="sticky top-24"
@@ -229,6 +229,14 @@ export default function CompanyProfilePage() {
 
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
+            {/* Mobile-friendly responsive ad (Mobile/Tablet only) */}
+            <div className="lg:hidden">
+              <GoogleAdSense 
+                format="responsive"
+                position="company-profile-mobile-top"
+                className="w-full"
+              />
+            </div>
             {/* Company Header */}
             <Card>
               <CardContent className="p-6">

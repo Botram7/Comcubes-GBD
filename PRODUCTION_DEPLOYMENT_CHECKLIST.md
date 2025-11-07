@@ -113,21 +113,72 @@ Expected output should show your values (not "undefined" or empty).
    - `page_view` events for each page navigation
    - Custom events like `search`, `sector_click`, `company_view`
 
-### Step 3: Verify AdSense Ads Display
-1. With `VITE_ADSENSE_CLIENT_ID` set, navigate to:
-   - Homepage (left sidebar vertical ad)
-   - Sectors page (left sidebar + in-content responsive ad)
-   - Industries page (left sidebar + in-content responsive ad)
-   - Company profile pages (left sidebar)
-2. **Expected Behavior**:
-   - **Development**: You may see blank ad spaces or placeholder ads (normal for dev environments)
-   - **Production**: Ads should display within 10-30 minutes of first traffic
-3. **Troubleshooting**: If no ads appear after 24 hours in production:
-   - Check AdSense dashboard for policy violations
-   - Verify `VITE_ADSENSE_CLIENT_ID` matches your AdSense Publisher ID exactly
-   - Ensure ad units are approved in AdSense dashboard
+### Step 3: Verify AdSense Ads Display (UPDATED - More Ad Placements!)
+With `VITE_ADSENSE_CLIENT_ID` set, verify ads on all pages:
 
-### Step 4: Test Microsoft Clarity (Optional)
+#### **HomePage (3 new ad placements)**:
+- [ ] Ad 1: Above-the-fold (after hero section) - Responsive format
+- [ ] Ad 2: Mid-content (after "Why Choose" section) - Responsive format
+- [ ] Ad 3: Before final CTA - Responsive format
+
+#### **SectorsPage**:
+- [ ] Desktop: Left sidebar vertical ad (160x600)
+- [ ] Desktop: In-content responsive ad (after intro)
+- [ ] Mobile/Tablet: In-content responsive ad displays (sidebar hidden on mobile)
+
+#### **IndustryPage**:
+- [ ] Desktop: Left sidebar vertical ad (160x600)
+- [ ] Mobile/Tablet: In-content responsive ad before company grid
+
+#### **CompanyProfilePage**:
+- [ ] Desktop: Left sidebar vertical ad (160x600)
+- [ ] Mobile/Tablet: Responsive ad at top of content area
+
+#### **Mobile Testing (CRITICAL)**:
+1. Open site on mobile device or use Chrome DevTools mobile emulator
+2. Verify responsive ads display on:
+   - Homepage (all 3 placements)
+   - Sectors page (in-content ad)
+   - Industry pages (in-content ad before companies)
+   - Company profiles (top ad)
+3. **Expected mobile behavior**:
+   - Sidebar ads (160x600) are hidden on mobile
+   - Responsive ads adapt to screen width
+   - Ads don't break page layout or overflow
+
+#### **Expected Behavior**:
+- **Development**: You may see blank ad spaces or placeholder ads (normal for dev environments)
+- **Production**: Ads should display within 10-30 minutes of first traffic
+- **Total Manual Ads**: 12+ placements (3 on HomePage, 2-3 per other key page)
+
+#### **Troubleshooting**: 
+If no ads appear after 24 hours in production:
+- Check AdSense dashboard for policy violations
+- Verify `VITE_ADSENSE_CLIENT_ID` matches your AdSense Publisher ID exactly
+- Ensure ad units are approved in AdSense dashboard
+- Check browser console for AdSense errors (F12 → Console)
+
+### Step 4: Configure Auto Ads (Optional but Recommended for Maximum Revenue)
+
+**What are Auto Ads?**  
+Google's AI automatically places additional ads in optimal positions you might miss, supplementing your manual placements for 10-20% more revenue.
+
+**Setup Steps** (takes 5 minutes):
+1. Follow the complete guide in **`AUTO_ADS_SETUP_GUIDE.md`** (located in project root)
+2. **Quick summary**:
+   - Go to Google AdSense → Ads → Your site → Enable Auto ads
+   - Set ad load to **50-60%** (NOT 100% - critical!)
+   - Enable: Anchor ads, Vignette ads (mobile), In-article ads
+   - Disable: Matched content, Multiplex ads
+   - Use Preview Tool to block bad placements
+3. **Verification**:
+   - Auto Ads may take 24-48 hours to start showing
+   - Check AdSense dashboard → Reports → Filter by "Auto ads"
+   - Monitor Page RPM (Revenue Per Mille) after 30 days
+
+**Expected result**: Manual ads + Auto ads = 10-20% higher total revenue vs manual-only approach.
+
+### Step 5: Test Microsoft Clarity (Optional)
 1. If `VITE_CLARITY_PROJECT_ID` is set, check browser console for: `"Microsoft Clarity initialized"`
 2. Visit Microsoft Clarity dashboard to see live session recordings
 
