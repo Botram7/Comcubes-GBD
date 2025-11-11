@@ -917,12 +917,12 @@ export default function ClaimCompanyPage() {
                   Back to Selection
                 </Button>
                 <Button 
-                  onClick={() => setStep('payment')} 
+                  onClick={handleSubmit} 
                   className="flex items-center gap-2"
-                  disabled={!isFormValid()}
-                  data-testid="button-continue-pricing"
+                  disabled={!isFormValid() || claimMutation.isPending}
+                  data-testid="button-submit-claim"
                 >
-                  Continue to Pricing
+                  {claimMutation.isPending ? 'Submitting...' : 'Submit Claim'}
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>
