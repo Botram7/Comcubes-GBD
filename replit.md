@@ -28,6 +28,7 @@ The application is built with a modern full-stack architecture, separating front
 - **Email Service**: Namecheap SMTP for email delivery, with intelligent routing.
 - **Database Synchronization**: Web-based `/admin-sync` interface for secure, transaction-safe database synchronization.
 - **Payment Gateway**: Dual support for Paystack (primary via Zenith Bank USD account) and PayPal (secondary) for USD transactions. Feature-flagged NGN fallback system preserved for emergency use (requires manual activation via `PAYSTACK_ENABLE_NGN_FALLBACK=true`).
+- **Company Claim Verification**: Multi-step verification system for company claims that requires email verification before payment. Includes rate-limited resend functionality (3 per 5 min) and brute-force protection (10 attempts per 15 min). Verification codes expire in 24 hours. Domain matching required between business email and company website for security.
 - **Monetization System**: Google AdSense integration across various pages, self-service advertising platform for direct ad sales with dynamic pricing, multi-format support, and dual payment gateway options. Analytics utilities (GA4, Microsoft Clarity) dynamically loaded. Database schema includes `adPurchases` for tracking.
 - **Data Transparency**: Disclaimers and "Company Intelligence" section for enriched company data with validation status, allowing user claims/updates.
 

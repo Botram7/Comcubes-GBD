@@ -7,6 +7,7 @@ import { storage } from "../storage";
 import { EmailService } from "../emailService";
 import { PaystackService } from "../paystackService";
 import { paypalService } from "../paypalService";
+import rateLimit from "express-rate-limit";
 
 // Configure multer for file uploads
 const upload = multer({
@@ -101,6 +102,31 @@ const claimFormSchema = z.object({
   plan: z.enum(["basic", "premium", "enterprise"]),
 });
 
+// Rate limiter for resend code endpoint - prevents email spam and brute force
+const resendCodeLimiter = rateLimit({
+  windowMs: 5 * 60 * 1000, // 5 minutes
+  max: 3, // Limit each IP to 3 resend requests per 5 minutes
+  message: { error: "Too many resend attempts. Please wait 5 minutes before trying again." },
+  standardHeaders: true,
+  legacyHeaders: false,
+  // Skip IP validation since we're using the claim ID as the primary key
+  validate: { xForwardedForHeader: false, ip: false },
+  // Key generator includes claim ID for per-claim limiting
+  keyGenerator: (req) => `claim-${req.params.claimId}`,
+});
+
+// Rate limiter for verification attempts - prevents brute force
+const verifyEmailLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10, // Limit each IP to 10 verification attempts per 15 minutes
+  message: { error: "Too many verification attempts. Please wait 15 minutes before trying again." },
+  standardHeaders: true,
+  legacyHeaders: false,
+  // Skip IP validation since we're using the claim ID as the primary key
+  validate: { xForwardedForHeader: false, ip: false },
+  keyGenerator: (req) => `verify-${req.params.claimId}`,
+});
+
 export function registerCompanyClaimRoutes(app: Express) {
   // Submit company claim
   app.post("/api/company-claims", upload.single('logoImage'), async (req, res) => {
@@ -188,7 +214,7 @@ export function registerCompanyClaimRoutes(app: Express) {
   });
 
   // Verify email for company claim
-  app.post("/api/company-claims/:claimId/verify-email", async (req, res) => {
+  app.post("/api/company-claims/:claimId/verify-email", verifyEmailLimiter, async (req, res) => {
     try {
       const claimId = parseInt(req.params.claimId);
       const { verificationCode } = req.body;
@@ -248,7 +274,7 @@ export function registerCompanyClaimRoutes(app: Express) {
   });
 
   // Resend verification code
-  app.post("/api/company-claims/:claimId/resend-code", async (req, res) => {
+  app.post("/api/company-claims/:claimId/resend-code", resendCodeLimiter, async (req, res) => {
     try {
       const claimId = parseInt(req.params.claimId);
       const claim = await storage.getCompanyClaim(claimId);
