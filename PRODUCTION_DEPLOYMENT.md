@@ -46,9 +46,13 @@ npx ts-node -e "import('bcrypt').then(bcrypt => bcrypt.default.hash('your_passwo
 PAYSTACK_SECRET_KEY       # Paystack LIVE secret key (starts with sk_live_)
 PAYPAL_CLIENT_ID          # PayPal production client ID
 PAYPAL_SECRET             # PayPal production secret key
+PAYPAL_MODE=live          # PayPal environment mode ('live' or 'sandbox')
 ```
 
-**⚠️ IMPORTANT**: Ensure Paystack secret key is for LIVE mode, not TEST mode
+**⚠️ IMPORTANT**: 
+- Ensure Paystack secret key is for LIVE mode, not TEST mode
+- Set PAYPAL_MODE=live to use production PayPal API with live credentials
+- Without PAYPAL_MODE=live, PayPal will use sandbox mode even with live credentials
 
 ### 🔴 CRITICAL - Email Service (Namecheap SMTP)
 ```
@@ -100,6 +104,7 @@ PAYSTACK_ENABLE_NGN_FALLBACK      # EMERGENCY ONLY: Set to 'true' for NGN fallba
 - [ ] Verify Paystack USD account (Zenith Bank) is active
 - [ ] Test Paystack LIVE secret key in Paystack dashboard
 - [ ] Verify PayPal production credentials
+- [ ] Set PAYPAL_MODE=live in Replit Secrets
 - [ ] Confirm Apple Pay domain verification file is in place
 - [ ] Review payment callback URLs use production domain
 
