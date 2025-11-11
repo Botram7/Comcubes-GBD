@@ -382,33 +382,6 @@ export default function ListCompanyPage() {
                 </RadioGroup>
               </div>
 
-              {/* Payment Currency Notice for Paystack */}
-              {paymentMethod === 'paystack' && selectedPlan && (
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <div className="flex items-start gap-2">
-                    <AlertCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                    <div className="flex-1">
-                      <h4 className="font-medium text-blue-900 mb-1">Payment Currency</h4>
-                      <p className="text-sm text-blue-800">
-                        You're paying <strong>${selectedPlan === 'basic' ? '60.00' : '90.00'} USD</strong> via Paystack.
-                        {isLoadingRate && <span className="ml-1">(checking payment currency...)</span>}
-                        {!isLoadingRate && exchangeRate && (
-                          <span>
-                            {' '}This equals approximately <strong>₦{((selectedPlan === 'basic' ? 60 : 90) * exchangeRate).toLocaleString('en-NG', { maximumFractionDigits: 0 })} NGN</strong> at the current rate.
-                          </span>
-                        )}
-                      </p>
-                      <p className="text-xs text-blue-700 mt-2">
-                        {exchangeRate 
-                          ? 'Paystack will process your payment securely. The checkout may display NGN amount for local compliance.'
-                          : 'Paystack will process your payment securely in USD via our USD account.'
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
               <Button 
                 onClick={handlePayment}
                 size="lg"
