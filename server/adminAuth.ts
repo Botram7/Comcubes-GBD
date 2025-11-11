@@ -65,12 +65,6 @@ export const validateAdminCredentials = async (username: string, password: strin
   const adminUsername = process.env.ADMIN_USERNAME;
   const adminPassword = process.env.ADMIN_PASSWORD;
   
-  console.log('Validating credentials for username:', username);
-  console.log('Expected username:', adminUsername);
-  console.log('Username match:', username === adminUsername);
-  console.log('Password provided:', !!password);
-  console.log('Expected password exists:', !!adminPassword);
-  
   if (!adminUsername || !adminPassword) {
     console.error('Admin credentials not configured in environment variables');
     return false;
@@ -85,20 +79,19 @@ export const validateAdminCredentials = async (username: string, password: strin
   if (adminPassword.startsWith('$2b$')) {
     // Compare with hashed password
     try {
-      const isValid = await bcrypt.compare(password, adminPassword);
-      console.log('Credentials valid:', isValid);
-      return isValid;
+      return await bcrypt.compare(password, adminPassword);
     } catch (error) {
-      console.error('Error comparing passwords:', error);
+      console.error('Error validating admin credentials');
       return false;
     }
   } else {
     // Fallback for plain text passwords (development only)
     // In production, this should be removed and only hashed passwords used
-    console.warn('Using plain text password comparison - this should only be used in development!');
-    const isValid = password === adminPassword;
-    console.log('Credentials valid:', isValid);
-    return isValid;
+    if (process.env.NODE_ENV === 'production') {
+      console.error('Plain text admin password detected in production - this is insecure!');
+      return false;
+    }
+    return password === adminPassword;
   }
 };
 
