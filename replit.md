@@ -27,9 +27,53 @@ The application is built with a modern full-stack architecture, separating front
 - **Admin Dashboard**: Comprehensive dashboard for statistics, waitlist, industry analytics, and email notifications.
 - **Email Service**: Namecheap SMTP for email delivery, with intelligent routing.
 - **Database Synchronization**: Web-based `/admin-sync` interface for secure, transaction-safe database synchronization.
-- **Payment Gateway**: Dual support for Paystack (primary) and PayPal (secondary) for multi-currency transactions, with intelligent routing and a selection UI.
+- **Payment Gateway**: Dual support for Paystack (primary via Zenith Bank USD account) and PayPal (secondary) for USD transactions. Feature-flagged NGN fallback system preserved for emergency use (requires manual activation via `PAYSTACK_ENABLE_NGN_FALLBACK=true`).
 - **Monetization System**: Google AdSense integration across various pages, self-service advertising platform for direct ad sales with dynamic pricing, multi-format support, and dual payment gateway options. Analytics utilities (GA4, Microsoft Clarity) dynamically loaded. Database schema includes `adPurchases` for tracking.
 - **Data Transparency**: Disclaimers and "Company Intelligence" section for enriched company data with validation status, allowing user claims/updates.
+
+## Feature Flags
+
+### PAYSTACK_ENABLE_NGN_FALLBACK (Emergency-Only NGN Fallback System)
+
+**Purpose**: Preserve the Western Union/RemitRadar currency conversion system for emergency situations without activating it by default.
+
+**Default**: `false` (USD-only production mode)
+
+**How It Works**:
+- **When false (default)**:
+  - All payments process via Paystack USD account (Zenith Bank)
+  - No Western Union/RemitRadar API calls are made
+  - Currency conversion endpoint `/api/currency/usd-to-ngn` returns 503 error
+  - USD payment failures throw clear error messages (no silent fallback to NGN)
+  
+- **When true (emergency mode)**:
+  - NGN fallback system activates
+  - USD payments that fail can automatically convert to NGN equivalent
+  - Western Union/RemitRadar APIs fetch real-time exchange rates
+  - Currency conversion endpoint works normally
+
+**When to Enable**:
+- Paystack USD channel experiences outages
+- Zenith Bank USD account has temporary issues
+- Emergency situations requiring NGN payment acceptance
+- **NEVER enable automatically** - requires explicit manual activation
+
+**How to Enable**:
+1. Go to Replit Secrets
+2. Add environment variable: `PAYSTACK_ENABLE_NGN_FALLBACK` = `true`
+3. Restart the application
+4. Monitor logs for: "⚠️ NGN FALLBACK ENABLED (Emergency Mode)"
+
+**How to Disable**:
+1. Remove the environment variable from Replit Secrets
+2. OR set it to `false`
+3. Restart the application
+4. Monitor logs for: "✅ USD-ONLY (Production Mode)"
+
+**Code Locations**:
+- `server/paystackService.ts` - Payment fallback logic
+- `server/currencyService.ts` - Exchange rate fetching (Western Union/RemitRadar)
+- `server/routes.ts` - Payment verification and currency API endpoint
 
 ## External Dependencies
 - **Frontend Frameworks**: `react`, `react-dom`, `@vitejs/plugin-react`

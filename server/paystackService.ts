@@ -4,13 +4,22 @@ import { currencyService } from './currencyService.js';
 export class PaystackService {
   private readonly secretKey: string;
   private readonly baseUrl = 'https://api.paystack.co';
+  private readonly enableNGNFallback: boolean;
 
   constructor() {
     this.secretKey = process.env.PAYSTACK_SECRET_KEY || '';
+    // Feature Flag: EMERGENCY-ONLY NGN fallback system
+    // Default: false (USD-only mode via Zenith Bank USD account)
+    // Set to 'true' ONLY if Paystack USD channels experience outages
+    // This preserves the Western Union/RemitRadar currency conversion system
+    // without activating it automatically
+    this.enableNGNFallback = process.env.PAYSTACK_ENABLE_NGN_FALLBACK === 'true';
     
     if (!this.secretKey) {
       console.warn("PAYSTACK_SECRET_KEY not set - payment functionality will be limited");
     }
+    
+    console.log(`💳 Paystack Mode: ${this.enableNGNFallback ? '⚠️ NGN FALLBACK ENABLED (Emergency Mode)' : '✅ USD-ONLY (Production Mode)'}`);
   }
 
   async initializePayment(data: {
@@ -67,10 +76,16 @@ export class PaystackService {
         console.error('Error Body:', errorText);
         console.error('===============================');
         
-        // If 403 error OR "No active channel" error and we tried USD, fallback to NGN
+        // FEATURE FLAG CHECK: Only fallback to NGN if explicitly enabled
         if ((response.status === 403 || (response.status === 400 && errorText.includes('No active channel'))) && preferredCurrency === 'USD') {
-          console.warn('USD channels not available on this Paystack account, falling back to NGN...');
-          return await this.initializePaymentNGN(data);
+          if (this.enableNGNFallback) {
+            console.warn('⚠️ NGN Fallback Active: USD channels not available, converting to NGN...');
+            return await this.initializePaymentNGN(data);
+          } else {
+            // USD-only mode: Fail with clear error instead of silent fallback
+            console.error('❌ USD payment failed. NGN fallback is DISABLED (set PAYSTACK_ENABLE_NGN_FALLBACK=true to enable)');
+            throw new Error(`Paystack USD payment failed: ${errorText}. Please contact support or enable NGN fallback mode.`);
+          }
         }
         throw new Error(`Paystack API error: ${response.status} - ${errorText}`);
       }
@@ -83,17 +98,33 @@ export class PaystackService {
 
       return result.data;
     } catch (error) {
-      // If we get a 403 error and we tried USD, fallback to NGN
+      // FEATURE FLAG CHECK: Only fallback to NGN if explicitly enabled
       if (error instanceof Error && error.message.includes('403') && preferredCurrency === 'USD') {
-        console.warn('USD payment failed, falling back to NGN equivalent...');
-        return await this.initializePaymentNGN(data);
+        if (this.enableNGNFallback) {
+          console.warn('⚠️ NGN Fallback Active: USD payment exception, converting to NGN...');
+          return await this.initializePaymentNGN(data);
+        } else {
+          console.error('❌ USD payment failed. NGN fallback is DISABLED');
+          throw new Error(`Paystack USD payment failed. Please contact support or enable NGN fallback mode.`);
+        }
       }
       console.error('Paystack initialization error:', error);
       throw error;
     }
   }
 
-  // Fallback method for NGN payments with USD to NGN conversion using real exchange rates
+  // ⚠️ EMERGENCY-ONLY NGN Fallback Method
+  // This method is PRESERVED but INACTIVE by default
+  // Only activates when PAYSTACK_ENABLE_NGN_FALLBACK=true
+  // 
+  // Purpose: Convert USD payments to NGN equivalent when Paystack USD channels are unavailable
+  // Uses: Western Union/RemitRadar API for real-time exchange rates
+  // 
+  // DO NOT DELETE: This code represents significant development work and may be needed
+  // in emergency situations (e.g., Paystack USD channel outages, banking issues)
+  // 
+  // To activate: Set environment variable PAYSTACK_ENABLE_NGN_FALLBACK=true
+  // To deactivate: Remove the variable or set to 'false' (default)
   private async initializePaymentNGN(originalData: {
     email: string;
     amount: number; // USD amount in cents
