@@ -444,29 +444,44 @@ export class EmailService {
     verificationCode: string;
   }): Promise<boolean> {
     const html = `
-      <h2>Verify Your Company Claim</h2>
+      <h2>Verify Your Company Claim - Action Required</h2>
       <p>Dear ${data.contactName},</p>
-      <p>Thank you for claiming your company listing on COMCUBES. To complete the verification process and prevent fraudulent claims, please use the verification code below:</p>
+      <p>Thank you for claiming your company listing on COMCUBES. Before proceeding to payment, you must verify ownership of this email address.</p>
       
-      <div style="background: #f8f9fa; padding: 20px; margin: 20px 0; text-align: center; border-radius: 8px;">
-        <h3 style="color: #2563eb; font-size: 24px; letter-spacing: 3px; margin: 0;">${data.verificationCode}</h3>
+      <div style="background: #f0f9ff; border: 2px solid #2563eb; padding: 20px; margin: 20px 0; text-align: center; border-radius: 8px;">
+        <p style="margin: 0 0 10px 0; font-weight: 600; color: #1e40af;">Your Verification Code:</p>
+        <h3 style="color: #2563eb; font-size: 32px; letter-spacing: 5px; margin: 0; font-family: monospace;">${data.verificationCode}</h3>
+      </div>
+      
+      <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0;">
+        <p style="margin: 0; font-weight: 600; color: #92400e;">⚠️ Next Steps:</p>
+        <ol style="margin: 10px 0 0 0; padding-left: 20px; color: #78350f;">
+          <li>Enter the verification code on the claim page</li>
+          <li>Once verified, you'll be directed to payment</li>
+          <li>Complete payment to activate your listing</li>
+        </ol>
       </div>
       
       <p><strong>Company:</strong> ${data.companyName}</p>
-      <p><strong>Plan:</strong> ${data.plan.charAt(0).toUpperCase() + data.plan.slice(1)}</p>
+      <p><strong>Selected Plan:</strong> ${data.plan.charAt(0).toUpperCase() + data.plan.slice(1)}</p>
       
-      <p>This verification code will expire in 24 hours. If you did not request this claim, please ignore this email or contact us immediately.</p>
+      <p style="color: #dc2626; font-weight: 600;">⏰ This code expires in 24 hours</p>
+      
+      <p>If you did not request this claim, please ignore this email or contact us immediately at admin@comcubes.com</p>
       
       <p>Best regards,<br>COMCUBES Team</p>
       
       <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
-      <p style="font-size: 12px; color: #666;">This is an automated security measure to ensure only legitimate business representatives can claim company listings.</p>
+      <p style="font-size: 12px; color: #666;">
+        <strong>Why am I receiving this?</strong><br>
+        Email verification prevents fraudulent company claims by ensuring only authorized business representatives can claim and update listings.
+      </p>
     `;
 
     return this.sendEmail({
       to: data.contactEmail,
       from: 'admin@comcubes.com',
-      subject: `COMCUBES: Verify Your Company Claim - ${data.companyName}`,
+      subject: `COMCUBES: Verify Your Email - ${data.companyName}`,
       html,
     });
   }
