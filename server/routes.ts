@@ -1493,7 +1493,7 @@ This is an automated notification from the COMCUBES self-service advertising pla
       let paymentReference: string;
 
       // Determine payment method and verify accordingly
-      if (orderId || paymentMethod === 'paypal') {
+      if (paymentMethod === 'paypal') {
         // PayPal payment verification
         const paypalOrderId = orderId || reference;
         verification = await paypalService.verifyPayment(paypalOrderId);
