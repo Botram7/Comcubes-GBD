@@ -99,7 +99,7 @@ export default function ClaimCompanyPage() {
   const [urlToCheck, setUrlToCheck] = useState<string>('');
   const [urlCheckDebounceTimer, setUrlCheckDebounceTimer] = useState<NodeJS.Timeout | null>(null);
 
-  // Fetch exchange rate when payment method changes to Paystack
+  // Fetch exchange rate when payment method changes to Paystack (USD-only mode: disabled by default)
   useEffect(() => {
     const fetchExchangeRate = async () => {
       if (paymentMethod === 'paystack' && claimId) {
@@ -107,11 +107,16 @@ export default function ClaimCompanyPage() {
         try {
           const response = await fetch('/api/currency/usd-to-ngn');
           const data = await response.json();
-          if (data.rate) {
+          
+          // Check if currency conversion is disabled (USD-only mode)
+          if (data.disabled) {
+            console.log('Currency conversion disabled - USD-only mode active');
+            setExchangeRate(null);
+          } else if (data.rate) {
             setExchangeRate(data.rate);
           }
         } catch (error) {
-          console.error('Failed to fetch exchange rate:', error);
+          console.log('Exchange rate fetch failed (USD-only mode):', error);
           setExchangeRate(null);
         } finally {
           setIsLoadingRate(false);
@@ -989,24 +994,27 @@ export default function ClaimCompanyPage() {
                     </RadioGroup>
                   </div>
 
-                  {/* Currency Conversion Notice for Paystack */}
+                  {/* Payment Currency Notice for Paystack */}
                   {paymentMethod === 'paystack' && (
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                       <div className="flex items-start gap-2">
-                        <AlertCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                        <AlertCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
                         <div className="flex-1">
-                          <h4 className="font-medium text-amber-900 mb-1">Currency Conversion Notice</h4>
-                          <p className="text-sm text-amber-800">
-                            You're paying <strong>${CLAIM_PRICING[formData.plan].annualPrice} USD</strong>
-                            {isLoadingRate && <span className="ml-1">(fetching exchange rate...)</span>}
+                          <h4 className="font-medium text-blue-900 mb-1">Payment Currency</h4>
+                          <p className="text-sm text-blue-800">
+                            You're paying <strong>${CLAIM_PRICING[formData.plan].annualPrice} USD</strong> via Paystack.
+                            {isLoadingRate && <span className="ml-1">(checking payment currency...)</span>}
                             {!isLoadingRate && exchangeRate && (
                               <span>
-                                , which equals approximately <strong>₦{(CLAIM_PRICING[formData.plan].annualPrice * exchangeRate).toLocaleString('en-NG', { maximumFractionDigits: 0 })} NGN</strong> at the current exchange rate of ₦{exchangeRate.toFixed(2)}/USD.
+                                {' '}This equals approximately <strong>₦{(CLAIM_PRICING[formData.plan].annualPrice * exchangeRate).toLocaleString('en-NG', { maximumFractionDigits: 0 })} NGN</strong> at the current rate.
                               </span>
                             )}
                           </p>
-                          <p className="text-xs text-amber-700 mt-2">
-                            The Paystack checkout page will display the NGN amount, but rest assured you're being charged the correct equivalent of your USD payment.
+                          <p className="text-xs text-blue-700 mt-2">
+                            {exchangeRate 
+                              ? 'Paystack will process your payment securely. The checkout may display NGN amount for local compliance.'
+                              : 'Paystack will process your payment securely in USD via our USD account.'
+                            }
                           </p>
                         </div>
                       </div>
