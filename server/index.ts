@@ -312,21 +312,15 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   app.post('/admin/login', async (req, res) => {
     const { username, password } = req.body;
     
-    console.log('Login attempt - Body:', req.body);
-    console.log('Login attempt - Username:', username);
-    console.log('Login attempt - Session before:', req.session?.isAdminAuthenticated);
-    
     try {
       if (await validateAdminCredentials(username, password)) {
         req.session!.isAdminAuthenticated = true;
-        console.log('Login successful - Session after:', req.session?.isAdminAuthenticated);
         res.redirect('/admin');
       } else {
-        console.log('Login failed - Invalid credentials');
         res.redirect('/admin/login?error=1');
       }
     } catch (error) {
-      console.error('Login error:', error);
+      console.error('Admin login error occurred');
       res.redirect('/admin/login?error=1');
     }
   });
