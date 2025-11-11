@@ -26,7 +26,7 @@ app.use(compression({
   level: 6, // Good balance between compression speed and ratio
 }));
 
-// Security Headers - Implement essential security headers
+// Security Headers - Implement essential security headers with Google AdSense support
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
@@ -34,9 +34,34 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
       imgSrc: ["'self'", "data:", "https:", "blob:"],
-      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://*.replit.dev", "https://*.replit.com"],
-      connectSrc: ["'self'", "https://api.paystack.co", "https://www.googleapis.com", "wss://*.replit.dev", "ws://localhost:*"],
-      frameSrc: ["'self'"],
+      // Allow Google AdSense scripts
+      scriptSrc: [
+        "'self'", 
+        "'unsafe-inline'", 
+        "'unsafe-eval'", 
+        "https://*.replit.dev", 
+        "https://*.replit.com",
+        "https://pagead2.googlesyndication.com",
+        "https://adservice.google.com",
+        "https://googleads.g.doubleclick.net"
+      ],
+      // Allow AdSense connections
+      connectSrc: [
+        "'self'", 
+        "https://api.paystack.co", 
+        "https://www.googleapis.com", 
+        "wss://*.replit.dev", 
+        "ws://localhost:*",
+        "https://pagead2.googlesyndication.com",
+        "https://adservice.google.com"
+      ],
+      // Allow AdSense iframes
+      frameSrc: [
+        "'self'",
+        "https://pagead2.googlesyndication.com",
+        "https://googleads.g.doubleclick.net",
+        "https://tpc.googlesyndication.com"
+      ],
       objectSrc: ["'none'"],
       mediaSrc: ["'self'"],
       manifestSrc: ["'self'"],

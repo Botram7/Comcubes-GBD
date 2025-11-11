@@ -119,8 +119,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
   // Get USD to NGN exchange rate
+  // ⚠️ EMERGENCY-ONLY Currency Conversion API
+  // Only active when PAYSTACK_ENABLE_NGN_FALLBACK=true
+  // Used by frontend for NGN fallback display (ListCompanyPage, ClaimCompanyPage)
   app.get("/api/currency/usd-to-ngn", async (req, res) => {
     try {
+      // Feature flag check happens inside getExchangeRate
+      // Will throw error if PAYSTACK_ENABLE_NGN_FALLBACK=false
       const rate = await currencyService.getExchangeRate('USD', 'NGN');
       res.json({ 
         rate: rate.rate,
@@ -129,7 +134,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error) {
       console.error("Error fetching exchange rate:", error);
-      res.status(500).json({ error: "Failed to fetch exchange rate" });
+      // Surface the specific error message from currencyService
+      const errorMessage = error instanceof Error ? error.message : "Failed to fetch exchange rate";
+      // Return 503 (Service Unavailable) when feature flag is disabled, not 500
+      const statusCode = errorMessage.includes('disabled') || errorMessage.includes('PAYSTACK_ENABLE_NGN_FALLBACK') ? 503 : 500;
+      res.status(statusCode).json({ 
+        error: errorMessage,
+        disabled: errorMessage.includes('disabled')
+      });
     }
   });
 
@@ -918,12 +930,13 @@ This is an automated notification from the COMCUBES self-service advertising pla
       }
 
       if (method === 'paypal') {
-        // PayPal payment flow
+        // PayPal payment flow (always uses USD)
         const reference = paypalService.generateReference();
         
         const paymentData = await paypalService.initializePayment({
           email: listing.contactEmail,
           amount: amountInCents,
+          currency: 'USD',
           reference,
           metadata: {
             listingId,
@@ -1527,11 +1540,14 @@ This is an automated notification from the COMCUBES self-service advertising pla
         if (verification.status === 'success') {
           const { listingId, fallbackPayment, originalAmount } = verification.metadata;
           
-          // Handle both USD and NGN fallback payments
+          // Handle both USD and NGN fallback payments (FEATURE FLAG CONTROLLED)
+          // Only processes NGN conversions when PAYSTACK_ENABLE_NGN_FALLBACK=true
           if (fallbackPayment && originalAmount) {
+            // NGN fallback payment detected - convert back to USD for storage
             amount = paystackService.convertToUSD(originalAmount);
-            console.log(`Payment verified with NGN fallback, using original USD amount: $${amount}`);
+            console.log(`⚠️ NGN Fallback Payment verified, using original USD amount: $${amount}`);
           } else {
+            // Standard USD payment - no conversion needed
             amount = paystackService.convertToUSD(verification.amount);
           }
           

@@ -11,13 +11,30 @@ interface CurrencyRate {
 class CurrencyConversionService {
   private rateCache = new Map<string, CurrencyRate>();
   private readonly CACHE_DURATION = 5 * 60 * 1000; // 5 minutes cache to avoid hitting API on every payment
+  private readonly enableNGNFallback: boolean;
+
+  constructor() {
+    // Feature Flag: EMERGENCY-ONLY Western Union/RemitRadar currency conversion
+    // This matches the PAYSTACK_ENABLE_NGN_FALLBACK flag in PaystackService
+    // Default: false (USD-only, no currency conversion needed)
+    // Set to 'true' ONLY in emergency situations
+    this.enableNGNFallback = process.env.PAYSTACK_ENABLE_NGN_FALLBACK === 'true';
+  }
 
   /**
-   * Get exchange rate from USD to target currency
+   * ⚠️ EMERGENCY-ONLY: Get exchange rate from USD to target currency
    * Primary: Western Union via RemitRadar API
    * Backup: ExchangeRate-API
+   * 
+   * This method is PRESERVED but only active when PAYSTACK_ENABLE_NGN_FALLBACK=true
+   * DO NOT DELETE: Represents significant development work for emergency NGN fallback
    */
   async getExchangeRate(fromCurrency: string, toCurrency: string): Promise<{ rate: number; source: string }> {
+    // FEATURE FLAG CHECK: Fail fast if NGN fallback is disabled
+    if (!this.enableNGNFallback) {
+      throw new Error(`Currency conversion disabled. Set PAYSTACK_ENABLE_NGN_FALLBACK=true to enable emergency NGN fallback mode.`);
+    }
+
     // If same currency, return 1
     if (fromCurrency === toCurrency) {
       return { rate: 1, source: 'same-currency' };
@@ -80,7 +97,10 @@ class CurrencyConversionService {
   }
 
   /**
-   * Fetch Western Union rates via RemitRadar API
+   * ⚠️ EMERGENCY-ONLY: Fetch Western Union rates via RemitRadar API
+   * This method is PRESERVED for emergency NGN fallback situations
+   * Only called when PAYSTACK_ENABLE_NGN_FALLBACK=true
+   * DO NOT DELETE: Represents integration work with RemitRadar API
    */
   private async fetchWesternUnionRate(fromCurrency: string, toCurrency: string): Promise<number | null> {
     // RemitRadar requires country codes, we'll use common defaults
