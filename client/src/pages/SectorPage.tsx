@@ -270,7 +270,8 @@ export default function SectorPage() {
                 <BusinessGrid 
                   items={searchResults.industries} 
                   type="industry" 
-                  onItemClick={handleIndustryClick} 
+                  onItemClick={handleIndustryClick}
+                  currentSector={decodedSectorName}
                 />
               </div>
             )}
@@ -332,7 +333,7 @@ export default function SectorPage() {
               </div>
             </div>
 
-            <BusinessGrid items={industries} type="industry" onItemClick={handleIndustryClick} />
+            <BusinessGrid items={industries} type="industry" onItemClick={handleIndustryClick} currentSector={decodedSectorName} />
             
             {/* Related Sectors Navigation */}
             {Array.isArray(industries) && industries.length > 0 && (
