@@ -70,11 +70,45 @@ export class PaystackService {
 
       if (!response.ok) {
         const errorText = await response.text();
+        let errorData;
+        try {
+          errorData = JSON.parse(errorText);
+        } catch {
+          errorData = null;
+        }
+        
         console.error('=== Paystack Error Response ===');
         console.error('Status:', response.status);
         console.error('Status Text:', response.statusText);
         console.error('Error Body:', errorText);
         console.error('===============================');
+        
+        // Enhanced diagnostics for common Paystack errors
+        console.error('=== Paystack Error Diagnostics ===');
+        console.error('API Key prefix:', this.secretKey.substring(0, 8) + '...');
+        console.error('API Key type:', this.secretKey.startsWith('sk_test_') ? 'TEST' : this.secretKey.startsWith('sk_live_') ? 'LIVE' : 'UNKNOWN');
+        console.error('Requested currency:', preferredCurrency);
+        console.error('Error type:', errorData?.type || 'unknown');
+        console.error('Error code:', errorData?.code || 'unknown');
+        console.error('Error message:', errorData?.message || 'unknown');
+        
+        // Common error interpretations
+        if (response.status === 401) {
+          console.error('🔑 DIAGNOSIS: Invalid or expired API key');
+          console.error('   → Check that PAYSTACK_SECRET_KEY is correct');
+          console.error('   → Ensure you are using the SECRET key, not PUBLIC key');
+        } else if (response.status === 400 && errorData?.code === 'unknown') {
+          console.error('💰 DIAGNOSIS: Likely currency/account configuration issue');
+          console.error('   → Your Paystack account may not support USD transactions');
+          console.error('   → Verify you are using the API key from your USD-enabled integration');
+          console.error('   → Check if you need to enable USD in Paystack Dashboard > Settings > Payment Methods');
+          console.error('   → Ensure your Zenith Bank USD account is properly linked');
+        } else if (response.status === 403 || errorText.includes('No active channel')) {
+          console.error('🚫 DIAGNOSIS: USD payment channel not available');
+          console.error('   → Your account may not have USD channels activated');
+          console.error('   → Contact Paystack support to enable USD payments');
+        }
+        console.error('===================================');
         
         // FEATURE FLAG CHECK: Only fallback to NGN if explicitly enabled
         if ((response.status === 403 || (response.status === 400 && errorText.includes('No active channel'))) && preferredCurrency === 'USD') {
@@ -87,7 +121,18 @@ export class PaystackService {
             throw new Error(`Paystack USD payment failed: ${errorText}. Please contact support or enable NGN fallback mode.`);
           }
         }
-        throw new Error(`Paystack API error: ${response.status} - ${errorText}`);
+        
+        // Return user-friendly error message
+        let userMessage = 'Payment initialization failed. ';
+        if (response.status === 401) {
+          userMessage += 'Invalid API credentials. Please contact support.';
+        } else if (response.status === 400 && errorData?.code === 'unknown') {
+          userMessage += 'Your payment account may not support USD transactions. Please verify your Paystack USD integration is properly configured with your Zenith Bank USD account.';
+        } else {
+          userMessage += errorData?.message || 'Please try again or contact support.';
+        }
+        
+        throw new Error(userMessage);
       }
 
       const result = await response.json();
