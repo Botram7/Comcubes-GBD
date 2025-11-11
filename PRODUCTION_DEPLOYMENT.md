@@ -78,8 +78,14 @@ DEFAULT_OBJECT_STORAGE_BUCKET_ID   # Replit object storage bucket name
 ### 🟢 OPTIONAL - Analytics & Features
 ```
 VITE_CLARITY_PROJECT_ID           # Microsoft Clarity project ID (optional)
+VITE_PAYPAL_ENABLED               # Set to 'true' to show PayPal option (default: hidden in production)
 PAYSTACK_ENABLE_NGN_FALLBACK      # EMERGENCY ONLY: Set to 'true' for NGN fallback
 ```
+
+**⚠️ PAYPAL VISIBILITY CONTROL**: 
+- PayPal is **HIDDEN by default** in production to prevent merchant account errors
+- Only set `VITE_PAYPAL_ENABLED=true` after your PayPal business account is fully verified
+- Paystack USD remains the primary payment method (always visible)
 
 ---
 
@@ -103,8 +109,9 @@ PAYSTACK_ENABLE_NGN_FALLBACK      # EMERGENCY ONLY: Set to 'true' for NGN fallba
 ### 3. Payment Gateway Configuration ✓
 - [ ] Verify Paystack USD account (Zenith Bank) is active
 - [ ] Test Paystack LIVE secret key in Paystack dashboard
-- [ ] Verify PayPal production credentials
-- [ ] Set PAYPAL_MODE=live in Replit Secrets
+- [ ] Verify PayPal production credentials (if using PayPal)
+- [ ] Set PAYPAL_MODE=live in Replit Secrets (if using PayPal)
+- [ ] **DO NOT** set VITE_PAYPAL_ENABLED until PayPal business verification complete
 - [ ] Confirm Apple Pay domain verification file is in place
 - [ ] Review payment callback URLs use production domain
 
