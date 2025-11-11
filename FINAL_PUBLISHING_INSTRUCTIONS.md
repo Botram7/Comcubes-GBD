@@ -72,9 +72,12 @@ npx ts-node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 PAYSTACK_SECRET_KEY=sk_live_XXXXXXXXXXXXXXXX
 PAYPAL_CLIENT_ID=your_production_client_id
 PAYPAL_SECRET=your_production_secret
+PAYPAL_MODE=live
 ```
 
-**⚠️ CRITICAL**: Use LIVE keys, not TEST keys!
+**⚠️ CRITICAL**: 
+- Use LIVE keys, not TEST keys!
+- **MUST set PAYPAL_MODE=live** - Without this, PayPal uses sandbox mode even with live credentials
 
 #### Required Email Service Secrets
 ```bash
