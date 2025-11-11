@@ -65,7 +65,9 @@ function Router() {
       <Route path="/list-company" component={ListCompanyPage} />
       <Route path="/resume-payment" component={ResumePaymentPage} />
       <Route path="/claim-company" component={ClaimCompanyPage} />
+      <Route path="/payment-success" component={PaymentSuccessPage} />
       <Route path="/payment/success" component={PaymentSuccessPage} />
+      <Route path="/payment-cancel" component={PaymentCancelPage} />
       <Route path="/payment/cancel" component={PaymentCancelPage} />
       <Route path="/admin" component={ComprehensiveAdminDashboard} />
       <Route path="/admin-sync" component={AdminSyncPage} />
