@@ -78,6 +78,8 @@ PAYPAL_MODE=live
 **⚠️ CRITICAL**: 
 - Use LIVE keys, not TEST keys!
 - **MUST set PAYPAL_MODE=live** - Without this, PayPal uses sandbox mode even with live credentials
+- **DO NOT set VITE_PAYPAL_ENABLED** until your PayPal business account is fully verified
+- PayPal option will be **HIDDEN from production users** until you enable it
 
 #### Required Email Service Secrets
 ```bash
@@ -99,6 +101,18 @@ VITE_ADSENSE_CLIENT_ID=ca-pub-XXXXXXXX
 ```bash
 DEFAULT_OBJECT_STORAGE_BUCKET_ID=your_bucket_name
 ```
+
+#### Optional Features
+```bash
+VITE_PAYPAL_ENABLED=true          # Only set AFTER PayPal business verification complete
+VITE_CLARITY_PROJECT_ID=your_id   # Microsoft Clarity (optional)
+```
+
+**PayPal Visibility Control**:
+- PayPal is **hidden by default** in production
+- Prevents showing payment option while merchant account verification is pending
+- Set `VITE_PAYPAL_ENABLED=true` only after PayPal confirms business verification
+- Paystack USD works immediately and is always visible
 
 #### Auto-Provided by Replit
 ```bash
