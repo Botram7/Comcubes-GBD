@@ -48,13 +48,13 @@ export class PaystackService {
       const callbackUrl = `${protocol}://${domain}/payment-success`;
       
       // Currency-specific payment channels
-      // USD: Paystack only supports card payments for USD transactions
+      // USD: Paystack supports card and Apple Pay for USD transactions
       // NGN: Multiple local payment methods are available (bank, USSD, mobile money, etc.)
       // Other currencies: Let Paystack auto-select valid channels by not specifying
       const getChannelsForCurrency = (currency: string): string[] | undefined => {
         switch (currency) {
           case 'USD':
-            return ["card"];
+            return ["card", "apple_pay"];
           case 'NGN':
             return ["card", "bank", "ussd", "qr", "mobile_money", "bank_transfer"];
           default:
