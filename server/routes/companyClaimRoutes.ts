@@ -247,6 +247,48 @@ export function registerCompanyClaimRoutes(app: Express) {
     }
   });
 
+  // Resend verification code
+  app.post("/api/company-claims/:claimId/resend-code", async (req, res) => {
+    try {
+      const claimId = parseInt(req.params.claimId);
+      const claim = await storage.getCompanyClaim(claimId);
+
+      if (!claim) {
+        return res.status(404).json({ error: "Claim not found" });
+      }
+
+      if (claim.emailVerified) {
+        return res.status(400).json({ error: "Email already verified" });
+      }
+
+      // Generate new verification code
+      const verificationCode = crypto.randomBytes(3).toString('hex').toUpperCase();
+      const verificationExpiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
+
+      // Update claim with new code
+      await storage.updateCompanyClaimVerificationCode(claimId, verificationCode, verificationExpiresAt);
+
+      // Send new verification email
+      const emailService = new EmailService();
+      await emailService.sendClaimVerificationEmail({
+        contactName: claim.contactName,
+        contactEmail: claim.contactEmail,
+        companyName: claim.companyName,
+        plan: claim.plan,
+        verificationCode: verificationCode
+      });
+
+      res.json({
+        message: "Verification code has been resent to your email",
+        codeSent: true
+      });
+
+    } catch (error) {
+      console.error("Error resending verification code:", error);
+      res.status(500).json({ error: "Failed to resend verification code" });
+    }
+  });
+
   // Get company claim by ID (for admin)
   app.get("/api/company-claims/:claimId", async (req, res) => {
     try {
@@ -323,6 +365,14 @@ export function registerCompanyClaimRoutes(app: Express) {
       const claim = await storage.getCompanyClaim(claimId);
       if (!claim) {
         return res.status(404).json({ error: "Claim not found" });
+      }
+
+      // Check email verification first
+      if (!claim.emailVerified) {
+        return res.status(403).json({ 
+          error: "Email verification required",
+          message: "Please verify your email address before proceeding to payment. Check your inbox for the verification code."
+        });
       }
 
       // Validate claim status
