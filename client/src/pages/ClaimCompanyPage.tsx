@@ -87,6 +87,10 @@ export default function ClaimCompanyPage() {
   const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'paystack'>('paystack');
   const [exchangeRate, setExchangeRate] = useState<number | null>(null);
   const [isLoadingRate, setIsLoadingRate] = useState(false);
+  
+  // Feature flag: PayPal visibility (enabled in development, disabled in production by default)
+  const isPayPalEnabled = import.meta.env.VITE_PAYPAL_ENABLED === 'true';
+  
   const [formData, setFormData] = useState<ClaimFormData>({
     companyId: '',
     companyName: '',
@@ -1129,14 +1133,16 @@ export default function ClaimCompanyPage() {
                           <div className="text-sm text-gray-500">Pay securely with Paystack (a Stripe subsidiary)</div>
                         </Label>
                       </div>
-                      <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paypal')}>
-                        <RadioGroupItem value="paypal" id="claim-paypal" data-testid="radio-claim-paypal" />
-                        <img src={paypalLogo} alt="PayPal" className="h-6 w-auto object-contain" />
-                        <Label htmlFor="claim-paypal" className="flex-1 cursor-pointer">
-                          <div className="font-medium">PayPal (Account may be required)</div>
-                          <div className="text-sm text-gray-500">Alternative payment option</div>
-                        </Label>
-                      </div>
+                      {isPayPalEnabled && (
+                        <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => setPaymentMethod('paypal')}>
+                          <RadioGroupItem value="paypal" id="claim-paypal" data-testid="radio-claim-paypal" />
+                          <img src={paypalLogo} alt="PayPal" className="h-6 w-auto object-contain" />
+                          <Label htmlFor="claim-paypal" className="flex-1 cursor-pointer">
+                            <div className="font-medium">PayPal (Account may be required)</div>
+                            <div className="text-sm text-gray-500">Alternative payment option</div>
+                          </Label>
+                        </div>
+                      )}
                     </RadioGroup>
                   </div>
 
