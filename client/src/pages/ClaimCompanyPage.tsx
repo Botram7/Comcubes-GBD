@@ -22,7 +22,9 @@ import {
   FileText,
   CreditCard,
   ArrowLeft,
-  AlertCircle
+  AlertCircle,
+  Mail,
+  RefreshCw
 } from "lucide-react";
 import { normalizeUrl } from '@/lib/urlUtils';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
@@ -77,10 +79,11 @@ export default function ClaimCompanyPage() {
   const { toast } = useToast();
   const queryClient = useQueryClient();
   
-  const [step, setStep] = useState<'search' | 'select' | 'form' | 'payment'>('search');
+  const [step, setStep] = useState<'search' | 'select' | 'form' | 'verify' | 'payment'>('search');
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
   const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
   const [claimId, setClaimId] = useState<number | null>(null);
+  const [verificationCode, setVerificationCode] = useState<string>('');
   const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'paystack'>('paystack');
   const [exchangeRate, setExchangeRate] = useState<number | null>(null);
   const [isLoadingRate, setIsLoadingRate] = useState(false);
@@ -288,15 +291,60 @@ export default function ClaimCompanyPage() {
       setClaimId(result.claimId);
       toast({
         title: "Claim Submitted Successfully",
-        description: "Please complete payment to activate your company claim.",
+        description: "Please check your email for the verification code.",
       });
       queryClient.invalidateQueries({ queryKey: ["/api/admin"] });
-      setStep('payment');
+      setStep('verify');
     },
     onError: (error) => {
       toast({
         title: "Claim Submission Failed",
         description: error.message,
+        variant: "destructive",
+      });
+    },
+  });
+
+  // Verification mutation
+  const verificationMutation = useMutation({
+    mutationFn: async (data: { claimId: number; verificationCode: string }) => {
+      const response = await apiRequest('POST', `/api/company-claims/${data.claimId}/verify-email`, {
+        verificationCode: data.verificationCode
+      });
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Email Verified",
+        description: "Your email has been verified successfully. Please proceed to payment.",
+      });
+      setStep('payment');
+    },
+    onError: (error) => {
+      toast({
+        title: "Verification Failed",
+        description: error.message || "Invalid or expired verification code.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  // Resend verification code mutation
+  const resendCodeMutation = useMutation({
+    mutationFn: async (claimId: number) => {
+      const response = await apiRequest('POST', `/api/company-claims/${claimId}/resend-code`, {});
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Code Resent",
+        description: "A new verification code has been sent to your email.",
+      });
+    },
+    onError: (error) => {
+      toast({
+        title: "Resend Failed",
+        description: error.message || "Could not resend verification code.",
         variant: "destructive",
       });
     },
@@ -331,6 +379,16 @@ export default function ClaimCompanyPage() {
       });
     },
   });
+
+  // Handle verification code submission
+  const handleVerification = () => {
+    if (claimId && verificationCode.trim()) {
+      verificationMutation.mutate({
+        claimId,
+        verificationCode: verificationCode.trim()
+      });
+    }
+  };
 
   // Handle payment with annual billing calculation
   const handlePayment = () => {
@@ -506,17 +564,18 @@ export default function ClaimCompanyPage() {
 
         {/* Progress Steps */}
         <div className="mb-8">
-          <div className="flex items-center justify-between max-w-2xl">
+          <div className="flex items-center justify-between max-w-3xl">
             {[
               { key: 'search', label: 'Find Company', icon: Search },
               { key: 'select', label: 'Select Listing', icon: Building2 },
               { key: 'form', label: 'Add Details', icon: FileText },
+              { key: 'verify', label: 'Verify Email', icon: Mail },
               { key: 'payment', label: 'Choose Plan', icon: CreditCard },
             ].map((stepInfo, index) => {
               const Icon = stepInfo.icon;
               const isActive = step === stepInfo.key;
               // Mark search and select as completed when coming from URL parameters
-              const stepOrder = ['search', 'select', 'form', 'payment'];
+              const stepOrder = ['search', 'select', 'form', 'verify', 'payment'];
               const currentStepIndex = stepOrder.indexOf(step);
               const stepIndex = stepOrder.indexOf(stepInfo.key);
               const isCompleted = currentStepIndex > stepIndex || (selectedCompany && ['search', 'select'].includes(stepInfo.key));
@@ -534,7 +593,7 @@ export default function ClaimCompanyPage() {
                   }`}>
                     {stepInfo.label}
                   </span>
-                  {index < 3 && (
+                  {index < 4 && (
                     <ArrowRight className="h-4 w-4 text-gray-400 mx-4" />
                   )}
                 </div>
@@ -865,6 +924,93 @@ export default function ClaimCompanyPage() {
                 >
                   Continue to Pricing
                   <ArrowRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {step === 'verify' && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Mail className="h-5 w-5" />
+                Verify Your Email
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <h3 className="font-medium text-blue-900 mb-2">Check Your Inbox</h3>
+                <p className="text-sm text-blue-800">
+                  We've sent a 6-character verification code to <strong>{formData.contactEmail}</strong>
+                </p>
+                <p className="text-sm text-blue-700 mt-2">
+                  Please enter the code below to verify ownership of this email address before proceeding to payment.
+                </p>
+              </div>
+
+              <div className="max-w-md mx-auto space-y-4">
+                <div>
+                  <Label htmlFor="verificationCode">Verification Code</Label>
+                  <Input
+                    id="verificationCode"
+                    value={verificationCode}
+                    onChange={(e) => setVerificationCode(e.target.value.toUpperCase())}
+                    placeholder="XXXXXX"
+                    maxLength={6}
+                    className="text-center text-2xl font-mono tracking-widest uppercase"
+                    data-testid="input-verification-code"
+                  />
+                  <p className="text-xs text-gray-500 mt-1 text-center">
+                    Code expires in 24 hours
+                  </p>
+                </div>
+
+                <div className="flex gap-4">
+                  <Button 
+                    onClick={handleVerification}
+                    disabled={verificationMutation.isPending || verificationCode.trim().length !== 6}
+                    className="flex-1"
+                    data-testid="button-verify-email"
+                  >
+                    {verificationMutation.isPending ? 'Verifying...' : 'Verify Email'}
+                  </Button>
+                </div>
+
+                <div className="text-center">
+                  <p className="text-sm text-gray-600 mb-2">Didn't receive the code?</p>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => claimId && resendCodeMutation.mutate(claimId)}
+                    disabled={resendCodeMutation.isPending}
+                    className="flex items-center gap-2"
+                    data-testid="button-resend-code"
+                  >
+                    <RefreshCw className={`h-4 w-4 ${resendCodeMutation.isPending ? 'animate-spin' : ''}`} />
+                    {resendCodeMutation.isPending ? 'Sending...' : 'Resend Code'}
+                  </Button>
+                </div>
+              </div>
+
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                <h4 className="font-medium text-yellow-900 mb-2 flex items-center gap-2">
+                  <AlertCircle className="h-5 w-5" />
+                  Security Notice
+                </h4>
+                <p className="text-sm text-yellow-800">
+                  Email verification is required to prevent fraudulent company claims. This ensures only authorized 
+                  business representatives can claim and update company listings.
+                </p>
+              </div>
+
+              <div className="flex gap-4 pt-4">
+                <Button 
+                  onClick={() => setStep('form')} 
+                  variant="outline"
+                  disabled={verificationMutation.isPending}
+                >
+                  Back to Details
                 </Button>
               </div>
             </CardContent>
