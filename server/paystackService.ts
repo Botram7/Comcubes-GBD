@@ -47,7 +47,25 @@ export class PaystackService {
       const protocol = domain.includes('localhost') ? 'http' : 'https';
       const callbackUrl = `${protocol}://${domain}/payment-success`;
       
-      const payload = {
+      // Currency-specific payment channels
+      // USD: Paystack only supports card payments for USD transactions
+      // NGN: Multiple local payment methods are available (bank, USSD, mobile money, etc.)
+      // Other currencies: Let Paystack auto-select valid channels by not specifying
+      const getChannelsForCurrency = (currency: string): string[] | undefined => {
+        switch (currency) {
+          case 'USD':
+            return ["card"];
+          case 'NGN':
+            return ["card", "bank", "ussd", "qr", "mobile_money", "bank_transfer"];
+          default:
+            // For other currencies, omit channels to let Paystack auto-select valid defaults
+            return undefined;
+        }
+      };
+      
+      const channels = getChannelsForCurrency(preferredCurrency);
+      
+      const payload: any = {
         email: data.email,
         amount: data.amount,
         currency: preferredCurrency,
@@ -55,6 +73,11 @@ export class PaystackService {
         metadata: data.metadata,
         callback_url: callbackUrl,
       };
+      
+      // Only add channels if we have a defined list for this currency
+      if (channels) {
+        payload.channels = channels;
+      }
       
       console.log('=== Paystack Request Debug ===');
       console.log('Payload being sent to Paystack:', JSON.stringify(payload, null, 2));
@@ -232,6 +255,7 @@ export class PaystackService {
         currency: 'NGN',
         reference: originalData.reference,
         callback_url: callbackUrl,
+        channels: ["card", "bank", "ussd", "qr", "mobile_money", "bank_transfer"],
         metadata: {
           ...originalData.metadata,
           originalCurrency: 'USD',

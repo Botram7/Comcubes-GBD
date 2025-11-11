@@ -2,6 +2,8 @@ import express, { type Request, Response, NextFunction } from "express";
 import helmet from "helmet";
 import compression from "compression";
 import rateLimit from "express-rate-limit";
+import fs from "fs";
+import path from "path";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { adminSessionConfig, requireAdminAuth, validateAdminCredentials } from "./adminAuth";
@@ -344,6 +346,30 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   await initDatabaseOnce();
 
   const server = await registerRoutes(app);
+
+  // Apple Pay domain verification - preload file at startup
+  // CRITICAL: Must serve with content-type: text/plain per Apple's production requirements
+  let applePayVerificationFile: Buffer | null = null;
+  try {
+    const filePath = path.join(process.cwd(), 'public', '.well-known', 'apple-developer-merchantid-domain-association');
+    applePayVerificationFile = fs.readFileSync(filePath);
+    log('✅ Apple Pay domain verification file loaded successfully');
+  } catch (error) {
+    log('⚠️  Apple Pay verification file not found - Apple Pay will not be available');
+  }
+
+  app.get('/.well-known/apple-developer-merchantid-domain-association', (req, res) => {
+    if (!applePayVerificationFile) {
+      log('❌ Apple Pay verification file requested but not available');
+      return res.status(404).send('Apple Pay verification file not found');
+    }
+    
+    // Serve cached file with correct headers per Apple's requirements
+    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Length', applePayVerificationFile.length.toString());
+    res.setHeader('Cache-Control', 'public, max-age=3600'); // Cache for 1 hour
+    res.send(applePayVerificationFile);
+  });
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
