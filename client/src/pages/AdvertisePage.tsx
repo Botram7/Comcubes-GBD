@@ -102,6 +102,9 @@ export default function AdvertisePage() {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [calculatedPrice, setCalculatedPrice] = useState<number>(0);
+  
+  // Feature flag: PayPal visibility (enabled in development, disabled in production by default)
+  const isPayPalEnabled = import.meta.env.VITE_PAYPAL_ENABLED === 'true';
 
   const form = useForm<AdPurchaseData>({
     resolver: zodResolver(adPurchaseSchema),
@@ -523,19 +526,21 @@ export default function AdvertisePage() {
                                     </div>
                                   </Label>
                                 </div>
-                                <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50">
-                                  <RadioGroupItem value="paypal" id="paypal" />
-                                  <img src={paypalLogo} alt="PayPal" className="h-6 w-auto object-contain" />
-                                  <Label htmlFor="paypal" className="flex-1 cursor-pointer">
-                                    <div className="flex items-center justify-between">
-                                      <div>
-                                        <div className="font-medium">PayPal</div>
-                                        <div className="text-sm text-gray-500">International payments accepted</div>
+                                {isPayPalEnabled && (
+                                  <div className="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:bg-gray-50">
+                                    <RadioGroupItem value="paypal" id="paypal" />
+                                    <img src={paypalLogo} alt="PayPal" className="h-6 w-auto object-contain" />
+                                    <Label htmlFor="paypal" className="flex-1 cursor-pointer">
+                                      <div className="flex items-center justify-between">
+                                        <div>
+                                          <div className="font-medium">PayPal</div>
+                                          <div className="text-sm text-gray-500">International payments accepted</div>
+                                        </div>
+                                        <Badge variant="secondary">SECONDARY</Badge>
                                       </div>
-                                      <Badge variant="secondary">SECONDARY</Badge>
-                                    </div>
-                                  </Label>
-                                </div>
+                                    </Label>
+                                  </div>
+                                )}
                               </RadioGroup>
                             </FormControl>
                             <FormMessage />
