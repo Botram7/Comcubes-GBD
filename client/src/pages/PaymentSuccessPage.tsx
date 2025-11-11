@@ -17,25 +17,51 @@ export default function PaymentSuccessPage() {
     const verifyPayment = async () => {
       try {
         const params = new URLSearchParams(window.location.search);
+        
+        // PayPal parameters
         const token = params.get('token');
         const PayerID = params.get('PayerID');
+        
+        // Paystack parameters
+        const reference = params.get('reference') || params.get('trxref');
+        const status = params.get('status');
 
-        console.log('Payment success page loaded. Token:', token, 'PayerID:', PayerID);
+        console.log('Payment success page loaded. PayPal:', { token, PayerID }, 'Paystack:', { reference, status });
 
-        if (!token) {
+        // Determine payment method and validate parameters
+        let paymentMethod: 'paypal' | 'paystack';
+        let orderId: string;
+        
+        if (token && PayerID) {
+          // PayPal payment
+          paymentMethod = 'paypal';
+          orderId = token;
+        } else if (reference) {
+          // Paystack payment
+          paymentMethod = 'paystack';
+          orderId = reference;
+          
+          // Check Paystack status
+          if (status && status.toLowerCase() !== 'success') {
+            setError(`Payment ${status}. Please try again or contact support.`);
+            setVerifying(false);
+            return;
+          }
+        } else {
           setError('Missing payment information. Please contact support.');
           setVerifying(false);
           return;
         }
 
-        const response = await fetch('/api/claims/payment/verify', {
+        const response = await fetch('/api/payment/verify', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            orderId: token,
-            paymentMethod: 'paypal'
+            orderId,
+            reference: paymentMethod === 'paystack' ? orderId : undefined,
+            paymentMethod
           }),
         });
 

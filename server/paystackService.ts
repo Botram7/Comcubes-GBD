@@ -42,12 +42,18 @@ export class PaystackService {
     const preferredCurrency = data.currency || 'USD';
     
     try {
+      // Build callback URL for redirect after payment
+      const domain = process.env.REPLIT_DEV_DOMAIN || 'localhost:5000';
+      const protocol = domain.includes('localhost') ? 'http' : 'https';
+      const callbackUrl = `${protocol}://${domain}/payment-success`;
+      
       const payload = {
         email: data.email,
         amount: data.amount,
         currency: preferredCurrency,
         reference: data.reference,
         metadata: data.metadata,
+        callback_url: callbackUrl,
       };
       
       console.log('=== Paystack Request Debug ===');
@@ -56,6 +62,7 @@ export class PaystackService {
       console.log('Amount value:', payload.amount);
       console.log('Currency:', payload.currency);
       console.log('Email:', payload.email);
+      console.log('Callback URL:', callbackUrl);
       console.log('===============================');
       
       // First, try with the preferred currency (USD)
@@ -208,6 +215,11 @@ export class PaystackService {
       console.log(`Emergency fallback: ${usdAmount} USD → ${ngnAmount} NGN (${ngnKobo} kobo)`);
     }
 
+    // Build callback URL for redirect after payment
+    const domain = process.env.REPLIT_DEV_DOMAIN || 'localhost:5000';
+    const protocol = domain.includes('localhost') ? 'http' : 'https';
+    const callbackUrl = `${protocol}://${domain}/payment-success`;
+
     const response = await fetch(`${this.baseUrl}/transaction/initialize`, {
       method: 'POST',
       headers: {
@@ -219,6 +231,7 @@ export class PaystackService {
         amount: ngnKobo,
         currency: 'NGN',
         reference: originalData.reference,
+        callback_url: callbackUrl,
         metadata: {
           ...originalData.metadata,
           originalCurrency: 'USD',
