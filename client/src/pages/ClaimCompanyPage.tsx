@@ -1157,10 +1157,10 @@ export default function ClaimCompanyPage() {
                     <Button 
                       onClick={handlePayment}
                       disabled={paymentMutation.isPending}
-                      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700"
+                      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 whitespace-nowrap overflow-hidden flex-1"
                       data-testid="button-proceed-claim-payment"
                     >
-                      {paymentMutation.isPending ? 'Initializing...' : `Proceed with ${paymentMethod === 'paypal' ? 'PayPal' : 'Paystack'}`}
+                      {paymentMutation.isPending ? 'Initializing...' : paymentMethod === 'paypal' ? 'Pay with PayPal' : 'Pay with Paystack'}
                     </Button>
                   </div>
                   

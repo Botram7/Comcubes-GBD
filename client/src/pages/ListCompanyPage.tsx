@@ -390,13 +390,13 @@ export default function ListCompanyPage() {
               <Button 
                 onClick={handlePayment}
                 size="lg"
-                className="w-full"
+                className="w-full whitespace-nowrap overflow-hidden"
                 disabled={paymentMutation.isPending}
                 data-testid="button-proceed-payment"
               >
                 {paymentMutation.isPending 
                   ? 'Processing...' 
-                  : `Proceed with ${paymentMethod === 'paypal' ? 'PayPal' : 'Paystack'}`
+                  : paymentMethod === 'paypal' ? 'Pay with PayPal' : 'Pay with Paystack'
                 }
               </Button>
               
