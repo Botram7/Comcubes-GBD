@@ -978,7 +978,9 @@ This is an automated notification from the COMCUBES self-service advertising pla
       }
     } catch (error) {
       console.error('Payment initialization error:', error);
-      res.status(500).json({ error: 'Failed to initialize payment' });
+      // Return detailed error message for better debugging
+      const errorMessage = error instanceof Error ? error.message : 'Failed to initialize payment';
+      res.status(500).json({ error: errorMessage });
     }
   });
 
