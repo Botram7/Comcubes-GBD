@@ -1167,7 +1167,7 @@ export default function ClaimCompanyPage() {
                   <div className="text-sm text-gray-500 text-center">
                     {paymentMethod === 'paypal' 
                       ? 'Secure payment powered by PayPal. All transactions in USD.'
-                      : 'Secure payment powered by Paystack. Supports cards, bank transfers, and mobile money.'
+                      : 'Secure payment powered by Paystack. Supports cards and Apple Pay.'
                     }
                   </div>
                 </>
