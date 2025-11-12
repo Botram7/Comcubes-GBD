@@ -476,7 +476,7 @@ export default function CompanyListingPage() {
           </Button>
           
           <div className="text-sm text-gray-500">
-            Secure payment powered by Paystack. Supports cards, bank transfers, and mobile money.
+            Secure payment powered by Paystack. Supports cards and Apple Pay.
           </div>
         </div>
       </CardContent>

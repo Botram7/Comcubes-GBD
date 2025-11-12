@@ -17,28 +17,29 @@ import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import type { SearchResults } from "@/lib/types";
 
 // Popular search suggestions that link to relevant sectors/industries
+// Using exact names from database to ensure links work correctly
 const POPULAR_SEARCHES = [
   { name: 'Technology', type: 'sector' },
-  { name: 'Banking and Financial Services', type: 'sector' },
+  { name: 'Banking & Financial Services', type: 'sector' },
   { name: 'Healthcare and Pharmaceuticals', type: 'sector' },
   { name: 'Manufacturing', type: 'sector' },
   { name: 'Retail', type: 'sector' },
   { name: 'Energy and Utilities', type: 'sector' },
-  { name: 'Software Development', type: 'industry' },
+  { name: 'Enterprise Software', type: 'industry' },
   { name: 'Investment Banking', type: 'industry' },
   { name: 'Insurance', type: 'sector' },
-  { name: 'Consulting Services', type: 'industry' }
+  { name: 'Professional Services', type: 'sector' }
 ];
 
 const TRENDING_SEARCHES = [
-  { name: 'Artificial Intelligence', type: 'industry' },
+  { name: 'FinTech', type: 'industry' },
   { name: 'Renewable Energy', type: 'industry' },
-  { name: 'Fintech', type: 'industry' },
-  { name: 'E-commerce', type: 'industry' },
-  { name: 'Cloud Computing', type: 'industry' },
-  { name: 'Biotechnology', type: 'industry' },
-  { name: 'Cryptocurrency', type: 'industry' },
-  { name: 'Green Technology', type: 'industry' }
+  { name: 'E-commerce Marketplaces', type: 'industry' },
+  { name: 'Biopharmaceuticals', type: 'industry' },
+  { name: 'Cryptocurrency Exchanges', type: 'industry' },
+  { name: 'Telecommunications and ICT', type: 'sector' },
+  { name: 'Cloud Telephony', type: 'industry' },
+  { name: 'Automotive Software', type: 'industry' }
 ];
 
 export default function SearchPage() {
