@@ -159,12 +159,57 @@ export default function GeographyPage() {
                 <Globe2 className="h-8 w-8 text-white" />
               </div>
               <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-                Global Geography
+                Discover Businesses by Location
               </h1>
             </div>
-            <p className="text-lg text-gray-600 max-w-3xl">
-              Find businesses near you or discover companies anywhere in the world. Whether you're searching for local services in your city, exploring brands in another country, or researching international companies, navigate through continents, regions, and countries to find exactly what you need—right in your neighborhood or halfway around the globe.
-            </p>
+            
+            <div className="prose max-w-none text-gray-700 space-y-4">
+              <p className="text-lg leading-relaxed">
+                Welcome to COMCUBES' geographic business discovery system. Whether you're searching for services in your local area, exploring brands in specific countries, or researching international companies across continents—our location-based directory helps you find businesses exactly where you need them.
+              </p>
+
+              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Why Search by Location?</h2>
+              <p>
+                Geography matters in business. Local businesses understand regional needs, cultural preferences, and market dynamics in ways that distant competitors cannot. International companies adapt their offerings to different markets, creating unique opportunities in each region. By organizing our directory geographically, we help you find businesses that are relevant to specific locations—whether that's your hometown, a country you're researching, or an international market you're exploring.
+              </p>
+
+              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">How Our Geographic System Works</h2>
+              <p>
+                COMCUBES organizes companies using a three-tier geographic hierarchy: <strong>Continents</strong> (7 major world regions) → <strong>Regions</strong> (sub-continental areas) → <strong>Countries</strong> ({stats?.totalCountries || '190+'} nations). This structure mirrors how the world is actually organized, making it intuitive to drill down from broad geographic areas to specific nations. Once you select a country, you'll see all companies in our directory with a presence in that location.
+              </p>
+
+              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Who Benefits from Location-Based Search?</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Local Consumers:</strong> Find services, shops, and businesses operating in your area or a specific city you're visiting.</li>
+                <li><strong>International Shoppers:</strong> Discover brands available in your country or explore products from specific regions worldwide.</li>
+                <li><strong>Business Travelers:</strong> Research companies in destinations before trips, find local service providers, and identify potential business partners in target markets.</li>
+                <li><strong>Market Researchers:</strong> Analyze business landscapes in specific countries, study regional industry concentrations, and identify market entry opportunities.</li>
+                <li><strong>Students & Researchers:</strong> Access educational institutions by country, study multinational company footprints, and gather geographic business data for projects.</li>
+                <li><strong>Investors:</strong> Explore businesses operating in emerging markets, assess regional economic activity, and identify geographic diversification opportunities.</li>
+              </ul>
+
+              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Real-World Use Cases</h2>
+              <p className="mb-2">
+                Our geographic directory serves diverse discovery needs:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 mb-4">
+                <li><strong>Planning a trip?</strong> Browse businesses in your destination country to find hotels, restaurants, tour operators, and local services.</li>
+                <li><strong>Moving to a new city?</strong> Discover local employers, service providers, schools, and businesses in your new location before you arrive.</li>
+                <li><strong>Expanding globally?</strong> Research competitors, partners, and market conditions in specific countries where you're considering business operations.</li>
+                <li><strong>Shopping internationally?</strong> Find brands and retailers that ship to your country or discover regional products available in specific locations.</li>
+                <li><strong>Academic research?</strong> Gather data on business distribution across regions, study economic development patterns, or compare industries across countries.</li>
+              </ul>
+
+              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Coverage and Data Quality</h2>
+              <p>
+                Our directory includes {stats?.totalGeocodedCompanies?.toLocaleString() || '7,000+'} companies with verified geographic locations across {stats?.totalCountries || '190+'} countries. Each company listing includes location data when available, allowing you to see where businesses operate, where they're headquartered, and in some cases, their full international presence. We've organized this data across all inhabited continents, from major economic centers like North America and Europe to emerging markets in Africa, Asia, and South America.
+              </p>
+
+              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Start Your Geographic Discovery</h2>
+              <p>
+                Select a continent below to begin exploring businesses by location. Each continent card shows regional statistics and leads to sub-regions, which then break down into individual countries. This hierarchical approach lets you zoom in from global to local, finding exactly the geographic scope you need—whether that's exploring all of Europe, focusing on Southeast Asia, or drilling down to businesses specifically in Japan.
+              </p>
+            </div>
           </div>
 
           {/* Statistics Cards - Improved Design */}

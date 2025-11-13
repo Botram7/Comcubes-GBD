@@ -299,16 +299,52 @@ export default function SectorsPage() {
               </div>
             ) : (
               <>
-                <div className="mb-6">
-                  <h1 className="text-3xl font-bold text-gray-900">Explore {sectors?.length || 20} Business Sectors</h1>
-                  <p className="text-gray-600 mt-2">
-                    Whatever you're looking for—universities in Education, fashion brands in Retail, car manufacturers in Automotive, hospitals in Healthcare, streaming services in Entertainment, or restaurants in Food & Beverages—start here. Each sector opens doors to specialized industries and thousands of companies. Whether you're shopping, studying, job hunting, or just curious, find what matters to you across {sectors?.length || 20} major sectors.
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
-                    <span>📊 {sectors?.length || 20} Business Sectors</span>
-                    <span>🏭 400+ Specialized Industries</span>
-                    <span>🌍 7,400+ Global Companies</span>
-                    <span>🔍 Advanced Search Available</span>
+                <div className="mb-8">
+                  <h1 className="text-3xl font-bold text-gray-900 mb-4">Explore {sectors?.length || 20} Business Sectors</h1>
+                  
+                  <div className="prose max-w-none text-gray-700 space-y-4">
+                    <p className="text-lg leading-relaxed">
+                      Welcome to COMCUBES' comprehensive business sector directory. Whether you're a professional conducting market research, a job seeker exploring potential employers, a shopper discovering new brands, a student researching universities, or simply curious about businesses in any field—this is your starting point for navigating the global business landscape.
+                    </p>
+
+                    <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What Are Business Sectors?</h2>
+                    <p>
+                      Business sectors represent the highest-level categorization of economic activity. Each of our {sectors?.length || 20} major sectors encompasses a broad area of commerce, from Education and Healthcare to Retail, Automotive, and Entertainment. Think of sectors as the main chapters in the story of global business—each one containing specialized industries and thousands of companies operating within that domain.
+                    </p>
+
+                    <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">How to Use This Directory</h2>
+                    <p>
+                      Our hierarchical navigation system makes finding businesses intuitive and efficient. Start by selecting a sector that matches your interest—for example, if you're looking for universities, choose Education; if you're shopping for fashion brands, select Retail; or if you're researching car manufacturers, click on Automotive. Each sector contains 20 specialized industries, and each industry showcases up to 20 leading companies in that field. This structured approach helps you quickly drill down from broad categories to specific businesses.
+                    </p>
+
+                    <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Who Benefits from COMCUBES?</h2>
+                    <ul className="list-disc pl-6 space-y-2">
+                      <li><strong>Business Professionals:</strong> Conduct competitive analysis, identify industry players, and research market trends across multiple sectors.</li>
+                      <li><strong>Job Seekers:</strong> Explore potential employers in your field, discover companies you didn't know existed, and research organizations before interviews.</li>
+                      <li><strong>Shoppers & Consumers:</strong> Find global brands, discover new products, and explore companies offering specific goods or services.</li>
+                      <li><strong>Students & Researchers:</strong> Access educational institutions worldwide, study industry structures, and gather business intelligence for projects.</li>
+                      <li><strong>Entrepreneurs:</strong> Identify competitors, find suppliers or partners, and understand market landscapes in various industries.</li>
+                    </ul>
+
+                    <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What Makes Our Directory Unique?</h2>
+                    <p>
+                      COMCUBES offers both breadth and depth. Our curated local directory features 7,400+ carefully selected companies across 400+ industries, organized into {sectors?.length || 20} major sectors. But we don't stop there—our integrated global search powered by Google Custom Search API extends your reach to millions of businesses worldwide. This dual approach means you can browse our expertly organized directory for quality curation, then expand to global search when you need comprehensive coverage.
+                    </p>
+
+                    <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Start Your Discovery Journey</h2>
+                    <p>
+                      Select any sector below to begin exploring. Each sector card shows the breadth of that business area, with visual cues and industry counts to guide your navigation. Whether you're looking for specific companies like Apple in Technology, Harvard University in Education, or Nike in Retail—or simply browsing to discover new businesses—your journey through the global business landscape starts here.
+                    </p>
+
+                    <div className="mt-6 bg-gray-50 border border-gray-200 rounded-lg p-5">
+                      <h3 className="font-semibold text-gray-900 mb-2">Quick Stats</h3>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-700">
+                        <span className="flex items-center gap-2">📊 {sectors?.length || 20} Business Sectors</span>
+                        <span className="flex items-center gap-2">🏭 400+ Specialized Industries</span>
+                        <span className="flex items-center gap-2">🌍 7,400+ Global Companies</span>
+                        <span className="flex items-center gap-2">🔍 Advanced Search Available</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 

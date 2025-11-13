@@ -346,16 +346,60 @@ export default function IndustriesPage() {
           </div>
         ) : (
           <>
-            <div className="mb-6">
-              <h1 className="text-3xl font-bold text-gray-900">Global Industries Directory</h1>
-              <p className="text-gray-600 mt-2">
-                Discover {total || '400+'} specialized industries spanning {sectors?.length || 20} major business sectors worldwide. Each industry features leading companies with detailed profiles, website access, and professional opportunities. Find specialized businesses in technology, healthcare, finance, manufacturing, energy, and emerging sectors.
-              </p>
-              <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
-                <span>🏭 {total || '400+'} Specialized Industries</span>
-                <span>📊 {sectors?.length || 20} Business Sectors</span>
-                <span>🌍 7,400+ Global Companies</span>
-                <span>📄 Page {currentPage} of {totalPages}</span>
+            <div className="mb-8">
+              <h1 className="text-3xl font-bold text-gray-900 mb-4">Global Industries Directory</h1>
+              
+              <div className="prose max-w-none text-gray-700 space-y-4">
+                <p className="text-lg leading-relaxed">
+                  Welcome to COMCUBES' comprehensive directory of {total || '400+'} specialized industries. Whether you're researching career opportunities, exploring business niches, comparing market players, or discovering new services—this directory connects you to the specific industries that matter most to your goals.
+                </p>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Understanding Industry Specializations</h2>
+                <p>
+                  While business sectors represent broad categories of economic activity, industries are the specialized fields within those sectors. For example, the Technology sector contains industries like Artificial Intelligence, Cloud Computing, Cybersecurity, and Software Development. The Healthcare sector includes Hospital Systems, Pharmaceutical Manufacturing, Medical Devices, and Telemedicine. This granular organization helps you find exactly what you're looking for without wading through unrelated businesses.
+                </p>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">How Professionals Use This Directory</h2>
+                <p className="mb-3">
+                  Different users find value in our industry directory for different reasons:
+                </p>
+                <ul className="list-disc pl-6 space-y-2 mb-4">
+                  <li><strong>Job Seekers:</strong> Identify all major players in your target industry. Research companies before interviews, discover employers you hadn't considered, and understand the competitive landscape in your field.</li>
+                  <li><strong>Business Development Professionals:</strong> Find potential partners, suppliers, or competitors within specific industries. Conduct market analysis and identify industry leaders for benchmarking.</li>
+                  <li><strong>Investors & Analysts:</strong> Research industry compositions, compare company portfolios, and identify emerging sectors with growth potential.</li>
+                  <li><strong>Students & Researchers:</strong> Gather data for academic projects, study industry structures, and access real-world examples for case studies and presentations.</li>
+                  <li><strong>Consumers & Shoppers:</strong> Discover brands and services within specific industries—whether you're looking for luxury fashion brands, organic food producers, or eco-friendly manufacturers.</li>
+                </ul>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Navigating Our Industry Database</h2>
+                <p>
+                  Our directory presents {total || '400+'} industries organized alphabetically and paginated for easy browsing. Each industry card shows its parent sector and company count. Click any industry to access its dedicated page featuring up to 20 leading companies in that field, complete with website links, business descriptions, and additional intelligence when available. Use the search bar above to quickly jump to specific industries, or browse page by page to discover new business fields you may not have known existed.
+                </p>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">From Broad Sectors to Specific Companies</h2>
+                <p>
+                  COMCUBES follows a logical hierarchy: {sectors?.length || 20} Business Sectors → {total || '400+'} Specialized Industries → 7,400+ Global Companies. This structure mirrors how businesses actually organize themselves in the real world. Start with a sector if you're exploring broadly (like "What's in Technology?"), drill into industries when you have a specific interest (like "Cloud Computing providers"), then access individual companies when you need specific information (like "Amazon Web Services").
+                </p>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What Makes Each Industry Page Valuable</h2>
+                <p>
+                  Every industry page in our directory provides curated listings of leading companies in that field. You'll find established industry giants, innovative disruptors, and specialized service providers—all selected for their market presence and relevance. Company profiles include official website links for direct access, business descriptions to understand their offerings, and when available, additional data like headquarters location, founding year, and geographic presence. This saves hours of research time by consolidating industry information in one place.
+                </p>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Start Exploring Industries</h2>
+                <p>
+                  Browse the industries below to discover specialized business fields across the global economy. Each card represents a distinct industry with its own market dynamics, key players, and opportunities. Whether you're looking for established industries like Banking and Pharmaceuticals or emerging fields like Artificial Intelligence and Renewable Energy, you'll find them organized clearly in this directory.
+                </p>
+
+                <div className="mt-6 bg-gray-50 border border-gray-200 rounded-lg p-5">
+                  <h3 className="font-semibold text-gray-900 mb-2">Quick Stats</h3>
+                  <div className="flex flex-wrap gap-4 text-sm text-gray-700">
+                    <span className="flex items-center gap-2">🏭 {total || '400+'} Specialized Industries</span>
+                    <span className="flex items-center gap-2">📊 {sectors?.length || 20} Business Sectors</span>
+                    <span className="flex items-center gap-2">🌍 7,400+ Global Companies</span>
+                    <span className="flex items-center gap-2">📄 Page {currentPage} of {totalPages}</span>
+                  </div>
+                </div>
               </div>
             </div>
 
