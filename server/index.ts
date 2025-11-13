@@ -36,7 +36,7 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
       imgSrc: ["'self'", "data:", "https:", "blob:"],
-      // Allow Google AdSense scripts
+      // Allow Google AdSense and Google Analytics scripts
       scriptSrc: [
         "'self'", 
         "'unsafe-inline'", 
@@ -45,9 +45,10 @@ app.use(helmet({
         "https://*.replit.com",
         "https://pagead2.googlesyndication.com",
         "https://adservice.google.com",
-        "https://googleads.g.doubleclick.net"
+        "https://googleads.g.doubleclick.net",
+        "https://www.googletagmanager.com"
       ],
-      // Allow AdSense connections
+      // Allow AdSense and Analytics connections
       connectSrc: [
         "'self'", 
         "https://api.paystack.co", 
@@ -55,7 +56,9 @@ app.use(helmet({
         "wss://*.replit.dev", 
         "ws://localhost:*",
         "https://pagead2.googlesyndication.com",
-        "https://adservice.google.com"
+        "https://adservice.google.com",
+        "https://www.google-analytics.com",
+        "https://www.googletagmanager.com"
       ],
       // Allow AdSense iframes
       frameSrc: [
