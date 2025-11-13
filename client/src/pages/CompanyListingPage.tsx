@@ -6,6 +6,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import { Building, Upload, CreditCard, ArrowLeft, CheckCircle, Globe, Mail, Phone, Users, Clock } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import { SEOHead } from '@/components/SEOHead';
+import { ReadMore } from '@/components/ReadMore';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -580,65 +581,67 @@ export default function CompanyListingPage() {
           <div className="mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-6 text-center">List Your Company in COMCUBES</h1>
             
-            <div className="prose max-w-none text-gray-700 space-y-4">
-              <p className="text-lg leading-relaxed">
-                COMCUBES Global Business Directory connects your company with professionals, consumers, researchers, and business decision-makers worldwide. Whether you're a startup seeking visibility, an established company expanding your digital footprint, or a specialized service provider targeting specific industries—our directory listing service puts your business in front of the right audience.
-              </p>
-
-              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Why List Your Company with COMCUBES?</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Targeted Visibility:</strong> Reach users actively searching for businesses in your specific industry and sector, not random web traffic.</li>
-                <li><strong>Professional Presentation:</strong> Showcase your company with detailed profiles including your logo, description, website link, and contact information.</li>
-                <li><strong>Industry-Specific Placement:</strong> Your listing appears alongside industry leaders in your field, associating your brand with established competitors.</li>
-                <li><strong>Global Reach:</strong> Access an international audience exploring businesses across {(sectors as any[])?.length || 20} sectors and 400+ specialized industries.</li>
-                <li><strong>Long-Term Value:</strong> All listings include 12-18 months visibility (depending on plan), providing sustained marketing value over time.</li>
-                <li><strong>Search Engine Benefits:</strong> Directory listings improve your online presence and can contribute to better search engine visibility.</li>
-              </ul>
-
-              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">How Our Listing System Works</h2>
-              <p>
-                COMCUBES organizes companies hierarchically: Business Sectors → Specialized Industries → Individual Companies. When you list your company, you select the sector and industry that best match your business. This ensures visitors exploring that industry see your company alongside the top players in your field. Each industry has limited slots (typically 20 companies) to maintain quality and prevent overcrowding. If your chosen industry is full, you'll be added to our priority waitlist and notified when slots become available.
-              </p>
-
-              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Who Should List Their Company?</h2>
-              <ul className="list-disc pl-6 space-y-2 mb-4">
-                <li><strong>B2B Service Providers:</strong> Reach decision-makers researching vendors, suppliers, and business partners in your industry.</li>
-                <li><strong>Consumer Brands:</strong> Connect with shoppers discovering new products and comparing brands across industries.</li>
-                <li><strong>Professional Services:</strong> Get found by clients seeking specialized expertise in consulting, legal, financial, or technical fields.</li>
-                <li><strong>Technology Companies:</strong> Showcase your software, platforms, or tech solutions to users exploring innovation in your sector.</li>
-                <li><strong>Educational Institutions:</strong> Help students and researchers find your programs, courses, and academic offerings.</li>
-                <li><strong>Healthcare Providers:</strong> Connect with patients and partners searching for medical services, facilities, and healthcare solutions.</li>
-              </ul>
-
-              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What's Included in Your Listing</h2>
-              <p className="mb-3">
-                All COMCUBES listings include comprehensive company information:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 mb-4">
-                <li><strong>Company Profile Page:</strong> Dedicated page featuring your business name, logo, and detailed description</li>
-                <li><strong>Direct Website Link:</strong> Clickable link to your official website for immediate visitor access</li>
-                <li><strong>Industry Categorization:</strong> Proper placement in relevant sectors and industries for maximum discoverability</li>
-                <li><strong>Contact Information:</strong> Display of verified business email for inquiries and partnership opportunities</li>
-                <li><strong>Premium Options:</strong> Enhanced visibility features available with Premium and Featured plans</li>
-              </ul>
-
-              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Simple Three-Step Process</h2>
-              <p>
-                Listing your company takes just minutes. First, choose your listing plan (Basic, Premium, or Featured) based on your marketing goals and budget. Next, complete our simple form with your company information—name, website, description, and industry selection. Finally, process payment through our secure system powered by Paystack. Once payment is confirmed, we review your submission and publish your listing within 2-3 business days.
-              </p>
-
-              <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Transparent Pricing</h2>
-              <p>
-                Our listing plans start at $60 for basic visibility, with premium options available for companies seeking enhanced placement and features. All plans include extended listing periods (12-18 months) and professional presentation. Payment is secure and processed via Paystack, supporting major credit cards and digital payment methods including Apple Pay.
-              </p>
-
-              <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-5">
-                <h3 className="font-semibold text-blue-900 mb-2">Ready to Get Started?</h3>
-                <p className="text-blue-800 text-sm">
-                  Complete the form below to submit your company listing. If you have questions about which plan is right for your business or need assistance with the submission process, our support team is here to help.
+            <ReadMore className="prose max-w-none text-gray-700">
+              <div className="space-y-4">
+                <p className="text-lg leading-relaxed">
+                  COMCUBES Global Business Directory connects your company with professionals, consumers, researchers, and business decision-makers worldwide. Whether you're a startup seeking visibility, an established company expanding your digital footprint, or a specialized service provider targeting specific industries—our directory listing service puts your business in front of the right audience.
                 </p>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Why List Your Company with COMCUBES?</h2>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Targeted Visibility:</strong> Reach users actively searching for businesses in your specific industry and sector, not random web traffic.</li>
+                  <li><strong>Professional Presentation:</strong> Showcase your company with detailed profiles including your logo, description, website link, and contact information.</li>
+                  <li><strong>Industry-Specific Placement:</strong> Your listing appears alongside industry leaders in your field, associating your brand with established competitors.</li>
+                  <li><strong>Global Reach:</strong> Access an international audience exploring businesses across {(sectors as any[])?.length || 20} sectors and 400+ specialized industries.</li>
+                  <li><strong>Long-Term Value:</strong> All listings include 12-18 months visibility (depending on plan), providing sustained marketing value over time.</li>
+                  <li><strong>Search Engine Benefits:</strong> Directory listings improve your online presence and can contribute to better search engine visibility.</li>
+                </ul>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">How Our Listing System Works</h2>
+                <p>
+                  COMCUBES organizes companies hierarchically: Business Sectors → Specialized Industries → Individual Companies. When you list your company, you select the sector and industry that best match your business. This ensures visitors exploring that industry see your company alongside the top players in your field. Each industry has limited slots (typically 20 companies) to maintain quality and prevent overcrowding. If your chosen industry is full, you'll be added to our priority waitlist and notified when slots become available.
+                </p>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Who Should List Their Company?</h2>
+                <ul className="list-disc pl-6 space-y-2 mb-4">
+                  <li><strong>B2B Service Providers:</strong> Reach decision-makers researching vendors, suppliers, and business partners in your industry.</li>
+                  <li><strong>Consumer Brands:</strong> Connect with shoppers discovering new products and comparing brands across industries.</li>
+                  <li><strong>Professional Services:</strong> Get found by clients seeking specialized expertise in consulting, legal, financial, or technical fields.</li>
+                  <li><strong>Technology Companies:</strong> Showcase your software, platforms, or tech solutions to users exploring innovation in your sector.</li>
+                  <li><strong>Educational Institutions:</strong> Help students and researchers find your programs, courses, and academic offerings.</li>
+                  <li><strong>Healthcare Providers:</strong> Connect with patients and partners searching for medical services, facilities, and healthcare solutions.</li>
+                </ul>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What's Included in Your Listing</h2>
+                <p className="mb-3">
+                  All COMCUBES listings include comprehensive company information:
+                </p>
+                <ul className="list-disc pl-6 space-y-2 mb-4">
+                  <li><strong>Company Profile Page:</strong> Dedicated page featuring your business name, logo, and detailed description</li>
+                  <li><strong>Direct Website Link:</strong> Clickable link to your official website for immediate visitor access</li>
+                  <li><strong>Industry Categorization:</strong> Proper placement in relevant sectors and industries for maximum discoverability</li>
+                  <li><strong>Contact Information:</strong> Display of verified business email for inquiries and partnership opportunities</li>
+                  <li><strong>Premium Options:</strong> Enhanced visibility features available with Premium and Featured plans</li>
+                </ul>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Simple Three-Step Process</h2>
+                <p>
+                  Listing your company takes just minutes. First, choose your listing plan (Basic, Premium, or Featured) based on your marketing goals and budget. Next, complete our simple form with your company information—name, website, description, and industry selection. Finally, process payment through our secure system powered by Paystack. Once payment is confirmed, we review your submission and publish your listing within 2-3 business days.
+                </p>
+
+                <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Transparent Pricing</h2>
+                <p>
+                  Our listing plans start at $60 for basic visibility, with premium options available for companies seeking enhanced placement and features. All plans include extended listing periods (12-18 months) and professional presentation. Payment is secure and processed via Paystack, supporting major credit cards and digital payment methods including Apple Pay.
+                </p>
+
+                <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-5">
+                  <h3 className="font-semibold text-blue-900 mb-2">Ready to Get Started?</h3>
+                  <p className="text-blue-800 text-sm">
+                    Complete the form below to submit your company listing. If you have questions about which plan is right for your business or need assistance with the submission process, our support team is here to help.
+                  </p>
+                </div>
               </div>
-            </div>
+            </ReadMore>
           </div>
 
           {/* Step Indicator */}
