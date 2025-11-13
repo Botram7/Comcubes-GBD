@@ -25,6 +25,9 @@ import DisclaimerPage from "@/pages/DisclaimerPage";
 import AffiliateDisclosurePage from "@/pages/AffiliateDisclosurePage";
 import ClaimCompanyPage from "@/pages/ClaimCompanyPage";
 import GeographyPage from "@/pages/GeographyPage";
+import GeographyRegionsPage from "@/pages/GeographyRegionsPage";
+import GeographyCountriesPage from "@/pages/GeographyCountriesPage";
+import GeographyCompaniesPage from "@/pages/GeographyCompaniesPage";
 import ContinentPage from "@/pages/ContinentPage";
 import RegionPage from "@/pages/RegionPage";
 import CountryPage from "@/pages/CountryPage";
@@ -42,6 +45,9 @@ function Router() {
       <Route path="/sector/:sectorName" component={SectorPage} />
       <Route path="/industry/:industryName" component={IndustryPage} />
       <Route path="/geography" component={GeographyPage} />
+      <Route path="/geography/regions" component={GeographyRegionsPage} />
+      <Route path="/geography/countries" component={GeographyCountriesPage} />
+      <Route path="/geography/companies" component={GeographyCompaniesPage} />
       <Route path="/geography/continent/:slug" component={ContinentPage} />
       <Route path="/geography/region/:slug" component={RegionPage} />
       <Route path="/geography/country/:slug" component={CountryPage} />

@@ -215,10 +215,12 @@ export default function GeographyPage() {
             </ReadMore>
           </div>
 
-          {/* Statistics Cards - Improved Design */}
+          {/* Statistics Cards - Clickable Navigation */}
           {stats && (
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-              <Card className="border-t-4 border-t-blue-500">
+              <Card 
+                className="border-t-4 border-t-blue-500 cursor-default"
+              >
                 <CardContent className="p-4 sm:p-6">
                   <div className="flex items-center justify-between mb-2">
                     <Map className="h-5 w-5 text-blue-600" />
@@ -231,7 +233,11 @@ export default function GeographyPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-t-green-500">
+              <Card 
+                className="border-t-4 border-t-green-500 hover:shadow-lg transition-shadow cursor-pointer"
+                onClick={() => setLocation('/geography/regions')}
+                data-testid="card-nav-regions"
+              >
                 <CardContent className="p-4 sm:p-6">
                   <div className="flex items-center justify-between mb-2">
                     <MapPin className="h-5 w-5 text-green-600" />
@@ -240,11 +246,15 @@ export default function GeographyPage() {
                     </Badge>
                   </div>
                   <div className="text-3xl font-bold text-gray-900">{stats.totalRegions}</div>
-                  <div className="text-sm text-gray-600 mt-1">Sub-regions</div>
+                  <div className="text-sm text-gray-600 mt-1">View all regions →</div>
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-t-purple-500">
+              <Card 
+                className="border-t-4 border-t-purple-500 hover:shadow-lg transition-shadow cursor-pointer"
+                onClick={() => setLocation('/geography/countries')}
+                data-testid="card-nav-countries"
+              >
                 <CardContent className="p-4 sm:p-6">
                   <div className="flex items-center justify-between mb-2">
                     <Globe2 className="h-5 w-5 text-purple-600" />
@@ -253,11 +263,15 @@ export default function GeographyPage() {
                     </Badge>
                   </div>
                   <div className="text-3xl font-bold text-gray-900">{stats.totalCountries}</div>
-                  <div className="text-sm text-gray-600 mt-1">Worldwide</div>
+                  <div className="text-sm text-gray-600 mt-1">View all countries →</div>
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-t-orange-500">
+              <Card 
+                className="border-t-4 border-t-orange-500 hover:shadow-lg transition-shadow cursor-pointer"
+                onClick={() => setLocation('/geography/companies')}
+                data-testid="card-nav-companies"
+              >
                 <CardContent className="p-4 sm:p-6">
                   <div className="flex items-center justify-between mb-2">
                     <Building2 className="h-5 w-5 text-orange-600" />
@@ -266,7 +280,7 @@ export default function GeographyPage() {
                     </Badge>
                   </div>
                   <div className="text-3xl font-bold text-gray-900">{stats.totalGeocodedCompanies.toLocaleString()}</div>
-                  <div className="text-sm text-gray-600 mt-1">Listed</div>
+                  <div className="text-sm text-gray-600 mt-1">Browse by location →</div>
                 </CardContent>
               </Card>
             </div>

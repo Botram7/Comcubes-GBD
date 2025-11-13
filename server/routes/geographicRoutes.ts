@@ -1,10 +1,132 @@
 import type { Express } from "express";
 import { storage } from "../storage";
 import { db } from "../db";
-import { countries as countries_db, companyLocations } from "@shared/schema";
+import { countries as countries_db, companyLocations, regions as regions_db, companies as companies_db, continents as continents_db } from "@shared/schema";
 import { eq, sql } from "drizzle-orm";
 
 export function registerGeographicRoutes(app: Express): void {
+
+  // Get all regions with continent and company/country counts
+  app.get("/api/geography/regions", async (req, res) => {
+    try {
+      // Get all regions with their continent names
+      const allRegions = await db
+        .select({
+          id: regions_db.id,
+          name: regions_db.name,
+          continentName: continents_db.name,
+        })
+        .from(regions_db)
+        .innerJoin(continents_db, eq(regions_db.continentId, continents_db.id))
+        .orderBy(continents_db.name, regions_db.name);
+
+      // Get country counts per region
+      const regionCountryCounts = await db
+        .select({
+          regionId: countries_db.regionId,
+          count: sql<number>`count(*)`
+        })
+        .from(countries_db)
+        .groupBy(countries_db.regionId);
+
+      const countryCountMap = new Map(regionCountryCounts.map(r => [r.regionId, Number(r.count)]));
+
+      // Get company counts per region
+      const regionCompanyCounts = await db
+        .select({
+          regionId: countries_db.regionId,
+          count: sql<number>`count(DISTINCT company_id)`
+        })
+        .from(companyLocations)
+        .innerJoin(countries_db, eq(companyLocations.countryId, countries_db.id))
+        .groupBy(countries_db.regionId);
+
+      const companyCountMap = new Map(regionCompanyCounts.map(r => [r.regionId, Number(r.count)]));
+
+      // Combine the data
+      const regions = allRegions.map(region => ({
+        id: region.id,
+        name: region.name,
+        continentName: region.continentName,
+        countryCount: countryCountMap.get(region.id) || 0,
+        companyCount: companyCountMap.get(region.id) || 0
+      }));
+
+      res.json({ regions });
+    } catch (error) {
+      console.error('Error fetching all regions:', error);
+      res.status(500).json({ error: "Failed to load regions" });
+    }
+  });
+
+  // Get all countries with region and company counts
+  app.get("/api/geography/countries", async (req, res) => {
+    try {
+      // Get all countries with their region and continent names
+      const allCountries = await db
+        .select({
+          id: countries_db.id,
+          name: countries_db.name,
+          regionName: regions_db.name,
+          continentName: continents_db.name,
+        })
+        .from(countries_db)
+        .innerJoin(regions_db, eq(countries_db.regionId, regions_db.id))
+        .innerJoin(continents_db, eq(regions_db.continentId, continents_db.id))
+        .orderBy(regions_db.name, countries_db.name);
+
+      // Get company counts per country
+      const countryCompanyCounts = await db
+        .select({
+          countryId: companyLocations.countryId,
+          count: sql<number>`count(DISTINCT company_id)`
+        })
+        .from(companyLocations)
+        .groupBy(companyLocations.countryId);
+
+      const companyCountMap = new Map(countryCompanyCounts.map(c => [c.countryId, Number(c.count)]));
+
+      // Combine the data
+      const countries = allCountries.map(country => ({
+        id: country.id,
+        name: country.name,
+        regionName: country.regionName,
+        continentName: country.continentName,
+        companyCount: companyCountMap.get(country.id) || 0
+      }));
+
+      res.json({ countries });
+    } catch (error) {
+      console.error('Error fetching all countries:', error);
+      res.status(500).json({ error: "Failed to load countries" });
+    }
+  });
+
+  // Get all companies with their location details
+  app.get("/api/geography/companies", async (req, res) => {
+    try {
+      // Get all companies with their location info (country, region)
+      const allCompanies = await db
+        .select({
+          id: companies_db.id,
+          name: companies_db.name,
+          industryName: companies_db.industryName,
+          websiteUrl: companies_db.websiteUrl,
+          countryName: countries_db.name,
+          regionName: regions_db.name,
+        })
+        .from(companyLocations)
+        .innerJoin(companies_db, eq(companyLocations.companyId, companies_db.id))
+        .innerJoin(countries_db, eq(companyLocations.countryId, countries_db.id))
+        .innerJoin(regions_db, eq(countries_db.regionId, regions_db.id))
+        .orderBy(regions_db.name, countries_db.name, companies_db.name);
+
+      res.json({ companies: allCompanies });
+    } catch (error) {
+      console.error('Error fetching all companies with locations:', error);
+      res.status(500).json({ error: "Failed to load companies" });
+    }
+  });
   
   // Get top countries by company count
   app.get("/api/geography/top-countries", async (req, res) => {
