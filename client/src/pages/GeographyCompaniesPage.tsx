@@ -6,6 +6,7 @@ import { BannerAd } from "@/components/BannerAd";
 import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { AlertCircle, Globe2, Building2, ArrowLeft } from "lucide-react";
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
@@ -107,6 +108,18 @@ export default function GeographyCompaniesPage() {
 
   const totalPages = data?.totalPages || Math.ceil((data?.total || 0) / 20);
   const companies = data?.companies || [];
+
+  // Group companies by country
+  const companiesByCountry = companies.reduce((acc, company) => {
+    const country = company.countryName || 'Unknown';
+    if (!acc[country]) {
+      acc[country] = [];
+    }
+    acc[country].push(company);
+    return acc;
+  }, {} as Record<string, Company[]>);
+
+  const countries = Object.keys(companiesByCountry).sort();
 
   if (isLoading) {
     return (
@@ -400,12 +413,25 @@ export default function GeographyCompaniesPage() {
 
                 {companies.length > 0 ? (
                   <>
-                    <BusinessGrid 
-                      items={companies} 
-                      type="company" 
-                      onItemClick={handleCompanyClick}
-                      showClaimButtons={true}
-                    />
+                    {countries.map((country) => (
+                      <div key={country} className="mb-12" data-testid={`country-group-${country.toLowerCase().replace(/\s+/g, '-')}`}>
+                        <div className="flex items-center gap-3 mb-6 pb-3 border-b-2 border-blue-200">
+                          <Globe2 className="h-6 w-6 text-blue-600 flex-shrink-0" />
+                          <h2 className="text-2xl font-bold text-gray-900 flex-1">
+                            {country}
+                          </h2>
+                          <Badge variant="secondary" className="bg-blue-100 text-blue-700">
+                            {companiesByCountry[country].length} {companiesByCountry[country].length === 1 ? 'Company' : 'Companies'}
+                          </Badge>
+                        </div>
+                        <BusinessGrid 
+                          items={companiesByCountry[country]} 
+                          type="company" 
+                          onItemClick={(item) => handleCompanyClick(item as Company)}
+                          showClaimButtons={true}
+                        />
+                      </div>
+                    ))}
 
                     {totalPages > 1 && (
                       <Pagination 

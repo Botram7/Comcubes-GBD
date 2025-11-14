@@ -21,6 +21,8 @@ export interface Company {
   companySize: string | null;
   specializationTags: string | null;
   verificationStatus: string | null;
+  countryName?: string; // Optional - only present in geography API responses
+  regionName?: string; // Optional - only present in geography API responses
 }
 
 export interface SearchResults {
