@@ -246,7 +246,10 @@ export default function GeographyCountriesPage() {
                     <div className="mb-4">
                       <Button
                         variant="ghost"
-                        onClick={() => setLocation('/geography/countries')}
+                        onClick={() => {
+                          setRegionFilter('');
+                          setLocation('/geography/countries');
+                        }}
                         data-testid="button-clear-filter"
                       >
                         <ArrowLeft className="mr-2 h-4 w-4" />

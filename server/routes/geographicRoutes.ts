@@ -113,6 +113,7 @@ export function registerGeographicRoutes(app: Express): void {
           id: companies_db.id,
           name: companies_db.name,
           industryName: companies_db.industryName,
+          sectorName: companies_db.sectorName,
           websiteUrl: companies_db.websiteUrl,
           countryName: countries_db.name,
           regionName: regions_db.name,
