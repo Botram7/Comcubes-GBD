@@ -92,8 +92,17 @@ export default function GeographyRegionsPage() {
     );
   }
 
+  const handleRegionClick = (regionName: string) => {
+    setLocation(`/geography/countries?region=${encodeURIComponent(regionName)}`);
+  };
+
+  const handleBackToHome = () => {
+    setLocation('/');
+  };
+
   return (
-    <>
+    <div className="page-with-sticky-footer bg-gray-50 font-inter">
+      <AffiliateDisclosureBanner />
       <SEOHead
         title="Global Business Regions - COMCUBES Directory"
         description={`Explore ${data?.regions.length || 22} business regions across all continents. Browse companies organized by geographic regions including Western Europe, Southeast Asia, North America, and more.`}
@@ -101,28 +110,76 @@ export default function GeographyRegionsPage() {
         structuredData={breadcrumbStructuredData}
       />
 
-      <div className="min-h-screen bg-gray-50">
-        <AffiliateDisclosureBanner />
+      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-4">
+            <div className="flex items-center">
+              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 mr-1 sm:mr-4" onClick={() => setLocation('/')}>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 mr-1 sm:mr-3 flex items-center justify-center">
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-12 h-12 sm:w-16 sm:h-16" />
+                </div>
+              </div>
+              
+              <div className="flex-1 mr-2 sm:mr-4 min-w-0">
+                <SearchBar onSearchResults={handleSearchResults} />
+              </div>
 
-        <div className="bg-white border-b sticky top-0 z-40 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex items-center gap-3 mb-4">
-              <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
-              <h1 className="text-xl sm:text-2xl font-bold text-gray-900">COMCUBES</h1>
+              <div className="hidden sm:flex items-center space-x-2 md:space-x-4 flex-shrink-0">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setLocation('/search')}
+                  className="flex items-center gap-2 flex-shrink-0"
+                >
+                  <Building2 className="h-4 w-4" />
+                  Advanced Search
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleBackToHome}
+                  className="flex items-center gap-2"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  <span>Home</span>
+                </Button>
+              </div>
             </div>
-            <Breadcrumbs items={breadcrumbItems} />
-            <div className="mt-4">
-              <SearchBar onSearchResults={handleSearchResults} />
+            
+            <div className="sm:hidden mt-3">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setLocation('/search')}
+                className="flex items-center gap-2 w-full justify-center"
+              >
+                <Building2 className="h-4 w-4" />
+                Advanced Search
+              </Button>
             </div>
           </div>
         </div>
+      </header>
 
-        <div className="flex max-w-[1600px] mx-auto gap-6">
+      <Breadcrumbs 
+        items={[
+          { label: "Home", onClick: handleBackToHome },
+          { label: "Geography", onClick: handleBackToGeography },
+          { label: "Regions" }
+        ]} 
+      />
+
+      <main className="main-content-with-sticky-footer max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex gap-6">
           <div className="hidden lg:block flex-shrink-0">
-            <BannerAd className="sticky top-24" position="left" />
+            <GoogleAdSense 
+              format="vertical"
+              className="sticky top-24"
+              position="regions-page-left-sidebar"
+            />
           </div>
 
-          <div className="flex-1 px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex-1">
             {searchResults ? (
               <div>
                 <Button
@@ -202,7 +259,8 @@ export default function GeographyRegionsPage() {
                       {groupedRegions[continentName].map((region) => (
                         <Card
                           key={region.id}
-                          className="hover:shadow-lg transition-all duration-200 border-2 border-gray-200 hover:border-blue-400"
+                          className="hover:shadow-lg transition-all duration-200 border-2 border-gray-200 hover:border-blue-400 cursor-pointer"
+                          onClick={() => handleRegionClick(region.name)}
                           data-testid={`card-region-${region.id}`}
                         >
                           <CardContent className="p-5">
@@ -241,7 +299,22 @@ export default function GeographyRegionsPage() {
             <BannerAd className="sticky top-24" position="right" />
           </div>
         </div>
-      </div>
-    </>
+      </main>
+
+      <footer className="sticky-footer mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center text-gray-600">
+            <p>&copy; 2024 COMCUBES Global Business Directory. Professional business data across 421 pages.</p>
+            <p className="mt-2 text-sm">Featuring 20 sectors, 400+ industries, and 7,400+ companies worldwide.</p>
+            <div className="mt-4 flex justify-center space-x-6 text-xs">
+              <button onClick={() => setLocation('/privacy-policy')} className="hover:text-gray-900 underline">Privacy Policy</button>
+              <button onClick={() => setLocation('/terms-of-service')} className="hover:text-gray-900 underline">Terms of Service</button>
+              <button onClick={() => setLocation('/disclaimer')} className="hover:text-gray-900 underline">Disclaimer</button>
+              <button onClick={() => setLocation('/affiliate-disclosure')} className="hover:text-gray-900 underline">Affiliate Disclosure</button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }

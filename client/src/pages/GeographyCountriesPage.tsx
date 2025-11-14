@@ -7,7 +7,7 @@ import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { AlertCircle, Globe2, Building2, ArrowLeft } from "lucide-react";
+import { AlertCircle, Globe2, Building2, ArrowLeft, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
@@ -29,13 +29,21 @@ interface CountriesData {
 export default function GeographyCountriesPage() {
   const [, setLocation] = useLocation();
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
+  const [regionFilter, setRegionFilter] = useState<string>('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      setRegionFilter(urlParams.get('region') || '');
+    }
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const { data, isLoading, error } = useQuery<CountriesData>({
-    queryKey: ["/api/geography/countries"],
+    queryKey: ["/api/geography/countries", regionFilter],
     staleTime: Infinity,
   });
 
@@ -47,21 +55,19 @@ export default function GeographyCountriesPage() {
     setLocation('/geography');
   };
 
-  const breadcrumbItems = [
-    { label: "Home", href: "/" },
-    { label: "Geography", href: "/geography" },
-    { label: "Countries" },
-  ];
+  const handleBackToHome = () => {
+    setLocation('/');
+  };
 
-  const structuredDataItems = [
-    { name: "Home", url: "/" },
-    { name: "Geography", url: "/geography" },
-    { name: "Countries", url: "/geography/countries" },
-  ];
+  const handleCountryClick = (countryName: string) => {
+    setLocation(`/geography/companies?country=${encodeURIComponent(countryName)}`);
+  };
 
-  const breadcrumbStructuredData = createBreadcrumbStructuredData(structuredDataItems);
+  const filteredCountries = regionFilter
+    ? data?.countries.filter(c => c.regionName === regionFilter)
+    : data?.countries;
 
-  const groupedCountries = data?.countries.reduce((acc, country) => {
+  const groupedCountries = filteredCountries?.reduce((acc, country) => {
     if (!acc[country.regionName]) {
       acc[country.regionName] = { continentName: country.continentName, countries: [] };
     }
@@ -71,90 +77,186 @@ export default function GeographyCountriesPage() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="text-lg">Loading countries...</div>
+      <div className="min-h-screen bg-gray-50">
+        <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="py-4">
+              <div className="flex items-center">
+                <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 mr-1 sm:mr-4" onClick={() => setLocation('/')}>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 mr-1 sm:mr-3 flex items-center justify-center">
+                    <img src={comcubesIcon} alt="COMCUBES" className="w-12 h-12 sm:w-16 sm:h-16" />
+                  </div>
+                </div>
+                <div className="flex-1 mr-2 sm:mr-4">
+                  <SearchBar onSearchResults={handleSearchResults} />
+                </div>
+                <div className="hidden sm:flex items-center">
+                  <span className="text-sm text-gray-600">Loading...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div className="flex items-center justify-center min-h-96">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading countries...</p>
+          </div>
+        </div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <Card className="max-w-md">
-          <CardContent className="p-6 text-center">
-            <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-            <p className="text-lg font-semibold mb-2">Error Loading Countries</p>
-            <p className="text-gray-600">Please try again later.</p>
-          </CardContent>
-        </Card>
+      <div className="min-h-screen bg-gray-50">
+        <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="py-4">
+              <div className="flex items-center">
+                <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 mr-1 sm:mr-4" onClick={() => setLocation('/')}>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 mr-1 sm:mr-3 flex items-center justify-center">
+                    <img src={comcubesIcon} alt="COMCUBES" className="w-12 h-12 sm:w-16 sm:h-16" />
+                  </div>
+                </div>
+                <div className="flex-1 mr-2 sm:mr-4">
+                  <SearchBar onSearchResults={handleSearchResults} />
+                </div>
+                <div className="hidden sm:flex items-center">
+                  <span className="text-sm text-gray-600">Error</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div className="flex items-center justify-center min-h-96">
+          <Card className="w-full max-w-md mx-4">
+            <CardContent className="pt-6">
+              <div className="flex mb-4 gap-2">
+                <AlertCircle className="h-8 w-8 text-red-500" />
+                <h1 className="text-2xl font-bold text-gray-900">Error Loading Data</h1>
+              </div>
+              <p className="mt-4 text-sm text-gray-600">
+                Failed to load countries. Please try again later.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     );
   }
 
   return (
-    <>
+    <div className="page-with-sticky-footer bg-gray-50 font-inter">
+      <AffiliateDisclosureBanner />
       <SEOHead
-        title="Global Business Countries - COMCUBES Directory"
-        description={`Browse ${data?.countries.length || '190+'} countries with business listings. Find companies by country across all continents and regions worldwide.`}
+        title={`Global Business Countries${regionFilter ? ` - ${regionFilter}` : ''} - COMCUBES Directory`}
+        description={`Browse ${filteredCountries?.length || '190+'} countries with business listings. Find companies by country across all continents and regions worldwide.`}
         canonicalUrl="/geography/countries"
-        structuredData={breadcrumbStructuredData}
+        structuredData={createBreadcrumbStructuredData([
+          { name: "Home", url: "/" },
+          { name: "Geography", url: "/geography" },
+          { name: "Countries", url: "/geography/countries" },
+        ])}
       />
 
-      <div className="min-h-screen bg-gray-50">
-        <AffiliateDisclosureBanner />
+      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-4">
+            <div className="flex items-center">
+              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 mr-1 sm:mr-4" onClick={() => setLocation('/')}>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 mr-1 sm:mr-3 flex items-center justify-center">
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-12 h-12 sm:w-16 sm:h-16" />
+                </div>
+              </div>
+              
+              <div className="flex-1 mr-2 sm:mr-4 min-w-0">
+                <SearchBar onSearchResults={handleSearchResults} />
+              </div>
 
-        <div className="bg-white border-b sticky top-0 z-40 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex items-center gap-3 mb-4">
-              <img src={comcubesIcon} alt="COMCUBES" className="w-8 h-8" />
-              <h1 className="text-xl sm:text-2xl font-bold text-gray-900">COMCUBES</h1>
+              <div className="hidden sm:flex items-center space-x-2 md:space-x-4 flex-shrink-0">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setLocation('/search')}
+                  className="flex items-center gap-2 flex-shrink-0"
+                >
+                  <Building2 className="h-4 w-4" />
+                  Advanced Search
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleBackToHome}
+                  className="flex items-center gap-2"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  <span>Home</span>
+                </Button>
+              </div>
             </div>
-            <Breadcrumbs items={breadcrumbItems} />
-            <div className="mt-4">
-              <SearchBar onSearchResults={handleSearchResults} />
+            
+            <div className="sm:hidden mt-3">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setLocation('/search')}
+                className="flex items-center gap-2 w-full justify-center"
+              >
+                <Building2 className="h-4 w-4" />
+                Advanced Search
+              </Button>
             </div>
           </div>
         </div>
+      </header>
 
-        <div className="flex max-w-[1600px] mx-auto gap-6">
+      <Breadcrumbs 
+        items={[
+          { label: "Home", onClick: handleBackToHome },
+          { label: "Geography", onClick: handleBackToGeography },
+          { label: regionFilter ? regionFilter : "Countries" }
+        ]} 
+      />
+
+      <main className="main-content-with-sticky-footer max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex gap-6">
           <div className="hidden lg:block flex-shrink-0">
-            <BannerAd className="sticky top-24" position="left" />
+            <GoogleAdSense 
+              format="vertical"
+              className="sticky top-24"
+              position="countries-page-left-sidebar"
+            />
           </div>
 
-          <div className="flex-1 px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex-1">
             {searchResults ? (
-              <div>
-                <Button
-                  variant="ghost"
-                  onClick={() => setSearchResults(null)}
-                  className="mb-4"
-                  data-testid="button-clear-search"
-                >
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  Back to Countries
-                </Button>
-
-                <h2 className="text-2xl font-bold mb-4">Search Results</h2>
-                <div className="text-gray-600 mb-6">
-                  Found {searchResults.sectors.length + searchResults.industries.length + searchResults.companies.length} results
+              <div className="space-y-8">
+                <div className="mb-6">
+                  <h2 className="text-3xl font-bold text-gray-900">Search Results</h2>
+                  <p className="text-gray-600 mt-2">
+                    Found {searchResults.sectors.length + searchResults.industries.length + searchResults.companies.length} results
+                  </p>
                 </div>
               </div>
             ) : (
               <>
                 <div className="mb-8">
-                  <div className="flex items-center gap-4 mb-4">
-                    <Button
-                      variant="ghost"
-                      onClick={handleBackToGeography}
-                      data-testid="button-back-geography"
-                    >
-                      <ArrowLeft className="mr-2 h-4 w-4" />
-                      Back to Geography
-                    </Button>
-                  </div>
+                  {regionFilter && (
+                    <div className="mb-4">
+                      <Button
+                        variant="ghost"
+                        onClick={() => setLocation('/geography/countries')}
+                        data-testid="button-clear-filter"
+                      >
+                        <ArrowLeft className="mr-2 h-4 w-4" />
+                        View All Countries
+                      </Button>
+                    </div>
+                  )}
 
                   <h1 className="text-3xl font-bold text-gray-900 mb-4">
-                    Explore {data?.countries.length || '190+'} Countries Worldwide
+                    {regionFilter ? `${regionFilter} - ` : ''}Explore {filteredCountries?.length || '190+'} Countries Worldwide
                   </h1>
 
                   <p className="text-lg text-gray-700 mb-6">
@@ -167,11 +269,11 @@ export default function GeographyCountriesPage() {
                     <div className="flex flex-wrap gap-4 text-sm text-purple-700">
                       <span className="flex items-center gap-2">
                         <Globe2 className="h-4 w-4" />
-                        {data?.countries.length || '190+'} Countries
+                        {filteredCountries?.length || '190+'} Countries
                       </span>
                       <span className="flex items-center gap-2">
                         <Building2 className="h-4 w-4" />
-                        {data?.countries.reduce((sum, c) => sum + c.companyCount, 0).toLocaleString() || '7,000+'} Companies
+                        {filteredCountries?.reduce((sum, c) => sum + c.companyCount, 0).toLocaleString() || '7,000+'} Companies
                       </span>
                     </div>
                   </div>
@@ -185,7 +287,6 @@ export default function GeographyCountriesPage() {
                   />
                 </div>
 
-                {/* Countries Grouped by Region */}
                 {groupedCountries && Object.keys(groupedCountries).sort().map((regionName) => {
                   const regionData = groupedCountries[regionName];
                   return (
@@ -193,16 +294,17 @@ export default function GeographyCountriesPage() {
                       <div className="mb-4">
                         <div className="text-sm text-gray-600 mb-1">{regionData.continentName}</div>
                         <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                          <Globe2 className="h-6 w-6 text-purple-600" />
+                          <MapPin className="h-6 w-6 text-purple-600" />
                           {regionName}
                         </h2>
                       </div>
                       
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                         {regionData.countries.map((country) => (
                           <Card
                             key={country.id}
-                            className="hover:shadow-md transition-all duration-200 border border-gray-200 hover:border-purple-400"
+                            className="hover:shadow-md transition-all duration-200 border border-gray-200 hover:border-purple-400 cursor-pointer"
+                            onClick={() => handleCountryClick(country.name)}
                             data-testid={`card-country-${country.id}`}
                           >
                             <CardContent className="p-4">
@@ -234,7 +336,22 @@ export default function GeographyCountriesPage() {
             <BannerAd className="sticky top-24" position="right" />
           </div>
         </div>
-      </div>
-    </>
+      </main>
+
+      <footer className="sticky-footer mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center text-gray-600">
+            <p>&copy; 2024 COMCUBES Global Business Directory. Professional business data across 421 pages.</p>
+            <p className="mt-2 text-sm">Featuring 20 sectors, 400+ industries, and 7,400+ companies worldwide.</p>
+            <div className="mt-4 flex justify-center space-x-6 text-xs">
+              <button onClick={() => setLocation('/privacy-policy')} className="hover:text-gray-900 underline">Privacy Policy</button>
+              <button onClick={() => setLocation('/terms-of-service')} className="hover:text-gray-900 underline">Terms of Service</button>
+              <button onClick={() => setLocation('/disclaimer')} className="hover:text-gray-900 underline">Disclaimer</button>
+              <button onClick={() => setLocation('/affiliate-disclosure')} className="hover:text-gray-900 underline">Affiliate Disclosure</button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
