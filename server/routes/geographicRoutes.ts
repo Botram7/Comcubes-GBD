@@ -102,11 +102,13 @@ export function registerGeographicRoutes(app: Express): void {
     }
   });
 
-  // Get all companies with their location details
+  // Get all companies with their location details (with filtering and pagination)
   app.get("/api/geography/companies", async (req, res) => {
     try {
-      // Get all companies with their location info (country, region)
-      const allCompanies = await db
+      const { country, region, letter, page, limit } = req.query;
+      
+      // Start with base query
+      let query = db
         .select({
           id: companies_db.id,
           name: companies_db.name,
@@ -118,10 +120,55 @@ export function registerGeographicRoutes(app: Express): void {
         .from(companyLocations)
         .innerJoin(companies_db, eq(companyLocations.companyId, companies_db.id))
         .innerJoin(countries_db, eq(companyLocations.countryId, countries_db.id))
-        .innerJoin(regions_db, eq(countries_db.regionId, regions_db.id))
-        .orderBy(regions_db.name, countries_db.name, companies_db.name);
+        .innerJoin(regions_db, eq(countries_db.regionId, regions_db.id));
 
-      res.json({ companies: allCompanies });
+      // Apply filters
+      const allCompanies = await query.orderBy(countries_db.name, companies_db.name);
+      
+      // Filter by country name (case-insensitive)
+      let filteredCompanies = allCompanies;
+      
+      if (country && typeof country === 'string') {
+        filteredCompanies = filteredCompanies.filter(c => 
+          c.countryName.toLowerCase() === country.toLowerCase()
+        );
+      }
+      
+      if (region && typeof region === 'string') {
+        filteredCompanies = filteredCompanies.filter(c => 
+          c.regionName.toLowerCase() === region.toLowerCase()
+        );
+      }
+      
+      if (letter && typeof letter === 'string') {
+        const letterUpper = letter.toUpperCase();
+        filteredCompanies = filteredCompanies.filter(c => 
+          c.countryName.toUpperCase().startsWith(letterUpper)
+        );
+      }
+
+      // Calculate pagination
+      const pageNum = page ? parseInt(page as string, 10) : undefined;
+      const limitNum = limit ? parseInt(limit as string, 10) : 20;
+      
+      if (pageNum) {
+        const startIndex = (pageNum - 1) * limitNum;
+        const paginatedCompanies = filteredCompanies.slice(startIndex, startIndex + limitNum);
+        
+        res.json({
+          companies: paginatedCompanies,
+          total: filteredCompanies.length,
+          page: pageNum,
+          limit: limitNum,
+          totalPages: Math.ceil(filteredCompanies.length / limitNum)
+        });
+      } else {
+        // No pagination, return all
+        res.json({ 
+          companies: filteredCompanies,
+          total: filteredCompanies.length 
+        });
+      }
     } catch (error) {
       console.error('Error fetching all companies with locations:', error);
       res.status(500).json({ error: "Failed to load companies" });
