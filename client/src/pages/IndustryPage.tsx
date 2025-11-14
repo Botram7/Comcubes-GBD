@@ -342,6 +342,15 @@ export default function IndustryPage() {
               </div>
             </div>
 
+            <BusinessGrid 
+              items={companies} 
+              type="company" 
+              onItemClick={handleCompanyClick} 
+              showClaimButtons={true}
+              currentSector={sectorName}
+              currentIndustry={decodedIndustryName}
+            />
+
             {/* Mobile-friendly in-content ad - shows on all screen sizes */}
             <div className="my-8 lg:hidden">
               <div className="flex justify-center">
@@ -352,15 +361,6 @@ export default function IndustryPage() {
                 />
               </div>
             </div>
-
-            <BusinessGrid 
-              items={companies} 
-              type="company" 
-              onItemClick={handleCompanyClick} 
-              showClaimButtons={true}
-              currentSector={sectorName}
-              currentIndustry={decodedIndustryName}
-            />
             
             {/* Related Industries & Business Opportunities */}
             {companies.length > 0 && (
