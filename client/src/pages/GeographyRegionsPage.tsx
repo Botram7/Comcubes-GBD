@@ -239,14 +239,6 @@ export default function GeographyRegionsPage() {
                   </div>
                 </div>
 
-                <div className="my-8 flex justify-center">
-                  <GoogleAdSense 
-                    format="responsive"
-                    className="w-full max-w-4xl"
-                    position="regions-page-in-content"
-                  />
-                </div>
-
                 {/* Regions Grouped by Continent */}
                 {groupedRegions && Object.keys(groupedRegions).sort().map((continentName) => (
                   <div key={continentName} className="mb-12">
@@ -291,6 +283,14 @@ export default function GeographyRegionsPage() {
                     </div>
                   </div>
                 ))}
+
+                <div className="my-8 flex justify-center">
+                  <GoogleAdSense 
+                    format="responsive"
+                    className="w-full max-w-4xl"
+                    position="regions-page-in-content"
+                  />
+                </div>
               </>
             )}
           </div>

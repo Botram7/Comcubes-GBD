@@ -362,14 +362,6 @@ export default function GeographyCompaniesPage() {
                   )}
                 </div>
 
-                <div className="my-8 flex justify-center">
-                  <GoogleAdSense 
-                    format="responsive"
-                    className="w-full max-w-4xl"
-                    position="companies-page-in-content"
-                  />
-                </div>
-
                 {groupedCompanies && Object.keys(groupedCompanies).length > 0 ? (
                   Object.keys(groupedCompanies).sort().map((countryName) => (
                     <div key={countryName} className="mb-12">
@@ -424,6 +416,14 @@ export default function GeographyCompaniesPage() {
                     onPageChange={handlePageChange}
                   />
                 )}
+
+                <div className="my-8 flex justify-center">
+                  <GoogleAdSense 
+                    format="responsive"
+                    className="w-full max-w-4xl"
+                    position="companies-page-in-content"
+                  />
+                </div>
               </>
             )}
           </div>

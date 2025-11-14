@@ -279,14 +279,6 @@ export default function GeographyCountriesPage() {
                   </div>
                 </div>
 
-                <div className="my-8 flex justify-center">
-                  <GoogleAdSense 
-                    format="responsive"
-                    className="w-full max-w-4xl"
-                    position="countries-page-in-content"
-                  />
-                </div>
-
                 {groupedCountries && Object.keys(groupedCountries).sort().map((regionName) => {
                   const regionData = groupedCountries[regionName];
                   return (
@@ -328,6 +320,14 @@ export default function GeographyCountriesPage() {
                     </div>
                   );
                 })}
+
+                <div className="my-8 flex justify-center">
+                  <GoogleAdSense 
+                    format="responsive"
+                    className="w-full max-w-4xl"
+                    position="countries-page-in-content"
+                  />
+                </div>
               </>
             )}
           </div>
