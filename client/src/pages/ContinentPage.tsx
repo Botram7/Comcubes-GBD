@@ -270,7 +270,16 @@ export default function ContinentPage() {
 
           {/* Statistics Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            <Card className="border-t-4 border-t-green-500">
+            <Card 
+              className="border-t-4 border-t-green-500 cursor-pointer hover:shadow-lg transition-all duration-200"
+              onClick={() => {
+                const element = document.getElementById('regions-section');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              data-testid="card-stat-regions"
+            >
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-2">
                   <MapPin className="h-5 w-5 text-green-600" />
@@ -283,7 +292,11 @@ export default function ContinentPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-t-4 border-t-purple-500">
+            <Card 
+              className="border-t-4 border-t-purple-500 cursor-pointer hover:shadow-lg transition-all duration-200"
+              onClick={() => setLocation(`/geography/countries?continent=${continent.slug}`)}
+              data-testid="card-stat-countries"
+            >
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-2">
                   <Globe2 className="h-5 w-5 text-purple-600" />
@@ -296,7 +309,11 @@ export default function ContinentPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-t-4 border-t-orange-500">
+            <Card 
+              className="border-t-4 border-t-orange-500 cursor-pointer hover:shadow-lg transition-all duration-200"
+              onClick={() => setLocation(`/geography/companies?continent=${continent.slug}`)}
+              data-testid="card-stat-companies"
+            >
               <CardContent className="p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-2">
                   <Building2 className="h-5 w-5 text-orange-600" />
@@ -311,7 +328,7 @@ export default function ContinentPage() {
           </div>
 
           {/* Regions Section */}
-          <div className="mb-8">
+          <div className="mb-8" id="regions-section">
             <h2 className="text-2xl font-bold text-gray-900 mb-2" data-testid="text-regions-heading">
               Regions in {continent.name}
             </h2>
