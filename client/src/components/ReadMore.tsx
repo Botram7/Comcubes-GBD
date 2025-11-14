@@ -8,15 +8,13 @@ interface ReadMoreProps {
   className?: string;
 }
 
-export function ReadMore({ children, maxLines = 4, className = '' }: ReadMoreProps) {
+export function ReadMore({ children, maxLines = 3, className = '' }: ReadMoreProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className={className}>
       <div 
-        className={`overflow-hidden transition-all duration-300 ${
-          isExpanded ? 'max-h-none' : 'max-h-24'
-        }`}
+        className={`overflow-hidden transition-all duration-300`}
         style={{
           display: '-webkit-box',
           WebkitBoxOrient: 'vertical',

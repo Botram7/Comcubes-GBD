@@ -351,6 +351,8 @@ export default function SectorsPage() {
                   </ReadMore>
                 </div>
 
+                <BusinessGrid items={sectors || []} type="sector" onItemClick={handleSectorClick} />
+
                 {/* In-content Advertisement - Responsive */}
                 <div className="my-8 flex justify-center">
                   <GoogleAdSense 
@@ -359,8 +361,6 @@ export default function SectorsPage() {
                     position="sectors-page-in-content"
                   />
                 </div>
-
-                <BusinessGrid items={sectors || []} type="sector" onItemClick={handleSectorClick} />
 
                 <div className="mt-12 text-center">
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
