@@ -5,27 +5,17 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BannerAd } from "@/components/BannerAd";
 import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { AlertCircle, Globe2, Building2, ArrowLeft, ExternalLink } from "lucide-react";
+import { AlertCircle, Globe2, Building2, ArrowLeft } from "lucide-react";
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
-import type { SearchResults } from "@/lib/types";
+import type { SearchResults, Company } from "@/lib/types";
 import { useState, useEffect } from "react";
 import { Pagination } from "@/components/Pagination";
-
-interface CompanyLocation {
-  id: number;
-  name: string;
-  industryName: string;
-  countryName: string;
-  regionName: string;
-  websiteUrl?: string;
-}
+import { BusinessGrid } from "@/components/BusinessGrid";
 
 interface CompaniesData {
-  companies: CompanyLocation[];
+  companies: Company[];
   total: number;
   page?: number;
   totalPages?: number;
@@ -98,9 +88,9 @@ export default function GeographyCompaniesPage() {
     setCurrentPage(1);
   };
 
-  const handleCompanyClick = (company: CompanyLocation) => {
-    if (company.websiteUrl) {
-      window.open(company.websiteUrl, '_blank');
+  const handleCompanyClick = (item: Company) => {
+    if (item.websiteUrl) {
+      window.open(item.websiteUrl, '_blank');
     }
   };
 
@@ -108,21 +98,15 @@ export default function GeographyCompaniesPage() {
     setLocation('/geography/companies');
     setSelectedLetter('');
     setCurrentPage(1);
+    setCountryFilter('');
+    setRegionFilter('');
   };
 
   // Generate alphabet buttons
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-  // Group companies by country
-  const groupedCompanies = data?.companies.reduce((acc, company) => {
-    if (!acc[company.countryName]) {
-      acc[company.countryName] = [];
-    }
-    acc[company.countryName].push(company);
-    return acc;
-  }, {} as Record<string, CompanyLocation[]>);
-
   const totalPages = data?.totalPages || Math.ceil((data?.total || 0) / 20);
+  const companies = data?.companies || [];
 
   if (isLoading) {
     return (
@@ -179,17 +163,13 @@ export default function GeographyCompaniesPage() {
           </div>
         </header>
         <div className="flex items-center justify-center min-h-96">
-          <Card className="w-full max-w-md mx-4">
-            <CardContent className="pt-6">
-              <div className="flex mb-4 gap-2">
-                <AlertCircle className="h-8 w-8 text-red-500" />
-                <h1 className="text-2xl font-bold text-gray-900">Error Loading Data</h1>
-              </div>
-              <p className="mt-4 text-sm text-gray-600">
-                Failed to load companies. Please try again later.
-              </p>
-            </CardContent>
-          </Card>
+          <div className="max-w-md mx-4 text-center">
+            <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
+            <h1 className="text-2xl font-bold text-gray-900 mb-4">Error Loading Data</h1>
+            <p className="text-sm text-gray-600">
+              Failed to load companies. Please try again later.
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -282,11 +262,66 @@ export default function GeographyCompaniesPage() {
             {searchResults ? (
               <div className="space-y-8">
                 <div className="mb-6">
-                  <h2 className="text-3xl font-bold text-gray-900">Search Results</h2>
+                  <Button
+                    variant="ghost"
+                    onClick={() => setSearchResults(null)}
+                    data-testid="button-clear-search"
+                  >
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Back to Companies
+                  </Button>
+                  
+                  <h2 className="text-3xl font-bold text-gray-900 mt-4">Search Results</h2>
                   <p className="text-gray-600 mt-2">
                     Found {searchResults.sectors.length + searchResults.industries.length + searchResults.companies.length} results
                   </p>
                 </div>
+
+                {searchResults.sectors.length > 0 && (
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">Sectors ({searchResults.sectors.length})</h3>
+                    <BusinessGrid 
+                      items={searchResults.sectors} 
+                      type="sector" 
+                      onItemClick={(item) => setLocation(`/sector/${encodeURIComponent(item.name)}`)} 
+                    />
+                  </div>
+                )}
+
+                {searchResults.industries.length > 0 && (
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">Industries ({searchResults.industries.length})</h3>
+                    <BusinessGrid 
+                      items={searchResults.industries} 
+                      type="industry" 
+                      onItemClick={(item) => setLocation(`/industry/${encodeURIComponent(item.name)}`)} 
+                    />
+                  </div>
+                )}
+
+                {searchResults.companies.length > 0 && (
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">Companies ({searchResults.companies.length})</h3>
+                    <BusinessGrid 
+                      items={searchResults.companies} 
+                      type="company" 
+                      onItemClick={(item) => handleCompanyClick(item as Company)}
+                      showClaimButtons={true}
+                    />
+                  </div>
+                )}
+
+                {searchResults.sectors.length === 0 && 
+                 searchResults.industries.length === 0 && 
+                 searchResults.companies.length === 0 && (
+                  <div className="text-center py-12">
+                    <Globe2 className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">No Results Found</h3>
+                    <p className="text-gray-600">
+                      Try a different search term or browse all companies.
+                    </p>
+                  </div>
+                )}
               </div>
             ) : (
               <>
@@ -330,7 +365,8 @@ export default function GeographyCompaniesPage() {
 
                   {!countryFilter && !regionFilter && (
                     <div className="mb-8">
-                      <h3 className="text-sm font-semibold text-gray-700 mb-3">Filter by Country Name</h3>
+                      <h3 className="text-sm font-semibold text-gray-700 mb-3">Filter Companies by Country Name (A-Z)</h3>
+                      <p className="text-xs text-gray-600 mb-3">Click a letter to show companies from countries starting with that letter</p>
                       <div className="flex flex-wrap gap-2">
                         {alphabet.map(letter => (
                           <Button
@@ -362,43 +398,23 @@ export default function GeographyCompaniesPage() {
                   )}
                 </div>
 
-                {groupedCompanies && Object.keys(groupedCompanies).length > 0 ? (
-                  Object.keys(groupedCompanies).sort().map((countryName) => (
-                    <div key={countryName} className="mb-12">
-                      <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <Globe2 className="h-6 w-6 text-green-600" />
-                        {countryName}
-                        <Badge variant="secondary" className="ml-2">{groupedCompanies[countryName].length} companies</Badge>
-                      </h2>
-                      
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        {groupedCompanies[countryName].map((company) => (
-                          <Card
-                            key={company.id}
-                            className="hover:shadow-md transition-all duration-200 border border-gray-200 hover:border-green-400 cursor-pointer"
-                            onClick={() => handleCompanyClick(company)}
-                            data-testid={`card-company-${company.id}`}
-                          >
-                            <CardContent className="p-4">
-                              <h3 className="text-sm font-semibold text-gray-900 mb-2 line-clamp-2 flex items-start gap-1">
-                                {company.name}
-                                {company.websiteUrl && <ExternalLink className="h-3 w-3 flex-shrink-0 mt-0.5" />}
-                              </h3>
+                {companies.length > 0 ? (
+                  <>
+                    <BusinessGrid 
+                      items={companies} 
+                      type="company" 
+                      onItemClick={handleCompanyClick}
+                      showClaimButtons={true}
+                    />
 
-                              <div className="space-y-1">
-                                <p className="text-xs text-gray-600 line-clamp-1">
-                                  {company.industryName}
-                                </p>
-                                <p className="text-xs text-gray-500">
-                                  {company.regionName}
-                                </p>
-                              </div>
-                            </CardContent>
-                          </Card>
-                        ))}
-                      </div>
-                    </div>
-                  ))
+                    {totalPages > 1 && (
+                      <Pagination 
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={handlePageChange}
+                      />
+                    )}
+                  </>
                 ) : (
                   <div className="text-center py-12">
                     <Globe2 className="h-16 w-16 text-gray-400 mx-auto mb-4" />
@@ -407,14 +423,6 @@ export default function GeographyCompaniesPage() {
                       Try adjusting your filters or browse all companies.
                     </p>
                   </div>
-                )}
-
-                {totalPages > 1 && (
-                  <Pagination 
-                    currentPage={currentPage}
-                    totalPages={totalPages}
-                    onPageChange={handlePageChange}
-                  />
                 )}
 
                 <div className="my-8 flex justify-center">
