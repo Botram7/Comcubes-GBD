@@ -326,6 +326,14 @@ export default function CompanyPage() {
               </div>
             </div>
 
+            <BusinessGrid items={(companyData as any)?.companies || []} type="company" onItemClick={(company) => handleCompanyClick(company as Company)} showClaimButtons={true} />
+
+            <Pagination 
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+
             {/* In-content Advertisement - Responsive */}
             <div className="my-8 flex justify-center">
               <GoogleAdSense 
@@ -334,14 +342,6 @@ export default function CompanyPage() {
                 position="company-page-in-content"
               />
             </div>
-
-            <BusinessGrid items={(companyData as any)?.companies || []} type="company" onItemClick={(company) => handleCompanyClick(company as Company)} showClaimButtons={true} />
-
-            <Pagination 
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
           </>
         )}
           </div>
