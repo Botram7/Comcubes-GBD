@@ -4,6 +4,19 @@ import "./index.css";
 
 // Initialize analytics
 const initializeAnalytics = () => {
+  // Google AdSense - Load immediately in <head> as required by Google
+  const adsenseClientId = import.meta.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-5485634688028600';
+  if (adsenseClientId && !adsenseClientId.includes('PLACEHOLDER')) {
+    const adsenseScript = document.createElement('script');
+    adsenseScript.async = true;
+    adsenseScript.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`;
+    adsenseScript.crossOrigin = 'anonymous';
+    document.head.appendChild(adsenseScript);
+    console.log('Google AdSense initialized with Client ID:', adsenseClientId);
+  } else {
+    console.warn('Google AdSense not configured - set VITE_ADSENSE_CLIENT_ID');
+  }
+
   // Google Analytics 4
   const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
   if (gaId && gaId !== '' && !gaId.includes('PLACEHOLDER')) {
