@@ -59,6 +59,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Serve uploaded files (logos, etc.)
   app.use('/uploads', express.static(path.resolve(import.meta.dirname, 'uploads')));
   
+  // Serve ads.txt for Google AdSense verification
+  app.get('/ads.txt', (req, res) => {
+    res.setHeader('Content-Type', 'text/plain');
+    res.send('google.com, pub-5485634688028600, DIRECT, f08c47fec0942fa0');
+  });
+  
   // Serve banner images from Object Storage (like generated images)
   app.get('/banner-images/:filename', async (req, res) => {
     const { filename } = req.params;
