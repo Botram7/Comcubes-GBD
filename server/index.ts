@@ -46,7 +46,11 @@ app.use(helmet({
         "https://pagead2.googlesyndication.com",
         "https://adservice.google.com",
         "https://googleads.g.doubleclick.net",
-        "https://www.googletagmanager.com"
+        "https://www.googletagmanager.com",
+        "https://www.google-analytics.com",
+        "https://ssl.google-analytics.com",
+        "https://www.clarity.ms",
+        "https://*.clarity.ms"
       ],
       // Allow AdSense and Analytics connections
       connectSrc: [
@@ -58,19 +62,27 @@ app.use(helmet({
         "https://pagead2.googlesyndication.com",
         "https://adservice.google.com",
         "https://www.google-analytics.com",
-        "https://www.googletagmanager.com"
+        "https://analytics.google.com",
+        "https://stats.g.doubleclick.net",
+        "https://www.googletagmanager.com",
+        "https://googleads.g.doubleclick.net",
+        "https://*.doubleclick.net",
+        "https://www.clarity.ms",
+        "https://*.clarity.ms"
       ],
       // Allow AdSense iframes
       frameSrc: [
         "'self'",
         "https://pagead2.googlesyndication.com",
         "https://googleads.g.doubleclick.net",
-        "https://tpc.googlesyndication.com"
+        "https://tpc.googlesyndication.com",
+        "https://*.google.com",
+        "https://*.doubleclick.net"
       ],
       objectSrc: ["'none'"],
       mediaSrc: ["'self'"],
       manifestSrc: ["'self'"],
-      workerSrc: ["'self'"]
+      workerSrc: ["'self'", "blob:"]
     }
   },
   hsts: {
