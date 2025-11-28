@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { trackAdClick } from '@/lib/analytics';
+import { useCookieConsent } from '@/contexts/CookieConsentContext';
 
 interface GoogleAdSenseProps {
   className?: string;
   format?: 'vertical' | 'horizontal' | 'rectangle' | 'responsive';
   slot?: string;
-  position?: string; // Track ad position for analytics
+  position?: string;
 }
 
-// Ad format to size mapping
 const AD_FORMATS = {
   vertical: { 
     width: 160, 
@@ -33,7 +33,6 @@ const AD_FORMATS = {
   },
 };
 
-// AdSense configuration - will be replaced with environment variables
 const ADSENSE_CLIENT_ID = import.meta.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-XXXXXXXXXX';
 
 declare global {
@@ -51,29 +50,22 @@ export function GoogleAdSense({
   const adRef = useRef<HTMLDivElement>(null);
   const [adLoaded, setAdLoaded] = useState(false);
   const [adError, setAdError] = useState(false);
+  const { hasConsented, preferences } = useCookieConsent();
 
   useEffect(() => {
-    // Skip if no valid client ID configured
+    if (!hasConsented || !preferences.marketing) {
+      return;
+    }
+
     if (!ADSENSE_CLIENT_ID || ADSENSE_CLIENT_ID === 'ca-pub-XXXXXXXXXX') {
       console.warn('AdSense client ID not configured');
       setAdError(true);
       return;
     }
 
-    // Load AdSense script if not already loaded
-    if (!document.querySelector('script[src*="adsbygoogle.js"]')) {
-      const script = document.createElement('script');
-      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`;
-      script.async = true;
-      script.crossOrigin = 'anonymous';
-      document.head.appendChild(script);
-    }
-
-    // Initialize ad after script loads
     const initializeAd = () => {
       try {
         if (window.adsbygoogle && adRef.current) {
-          // Push ad to AdSense queue
           (window.adsbygoogle = window.adsbygoogle || []).push({});
           setAdLoaded(true);
         }
@@ -83,19 +75,34 @@ export function GoogleAdSense({
       }
     };
 
-    // Wait a bit for script to load
-    const timer = setTimeout(initializeAd, 100);
+    const timer = setTimeout(initializeAd, 500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [hasConsented, preferences.marketing]);
 
-  // Track ad clicks
   const handleAdClick = () => {
     trackAdClick('adsense', position, slot);
   };
 
   const formatConfig = AD_FORMATS[format];
 
-  // Show error fallback if ad fails to load
+  if (!hasConsented || !preferences.marketing) {
+    return (
+      <div className={className}>
+        <Card 
+          className="bg-gray-50 border-2 border-dashed border-gray-200 p-4 text-center"
+          style={{ 
+            width: format === 'responsive' ? '100%' : `${formatConfig.width}px`,
+            height: format === 'responsive' ? 'auto' : `${formatConfig.height}px`,
+            minHeight: format === 'responsive' ? '250px' : undefined
+          }}
+        >
+          <div className="text-gray-400 text-sm">Advertisement</div>
+          <div className="text-gray-300 text-xs mt-1">Enable marketing cookies to view ads</div>
+        </Card>
+      </div>
+    );
+  }
+
   if (adError) {
     return (
       <div className={className}>
@@ -127,7 +134,6 @@ export function GoogleAdSense({
   );
 }
 
-// Helper component for non-intrusive in-content ads
 export function InContentAd({ className = "" }: { className?: string }) {
   return (
     <div className={`my-8 flex justify-center ${className}`}>
