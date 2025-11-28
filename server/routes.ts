@@ -825,7 +825,42 @@ This is an automated notification from the COMCUBES self-service advertising pla
 
   app.post('/api/contact', async (req, res) => {
     try {
-      const contactData = insertContactMessageSchema.parse(req.body);
+      const { turnstileToken, ...formData } = req.body;
+      
+      // Verify Cloudflare Turnstile token
+      const turnstileSecretKey = process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY;
+      if (turnstileSecretKey && turnstileToken) {
+        const verifyFormData = new FormData();
+        verifyFormData.append('secret', turnstileSecretKey);
+        verifyFormData.append('response', turnstileToken);
+        
+        const ip = req.headers['cf-connecting-ip'] || 
+                   req.headers['x-forwarded-for'] || 
+                   req.socket.remoteAddress || '';
+        if (ip) {
+          verifyFormData.append('remoteip', Array.isArray(ip) ? ip[0] : ip);
+        }
+
+        const turnstileResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+          method: 'POST',
+          body: verifyFormData,
+        });
+
+        const turnstileResult = await turnstileResponse.json() as { success: boolean; 'error-codes'?: string[] };
+        
+        if (!turnstileResult.success) {
+          console.warn('Turnstile verification failed:', turnstileResult['error-codes']);
+          return res.status(400).json({ 
+            error: 'Security verification failed. Please try again.' 
+          });
+        }
+      } else if (turnstileSecretKey && !turnstileToken) {
+        return res.status(400).json({ 
+          error: 'Security verification required. Please complete the challenge.' 
+        });
+      }
+      
+      const contactData = insertContactMessageSchema.parse(formData);
       
       // Save to database
       const savedMessage = await storage.createContactMessage(contactData);
