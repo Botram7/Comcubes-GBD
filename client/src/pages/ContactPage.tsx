@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useMutation } from '@tanstack/react-query';
 import { Mail, Clock, ArrowLeft, MessageSquare, Building, Users, HelpCircle } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 
 import { Button } from '@/components/ui/button';
@@ -19,7 +20,6 @@ import { BannerAd } from '@/components/BannerAd';
 import { apiRequest } from '@/lib/queryClient';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 
-// Form validation schema
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
@@ -39,12 +39,16 @@ const contactTypes = [
   { value: 'Company Listing', label: 'Company Listing', icon: Users },
 ];
 
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_CLOUDFLARE_TURNSTILE_SITE_KEY || '';
+
 export default function ContactPage() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileError, setTurnstileError] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
-  // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -61,18 +65,21 @@ export default function ContactPage() {
   });
 
   const contactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
+    mutationFn: async (data: ContactFormData & { turnstileToken: string }) => {
       return await apiRequest('POST', '/api/contact', data);
     },
     onSuccess: () => {
       setIsSubmitted(true);
       form.reset();
+      setTurnstileToken(null);
       toast({
         title: "Message Sent Successfully",
         description: "We'll get back to you within 24-48 hours.",
       });
     },
     onError: (error) => {
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
       toast({
         title: "Failed to Send Message",
         description: error.message || "Please try again later.",
@@ -82,13 +89,31 @@ export default function ContactPage() {
   });
 
   const onSubmit = (data: ContactFormData) => {
-    contactMutation.mutate(data);
+    if (!turnstileToken) {
+      setTurnstileError('Please complete the security verification');
+      return;
+    }
+    setTurnstileError(null);
+    contactMutation.mutate({ ...data, turnstileToken });
+  };
+
+  const handleTurnstileSuccess = (token: string) => {
+    setTurnstileToken(token);
+    setTurnstileError(null);
+  };
+
+  const handleTurnstileError = () => {
+    setTurnstileToken(null);
+    setTurnstileError('Security verification failed. Please try again.');
+  };
+
+  const handleTurnstileExpire = () => {
+    setTurnstileToken(null);
   };
 
   if (isSubmitted) {
     return (
       <div className="min-h-screen bg-gray-50 font-inter">
-        {/* Header */}
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center h-16">
@@ -109,7 +134,6 @@ export default function ContactPage() {
           </div>
         </header>
 
-        {/* Success Message */}
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <Card>
             <CardContent className="p-12 text-center">
@@ -151,7 +175,6 @@ export default function ContactPage() {
           { name: "Contact Us", url: `${window.location.origin}/contact` }
         ])}
       />
-      {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-16">
@@ -172,7 +195,6 @@ export default function ContactPage() {
         </div>
       </header>
 
-      {/* Breadcrumbs */}
       <Breadcrumbs 
         items={[
           { label: 'Home', href: '/' },
@@ -180,9 +202,7 @@ export default function ContactPage() {
         ]} 
       />
 
-      {/* Main Content - Full Width */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact COMCUBES</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -191,7 +211,6 @@ export default function ContactPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <Card>
             <CardHeader>
               <CardTitle>Send us a Message</CardTitle>
@@ -207,7 +226,7 @@ export default function ContactPage() {
                           <FormItem>
                             <FormLabel>Full Name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Your name" {...field} />
+                              <Input placeholder="Your name" data-testid="input-contact-name" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -220,7 +239,7 @@ export default function ContactPage() {
                           <FormItem>
                             <FormLabel>Email Address</FormLabel>
                             <FormControl>
-                              <Input placeholder="your@email.com" type="email" {...field} />
+                              <Input placeholder="your@email.com" type="email" data-testid="input-contact-email" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -236,7 +255,7 @@ export default function ContactPage() {
                           <FormLabel>Contact Type</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger>
+                              <SelectTrigger data-testid="select-contact-type">
                                 <SelectValue placeholder="Select inquiry type" />
                               </SelectTrigger>
                             </FormControl>
@@ -263,7 +282,7 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>Subject</FormLabel>
                           <FormControl>
-                            <Input placeholder="Brief description of your inquiry" {...field} />
+                            <Input placeholder="Brief description of your inquiry" data-testid="input-contact-subject" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -280,6 +299,7 @@ export default function ContactPage() {
                             <Textarea 
                               placeholder="Please provide details about your inquiry..."
                               className="min-h-[120px]"
+                              data-testid="textarea-contact-message"
                               {...field}
                             />
                           </FormControl>
@@ -288,10 +308,32 @@ export default function ContactPage() {
                       )}
                     />
 
+                    {TURNSTILE_SITE_KEY && (
+                      <div className="space-y-2">
+                        <div className="flex items-center" data-testid="turnstile-widget">
+                          <Turnstile
+                            ref={turnstileRef}
+                            siteKey={TURNSTILE_SITE_KEY}
+                            onSuccess={handleTurnstileSuccess}
+                            onError={handleTurnstileError}
+                            onExpire={handleTurnstileExpire}
+                            options={{
+                              theme: 'light',
+                              size: 'normal',
+                            }}
+                          />
+                        </div>
+                        {turnstileError && (
+                          <p className="text-sm text-red-600" data-testid="text-turnstile-error">{turnstileError}</p>
+                        )}
+                      </div>
+                    )}
+
                     <Button 
                       type="submit" 
                       className="w-full" 
-                      disabled={contactMutation.isPending}
+                      disabled={contactMutation.isPending || (TURNSTILE_SITE_KEY && !turnstileToken)}
+                      data-testid="button-contact-submit"
                     >
                       {contactMutation.isPending ? 'Sending...' : 'Send Message'}
                     </Button>
@@ -300,7 +342,6 @@ export default function ContactPage() {
             </CardContent>
           </Card>
 
-          {/* Contact Information */}
           <div className="space-y-8">
             <Card>
               <CardHeader>
@@ -324,12 +365,9 @@ export default function ContactPage() {
                       <p className="text-sm text-gray-500">Monday to Friday, 9 AM - 6 PM WAT</p>
                     </div>
                   </div>
-                  
-
               </CardContent>
             </Card>
 
-            {/* Contact Types */}
             <Card>
               <CardHeader>
                 <CardTitle>How Can We Help?</CardTitle>
@@ -356,8 +394,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-      
-      {/* SEO Analyzer Component */}
     </div>
   );
 }
