@@ -1,4 +1,13 @@
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    dataLayer?: any[];
+    clarity?: (...args: any[]) => void;
+    adsbygoogle?: any[];
+  }
+}
 
 export interface CookiePreferences {
   necessary: boolean;
@@ -16,6 +25,8 @@ interface CookieConsentContextType {
   savePreferences: (prefs: Partial<CookiePreferences>) => void;
   openPreferences: () => void;
   closePreferences: () => void;
+  analyticsLoaded: boolean;
+  marketingLoaded: boolean;
 }
 
 const COOKIE_CONSENT_KEY = 'comcubes_cookie_consent';
@@ -35,6 +46,9 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
   const [showBanner, setShowBanner] = useState<boolean>(false);
   const [showPreferences, setShowPreferences] = useState<boolean>(false);
   const [isInitialized, setIsInitialized] = useState<boolean>(false);
+  const [analyticsLoaded, setAnalyticsLoaded] = useState<boolean>(false);
+  const [marketingLoaded, setMarketingLoaded] = useState<boolean>(false);
+  const previousPrefsRef = useRef<CookiePreferences | null>(null);
 
   useEffect(() => {
     const storedConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
@@ -43,7 +57,9 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
     if (storedConsent === 'true' && storedPreferences) {
       try {
         const parsedPrefs = JSON.parse(storedPreferences);
-        setPreferences({ ...defaultPreferences, ...parsedPrefs });
+        const prefs = { ...defaultPreferences, ...parsedPrefs };
+        setPreferences(prefs);
+        previousPrefsRef.current = prefs;
         setHasConsented(true);
         setShowBanner(false);
       } catch (e) {
@@ -55,15 +71,9 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
     setIsInitialized(true);
   }, []);
 
-  useEffect(() => {
-    if (!isInitialized) return;
-
-    if (hasConsented && preferences.analytics) {
-      loadAnalytics();
-    }
-  }, [hasConsented, preferences.analytics, isInitialized]);
-
   const loadAnalytics = useCallback(() => {
+    if (analyticsLoaded) return;
+    
     const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
     if (gaId && gaId !== '' && !gaId.includes('PLACEHOLDER') && !window.gtag) {
       const script = document.createElement('script');
@@ -98,16 +108,67 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
       })(window, document, 'clarity', 'script', clarityId, {} as HTMLScriptElement, document.getElementsByTagName('script')[0]);
       console.log('Microsoft Clarity initialized with consent');
     }
-  }, []);
+    
+    setAnalyticsLoaded(true);
+  }, [analyticsLoaded]);
+
+  const loadMarketing = useCallback(() => {
+    if (marketingLoaded) return;
+    
+    const adsenseClientId = import.meta.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-5485634688028600';
+    if (adsenseClientId && !adsenseClientId.includes('PLACEHOLDER') && !window.adsbygoogle) {
+      const adsenseScript = document.createElement('script');
+      adsenseScript.async = true;
+      adsenseScript.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`;
+      adsenseScript.crossOrigin = 'anonymous';
+      document.head.appendChild(adsenseScript);
+      
+      window.adsbygoogle = window.adsbygoogle || [];
+      console.log('Google AdSense initialized with consent');
+    }
+    
+    setMarketingLoaded(true);
+  }, [marketingLoaded]);
+
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    if (hasConsented && preferences.analytics && !analyticsLoaded) {
+      loadAnalytics();
+    }
+  }, [hasConsented, preferences.analytics, isInitialized, analyticsLoaded, loadAnalytics]);
+
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    if (hasConsented && preferences.marketing && !marketingLoaded) {
+      loadMarketing();
+    }
+  }, [hasConsented, preferences.marketing, isInitialized, marketingLoaded, loadMarketing]);
 
   const saveConsent = useCallback((prefs: CookiePreferences) => {
+    const prevPrefs = previousPrefsRef.current;
+    
+    const analyticsRevoked = prevPrefs?.analytics === true && prefs.analytics === false;
+    const marketingRevoked = prevPrefs?.marketing === true && prefs.marketing === false;
+    const consentRevoked = (analyticsRevoked && analyticsLoaded) || (marketingRevoked && marketingLoaded);
+    
     localStorage.setItem(COOKIE_CONSENT_KEY, 'true');
     localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(prefs));
     setPreferences(prefs);
+    previousPrefsRef.current = prefs;
     setHasConsented(true);
     setShowBanner(false);
     setShowPreferences(false);
-  }, []);
+    
+    if (consentRevoked) {
+      setTimeout(() => {
+        if (window.confirm('To fully apply your cookie preferences, the page needs to reload. Reload now?')) {
+          window.location.reload();
+        }
+      }, 100);
+    }
+  }, [analyticsLoaded, marketingLoaded]);
 
   const acceptAll = useCallback(() => {
     saveConsent({
@@ -154,6 +215,8 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
         savePreferences,
         openPreferences,
         closePreferences,
+        analyticsLoaded,
+        marketingLoaded,
       }}
     >
       {children}
