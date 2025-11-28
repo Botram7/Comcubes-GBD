@@ -80,3 +80,8 @@ integrations = ["javascript_database==1.0.0", "javascript_stripe==1.0.0", "javas
 
 [objectStorage]
 defaultBucketID = "replit-objstore-729de78f-053b-47e4-bc3d-591d880e1270"
+
+[userenv]
+
+[userenv.shared]
+VITE_CLOUDFLARE_TURNSTILE_SITE_KEY = "0x4AAAAAACDX8EY0UMOZswoX"

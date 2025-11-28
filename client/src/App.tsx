@@ -3,6 +3,8 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
+import { CookieConsent } from "@/components/CookieConsent";
 
 import HomePage from "@/pages/HomePage";
 import SectorsPage from "@/pages/SectorsPage";
@@ -12,7 +14,6 @@ import IndustryPage from "@/pages/IndustryPage";
 import CompanyPage from "@/pages/CompanyPage";
 import CompanyProfilePage from "@/pages/CompanyProfilePage";
 import SearchPage from "@/pages/SearchPage";
-// LogoManagementPage removed - using fallback icons only
 import ContactPage from "@/pages/ContactPage";
 import AdvertisePage from "@/pages/AdvertisePage";
 import CompanyListingPage from "@/pages/CompanyListingPage";
@@ -77,7 +78,6 @@ function Router() {
       <Route path="/payment/cancel" component={PaymentCancelPage} />
       <Route path="/admin" component={ComprehensiveAdminDashboard} />
       <Route path="/admin-sync" component={AdminSyncPage} />
-{/* Logo management removed - using fallback icons only */}
       <Route path="/privacy-policy" component={PrivacyPolicyPage} />
       <Route path="/terms-of-service" component={TermsOfServicePage} />
       <Route path="/disclaimer" component={DisclaimerPage} />
@@ -90,10 +90,13 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
+      <CookieConsentProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+          <CookieConsent />
+        </TooltipProvider>
+      </CookieConsentProvider>
     </QueryClientProvider>
   );
 }
