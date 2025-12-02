@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { SearchBar } from "@/components/SearchBar";
 import { AnimatedExplainer } from "@/components/AnimatedExplainer";
 import { ExploreByLocation } from "@/components/ExploreByLocation";
-import { SEOHead, createBusinessDirectoryStructuredData } from "@/components/SEOHead";
+import { SEOHead, createBusinessDirectoryStructuredData, createFAQStructuredData, createOrganizationStructuredData, HOMEPAGE_FAQS, BRAND_KEYWORDS } from "@/components/SEOHead";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { 
@@ -126,17 +126,25 @@ export default function HomePage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title="COMCUBES - Discover Everything Business | Global Companies, Brands & Industries"
-        description="Your gateway to everything business. Professionals, researchers, job seekers, shoppers, students—access 7,400+ curated companies across 400+ industries PLUS global search for millions worldwide. From Fortune 500 to local businesses, find exactly what you're looking for."
+        description="Your gateway to everything business. Professionals, researchers, job seekers, shoppers, students—access 7,400+ curated companies across 400+ industries PLUS global search for millions worldwide. From Fortune 500 to local businesses, find exactly what you're looking for. COMCUBES (Comcube, Commercial Cubes) - your trusted business directory."
         keywords={[
+          ...BRAND_KEYWORDS,
           'business directory', 'global companies', 'find businesses', 'discover brands', 
           'company search', 'universities worldwide', 'global brands', 'business discovery',
           'find employers', 'shopping brands', 'automotive companies', 'fashion brands',
           'education institutions', 'entertainment companies', 'local businesses', 'company finder',
           'business search', 'worldwide companies', 'industry directory', 'commercial directory',
-          'business research', 'company intelligence', 'global search', 'business professionals'
+          'business research', 'company intelligence', 'global search', 'business professionals',
+          'global business directory', 'international companies', 'B2B directory', 'corporate directory'
         ]}
-        canonicalUrl={`${window.location.origin}/`}
+        canonicalUrl="https://comcubes.com/"
+        ogTitle="COMCUBES - The Global Business Directory | Find Any Business Worldwide"
+        ogDescription="Discover 7,400+ companies across 400+ industries. COMCUBES is your gateway to everything business - from Fortune 500 giants to local boutiques."
         structuredData={createBusinessDirectoryStructuredData()}
+        additionalStructuredData={[
+          createOrganizationStructuredData(),
+          createFAQStructuredData(HOMEPAGE_FAQS)
+        ]}
       />
       {/* Header with Theme Toggle */}
       <header className="absolute top-0 right-0 z-50 p-4">

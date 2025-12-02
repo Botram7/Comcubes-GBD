@@ -8,7 +8,7 @@ import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanne
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AlertCircle, Globe2, MapPin, Map, Building2 } from "lucide-react";
-import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOHead, createBreadcrumbStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import { ReadMore } from "@/components/ReadMore";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import type { SearchResults } from "@/lib/types";
@@ -113,11 +113,17 @@ export default function GeographyPage() {
       <AffiliateDisclosureBanner />
       <SEOHead
         title="Find Businesses Near You or Worldwide | Browse by Location - COMCUBES"
-        description="Discover local businesses in your city or explore companies globally. Search by continent, region, or country to find services near you or brands anywhere in the world. Your local and global business discovery starts here."
-        keywords={["find businesses near me", "local businesses", "companies by location", "businesses worldwide", "geographic search", "businesses by country", "local services", "global companies", "business location finder", "international directory"]}
-        canonicalUrl="/geography"
-        ogTitle="Find Local & Global Businesses | COMCUBES Geography"
-        ogDescription="Discover businesses near you or anywhere in the world. Browse by location to find local services and global companies organized by geography."
+        description="Discover local businesses in your city or explore companies globally. Search by continent, region, or country to find services near you or brands anywhere in the world. COMCUBES geographic business directory - your local and global business discovery starts here."
+        keywords={[
+          ...BRAND_KEYWORDS.slice(0, 5),
+          "find businesses near me", "local businesses", "companies by location", "businesses worldwide", 
+          "geographic search", "businesses by country", "local services", "global companies", 
+          "business location finder", "international directory", "businesses by continent",
+          "find companies by country", "regional business directory", "worldwide business search"
+        ]}
+        canonicalUrl="https://comcubes.com/geography"
+        ogTitle="Find Local & Global Businesses by Location | COMCUBES"
+        ogDescription="Discover businesses near you or anywhere in the world. Browse 7 continents, 22 regions, and 198 countries to find local services and global companies."
         structuredData={structuredData}
       />
 

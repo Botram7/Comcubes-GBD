@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Search, TrendingUp, Globe, Building2, Users, ArrowLeft } from 'lucide-react';
-import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOHead, createBreadcrumbStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 
 import { Link, useLocation } from 'wouter';
 import { EnhancedSearch } from '@/components/EnhancedSearch';
@@ -81,16 +81,20 @@ export default function SearchPage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title="Advanced Business Search | Global Company & Industry Search | COMCUBES"
-        description="Search 7,400+ companies across 400+ industries with advanced filters. Find businesses by location, size, sector, and more with our global search technology."
+        description="Search 7,400+ companies across 400+ industries with advanced filters. Find businesses by location, size, sector, and more with COMCUBES (Comcube) global search technology. Your gateway to discovering businesses worldwide."
         keywords={[
+          ...BRAND_KEYWORDS.slice(0, 5),
           "business search", "company search", "advanced search", "global business search",
           "company finder", "business finder", "industry search", "company database search",
-          "business directory search", "enterprise search", "B2B search", "worldwide business search"
+          "business directory search", "enterprise search", "B2B search", "worldwide business search",
+          "find companies", "search businesses", "global company directory"
         ]}
-        canonicalUrl={`${window.location.origin}/search`}
+        canonicalUrl="https://comcubes.com/search"
+        ogTitle="Advanced Business Search | COMCUBES Global Directory"
+        ogDescription="Search 7,400+ companies across 400+ industries. Find businesses by location, sector, and industry with advanced filters."
         structuredData={createBreadcrumbStructuredData([
-          { name: "Home", url: `${window.location.origin}/` },
-          { name: "Advanced Search", url: `${window.location.origin}/search` }
+          { name: "Home", url: "https://comcubes.com/" },
+          { name: "Advanced Search", url: "https://comcubes.com/search" }
         ])}
       />
       {/* Header - Consistent with other pages */}

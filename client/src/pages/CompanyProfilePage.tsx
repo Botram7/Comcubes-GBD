@@ -29,7 +29,7 @@ import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 import { generateCompanyDescription } from "@/utils/companyDescriptionGenerator";
-import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOHead, createBreadcrumbStructuredData, createLocalBusinessStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { DataAccuracyDisclaimer } from "@/components/DataAccuracyDisclaimer";
 
@@ -162,20 +162,33 @@ export default function CompanyProfilePage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title={`${company.name} - Company Profile | ${company.industryName} | COMCUBES`}
-        description={`Complete business profile for ${company.name} in ${company.industryName} industry. Find contact details, website, company information, and related businesses in ${company.sectorName} sector.`}
+        description={`Complete business profile for ${company.name} in ${company.industryName} industry. Find contact details, website, company information, and related businesses in ${company.sectorName} sector on COMCUBES business directory.`}
         keywords={[
+          ...BRAND_KEYWORDS.slice(0, 3),
           `${company.name}`, `${company.name.toLowerCase()}`, `${company.industryName.toLowerCase()}`,
-          `${company.sectorName.toLowerCase()}`, "company profile", "business information",
-          "company details", "business directory", "company contact", "business profile"
+          `${company.sectorName.toLowerCase()}`, `${company.name} company`, `${company.name} profile`,
+          "company profile", "business information", "company details", "business directory", 
+          "company contact", "business profile", "company website"
         ]}
-        canonicalUrl={`${window.location.origin}/company/${company.id}`}
+        canonicalUrl={`https://comcubes.com/company/${company.id}`}
+        ogTitle={`${company.name} | ${company.industryName} Company | COMCUBES`}
+        ogDescription={`Business profile for ${company.name} in ${company.industryName}. Contact details, website, and company information.`}
         structuredData={createBreadcrumbStructuredData([
-          { name: "Home", url: `${window.location.origin}/` },
-          { name: "Business Sectors", url: `${window.location.origin}/sectors` },
-          { name: company.sectorName, url: `${window.location.origin}/sector/${encodeURIComponent(company.sectorName)}` },
-          { name: company.industryName, url: `${window.location.origin}/industry/${encodeURIComponent(company.industryName)}` },
-          { name: company.name, url: `${window.location.origin}/company/${company.id}` }
+          { name: "Home", url: "https://comcubes.com/" },
+          { name: "Business Sectors", url: "https://comcubes.com/sectors" },
+          { name: company.sectorName, url: `https://comcubes.com/sector/${encodeURIComponent(company.sectorName)}` },
+          { name: company.industryName, url: `https://comcubes.com/industry/${encodeURIComponent(company.industryName)}` },
+          { name: company.name, url: `https://comcubes.com/company/${company.id}` }
         ])}
+        additionalStructuredData={[
+          createLocalBusinessStructuredData({
+            name: company.name,
+            description: `${company.name} is a company in the ${company.industryName} industry, part of the ${company.sectorName} sector.`,
+            url: company.websiteUrl || undefined,
+            industry: company.industryName,
+            country: (company as any).country || undefined
+          })
+        ]}
       />
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

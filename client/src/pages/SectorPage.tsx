@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2 } from "lucide-react";
-import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOHead, createBreadcrumbStructuredData, createItemListStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { BannerAd } from "@/components/BannerAd";
@@ -164,18 +164,33 @@ export default function SectorPage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title={`${decodedSectorName} Industries & Companies | COMCUBES Global Directory`}
-        description={`Explore specialized industries within ${decodedSectorName} sector. Discover top companies, industry leaders, and business opportunities in ${decodedSectorName}. Browse ${Array.isArray(industries) ? industries.length : 20} industries now.`}
+        description={`Explore specialized industries within ${decodedSectorName} sector. Discover top companies, industry leaders, and business opportunities in ${decodedSectorName}. Browse ${Array.isArray(industries) ? industries.length : 20} industries on COMCUBES (Comcube) business directory.`}
         keywords={[
+          ...BRAND_KEYWORDS.slice(0, 5),
           `${decodedSectorName.toLowerCase()} sector`, `${decodedSectorName.toLowerCase()} industries`, `${decodedSectorName.toLowerCase()} companies`,
-          `${decodedSectorName.toLowerCase()} business`, `${decodedSectorName.toLowerCase()} directory`, "sector industries",
-          "business sectors", "industry listings", "company directory", "business listings"
+          `${decodedSectorName.toLowerCase()} business`, `${decodedSectorName.toLowerCase()} directory`, `top ${decodedSectorName.toLowerCase()} companies`,
+          `${decodedSectorName.toLowerCase()} industry leaders`, `find ${decodedSectorName.toLowerCase()} businesses`,
+          "sector industries", "business sectors", "industry listings", "company directory", "business listings"
         ]}
-        canonicalUrl={`${window.location.origin}/sector/${encodeURIComponent(decodedSectorName)}`}
+        canonicalUrl={`https://comcubes.com/sector/${encodeURIComponent(decodedSectorName)}`}
+        ogTitle={`${decodedSectorName} Industries & Companies | COMCUBES`}
+        ogDescription={`Browse ${Array.isArray(industries) ? industries.length : 20} industries in the ${decodedSectorName} sector. Find top companies and business opportunities.`}
         structuredData={createBreadcrumbStructuredData([
-          { name: "Home", url: `${window.location.origin}/` },
-          { name: "Business Sectors", url: `${window.location.origin}/sectors` },
-          { name: decodedSectorName, url: `${window.location.origin}/sector/${encodeURIComponent(decodedSectorName)}` }
+          { name: "Home", url: "https://comcubes.com/" },
+          { name: "Business Sectors", url: "https://comcubes.com/sectors" },
+          { name: decodedSectorName, url: `https://comcubes.com/sector/${encodeURIComponent(decodedSectorName)}` }
         ])}
+        additionalStructuredData={[
+          createItemListStructuredData(
+            (Array.isArray(industries) ? industries : []).slice(0, 20).map((ind: any) => ({
+              name: ind.name,
+              url: `https://comcubes.com/industry/${encodeURIComponent(ind.name)}`,
+              description: `${ind.name} industry in ${decodedSectorName} sector`
+            })),
+            `Industries in ${decodedSectorName}`,
+            `https://comcubes.com/sector/${encodeURIComponent(decodedSectorName)}`
+          )
+        ]}
       />
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

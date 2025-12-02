@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
-import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOHead, createBreadcrumbStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import { ReadMore } from "@/components/ReadMore";
 
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
@@ -187,20 +187,23 @@ export default function IndustriesPage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title={`Browse ${total || '400+'} Specialized Industries Directory | COMCUBES Global Business Directory`}
-        description={`Explore ${total || '400+'} specialized industries across ${sectors?.length || 20} business sectors worldwide. Each industry showcases leading companies with detailed profiles, website access, and professional opportunities. Find businesses in technology, healthcare, finance, manufacturing, and more specialized fields.`}
+        description={`Explore ${total || '400+'} specialized industries across ${sectors?.length || 20} business sectors on COMCUBES (Comcube). Each industry showcases leading companies with detailed profiles, website access, and professional opportunities. Find businesses in technology, healthcare, finance, manufacturing, and more.`}
         keywords={[
+          ...BRAND_KEYWORDS.slice(0, 5),
           "industries directory", "business industries", "industry listings", "specialized industries",
           "industry categories", "business specializations", "professional services", "industrial sectors",
           "industry database", "commercial industries", "business verticals", "global industries",
           "industry classification", "business sectors", "professional industries", "commercial specialties"
         ]}
-        canonicalUrl={`${window.location.origin}/industries`}
+        canonicalUrl="https://comcubes.com/industries"
+        ogTitle={`${total || '400+'} Industries Directory | COMCUBES`}
+        ogDescription={`Browse ${total || '400+'} specialized industries across ${sectors?.length || 20} business sectors worldwide.`}
         structuredData={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          "name": "Global Industries Directory",
-          "description": `Comprehensive directory of ${total || '400+'} specialized industries with leading companies worldwide`,
-          "url": `${window.location.origin}/industries`,
+          "name": "Global Industries Directory - COMCUBES",
+          "description": `Comprehensive directory of ${total || '400+'} specialized industries with leading companies worldwide on COMCUBES business directory`,
+          "url": "https://comcubes.com/industries",
           "mainEntity": {
             "@type": "ItemList",
             "itemListElement": industries?.slice(0, 20).map((industry: any, index: number) => ({
@@ -209,7 +212,7 @@ export default function IndustriesPage() {
               "item": {
                 "@type": "Thing",
                 "name": industry.name,
-                "url": `${window.location.origin}/industry/${encodeURIComponent(industry.name)}`,
+                "url": `https://comcubes.com/industry/${encodeURIComponent(industry.name)}`,
                 "description": `Specialized industry in ${industry.sectorName} sector`
               }
             })) || []
@@ -217,8 +220,8 @@ export default function IndustriesPage() {
           "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": `${window.location.origin}/` },
-              { "@type": "ListItem", "position": 2, "name": "All Industries", "item": `${window.location.origin}/industries` }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://comcubes.com/" },
+              { "@type": "ListItem", "position": 2, "name": "All Industries", "item": "https://comcubes.com/industries" }
             ]
           }
         }}

@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
-import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOHead, createBreadcrumbStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import { ReadMore } from "@/components/ReadMore";
 
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
@@ -141,20 +141,23 @@ export default function SectorsPage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title={`Explore ${sectors?.length || 20} Business Sectors | Find Universities, Brands, Companies & More - COMCUBES`}
-        description={`Find what you're looking for across ${sectors?.length || 20} sectors: Education (universities), Retail (fashion, shopping), Automotive (car brands), Healthcare, Entertainment, Food & Beverages, and more. 400+ industries, 7,400+ companies worldwide.`}
+        description={`Find what you're looking for across ${sectors?.length || 20} sectors on COMCUBES (Comcube): Education (universities), Retail (fashion, shopping), Automotive (car brands), Healthcare, Entertainment, Food & Beverages, and more. 400+ industries, 7,400+ companies worldwide.`}
         keywords={[
+          ...BRAND_KEYWORDS.slice(0, 5),
           "business sectors", "find universities", "global brands", "shopping brands", 
           "automotive companies", "fashion brands", "healthcare providers", "entertainment companies",
           "food and beverages", "retail stores", "education institutions", "discover businesses",
           "company directory", "brand discovery", "business categories", "industry sectors"
         ]}
-        canonicalUrl={`${window.location.origin}/sectors`}
+        canonicalUrl="https://comcubes.com/sectors"
+        ogTitle={`${sectors?.length || 20} Business Sectors Directory | COMCUBES`}
+        ogDescription={`Browse ${sectors?.length || 20} business sectors across 400+ industries and 7,400+ companies.`}
         structuredData={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          "name": "Business Sectors Directory",
-          "description": `Comprehensive directory of ${sectors?.length || 20} business sectors with specialized industries and companies worldwide`,
-          "url": `${window.location.origin}/sectors`,
+          "name": "Business Sectors Directory - COMCUBES",
+          "description": `Comprehensive directory of ${sectors?.length || 20} business sectors with specialized industries and companies worldwide on COMCUBES business directory`,
+          "url": "https://comcubes.com/sectors",
           "mainEntity": {
             "@type": "ItemList",
             "itemListElement": sectors?.map((sector, index) => ({
@@ -163,7 +166,7 @@ export default function SectorsPage() {
               "item": {
                 "@type": "Thing",
                 "name": sector.name,
-                "url": `${window.location.origin}/sector/${encodeURIComponent(sector.name)}`,
+                "url": `https://comcubes.com/sector/${encodeURIComponent(sector.name)}`,
                 "description": `Business sector focusing on ${sector.name.toLowerCase()}`
               }
             })) || []
@@ -171,8 +174,8 @@ export default function SectorsPage() {
           "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": `${window.location.origin}/` },
-              { "@type": "ListItem", "position": 2, "name": "Business Sectors", "item": `${window.location.origin}/sectors` }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://comcubes.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Business Sectors", "item": "https://comcubes.com/sectors" }
             ]
           }
         }}

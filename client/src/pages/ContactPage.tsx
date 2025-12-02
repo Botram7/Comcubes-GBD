@@ -180,10 +180,10 @@ export default function ContactPage() {
           "company listing help", "contact form", "business inquiry", "support ticket",
           "help desk", "customer service", "business contact"
         ]}
-        canonicalUrl={`${window.location.origin}/contact`}
+        canonicalUrl="https://comcubes.com/contact"
         structuredData={createBreadcrumbStructuredData([
-          { name: "Home", url: `${window.location.origin}/` },
-          { name: "Contact Us", url: `${window.location.origin}/contact` }
+          { name: "Home", url: "https://comcubes.com/" },
+          { name: "Contact Us", url: "https://comcubes.com/contact" }
         ])}
       />
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">

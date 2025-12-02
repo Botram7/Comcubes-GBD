@@ -80,6 +80,25 @@ The application is built with a modern full-stack architecture, separating front
 - `server/currencyService.ts` - Exchange rate fetching (Western Union/RemitRadar)
 - `server/routes.ts` - Payment verification and currency API endpoint
 
+## SEO Optimization (Production Launch Ready)
+
+**Brand Keywords Coverage**: All pages include comprehensive brand keyword variants: COMCUBES, Comcube, comcube, concube, COM CUBES, com cubes, commercial cubes, comcubes global directory, comcubes GBD, comcubes business, com cube, conc cube, COMCUBES directory, Comcubes global, comcubes.com
+
+**Structured Data Schemas**:
+- **WebSite Schema**: Homepage with SearchAction for sitelinks search box
+- **Organization Schema**: COMCUBES brand information with logo
+- **FAQ Schema**: Homepage FAQ section for rich snippets
+- **ItemList Schema**: Sector, Industry, and Company listing pages
+- **Place Schema**: Geography pages (continents, regions, countries)
+- **LocalBusiness Schema**: Individual company profile pages
+- **BreadcrumbList Schema**: All pages with navigation breadcrumbs
+
+**Canonical URLs**: All public-facing pages use hardcoded production domain (https://comcubes.com) for canonical URLs and structured data references.
+
+**robots.txt**: Comprehensive configuration allowing all public routes (sectors, industries, companies, geography, search) while blocking admin, API, and transactional pages.
+
+**Sitemap**: Dynamic sitemap.xml generator including all sectors, industries, companies, and geography pages with proper priority and changefreq settings.
+
 ## External Dependencies
 - **Frontend Frameworks**: `react`, `react-dom`, `@vitejs/plugin-react`
 - **Routing**: `wouter`

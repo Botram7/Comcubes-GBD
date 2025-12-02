@@ -1762,24 +1762,48 @@ This is an automated notification from the COMCUBES self-service advertising pla
 
   // SEO: Robots.txt endpoint
   app.get("/robots.txt", (req, res) => {
-    const robotsTxt = `User-agent: *
+    const robotsTxt = `# COMCUBES Global Business Directory - robots.txt
+# https://comcubes.com
+
+User-agent: *
 Allow: /
 
-# Important pages for crawling
+# Core directory pages
 Allow: /sectors
 Allow: /industries
 Allow: /companies
 Allow: /search
 
-# SEO and legal pages
+# Dynamic directory content
+Allow: /sector/
+Allow: /industry/
+Allow: /company/
+
+# Geography pages (location-based discovery)
+Allow: /geography
+Allow: /geography/regions
+Allow: /geography/countries
+Allow: /geography/companies
+Allow: /geography/continent/
+Allow: /geography/region/
+Allow: /geography/country/
+
+# Business and legal pages
+Allow: /advertise
+Allow: /contact
 Allow: /privacy-policy
 Allow: /terms-of-service
 Allow: /disclaimer
 Allow: /affiliate-disclosure
-Allow: /contact
 
-# Disallow admin and dynamic endpoints
+# SEO feeds
+Allow: /sitemap.xml
+Allow: /feed
+Allow: /feed/
+
+# Disallow admin, API, and transactional pages
 Disallow: /admin
+Disallow: /admin-sync
 Disallow: /api/
 Disallow: /resume-payment
 Disallow: /list-company
@@ -1788,7 +1812,7 @@ Disallow: /claim-company
 # Sitemap location
 Sitemap: https://comcubes.com/sitemap.xml
 
-# Crawl delay to be respectful
+# Crawl delay to be respectful of server resources
 Crawl-delay: 1`;
     
     res.set({

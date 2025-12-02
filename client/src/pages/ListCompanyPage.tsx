@@ -525,10 +525,10 @@ export default function ListCompanyPage() {
           "list company", "business directory", "company listing", "business visibility",
           "global directory", "business registration", "company profile", "business promotion"
         ]}
-        canonicalUrl={`${window.location.origin}/list-company`}
+        canonicalUrl="https://comcubes.com/list-company"
         structuredData={createBreadcrumbStructuredData([
-          { name: "Home", url: `${window.location.origin}/` },
-          { name: "List Your Company", url: `${window.location.origin}/list-company` }
+          { name: "Home", url: "https://comcubes.com/" },
+          { name: "List Your Company", url: "https://comcubes.com/list-company" }
         ])}
       />
       

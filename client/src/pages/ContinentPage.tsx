@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Globe2, MapPin, Map, ArrowLeft, Building2 } from "lucide-react";
-import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOHead, createBreadcrumbStructuredData, createPlaceStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import type { SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
@@ -197,13 +197,27 @@ export default function ContinentPage() {
     <div className="min-h-screen bg-gray-50">
       <AffiliateDisclosureBanner />
       <SEOHead
-        title={`${continent.name} - Business Directory by Geography | COMCUBES`}
-        description={`Explore businesses in ${continent.name}. Browse ${stats.totalRegions} regions, ${stats.totalCountries} countries, and ${stats.totalCompanies.toLocaleString()} companies across ${continent.name}.`}
-        keywords={[`${continent.name} businesses`, `companies in ${continent.name}`, `${continent.name} business directory`, "geographic business search", `${continent.name} regions`, `${continent.name} countries`]}
-        canonicalUrl={`/geography/continent/${continent.slug}`}
+        title={`${continent.name} Business Directory - ${stats.totalCompanies.toLocaleString()} Companies | COMCUBES`}
+        description={`Discover businesses in ${continent.name}. Browse ${stats.totalRegions} regions, ${stats.totalCountries} countries, and ${stats.totalCompanies.toLocaleString()} companies. Find local services, international brands, and business opportunities across ${continent.name} on COMCUBES.`}
+        keywords={[
+          ...BRAND_KEYWORDS.slice(0, 5),
+          `${continent.name} businesses`, `companies in ${continent.name}`, `${continent.name} business directory`, 
+          `${continent.name.toLowerCase()} companies`, `find businesses in ${continent.name}`,
+          `${continent.name} regions`, `${continent.name} countries`, `${continent.name} local businesses`,
+          "geographic business search", "businesses by location", "international business directory"
+        ]}
+        canonicalUrl={`https://comcubes.com/geography/continent/${continent.slug}`}
         ogTitle={`${continent.name} Business Directory | COMCUBES`}
-        ogDescription={`Discover businesses across ${continent.name} with ${stats.totalCompanies.toLocaleString()} companies in ${stats.totalCountries} countries.`}
+        ogDescription={`Discover ${stats.totalCompanies.toLocaleString()} businesses across ${continent.name} in ${stats.totalCountries} countries.`}
         structuredData={structuredData}
+        additionalStructuredData={[
+          createPlaceStructuredData(
+            continent.name,
+            'Continent',
+            `https://comcubes.com/geography/continent/${continent.slug}`,
+            continent.description || `Business directory for ${continent.name} with ${stats.totalCompanies.toLocaleString()} companies`
+          )
+        ]}
       />
 
       {/* Header - Consistent with SearchPage */}
