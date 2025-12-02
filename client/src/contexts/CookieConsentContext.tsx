@@ -116,23 +116,53 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
       const config = await getPublicConfig();
       const gaId = config.gaMeasurementId;
       
-      if (gaId && gaId !== '' && !gaId.includes('PLACEHOLDER') && !window.gtag) {
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
-        document.head.appendChild(script);
-
+      if (gaId && gaId !== '' && !gaId.includes('PLACEHOLDER')) {
+        // Initialize dataLayer and gtag function FIRST (before script loads)
+        // This is the official Google recommended approach
         window.dataLayer = window.dataLayer || [];
         window.gtag = function(...args: any[]) {
           window.dataLayer?.push(args);
         };
+        
+        // Queue up the initial commands - they'll execute when script loads
         window.gtag('js', new Date());
         window.gtag('config', gaId, {
-          send_page_view: true,
+          send_page_view: false, // We'll send it manually after script loads
           anonymize_ip: true,
-          cookie_flags: 'SameSite=None;Secure',
         });
-        console.log('Google Analytics 4 initialized with consent, ID:', gaId);
+        
+        // Check if script already exists
+        const existingScript = document.querySelector(`script[src*="googletagmanager.com/gtag/js"]`);
+        if (!existingScript) {
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+          
+          // Wait for script to load before sending pageview
+          script.onload = () => {
+            console.log('GA4 script loaded, sending page_view event');
+            window.gtag?.('event', 'page_view', {
+              page_title: document.title,
+              page_location: window.location.href,
+              page_path: window.location.pathname,
+            });
+          };
+          
+          script.onerror = () => {
+            console.error('Failed to load GA4 script');
+          };
+          
+          document.head.appendChild(script);
+          console.log('Google Analytics 4 initialized with consent, ID:', gaId);
+        } else {
+          // Script already exists, just send pageview
+          console.log('GA4 script already loaded, sending page_view event');
+          window.gtag?.('event', 'page_view', {
+            page_title: document.title,
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+          });
+        }
       }
     } catch (e) {
       console.error('Failed to load GA config:', e);
