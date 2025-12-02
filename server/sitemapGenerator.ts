@@ -185,20 +185,20 @@ ${urlElements}
         });
       }
 
-      // Get companies with strategic priority distribution
+      // Get ALL companies - no limit to match existing sitemap coverage
       // Use company ID in URL to match actual route: /company/:companyId
-      const companies = await storage.getAllCompanies(1500); // Increased limit for better coverage
+      const companies = await storage.getAllCompanies();
       for (let i = 0; i < companies.length; i++) {
         const company = companies[i];
         
-        // Higher priority for top companies (first 200)
+        // Priority based on position (alphabetical order)
         let priority = 0.6;
         let changefreq: 'daily' | 'weekly' | 'monthly' = 'weekly';
         
-        if (i < 200) {
+        if (i < 500) {
           priority = 0.7;
           changefreq = 'daily';
-        } else if (i < 500) {
+        } else if (i < 2000) {
           priority = 0.65;
           changefreq = 'weekly';
         } else {
