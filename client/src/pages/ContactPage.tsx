@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { Mail, Clock, ArrowLeft, MessageSquare, Building, Users, HelpCircle } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
@@ -39,7 +39,11 @@ const contactTypes = [
   { value: 'Company Listing', label: 'Company Listing', icon: Users },
 ];
 
-const TURNSTILE_SITE_KEY = import.meta.env.VITE_CLOUDFLARE_TURNSTILE_SITE_KEY || '';
+interface PublicConfig {
+  turnstileSiteKey: string;
+  gaMeasurementId: string;
+  adsenseClientId: string;
+}
 
 export default function ContactPage() {
   const [, setLocation] = useLocation();
@@ -48,6 +52,13 @@ export default function ContactPage() {
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [turnstileError, setTurnstileError] = useState<string | null>(null);
   const turnstileRef = useRef<TurnstileInstance>(null);
+
+  const { data: publicConfig } = useQuery<PublicConfig>({
+    queryKey: ['/api/config/public'],
+    staleTime: 1000 * 60 * 60,
+  });
+
+  const turnstileSiteKey = publicConfig?.turnstileSiteKey || import.meta.env.VITE_CLOUDFLARE_TURNSTILE_SITE_KEY || '';
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -308,13 +319,13 @@ export default function ContactPage() {
                       )}
                     />
 
-                    {TURNSTILE_SITE_KEY && (
+                    {turnstileSiteKey && (
                       <div className="space-y-2">
                         <p className="text-xs text-gray-500">Security verification:</p>
                         <div className="flex items-center" data-testid="turnstile-widget">
                           <Turnstile
                             ref={turnstileRef}
-                            siteKey={TURNSTILE_SITE_KEY}
+                            siteKey={turnstileSiteKey}
                             onSuccess={handleTurnstileSuccess}
                             onError={handleTurnstileError}
                             onExpire={handleTurnstileExpire}
@@ -333,7 +344,7 @@ export default function ContactPage() {
                     <Button 
                       type="submit" 
                       className="w-full" 
-                      disabled={contactMutation.isPending || (TURNSTILE_SITE_KEY && !turnstileToken)}
+                      disabled={contactMutation.isPending || (turnstileSiteKey && !turnstileToken)}
                       data-testid="button-contact-submit"
                     >
                       {contactMutation.isPending ? 'Sending...' : 'Send Message'}

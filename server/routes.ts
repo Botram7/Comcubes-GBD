@@ -65,6 +65,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.send('google.com, pub-5485634688028600, DIRECT, f08c47fec0942fa0');
   });
   
+  // Public configuration endpoint (returns non-sensitive config for frontend)
+  app.get('/api/config/public', (req, res) => {
+    res.json({
+      turnstileSiteKey: process.env.VITE_CLOUDFLARE_TURNSTILE_SITE_KEY || '',
+      gaMeasurementId: process.env.VITE_GA_MEASUREMENT_ID || '',
+      adsenseClientId: process.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-5485634688028600',
+    });
+  });
+  
   // Serve banner images from Object Storage (like generated images)
   app.get('/banner-images/:filename', async (req, res) => {
     const { filename } = req.params;
