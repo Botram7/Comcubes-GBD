@@ -50,9 +50,10 @@ app.use(helmet({
         "https://www.google-analytics.com",
         "https://ssl.google-analytics.com",
         "https://www.clarity.ms",
-        "https://*.clarity.ms"
+        "https://*.clarity.ms",
+        "https://challenges.cloudflare.com"
       ],
-      // Allow AdSense and Analytics connections
+      // Allow AdSense, Analytics, and Cloudflare Turnstile connections
       connectSrc: [
         "'self'", 
         "https://api.paystack.co", 
@@ -68,16 +69,18 @@ app.use(helmet({
         "https://googleads.g.doubleclick.net",
         "https://*.doubleclick.net",
         "https://www.clarity.ms",
-        "https://*.clarity.ms"
+        "https://*.clarity.ms",
+        "https://challenges.cloudflare.com"
       ],
-      // Allow AdSense iframes
+      // Allow AdSense iframes and Cloudflare Turnstile
       frameSrc: [
         "'self'",
         "https://pagead2.googlesyndication.com",
         "https://googleads.g.doubleclick.net",
         "https://tpc.googlesyndication.com",
         "https://*.google.com",
-        "https://*.doubleclick.net"
+        "https://*.doubleclick.net",
+        "https://challenges.cloudflare.com"
       ],
       objectSrc: ["'none'"],
       mediaSrc: ["'self'"],
