@@ -128,6 +128,32 @@ ${urlElements}
         lastmod: now,
         changefreq: 'yearly',
         priority: 0.4
+      },
+      
+      // Geography pages - important for location-based search
+      {
+        url: `${this.baseUrl}/geography`,
+        lastmod: now,
+        changefreq: 'weekly',
+        priority: 0.8
+      },
+      {
+        url: `${this.baseUrl}/geography/regions`,
+        lastmod: now,
+        changefreq: 'weekly',
+        priority: 0.75
+      },
+      {
+        url: `${this.baseUrl}/geography/countries`,
+        lastmod: now,
+        changefreq: 'weekly',
+        priority: 0.75
+      },
+      {
+        url: `${this.baseUrl}/geography/companies`,
+        lastmod: now,
+        changefreq: 'daily',
+        priority: 0.8
       }
     ];
   }
@@ -160,6 +186,7 @@ ${urlElements}
       }
 
       // Get companies with strategic priority distribution
+      // Use company ID in URL to match actual route: /company/:companyId
       const companies = await storage.getAllCompanies(1500); // Increased limit for better coverage
       for (let i = 0; i < companies.length; i++) {
         const company = companies[i];
@@ -179,12 +206,58 @@ ${urlElements}
           changefreq = 'monthly';
         }
         
+        // Use company ID for URL to match the actual route
         urls.push({
-          url: `${this.baseUrl}/company/${encodeURIComponent(company.name)}`,
+          url: `${this.baseUrl}/company/${company.id}`,
           lastmod: now,
           changefreq: changefreq,
           priority: priority
         });
+      }
+
+      // Get continents for geography pages
+      try {
+        const continents = await storage.getContinents();
+        for (const continent of continents) {
+          urls.push({
+            url: `${this.baseUrl}/geography/continent/${continent.slug}`,
+            lastmod: now,
+            changefreq: 'weekly',
+            priority: 0.75
+          });
+        }
+      } catch (e) {
+        console.log('Continents not available for sitemap');
+      }
+
+      // Get regions for geography pages
+      try {
+        const regions = await storage.getRegions();
+        for (const region of regions) {
+          urls.push({
+            url: `${this.baseUrl}/geography/region/${region.slug}`,
+            lastmod: now,
+            changefreq: 'weekly',
+            priority: 0.7
+          });
+        }
+      } catch (e) {
+        console.log('Regions not available for sitemap');
+      }
+
+      // Get countries for geography pages
+      try {
+        const countries = await storage.getCountries();
+        for (const country of countries) {
+          urls.push({
+            url: `${this.baseUrl}/geography/country/${country.slug}`,
+            lastmod: now,
+            changefreq: 'weekly',
+            priority: 0.7
+          });
+        }
+      } catch (e) {
+        console.log('Countries not available for sitemap');
       }
 
     } catch (error) {

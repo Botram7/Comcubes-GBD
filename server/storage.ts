@@ -14,7 +14,7 @@ export interface IStorage {
     companies: Company[];
   }>;
   getAllIndustries(): Promise<Industry[]>;
-  getAllCompanies(): Promise<Company[]>;
+  getAllCompanies(limit?: number): Promise<Company[]>;
   getCompanyById(id: number): Promise<Company | undefined>;
   
   // Contact message operations
@@ -93,8 +93,10 @@ export interface IStorage {
   // Geographic operations
   getContinents(): Promise<Continent[]>;
   getContinentBySlug(slug: string): Promise<Continent | undefined>;
+  getRegions(): Promise<Region[]>;
   getRegionsByContinent(continentId: number): Promise<Region[]>;
   getRegionBySlug(slug: string): Promise<Region | undefined>;
+  getCountries(): Promise<Country[]>;
   getCountriesByRegion(regionId: number): Promise<Country[]>;
   getCountriesByContinent(continentId: number): Promise<Country[]>;
   getCountryBySlug(slug: string): Promise<Country | undefined>;
@@ -172,11 +174,14 @@ export class DatabaseStorage implements IStorage {
     }
   }
 
-  async getAllCompanies(): Promise<Company[]> {
+  async getAllCompanies(limit?: number): Promise<Company[]> {
     try {
-
       // Order by name for alphabetical sorting like sectors and industries
-      return await db.select().from(companies).orderBy(companies.name);
+      let query = db.select().from(companies).orderBy(companies.name);
+      if (limit) {
+        query = query.limit(limit) as typeof query;
+      }
+      return await query;
     } catch (error) {
       console.error('Error getting all companies:', error);
       return [];
@@ -838,6 +843,15 @@ export class DatabaseStorage implements IStorage {
     }
   }
 
+  async getRegions(): Promise<Region[]> {
+    try {
+      return await db.select().from(regions).orderBy(regions.name);
+    } catch (error) {
+      console.error('Error getting all regions:', error);
+      return [];
+    }
+  }
+
   async getRegionsByContinent(continentId: number): Promise<Region[]> {
     try {
       return await db.select().from(regions)
@@ -858,6 +872,15 @@ export class DatabaseStorage implements IStorage {
     } catch (error) {
       console.error('Error getting region by slug:', error);
       return undefined;
+    }
+  }
+
+  async getCountries(): Promise<Country[]> {
+    try {
+      return await db.select().from(countries).orderBy(countries.name);
+    } catch (error) {
+      console.error('Error getting all countries:', error);
+      return [];
     }
   }
 
