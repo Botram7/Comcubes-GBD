@@ -29,6 +29,12 @@ interface CookieConsentContextType {
   marketingLoaded: boolean;
 }
 
+interface PublicConfig {
+  turnstileSiteKey: string;
+  gaMeasurementId: string;
+  adsenseClientId: string;
+}
+
 const COOKIE_CONSENT_KEY = 'comcubes_cookie_consent';
 const COOKIE_PREFERENCES_KEY = 'comcubes_cookie_preferences';
 
@@ -39,6 +45,28 @@ const defaultPreferences: CookiePreferences = {
 };
 
 const CookieConsentContext = createContext<CookieConsentContextType | undefined>(undefined);
+
+let cachedConfig: PublicConfig | null = null;
+let configPromise: Promise<PublicConfig> | null = null;
+
+async function getPublicConfig(): Promise<PublicConfig> {
+  if (cachedConfig) return cachedConfig;
+  if (configPromise) return configPromise;
+  
+  configPromise = fetch('/api/config/public')
+    .then(res => res.json())
+    .then(config => {
+      cachedConfig = config;
+      return config;
+    })
+    .catch(() => ({
+      turnstileSiteKey: '',
+      gaMeasurementId: '',
+      adsenseClientId: 'ca-pub-5485634688028600'
+    }));
+  
+  return configPromise;
+}
 
 export function CookieConsentProvider({ children }: { children: React.ReactNode }) {
   const [hasConsented, setHasConsented] = useState<boolean>(false);
@@ -81,27 +109,33 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
     setIsInitialized(true);
   }, []);
 
-  const loadAnalytics = useCallback(() => {
+  const loadAnalytics = useCallback(async () => {
     if (analyticsLoaded) return;
     
-    const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
-    if (gaId && gaId !== '' && !gaId.includes('PLACEHOLDER') && !window.gtag) {
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
-      document.head.appendChild(script);
+    try {
+      const config = await getPublicConfig();
+      const gaId = config.gaMeasurementId;
+      
+      if (gaId && gaId !== '' && !gaId.includes('PLACEHOLDER') && !window.gtag) {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+        document.head.appendChild(script);
 
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function(...args: any[]) {
-        window.dataLayer?.push(args);
-      };
-      window.gtag('js', new Date());
-      window.gtag('config', gaId, {
-        send_page_view: true,
-        anonymize_ip: true,
-        cookie_flags: 'SameSite=None;Secure',
-      });
-      console.log('Google Analytics 4 initialized with consent');
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(...args: any[]) {
+          window.dataLayer?.push(args);
+        };
+        window.gtag('js', new Date());
+        window.gtag('config', gaId, {
+          send_page_view: true,
+          anonymize_ip: true,
+          cookie_flags: 'SameSite=None;Secure',
+        });
+        console.log('Google Analytics 4 initialized with consent, ID:', gaId);
+      }
+    } catch (e) {
+      console.error('Failed to load GA config:', e);
     }
 
     const clarityId = import.meta.env.VITE_CLARITY_PROJECT_ID;
@@ -122,19 +156,25 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
     setAnalyticsLoaded(true);
   }, [analyticsLoaded]);
 
-  const loadMarketing = useCallback(() => {
+  const loadMarketing = useCallback(async () => {
     if (marketingLoaded) return;
     
-    const adsenseClientId = import.meta.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-5485634688028600';
-    if (adsenseClientId && !adsenseClientId.includes('PLACEHOLDER') && !window.adsbygoogle) {
-      const adsenseScript = document.createElement('script');
-      adsenseScript.async = true;
-      adsenseScript.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`;
-      adsenseScript.crossOrigin = 'anonymous';
-      document.head.appendChild(adsenseScript);
+    try {
+      const config = await getPublicConfig();
+      const adsenseClientId = config.adsenseClientId || 'ca-pub-5485634688028600';
       
-      window.adsbygoogle = window.adsbygoogle || [];
-      console.log('Google AdSense initialized with consent');
+      if (adsenseClientId && !adsenseClientId.includes('PLACEHOLDER') && !window.adsbygoogle) {
+        const adsenseScript = document.createElement('script');
+        adsenseScript.async = true;
+        adsenseScript.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`;
+        adsenseScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsenseScript);
+        
+        window.adsbygoogle = window.adsbygoogle || [];
+        console.log('Google AdSense initialized with consent, Client:', adsenseClientId);
+      }
+    } catch (e) {
+      console.error('Failed to load AdSense config:', e);
     }
     
     setMarketingLoaded(true);
