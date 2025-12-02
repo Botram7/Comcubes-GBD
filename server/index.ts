@@ -54,17 +54,20 @@ app.use(helmet({
         "https://partner.googleadservices.com",
         "https://www.googleadservices.com",
         "https://tpc.googlesyndication.com",
-        // Google Analytics / Tag Manager
+        // Google Analytics 4 / Tag Manager - comprehensive list
         "https://www.googletagmanager.com",
-        "https://googletagmanager.com",
+        "https://*.googletagmanager.com",
         "https://www.google-analytics.com",
         "https://ssl.google-analytics.com",
         "https://*.google-analytics.com",
+        "https://analytics.google.com",
+        "https://*.analytics.google.com",
         // Microsoft Clarity
         "https://www.clarity.ms",
         "https://*.clarity.ms",
         // Cloudflare Turnstile
-        "https://challenges.cloudflare.com"
+        "https://challenges.cloudflare.com",
+        "https://*.cloudflare.com"
       ],
       // Allow AdSense, Analytics, and Cloudflare Turnstile connections
       connectSrc: [
@@ -81,18 +84,21 @@ app.use(helmet({
         "https://googleads.g.doubleclick.net",
         "https://*.doubleclick.net",
         "https://partner.googleadservices.com",
-        // Google Analytics
+        // Google Analytics 4 - comprehensive list for all regional endpoints
         "https://www.google-analytics.com",
         "https://*.google-analytics.com",
         "https://analytics.google.com",
+        "https://*.analytics.google.com",
         "https://stats.g.doubleclick.net",
+        "https://*.g.doubleclick.net",
         "https://www.googletagmanager.com",
-        "https://region1.google-analytics.com",
+        "https://*.googletagmanager.com",
         // Microsoft Clarity
         "https://www.clarity.ms",
         "https://*.clarity.ms",
         // Cloudflare Turnstile
-        "https://challenges.cloudflare.com"
+        "https://challenges.cloudflare.com",
+        "https://*.cloudflare.com"
       ],
       // Allow AdSense iframes and Cloudflare Turnstile
       frameSrc: [
