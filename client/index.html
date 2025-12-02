@@ -4,6 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     
+    <!-- Google tag (gtag.js) - Official GA4 Implementation -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9WCL2L81X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      // Default consent mode - deny until user accepts
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+      
+      // Configure GA4 - will respect consent mode
+      gtag('config', 'G-T9WCL2L81X', {
+        'anonymize_ip': true
+      });
+    </script>
+    
     <!-- Impact Affiliate Marketing Verification -->
     <meta name='impact-site-verification' value='d5b4b963-4906-46a4-8d67-097cc2a9a5c2' />
     

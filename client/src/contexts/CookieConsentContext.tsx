@@ -112,62 +112,24 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
   const loadAnalytics = useCallback(async () => {
     if (analyticsLoaded) return;
     
-    try {
-      const config = await getPublicConfig();
-      const gaId = config.gaMeasurementId;
+    // GA4 script is already loaded in index.html with consent mode
+    // Update consent to granted when user accepts analytics
+    if (window.gtag) {
+      window.gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+      console.log('GA4 consent updated: analytics_storage granted');
       
-      if (gaId && gaId !== '' && !gaId.includes('PLACEHOLDER')) {
-        // Initialize dataLayer and gtag function FIRST (before script loads)
-        // This is the official Google recommended approach
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function(...args: any[]) {
-          window.dataLayer?.push(args);
-        };
-        
-        // Queue up the initial commands - they'll execute when script loads
-        window.gtag('js', new Date());
-        window.gtag('config', gaId, {
-          send_page_view: false, // We'll send it manually after script loads
-          anonymize_ip: true,
-        });
-        
-        // Check if script already exists
-        const existingScript = document.querySelector(`script[src*="googletagmanager.com/gtag/js"]`);
-        if (!existingScript) {
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
-          
-          // Wait for script to load before sending pageview
-          script.onload = () => {
-            console.log('GA4 script loaded, sending page_view event');
-            window.gtag?.('event', 'page_view', {
-              page_title: document.title,
-              page_location: window.location.href,
-              page_path: window.location.pathname,
-            });
-          };
-          
-          script.onerror = () => {
-            console.error('Failed to load GA4 script');
-          };
-          
-          document.head.appendChild(script);
-          console.log('Google Analytics 4 initialized with consent, ID:', gaId);
-        } else {
-          // Script already exists, just send pageview
-          console.log('GA4 script already loaded, sending page_view event');
-          window.gtag?.('event', 'page_view', {
-            page_title: document.title,
-            page_location: window.location.href,
-            page_path: window.location.pathname,
-          });
-        }
-      }
-    } catch (e) {
-      console.error('Failed to load GA config:', e);
+      // Send a pageview event now that consent is granted
+      window.gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+      });
+      console.log('GA4 page_view event sent after consent');
     }
 
+    // Load Microsoft Clarity if configured
     const clarityId = import.meta.env.VITE_CLARITY_PROJECT_ID;
     if (clarityId && clarityId !== '' && !clarityId.includes('PLACEHOLDER') && !window.clarity) {
       (function (c: any, l: Document, a: string, r: string, i: string, t: HTMLScriptElement, y: Element) {
@@ -188,6 +150,16 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
 
   const loadMarketing = useCallback(async () => {
     if (marketingLoaded) return;
+    
+    // Update consent mode for marketing/advertising
+    if (window.gtag) {
+      window.gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+      });
+      console.log('GA4 consent updated: ad_storage, ad_user_data, ad_personalization granted');
+    }
     
     try {
       const config = await getPublicConfig();
