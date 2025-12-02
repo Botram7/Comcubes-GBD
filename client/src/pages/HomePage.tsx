@@ -595,25 +595,10 @@ export default function HomePage() {
           </div>
           
           <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex flex-col md:flex-row items-center justify-center">
               <p className="text-gray-400 text-sm">
                 © 2024 COMCUBES. All rights reserved.
               </p>
-              <a 
-                href="https://replit.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
-                data-testid="link-replit-badge"
-              >
-                <span>Built with</span>
-                <img 
-                  src="https://replit.com/public/images/logo-small.png" 
-                  alt="Replit" 
-                  className="h-5 inline-block"
-                />
-                <span className="font-semibold">Replit</span>
-              </a>
             </div>
           </div>
         </div>
