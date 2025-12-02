@@ -532,7 +532,7 @@ export default function CompanyListingPage() {
           "company submission", "business promotion", "directory inclusion", "company marketing",
           "business visibility", "company advertising"
         ]}
-        canonicalUrl={`${window.location.origin}/company-listing`}
+        canonicalUrl="https://comcubes.com/company-listing"
       />
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">

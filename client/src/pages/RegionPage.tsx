@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Globe2, MapPin, Map, ArrowLeft, Building2 } from "lucide-react";
-import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOHead, createBreadcrumbStructuredData, createPlaceStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import type { SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
@@ -158,10 +158,32 @@ export default function RegionPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title={`${region.name} Business Directory - Companies by Country | COMCUBES`}
+        title={`${region.name} Business Directory - ${stats.totalCompanies.toLocaleString()} Companies in ${stats.totalCountries} Countries | COMCUBES`}
         description={metaDescription}
+        keywords={[
+          ...BRAND_KEYWORDS.slice(0, 5),
+          `${region.name} businesses`, `companies in ${region.name}`, `${region.name} business directory`,
+          `${region.name.toLowerCase()} companies`, `find businesses in ${region.name}`,
+          `${region.name} countries`, `${region.name} local businesses`,
+          "regional business search", "businesses by region", "international business directory"
+        ]}
         canonicalUrl={`https://comcubes.com/geography/region/${region.slug}`}
         ogType="website"
+        ogTitle={`${region.name} Business Directory | COMCUBES`}
+        ogDescription={`Explore ${stats.totalCompanies.toLocaleString()} companies across ${stats.totalCountries} countries in ${region.name}.`}
+        structuredData={createBreadcrumbStructuredData([
+          { name: "Home", url: "https://comcubes.com/" },
+          { name: "Geography", url: "https://comcubes.com/geography" },
+          { name: region.name, url: `https://comcubes.com/geography/region/${region.slug}` }
+        ])}
+        additionalStructuredData={[
+          createPlaceStructuredData(
+            region.name,
+            'AdministrativeArea',
+            `https://comcubes.com/geography/region/${region.slug}`,
+            region.description || `Business directory for ${region.name} with ${stats.totalCompanies.toLocaleString()} companies`
+          )
+        ]}
       />
       
       <AffiliateDisclosureBanner />

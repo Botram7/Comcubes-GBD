@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle, Building2, ArrowLeft, LayoutGrid, Layers, List, X } from "lucide-react";
-import { SEOHead } from "@/components/SEOHead";
+import { SEOHead, createBreadcrumbStructuredData, createPlaceStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { BannerAd } from "@/components/BannerAd";
 import { GoogleAdSense } from "@/components/GoogleAdSense";
@@ -292,8 +292,34 @@ export default function CountryPage() {
       <SEOHead
         title={`${countryData.name} ${countryData.flagEmoji} Business Directory - ${totalCompanies} Companies | COMCUBES`}
         description={metaDescription}
+        keywords={[
+          ...BRAND_KEYWORDS.slice(0, 5),
+          `${countryData.name} businesses`, `companies in ${countryData.name}`, `${countryData.name} business directory`,
+          `${countryData.name.toLowerCase()} companies`, `find businesses in ${countryData.name}`,
+          `${countryData.name} local businesses`, `${countryData.name} services`,
+          `businesses near ${countryData.capital || countryData.name}`,
+          "country business search", "businesses by country", "international business directory"
+        ]}
         canonicalUrl={`https://comcubes.com/geography/country/${countryData.slug}`}
         ogType="website"
+        ogTitle={`${countryData.name} ${countryData.flagEmoji} Business Directory | COMCUBES`}
+        ogDescription={`Discover ${totalCompanies} companies in ${countryData.name}. Find local businesses, services, and international brands.`}
+        structuredData={createBreadcrumbStructuredData([
+          { name: "Home", url: "https://comcubes.com/" },
+          { name: "Geography", url: "https://comcubes.com/geography" },
+          ...(countryData.continentSlug ? [{ name: countryData.continentName || "Continent", url: `https://comcubes.com/geography/continent/${countryData.continentSlug}` }] : []),
+          ...(countryData.regionSlug ? [{ name: countryData.regionName || "Region", url: `https://comcubes.com/geography/region/${countryData.regionSlug}` }] : []),
+          { name: countryData.name, url: `https://comcubes.com/geography/country/${countryData.slug}` }
+        ])}
+        additionalStructuredData={[
+          createPlaceStructuredData(
+            countryData.name,
+            'Country',
+            `https://comcubes.com/geography/country/${countryData.slug}`,
+            `Business directory for ${countryData.name} with ${totalCompanies} companies`,
+            countryData.regionName
+          )
+        ]}
       />
       
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">

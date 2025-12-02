@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Pagination } from "@/components/Pagination";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { SEOHead, createBusinessDirectoryStructuredData } from "@/components/SEOHead";
+import { SEOHead, createBusinessDirectoryStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import { AlertCircle, Building2 } from "lucide-react";
 
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
@@ -163,20 +163,24 @@ export default function CompanyPage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title={`Browse ${((companyData as any)?.total || 7400)} Global Companies Directory | COMCUBES`}
-        description={`Explore ${((companyData as any)?.total || 7400)} companies from around the world across 20 business sectors and 400+ industries. Search and discover businesses with direct website access, company profiles, and professional opportunities in our comprehensive global directory.`}
+        description={`Explore ${((companyData as any)?.total || 7400)} companies from around the world across 20 business sectors and 400+ industries on COMCUBES (Comcube). Search and discover businesses with direct website access, company profiles, and professional opportunities in our comprehensive global directory.`}
         keywords={[
+          ...BRAND_KEYWORDS.slice(0, 5),
           "companies directory", "global companies", "business listings", "company search",
           "worldwide businesses", "corporate directory", "international companies",
           "business database", "company finder", "enterprise directory", "company profiles",
-          "business contacts", "global business directory", "professional networking"
+          "business contacts", "global business directory", "professional networking",
+          "browse companies", "company listings", "business search"
         ]}
-        canonicalUrl={`${window.location.origin}/companies`}
+        canonicalUrl="https://comcubes.com/companies"
+        ogTitle="Global Companies Directory | COMCUBES"
+        ogDescription={`Browse ${((companyData as any)?.total || 7400)} companies across 400+ industries worldwide.`}
         structuredData={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          "name": "Global Companies Directory",
-          "description": `Comprehensive directory of ${((companyData as any)?.total || 7400)} companies worldwide across all business sectors and industries`,
-          "url": `${window.location.origin}/companies`,
+          "name": "Global Companies Directory - COMCUBES",
+          "description": `Comprehensive directory of ${((companyData as any)?.total || 7400)} companies worldwide across all business sectors and industries on COMCUBES business directory`,
+          "url": "https://comcubes.com/companies",
           "mainEntity": {
             "@type": "ItemList",
             "itemListElement": ((companyData as any)?.companies || []).slice(0, 20).map((company: any, index: number) => ({
@@ -193,8 +197,8 @@ export default function CompanyPage() {
           "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": `${window.location.origin}/` },
-              { "@type": "ListItem", "position": 2, "name": "All Companies", "item": `${window.location.origin}/companies` }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://comcubes.com/" },
+              { "@type": "ListItem", "position": 2, "name": "All Companies", "item": "https://comcubes.com/companies" }
             ]
           }
         }}

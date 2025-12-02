@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Building2 } from "lucide-react";
-import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
+import { SEOHead, createBreadcrumbStructuredData, createItemListStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { BannerAd } from "@/components/BannerAd";
@@ -163,19 +163,34 @@ export default function IndustryPage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title={`${decodedIndustryName} Companies | Top ${decodedIndustryName} Directory | COMCUBES`}
-        description={`Find top companies in ${decodedIndustryName} industry. Browse ${companies?.length || 20} leading ${decodedIndustryName} businesses with direct access to company websites and contact information.`}
+        description={`Find top companies in ${decodedIndustryName} industry. Browse ${companies?.length || 20} leading ${decodedIndustryName} businesses with direct access to company websites and contact information on COMCUBES (Comcube) business directory.`}
         keywords={[
+          ...BRAND_KEYWORDS.slice(0, 5),
           `${decodedIndustryName.toLowerCase()} companies`, `${decodedIndustryName.toLowerCase()} industry`, `${decodedIndustryName.toLowerCase()} business`,
-          `${decodedIndustryName.toLowerCase()} directory`, `${decodedIndustryName.toLowerCase()} firms`, "industry companies",
-          "business directory", "company listings", "industry leaders", "top companies"
+          `${decodedIndustryName.toLowerCase()} directory`, `${decodedIndustryName.toLowerCase()} firms`, `top ${decodedIndustryName.toLowerCase()} companies`,
+          `leading ${decodedIndustryName.toLowerCase()} businesses`, `find ${decodedIndustryName.toLowerCase()} companies`,
+          "industry companies", "business directory", "company listings", "industry leaders", "top companies"
         ]}
-        canonicalUrl={`${window.location.origin}/industry/${encodeURIComponent(decodedIndustryName)}`}
+        canonicalUrl={`https://comcubes.com/industry/${encodeURIComponent(decodedIndustryName)}`}
+        ogTitle={`${decodedIndustryName} Companies | COMCUBES`}
+        ogDescription={`Browse ${companies?.length || 20} leading companies in the ${decodedIndustryName} industry. Direct access to websites and business information.`}
         structuredData={createBreadcrumbStructuredData([
-          { name: "Home", url: `${window.location.origin}/` },
-          { name: "Business Sectors", url: `${window.location.origin}/sectors` },
-          ...(sectorName ? [{ name: sectorName, url: `${window.location.origin}/sector/${encodeURIComponent(sectorName)}` }] : []),
-          { name: decodedIndustryName, url: `${window.location.origin}/industry/${encodeURIComponent(decodedIndustryName)}` }
+          { name: "Home", url: "https://comcubes.com/" },
+          { name: "Business Sectors", url: "https://comcubes.com/sectors" },
+          ...(sectorName ? [{ name: sectorName, url: `https://comcubes.com/sector/${encodeURIComponent(sectorName)}` }] : []),
+          { name: decodedIndustryName, url: `https://comcubes.com/industry/${encodeURIComponent(decodedIndustryName)}` }
         ])}
+        additionalStructuredData={[
+          createItemListStructuredData(
+            (Array.isArray(companies) ? companies : []).slice(0, 20).map((comp: any) => ({
+              name: comp.name,
+              url: comp.websiteUrl || `https://comcubes.com/company/${comp.id}`,
+              description: `${comp.name} - ${decodedIndustryName} company`
+            })),
+            `Companies in ${decodedIndustryName}`,
+            `https://comcubes.com/industry/${encodeURIComponent(decodedIndustryName)}`
+          )
+        ]}
       />
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
