@@ -51,7 +51,6 @@ export default function ContactPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log('ContactPage: TURNSTILE_SITE_KEY =', TURNSTILE_SITE_KEY, 'length:', TURNSTILE_SITE_KEY?.length);
   }, []);
 
   const form = useForm<ContactFormData>({
@@ -309,10 +308,10 @@ export default function ContactPage() {
                       )}
                     />
 
-                    {TURNSTILE_SITE_KEY ? (
+                    {TURNSTILE_SITE_KEY && (
                       <div className="space-y-2">
                         <p className="text-xs text-gray-500">Security verification:</p>
-                        <div className="flex items-center border border-gray-200 rounded-md p-2 min-h-[70px]" data-testid="turnstile-widget">
+                        <div className="flex items-center" data-testid="turnstile-widget">
                           <Turnstile
                             ref={turnstileRef}
                             siteKey={TURNSTILE_SITE_KEY}
@@ -329,8 +328,6 @@ export default function ContactPage() {
                           <p className="text-sm text-red-600" data-testid="text-turnstile-error">{turnstileError}</p>
                         )}
                       </div>
-                    ) : (
-                      <p className="text-xs text-orange-500">Debug: TURNSTILE_SITE_KEY not available</p>
                     )}
 
                     <Button 
