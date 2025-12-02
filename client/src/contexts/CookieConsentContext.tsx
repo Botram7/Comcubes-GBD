@@ -51,6 +51,16 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
   const previousPrefsRef = useRef<CookiePreferences | null>(null);
 
   useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('resetCookies') === 'true') {
+      localStorage.removeItem(COOKIE_CONSENT_KEY);
+      localStorage.removeItem(COOKIE_PREFERENCES_KEY);
+      window.history.replaceState({}, '', window.location.pathname);
+      setShowBanner(true);
+      setIsInitialized(true);
+      return;
+    }
+
     const storedConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
     const storedPreferences = localStorage.getItem(COOKIE_PREFERENCES_KEY);
 
