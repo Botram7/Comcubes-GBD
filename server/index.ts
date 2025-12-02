@@ -33,24 +33,37 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://pagead2.googlesyndication.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
       imgSrc: ["'self'", "data:", "https:", "blob:"],
-      // Allow Google AdSense and Google Analytics scripts
+      // Allow Google AdSense and Google Analytics scripts - comprehensive list
       scriptSrc: [
         "'self'", 
         "'unsafe-inline'", 
         "'unsafe-eval'", 
         "https://*.replit.dev", 
         "https://*.replit.com",
+        "https://replit.com",
+        // Google AdSense
         "https://pagead2.googlesyndication.com",
+        "https://*.googlesyndication.com",
         "https://adservice.google.com",
+        "https://*.adservice.google.com",
         "https://googleads.g.doubleclick.net",
+        "https://*.doubleclick.net",
+        "https://partner.googleadservices.com",
+        "https://www.googleadservices.com",
+        "https://tpc.googlesyndication.com",
+        // Google Analytics / Tag Manager
         "https://www.googletagmanager.com",
+        "https://googletagmanager.com",
         "https://www.google-analytics.com",
         "https://ssl.google-analytics.com",
+        "https://*.google-analytics.com",
+        // Microsoft Clarity
         "https://www.clarity.ms",
         "https://*.clarity.ms",
+        // Cloudflare Turnstile
         "https://challenges.cloudflare.com"
       ],
       // Allow AdSense, Analytics, and Cloudflare Turnstile connections
@@ -60,27 +73,39 @@ app.use(helmet({
         "https://www.googleapis.com", 
         "wss://*.replit.dev", 
         "ws://localhost:*",
+        // Google AdSense
         "https://pagead2.googlesyndication.com",
+        "https://*.googlesyndication.com",
         "https://adservice.google.com",
+        "https://*.adservice.google.com",
+        "https://googleads.g.doubleclick.net",
+        "https://*.doubleclick.net",
+        "https://partner.googleadservices.com",
+        // Google Analytics
         "https://www.google-analytics.com",
+        "https://*.google-analytics.com",
         "https://analytics.google.com",
         "https://stats.g.doubleclick.net",
         "https://www.googletagmanager.com",
-        "https://googleads.g.doubleclick.net",
-        "https://*.doubleclick.net",
+        "https://region1.google-analytics.com",
+        // Microsoft Clarity
         "https://www.clarity.ms",
         "https://*.clarity.ms",
+        // Cloudflare Turnstile
         "https://challenges.cloudflare.com"
       ],
       // Allow AdSense iframes and Cloudflare Turnstile
       frameSrc: [
         "'self'",
         "https://pagead2.googlesyndication.com",
+        "https://*.googlesyndication.com",
         "https://googleads.g.doubleclick.net",
         "https://tpc.googlesyndication.com",
         "https://*.google.com",
         "https://*.doubleclick.net",
-        "https://challenges.cloudflare.com"
+        "https://challenges.cloudflare.com",
+        "https://ep1.adtrafficquality.google",
+        "https://ep2.adtrafficquality.google"
       ],
       objectSrc: ["'none'"],
       mediaSrc: ["'self'"],
@@ -93,7 +118,7 @@ app.use(helmet({
     includeSubDomains: true,
     preload: true
   },
-  frameguard: { action: 'deny' },
+  frameguard: false, // Allow AdSense to frame content when needed
   noSniff: true,
   xssFilter: true,
   referrerPolicy: { policy: 'strict-origin-when-cross-origin' }
