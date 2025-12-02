@@ -68,9 +68,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Public configuration endpoint (returns non-sensitive config for frontend)
   app.get('/api/config/public', (req, res) => {
     res.json({
-      turnstileSiteKey: process.env.VITE_CLOUDFLARE_TURNSTILE_SITE_KEY || '',
-      gaMeasurementId: process.env.VITE_GA_MEASUREMENT_ID || '',
-      adsenseClientId: process.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-5485634688028600',
+      turnstileSiteKey: (process.env.VITE_CLOUDFLARE_TURNSTILE_SITE_KEY || '').trim(),
+      gaMeasurementId: (process.env.VITE_GA_MEASUREMENT_ID || '').trim(),
+      adsenseClientId: (process.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-5485634688028600').trim(),
     });
   });
   
