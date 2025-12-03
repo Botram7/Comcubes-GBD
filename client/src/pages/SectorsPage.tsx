@@ -249,6 +249,9 @@ export default function SectorsPage() {
               format="vertical"
               className="sticky top-24"
               position="sectors-page-left-sidebar"
+              contentLoaded={!isLoading && Array.isArray(sectors) && sectors.length > 0}
+              minContentItems={5}
+              actualContentItems={Array.isArray(sectors) ? sectors.length : 0}
             />
           </div>
 
@@ -362,6 +365,9 @@ export default function SectorsPage() {
                     format="responsive"
                     className="w-full max-w-4xl"
                     position="sectors-page-in-content"
+                    contentLoaded={!isLoading && Array.isArray(sectors) && sectors.length > 0}
+                    minContentItems={5}
+                    actualContentItems={Array.isArray(sectors) ? sectors.length : 0}
                   />
                 </div>
 

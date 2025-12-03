@@ -211,6 +211,9 @@ export default function HomePage() {
               format="responsive"
               position="homepage-above-fold"
               className="w-full max-w-3xl"
+              contentLoaded={!isLoading && Array.isArray(sectors) && sectors.length > 0}
+              minContentItems={5}
+              actualContentItems={Array.isArray(sectors) ? sectors.length : 0}
             />
           </div>
         </div>
@@ -388,6 +391,9 @@ export default function HomePage() {
               format="responsive"
               position="homepage-mid-content"
               className="w-full max-w-3xl"
+              contentLoaded={!isLoading && Array.isArray(sectors) && sectors.length > 0}
+              minContentItems={5}
+              actualContentItems={Array.isArray(sectors) ? sectors.length : 0}
             />
           </div>
         </div>
@@ -502,6 +508,9 @@ export default function HomePage() {
               format="responsive"
               position="homepage-before-cta"
               className="w-full max-w-3xl"
+              contentLoaded={!isLoading && Array.isArray(sectors) && sectors.length > 0}
+              minContentItems={5}
+              actualContentItems={Array.isArray(sectors) ? sectors.length : 0}
             />
           </div>
         </div>

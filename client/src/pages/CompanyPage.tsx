@@ -267,6 +267,9 @@ export default function CompanyPage() {
               format="vertical"
               className="sticky top-24"
               position="company-page-left-sidebar"
+              contentLoaded={!isLoading && companyData && (companyData as any).companies?.length > 0}
+              minContentItems={5}
+              actualContentItems={(companyData as any)?.companies?.length || 0}
             />
           </div>
 
@@ -344,6 +347,9 @@ export default function CompanyPage() {
                 format="responsive"
                 className="w-full max-w-4xl"
                 position="company-page-in-content"
+                contentLoaded={!isLoading && companyData && (companyData as any).companies?.length > 0}
+                minContentItems={5}
+                actualContentItems={(companyData as any)?.companies?.length || 0}
               />
             </div>
           </>

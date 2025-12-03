@@ -237,6 +237,7 @@ export default function CompanyProfilePage() {
               format="vertical"
               className="sticky top-24"
               position="company-profile-left-sidebar"
+              contentLoaded={!companyLoading && company !== null}
             />
           </div>
 
@@ -248,6 +249,7 @@ export default function CompanyProfilePage() {
                 format="responsive"
                 position="company-profile-mobile-top"
                 className="w-full"
+                contentLoaded={!companyLoading && company !== null}
               />
             </div>
             {/* Company Header */}
