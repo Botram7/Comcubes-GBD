@@ -165,6 +165,9 @@ export default function SearchPage() {
             format="vertical"
             className="sticky top-24"
             position="search-page-left-sidebar"
+            contentLoaded={true}
+            minContentItems={5}
+            actualContentItems={POPULAR_SEARCHES.length + TRENDING_SEARCHES.length}
           />
         </div>
 

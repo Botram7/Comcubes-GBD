@@ -8,6 +8,9 @@ interface GoogleAdSenseProps {
   format?: 'vertical' | 'horizontal' | 'rectangle' | 'responsive';
   slot?: string;
   position?: string;
+  contentLoaded?: boolean;
+  minContentItems?: number;
+  actualContentItems?: number;
 }
 
 const AD_FORMATS = {
@@ -45,15 +48,21 @@ export function GoogleAdSense({
   className = "", 
   format = 'vertical',
   slot = 'XXXXXXXXXX',
-  position = 'sidebar'
+  position = 'sidebar',
+  contentLoaded = true,
+  minContentItems = 0,
+  actualContentItems = 0
 }: GoogleAdSenseProps) {
   const adRef = useRef<HTMLDivElement>(null);
   const [adLoaded, setAdLoaded] = useState(false);
   const [adError, setAdError] = useState(false);
   const { hasConsented, preferences } = useCookieConsent();
 
+  const hasEnoughContent = minContentItems === 0 || actualContentItems >= minContentItems;
+  const shouldShowAd = contentLoaded && hasEnoughContent;
+
   useEffect(() => {
-    if (!hasConsented || !preferences.marketing) {
+    if (!hasConsented || !preferences.marketing || !shouldShowAd) {
       return;
     }
 
@@ -77,13 +86,17 @@ export function GoogleAdSense({
 
     const timer = setTimeout(initializeAd, 500);
     return () => clearTimeout(timer);
-  }, [hasConsented, preferences.marketing]);
+  }, [hasConsented, preferences.marketing, shouldShowAd]);
 
   const handleAdClick = () => {
     trackAdClick('adsense', position, slot);
   };
 
   const formatConfig = AD_FORMATS[format];
+
+  if (!shouldShowAd) {
+    return null;
+  }
 
   if (!hasConsented || !preferences.marketing) {
     return (
@@ -134,13 +147,28 @@ export function GoogleAdSense({
   );
 }
 
-export function InContentAd({ className = "" }: { className?: string }) {
+interface InContentAdProps {
+  className?: string;
+  contentLoaded?: boolean;
+  minContentItems?: number;
+  actualContentItems?: number;
+}
+
+export function InContentAd({ 
+  className = "",
+  contentLoaded = true,
+  minContentItems = 0,
+  actualContentItems = 0
+}: InContentAdProps) {
   return (
     <div className={`my-8 flex justify-center ${className}`}>
       <GoogleAdSense 
         format="horizontal" 
         position="in-content"
         className="max-w-full overflow-hidden"
+        contentLoaded={contentLoaded}
+        minContentItems={minContentItems}
+        actualContentItems={actualContentItems}
       />
     </div>
   );

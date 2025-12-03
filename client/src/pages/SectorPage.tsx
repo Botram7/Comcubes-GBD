@@ -254,6 +254,9 @@ export default function SectorPage() {
               format="vertical"
               className="sticky top-24"
               position="sector-page-left-sidebar"
+              contentLoaded={!isLoading && Array.isArray(industries) && industries.length > 0}
+              minContentItems={3}
+              actualContentItems={Array.isArray(industries) ? industries.length : 0}
             />
           </div>
 

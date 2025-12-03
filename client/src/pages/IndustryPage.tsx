@@ -255,6 +255,9 @@ export default function IndustryPage() {
               format="vertical"
               className="sticky top-24"
               position="industry-page-left-sidebar"
+              contentLoaded={!isLoading && Array.isArray(companies) && companies.length > 0}
+              minContentItems={3}
+              actualContentItems={Array.isArray(companies) ? companies.length : 0}
             />
           </div>
 
@@ -373,6 +376,9 @@ export default function IndustryPage() {
                   format="responsive"
                   position="industry-page-mobile-content"
                   className="w-full max-w-2xl"
+                  contentLoaded={!isLoading && Array.isArray(companies) && companies.length > 0}
+                  minContentItems={3}
+                  actualContentItems={Array.isArray(companies) ? companies.length : 0}
                 />
               </div>
             </div>
