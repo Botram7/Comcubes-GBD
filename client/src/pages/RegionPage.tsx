@@ -219,7 +219,14 @@ export default function RegionPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="hidden lg:block lg:col-span-2">
-              <GoogleAdSense format="vertical" className="sticky top-24" position="region-page-left-sidebar" />
+              <GoogleAdSense 
+                format="vertical" 
+                className="sticky top-24" 
+                position="region-page-left-sidebar"
+                contentLoaded={!!searchResults && ((searchResults.sectors?.length || 0) + (searchResults.industries?.length || 0) + (searchResults.companies?.length || 0)) > 0}
+                minContentItems={3}
+                actualContentItems={(searchResults?.sectors?.length || 0) + (searchResults?.industries?.length || 0) + (searchResults?.companies?.length || 0)}
+              />
             </div>
 
             <div className="lg:col-span-8">
@@ -317,7 +324,14 @@ export default function RegionPage() {
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="hidden lg:block lg:col-span-2">
-              <GoogleAdSense format="vertical" className="sticky top-24" position="region-page-left-sidebar" />
+              <GoogleAdSense 
+                format="vertical" 
+                className="sticky top-24" 
+                position="region-page-left-sidebar"
+                contentLoaded={!isLoading && !!regionData && (regionData?.countries?.length || 0) > 0}
+                minContentItems={3}
+                actualContentItems={regionData?.countries?.length || 0}
+              />
             </div>
 
             <div className="lg:col-span-8">

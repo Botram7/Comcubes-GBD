@@ -176,6 +176,9 @@ export default function GeographyRegionsPage() {
               format="vertical"
               className="sticky top-24"
               position="regions-page-left-sidebar"
+              contentLoaded={!isLoading && data?.regions && data.regions.length > 0}
+              minContentItems={5}
+              actualContentItems={data?.regions?.length || 0}
             />
           </div>
 
@@ -289,6 +292,9 @@ export default function GeographyRegionsPage() {
                     format="responsive"
                     className="w-full max-w-4xl"
                     position="regions-page-in-content"
+                    contentLoaded={!isLoading && data?.regions && data.regions.length > 0}
+                    minContentItems={5}
+                    actualContentItems={data?.regions?.length || 0}
                   />
                 </div>
               </>

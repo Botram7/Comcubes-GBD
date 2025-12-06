@@ -226,6 +226,9 @@ export default function GeographyCountriesPage() {
               format="vertical"
               className="sticky top-24"
               position="countries-page-left-sidebar"
+              contentLoaded={!isLoading && filteredCountries && filteredCountries.length > 0}
+              minContentItems={5}
+              actualContentItems={filteredCountries?.length || 0}
             />
           </div>
 
@@ -329,6 +332,9 @@ export default function GeographyCountriesPage() {
                     format="responsive"
                     className="w-full max-w-4xl"
                     position="countries-page-in-content"
+                    contentLoaded={!isLoading && filteredCountries && filteredCountries.length > 0}
+                    minContentItems={5}
+                    actualContentItems={filteredCountries?.length || 0}
                   />
                 </div>
               </>
