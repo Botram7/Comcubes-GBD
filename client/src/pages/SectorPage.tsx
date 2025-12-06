@@ -10,8 +10,6 @@ import { AlertCircle, Building2 } from "lucide-react";
 import { SEOHead, createBreadcrumbStructuredData, createItemListStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
-import { BannerAd } from "@/components/BannerAd";
-import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import type { Industry, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
@@ -247,21 +245,6 @@ export default function SectorPage() {
       />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex gap-6">
-          {/* Left Advertisement Banner - 160x600 */}
-          <div className="hidden lg:block flex-shrink-0">
-            <GoogleAdSense 
-              format="vertical"
-              className="sticky top-24"
-              position="sector-page-left-sidebar"
-              contentLoaded={!isLoading && Array.isArray(industries) && industries.length > 0}
-              minContentItems={3}
-              actualContentItems={Array.isArray(industries) ? industries.length : 0}
-            />
-          </div>
-
-          {/* Main Content */}
-          <div className="flex-1">
             {searchResults ? (
               <div className="space-y-8">
             <div className="mb-6">
@@ -402,16 +385,6 @@ export default function SectorPage() {
             )}
           </>
         )}
-          </div>
-
-          {/* Right Advertisement Banner - 160x600 */}
-          <div className="hidden lg:block flex-shrink-0">
-            <BannerAd 
-              className="sticky top-24" 
-              position="right"
-            />
-          </div>
-        </div>
       </main>
 
       <footer className="bg-white border-t border-gray-200 mt-16">

@@ -2,8 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "wouter";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { BannerAd } from "@/components/BannerAd";
-import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -146,22 +144,7 @@ export default function GeographyPage() {
       {/* Breadcrumbs */}
       <Breadcrumbs items={breadcrumbsForNav} />
 
-      {/* Three-column layout with sidebar banner ads */}
-      <div className="flex gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Left Sidebar - Advertisement Banner - 160x600 */}
-        <div className="hidden lg:block flex-shrink-0">
-          <GoogleAdSense 
-            format="vertical"
-            className="sticky top-24"
-            position="geography-page-left-sidebar"
-            contentLoaded={!continentsLoading && Array.isArray(continents) && continents.length > 0}
-            minContentItems={3}
-            actualContentItems={continents?.length || 0}
-          />
-        </div>
-
-        {/* Main Content */}
-        <div className="flex-1">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Hero Section */}
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
@@ -354,15 +337,6 @@ export default function GeographyPage() {
               </CardContent>
             </Card>
           )}
-        </div>
-
-        {/* Right Sidebar - Advertisement Banner - 160x600 */}
-        <div className="hidden lg:block flex-shrink-0">
-          <BannerAd 
-            className="sticky top-24" 
-            position="right"
-          />
-        </div>
       </div>
 
       {/* Footer */}
