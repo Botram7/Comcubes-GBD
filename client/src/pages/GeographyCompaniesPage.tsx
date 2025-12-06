@@ -458,7 +458,7 @@ export default function GeographyCompaniesPage() {
       <footer className="sticky-footer mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-gray-600">
-            <p>&copy; 2024 COMCUBES Global Business Directory. Professional business data across 421 pages.</p>
+            <p>&copy; 2025 COMCUBES Global Business Directory. Professional business data across 421 pages.</p>
             <p className="mt-2 text-sm">Featuring 20 sectors, 400+ industries, and 7,400+ companies worldwide.</p>
             <div className="mt-4 flex justify-center space-x-6 text-xs">
               <button onClick={() => setLocation('/privacy-policy')} className="hover:text-gray-900 underline">Privacy Policy</button>

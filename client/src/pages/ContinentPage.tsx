@@ -459,7 +459,7 @@ export default function ContinentPage() {
       <footer className="bg-white border-t border-gray-200 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-gray-600">
-            <p>&copy; 2024 COMCUBES Global Business Directory. Exploring {continent.name} with {stats.totalCompanies.toLocaleString()} companies across {stats.totalCountries} countries.</p>
+            <p>&copy; 2025 COMCUBES Global Business Directory. Exploring {continent.name} with {stats.totalCompanies.toLocaleString()} companies across {stats.totalCountries} countries.</p>
             <p className="mt-2 text-sm">Browse by region, country, and business sector for comprehensive {continent.name} coverage.</p>
             <div className="mt-4 flex justify-center space-x-6 text-xs">
               <button onClick={() => setLocation('/privacy-policy')} className="hover:text-gray-900 underline">Privacy Policy</button>
