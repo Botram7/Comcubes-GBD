@@ -5,7 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { AlertCircle, Globe2, MapPin, Map, Building2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { AlertCircle, Globe2, MapPin, Map, Building2, Layers, ArrowLeft } from "lucide-react";
 import { SEOHead, createBreadcrumbStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import { ReadMore } from "@/components/ReadMore";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
@@ -126,17 +127,73 @@ export default function GeographyPage() {
         structuredData={structuredData}
       />
 
-      {/* Header - Consistent with SearchPage */}
+      {/* Header - Consistent with other pages */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center h-16">
-            <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity mr-1 sm:mr-4 flex-shrink-0" onClick={() => setLocation('/')}>
-              <div className="w-12 h-12 sm:w-16 sm:h-16 mr-1 sm:mr-3 flex items-center justify-center">
-                <img src={comcubesIcon} alt="COMCUBES" className="w-12 h-12 sm:w-16 sm:h-16" />
+          <div className="py-4">
+            {/* Main header row */}
+            <div className="flex items-center">
+              <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity mr-1 sm:mr-4 flex-shrink-0" onClick={() => setLocation('/')}>
+                <div className="w-12 h-12 sm:w-16 sm:h-16 mr-1 sm:mr-3 flex items-center justify-center">
+                  <img src={comcubesIcon} alt="COMCUBES" className="w-12 h-12 sm:w-16 sm:h-16" />
+                </div>
+              </div>
+              <div className="flex-1 mr-2 sm:mr-4 min-w-0">
+                <SearchBar onSearchResults={handleSearchResults} />
+              </div>
+
+              {/* Navigation buttons for desktop */}
+              <div className="hidden sm:flex items-center space-x-2 md:space-x-4 flex-shrink-0">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setLocation('/sectors')}
+                  className="flex items-center gap-2 flex-shrink-0"
+                >
+                  <Layers className="h-4 w-4" />
+                  Business Sectors
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setLocation('/search')}
+                  className="flex items-center gap-2 flex-shrink-0"
+                >
+                  <Building2 className="h-4 w-4" />
+                  Advanced Search
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setLocation('/')}
+                  className="flex items-center gap-2"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  <span>Home</span>
+                </Button>
               </div>
             </div>
-            <div className="flex-1 mr-2 sm:mr-0">
-              <SearchBar onSearchResults={handleSearchResults} />
+            
+            {/* Mobile navigation buttons beneath logo and search */}
+            <div className="sm:hidden mt-3 flex gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setLocation('/sectors')}
+                className="flex items-center gap-2 flex-1 justify-center"
+              >
+                <Layers className="h-4 w-4" />
+                Sectors
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setLocation('/search')}
+                className="flex items-center gap-2 flex-1 justify-center"
+              >
+                <Building2 className="h-4 w-4" />
+                Search
+              </Button>
             </div>
           </div>
         </div>
