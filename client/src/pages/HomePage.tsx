@@ -565,7 +565,7 @@ export default function HomePage() {
           <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8">
             <div className="flex flex-col md:flex-row items-center justify-center">
               <p className="text-gray-400 text-sm">
-                © 2024 COMCUBES. All rights reserved.
+                © 2025 COMCUBES. All rights reserved.
               </p>
             </div>
           </div>
