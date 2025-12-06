@@ -99,38 +99,11 @@ export function GoogleAdSense({
   }
 
   if (!hasConsented || !preferences.marketing) {
-    return (
-      <div className={className}>
-        <Card 
-          className="bg-gray-50 border-2 border-dashed border-gray-200 p-4 text-center"
-          style={{ 
-            width: format === 'responsive' ? '100%' : `${formatConfig.width}px`,
-            height: format === 'responsive' ? 'auto' : `${formatConfig.height}px`,
-            minHeight: format === 'responsive' ? '250px' : undefined
-          }}
-        >
-          <div className="text-gray-400 text-sm">Advertisement</div>
-          <div className="text-gray-300 text-xs mt-1">Enable marketing cookies to view ads</div>
-        </Card>
-      </div>
-    );
+    return null;
   }
 
   if (adError) {
-    return (
-      <div className={className}>
-        <Card 
-          className="bg-gray-50 border-2 border-dashed border-gray-200 p-4 text-center"
-          style={{ 
-            width: format === 'responsive' ? '100%' : `${formatConfig.width}px`,
-            height: format === 'responsive' ? 'auto' : `${formatConfig.height}px`,
-            minHeight: format === 'responsive' ? '250px' : undefined
-          }}
-        >
-          <div className="text-gray-400 text-sm">Advertisement</div>
-        </Card>
-      </div>
-    );
+    return null;
   }
 
   return (
