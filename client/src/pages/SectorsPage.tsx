@@ -5,7 +5,7 @@ import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AlertCircle, Building2, ArrowLeft } from "lucide-react";
+import { AlertCircle, Building2, ArrowLeft, Globe } from "lucide-react";
 import { SEOHead, createBreadcrumbStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import { ReadMore } from "@/components/ReadMore";
 
@@ -194,8 +194,17 @@ export default function SectorsPage() {
                 <SearchBar onSearchResults={handleSearchResults} />
               </div>
 
-              {/* Keep Home button for desktop only */}
+              {/* Navigation buttons for desktop */}
               <div className="hidden sm:flex items-center space-x-2 md:space-x-4 flex-shrink-0">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setLocation('/geography')}
+                  className="flex items-center gap-2 flex-shrink-0"
+                >
+                  <Globe className="h-4 w-4" />
+                  Browse by Location
+                </Button>
                 <Button
                   variant="outline"
                   size="sm"
@@ -217,16 +226,25 @@ export default function SectorsPage() {
               </div>
             </div>
             
-            {/* Mobile Advanced Search button beneath logo and search */}
-            <div className="sm:hidden mt-3">
+            {/* Mobile navigation buttons beneath logo and search */}
+            <div className="sm:hidden mt-3 flex gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setLocation('/geography')}
+                className="flex items-center gap-2 flex-1 justify-center"
+              >
+                <Globe className="h-4 w-4" />
+                Location
+              </Button>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setLocation('/search')}
-                className="flex items-center gap-2 w-full justify-center"
+                className="flex items-center gap-2 flex-1 justify-center"
               >
                 <Building2 className="h-4 w-4" />
-                Advanced Search
+                Search
               </Button>
             </div>
           </div>
