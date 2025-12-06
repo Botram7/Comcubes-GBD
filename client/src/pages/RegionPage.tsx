@@ -2,8 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useLocation, useRoute } from "wouter";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { BannerAd } from "@/components/BannerAd";
-import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -217,22 +215,9 @@ export default function RegionPage() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="hidden lg:block lg:col-span-2">
-              <GoogleAdSense 
-                format="vertical" 
-                className="sticky top-24" 
-                position="region-page-left-sidebar"
-                contentLoaded={!!searchResults && ((searchResults.sectors?.length || 0) + (searchResults.industries?.length || 0) + (searchResults.companies?.length || 0)) > 0}
-                minContentItems={3}
-                actualContentItems={(searchResults?.sectors?.length || 0) + (searchResults?.industries?.length || 0) + (searchResults?.companies?.length || 0)}
-              />
-            </div>
-
-            <div className="lg:col-span-8">
-              <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-gray-900">
-                  Search Results
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-gray-900">
+              Search Results
                   <span className="ml-2 text-base font-normal text-gray-600">
                     ({(searchResults.sectors?.length || 0) + (searchResults.industries?.length || 0) + (searchResults.companies?.length || 0)} results)
                   </span>
@@ -312,119 +297,94 @@ export default function RegionPage() {
                     </CardContent>
                   </Card>
                 )}
-              </div>
-            </div>
-
-            <div className="hidden lg:block lg:col-span-2">
-              <BannerAd position="right" className="sticky top-24" />
-            </div>
           </div>
         </div>
       ) : (
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="hidden lg:block lg:col-span-2">
-              <GoogleAdSense 
-                format="vertical" 
-                className="sticky top-24" 
-                position="region-page-left-sidebar"
-                contentLoaded={!isLoading && !!regionData && (regionData?.countries?.length || 0) > 0}
-                minContentItems={3}
-                actualContentItems={regionData?.countries?.length || 0}
-              />
-            </div>
+          <Breadcrumbs items={breadcrumbs} />
 
-            <div className="lg:col-span-8">
-              <Breadcrumbs items={breadcrumbs} />
-
-              <div className="bg-gradient-to-br from-blue-50 to-cyan-100 border border-blue-200 rounded-lg p-6 sm:p-8 mb-8 shadow-sm">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-md">
-                      <Map className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-                      Countries in {region.name}
-                    </h1>
-                    <p className="text-gray-700 mb-4">
-                      {region.description || `Explore businesses by country within ${region.name}`}
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      <Badge variant="secondary" className="text-sm py-1 px-3">
-                        <MapPin className="w-4 h-4 mr-1" />
-                        {stats.totalCountries} {stats.totalCountries === 1 ? 'Country' : 'Countries'}
-                      </Badge>
-                      <Badge variant="secondary" className="text-sm py-1 px-3">
-                        <Building2 className="w-4 h-4 mr-1" />
-                        {stats.totalCompanies.toLocaleString()} {stats.totalCompanies === 1 ? 'Company' : 'Companies'}
-                      </Badge>
-                    </div>
-                  </div>
+          <div className="bg-gradient-to-br from-blue-50 to-cyan-100 border border-blue-200 rounded-lg p-6 sm:p-8 mb-8 shadow-sm">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-md">
+                  <Map className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" />
                 </div>
               </div>
-
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <div className="flex-1">
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                   Countries in {region.name}
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-                  {countries.map((country) => {
-                    const gradientClass = countryGradients[country.slug] || countryGradients.default;
-                    
-                    return (
-                      <Card
-                        key={country.id}
-                        className={`hover:shadow-xl transition-all cursor-pointer bg-gradient-to-br ${gradientClass}`}
-                        onClick={() => handleCountryClick(country)}
-                        data-testid={`card-country-${country.slug}`}
-                      >
-                        <CardContent className="p-6">
-                          <div className="flex items-start gap-3 mb-4">
-                            <div className="text-4xl flex-shrink-0">{country.flagEmoji}</div>
-                            <div className="flex-1 min-w-0">
-                              <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                                {country.name}
-                              </h3>
-                              {country.capital && (
-                                <p className="text-sm text-gray-600">Capital: {country.capital}</p>
-                              )}
-                            </div>
-                          </div>
-
-                          <div className="grid grid-cols-1 gap-2 text-sm">
-                            <div className="flex items-center justify-between bg-white/50 rounded px-3 py-2">
-                              <span className="text-gray-600 flex items-center gap-2">
-                                <Building2 className="w-4 h-4" />
-                                Companies:
-                              </span>
-                              <span className="font-semibold text-gray-900">
-                                {country.companyCount?.toLocaleString() || 0}
-                              </span>
-                            </div>
-                          </div>
-
-                          <Button 
-                            className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleCountryClick(country);
-                            }}
-                            data-testid={`button-explore-country-${country.slug}`}
-                          >
-                            Explore <Globe2 className="ml-2 h-4 w-4" />
-                          </Button>
-                        </CardContent>
-                      </Card>
-                    );
-                  })}
+                </h1>
+                <p className="text-gray-700 mb-4">
+                  {region.description || `Explore businesses by country within ${region.name}`}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Badge variant="secondary" className="text-sm py-1 px-3">
+                    <MapPin className="w-4 h-4 mr-1" />
+                    {stats.totalCountries} {stats.totalCountries === 1 ? 'Country' : 'Countries'}
+                  </Badge>
+                  <Badge variant="secondary" className="text-sm py-1 px-3">
+                    <Building2 className="w-4 h-4 mr-1" />
+                    {stats.totalCompanies.toLocaleString()} {stats.totalCompanies === 1 ? 'Company' : 'Companies'}
+                  </Badge>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="hidden lg:block lg:col-span-2">
-              <BannerAd position="right" className="sticky top-24" />
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              Countries in {region.name}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+              {countries.map((country) => {
+                const gradientClass = countryGradients[country.slug] || countryGradients.default;
+                
+                return (
+                  <Card
+                    key={country.id}
+                    className={`hover:shadow-xl transition-all cursor-pointer bg-gradient-to-br ${gradientClass}`}
+                    onClick={() => handleCountryClick(country)}
+                    data-testid={`card-country-${country.slug}`}
+                  >
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="text-4xl flex-shrink-0">{country.flagEmoji}</div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-xl font-semibold text-gray-900 mb-1">
+                            {country.name}
+                          </h3>
+                          {country.capital && (
+                            <p className="text-sm text-gray-600">Capital: {country.capital}</p>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-2 text-sm">
+                        <div className="flex items-center justify-between bg-white/50 rounded px-3 py-2">
+                          <span className="text-gray-600 flex items-center gap-2">
+                            <Building2 className="w-4 h-4" />
+                            Companies:
+                          </span>
+                          <span className="font-semibold text-gray-900">
+                            {country.companyCount?.toLocaleString() || 0}
+                          </span>
+                        </div>
+                      </div>
+
+                      <Button 
+                        className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCountryClick(country);
+                        }}
+                        data-testid={`button-explore-country-${country.slug}`}
+                      >
+                        Explore <Globe2 className="ml-2 h-4 w-4" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
 

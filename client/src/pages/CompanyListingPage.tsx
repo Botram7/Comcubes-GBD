@@ -18,7 +18,6 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { BannerAd } from '@/components/BannerAd';
-import { GoogleAdSense } from '@/components/GoogleAdSense';
 import { apiRequest } from '@/lib/queryClient';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 
@@ -564,20 +563,8 @@ export default function CompanyListingPage() {
         ]} 
       />
 
-      {/* Three-column layout with sidebar banner ads */}
-      <div className="flex gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Left Sidebar - Banner Ad */}
-        <div className="hidden lg:block flex-shrink-0">
-          <GoogleAdSense 
-            format="vertical"
-            className="sticky top-24"
-            position="listing-page-left-sidebar"
-            contentLoaded={!sectorsLoading && !!sectors && (sectors as any[]).length > 0}
-            minContentItems={5}
-            actualContentItems={(sectors as any[])?.length || 0}
-          />
-        </div>
-
+      {/* Main content area */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Main Content */}
         <div className="flex-1">
           {/* Hero Section */}

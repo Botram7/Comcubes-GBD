@@ -7,8 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { BannerAd } from "@/components/BannerAd";
-import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { 
   Building2, 
   Globe, 
@@ -231,27 +229,8 @@ export default function CompanyProfilePage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Left Sidebar - Advertisement (Desktop only) */}
-          <div className="lg:col-span-1 space-y-4 hidden lg:block">
-            <GoogleAdSense 
-              format="vertical"
-              className="sticky top-24"
-              position="company-profile-left-sidebar"
-              contentLoaded={!companyLoading && company !== null}
-            />
-          </div>
-
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Mobile-friendly responsive ad (Mobile/Tablet only) */}
-            <div className="lg:hidden">
-              <GoogleAdSense 
-                format="responsive"
-                position="company-profile-mobile-top"
-                className="w-full"
-                contentLoaded={!companyLoading && company !== null}
-              />
-            </div>
+          <div className="lg:col-span-3 space-y-6">
             {/* Company Header */}
             <Card>
               <CardContent className="p-6">

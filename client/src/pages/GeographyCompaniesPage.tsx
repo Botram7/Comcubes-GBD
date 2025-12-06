@@ -2,8 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "wouter";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { BannerAd } from "@/components/BannerAd";
-import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -262,19 +260,6 @@ export default function GeographyCompaniesPage() {
       />
 
       <main className="main-content-with-sticky-footer max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex gap-6">
-          <div className="hidden lg:block flex-shrink-0">
-            <GoogleAdSense 
-              format="vertical"
-              className="sticky top-24"
-              position="companies-page-left-sidebar"
-              contentLoaded={!isLoading && companies && companies.length > 0}
-              minContentItems={5}
-              actualContentItems={companies?.length || 0}
-            />
-          </div>
-
-          <div className="flex-1">
             {searchResults ? (
               <div className="space-y-8">
                 <div className="mb-6">
@@ -453,25 +438,8 @@ export default function GeographyCompaniesPage() {
                     </p>
                   </div>
                 )}
-
-                <div className="my-8 flex justify-center">
-                  <GoogleAdSense 
-                    format="responsive"
-                    className="w-full max-w-4xl"
-                    position="companies-page-in-content"
-                    contentLoaded={!isLoading && companies && companies.length > 0}
-                    minContentItems={5}
-                    actualContentItems={companies?.length || 0}
-                  />
-                </div>
               </>
             )}
-          </div>
-
-          <div className="hidden lg:block flex-shrink-0">
-            <BannerAd className="sticky top-24" position="right" />
-          </div>
-        </div>
       </main>
 
       <footer className="sticky-footer mt-16">

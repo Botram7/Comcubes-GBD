@@ -9,8 +9,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { SearchBar } from '@/components/SearchBar';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { BannerAd } from '@/components/BannerAd';
-import { GoogleAdSense } from '@/components/GoogleAdSense';
 import { AffiliateDisclosureBanner } from '@/components/AffiliateDisclosureBanner';
 import { BusinessGrid } from '@/components/BusinessGrid';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
@@ -157,22 +155,7 @@ export default function SearchPage() {
         </div>
       </div>
 
-      {/* Three-column layout with sidebar banner ads */}
-      <div className="flex gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Left Sidebar - Advertisement Banner - 160x600 */}
-        <div className="hidden lg:block flex-shrink-0">
-          <GoogleAdSense 
-            format="vertical"
-            className="sticky top-24"
-            position="search-page-left-sidebar"
-            contentLoaded={true}
-            minContentItems={5}
-            actualContentItems={POPULAR_SEARCHES.length + TRENDING_SEARCHES.length}
-          />
-        </div>
-
-        {/* Main Content */}
-        <div className="flex-1">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {searchResults ? (
             /* Search Results Display */
             <div className="space-y-8">
@@ -476,15 +459,6 @@ export default function SearchPage() {
               </Card>
             </>
           )}
-        </div>
-
-        {/* Right Sidebar - Advertisement Banner - 160x600 */}
-        <div className="hidden lg:block flex-shrink-0">
-          <BannerAd 
-            className="sticky top-24" 
-            position="right"
-          />
-        </div>
       </div>
 
       {/* Footer */}

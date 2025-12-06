@@ -11,7 +11,6 @@ import { AlertCircle, Building2, ArrowLeft, LayoutGrid, Layers, List, X } from "
 import { SEOHead, createBreadcrumbStructuredData, createPlaceStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { BannerAd } from "@/components/BannerAd";
-import { GoogleAdSense } from "@/components/GoogleAdSense";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import type { Company, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
@@ -382,17 +381,6 @@ export default function CountryPage() {
           </Button>
 
           <div className="flex flex-col lg:flex-row gap-6">
-            <div className="hidden lg:block flex-shrink-0">
-              <GoogleAdSense 
-                format="vertical" 
-                className="sticky top-24" 
-                position="country-page-left-sidebar"
-                contentLoaded={!!searchResults && ((searchResults.sectors?.length || 0) + (searchResults.industries?.length || 0) + (searchResults.companies?.length || 0)) > 0}
-                minContentItems={3}
-                actualContentItems={(searchResults?.sectors?.length || 0) + (searchResults?.industries?.length || 0) + (searchResults?.companies?.length || 0)}
-              />
-            </div>
-
             <div className="flex-1">
               {searchResults.sectors && searchResults.sectors.length > 0 && (
                 <div className="mb-8">
@@ -440,17 +428,6 @@ export default function CountryPage() {
             <Breadcrumbs items={breadcrumbs} />
 
             <div className="flex flex-col lg:flex-row gap-6 mt-6">
-              <div className="hidden lg:block flex-shrink-0">
-                <GoogleAdSense 
-                  format="vertical" 
-                  className="sticky top-24" 
-                  position="country-page-left-sidebar-2"
-                  contentLoaded={!isLoading && !!countryData && totalCompanies > 0}
-                  minContentItems={5}
-                  actualContentItems={companies.length}
-                />
-              </div>
-
               <div className="flex-1">
                 <div className="mb-6">
                   <h1 className="text-3xl font-bold text-gray-900">
