@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { SearchBar } from '@/components/SearchBar';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { AffiliateDisclosureBanner } from '@/components/AffiliateDisclosureBanner';
+import { BannerAd } from '@/components/BannerAd';
 import { BusinessGrid } from '@/components/BusinessGrid';
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import type { SearchResults } from "@/lib/types";
@@ -156,7 +157,13 @@ export default function SearchPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {searchResults ? (
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd className="sticky top-24" position="left" />
+          </div>
+          
+          <div className="flex-1">
+            {searchResults ? (
             /* Search Results Display */
             <div className="space-y-8">
               <div className="mb-6">
@@ -459,6 +466,12 @@ export default function SearchPage() {
               </Card>
             </>
           )}
+          </div>
+          
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd className="sticky top-24" position="right" />
+          </div>
+        </div>
       </div>
 
       {/* Footer */}

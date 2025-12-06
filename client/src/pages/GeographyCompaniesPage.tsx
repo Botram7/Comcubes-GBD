@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
+import { BannerAd } from "@/components/BannerAd";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { AlertCircle, Globe2, Building2, ArrowLeft } from "lucide-react";
@@ -260,6 +261,12 @@ export default function GeographyCompaniesPage() {
       />
 
       <main className="main-content-with-sticky-footer max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd className="sticky top-24" position="left" />
+          </div>
+          
+          <div className="flex-1">
             {searchResults ? (
               <div className="space-y-8">
                 <div className="mb-6">
@@ -440,6 +447,12 @@ export default function GeographyCompaniesPage() {
                 )}
               </>
             )}
+          </div>
+          
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd className="sticky top-24" position="right" />
+          </div>
+        </div>
       </main>
 
       <footer className="sticky-footer mt-16">

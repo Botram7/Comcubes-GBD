@@ -11,6 +11,7 @@ import { ReadMore } from "@/components/ReadMore";
 
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
+import { BannerAd } from "@/components/BannerAd";
 import { getActiveBannerImages, getBannerClickUrl } from "@/config/bannerAds";
 import type { Sector, SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
@@ -240,6 +241,12 @@ export default function SectorsPage() {
       />
 
       <main className="main-content-with-sticky-footer max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd className="sticky top-24" position="left" />
+          </div>
+          
+          <div className="flex-1">
             {searchResults ? (
               <div className="space-y-8">
                 <div className="mb-6">
@@ -354,6 +361,12 @@ export default function SectorsPage() {
                 </div>
               </>
             )}
+          </div>
+          
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd className="sticky top-24" position="right" />
+          </div>
+        </div>
       </main>
 
       <footer className="sticky-footer mt-16">

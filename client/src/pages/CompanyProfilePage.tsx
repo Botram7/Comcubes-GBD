@@ -29,6 +29,7 @@ import { useState, useEffect } from "react";
 import { generateCompanyDescription } from "@/utils/companyDescriptionGenerator";
 import { SEOHead, createBreadcrumbStructuredData, createLocalBusinessStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
+import { BannerAd } from "@/components/BannerAd";
 import { DataAccuracyDisclaimer } from "@/components/DataAccuracyDisclaimer";
 
 export default function CompanyProfilePage() {
@@ -216,9 +217,15 @@ export default function CompanyProfilePage() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {/* Breadcrumbs */}
-        <div className="mb-6">
-          <Breadcrumbs 
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd className="sticky top-24" position="left" />
+          </div>
+          
+          <div className="flex-1">
+            {/* Breadcrumbs */}
+            <div className="mb-6">
+              <Breadcrumbs 
             items={[
               { label: 'Home', href: '/' },
               { label: company.sectorName, href: `/sector/${encodeURIComponent(company.sectorName)}` },
@@ -526,16 +533,22 @@ export default function CompanyProfilePage() {
           </div>
         </div>
 
-        {/* Back to Industry Button */}
-        <div className="mt-8 text-center">
-          <Button 
-            variant="outline" 
-            onClick={() => setLocation(`/industry/${encodeURIComponent(company.industryName)}`)}
-            className="flex items-center gap-2 mx-auto"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to {company.industryName} Companies
-          </Button>
+            {/* Back to Industry Button */}
+            <div className="mt-8 text-center">
+              <Button 
+                variant="outline" 
+                onClick={() => setLocation(`/industry/${encodeURIComponent(company.industryName)}`)}
+                className="flex items-center gap-2 mx-auto"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Back to {company.industryName} Companies
+              </Button>
+            </div>
+          </div>
+          
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd className="sticky top-24" position="right" />
+          </div>
         </div>
       </main>
 

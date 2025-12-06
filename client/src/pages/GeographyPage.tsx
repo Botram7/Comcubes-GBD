@@ -9,6 +9,7 @@ import { AlertCircle, Globe2, MapPin, Map, Building2 } from "lucide-react";
 import { SEOHead, createBreadcrumbStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 import { ReadMore } from "@/components/ReadMore";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
+import { BannerAd } from "@/components/BannerAd";
 import type { SearchResults } from "@/lib/types";
 import { useState, useEffect } from "react";
 
@@ -145,7 +146,13 @@ export default function GeographyPage() {
       <Breadcrumbs items={breadcrumbsForNav} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Hero Section */}
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd className="sticky top-24" position="left" />
+          </div>
+          
+          <div className="flex-1">
+            {/* Hero Section */}
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="bg-gradient-to-br from-blue-500 to-green-500 p-3 rounded-lg">
@@ -337,6 +344,12 @@ export default function GeographyPage() {
               </CardContent>
             </Card>
           )}
+          </div>
+          
+          <div className="hidden lg:block flex-shrink-0">
+            <BannerAd className="sticky top-24" position="right" />
+          </div>
+        </div>
       </div>
 
       {/* Footer */}

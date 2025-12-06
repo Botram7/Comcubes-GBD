@@ -3,6 +3,7 @@ import { useLocation, useRoute } from "wouter";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
+import { BannerAd } from "@/components/BannerAd";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -203,6 +204,12 @@ export default function RegionPage() {
 
       {searchResults ? (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col lg:flex-row gap-6">
+            <div className="hidden lg:block flex-shrink-0">
+              <BannerAd className="sticky top-24" position="left" />
+            </div>
+            
+            <div className="flex-1">
           <div className="mb-6">
             <Button
               onClick={() => setSearchResults(null)}
@@ -298,10 +305,22 @@ export default function RegionPage() {
                   </Card>
                 )}
           </div>
+            </div>
+            
+            <div className="hidden lg:block flex-shrink-0">
+              <BannerAd className="sticky top-24" position="right" />
+            </div>
+          </div>
         </div>
       ) : (
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <Breadcrumbs items={breadcrumbs} />
+          <div className="flex flex-col lg:flex-row gap-6">
+            <div className="hidden lg:block flex-shrink-0">
+              <BannerAd className="sticky top-24" position="left" />
+            </div>
+            
+            <div className="flex-1">
+              <Breadcrumbs items={breadcrumbs} />
 
           <div className="bg-gradient-to-br from-blue-50 to-cyan-100 border border-blue-200 rounded-lg p-6 sm:p-8 mb-8 shadow-sm">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -385,6 +404,13 @@ export default function RegionPage() {
                   </Card>
                 );
               })}
+            </div>
+          </div>
+
+            </div>
+            
+            <div className="hidden lg:block flex-shrink-0">
+              <BannerAd className="sticky top-24" position="right" />
             </div>
           </div>
 

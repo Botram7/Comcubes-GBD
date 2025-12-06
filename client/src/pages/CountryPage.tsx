@@ -381,6 +381,9 @@ export default function CountryPage() {
           </Button>
 
           <div className="flex flex-col lg:flex-row gap-6">
+            <div className="hidden lg:block flex-shrink-0">
+              <BannerAd className="sticky top-24" position="left" />
+            </div>
             <div className="flex-1">
               {searchResults.sectors && searchResults.sectors.length > 0 && (
                 <div className="mb-8">
@@ -428,6 +431,9 @@ export default function CountryPage() {
             <Breadcrumbs items={breadcrumbs} />
 
             <div className="flex flex-col lg:flex-row gap-6 mt-6">
+              <div className="hidden lg:block flex-shrink-0">
+                <BannerAd className="sticky top-24" position="left" />
+              </div>
               <div className="flex-1">
                 <div className="mb-6">
                   <h1 className="text-3xl font-bold text-gray-900">
