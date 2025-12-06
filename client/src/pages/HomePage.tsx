@@ -8,7 +8,6 @@ import { AnimatedExplainer } from "@/components/AnimatedExplainer";
 import { ExploreByLocation } from "@/components/ExploreByLocation";
 import { SEOHead, createBusinessDirectoryStructuredData, createFAQStructuredData, createOrganizationStructuredData, HOMEPAGE_FAQS, BRAND_KEYWORDS } from "@/components/SEOHead";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
-import { BannerAd } from "@/components/BannerAd";
 import { 
   BarChart3, 
   Users, 
@@ -153,13 +152,7 @@ export default function HomePage() {
       
       {/* Hero Section */}
       <section className="bg-gray-50 py-9 md:py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-6">
-            <div className="hidden lg:block flex-shrink-0">
-              <BannerAd className="sticky top-24" position="left" />
-            </div>
-            
-            <div className="flex-1 max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Logo */}
           <div className="mb-[18px] md:mb-[22px] flex justify-center">
             <img 
@@ -205,12 +198,6 @@ export default function HomePage() {
               <Search className="mr-2 h-4 w-4" />
               Advanced Search
             </Button>
-          </div>
-            </div>
-            
-            <div className="hidden lg:block flex-shrink-0">
-              <BannerAd className="sticky top-24" position="right" />
-            </div>
           </div>
         </div>
       </section>
