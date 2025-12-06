@@ -112,42 +112,15 @@ export function BannerAd({ className = "", position }: BannerAdProps) {
     }
   };
   
-  // Show loading state
+  // Hide completely during loading - no placeholder boxes
   if (isLoading) {
-    return (
-      <div className={`${className}`} ref={adRef}>
-        <Card 
-          className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 text-center animate-pulse"
-          style={{ width: '160px', height: '600px' }}
-        >
-          <div className="text-gray-400 h-full flex flex-col justify-center">
-            <div className="text-sm font-medium mb-2">Loading...</div>
-          </div>
-        </Card>
-      </div>
-    );
+    return null;
   }
 
-  // If no images are provided, show the default "Available for Rent" banner
+  // Hide completely when no images - no empty "Available for Rent" placeholders
+  // This prevents ugly white spaces when ads aren't ready
   if (validImages.length === 0) {
-    return (
-      <div className={`${className}`} ref={adRef}>
-        {/* Advertisement Space - 160x600 dimensions */}
-        <Card 
-          className="bg-gray-100 border-2 border-dashed border-gray-300 p-4 text-center cursor-pointer hover:bg-gray-200 transition-colors"
-          style={{ width: '160px', height: '600px' }}
-          onClick={handleClick}
-        >
-          <div className="text-gray-500 h-full flex flex-col justify-center">
-            <div className="text-sm font-medium mb-2">Advertisement Space</div>
-            <div className="text-sm opacity-75 mb-4">Available for Rent</div>
-            <div className="bg-gray-200 rounded px-4 py-2 text-sm font-medium">
-              Contact Us
-            </div>
-          </div>
-        </Card>
-      </div>
-    );
+    return null;
   }
   
   // Show rotating banner ads
