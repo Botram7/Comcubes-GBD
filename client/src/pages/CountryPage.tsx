@@ -383,7 +383,14 @@ export default function CountryPage() {
 
           <div className="flex flex-col lg:flex-row gap-6">
             <div className="hidden lg:block flex-shrink-0">
-              <GoogleAdSense format="vertical" className="sticky top-24" position="country-page-left-sidebar" />
+              <GoogleAdSense 
+                format="vertical" 
+                className="sticky top-24" 
+                position="country-page-left-sidebar"
+                contentLoaded={!!searchResults && ((searchResults.sectors?.length || 0) + (searchResults.industries?.length || 0) + (searchResults.companies?.length || 0)) > 0}
+                minContentItems={3}
+                actualContentItems={(searchResults?.sectors?.length || 0) + (searchResults?.industries?.length || 0) + (searchResults?.companies?.length || 0)}
+              />
             </div>
 
             <div className="flex-1">
@@ -434,7 +441,14 @@ export default function CountryPage() {
 
             <div className="flex flex-col lg:flex-row gap-6 mt-6">
               <div className="hidden lg:block flex-shrink-0">
-                <GoogleAdSense format="vertical" className="sticky top-24" position="country-page-left-sidebar-2" />
+                <GoogleAdSense 
+                  format="vertical" 
+                  className="sticky top-24" 
+                  position="country-page-left-sidebar-2"
+                  contentLoaded={!isLoading && !!countryData && totalCompanies > 0}
+                  minContentItems={5}
+                  actualContentItems={companies.length}
+                />
               </div>
 
               <div className="flex-1">

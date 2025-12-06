@@ -247,6 +247,9 @@ export default function ContinentPage() {
             format="vertical"
             className="sticky top-24"
             position="continent-page-left-sidebar"
+            contentLoaded={!isLoading && !!continentData && ((continentData?.regions?.length || 0) > 0 || (continentData?.countries?.length || 0) > 0)}
+            minContentItems={3}
+            actualContentItems={(continentData?.regions?.length || 0) + (continentData?.countries?.length || 0)}
           />
         </div>
 

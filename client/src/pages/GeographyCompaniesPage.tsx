@@ -268,6 +268,9 @@ export default function GeographyCompaniesPage() {
               format="vertical"
               className="sticky top-24"
               position="companies-page-left-sidebar"
+              contentLoaded={!isLoading && companies && companies.length > 0}
+              minContentItems={5}
+              actualContentItems={companies?.length || 0}
             />
           </div>
 
@@ -456,6 +459,9 @@ export default function GeographyCompaniesPage() {
                     format="responsive"
                     className="w-full max-w-4xl"
                     position="companies-page-in-content"
+                    contentLoaded={!isLoading && companies && companies.length > 0}
+                    minContentItems={5}
+                    actualContentItems={companies?.length || 0}
                   />
                 </div>
               </>

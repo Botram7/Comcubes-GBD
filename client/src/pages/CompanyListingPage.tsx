@@ -50,7 +50,7 @@ export default function CompanyListingPage() {
   const [selectedPlan, setSelectedPlan] = useState<keyof typeof LISTING_PRICES>('basic');
 
   // Fetch sectors and industries for form dropdowns
-  const { data: sectors } = useQuery({
+  const { data: sectors, isLoading: sectorsLoading } = useQuery({
     queryKey: ['/api/sectors'],
   });
 
@@ -572,6 +572,9 @@ export default function CompanyListingPage() {
             format="vertical"
             className="sticky top-24"
             position="listing-page-left-sidebar"
+            contentLoaded={!sectorsLoading && !!sectors && (sectors as any[]).length > 0}
+            minContentItems={5}
+            actualContentItems={(sectors as any[])?.length || 0}
           />
         </div>
 

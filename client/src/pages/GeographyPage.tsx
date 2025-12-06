@@ -154,6 +154,9 @@ export default function GeographyPage() {
             format="vertical"
             className="sticky top-24"
             position="geography-page-left-sidebar"
+            contentLoaded={!continentsLoading && Array.isArray(continents) && continents.length > 0}
+            minContentItems={3}
+            actualContentItems={continents?.length || 0}
           />
         </div>
 
