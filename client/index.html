@@ -48,6 +48,7 @@
     <meta property="og:title" content="COMCUBES - Global Business Directory">
     <meta property="og:description" content="Discover thousands of companies across all business sectors and industries worldwide.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://comcubes.com/">
     <meta property="og:site_name" content="COMCUBES">
     
     <!-- Twitter Card default tags -->
@@ -60,6 +61,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="shortcut icon" href="/favicon.png">
     <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+    
+    <!-- Canonical URL for homepage -->
+    <link rel="canonical" href="https://comcubes.com/">
     
     <!-- Additional SEO meta tags -->
     <meta name="theme-color" content="#1e40af">
@@ -87,7 +91,72 @@
     <!-- Analytics scripts will be loaded dynamically from main.tsx using environment variables -->
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Pre-rendered SEO Content - Visible to search engine crawlers before React hydrates -->
+      <!-- This content provides meaningful text for Google to index, solving the "Soft 404" issue -->
+      <div id="seo-prerender" style="font-family:system-ui,-apple-system,sans-serif;max-width:1200px;margin:0 auto;padding:20px;">
+        <header style="text-align:center;padding:40px 0;">
+          <h1 style="font-size:2.5rem;color:#1e40af;margin-bottom:10px;">COMCUBES - Global Business Directory</h1>
+          <p style="font-size:1.2rem;color:#4b5563;margin:10px 0;">Your Gateway to Discover Everything Business</p>
+          <p style="font-size:1rem;color:#6b7280;">Connecting businesses worldwide across 20 major sectors and 400+ specialized industries</p>
+        </header>
+        <main>
+          <section style="margin:40px 0;">
+            <h2 style="font-size:1.5rem;color:#1e3a8a;margin-bottom:20px;">Explore Business Sectors</h2>
+            <p>COMCUBES features 20 major business sectors including Technology, Healthcare, Finance, Manufacturing, Retail, Energy, Transportation, Agriculture, Construction, Education, Hospitality, Media and Entertainment, Real Estate, Telecommunications, Professional Services, Consumer Goods, Utilities, Mining, Aerospace and Defense, and Chemicals.</p>
+            <ul style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:10px;margin-top:15px;">
+              <li><a href="/sector/Technology" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Technology</a></li>
+              <li><a href="/sector/Healthcare" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Healthcare</a></li>
+              <li><a href="/sector/Finance" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Finance</a></li>
+              <li><a href="/sector/Manufacturing" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Manufacturing</a></li>
+              <li><a href="/sector/Retail" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Retail</a></li>
+              <li><a href="/sector/Energy" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Energy</a></li>
+              <li><a href="/sectors" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#dbeafe;border-radius:6px;display:inline-block;font-weight:500;">View All 20 Sectors →</a></li>
+            </ul>
+          </section>
+          <section style="margin:40px 0;">
+            <h2 style="font-size:1.5rem;color:#1e3a8a;margin-bottom:20px;">Browse by Location</h2>
+            <p>Discover companies across all continents: Africa, Asia, Europe, North America, South America, and Oceania. Our geographic directory helps you find businesses in any country worldwide.</p>
+            <ul style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:10px;margin-top:15px;">
+              <li><a href="/geography/continent/Africa" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Africa</a></li>
+              <li><a href="/geography/continent/Asia" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Asia</a></li>
+              <li><a href="/geography/continent/Europe" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Europe</a></li>
+              <li><a href="/geography/continent/North%20America" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">North America</a></li>
+              <li><a href="/geography/continent/South%20America" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">South America</a></li>
+              <li><a href="/geography/continent/Oceania" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Oceania</a></li>
+              <li><a href="/geography" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#dbeafe;border-radius:6px;display:inline-block;font-weight:500;">Browse All Locations →</a></li>
+            </ul>
+          </section>
+          <section style="margin:40px 0;">
+            <h2 style="font-size:1.5rem;color:#1e3a8a;margin-bottom:20px;">Quick Links</h2>
+            <ul style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:10px;">
+              <li><a href="/sectors" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">All Business Sectors</a></li>
+              <li><a href="/industries" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">All Industries</a></li>
+              <li><a href="/companies" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">All Companies</a></li>
+              <li><a href="/search" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Advanced Search</a></li>
+              <li><a href="/list-company" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">List Your Company</a></li>
+              <li><a href="/advertise" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Advertise With Us</a></li>
+              <li><a href="/contact" style="color:#1e40af;text-decoration:none;padding:8px 16px;background:#f3f4f6;border-radius:6px;display:inline-block;">Contact Us</a></li>
+            </ul>
+          </section>
+          <section style="margin:40px 0;">
+            <h2 style="font-size:1.5rem;color:#1e3a8a;margin-bottom:20px;">About COMCUBES</h2>
+            <p style="color:#374151;line-height:1.7;margin-bottom:15px;">COMCUBES (Commercial Cubes) is a comprehensive global business directory designed to connect professionals, researchers, job seekers, and businesses worldwide. Our platform provides curated access to over 7,400 companies across 20 major sectors and 400+ specialized industries.</p>
+            <p style="color:#374151;line-height:1.7;margin-bottom:15px;">Whether you're a business professional conducting research, an employer discovering global brands, a job seeker exploring opportunities, a student researching universities, or simply curious about businesses near you or anywhere in the world - COMCUBES is your gateway. Instantly access our curated directory of 7,400+ companies across 20 major sectors and 400+ specialized industries.</p>
+            <p style="color:#374151;line-height:1.7;">Tap into our powerful global search to discover millions of businesses worldwide. From Fortune 500 giants to local boutiques, find exactly what you're looking for with COMCUBES - Everything and Anything Business.</p>
+          </section>
+        </main>
+        <footer style="text-align:center;padding:40px 0;border-top:1px solid #e5e7eb;margin-top:40px;">
+          <p style="color:#6b7280;margin-bottom:15px;">© 2025 COMCUBES - Global Business Directory. All rights reserved.</p>
+          <p>
+            <a href="/privacy-policy" style="color:#1e40af;text-decoration:none;margin:0 10px;">Privacy Policy</a> | 
+            <a href="/terms-of-service" style="color:#1e40af;text-decoration:none;margin:0 10px;">Terms of Service</a> | 
+            <a href="/disclaimer" style="color:#1e40af;text-decoration:none;margin:0 10px;">Disclaimer</a> | 
+            <a href="/affiliate-disclosure" style="color:#1e40af;text-decoration:none;margin:0 10px;">Affiliate Disclosure</a>
+          </p>
+        </footer>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
