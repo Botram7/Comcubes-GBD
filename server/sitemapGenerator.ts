@@ -68,13 +68,7 @@ ${urlElements}
         priority: 0.9
       },
       
-      // Business-critical pages
-      {
-        url: `${this.baseUrl}/list-company`,
-        lastmod: now,
-        changefreq: 'weekly',
-        priority: 0.9
-      },
+      // Search page - important for SEO
       {
         url: `${this.baseUrl}/search`,
         lastmod: now,
