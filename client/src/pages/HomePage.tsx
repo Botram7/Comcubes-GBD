@@ -83,39 +83,6 @@ export default function HomePage() {
     setLocation('/sectors');
   };
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <div className="flex items-center justify-center min-h-96">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Loading...</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <div className="flex items-center justify-center min-h-96">
-          <Card className="w-full max-w-md mx-4">
-            <CardContent className="pt-6">
-              <div className="flex mb-4 gap-2">
-                <Target className="h-8 w-8 text-red-500" />
-                <h1 className="text-2xl font-bold text-gray-900">Error Loading Data</h1>
-              </div>
-              <p className="mt-4 text-sm text-gray-600">
-                Failed to load data. Please try again later.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    );
-  }
-
   const sectorCount = Array.isArray(sectors) ? sectors.length : 20;
   const industryCount = (industriesData as any)?.total || 400;
   const companyCount = (companiesData as any)?.total || 7400;
@@ -216,7 +183,30 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-6 md:mb-8">
-            {Array.isArray(sectors) && sectors.length > 0 ? sectors.slice(0, 10).map((sector: Sector) => (
+            {isLoading || error ? (
+              ['Technology', 'Healthcare', 'Finance', 'Manufacturing', 'Retail', 'Energy', 'Transportation', 'Agriculture', 'Construction', 'Education'].map((sectorName, index) => (
+                <Card 
+                  key={index} 
+                  className="group cursor-pointer hover:shadow-lg transition-all duration-200 bg-white overflow-hidden"
+                  onClick={() => setLocation(`/sector/${encodeURIComponent(sectorName)}`)}
+                  data-testid={`card-sector-placeholder-${index}`}
+                >
+                  <div className="aspect-square relative">
+                    <img 
+                      src={getImageForEntity(sectorName, 'sector')}
+                      alt={sectorName}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-3 right-3 text-center">
+                      <div className="text-white font-medium text-sm leading-tight">
+                        {sectorName}
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))
+            ) : Array.isArray(sectors) && sectors.length > 0 ? sectors.slice(0, 10).map((sector: Sector) => (
               <Card 
                 key={sector.id} 
                 className="group cursor-pointer hover:shadow-lg transition-all duration-200 bg-white overflow-hidden"
