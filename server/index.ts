@@ -386,7 +386,12 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   // Admin dashboard is now handled by React at /admin route
 
   // Initialize database once at server startup
-  await initDatabaseOnce();
+  // Wrapped in try-catch to allow app to start even if database is temporarily unavailable
+  try {
+    await initDatabaseOnce();
+  } catch (dbError) {
+    console.error('⚠️ Database initialization failed - app will start but some features may be unavailable:', dbError);
+  }
 
   const server = await registerRoutes(app);
 
