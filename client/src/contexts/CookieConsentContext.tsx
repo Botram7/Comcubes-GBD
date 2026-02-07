@@ -62,7 +62,7 @@ async function getPublicConfig(): Promise<PublicConfig> {
     .catch(() => ({
       turnstileSiteKey: '',
       gaMeasurementId: '',
-      adsenseClientId: 'ca-pub-5485634688028600'
+      adsenseClientId: ''
     }));
   
   return configPromise;
