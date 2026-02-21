@@ -363,7 +363,7 @@ export default function IndustriesPage() {
               <ReadMore className="prose max-w-none text-gray-700">
                 <div className="space-y-4">
                   <p className="text-lg leading-relaxed">
-                    Welcome to COMCUBES' comprehensive directory of {total || '400+'} specialized industries. Whether you're researching career opportunities, exploring business niches, comparing market players, or discovering new services—this directory connects you to the specific industries that matter most to your goals.
+                    Welcome to COMCUBES' comprehensive directory of {total || '400+'} specialized industries. Whether you're researching career opportunities, exploring business niches, comparing market players, or discovering new services - this directory connects you to the specific industries that matter most to your goals.
                   </p>
 
                   <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Understanding Industry Specializations</h2>
@@ -380,7 +380,7 @@ export default function IndustriesPage() {
                     <li><strong>Business Development Professionals:</strong> Find potential partners, suppliers, or competitors within specific industries. Conduct market analysis and identify industry leaders for benchmarking.</li>
                     <li><strong>Investors & Analysts:</strong> Research industry compositions, compare company portfolios, and identify emerging sectors with growth potential.</li>
                     <li><strong>Students & Researchers:</strong> Gather data for academic projects, study industry structures, and access real-world examples for case studies and presentations.</li>
-                    <li><strong>Consumers & Shoppers:</strong> Discover brands and services within specific industries—whether you're looking for luxury fashion brands, organic food producers, or eco-friendly manufacturers.</li>
+                    <li><strong>Consumers & Shoppers:</strong> Discover brands and services within specific industries - whether you're looking for luxury fashion brands, organic food producers, or eco-friendly manufacturers.</li>
                   </ul>
 
                   <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Navigating Our Industry Database</h2>
@@ -395,7 +395,7 @@ export default function IndustriesPage() {
 
                   <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What Makes Each Industry Page Valuable</h2>
                   <p>
-                    Every industry page in our directory provides curated listings of leading companies in that field. You'll find established industry giants, innovative disruptors, and specialized service providers—all selected for their market presence and relevance. Company profiles include official website links for direct access, business descriptions to understand their offerings, and when available, additional data like headquarters location, founding year, and geographic presence. This saves hours of research time by consolidating industry information in one place.
+                    Every industry page in our directory provides curated listings of leading companies in that field. You'll find established industry giants, innovative disruptors, and specialized service providers - all selected for their market presence and relevance. Company profiles include official website links for direct access, business descriptions to understand their offerings, and when available, additional data like headquarters location, founding year, and geographic presence. This saves hours of research time by consolidating industry information in one place.
                   </p>
 
                   <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Start Exploring Industries</h2>

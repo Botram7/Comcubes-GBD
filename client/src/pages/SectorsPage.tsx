@@ -320,17 +320,17 @@ export default function SectorsPage() {
                   <ReadMore className="prose max-w-none text-gray-700">
                     <div className="space-y-4">
                       <p className="text-lg leading-relaxed">
-                        Welcome to COMCUBES' comprehensive business sector directory. Whether you're a professional conducting market research, a job seeker exploring potential employers, a shopper discovering new brands, a student researching universities, or simply curious about businesses in any field—this is your starting point for navigating the global business landscape.
+                        Welcome to COMCUBES' comprehensive business sector directory. Whether you're a professional conducting market research, a job seeker exploring potential employers, a shopper discovering new brands, a student researching universities, or simply curious about businesses in any field - this is your starting point for navigating the global business landscape.
                       </p>
 
                       <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What Are Business Sectors?</h2>
                       <p>
-                        Business sectors represent the highest-level categorization of economic activity. Each of our {sectors?.length || 20} major sectors encompasses a broad area of commerce, from Education and Healthcare to Retail, Automotive, and Entertainment. Think of sectors as the main chapters in the story of global business—each one containing specialized industries and thousands of companies operating within that domain.
+                        Business sectors represent the highest-level categorization of economic activity. Each of our {sectors?.length || 20} major sectors encompasses a broad area of commerce, from Education and Healthcare to Retail, Automotive, and Entertainment. Think of sectors as the main chapters in the story of global business - each one containing specialized industries and thousands of companies operating within that domain.
                       </p>
 
                       <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">How to Use This Directory</h2>
                       <p>
-                        Our hierarchical navigation system makes finding businesses intuitive and efficient. Start by selecting a sector that matches your interest—for example, if you're looking for universities, choose Education; if you're shopping for fashion brands, select Retail; or if you're researching car manufacturers, click on Automotive. Each sector contains 20 specialized industries, and each industry showcases up to 20 leading companies in that field. This structured approach helps you quickly drill down from broad categories to specific businesses.
+                        Our hierarchical navigation system makes finding businesses intuitive and efficient. Start by selecting a sector that matches your interest - for example, if you're looking for universities, choose Education; if you're shopping for fashion brands, select Retail; or if you're researching car manufacturers, click on Automotive. Each sector contains 20 specialized industries, and each industry showcases up to 20 leading companies in that field. This structured approach helps you quickly drill down from broad categories to specific businesses.
                       </p>
 
                       <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Who Benefits from COMCUBES?</h2>
@@ -344,12 +344,12 @@ export default function SectorsPage() {
 
                       <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">What Makes Our Directory Unique?</h2>
                       <p>
-                        COMCUBES offers both breadth and depth. Our curated local directory features 7,400+ carefully selected companies across 400+ industries, organized into {sectors?.length || 20} major sectors. But we don't stop there—our integrated global search powered by Google Custom Search API extends your reach to millions of businesses worldwide. This dual approach means you can browse our expertly organized directory for quality curation, then expand to global search when you need comprehensive coverage.
+                        COMCUBES offers both breadth and depth. Our curated local directory features 7,400+ carefully selected companies across 400+ industries, organized into {sectors?.length || 20} major sectors. But we don't stop there - our integrated global search powered by Google Custom Search API extends your reach to millions of businesses worldwide. This dual approach means you can browse our expertly organized directory for quality curation, then expand to global search when you need comprehensive coverage.
                       </p>
 
                       <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Start Your Discovery Journey</h2>
                       <p>
-                        Select any sector below to begin exploring. Each sector card shows the breadth of that business area, with visual cues and industry counts to guide your navigation. Whether you're looking for specific companies like Apple in Technology, Harvard University in Education, or Nike in Retail—or simply browsing to discover new businesses—your journey through the global business landscape starts here.
+                        Select any sector below to begin exploring. Each sector card shows the breadth of that business area, with visual cues and industry counts to guide your navigation. Whether you're looking for specific companies like Apple in Technology, Harvard University in Education, or Nike in Retail - or simply browsing to discover new businesses - your journey through the global business landscape starts here.
                       </p>
 
                       <div className="mt-6 bg-gray-50 border border-gray-200 rounded-lg p-5">

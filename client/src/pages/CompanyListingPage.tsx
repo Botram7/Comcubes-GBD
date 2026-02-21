@@ -579,7 +579,7 @@ export default function CompanyListingPage() {
             <ReadMore className="prose max-w-none text-gray-700">
               <div className="space-y-4">
                 <p className="text-lg leading-relaxed">
-                  COMCUBES Global Business Directory connects your company with professionals, consumers, researchers, and business decision-makers worldwide. Whether you're a startup seeking visibility, an established company expanding your digital footprint, or a specialized service provider targeting specific industries—our directory listing service puts your business in front of the right audience.
+                  COMCUBES Global Business Directory connects your company with professionals, consumers, researchers, and business decision-makers worldwide. Whether you're a startup seeking visibility, an established company expanding your digital footprint, or a specialized service provider targeting specific industries - our directory listing service puts your business in front of the right audience.
                 </p>
 
                 <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Why List Your Company with COMCUBES?</h2>
@@ -621,7 +621,7 @@ export default function CompanyListingPage() {
 
                 <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Simple Three-Step Process</h2>
                 <p>
-                  Listing your company takes just minutes. First, choose your listing plan (Basic, Premium, or Featured) based on your marketing goals and budget. Next, complete our simple form with your company information—name, website, description, and industry selection. Finally, process payment through our secure system powered by Paystack. Once payment is confirmed, we review your submission and publish your listing within 2-3 business days.
+                  Listing your company takes just minutes. First, choose your listing plan (Basic, Premium, or Featured) based on your marketing goals and budget. Next, complete our simple form with your company information - name, website, description, and industry selection. Finally, process payment through our secure system powered by Paystack. Once payment is confirmed, we review your submission and publish your listing within 2-3 business days.
                 </p>
 
                 <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Transparent Pricing</h2>
