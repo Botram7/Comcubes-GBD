@@ -92,7 +92,7 @@ export default function HomePage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title="COMCUBES - Discover Everything Business | Global Companies, Brands & Industries"
-        description="Your gateway to everything business. Professionals, researchers, job seekers, shoppers, students—access 7,400+ curated companies across 400+ industries PLUS global search for millions worldwide. From Fortune 500 to local businesses, find exactly what you're looking for. COMCUBES (Comcube, Commercial Cubes) - your trusted business directory."
+        description="Your gateway to everything business. Professionals, researchers, job seekers, shoppers, students - access 7,400+ curated companies across 400+ industries PLUS global search for millions worldwide. From Fortune 500 to local businesses, find exactly what you're looking for. COMCUBES (Comcube, Commercial Cubes) - your trusted business directory."
         keywords={[
           ...BRAND_KEYWORDS,
           'business directory', 'global companies', 'find businesses', 'discover brands', 
@@ -134,7 +134,7 @@ export default function HomePage() {
           </h1>
           
           <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
-            Whether you're a business professional conducting research, a job seeker exploring employers, a shopper discovering global brands, a student researching universities, or simply curious about businesses near you or anywhere in the world—COMCUBES is your gateway. Instantly access our curated directory of 7,400+ companies across 20 major sectors and 400+ specialized industries. Plus, tap into our powerful global search to discover millions of businesses worldwide. From Fortune 500 giants to local boutiques, find exactly what you're looking for.
+            Whether you're a business professional conducting research, a job seeker exploring employers, a shopper discovering global brands, a student researching universities, or simply curious about businesses near you or anywhere in the world, COMCUBES is your gateway. Instantly access our curated directory of 7,400+ companies across 20 major sectors and 400+ specialized industries. Plus, tap into our powerful global search to discover millions of businesses worldwide. From Fortune 500 giants to local boutiques, find exactly what you're looking for.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -464,7 +464,7 @@ export default function HomePage() {
             Ready to Explore the Global Business Ecosystem?
           </h2>
           <p className="text-base md:text-lg text-blue-100 mb-6 md:mb-8 max-w-2xl mx-auto">
-            Join thousands of professionals, researchers, and decision makers worldwide—along with students, job seekers, and shoppers—who rely on COMCUBES for comprehensive business intelligence, research, and discovery.
+            Join thousands of professionals, researchers, and decision makers worldwide - along with students, job seekers, and shoppers - who rely on COMCUBES for comprehensive business intelligence, research, and discovery.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

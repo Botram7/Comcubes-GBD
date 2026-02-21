@@ -223,12 +223,12 @@ export default function GeographyPage() {
             <ReadMore className="prose max-w-none text-gray-700">
               <div className="space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Welcome to COMCUBES' geographic business discovery system. Whether you're searching for services in your local area, exploring brands in specific countries, or researching international companies across continents—our location-based directory helps you find businesses exactly where you need them.
+                  Welcome to COMCUBES' geographic business discovery system. Whether you're searching for services in your local area, exploring brands in specific countries, or researching international companies across continents - our location-based directory helps you find businesses exactly where you need them.
                 </p>
 
                 <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Why Search by Location?</h2>
                 <p>
-                  Geography matters in business. Local businesses understand regional needs, cultural preferences, and market dynamics in ways that distant competitors cannot. International companies adapt their offerings to different markets, creating unique opportunities in each region. By organizing our directory geographically, we help you find businesses that are relevant to specific locations—whether that's your hometown, a country you're researching, or an international market you're exploring.
+                  Geography matters in business. Local businesses understand regional needs, cultural preferences, and market dynamics in ways that distant competitors cannot. International companies adapt their offerings to different markets, creating unique opportunities in each region. By organizing our directory geographically, we help you find businesses that are relevant to specific locations - whether that's your hometown, a country you're researching, or an international market you're exploring.
                 </p>
 
                 <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">How Our Geographic System Works</h2>
@@ -265,7 +265,7 @@ export default function GeographyPage() {
 
                 <h2 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Start Your Geographic Discovery</h2>
                 <p>
-                  Select a continent below to begin exploring businesses by location. Each continent card shows regional statistics and leads to sub-regions, which then break down into individual countries. This hierarchical approach lets you zoom in from global to local, finding exactly the geographic scope you need—whether that's exploring all of Europe, focusing on Southeast Asia, or drilling down to businesses specifically in Japan.
+                  Select a continent below to begin exploring businesses by location. Each continent card shows regional statistics and leads to sub-regions, which then break down into individual countries. This hierarchical approach lets you zoom in from global to local, finding exactly the geographic scope you need - whether that's exploring all of Europe, focusing on Southeast Asia, or drilling down to businesses specifically in Japan.
                 </p>
               </div>
             </ReadMore>
