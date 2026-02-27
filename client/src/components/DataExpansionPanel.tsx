@@ -12,6 +12,11 @@ import {
   MapPin,
   AlertTriangle,
   Info,
+  ClipboardList,
+  Download,
+  ThumbsUp,
+  ThumbsDown,
+  XCircle,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -94,7 +99,7 @@ function InfoBanner({ message }: { message: string }) {
 export function DataExpansionPanel() {
   const { toast } = useToast();
   const queryClient = useQueryClient();
-  const [activeSection, setActiveSection] = useState<'overview' | 'ai-generator' | 'descriptions' | 'wikidata' | 'cache'>('overview');
+  const [activeSection, setActiveSection] = useState<'overview' | 'ai-generator' | 'descriptions' | 'wikidata' | 'cache' | 'staged'>('overview');
   const [selectedSector, setSelectedSector] = useState<string>('');
   const [geoTarget, setGeoTarget] = useState<string>('');
   const [generatingIndustry, setGeneratingIndustry] = useState<string>('');
@@ -103,6 +108,8 @@ export function DataExpansionPanel() {
   const [generationErrors, setGenerationErrors] = useState<string[]>([]);
   const [importErrors, setImportErrors] = useState<string[]>([]);
   const [wikidataQuery, setWikidataQuery] = useState({ industryName: '', countryCode: '', continentName: '' });
+  const [stagedFilter, setStagedFilter] = useState<{ status: string; source: string }>({ status: '', source: '' });
+  const [selectedStagedIds, setSelectedStagedIds] = useState<Set<number>>(new Set());
 
   const { data: gapsData } = useQuery<{ totalIndustries: number; industriesWithGaps: number; gaps: GapInfo[] }>({
     queryKey: ['/api/admin/ai-generator/gaps'],
@@ -119,6 +126,89 @@ export function DataExpansionPanel() {
 
   const { data: sectors } = useQuery<any[]>({
     queryKey: ['/api/sectors'],
+  });
+
+  const stagedQueryParams = new URLSearchParams();
+  if (stagedFilter.status) stagedQueryParams.set('status', stagedFilter.status);
+  if (stagedFilter.source) stagedQueryParams.set('source', stagedFilter.source);
+  const stagedQueryString = stagedQueryParams.toString();
+
+  const { data: stagedCompanies, refetch: refetchStaged } = useQuery<any[]>({
+    queryKey: ['/api/admin/staged-companies', stagedQueryString],
+    queryFn: async () => {
+      const url = stagedQueryString ? `/api/admin/staged-companies?${stagedQueryString}` : '/api/admin/staged-companies';
+      const res = await fetch(url, { credentials: 'include' });
+      if (!res.ok) throw new Error('Failed to fetch staged companies');
+      return res.json();
+    },
+  });
+
+  const { data: stagedStats } = useQuery<{ total: number; pending: number; approved: number; rejected: number }>({
+    queryKey: ['/api/admin/staged-companies/stats'],
+  });
+
+  const approveMutation = useMutation({
+    mutationFn: async (id: number) => {
+      const response = await apiRequest('POST', `/api/admin/staged-companies/${id}/approve`);
+      return response.json();
+    },
+    onSuccess: (data) => {
+      refetchStaged();
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/staged-companies/stats'] });
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/ai-generator/gaps'] });
+      toast({ title: data.success ? 'Approved' : 'Issue', description: data.message });
+    },
+    onError: (error: Error) => {
+      toast({ title: 'Approval failed', description: error.message, variant: 'destructive' });
+    },
+  });
+
+  const rejectMutation = useMutation({
+    mutationFn: async (id: number) => {
+      const response = await apiRequest('POST', `/api/admin/staged-companies/${id}/reject`);
+      return response.json();
+    },
+    onSuccess: (data) => {
+      refetchStaged();
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/staged-companies/stats'] });
+      toast({ title: 'Rejected', description: data.message });
+    },
+    onError: (error: Error) => {
+      toast({ title: 'Rejection failed', description: error.message, variant: 'destructive' });
+    },
+  });
+
+  const bulkApproveMutation = useMutation({
+    mutationFn: async (ids: number[]) => {
+      const response = await apiRequest('POST', '/api/admin/staged-companies/approve-bulk', { ids });
+      return response.json();
+    },
+    onSuccess: (data) => {
+      setSelectedStagedIds(new Set());
+      refetchStaged();
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/staged-companies/stats'] });
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/ai-generator/gaps'] });
+      toast({ title: 'Bulk approve complete', description: data.message });
+    },
+    onError: (error: Error) => {
+      toast({ title: 'Bulk approve failed', description: error.message, variant: 'destructive' });
+    },
+  });
+
+  const bulkRejectMutation = useMutation({
+    mutationFn: async (ids: number[]) => {
+      const response = await apiRequest('POST', '/api/admin/staged-companies/reject-bulk', { ids });
+      return response.json();
+    },
+    onSuccess: (data) => {
+      setSelectedStagedIds(new Set());
+      refetchStaged();
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/staged-companies/stats'] });
+      toast({ title: 'Bulk reject complete', description: data.message });
+    },
+    onError: (error: Error) => {
+      toast({ title: 'Bulk reject failed', description: error.message, variant: 'destructive' });
+    },
   });
 
   const generateMutation = useMutation({
@@ -270,7 +360,7 @@ export function DataExpansionPanel() {
         </Card>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <Card className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setActiveSection('ai-generator')}>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
@@ -313,6 +403,21 @@ export function DataExpansionPanel() {
               Import real company data from Wikidata's free open database. No API key needed.
             </p>
             <Badge variant="outline">Free data source</Badge>
+          </CardContent>
+        </Card>
+
+        <Card className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setActiveSection('staged')}>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-lg">
+              <ClipboardList className="h-5 w-5 text-amber-500" />
+              Staged Imports
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-gray-600 mb-3">
+              Review, approve, reject, or export staged company imports before they go live.
+            </p>
+            <Badge variant="outline">{stagedStats?.pending || 0} pending review</Badge>
           </CardContent>
         </Card>
       </div>
@@ -697,6 +802,239 @@ export function DataExpansionPanel() {
     </div>
   );
 
+  const toggleStagedId = (id: number) => {
+    setSelectedStagedIds(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const toggleAllStaged = () => {
+    if (!stagedCompanies) return;
+    const pendingIds = stagedCompanies.filter((s: any) => s.status === 'pending').map((s: any) => s.id);
+    if (selectedStagedIds.size === pendingIds.length && pendingIds.length > 0) {
+      setSelectedStagedIds(new Set());
+    } else {
+      setSelectedStagedIds(new Set(pendingIds));
+    }
+  };
+
+  const renderStaged = () => (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-semibold">Staged Imports</h3>
+        <Button variant="outline" size="sm" onClick={() => setActiveSection('overview')}>
+          Back to Overview
+        </Button>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <Card>
+          <CardContent className="pt-6 text-center">
+            <p className="text-3xl font-bold text-blue-600">{stagedStats?.total || 0}</p>
+            <p className="text-sm text-gray-500">Total Staged</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-6 text-center">
+            <p className="text-3xl font-bold text-amber-600">{stagedStats?.pending || 0}</p>
+            <p className="text-sm text-gray-500">Pending</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-6 text-center">
+            <p className="text-3xl font-bold text-green-600">{stagedStats?.approved || 0}</p>
+            <p className="text-sm text-gray-500">Approved</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-6 text-center">
+            <p className="text-3xl font-bold text-red-600">{stagedStats?.rejected || 0}</p>
+            <p className="text-sm text-gray-500">Rejected</p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base flex items-center justify-between">
+            <span>Filters & Actions</span>
+            <div className="flex gap-2">
+              {selectedStagedIds.size > 0 && (
+                <>
+                  <Button
+                    size="sm"
+                    onClick={() => bulkApproveMutation.mutate(Array.from(selectedStagedIds))}
+                    disabled={bulkApproveMutation.isPending}
+                  >
+                    {bulkApproveMutation.isPending ? <Loader2 className="h-4 w-4 mr-1 animate-spin" /> : <ThumbsUp className="h-4 w-4 mr-1" />}
+                    Approve {selectedStagedIds.size}
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="destructive"
+                    onClick={() => bulkRejectMutation.mutate(Array.from(selectedStagedIds))}
+                    disabled={bulkRejectMutation.isPending}
+                  >
+                    {bulkRejectMutation.isPending ? <Loader2 className="h-4 w-4 mr-1 animate-spin" /> : <ThumbsDown className="h-4 w-4 mr-1" />}
+                    Reject {selectedStagedIds.size}
+                  </Button>
+                </>
+              )}
+              <a href="/api/admin/staged-companies/export-csv" target="_blank" rel="noopener noreferrer">
+                <Button size="sm" variant="outline">
+                  <Download className="h-4 w-4 mr-1" /> Export CSV
+                </Button>
+              </a>
+            </div>
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex gap-4">
+            <Select onValueChange={(val) => setStagedFilter(prev => ({ ...prev, status: val === 'all' ? '' : val }))}>
+              <SelectTrigger className="w-40">
+                <SelectValue placeholder="Status" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Status</SelectItem>
+                <SelectItem value="pending">Pending</SelectItem>
+                <SelectItem value="approved">Approved</SelectItem>
+                <SelectItem value="rejected">Rejected</SelectItem>
+              </SelectContent>
+            </Select>
+            <Select onValueChange={(val) => setStagedFilter(prev => ({ ...prev, source: val === 'all' ? '' : val }))}>
+              <SelectTrigger className="w-40">
+                <SelectValue placeholder="Source" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Sources</SelectItem>
+                <SelectItem value="ai">AI Generated</SelectItem>
+                <SelectItem value="wikidata">Wikidata</SelectItem>
+                <SelectItem value="csv">CSV Import</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">
+            Staged Companies ({stagedCompanies?.length || 0})
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="max-h-[500px] overflow-y-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-10">
+                    <input
+                      type="checkbox"
+                      checked={stagedCompanies && stagedCompanies.filter((s: any) => s.status === 'pending').length > 0 && selectedStagedIds.size === stagedCompanies.filter((s: any) => s.status === 'pending').length}
+                      onChange={toggleAllStaged}
+                      className="rounded"
+                    />
+                  </TableHead>
+                  <TableHead>Company</TableHead>
+                  <TableHead>Industry</TableHead>
+                  <TableHead>Sector</TableHead>
+                  <TableHead>Source</TableHead>
+                  <TableHead>Confidence</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Actions</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {(stagedCompanies || []).map((sc: any) => (
+                  <TableRow key={sc.id} className={sc.status === 'rejected' ? 'opacity-50' : ''}>
+                    <TableCell>
+                      {sc.status === 'pending' && (
+                        <input
+                          type="checkbox"
+                          checked={selectedStagedIds.has(sc.id)}
+                          onChange={() => toggleStagedId(sc.id)}
+                          className="rounded"
+                        />
+                      )}
+                    </TableCell>
+                    <TableCell>
+                      <div>
+                        <p className="font-medium text-sm">{sc.name}</p>
+                        {sc.websiteUrl && <p className="text-xs text-blue-600 truncate max-w-40">{sc.websiteUrl}</p>}
+                        {sc.country && <p className="text-xs text-gray-400">{sc.country}</p>}
+                      </div>
+                    </TableCell>
+                    <TableCell className="text-sm">{sc.matchedIndustry || sc.industryName}</TableCell>
+                    <TableCell className="text-sm">{sc.matchedSector || sc.sectorName}</TableCell>
+                    <TableCell>
+                      <Badge variant="outline" className="text-xs">
+                        {sc.source === 'ai' ? 'AI' : sc.source === 'wikidata' ? 'Wikidata' : sc.source}
+                      </Badge>
+                    </TableCell>
+                    <TableCell>
+                      <Badge
+                        variant="outline"
+                        className={`text-xs ${
+                          sc.matchConfidence === 'high' ? 'text-green-700 border-green-300' :
+                          sc.matchConfidence === 'medium' ? 'text-amber-700 border-amber-300' :
+                          'text-red-700 border-red-300'
+                        }`}
+                      >
+                        {sc.matchConfidence || 'unknown'}
+                      </Badge>
+                    </TableCell>
+                    <TableCell>
+                      <Badge
+                        variant={sc.status === 'approved' ? 'default' : sc.status === 'rejected' ? 'destructive' : 'secondary'}
+                        className="text-xs"
+                      >
+                        {sc.status}
+                      </Badge>
+                    </TableCell>
+                    <TableCell>
+                      {sc.status === 'pending' && (
+                        <div className="flex gap-1">
+                          <Button
+                            size="sm"
+                            variant="ghost"
+                            onClick={() => approveMutation.mutate(sc.id)}
+                            disabled={approveMutation.isPending}
+                            title="Approve"
+                          >
+                            <CheckCircle className="h-4 w-4 text-green-600" />
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="ghost"
+                            onClick={() => rejectMutation.mutate(sc.id)}
+                            disabled={rejectMutation.isPending}
+                            title="Reject"
+                          >
+                            <XCircle className="h-4 w-4 text-red-600" />
+                          </Button>
+                        </div>
+                      )}
+                    </TableCell>
+                  </TableRow>
+                ))}
+                {(!stagedCompanies || stagedCompanies.length === 0) && (
+                  <TableRow>
+                    <TableCell colSpan={8} className="text-center text-gray-500 py-8">
+                      No staged companies found. Import companies via AI Generator or Wikidata to see them here.
+                    </TableCell>
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+
   const renderCache = () => (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -741,6 +1079,7 @@ export function DataExpansionPanel() {
       {activeSection === 'ai-generator' && renderAIGenerator()}
       {activeSection === 'descriptions' && renderDescriptions()}
       {activeSection === 'wikidata' && renderWikidata()}
+      {activeSection === 'staged' && renderStaged()}
       {activeSection === 'cache' && renderCache()}
     </div>
   );

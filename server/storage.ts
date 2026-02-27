@@ -1,7 +1,7 @@
 import { csvParser } from './services/csvParser';
 import { db } from './db';
-import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, companyClaims, bannerAds, adAnalytics, adPerformanceSummary, emailLogs, continents, regions, countries, companyLocations, searchCache, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type CompanyClaim, type BannerAd, type AdAnalytics, type AdPerformanceSummary, type EmailLog, type Continent, type Region, type Country, type CompanyLocation, type SearchCache, type InsertSearchCache, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist, type InsertCompanyClaim, type InsertBannerAd, type InsertAdAnalytics, type InsertAdPerformanceSummary, type InsertEmailLog } from '@shared/schema';
-import { eq, ilike, or, and, sql, gt, lt, desc } from 'drizzle-orm';
+import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, companyClaims, bannerAds, adAnalytics, adPerformanceSummary, emailLogs, continents, regions, countries, companyLocations, searchCache, stagedCompanies, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type CompanyClaim, type BannerAd, type AdAnalytics, type AdPerformanceSummary, type EmailLog, type Continent, type Region, type Country, type CompanyLocation, type SearchCache, type InsertSearchCache, type StagedCompany, type InsertStagedCompany, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist, type InsertCompanyClaim, type InsertBannerAd, type InsertAdAnalytics, type InsertAdPerformanceSummary, type InsertEmailLog } from '@shared/schema';
+import { eq, ilike, or, and, sql, gt, lt, desc, inArray } from 'drizzle-orm';
 import { generateCompanyDescription } from './services/companyDescriptionGenerator';
 
 export interface IStorage {
@@ -140,6 +140,16 @@ export interface IStorage {
   }>;
   clearExpiredSearchCache(): Promise<number>;
   clearAllSearchCache(): Promise<number>;
+
+  // Staged companies operations
+  createStagedCompany(staged: InsertStagedCompany): Promise<StagedCompany>;
+  createStagedCompanies(staged: InsertStagedCompany[]): Promise<StagedCompany[]>;
+  getStagedCompanies(filters?: { status?: string; source?: string; sectorName?: string }): Promise<StagedCompany[]>;
+  getStagedCompanyById(id: number): Promise<StagedCompany | undefined>;
+  updateStagedCompanyStatus(id: number, status: string): Promise<StagedCompany | undefined>;
+  updateStagedCompaniesStatus(ids: number[], status: string): Promise<number>;
+  deleteStagedCompany(id: number): Promise<boolean>;
+  getStagedCompanyStats(): Promise<{ total: number; pending: number; approved: number; rejected: number }>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -337,17 +347,16 @@ export class DatabaseStorage implements IStorage {
       const companiesInIndustry = await db.select().from(companies)
         .where(eq(companies.industryName, industryName));
       
-      const maxSlots = 20; // Each industry grid shows 20 companies (5x4 grid)
       const currentCount = companiesInIndustry.length;
       
       return {
-        available: currentCount < maxSlots,
+        available: true,
         currentCount,
-        maxSlots
+        maxSlots: Infinity
       };
     } catch (error) {
       console.error('Error checking slot availability:', error);
-      return { available: false, currentCount: 0, maxSlots: 20 };
+      return { available: true, currentCount: 0, maxSlots: Infinity };
     }
   }
 
@@ -455,8 +464,7 @@ export class DatabaseStorage implements IStorage {
         industryMap.set(company.industryName, count + 1);
       });
       
-      // Count industries with 20 or more companies
-      const industriesAtCapacity = Array.from(industryMap.values()).filter(count => count >= 20).length;
+      const industriesAtCapacity = 0;
 
       const sevenDaysAgo = new Date();
       sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
@@ -1447,6 +1455,75 @@ export class DatabaseStorage implements IStorage {
     } catch (error) {
       console.error('Error clearing all search cache:', error);
       return 0;
+    }
+  }
+
+  async createStagedCompany(staged: InsertStagedCompany): Promise<StagedCompany> {
+    const [created] = await db.insert(stagedCompanies).values(staged).returning();
+    return created;
+  }
+
+  async createStagedCompanies(staged: InsertStagedCompany[]): Promise<StagedCompany[]> {
+    if (staged.length === 0) return [];
+    const created = await db.insert(stagedCompanies).values(staged).returning();
+    return created;
+  }
+
+  async getStagedCompanies(filters?: { status?: string; source?: string; sectorName?: string }): Promise<StagedCompany[]> {
+    try {
+      const conditions = [];
+      if (filters?.status) {
+        conditions.push(eq(stagedCompanies.status, filters.status));
+      }
+      if (filters?.source) {
+        conditions.push(eq(stagedCompanies.source, filters.source));
+      }
+      if (filters?.sectorName) {
+        conditions.push(eq(stagedCompanies.sectorName, filters.sectorName));
+      }
+      if (conditions.length > 0) {
+        return await db.select().from(stagedCompanies).where(and(...conditions)).orderBy(desc(stagedCompanies.stagedAt));
+      }
+      return await db.select().from(stagedCompanies).orderBy(desc(stagedCompanies.stagedAt));
+    } catch (error) {
+      console.error('Error getting staged companies:', error);
+      return [];
+    }
+  }
+
+  async getStagedCompanyById(id: number): Promise<StagedCompany | undefined> {
+    const [found] = await db.select().from(stagedCompanies).where(eq(stagedCompanies.id, id)).limit(1);
+    return found || undefined;
+  }
+
+  async updateStagedCompanyStatus(id: number, status: string): Promise<StagedCompany | undefined> {
+    const [updated] = await db.update(stagedCompanies).set({ status }).where(eq(stagedCompanies.id, id)).returning();
+    return updated || undefined;
+  }
+
+  async updateStagedCompaniesStatus(ids: number[], status: string): Promise<number> {
+    if (ids.length === 0) return 0;
+    const updated = await db.update(stagedCompanies).set({ status }).where(inArray(stagedCompanies.id, ids)).returning();
+    return updated.length;
+  }
+
+  async deleteStagedCompany(id: number): Promise<boolean> {
+    const deleted = await db.delete(stagedCompanies).where(eq(stagedCompanies.id, id)).returning();
+    return deleted.length > 0;
+  }
+
+  async getStagedCompanyStats(): Promise<{ total: number; pending: number; approved: number; rejected: number }> {
+    try {
+      const all = await db.select().from(stagedCompanies);
+      return {
+        total: all.length,
+        pending: all.filter(s => s.status === 'pending').length,
+        approved: all.filter(s => s.status === 'approved').length,
+        rejected: all.filter(s => s.status === 'rejected').length,
+      };
+    } catch (error) {
+      console.error('Error getting staged company stats:', error);
+      return { total: 0, pending: 0, approved: 0, rejected: 0 };
     }
   }
 }

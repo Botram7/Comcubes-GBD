@@ -256,6 +256,27 @@ export const adPurchases = pgTable('ad_purchases', {
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
+export const stagedCompanies = pgTable('staged_companies', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  websiteUrl: text('website_url'),
+  industryName: text('industry_name').notNull(),
+  sectorName: text('sector_name').notNull(),
+  employeeCount: text('employee_count'),
+  revenueEstimate: text('revenue_estimate'),
+  foundedYear: integer('founded_year'),
+  companySize: text('company_size'),
+  description: text('description'),
+  country: text('country'),
+  countryCode: text('country_code'),
+  source: text('source').notNull(),
+  matchedSector: text('matched_sector'),
+  matchedIndustry: text('matched_industry'),
+  matchConfidence: text('match_confidence'),
+  status: text('status').default('pending').notNull(),
+  stagedAt: timestamp('staged_at').defaultNow().notNull(),
+});
+
 export const searchCache = pgTable('search_cache', {
   id: serial('id').primaryKey(),
   queryString: text('query_string').notNull(),
@@ -286,6 +307,7 @@ export type Region = typeof regions.$inferSelect;
 export type Country = typeof countries.$inferSelect;
 export type CompanyLocation = typeof companyLocations.$inferSelect;
 export type AdPurchase = typeof adPurchases.$inferSelect;
+export type StagedCompany = typeof stagedCompanies.$inferSelect;
 
 export type InsertSector = typeof sectors.$inferInsert;
 export type InsertIndustry = typeof industries.$inferInsert;
@@ -304,6 +326,7 @@ export type InsertRegion = typeof regions.$inferInsert;
 export type InsertCountry = typeof countries.$inferInsert;
 export type InsertCompanyLocation = typeof companyLocations.$inferInsert;
 export type InsertAdPurchase = typeof adPurchases.$inferInsert;
+export type InsertStagedCompany = typeof stagedCompanies.$inferInsert;
 
 // Zod schemas for validation
 export const insertSectorSchema = createInsertSchema(sectors);
@@ -339,5 +362,7 @@ export const insertCompanyLocationSchema = createInsertSchema(companyLocations);
 export const selectCompanyLocationSchema = createSelectSchema(companyLocations);
 export const insertAdPurchaseSchema = createInsertSchema(adPurchases);
 export const selectAdPurchaseSchema = createSelectSchema(adPurchases);
+export const insertStagedCompanySchema = createInsertSchema(stagedCompanies);
+export const selectStagedCompanySchema = createSelectSchema(stagedCompanies);
 export const insertSearchCacheSchema = createInsertSchema(searchCache);
 export const selectSearchCacheSchema = createSelectSchema(searchCache);

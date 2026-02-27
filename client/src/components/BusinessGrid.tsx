@@ -5,6 +5,29 @@ import { useLocation } from "wouter";
 import { Crown, ExternalLink } from "lucide-react";
 import type { Sector, Industry, Company } from "@/lib/types";
 
+export function BusinessGridSkeleton({ count = 20 }: { count?: number }) {
+  return (
+    <div className="grid grid-cols-1 min-[375px]:grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 w-full max-w-4xl mx-auto px-2 sm:px-4 mt-4">
+      {Array.from({ length: count }).map((_, index) => (
+        <Card
+          key={`skeleton-${index}`}
+          className="relative overflow-hidden aspect-square"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse">
+            <div className="absolute inset-0 flex items-end justify-center">
+              <div className="text-center p-2 sm:p-3 pb-3 sm:pb-4 w-full px-2">
+                <div className="h-3 w-16 bg-gray-400/30 rounded mx-auto mb-2"></div>
+                <div className="h-4 w-24 bg-gray-400/30 rounded mx-auto mb-1"></div>
+                <div className="h-3 w-16 bg-gray-400/30 rounded mx-auto"></div>
+              </div>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  );
+}
+
 interface BusinessGridProps {
   items: (Sector | Industry | Company)[];
   type: 'sector' | 'industry' | 'company';
@@ -54,20 +77,8 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
     
     return gradients[index % gradients.length];
   };
-  // Ensure items is always an array and exactly 20 items for 5x4 grid
   const validItems = Array.isArray(items) ? items : [];
-  const gridItems = [...validItems];
-  
-  while (gridItems.length < 20) {
-    gridItems.push({
-      id: -1,
-      name: 'Available Slot',
-      ...(type === 'industry' && { sectorName: '' }),
-      ...(type === 'company' && { industryName: '', sectorName: '', websiteUrl: null })
-    } as any);
-  }
-
-  const displayItems = gridItems.slice(0, 20);
+  const displayItems = validItems;
 
   return (
     <div className="grid grid-cols-1 min-[375px]:grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 w-full max-w-4xl mx-auto px-2 sm:px-4">

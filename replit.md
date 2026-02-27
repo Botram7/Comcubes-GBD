@@ -144,6 +144,41 @@ The application is built with a modern full-stack architecture, separating front
 - Wikidata is completely free with no rate limits for reasonable usage
 - Wikidata SPARQL queries support 20 languages for global coverage
 
+## Phase 3: Smart Import & Dynamic Grids (Completed)
+
+**Goal**: Improve import accuracy with smart category matching, add a staging/review layer before live import, and remove the rigid 20-slot grid limit for dynamic company display.
+
+**Smart Category Matcher** (`server/services/categoryMatcher.ts`):
+- Maps arbitrary incoming sector/industry names to closest existing Comcubes categories
+- Keyword/alias map covering all 20 sectors and 400 industries (e.g., "Finance" → "Banking and Financial Services", "Farming" → "Agriculture")
+- Fuzzy matching fallback using Levenshtein distance and token overlap (Dice coefficient)
+- Returns best match with confidence score (1.0 = exact, 0.95 = alias, 0.8 = substring, variable for fuzzy)
+- Items below 0.45 confidence threshold flagged with `needsReview: true` for admin review
+- Integrated into both `aiCompanyGenerator.ts` and `wikidataService.ts`
+
+**Staging/Preview System**:
+- `staged_companies` table in database with source tracking (ai/wikidata/csv), matched category info, confidence scores, and status (pending/approved/rejected)
+- AI generator and Wikidata imports now land in staging instead of going directly to live `companies` table
+- Admin API routes: GET staged companies (with filters), approve/reject (single + bulk), CSV export
+- "Staged Imports" tab in Data Expansion admin panel with stats, filters, bulk actions, and CSV export button
+- Approve action moves staged company to live `companies` table via existing import pipeline
+
+**Dynamic Pagination**:
+- Removed rigid 20-slot grid limit: `ITEMS_PER_PAGE` increased to 40, `checkSlotAvailability` no longer caps at 20
+- `BusinessGrid.tsx` no longer pads to 20 items with "Available Slot" placeholders — displays exactly the items passed
+- `/api/industries/:name/companies` supports `?page=N&limit=N` pagination (backward compatible)
+- Industry and Geography company pages use "Load More" pattern with skeleton loaders
+- Companies accumulate as user clicks "Load More" for seamless browsing experience
+
+**API Endpoints Added**:
+- `GET /api/admin/staged-companies` — List staged companies with optional filters (status, source, sector)
+- `GET /api/admin/staged-companies/stats` — Staging stats by status
+- `GET /api/admin/staged-companies/export-csv` — CSV export of staged companies
+- `POST /api/admin/staged-companies/:id/approve` — Approve single staged company to live
+- `POST /api/admin/staged-companies/:id/reject` — Reject single staged company
+- `POST /api/admin/staged-companies/approve-bulk` — Bulk approve
+- `POST /api/admin/staged-companies/reject-bulk` — Bulk reject
+
 ## External Dependencies
 - **Frontend Frameworks**: `react`, `react-dom`, `@vitejs/plugin-react`
 - **Routing**: `wouter`
