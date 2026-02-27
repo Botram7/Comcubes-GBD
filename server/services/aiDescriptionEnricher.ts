@@ -13,6 +13,10 @@ interface EnrichmentResult {
   companyId: number;
   companyName: string;
   description: string;
+  previousDescription: string;
+  industryName: string;
+  sectorName: string;
+  websiteUrl: string;
   success: boolean;
   error?: string;
 }
@@ -116,6 +120,7 @@ export async function enrichBatch(batchSize: number = 10): Promise<{
   const results: EnrichmentResult[] = [];
 
   for (const company of companiesWithout) {
+    const previousDescription = company.description || "";
     try {
       const description = await generateCompanyDescription(company);
       if (description) {
@@ -127,6 +132,10 @@ export async function enrichBatch(batchSize: number = 10): Promise<{
           companyId: company.id,
           companyName: company.name,
           description,
+          previousDescription,
+          industryName: company.industryName || "",
+          sectorName: company.sectorName || "",
+          websiteUrl: company.websiteUrl || "",
           success: true,
         });
       } else {
@@ -134,6 +143,10 @@ export async function enrichBatch(batchSize: number = 10): Promise<{
           companyId: company.id,
           companyName: company.name,
           description: "",
+          previousDescription,
+          industryName: company.industryName || "",
+          sectorName: company.sectorName || "",
+          websiteUrl: company.websiteUrl || "",
           success: false,
           error: "Empty response from AI",
         });
@@ -143,6 +156,10 @@ export async function enrichBatch(batchSize: number = 10): Promise<{
         companyId: company.id,
         companyName: company.name,
         description: "",
+        previousDescription,
+        industryName: company.industryName || "",
+        sectorName: company.sectorName || "",
+        websiteUrl: company.websiteUrl || "",
         success: false,
         error: error instanceof Error ? error.message : "Unknown error",
       });
@@ -170,10 +187,16 @@ export async function enrichSingleCompany(companyId: number): Promise<Enrichment
       companyId,
       companyName: "Unknown",
       description: "",
+      previousDescription: "",
+      industryName: "",
+      sectorName: "",
+      websiteUrl: "",
       success: false,
       error: "Company not found",
     };
   }
+
+  const previousDescription = company.description || "";
 
   try {
     const description = await generateCompanyDescription(company);
@@ -186,6 +209,10 @@ export async function enrichSingleCompany(companyId: number): Promise<Enrichment
         companyId,
         companyName: company.name,
         description,
+        previousDescription,
+        industryName: company.industryName || "",
+        sectorName: company.sectorName || "",
+        websiteUrl: company.websiteUrl || "",
         success: true,
       };
     }
@@ -193,6 +220,10 @@ export async function enrichSingleCompany(companyId: number): Promise<Enrichment
       companyId,
       companyName: company.name,
       description: "",
+      previousDescription,
+      industryName: company.industryName || "",
+      sectorName: company.sectorName || "",
+      websiteUrl: company.websiteUrl || "",
       success: false,
       error: "Empty response from AI",
     };
@@ -201,6 +232,10 @@ export async function enrichSingleCompany(companyId: number): Promise<Enrichment
       companyId,
       companyName: company.name,
       description: "",
+      previousDescription,
+      industryName: company.industryName || "",
+      sectorName: company.sectorName || "",
+      websiteUrl: company.websiteUrl || "",
       success: false,
       error: error instanceof Error ? error.message : "Unknown error",
     };

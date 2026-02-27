@@ -17,7 +17,14 @@ import {
   ThumbsUp,
   ThumbsDown,
   XCircle,
+  ChevronDown,
+  ChevronUp,
+  Undo2,
+  Pencil,
+  Save,
+  X,
 } from 'lucide-react';
+import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -594,8 +601,200 @@ export function DataExpansionPanel() {
     </div>
   );
 
+  const EnrichmentResultsTable = ({ results }: { results: any[] }) => {
+    const [expandedIds, setExpandedIds] = useState<Set<number>>(new Set());
+    const [editingId, setEditingId] = useState<number | null>(null);
+    const [editText, setEditText] = useState('');
+    const [revertedIds, setRevertedIds] = useState<Set<number>>(new Set());
+    const [savedEdits, setSavedEdits] = useState<Record<number, string>>({});
+
+    const successCount = results.filter((r: any) => r.success).length;
+    const failCount = results.filter((r: any) => !r.success).length;
+
+    const toggleExpand = (id: number) => {
+      setExpandedIds(prev => {
+        const next = new Set(prev);
+        if (next.has(id)) next.delete(id);
+        else next.add(id);
+        return next;
+      });
+    };
+
+    const startEdit = (r: any) => {
+      setEditingId(r.companyId);
+      setEditText(savedEdits[r.companyId] ?? r.description);
+    };
+
+    const cancelEdit = () => {
+      setEditingId(null);
+      setEditText('');
+    };
+
+    const revertMutation = useMutation({
+      mutationFn: async ({ companyId, previousDescription }: { companyId: number; previousDescription: string }) => {
+        const response = await apiRequest('POST', `/api/admin/descriptions/revert/${companyId}`, { previousDescription });
+        return response.json();
+      },
+      onSuccess: (_data, variables) => {
+        setRevertedIds(prev => new Set(prev).add(variables.companyId));
+        toast({ title: 'Reverted', description: `Description restored for company ${variables.companyId}` });
+        refetchDescStats();
+      },
+      onError: (error: any) => {
+        toast({ title: 'Revert failed', description: error.message, variant: 'destructive' });
+      },
+    });
+
+    const updateMutation = useMutation({
+      mutationFn: async ({ companyId, description }: { companyId: number; description: string }) => {
+        const response = await apiRequest('PATCH', `/api/admin/descriptions/update/${companyId}`, { description });
+        return response.json();
+      },
+      onSuccess: (_data, variables) => {
+        setSavedEdits(prev => ({ ...prev, [variables.companyId]: variables.description }));
+        setEditingId(null);
+        setEditText('');
+        toast({ title: 'Saved', description: `Description updated for company ${variables.companyId}` });
+      },
+      onError: (error: any) => {
+        toast({ title: 'Save failed', description: error.message, variant: 'destructive' });
+      },
+    });
+
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">Last Batch Results</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex gap-4 mb-4">
+            <Badge variant="outline" className="text-green-700">{successCount} succeeded</Badge>
+            {failCount > 0 && <Badge variant="destructive">{failCount} failed</Badge>}
+          </div>
+
+          <div className="space-y-2">
+            {results.map((r: any) => {
+              const isExpanded = expandedIds.has(r.companyId);
+              const isEditing = editingId === r.companyId;
+              const wasReverted = revertedIds.has(r.companyId);
+              const currentDescription = savedEdits[r.companyId] ?? r.description;
+
+              return (
+                <div key={r.companyId} className={`border rounded-lg ${r.success ? 'border-green-200' : 'border-red-200'}`}>
+                  <div
+                    className={`flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-gray-50 ${r.success ? 'bg-green-50/50' : 'bg-red-50/50'}`}
+                    onClick={() => toggleExpand(r.companyId)}
+                  >
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        {r.success ? (
+                          <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" />
+                        ) : (
+                          <XCircle className="h-4 w-4 text-red-600 flex-shrink-0" />
+                        )}
+                        <span className="font-medium text-sm truncate">{r.companyName}</span>
+                        {r.industryName && (
+                          <span className="text-xs text-gray-500 hidden sm:inline">({r.industryName})</span>
+                        )}
+                        {wasReverted && <Badge variant="outline" className="text-xs text-yellow-700">Reverted</Badge>}
+                      </div>
+                      {!isExpanded && r.success && (
+                        <p className="text-xs text-gray-500 mt-1 truncate pl-6">{currentDescription}</p>
+                      )}
+                    </div>
+                    {isExpanded ? <ChevronUp className="h-4 w-4 flex-shrink-0" /> : <ChevronDown className="h-4 w-4 flex-shrink-0" />}
+                  </div>
+
+                  {isExpanded && (
+                    <div className="px-4 pb-4 space-y-3 border-t">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-3 text-xs text-gray-600">
+                        <div><span className="font-medium">Industry:</span> {r.industryName || 'N/A'}</div>
+                        <div><span className="font-medium">Sector:</span> {r.sectorName || 'N/A'}</div>
+                        <div><span className="font-medium">Website:</span> {r.websiteUrl ? <a href={r.websiteUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">{r.websiteUrl}</a> : 'N/A'}</div>
+                        <div><span className="font-medium">ID:</span> {r.companyId}</div>
+                      </div>
+
+                      {r.success ? (
+                        <>
+                          <div>
+                            <p className="text-xs font-medium text-gray-500 mb-1">Previous Description:</p>
+                            <div className="bg-gray-50 rounded p-2 text-sm text-gray-600 italic">
+                              {r.previousDescription || <span className="text-gray-400">None (empty)</span>}
+                            </div>
+                          </div>
+
+                          <div>
+                            <p className="text-xs font-medium text-gray-500 mb-1">New AI Description:</p>
+                            {isEditing ? (
+                              <div className="space-y-2">
+                                <Textarea
+                                  value={editText}
+                                  onChange={(e) => setEditText(e.target.value)}
+                                  rows={4}
+                                  className="text-sm"
+                                />
+                                <div className="flex gap-2">
+                                  <Button
+                                    size="sm"
+                                    onClick={() => updateMutation.mutate({ companyId: r.companyId, description: editText })}
+                                    disabled={updateMutation.isPending}
+                                  >
+                                    {updateMutation.isPending ? <Loader2 className="h-3 w-3 animate-spin mr-1" /> : <Save className="h-3 w-3 mr-1" />}
+                                    Save
+                                  </Button>
+                                  <Button size="sm" variant="outline" onClick={cancelEdit}>
+                                    <X className="h-3 w-3 mr-1" /> Cancel
+                                  </Button>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="bg-green-50 rounded p-2 text-sm text-gray-800">
+                                {currentDescription}
+                              </div>
+                            )}
+                          </div>
+
+                          {!isEditing && (
+                            <div className="flex gap-2 pt-1">
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                onClick={(e) => { e.stopPropagation(); startEdit(r); }}
+                              >
+                                <Pencil className="h-3 w-3 mr-1" /> Edit
+                              </Button>
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                className="text-orange-700 border-orange-300 hover:bg-orange-50"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  revertMutation.mutate({ companyId: r.companyId, previousDescription: r.previousDescription });
+                                }}
+                                disabled={revertMutation.isPending || wasReverted}
+                              >
+                                <Undo2 className="h-3 w-3 mr-1" /> {wasReverted ? 'Reverted' : 'Revert'}
+                              </Button>
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <div className="pt-2">
+                          <p className="text-sm text-red-600"><AlertCircle className="h-3 w-3 inline mr-1" />{r.error}</p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
+    );
+  };
+
   const renderDescriptions = () => {
-    const failedResults = enrichMutation.data?.results?.filter((r: any) => !r.success) || [];
 
     return (
       <div className="space-y-6">
@@ -666,26 +865,7 @@ export function DataExpansionPanel() {
         </Card>
 
         {enrichMutation.data && (
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-base">Last Batch Results</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex gap-4 mb-4">
-                <Badge variant="outline" className="text-green-700">
-                  {enrichMutation.data.results?.filter((r: any) => r.success).length || 0} succeeded
-                </Badge>
-                {failedResults.length > 0 && (
-                  <Badge variant="destructive">
-                    {failedResults.length} failed
-                  </Badge>
-                )}
-              </div>
-              {failedResults.length > 0 && (
-                <WarningBanner messages={failedResults.map((r: any) => `${r.companyName}: ${r.error}`)} />
-              )}
-            </CardContent>
-          </Card>
+          <EnrichmentResultsTable results={enrichMutation.data.results || []} />
         )}
       </div>
     );
