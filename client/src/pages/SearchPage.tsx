@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, TrendingUp, Globe, Building2, Users, ArrowLeft, Layers } from 'lucide-react';
+import { Search, TrendingUp, Globe, Building2, Users, ArrowLeft, Layers, PlusCircle, Check } from 'lucide-react';
 import { SEOHead, createBreadcrumbStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 
 import { Link, useLocation } from 'wouter';
@@ -46,6 +46,31 @@ export default function SearchPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<any>(null);
   const [searchMode, setSearchMode] = useState<'local' | 'global'>('local');
+  const [suggestedIds, setSuggestedIds] = useState<Set<string>>(new Set());
+  const [suggestingId, setSuggestingId] = useState<string | null>(null);
+
+  const handleSuggestForDirectory = async (business: any, e: React.MouseEvent) => {
+    e.stopPropagation();
+    const id = business.id || business.website;
+    setSuggestingId(id);
+    try {
+      const response = await fetch('/api/suggest-company', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          companyName: business.name,
+          websiteUrl: business.website,
+          description: business.description,
+        }),
+      });
+      if (response.ok) {
+        setSuggestedIds(prev => new Set(prev).add(id));
+      }
+    } catch (error) {
+      console.error('Failed to suggest company:', error);
+    }
+    setSuggestingId(null);
+  };
 
   const handleQuickSearch = (query: string) => {
     setSearchQuery(query);
@@ -327,6 +352,19 @@ export default function SearchPage() {
                                   via Google
                                 </Badge>
                               </div>
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                className="mt-3 w-full text-xs"
+                                disabled={suggestedIds.has(business.id || business.website) || suggestingId === (business.id || business.website)}
+                                onClick={(e) => handleSuggestForDirectory(business, e)}
+                              >
+                                {suggestedIds.has(business.id || business.website) ? (
+                                  <><Check className="h-3 w-3 mr-1" /> Suggested</>
+                                ) : (
+                                  <><PlusCircle className="h-3 w-3 mr-1" /> Suggest for Directory</>
+                                )}
+                              </Button>
                             </CardContent>
                           </Card>
                         ))}

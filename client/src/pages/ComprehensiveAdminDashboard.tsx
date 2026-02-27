@@ -20,7 +20,8 @@ import {
   Search,
   Filter,
   MoreHorizontal,
-  ImageIcon
+  ImageIcon,
+  Database
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -28,6 +29,7 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { BannerAdManager } from '@/components/BannerAdManager';
 import { AdPerformanceDashboard } from '@/components/AdPerformanceDashboard';
+import { DataExpansionPanel } from '@/components/DataExpansionPanel';
 import { apiRequest } from '@/lib/queryClient';
 import {
   Table,
@@ -1007,14 +1009,14 @@ export default function ComprehensiveAdminDashboard() {
 
         {/* Main Content Tabs */}
         <Tabs defaultValue="listings" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-6">
+          <TabsList className="grid w-full grid-cols-8">
             <TabsTrigger value="listings" className="flex items-center gap-2">
               <Building2 className="h-4 w-4" />
-              Company Listings
+              Listings
             </TabsTrigger>
             <TabsTrigger value="claims" className="flex items-center gap-2">
               <AlertCircle className="h-4 w-4" />
-              Company Claims
+              Claims
               {(adminStats?.pendingClaims || 0) > 0 && (
                 <Badge variant="destructive" className="ml-1 text-xs px-1 py-0 h-4 w-4 rounded-full">
                   {adminStats.pendingClaims}
@@ -1023,7 +1025,11 @@ export default function ComprehensiveAdminDashboard() {
             </TabsTrigger>
             <TabsTrigger value="waitlist" className="flex items-center gap-2">
               <Users className="h-4 w-4" />
-              Waitlist Management
+              Waitlist
+            </TabsTrigger>
+            <TabsTrigger value="data-expansion" className="flex items-center gap-2">
+              <Database className="h-4 w-4" />
+              Data Expansion
             </TabsTrigger>
             <TabsTrigger value="analytics" className="flex items-center gap-2">
               <BarChart3 className="h-4 w-4" />
@@ -1053,6 +1059,10 @@ export default function ComprehensiveAdminDashboard() {
 
           <TabsContent value="waitlist">
             {renderWaitlistTab()}
+          </TabsContent>
+
+          <TabsContent value="data-expansion">
+            <DataExpansionPanel />
           </TabsContent>
 
           <TabsContent value="analytics">

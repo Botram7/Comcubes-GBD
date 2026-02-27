@@ -291,7 +291,7 @@ export default function CompanyProfilePage() {
                 <div className="mb-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">About {company.name}</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    {generateCompanyDescription(company)}
+                    {company.description || generateCompanyDescription(company)}
                   </p>
                 </div>
 
