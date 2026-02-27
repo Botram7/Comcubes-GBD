@@ -2084,7 +2084,7 @@ Crawl-delay: 1`;
 
   app.post('/api/admin/ai-generator/import', requireAdminAuth, async (req, res) => {
     try {
-      const { companies: companiesToImport } = req.body;
+      const companiesToImport = Array.isArray(req.body) ? req.body : req.body.companies;
 
       if (!companiesToImport || !Array.isArray(companiesToImport) || companiesToImport.length === 0) {
         return res.status(400).json({ error: 'companies array is required and must not be empty' });
