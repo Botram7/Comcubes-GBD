@@ -11,7 +11,9 @@ import { paystackService } from "./paystackService";
 import { paypalService } from "./paypalService";
 import { currencyService } from "./currencyService";
 import { createPaypalOrder, capturePaypalOrder, loadPaypalDefault } from "./paypal";
-import { insertContactMessageSchema, insertCompanyListingSchema } from "@shared/schema";
+import { insertContactMessageSchema, insertCompanyListingSchema, companies } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 import { registerCompanyClaimRoutes } from "./routes/companyClaimRoutes";
 import { registerGeographicRoutes } from "./routes/geographicRoutes";
 import { registerFixGeocodingRoute } from "./routes/fixGeocodingRoute";
@@ -1962,6 +1964,34 @@ Crawl-delay: 1`;
     } catch (error) {
       console.error('Error enriching single description:', error);
       res.status(500).json({ error: 'Failed to enrich description' });
+    }
+  });
+
+  app.post('/api/admin/descriptions/revert/:id', requireAdminAuth, async (req, res) => {
+    try {
+      const companyId = parseInt(req.params.id);
+      const { previousDescription } = req.body;
+      const description = previousDescription || null;
+      await db.update(companies).set({ description }).where(eq(companies.id, companyId));
+      res.json({ success: true, message: `Description reverted for company ${companyId}` });
+    } catch (error) {
+      console.error('Error reverting description:', error);
+      res.status(500).json({ error: 'Failed to revert description' });
+    }
+  });
+
+  app.patch('/api/admin/descriptions/update/:id', requireAdminAuth, async (req, res) => {
+    try {
+      const companyId = parseInt(req.params.id);
+      const { description } = req.body;
+      if (typeof description !== 'string') {
+        return res.status(400).json({ error: 'description field is required' });
+      }
+      await db.update(companies).set({ description }).where(eq(companies.id, companyId));
+      res.json({ success: true, message: `Description updated for company ${companyId}` });
+    } catch (error) {
+      console.error('Error updating description:', error);
+      res.status(500).json({ error: 'Failed to update description' });
     }
   });
 
