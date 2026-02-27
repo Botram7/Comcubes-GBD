@@ -6,13 +6,12 @@ import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanne
 import { BannerAd } from "@/components/BannerAd";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { AlertCircle, Globe2, Building2, ArrowLeft, Layers } from "lucide-react";
+import { AlertCircle, Globe2, Building2, ArrowLeft, Layers, Loader2 } from "lucide-react";
 import { SEOHead, createBreadcrumbStructuredData } from "@/components/SEOHead";
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import type { SearchResults, Company } from "@/lib/types";
-import { useState, useEffect } from "react";
-import { Pagination } from "@/components/Pagination";
-import { BusinessGrid } from "@/components/BusinessGrid";
+import { useState, useEffect, useCallback } from "react";
+import { BusinessGrid, BusinessGridSkeleton } from "@/components/BusinessGrid";
 
 interface CompaniesData {
   companies: Company[];
@@ -21,10 +20,14 @@ interface CompaniesData {
   totalPages?: number;
 }
 
+const LOAD_MORE_LIMIT = 40;
+
 export default function GeographyCompaniesPage() {
   const [, setLocation] = useLocation();
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [allLoadedCompanies, setAllLoadedCompanies] = useState<Company[]>([]);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [selectedLetter, setSelectedLetter] = useState<string>('');
   const [countryFilter, setCountryFilter] = useState<string>('');
   const [regionFilter, setRegionFilter] = useState<string>('');
@@ -39,9 +42,8 @@ export default function GeographyCompaniesPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [currentPage, selectedLetter]);
+  }, [selectedLetter]);
 
-  // Build query key with filters
   const queryKey = [
     "/api/geography/companies",
     countryFilter,
@@ -58,7 +60,7 @@ export default function GeographyCompaniesPage() {
       if (regionFilter) params.append('region', regionFilter);
       if (selectedLetter) params.append('letter', selectedLetter);
       params.append('page', currentPage.toString());
-      params.append('limit', '20');
+      params.append('limit', LOAD_MORE_LIMIT.toString());
       
       const response = await fetch(`/api/geography/companies?${params.toString()}`);
       if (!response.ok) throw new Error('Failed to fetch companies');
@@ -66,6 +68,31 @@ export default function GeographyCompaniesPage() {
     },
     staleTime: Infinity,
   });
+
+  useEffect(() => {
+    if (data?.companies) {
+      setIsLoadingMore(false);
+      if (currentPage === 1) {
+        setAllLoadedCompanies(data.companies);
+      } else {
+        setAllLoadedCompanies(prev => {
+          const existingIds = new Set(prev.map(c => c.id));
+          const newCompanies = data.companies.filter(c => !existingIds.has(c.id));
+          return [...prev, ...newCompanies];
+        });
+      }
+    }
+  }, [data, currentPage]);
+
+  const totalPages = data?.totalPages || Math.ceil((data?.total || 0) / LOAD_MORE_LIMIT);
+  const hasMore = currentPage < totalPages;
+
+  const handleLoadMore = useCallback(() => {
+    if (hasMore && !isLoadingMore) {
+      setIsLoadingMore(true);
+      setCurrentPage(prev => prev + 1);
+    }
+  }, [hasMore, isLoadingMore]);
 
   const handleSearchResults = (results: SearchResults | null) => {
     setSearchResults(results);
@@ -79,13 +106,10 @@ export default function GeographyCompaniesPage() {
     setLocation('/');
   };
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
-
   const handleLetterClick = (letter: string) => {
     setSelectedLetter(letter === selectedLetter ? '' : letter);
     setCurrentPage(1);
+    setAllLoadedCompanies([]);
   };
 
   const handleCompanyClick = (item: Company) => {
@@ -98,15 +122,14 @@ export default function GeographyCompaniesPage() {
     setLocation('/geography/companies');
     setSelectedLetter('');
     setCurrentPage(1);
+    setAllLoadedCompanies([]);
     setCountryFilter('');
     setRegionFilter('');
   };
 
-  // Generate alphabet buttons
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-  const totalPages = data?.totalPages || Math.ceil((data?.total || 0) / 20);
-  const companies = data?.companies || [];
+  const companies = allLoadedCompanies;
 
   // Group companies by country
   const companiesByCountry = companies.reduce((acc, company) => {
@@ -142,11 +165,12 @@ export default function GeographyCompaniesPage() {
             </div>
           </div>
         </header>
-        <div className="flex items-center justify-center min-h-96">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Loading companies...</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="mb-8">
+            <div className="h-8 w-64 bg-gray-200 rounded animate-pulse mb-3"></div>
+            <div className="h-4 w-96 bg-gray-200 rounded animate-pulse"></div>
           </div>
+          <BusinessGridSkeleton count={20} />
         </div>
       </div>
     );
@@ -448,12 +472,33 @@ export default function GeographyCompaniesPage() {
                       </div>
                     ))}
 
-                    {totalPages > 1 && (
-                      <Pagination 
-                        currentPage={currentPage}
-                        totalPages={totalPages}
-                        onPageChange={handlePageChange}
-                      />
+                    {isLoadingMore && (
+                      <BusinessGridSkeleton count={20} />
+                    )}
+
+                    {hasMore && !isLoadingMore && (
+                      <div className="mt-8 flex flex-col items-center gap-3">
+                        <p className="text-sm text-gray-500">
+                          Showing {companies.length} of {data?.total?.toLocaleString() || '?'} companies
+                        </p>
+                        <Button
+                          onClick={handleLoadMore}
+                          variant="outline"
+                          size="lg"
+                          className="px-8 py-3 text-base font-medium border-green-300 hover:bg-green-50 hover:border-green-400 transition-all"
+                        >
+                          <Loader2 className="h-4 w-4 mr-2 hidden" />
+                          Load More Companies
+                        </Button>
+                      </div>
+                    )}
+
+                    {!hasMore && companies.length > LOAD_MORE_LIMIT && (
+                      <div className="mt-8 text-center">
+                        <p className="text-sm text-gray-500">
+                          All {data?.total?.toLocaleString()} companies loaded
+                        </p>
+                      </div>
                     )}
                   </>
                 ) : (

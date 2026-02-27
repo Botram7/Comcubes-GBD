@@ -1,4 +1,4 @@
-export const ITEMS_PER_PAGE = 20;
+export const ITEMS_PER_PAGE = 40;
 export const GRID_COLS = 5;
 export const GRID_ROWS = 4;
 

@@ -1,37 +1,81 @@
 import { useParams } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "wouter";
-import { BusinessGrid } from "@/components/BusinessGrid";
+import { BusinessGrid, BusinessGridSkeleton } from "@/components/BusinessGrid";
 import { SearchBar } from "@/components/SearchBar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AlertCircle, Building2, Globe } from "lucide-react";
+import { AlertCircle, Building2, Globe, Loader2 } from "lucide-react";
 import { SEOHead, createBreadcrumbStructuredData, createItemListStructuredData, BRAND_KEYWORDS } from "@/components/SEOHead";
 
 import comcubesIcon from "@assets/Artboard 17 copy 3_1758850589536.png";
 import { AffiliateDisclosureBanner } from "@/components/AffiliateDisclosureBanner";
 import { BannerAd } from "@/components/BannerAd";
+import { ITEMS_PER_PAGE } from "@/lib/constants";
 import type { Company, SearchResults } from "@/lib/types";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function IndustryPage() {
   const { industryName } = useParams();
   const [, setLocation] = useLocation();
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [allLoadedCompanies, setAllLoadedCompanies] = useState<Company[]>([]);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   const decodedIndustryName = decodeURIComponent(industryName || "");
 
-  // Scroll to top when component mounts or industry changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [industryName]);
 
-  const { data: companies = [], isLoading, error } = useQuery({
-    queryKey: [`/api/industries/${encodeURIComponent(decodedIndustryName)}/companies`],
+  useEffect(() => {
+    setCurrentPage(1);
+    setAllLoadedCompanies([]);
+  }, [industryName]);
+
+  const { data: paginatedData, isLoading, error } = useQuery<{ companies: Company[]; total: number; page: number; totalPages: number }>({
+    queryKey: ['/api/industries', decodedIndustryName, 'companies', currentPage],
+    queryFn: async () => {
+      const params = new URLSearchParams({
+        page: currentPage.toString(),
+        limit: ITEMS_PER_PAGE.toString(),
+      });
+      const res = await fetch(`/api/industries/${encodeURIComponent(decodedIndustryName)}/companies?${params}`);
+      if (!res.ok) throw new Error('Failed to load companies');
+      return res.json();
+    },
     enabled: !!industryName,
     staleTime: Infinity,
   });
+
+  useEffect(() => {
+    if (paginatedData?.companies) {
+      setIsLoadingMore(false);
+      if (currentPage === 1) {
+        setAllLoadedCompanies(paginatedData.companies);
+      } else {
+        setAllLoadedCompanies(prev => {
+          const existingIds = new Set(prev.map(c => c.id));
+          const newCompanies = paginatedData.companies.filter(c => !existingIds.has(c.id));
+          return [...prev, ...newCompanies];
+        });
+      }
+    }
+  }, [paginatedData, currentPage]);
+
+  const companies = allLoadedCompanies;
+  const totalCompanies = paginatedData?.total ?? 0;
+  const totalPages = paginatedData?.totalPages ?? 1;
+  const hasMore = currentPage < totalPages;
+
+  const handleLoadMore = useCallback(() => {
+    if (hasMore && !isLoadingMore) {
+      setIsLoadingMore(true);
+      setCurrentPage(prev => prev + 1);
+    }
+  }, [hasMore, isLoadingMore]);
 
   const handleCompanyClick = (item: any) => {
     if (item.websiteUrl) {
@@ -88,17 +132,18 @@ export default function IndustryPage() {
             </div>
           </div>
         </header>
-        <div className="flex items-center justify-center min-h-96">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Loading companies...</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="mb-8">
+            <div className="h-8 w-64 bg-gray-200 rounded animate-pulse mb-3"></div>
+            <div className="h-4 w-96 bg-gray-200 rounded animate-pulse"></div>
           </div>
+          <BusinessGridSkeleton count={ITEMS_PER_PAGE} />
         </div>
       </div>
     );
   }
 
-  if (error || !Array.isArray(companies) || companies.length === 0) {
+  if (error || totalCompanies === 0) {
     return (
       <div className="min-h-screen bg-gray-50">
         <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
@@ -162,7 +207,7 @@ export default function IndustryPage() {
       <AffiliateDisclosureBanner />
       <SEOHead 
         title={`${decodedIndustryName} Companies | Top ${decodedIndustryName} Directory | COMCUBES`}
-        description={`Find top companies in ${decodedIndustryName} industry. Browse ${companies?.length || 20} leading ${decodedIndustryName} businesses with direct access to company websites and contact information on COMCUBES (Comcube) business directory.`}
+        description={`Find top companies in ${decodedIndustryName} industry. Browse ${totalCompanies} leading ${decodedIndustryName} businesses with direct access to company websites and contact information on COMCUBES (Comcube) business directory.`}
         keywords={[
           ...BRAND_KEYWORDS.slice(0, 5),
           `${decodedIndustryName.toLowerCase()} companies`, `${decodedIndustryName.toLowerCase()} industry`, `${decodedIndustryName.toLowerCase()} business`,
@@ -172,7 +217,7 @@ export default function IndustryPage() {
         ]}
         canonicalUrl={`https://comcubes.com/industry/${encodeURIComponent(decodedIndustryName)}`}
         ogTitle={`${decodedIndustryName} Companies | COMCUBES`}
-        ogDescription={`Browse ${companies?.length || 20} leading companies in the ${decodedIndustryName} industry. Direct access to websites and business information.`}
+        ogDescription={`Browse ${totalCompanies} leading companies in the ${decodedIndustryName} industry. Direct access to websites and business information.`}
         structuredData={createBreadcrumbStructuredData([
           { name: "Home", url: "https://comcubes.com/" },
           { name: "Business Sectors", url: "https://comcubes.com/sectors" },
@@ -319,10 +364,10 @@ export default function IndustryPage() {
             <div className="mb-8">
               <h1 className="text-3xl font-bold text-gray-900">{decodedIndustryName} Industry</h1>
               <p className="text-gray-600 mt-2">
-                Discover {companies.length} leading companies in the {decodedIndustryName} industry{sectorName ? ` within the ${sectorName} sector` : ''}. Each company listing includes direct website access, industry classification, and professional business details. Connect with industry leaders, emerging companies, and business opportunities in this specialized industry directory.
+                Discover {totalCompanies} leading companies in the {decodedIndustryName} industry{sectorName ? ` within the ${sectorName} sector` : ''}. Each company listing includes direct website access, industry classification, and professional business details. Connect with industry leaders, emerging companies, and business opportunities in this specialized industry directory.
               </p>
               <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
-                <span>🏢 {companies.length} Companies</span>
+                <span>🏢 {totalCompanies} Companies</span>
                 {sectorName && <span>📊 {sectorName} Sector</span>}
                 <span>🌍 Global Industry Directory</span>
                 <span>🔗 Direct Website Access</span>
@@ -376,6 +421,35 @@ export default function IndustryPage() {
               currentSector={sectorName}
               currentIndustry={decodedIndustryName}
             />
+
+            {isLoadingMore && (
+              <BusinessGridSkeleton count={ITEMS_PER_PAGE} />
+            )}
+
+            {hasMore && !isLoadingMore && (
+              <div className="mt-8 flex flex-col items-center gap-3">
+                <p className="text-sm text-gray-500">
+                  Showing {companies.length} of {totalCompanies} companies
+                </p>
+                <Button
+                  onClick={handleLoadMore}
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-3 text-base font-medium border-green-300 hover:bg-green-50 hover:border-green-400 transition-all"
+                >
+                  <Loader2 className="h-4 w-4 mr-2 hidden" />
+                  Load More Companies
+                </Button>
+              </div>
+            )}
+
+            {!hasMore && companies.length > ITEMS_PER_PAGE && (
+              <div className="mt-8 text-center">
+                <p className="text-sm text-gray-500">
+                  All {totalCompanies} companies loaded
+                </p>
+              </div>
+            )}
             
             {/* Related Industries & Business Opportunities */}
             {companies.length > 0 && (

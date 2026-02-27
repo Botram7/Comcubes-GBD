@@ -1,6 +1,7 @@
 import { db } from '../db';
 import { companies, industries, companyLocations, countries } from '@shared/schema';
 import { eq } from 'drizzle-orm';
+import { matchSector, matchIndustry } from './categoryMatcher';
 
 interface WikidataCompany {
   name: string;
@@ -355,9 +356,38 @@ export class WikidataService {
   }): Promise<WikidataImportResult> {
     const { industryName, sectorName, selectedCompanies } = options;
 
+    let resolvedSectorName = sectorName;
+    let resolvedIndustryName = industryName;
+
+    const sectorMatch = matchSector(sectorName);
+    if (sectorMatch.name) {
+      if (sectorMatch.matchType !== "exact") {
+        console.log(`[Wikidata] Sector fuzzy match: "${sectorName}" → "${sectorMatch.name}" (confidence: ${sectorMatch.confidence}, type: ${sectorMatch.matchType})`);
+      }
+      resolvedSectorName = sectorMatch.name;
+      if (sectorMatch.needsReview) {
+        console.warn(`[Wikidata] Low confidence sector match: "${sectorName}" → "${sectorMatch.name}" (confidence: ${sectorMatch.confidence}) — flagged for review`);
+      }
+    } else {
+      console.warn(`[Wikidata] No sector match found for "${sectorName}" — using original name`);
+    }
+
+    const industryMatch = matchIndustry(industryName, resolvedSectorName);
+    if (industryMatch.name) {
+      if (industryMatch.matchType !== "exact") {
+        console.log(`[Wikidata] Industry fuzzy match: "${industryName}" → "${industryMatch.name}" (confidence: ${industryMatch.confidence}, type: ${industryMatch.matchType})`);
+      }
+      resolvedIndustryName = industryMatch.name;
+      if (industryMatch.needsReview) {
+        console.warn(`[Wikidata] Low confidence industry match: "${industryName}" → "${industryMatch.name}" (confidence: ${industryMatch.confidence}) — flagged for review`);
+      }
+    } else {
+      console.warn(`[Wikidata] No industry match found for "${industryName}" — using original name`);
+    }
+
     const existingCompanies = await db.select({ name: companies.name })
       .from(companies)
-      .where(eq(companies.industryName, industryName));
+      .where(eq(companies.industryName, resolvedIndustryName));
 
     const existingNames = new Set(existingCompanies.map(c => c.name.toLowerCase()));
 
@@ -377,8 +407,8 @@ export class WikidataService {
           name: wc.name,
           websiteUrl: wc.websiteUrl,
           description: wc.description,
-          industryName,
-          sectorName,
+          industryName: resolvedIndustryName,
+          sectorName: resolvedSectorName,
           employeeCount: wc.employeeCount,
           foundedYear: wc.foundedYear,
           companySize: wc.employeeCount ? this.estimateCompanySize(wc.employeeCount) : null,
@@ -427,8 +457,8 @@ export class WikidataService {
     console.log(`[Wikidata] Import complete: ${imported} imported, ${skippedDuplicates} duplicates, ${skippedErrors} errors`);
 
     return {
-      industry: industryName,
-      sector: sectorName,
+      industry: resolvedIndustryName,
+      sector: resolvedSectorName,
       total: selectedCompanies.length,
       imported,
       skippedDuplicates,

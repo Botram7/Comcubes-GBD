@@ -2,6 +2,7 @@ import OpenAI from "openai";
 import { db } from "../db";
 import { companies, industries, sectors, countries, companyLocations } from "@shared/schema";
 import { eq, sql, ilike, and } from "drizzle-orm";
+import { matchSector, matchIndustry } from "./categoryMatcher";
 
 const openai = new OpenAI({
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
@@ -310,14 +311,43 @@ export async function importGeneratedCompanies(
 
   for (const company of companiesToImport) {
     try {
+      let resolvedSectorName = company.sectorName;
+      let resolvedIndustryName = company.industryName;
+
+      const sectorMatch = matchSector(company.sectorName);
+      if (sectorMatch.name) {
+        if (sectorMatch.matchType !== "exact") {
+          console.log(`[AI-Generator] Sector fuzzy match: "${company.sectorName}" → "${sectorMatch.name}" (confidence: ${sectorMatch.confidence}, type: ${sectorMatch.matchType})`);
+        }
+        resolvedSectorName = sectorMatch.name;
+        if (sectorMatch.needsReview) {
+          console.warn(`[AI-Generator] Low confidence sector match for "${company.name}": "${company.sectorName}" → "${sectorMatch.name}" (confidence: ${sectorMatch.confidence}) — flagged for review`);
+        }
+      } else {
+        console.warn(`[AI-Generator] No sector match found for "${company.sectorName}" (company: "${company.name}") — using original name`);
+      }
+
+      const industryMatch = matchIndustry(company.industryName, resolvedSectorName);
+      if (industryMatch.name) {
+        if (industryMatch.matchType !== "exact") {
+          console.log(`[AI-Generator] Industry fuzzy match: "${company.industryName}" → "${industryMatch.name}" (confidence: ${industryMatch.confidence}, type: ${industryMatch.matchType})`);
+        }
+        resolvedIndustryName = industryMatch.name;
+        if (industryMatch.needsReview) {
+          console.warn(`[AI-Generator] Low confidence industry match for "${company.name}": "${company.industryName}" → "${industryMatch.name}" (confidence: ${industryMatch.confidence}) — flagged for review`);
+        }
+      } else {
+        console.warn(`[AI-Generator] No industry match found for "${company.industryName}" (company: "${company.name}") — using original name`);
+      }
+
       const existing = await db
         .select({ id: companies.id })
         .from(companies)
         .where(
           and(
             eq(companies.name, company.name),
-            eq(companies.industryName, company.industryName),
-            eq(companies.sectorName, company.sectorName)
+            eq(companies.industryName, resolvedIndustryName),
+            eq(companies.sectorName, resolvedSectorName)
           )
         )
         .limit(1);
@@ -333,8 +363,8 @@ export async function importGeneratedCompanies(
           name: company.name,
           websiteUrl: company.websiteUrl,
           description: company.description || null,
-          industryName: company.industryName,
-          sectorName: company.sectorName,
+          industryName: resolvedIndustryName,
+          sectorName: resolvedSectorName,
           employeeCount: company.employeeCount || null,
           foundedYear: company.foundedYear || null,
           companySize: inferCompanySize(company.employeeCount),

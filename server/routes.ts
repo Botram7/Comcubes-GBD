@@ -182,12 +182,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get companies by industry
+  // Get companies by industry (with optional pagination)
   app.get("/api/industries/:industryName/companies", async (req, res) => {
     try {
       const { industryName } = req.params;
-      const companies = await storage.getCompaniesByIndustry(decodeURIComponent(industryName));
-      res.json(companies);
+      const allCompanies = await storage.getCompaniesByIndustry(decodeURIComponent(industryName));
+
+      const page = parseInt(req.query.page as string);
+      const limit = parseInt(req.query.limit as string);
+
+      if (page && limit) {
+        const offset = (page - 1) * limit;
+        const paginatedCompanies = allCompanies.slice(offset, offset + limit);
+        res.json({
+          companies: paginatedCompanies,
+          total: allCompanies.length,
+          page,
+          totalPages: Math.ceil(allCompanies.length / limit)
+        });
+      } else {
+        res.json(allCompanies);
+      }
     } catch (error) {
       res.status(500).json({ error: "Failed to load companies" });
     }
@@ -2090,11 +2105,30 @@ Crawl-delay: 1`;
         return res.status(400).json({ error: 'companies array is required and must not be empty' });
       }
 
-      const result = await importGeneratedCompanies(companiesToImport);
-      res.json(result);
+      const staged = companiesToImport.map((c: any) => ({
+        name: c.name,
+        websiteUrl: c.websiteUrl || c.website || null,
+        industryName: c.industryName,
+        sectorName: c.sectorName,
+        employeeCount: c.employeeCount || null,
+        revenueEstimate: c.revenueEstimate || null,
+        foundedYear: c.foundedYear ? Number(c.foundedYear) : null,
+        companySize: c.companySize || null,
+        description: c.description || null,
+        country: c.country || null,
+        countryCode: c.countryCode || null,
+        source: 'ai' as const,
+        matchedSector: c.sectorName,
+        matchedIndustry: c.industryName,
+        matchConfidence: 'high',
+        status: 'pending' as const,
+      }));
+
+      const created = await storage.createStagedCompanies(staged);
+      res.json({ imported: 0, staged: created.length, skipped: 0, errors: [], message: `${created.length} companies staged for review` });
     } catch (error) {
-      console.error('Error importing companies:', error);
-      res.status(500).json({ error: 'Failed to import companies' });
+      console.error('Error staging companies:', error);
+      res.status(500).json({ error: 'Failed to stage companies' });
     }
   });
 
@@ -2163,16 +2197,38 @@ Crawl-delay: 1`;
         return res.status(400).json({ error: 'selectedCompanies array is required and must not be empty' });
       }
 
-      const result = await wikidataService.importCompanies({
+      const staged = selectedCompanies.map((c: any) => ({
+        name: c.name,
+        websiteUrl: c.websiteUrl || null,
         industryName,
         sectorName,
-        selectedCompanies,
-      });
+        employeeCount: c.employeeCount || null,
+        foundedYear: c.foundedYear ? Number(c.foundedYear) : null,
+        description: c.description || null,
+        country: c.country || null,
+        countryCode: c.countryCode || null,
+        source: 'wikidata' as const,
+        matchedSector: sectorName,
+        matchedIndustry: industryName,
+        matchConfidence: 'medium',
+        status: 'pending' as const,
+      }));
 
-      res.json(result);
+      const created = await storage.createStagedCompanies(staged);
+      res.json({
+        industry: industryName,
+        sector: sectorName,
+        total: selectedCompanies.length,
+        imported: 0,
+        staged: created.length,
+        skippedDuplicates: 0,
+        skippedErrors: 0,
+        errors: [],
+        message: `${created.length} companies staged for review`,
+      });
     } catch (error) {
-      console.error('Error importing from Wikidata:', error);
-      res.status(500).json({ error: 'Failed to import from Wikidata' });
+      console.error('Error staging from Wikidata:', error);
+      res.status(500).json({ error: 'Failed to stage Wikidata companies' });
     }
   });
 
@@ -2188,6 +2244,169 @@ Crawl-delay: 1`;
     } catch (error) {
       console.error('Error getting Wikidata gaps:', error);
       res.status(500).json({ error: 'Failed to get industry gaps' });
+    }
+  });
+
+  // Staged companies routes (admin only)
+  app.get('/api/admin/staged-companies', requireAdminAuth, async (req, res) => {
+    try {
+      const status = req.query.status as string | undefined;
+      const source = req.query.source as string | undefined;
+      const sectorName = req.query.sectorName as string | undefined;
+      const staged = await storage.getStagedCompanies({
+        status: status || undefined,
+        source: source || undefined,
+        sectorName: sectorName || undefined,
+      });
+      res.json(staged);
+    } catch (error) {
+      console.error('Error getting staged companies:', error);
+      res.status(500).json({ error: 'Failed to get staged companies' });
+    }
+  });
+
+  app.get('/api/admin/staged-companies/stats', requireAdminAuth, async (req, res) => {
+    try {
+      const stats = await storage.getStagedCompanyStats();
+      res.json(stats);
+    } catch (error) {
+      console.error('Error getting staged company stats:', error);
+      res.status(500).json({ error: 'Failed to get staged company stats' });
+    }
+  });
+
+  app.get('/api/admin/staged-companies/export-csv', requireAdminAuth, async (req, res) => {
+    try {
+      const status = req.query.status as string | undefined;
+      const staged = await storage.getStagedCompanies({ status: status || undefined });
+      const headers = ['Name', 'Website', 'Industry', 'Sector', 'Source', 'Matched Sector', 'Matched Industry', 'Confidence', 'Status', 'Country', 'Employee Count', 'Founded Year', 'Staged At'];
+      const rows = staged.map(s => [
+        `"${(s.name || '').replace(/"/g, '""')}"`,
+        `"${(s.websiteUrl || '').replace(/"/g, '""')}"`,
+        `"${(s.industryName || '').replace(/"/g, '""')}"`,
+        `"${(s.sectorName || '').replace(/"/g, '""')}"`,
+        `"${(s.source || '').replace(/"/g, '""')}"`,
+        `"${(s.matchedSector || '').replace(/"/g, '""')}"`,
+        `"${(s.matchedIndustry || '').replace(/"/g, '""')}"`,
+        `"${(s.matchConfidence || '').replace(/"/g, '""')}"`,
+        `"${(s.status || '').replace(/"/g, '""')}"`,
+        `"${(s.country || '').replace(/"/g, '""')}"`,
+        `"${(s.employeeCount || '').replace(/"/g, '""')}"`,
+        s.foundedYear || '',
+        `"${s.stagedAt ? new Date(s.stagedAt).toISOString() : ''}"`,
+      ].join(','));
+      const csv = [headers.join(','), ...rows].join('\n');
+      res.setHeader('Content-Type', 'text/csv');
+      res.setHeader('Content-Disposition', 'attachment; filename=staged-companies.csv');
+      res.send(csv);
+    } catch (error) {
+      console.error('Error exporting staged companies CSV:', error);
+      res.status(500).json({ error: 'Failed to export CSV' });
+    }
+  });
+
+  app.post('/api/admin/staged-companies/:id/approve', requireAdminAuth, async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) return res.status(400).json({ error: 'Invalid ID' });
+
+      const staged = await storage.getStagedCompanyById(id);
+      if (!staged) return res.status(404).json({ error: 'Staged company not found' });
+
+      const { importGeneratedCompanies } = await import('./services/aiCompanyGenerator');
+      const result = await importGeneratedCompanies([{
+        name: staged.name,
+        websiteUrl: staged.websiteUrl || '',
+        description: staged.description || '',
+        industryName: staged.matchedIndustry || staged.industryName,
+        sectorName: staged.matchedSector || staged.sectorName,
+        employeeCount: staged.employeeCount || '',
+        foundedYear: staged.foundedYear || null,
+        country: staged.country || '',
+      }]);
+
+      if (result.imported > 0) {
+        await storage.updateStagedCompanyStatus(id, 'approved');
+        res.json({ success: true, message: `"${staged.name}" approved and moved to live directory` });
+      } else {
+        res.json({ success: false, message: `Could not import "${staged.name}": ${result.errors.join(', ') || 'duplicate or error'}` });
+      }
+    } catch (error) {
+      console.error('Error approving staged company:', error);
+      res.status(500).json({ error: 'Failed to approve staged company' });
+    }
+  });
+
+  app.post('/api/admin/staged-companies/:id/reject', requireAdminAuth, async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) return res.status(400).json({ error: 'Invalid ID' });
+
+      const updated = await storage.updateStagedCompanyStatus(id, 'rejected');
+      if (!updated) return res.status(404).json({ error: 'Staged company not found' });
+
+      res.json({ success: true, message: `"${updated.name}" rejected` });
+    } catch (error) {
+      console.error('Error rejecting staged company:', error);
+      res.status(500).json({ error: 'Failed to reject staged company' });
+    }
+  });
+
+  app.post('/api/admin/staged-companies/approve-bulk', requireAdminAuth, async (req, res) => {
+    try {
+      const { ids } = req.body;
+      if (!Array.isArray(ids) || ids.length === 0) {
+        return res.status(400).json({ error: 'ids array is required' });
+      }
+
+      let imported = 0;
+      let failed = 0;
+      const errors: string[] = [];
+      const { importGeneratedCompanies } = await import('./services/aiCompanyGenerator');
+
+      for (const id of ids) {
+        const staged = await storage.getStagedCompanyById(id);
+        if (!staged) { failed++; continue; }
+
+        const result = await importGeneratedCompanies([{
+          name: staged.name,
+          websiteUrl: staged.websiteUrl || '',
+          description: staged.description || '',
+          industryName: staged.matchedIndustry || staged.industryName,
+          sectorName: staged.matchedSector || staged.sectorName,
+          employeeCount: staged.employeeCount || '',
+          foundedYear: staged.foundedYear || null,
+          country: staged.country || '',
+        }]);
+
+        if (result.imported > 0) {
+          await storage.updateStagedCompanyStatus(id, 'approved');
+          imported++;
+        } else {
+          failed++;
+          if (result.errors.length > 0) errors.push(...result.errors);
+        }
+      }
+
+      res.json({ success: true, imported, failed, errors, message: `${imported} approved, ${failed} failed` });
+    } catch (error) {
+      console.error('Error bulk approving:', error);
+      res.status(500).json({ error: 'Failed to bulk approve' });
+    }
+  });
+
+  app.post('/api/admin/staged-companies/reject-bulk', requireAdminAuth, async (req, res) => {
+    try {
+      const { ids } = req.body;
+      if (!Array.isArray(ids) || ids.length === 0) {
+        return res.status(400).json({ error: 'ids array is required' });
+      }
+
+      const count = await storage.updateStagedCompaniesStatus(ids, 'rejected');
+      res.json({ success: true, rejected: count, message: `${count} companies rejected` });
+    } catch (error) {
+      console.error('Error bulk rejecting:', error);
+      res.status(500).json({ error: 'Failed to bulk reject' });
     }
   });
 
