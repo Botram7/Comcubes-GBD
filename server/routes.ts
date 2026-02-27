@@ -1854,6 +1854,114 @@ Crawl-delay: 1`;
     }
   });
 
+  // Search cache admin endpoints
+  app.get('/api/admin/search-cache/stats', requireAdminAuth, async (req, res) => {
+    try {
+      const stats = await storage.getSearchCacheStats();
+      res.json(stats);
+    } catch (error) {
+      console.error('Error fetching search cache stats:', error);
+      res.status(500).json({ error: 'Failed to fetch search cache stats' });
+    }
+  });
+
+  app.post('/api/admin/search-cache/clear-expired', requireAdminAuth, async (req, res) => {
+    try {
+      const count = await storage.clearExpiredSearchCache();
+      res.json({ cleared: count });
+    } catch (error) {
+      console.error('Error clearing expired search cache:', error);
+      res.status(500).json({ error: 'Failed to clear expired cache' });
+    }
+  });
+
+  app.post('/api/admin/search-cache/clear-all', requireAdminAuth, async (req, res) => {
+    try {
+      const count = await storage.clearAllSearchCache();
+      res.json({ cleared: count });
+    } catch (error) {
+      console.error('Error clearing all search cache:', error);
+      res.status(500).json({ error: 'Failed to clear cache' });
+    }
+  });
+
+  // Suggest for Directory (from global search)
+  app.post('/api/suggest-company', async (req, res) => {
+    try {
+      const { companyName, websiteUrl, description } = req.body;
+      if (!companyName || !websiteUrl) {
+        return res.status(400).json({ error: 'Company name and website URL are required' });
+      }
+      const listing = await storage.createCompanyListing({
+        companyName,
+        websiteUrl,
+        contactEmail: 'suggested@comcubes.com',
+        sectorName: 'Pending Review',
+        industryName: 'Pending Review',
+        description: description || null,
+        logoUrl: null,
+        paymentAmount: '0',
+        paymentStatus: 'suggested',
+        paymentReference: 'user-suggestion',
+        currency: 'USD',
+        currencyAmount: '0',
+        paymentMethod: 'none',
+      });
+      res.json({ success: true, id: listing.id });
+    } catch (error) {
+      console.error('Error suggesting company:', error);
+      res.status(500).json({ error: 'Failed to submit suggestion' });
+    }
+  });
+
+  // AI Description Enrichment routes
+  app.get('/api/admin/descriptions/stats', requireAdminAuth, async (req, res) => {
+    try {
+      const { getDescriptionStats } = await import('./services/aiDescriptionEnricher');
+      const stats = await getDescriptionStats();
+      res.json(stats);
+    } catch (error) {
+      console.error('Error getting description stats:', error);
+      res.status(500).json({ error: 'Failed to get description stats' });
+    }
+  });
+
+  app.post('/api/admin/descriptions/enrich-batch', requireAdminAuth, async (req, res) => {
+    try {
+      const { enrichBatch } = await import('./services/aiDescriptionEnricher');
+      const batchSize = Math.min(parseInt(req.body.batchSize) || 10, 25);
+      const result = await enrichBatch(batchSize);
+      res.json(result);
+    } catch (error) {
+      console.error('Error enriching descriptions:', error);
+      res.status(500).json({ error: 'Failed to enrich descriptions' });
+    }
+  });
+
+  app.post('/api/admin/descriptions/enrich-single/:id', requireAdminAuth, async (req, res) => {
+    try {
+      const { enrichSingleCompany } = await import('./services/aiDescriptionEnricher');
+      const companyId = parseInt(req.params.id);
+      const result = await enrichSingleCompany(companyId);
+      res.json(result);
+    } catch (error) {
+      console.error('Error enriching single description:', error);
+      res.status(500).json({ error: 'Failed to enrich description' });
+    }
+  });
+
+  app.get('/api/admin/descriptions/preview', requireAdminAuth, async (req, res) => {
+    try {
+      const { getCompaniesWithoutDescriptions } = await import('./services/aiDescriptionEnricher');
+      const limit = Math.min(parseInt(req.query.limit as string) || 20, 50);
+      const companiesWithout = await getCompaniesWithoutDescriptions(limit);
+      res.json(companiesWithout);
+    } catch (error) {
+      console.error('Error previewing companies:', error);
+      res.status(500).json({ error: 'Failed to preview companies' });
+    }
+  });
+
   // PayPal routes (from blueprint)
   app.get("/api/paypal/setup", async (req, res) => {
     await loadPaypalDefault(req, res);
@@ -1882,6 +1990,206 @@ Crawl-delay: 1`;
   // Register database sync route (admin only)
   const { registerDatabaseSyncRoute } = await import('./routes/databaseSyncRoute');
   registerDatabaseSyncRoute(app);
+
+  // AI Company Generator routes (admin only)
+  const { getIndustryGaps, generateCompaniesForIndustry, generateBatchCompanies, importGeneratedCompanies, validateUrls } = await import('./services/aiCompanyGenerator');
+
+  app.get('/api/admin/ai-generator/gaps', requireAdminAuth, async (req, res) => {
+    try {
+      const maxSlots = parseInt(req.query.maxSlots as string) || 20;
+      const gaps = await getIndustryGaps(maxSlots);
+      res.json({
+        totalIndustries: gaps.length + (await storage.getAllIndustries()).length - gaps.length,
+        industriesWithGaps: gaps.length,
+        gaps,
+      });
+    } catch (error) {
+      console.error('Error getting industry gaps:', error);
+      res.status(500).json({ error: 'Failed to get industry gaps' });
+    }
+  });
+
+  app.post('/api/admin/ai-generator/generate', requireAdminAuth, async (req, res) => {
+    try {
+      const { industryName, sectorName, count, geographicFocus } = req.body;
+
+      if (!industryName || !sectorName) {
+        return res.status(400).json({ error: 'industryName and sectorName are required' });
+      }
+
+      const result = await generateCompaniesForIndustry({
+        industryName,
+        sectorName,
+        count: count || 5,
+        geographicFocus: geographicFocus || undefined,
+      });
+
+      res.json(result);
+    } catch (error) {
+      console.error('Error generating companies:', error);
+      res.status(500).json({ error: 'Failed to generate companies' });
+    }
+  });
+
+  app.post('/api/admin/ai-generator/generate-batch', requireAdminAuth, async (req, res) => {
+    try {
+      const { industryNames, geographicFocus, countPerIndustry } = req.body;
+
+      if (!industryNames || !Array.isArray(industryNames) || industryNames.length === 0) {
+        return res.status(400).json({ error: 'industryNames array is required' });
+      }
+
+      if (industryNames.length > 10) {
+        return res.status(400).json({ error: 'Maximum 10 industries per batch request' });
+      }
+
+      const results = await generateBatchCompanies(
+        industryNames,
+        geographicFocus || undefined,
+        countPerIndustry || 5
+      );
+
+      const totalGenerated = results.reduce((sum, r) => sum + r.generated.length, 0);
+      const totalErrors = results.reduce((sum, r) => sum + r.errors.length, 0);
+
+      res.json({
+        results,
+        summary: {
+          industriesProcessed: results.length,
+          totalGenerated,
+          totalErrors,
+        },
+      });
+    } catch (error) {
+      console.error('Error in batch generation:', error);
+      res.status(500).json({ error: 'Failed to generate batch companies' });
+    }
+  });
+
+  app.post('/api/admin/ai-generator/validate-urls', requireAdminAuth, async (req, res) => {
+    try {
+      const { companies: companiesToValidate } = req.body;
+
+      if (!companiesToValidate || !Array.isArray(companiesToValidate)) {
+        return res.status(400).json({ error: 'companies array is required' });
+      }
+
+      const validated = await validateUrls(companiesToValidate);
+      res.json({ companies: validated });
+    } catch (error) {
+      console.error('Error validating URLs:', error);
+      res.status(500).json({ error: 'Failed to validate URLs' });
+    }
+  });
+
+  app.post('/api/admin/ai-generator/import', requireAdminAuth, async (req, res) => {
+    try {
+      const { companies: companiesToImport } = req.body;
+
+      if (!companiesToImport || !Array.isArray(companiesToImport) || companiesToImport.length === 0) {
+        return res.status(400).json({ error: 'companies array is required and must not be empty' });
+      }
+
+      const result = await importGeneratedCompanies(companiesToImport);
+      res.json(result);
+    } catch (error) {
+      console.error('Error importing companies:', error);
+      res.status(500).json({ error: 'Failed to import companies' });
+    }
+  });
+
+  // Wikidata integration routes (admin only)
+  const { wikidataService } = await import('./services/wikidataService');
+
+  app.get('/api/admin/wikidata/search', requireAdminAuth, async (req, res) => {
+    try {
+      const industryName = req.query.industryName as string | undefined;
+      const sectorName = req.query.sectorName as string | undefined;
+      const countryCode = req.query.countryCode as string | undefined;
+      const continentName = req.query.continentName as string | undefined;
+      const limit = parseInt(req.query.limit as string) || 50;
+
+      const companies = await wikidataService.searchCompanies({
+        industryName,
+        sectorName,
+        countryCode,
+        continentName,
+        limit,
+      });
+
+      res.json({
+        companies,
+        total: companies.length,
+        filters: { industryName, sectorName, countryCode, continentName },
+      });
+    } catch (error) {
+      console.error('Error searching Wikidata:', error);
+      res.status(500).json({ error: 'Failed to search Wikidata' });
+    }
+  });
+
+  app.post('/api/admin/wikidata/preview', requireAdminAuth, async (req, res) => {
+    try {
+      const { industryName, sectorName, countryCode, continentName, limit } = req.body;
+
+      if (!industryName || !sectorName) {
+        return res.status(400).json({ error: 'industryName and sectorName are required' });
+      }
+
+      const preview = await wikidataService.previewImport({
+        industryName,
+        sectorName,
+        countryCode,
+        continentName,
+        limit: limit || 50,
+      });
+
+      res.json(preview);
+    } catch (error) {
+      console.error('Error previewing Wikidata import:', error);
+      res.status(500).json({ error: 'Failed to preview Wikidata import' });
+    }
+  });
+
+  app.post('/api/admin/wikidata/import', requireAdminAuth, async (req, res) => {
+    try {
+      const { industryName, sectorName, selectedCompanies } = req.body;
+
+      if (!industryName || !sectorName) {
+        return res.status(400).json({ error: 'industryName and sectorName are required' });
+      }
+
+      if (!selectedCompanies || !Array.isArray(selectedCompanies) || selectedCompanies.length === 0) {
+        return res.status(400).json({ error: 'selectedCompanies array is required and must not be empty' });
+      }
+
+      const result = await wikidataService.importCompanies({
+        industryName,
+        sectorName,
+        selectedCompanies,
+      });
+
+      res.json(result);
+    } catch (error) {
+      console.error('Error importing from Wikidata:', error);
+      res.status(500).json({ error: 'Failed to import from Wikidata' });
+    }
+  });
+
+  app.get('/api/admin/wikidata/gaps', requireAdminAuth, async (req, res) => {
+    try {
+      const sectorName = req.query.sectorName as string | undefined;
+      const gaps = await wikidataService.getIndustryGaps(sectorName);
+
+      res.json({
+        totalWithGaps: gaps.length,
+        gaps,
+      });
+    } catch (error) {
+      console.error('Error getting Wikidata gaps:', error);
+      res.status(500).json({ error: 'Failed to get industry gaps' });
+    }
+  });
 
   const httpServer = createServer(app);
   return httpServer;

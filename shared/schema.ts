@@ -25,6 +25,7 @@ export const companies = pgTable('companies', {
   foundedYear: integer('founded_year'), // e.g., 1916, 2008
   companySize: text('company_size'), // e.g., "Large Enterprise", "SME", "Conglomerate"
   specializationTags: text('specialization_tags'), // Comma-separated: "Film Production, Distribution, Franchise Management"
+  description: text('description'), // AI-generated or manually curated company description
   verificationStatus: text('verification_status').default('unverified'), // 'verified', 'unverified', 'pending'
 }, (table) => ({
   // Composite unique constraint: same company can exist in different sectors/industries
@@ -255,7 +256,19 @@ export const adPurchases = pgTable('ad_purchases', {
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
+export const searchCache = pgTable('search_cache', {
+  id: serial('id').primaryKey(),
+  queryString: text('query_string').notNull(),
+  resultsJson: json('results_json').$type<any>().notNull(),
+  hitCount: integer('hit_count').default(0).notNull(),
+  isIndustrySpecific: boolean('is_industry_specific').default(false).notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  expiresAt: timestamp('expires_at').notNull(),
+});
+
 // Type exports
+export type SearchCache = typeof searchCache.$inferSelect;
+export type InsertSearchCache = typeof searchCache.$inferInsert;
 export type Sector = typeof sectors.$inferSelect;
 export type Industry = typeof industries.$inferSelect;
 export type Company = typeof companies.$inferSelect;
@@ -326,3 +339,5 @@ export const insertCompanyLocationSchema = createInsertSchema(companyLocations);
 export const selectCompanyLocationSchema = createSelectSchema(companyLocations);
 export const insertAdPurchaseSchema = createInsertSchema(adPurchases);
 export const selectAdPurchaseSchema = createSelectSchema(adPurchases);
+export const insertSearchCacheSchema = createInsertSchema(searchCache);
+export const selectSearchCacheSchema = createSelectSchema(searchCache);

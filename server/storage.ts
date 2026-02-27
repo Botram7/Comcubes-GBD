@@ -1,7 +1,7 @@
 import { csvParser } from './services/csvParser';
 import { db } from './db';
-import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, companyClaims, bannerAds, adAnalytics, adPerformanceSummary, emailLogs, continents, regions, countries, companyLocations, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type CompanyClaim, type BannerAd, type AdAnalytics, type AdPerformanceSummary, type EmailLog, type Continent, type Region, type Country, type CompanyLocation, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist, type InsertCompanyClaim, type InsertBannerAd, type InsertAdAnalytics, type InsertAdPerformanceSummary, type InsertEmailLog } from '@shared/schema';
-import { eq, ilike, or, and, sql } from 'drizzle-orm';
+import { sectors, industries, companies, contactMessages, companyListings, industryWaitlist, companyClaims, bannerAds, adAnalytics, adPerformanceSummary, emailLogs, continents, regions, countries, companyLocations, searchCache, type Sector, type Industry, type Company, type ContactMessage, type CompanyListing, type IndustryWaitlist, type CompanyClaim, type BannerAd, type AdAnalytics, type AdPerformanceSummary, type EmailLog, type Continent, type Region, type Country, type CompanyLocation, type SearchCache, type InsertSearchCache, type InsertSector, type InsertIndustry, type InsertCompany, type InsertContactMessage, type InsertCompanyListing, type InsertIndustryWaitlist, type InsertCompanyClaim, type InsertBannerAd, type InsertAdAnalytics, type InsertAdPerformanceSummary, type InsertEmailLog } from '@shared/schema';
+import { eq, ilike, or, and, sql, gt, lt, desc } from 'drizzle-orm';
 import { generateCompanyDescription } from './services/companyDescriptionGenerator';
 
 export interface IStorage {
@@ -126,6 +126,20 @@ export interface IStorage {
     topCountries: Array<{ countryName: string; companyCount: number }>;
   }>;
   getTopCountriesByCompanyCount(limit: number): Promise<Array<Country & { companyCount: number }>>;
+
+  // Search cache operations
+  getSearchCache(queryString: string): Promise<SearchCache | undefined>;
+  setSearchCache(entry: InsertSearchCache): Promise<SearchCache>;
+  incrementSearchCacheHit(id: number): Promise<void>;
+  getSearchCacheStats(): Promise<{
+    totalEntries: number;
+    totalHits: number;
+    activeEntries: number;
+    expiredEntries: number;
+    hitRate: number;
+  }>;
+  clearExpiredSearchCache(): Promise<number>;
+  clearAllSearchCache(): Promise<number>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -1327,6 +1341,112 @@ export class DatabaseStorage implements IStorage {
     } catch (error) {
       console.error('Error getting top countries by company count:', error);
       return [];
+    }
+  }
+  // Search cache operations
+  async getSearchCache(queryString: string): Promise<SearchCache | undefined> {
+    try {
+      const normalizedQuery = queryString.toLowerCase().trim();
+      const now = new Date();
+      const [cached] = await db.select().from(searchCache)
+        .where(and(
+          eq(searchCache.queryString, normalizedQuery),
+          gt(searchCache.expiresAt, now)
+        ))
+        .limit(1);
+      return cached || undefined;
+    } catch (error) {
+      console.error('Error getting search cache:', error);
+      return undefined;
+    }
+  }
+
+  async setSearchCache(entry: InsertSearchCache): Promise<SearchCache> {
+    try {
+      const normalizedQuery = entry.queryString.toLowerCase().trim();
+      const existing = await db.select().from(searchCache)
+        .where(eq(searchCache.queryString, normalizedQuery))
+        .limit(1);
+
+      if (existing.length > 0) {
+        const [updated] = await db.update(searchCache)
+          .set({
+            resultsJson: entry.resultsJson,
+            isIndustrySpecific: entry.isIndustrySpecific,
+            expiresAt: entry.expiresAt,
+            createdAt: new Date(),
+            hitCount: 0,
+          })
+          .where(eq(searchCache.id, existing[0].id))
+          .returning();
+        return updated;
+      }
+
+      const [created] = await db.insert(searchCache).values({
+        ...entry,
+        queryString: normalizedQuery,
+      }).returning();
+      return created;
+    } catch (error) {
+      console.error('Error setting search cache:', error);
+      throw new Error('Failed to set search cache');
+    }
+  }
+
+  async incrementSearchCacheHit(id: number): Promise<void> {
+    try {
+      await db.update(searchCache)
+        .set({ hitCount: sql`${searchCache.hitCount} + 1` })
+        .where(eq(searchCache.id, id));
+    } catch (error) {
+      console.error('Error incrementing search cache hit:', error);
+    }
+  }
+
+  async getSearchCacheStats(): Promise<{
+    totalEntries: number;
+    totalHits: number;
+    activeEntries: number;
+    expiredEntries: number;
+    hitRate: number;
+  }> {
+    try {
+      const now = new Date();
+      const allEntries = await db.select().from(searchCache);
+      const totalEntries = allEntries.length;
+      const totalHits = allEntries.reduce((sum, e) => sum + e.hitCount, 0);
+      const activeEntries = allEntries.filter(e => new Date(e.expiresAt) > now).length;
+      const expiredEntries = totalEntries - activeEntries;
+      const totalRequests = totalHits + totalEntries;
+      const hitRate = totalRequests > 0 ? (totalHits / totalRequests) * 100 : 0;
+
+      return { totalEntries, totalHits, activeEntries, expiredEntries, hitRate };
+    } catch (error) {
+      console.error('Error getting search cache stats:', error);
+      return { totalEntries: 0, totalHits: 0, activeEntries: 0, expiredEntries: 0, hitRate: 0 };
+    }
+  }
+
+  async clearExpiredSearchCache(): Promise<number> {
+    try {
+      const now = new Date();
+      const expired = await db.delete(searchCache)
+        .where(lt(searchCache.expiresAt, now))
+        .returning();
+      return expired.length;
+    } catch (error) {
+      console.error('Error clearing expired search cache:', error);
+      return 0;
+    }
+  }
+
+  async clearAllSearchCache(): Promise<number> {
+    try {
+      const deleted = await db.delete(searchCache).returning();
+      return deleted.length;
+    } catch (error) {
+      console.error('Error clearing all search cache:', error);
+      return 0;
     }
   }
 }

@@ -99,6 +99,43 @@ The application is built with a modern full-stack architecture, separating front
 
 **Sitemap**: Dynamic sitemap.xml generator including all sectors, industries, companies, and geography pages with proper priority and changefreq settings.
 
+## Phase 2: Dynamic Data Infrastructure (Completed)
+
+**Goal**: Expand company database from ~7,500 to 15,000-25,000+ using cost-effective AI and open data sources with geographic emphasis on Africa and underrepresented regions.
+
+**Services Built**:
+- `server/services/aiCompanyGenerator.ts` — OpenAI-powered company generation for industries with open slots. Supports geographic targeting (continent/country focus). Uses `gpt-5-nano` for cost efficiency.
+- `server/services/aiDescriptionEnricher.ts` — AI-powered description enrichment replacing template descriptions. Batch processing with progress tracking.
+- `server/services/wikidataService.ts` — Free Wikidata SPARQL integration for importing real company data. Supports continent/country filtering. No API key needed.
+- `server/services/googleSearchService.ts` — Google Custom Search with database-backed caching (7-30 day TTL).
+
+**Admin Dashboard Extensions**:
+- "Data Expansion" tab in admin dashboard (`client/src/components/DataExpansionPanel.tsx`)
+- AI Company Generator panel with industry gap analysis and geographic targeting
+- Description Enrichment panel with progress tracking and batch controls
+- Wikidata Import panel with continent/country filters
+- Search Cache statistics panel
+
+**User-Facing Features**:
+- "Suggest for Directory" button on external Google search results (SearchPage.tsx)
+- Suggestions flow to admin approval queue via `POST /api/suggest-company`
+
+**API Endpoints Added**:
+- `GET /api/admin/ai-generator/gaps` — Industry gap analysis
+- `POST /api/admin/ai-generator/generate` — AI company generation
+- `POST /api/admin/ai-generator/import` — Import generated companies
+- `GET /api/admin/descriptions/stats` — Description enrichment stats
+- `POST /api/admin/descriptions/enrich-batch` — Batch description enrichment
+- `GET /api/admin/wikidata/search` — Wikidata SPARQL search
+- `POST /api/admin/wikidata/import` — Import Wikidata companies
+- `GET /api/admin/search-cache/stats` — Cache statistics
+- `POST /api/suggest-company` — User company suggestions
+
+**Design Decisions**:
+- OpenAI uses Replit AI credits via `AI_INTEGRATIONS_OPENAI_API_KEY` / `AI_INTEGRATIONS_OPENAI_BASE_URL` (no separate API key)
+- Google Custom Search stays limited to user-initiated searches only
+- Wikidata is completely free with no rate limits for reasonable usage
+
 ## External Dependencies
 - **Frontend Frameworks**: `react`, `react-dom`, `@vitejs/plugin-react`
 - **Routing**: `wouter`
