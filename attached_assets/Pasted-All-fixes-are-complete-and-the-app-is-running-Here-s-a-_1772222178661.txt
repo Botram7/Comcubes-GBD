@@ -1,0 +1,18 @@
+All fixes are complete and the app is running. Here's a summary of everything that was fixed:
+
+T001 — Fixed Deduplication Logic: The AI generator now checks for duplicates using the composite key (name + industry + sector) instead of just the name. This means the same company can correctly exist in multiple industries and in multiple countries with different URLs. The AI prompt was also updated to explicitly ask for country-specific subsidiaries (like MTN Nigeria with mtn.ng vs MTN South Africa with mtn.co.za).
+
+T002 — Fixed Import: Descriptions Saved + Country Matching: Generated descriptions are now saved to the database during import. A normalization map with 40+ common country name variants (USA, UK, UAE, DRC, etc.) ensures accurate geographic linking. Location failures now log visible warnings instead of being silently swallowed.
+
+T003 — Fixed Wikidata: Multilingual + Inclusive Filtering: SPARQL queries now support 20 languages (English, French, Portuguese, Spanish, Arabic, German, Chinese, Japanese, Swahili, Hausa, Yoruba, Amharic, Hindi, Korean, Russian, Italian, Dutch, Turkish, Polish, Indonesian). The description filter was fixed so companies are no longer excluded just because they lack a description — name matches always come through. The Q-ID skip logic was tightened to only skip pure Q-IDs rather than any label starting with Q.
+
+T004 — Fixed Description Enricher: Model standardized to gpt-4o-mini (matching the AI generator). The company selector now picks up both NULL and empty string descriptions consistently.
+
+T005 — Improved UI Feedback: Error banners, warning lists, and "no results" messages added throughout the Data Expansion panel. The admin now sees clear actionable feedback when operations partially fail (e.g., "8 imported, 2 failed due to country matching").
+
+You're now ready to test all three tools. I'd suggest testing in this order:
+
+Description Enrichment first — click "Enrich 10 Companies" to verify the AI integration works
+AI Company Generator — select an industry, optionally set a geographic focus like "Nigeria", and generate
+Wikidata Import — try searching for "bank" or "airline" with Africa as the continent
+All fixes are applied and ready for testing. Would you like to try the Description Enrichment first to verify the AI connection works?
