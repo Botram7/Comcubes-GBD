@@ -20,6 +20,7 @@ interface WikidataImportResult {
   imported: number;
   skippedDuplicates: number;
   skippedErrors: number;
+  errors: string[];
   companies: WikidataCompany[];
 }
 
@@ -34,100 +35,67 @@ interface WikidataPreviewResult {
 
 const WIKIDATA_SPARQL_ENDPOINT = 'https://query.wikidata.org/sparql';
 
+const WIKIDATA_LANG_LIST = '"en","fr","pt","es","ar","de","zh","ja","sw","ha","yo","am","hi","ko","ru","it","nl","tr","pl","id"';
+const WIKIDATA_LABEL_LANGS = 'en,fr,pt,es,ar,de,zh,ja,sw,ha,yo,am,hi,ko,ru,it,nl,tr,pl,id';
+
 const INDUSTRY_TO_WIKIDATA_MAP: Record<string, string[]> = {
-  'Commercial Banking': ['Q000000', 'commercial bank', 'bank'],
-  'Investment Banking': ['Q000000', 'investment bank'],
-  'Asset Management': ['Q000000', 'asset management company', 'investment management'],
-  'Insurance Underwriting': ['Q000000', 'insurance company'],
-  'FinTech': ['Q000000', 'financial technology company'],
-  'Stock Exchanges': ['Q000000', 'stock exchange'],
-  'Cryptocurrency Exchanges': ['Q000000', 'cryptocurrency exchange'],
-  'Consumer Finance': ['Q000000', 'consumer finance', 'financial services company'],
-  'Credit Cards': ['Q000000', 'credit card company'],
-  'Airlines': ['Q000000', 'airline'],
-  'Passenger Vehicles': ['Q000000', 'automobile manufacturer'],
-  'Electric Vehicles': ['Q000000', 'electric vehicle manufacturer'],
-  'Motorcycles': ['Q000000', 'motorcycle manufacturer'],
-  'Commercial Trucks': ['Q000000', 'truck manufacturer'],
-  'Auto Parts Manufacturing': ['Q000000', 'auto parts manufacturer'],
-  'Pharmaceutical Companies': ['Q000000', 'pharmaceutical company'],
-  'Hospital Management': ['Q000000', 'hospital', 'hospital chain'],
-  'Diagnostic Labs': ['Q000000', 'medical laboratory'],
-  'Biopharmaceuticals': ['Q000000', 'biopharmaceutical company'],
-  'Generic Drugs': ['Q000000', 'generic drug manufacturer'],
-  'Film Production': ['Q000000', 'film production company', 'film studio'],
-  'Music Industry': ['Q000000', 'record label', 'music company'],
-  'Broadcasting': ['Q000000', 'broadcasting company', 'television network'],
-  'Digital Media': ['Q000000', 'digital media company'],
-  'Video Games': ['Q000000', 'video game company'],
-  'Oil and Gas': ['Q000000', 'oil company', 'petroleum company'],
-  'Renewable Energy': ['Q000000', 'renewable energy company'],
-  'Solar Energy': ['Q000000', 'solar energy company'],
-  'Wind Energy': ['Q000000', 'wind energy company'],
-  'Electricity Distribution': ['Q000000', 'electric utility', 'electricity company'],
-  'Telecommunications': ['Q000000', 'telecommunications company'],
-  'Broadband Providers': ['Q000000', 'internet service provider'],
-  'Mobile Networks': ['Q000000', 'mobile phone operator'],
-  'Enterprise Software': ['Q000000', 'software company'],
-  'Cloud Computing': ['Q000000', 'cloud computing company'],
-  'Semiconductor': ['Q000000', 'semiconductor company'],
-  'Consumer Electronics': ['Q000000', 'consumer electronics company'],
-  'E-commerce': ['Q000000', 'e-commerce company', 'online retailer'],
-  'Department Stores': ['Q000000', 'department store', 'retail chain'],
-  'Grocery Chains': ['Q000000', 'supermarket chain', 'grocery store chain'],
-  'Luxury Fashion': ['Q000000', 'luxury fashion house', 'luxury brand'],
-  'Construction Services': ['Q000000', 'construction company'],
-  'Civil Engineering': ['Q000000', 'civil engineering company'],
-  'Building Materials': ['Q000000', 'building materials company'],
-  'Universities': ['Q000000', 'university'],
-  'EdTech': ['Q000000', 'educational technology company'],
-  'Crop Production': ['Q000000', 'agricultural company'],
-  'Food Processing': ['Q000000', 'food processing company'],
-  'Beverage Production': ['Q000000', 'beverage company'],
-  'Mining': ['Q000000', 'mining company'],
-  'Steel Manufacturing': ['Q000000', 'steel company'],
-  'Chemical Manufacturing': ['Q000000', 'chemical company'],
-  'Shipping': ['Q000000', 'shipping company', 'shipping line'],
-  'Rail Transport': ['Q000000', 'railway company'],
-  'Hotels and Resorts': ['Q000000', 'hotel chain', 'hotel company'],
-  'Real Estate Development': ['Q000000', 'real estate company', 'property developer'],
+  'Commercial Banking': ['commercial bank', 'bank'],
+  'Investment Banking': ['investment bank'],
+  'Asset Management': ['asset management company', 'investment management'],
+  'Insurance Underwriting': ['insurance company'],
+  'FinTech': ['financial technology company'],
+  'Stock Exchanges': ['stock exchange'],
+  'Cryptocurrency Exchanges': ['cryptocurrency exchange'],
+  'Consumer Finance': ['consumer finance', 'financial services company'],
+  'Credit Cards': ['credit card company'],
+  'Airlines': ['airline'],
+  'Passenger Vehicles': ['automobile manufacturer'],
+  'Electric Vehicles': ['electric vehicle manufacturer'],
+  'Motorcycles': ['motorcycle manufacturer'],
+  'Commercial Trucks': ['truck manufacturer'],
+  'Auto Parts Manufacturing': ['auto parts manufacturer'],
+  'Pharmaceutical Companies': ['pharmaceutical company'],
+  'Hospital Management': ['hospital', 'hospital chain'],
+  'Diagnostic Labs': ['medical laboratory'],
+  'Biopharmaceuticals': ['biopharmaceutical company'],
+  'Generic Drugs': ['generic drug manufacturer'],
+  'Film Production': ['film production company', 'film studio'],
+  'Music Industry': ['record label', 'music company'],
+  'Broadcasting': ['broadcasting company', 'television network'],
+  'Digital Media': ['digital media company'],
+  'Video Games': ['video game company'],
+  'Oil and Gas': ['oil company', 'petroleum company'],
+  'Renewable Energy': ['renewable energy company'],
+  'Solar Energy': ['solar energy company'],
+  'Wind Energy': ['wind energy company'],
+  'Electricity Distribution': ['electric utility', 'electricity company'],
+  'Telecommunications': ['telecommunications company'],
+  'Broadband Providers': ['internet service provider'],
+  'Mobile Networks': ['mobile phone operator'],
+  'Enterprise Software': ['software company'],
+  'Cloud Computing': ['cloud computing company'],
+  'Semiconductor': ['semiconductor company'],
+  'Consumer Electronics': ['consumer electronics company'],
+  'E-commerce': ['e-commerce company', 'online retailer'],
+  'Department Stores': ['department store', 'retail chain'],
+  'Grocery Chains': ['supermarket chain', 'grocery store chain'],
+  'Luxury Fashion': ['luxury fashion house', 'luxury brand'],
+  'Construction Services': ['construction company'],
+  'Civil Engineering': ['civil engineering company'],
+  'Building Materials': ['building materials company'],
+  'Universities': ['university'],
+  'EdTech': ['educational technology company'],
+  'Crop Production': ['agricultural company'],
+  'Food Processing': ['food processing company'],
+  'Beverage Production': ['beverage company'],
+  'Mining': ['mining company'],
+  'Steel Manufacturing': ['steel company'],
+  'Chemical Manufacturing': ['chemical company'],
+  'Shipping': ['shipping company', 'shipping line'],
+  'Rail Transport': ['railway company'],
+  'Hotels and Resorts': ['hotel chain', 'hotel company'],
+  'Real Estate Development': ['real estate company', 'property developer'],
 };
-
-function buildSparqlQuery(industryKeywords: string[], countryCode?: string, limit: number = 50): string {
-  const keywordFilters = industryKeywords
-    .map(kw => `CONTAINS(LCASE(?desc), "${kw.toLowerCase()}")`)
-    .join(' || ');
-
-  const countryFilter = countryCode
-    ? `?company wdt:P17 ?country . ?country wdt:P297 "${countryCode}" .`
-    : '';
-
-  const continentFilter = '';
-
-  return `
-    SELECT DISTINCT ?company ?companyLabel ?website ?countryLabel ?countryCode ?founded ?employees ?description WHERE {
-      ?company wdt:P31/wdt:P279* wd:Q4830453 .
-      ${countryFilter}
-      ${continentFilter}
-      OPTIONAL { ?company wdt:P856 ?website . }
-      OPTIONAL {
-        ?company wdt:P17 ?countryEntity .
-        ?countryEntity rdfs:label ?countryLabel .
-        FILTER(LANG(?countryLabel) = "en")
-        OPTIONAL { ?countryEntity wdt:P297 ?countryCode . }
-      }
-      OPTIONAL { ?company wdt:P571 ?founded . }
-      OPTIONAL { ?company wdt:P1128 ?employees . }
-      OPTIONAL {
-        ?company schema:description ?description .
-        FILTER(LANG(?description) = "en")
-      }
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
-      ${keywordFilters ? `FILTER(${keywordFilters})` : ''}
-    }
-    LIMIT ${limit}
-  `;
-}
 
 function buildIndustrySearchQuery(searchTerms: string[], countryCode?: string, continentName?: string, limit: number = 50): string {
   const countryFilter = countryCode
@@ -151,7 +119,7 @@ function buildIndustrySearchQuery(searchTerms: string[], countryCode?: string, c
     }
   }
 
-  const termFilters = searchTerms
+  const nameFilters = searchTerms
     .map(term => {
       const escaped = term.replace(/"/g, '\\"').toLowerCase();
       return `CONTAINS(LCASE(?companyLabel), "${escaped}")`;
@@ -160,10 +128,10 @@ function buildIndustrySearchQuery(searchTerms: string[], countryCode?: string, c
   const descFilters = searchTerms
     .map(term => {
       const escaped = term.replace(/"/g, '\\"').toLowerCase();
-      return `CONTAINS(LCASE(?description), "${escaped}")`;
+      return `(BOUND(?description) && CONTAINS(LCASE(?description), "${escaped}"))`;
     });
 
-  const allFilters = [...termFilters, ...descFilters].join(' || ');
+  const allFilters = [...nameFilters, ...descFilters].join(' || ');
 
   return `
     SELECT DISTINCT ?company ?companyLabel ?website ?countryLabel ?countryCode ?founded ?employees ?description WHERE {
@@ -174,16 +142,15 @@ function buildIndustrySearchQuery(searchTerms: string[], countryCode?: string, c
       OPTIONAL {
         ?company wdt:P17 ?cEntity .
         ?cEntity rdfs:label ?countryLabel .
-        FILTER(LANG(?countryLabel) = "en")
-        OPTIONAL { ?cEntity wdt:P297 ?countryCode . }
+        FILTER(LANG(?countryLabel) IN (${WIKIDATA_LANG_LIST}))
       }
       OPTIONAL { ?company wdt:P571 ?founded . }
       OPTIONAL { ?company wdt:P1128 ?employees . }
       OPTIONAL {
         ?company schema:description ?description .
-        FILTER(LANG(?description) = "en")
+        FILTER(LANG(?description) IN (${WIKIDATA_LANG_LIST}))
       }
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "${WIKIDATA_LABEL_LANGS}" . }
       ${allFilters ? `FILTER(${allFilters})` : ''}
     }
     LIMIT ${limit}
@@ -221,16 +188,16 @@ function buildGenericCompanyQuery(countryCode?: string, continentName?: string, 
       OPTIONAL {
         ?company wdt:P17 ?cEntity .
         ?cEntity rdfs:label ?countryLabel .
-        FILTER(LANG(?countryLabel) = "en")
+        FILTER(LANG(?countryLabel) IN (${WIKIDATA_LANG_LIST}))
         OPTIONAL { ?cEntity wdt:P297 ?countryCode . }
       }
       OPTIONAL { ?company wdt:P571 ?founded . }
       OPTIONAL { ?company wdt:P1128 ?employees . }
       OPTIONAL {
         ?company schema:description ?description .
-        FILTER(LANG(?description) = "en")
+        FILTER(LANG(?description) IN (${WIKIDATA_LANG_LIST}))
       }
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "${WIKIDATA_LABEL_LANGS}" . }
     }
     LIMIT ${limit}
   `;
@@ -263,7 +230,7 @@ function parseWikidataResults(results: any[]): WikidataCompany[] {
     const wikidataId = result.company?.value?.split('/').pop() || '';
     const name = result.companyLabel?.value || '';
 
-    if (!name || name.startsWith('Q') || seen.has(name.toLowerCase())) {
+    if (!name || /^Q\d+$/.test(name) || seen.has(name.toLowerCase())) {
       continue;
     }
     seen.add(name.toLowerCase());
@@ -325,7 +292,7 @@ export class WikidataService {
     if (industryName) {
       const mapped = INDUSTRY_TO_WIKIDATA_MAP[industryName];
       if (mapped) {
-        searchTerms = mapped.filter(t => !t.startsWith('Q'));
+        searchTerms = mapped;
       } else {
         searchTerms = industryName.toLowerCase().split(/\s+and\s+|\s+&\s+/).map(t => t.trim());
       }
@@ -343,11 +310,11 @@ export class WikidataService {
     console.log(`[Wikidata] Querying for industry="${industryName || 'all'}", sector="${sectorName || 'all'}", country="${countryCode || 'all'}", continent="${continentName || 'all'}"`);
 
     const results = await executeSparqlQuery(sparqlQuery);
-    const companies = parseWikidataResults(results);
+    const parsedCompanies = parseWikidataResults(results);
 
-    console.log(`[Wikidata] Found ${companies.length} companies from ${results.length} raw results`);
+    console.log(`[Wikidata] Found ${parsedCompanies.length} companies from ${results.length} raw results`);
 
-    return companies;
+    return parsedCompanies;
   }
 
   async previewImport(options: {
@@ -365,10 +332,10 @@ export class WikidataService {
       .from(companies)
       .where(eq(companies.industryName, industryName));
 
-    const existingNames = existingCompanies.map(c => c.name.toLowerCase());
+    const existingNameSet = new Set(existingCompanies.map(c => c.name.toLowerCase()));
 
     const newCompanies = wikidataCompanies.filter(
-      wc => !existingNames.includes(wc.name.toLowerCase())
+      wc => !existingNameSet.has(wc.name.toLowerCase())
     );
 
     return {
@@ -397,6 +364,7 @@ export class WikidataService {
     let imported = 0;
     let skippedDuplicates = 0;
     let skippedErrors = 0;
+    const errors: string[] = [];
 
     for (const wc of selectedCompanies) {
       if (existingNames.has(wc.name.toLowerCase())) {
@@ -408,6 +376,7 @@ export class WikidataService {
         const [newCompany] = await db.insert(companies).values({
           name: wc.name,
           websiteUrl: wc.websiteUrl,
+          description: wc.description,
           industryName,
           sectorName,
           employeeCount: wc.employeeCount,
@@ -430,17 +399,28 @@ export class WikidataService {
                 confidence: 'medium',
                 source: 'wikidata',
               });
+            } else {
+              console.warn(`[Wikidata] Country code "${wc.countryCode}" not found in database for "${wc.name}"`);
+              errors.push(`Country code "${wc.countryCode}" not found for "${wc.name}" — imported without location`);
             }
           } catch (locErr) {
-            console.warn(`[Wikidata] Could not assign location for ${wc.name}:`, locErr);
+            const locErrMsg = locErr instanceof Error ? locErr.message : String(locErr);
+            console.warn(`[Wikidata] Location insert failed for ${wc.name}: ${locErrMsg}`);
+            errors.push(`Location assignment failed for "${wc.name}": ${locErrMsg}`);
           }
         }
 
         existingNames.add(wc.name.toLowerCase());
         imported++;
       } catch (err) {
-        console.warn(`[Wikidata] Error importing ${wc.name}:`, err);
-        skippedErrors++;
+        const errMsg = err instanceof Error ? err.message : String(err);
+        if (errMsg.includes('unique') || errMsg.includes('duplicate')) {
+          skippedDuplicates++;
+        } else {
+          console.warn(`[Wikidata] Error importing ${wc.name}:`, err);
+          errors.push(`Failed to import "${wc.name}": ${errMsg}`);
+          skippedErrors++;
+        }
       }
     }
 
@@ -453,6 +433,7 @@ export class WikidataService {
       imported,
       skippedDuplicates,
       skippedErrors,
+      errors,
       companies: selectedCompanies,
     };
   }

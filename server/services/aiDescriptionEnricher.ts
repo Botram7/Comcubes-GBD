@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import { db } from "../db";
 import { companies } from "@shared/schema";
-import { eq, isNull, sql } from "drizzle-orm";
+import { eq, sql, or, isNull } from "drizzle-orm";
 import type { Company } from "@shared/schema";
 
 const openai = new OpenAI({
@@ -29,7 +29,7 @@ export async function generateCompanyDescription(company: Company): Promise<stri
   ].filter(Boolean).join(", ");
 
   const response = await openai.chat.completions.create({
-    model: "gpt-5-nano",
+    model: "gpt-4o-mini",
     messages: [
       {
         role: "system",
@@ -40,7 +40,7 @@ export async function generateCompanyDescription(company: Company): Promise<stri
         content: `Write a directory description for: ${company.name}. Known details: ${details}`,
       },
     ],
-    max_completion_tokens: 200,
+    max_tokens: 200,
     temperature: 0.7,
   });
 
@@ -53,7 +53,7 @@ export async function generateIndustryDescription(
   companyCount: number
 ): Promise<string> {
   const response = await openai.chat.completions.create({
-    model: "gpt-5-nano",
+    model: "gpt-4o-mini",
     messages: [
       {
         role: "system",
@@ -64,7 +64,7 @@ export async function generateIndustryDescription(
         content: `Write a directory description for the "${industryName}" industry within the "${sectorName}" sector. This industry currently has ${companyCount} companies listed in our directory.`,
       },
     ],
-    max_completion_tokens: 250,
+    max_tokens: 250,
     temperature: 0.7,
   });
 
@@ -75,7 +75,12 @@ export async function getCompaniesWithoutDescriptions(limit: number = 50): Promi
   return await db
     .select()
     .from(companies)
-    .where(isNull(companies.description))
+    .where(
+      or(
+        isNull(companies.description),
+        sql`${companies.description} = ''`
+      )
+    )
     .limit(limit)
     .orderBy(companies.id);
 }

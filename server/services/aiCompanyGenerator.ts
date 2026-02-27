@@ -1,12 +1,57 @@
 import OpenAI from "openai";
 import { db } from "../db";
 import { companies, industries, sectors, countries, companyLocations } from "@shared/schema";
-import { eq, sql, ilike } from "drizzle-orm";
+import { eq, sql, ilike, and } from "drizzle-orm";
 
 const openai = new OpenAI({
   apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
   baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
 });
+
+const COUNTRY_NAME_NORMALIZATION: Record<string, string> = {
+  'usa': 'United States',
+  'us': 'United States',
+  'u.s.': 'United States',
+  'u.s.a.': 'United States',
+  'united states of america': 'United States',
+  'america': 'United States',
+  'uk': 'United Kingdom',
+  'u.k.': 'United Kingdom',
+  'great britain': 'United Kingdom',
+  'england': 'United Kingdom',
+  'uae': 'United Arab Emirates',
+  'u.a.e.': 'United Arab Emirates',
+  'drc': 'Democratic Republic of the Congo',
+  'dr congo': 'Democratic Republic of the Congo',
+  'congo-kinshasa': 'Democratic Republic of the Congo',
+  'congo-brazzaville': 'Republic of the Congo',
+  'ivory coast': "Côte d'Ivoire",
+  'cote d\'ivoire': "Côte d'Ivoire",
+  'south korea': 'Korea, Republic of',
+  'korea': 'Korea, Republic of',
+  'north korea': "Korea, Democratic People's Republic of",
+  'russia': 'Russian Federation',
+  'taiwan': 'Taiwan, Province of China',
+  'tanzania': 'Tanzania, United Republic of',
+  'venezuela': 'Venezuela, Bolivarian Republic of',
+  'vietnam': 'Viet Nam',
+  'iran': 'Iran, Islamic Republic of',
+  'syria': 'Syrian Arab Republic',
+  'laos': "Lao People's Democratic Republic",
+  'bolivia': 'Bolivia, Plurinational State of',
+  'czech republic': 'Czechia',
+  'holland': 'Netherlands',
+  'the netherlands': 'Netherlands',
+  'myanmar': 'Myanmar',
+  'burma': 'Myanmar',
+  'eswatini': 'Eswatini',
+  'swaziland': 'Eswatini',
+};
+
+function normalizeCountryName(name: string): string {
+  const lower = name.trim().toLowerCase();
+  return COUNTRY_NAME_NORMALIZATION[lower] || name.trim();
+}
 
 export interface GeneratedCompany {
   name: string;
@@ -83,11 +128,12 @@ export async function generateCompaniesForIndustry(
   const errors: string[] = [];
 
   const existingCompanies = await db
-    .select({ name: companies.name })
+    .select({ name: companies.name, websiteUrl: companies.websiteUrl })
     .from(companies)
     .where(eq(companies.industryName, industryName));
 
   const existingNames = new Set(existingCompanies.map((c) => c.name.toLowerCase()));
+  const existingUrls = new Set(existingCompanies.map((c) => c.websiteUrl?.toLowerCase()).filter(Boolean));
   const currentCount = existingCompanies.length;
   const maxSlots = 20;
 
@@ -106,8 +152,8 @@ export async function generateCompaniesForIndustry(
   }
 
   const geographicInstruction = geographicFocus
-    ? `Focus specifically on companies headquartered in or primarily operating in ${geographicFocus}. Prioritize well-known, notable companies from this region.`
-    : "Include a diverse global mix of companies from different countries and regions.";
+    ? `Focus specifically on companies headquartered in or primarily operating in ${geographicFocus}. Prioritize well-known, notable companies from this region. Include country-specific subsidiaries where applicable (e.g., "MTN Nigeria" with its local website mtn.ng is a separate entry from "MTN Group" with mtn.com).`
+    : "Include a diverse global mix of companies from different countries and regions. Include country-specific subsidiaries where applicable (e.g., a company operating in multiple countries should be represented with its local subsidiary name and local website URL).";
 
   const existingNamesList = existingCompanies.map((c) => c.name).join(", ");
 
@@ -119,11 +165,13 @@ IMPORTANT RULES:
 - Only include REAL companies that actually exist and can be verified
 - Do NOT include any of these existing companies: ${existingNamesList || "none"}
 - Each company must have a working website URL
+- A company can legitimately exist in multiple countries with different local websites (e.g., MTN Nigeria at mtn.ng, MTN South Africa at mtn.co.za). These are separate valid entries.
+- Use the country-specific website URL when listing a country-specific subsidiary
 - Provide accurate information based on your knowledge
 
 For each company, provide:
-1. name: Official company name
-2. websiteUrl: The company's official website URL (must start with https://)
+1. name: Official company name (include country qualifier for subsidiaries, e.g., "MTN Nigeria" not just "MTN")
+2. websiteUrl: The company's official website URL (must start with https://). Use country-specific URL for subsidiaries.
 3. description: A 1-2 sentence professional description of what the company does
 4. employeeCount: Estimated employee count as a string (e.g., "10,000+", "500-1,000", "50,000+")
 5. foundedYear: Year the company was founded (number or null if unknown)
@@ -248,6 +296,7 @@ export async function importGeneratedCompanies(
   companiesToImport: Array<{
     name: string;
     websiteUrl: string;
+    description?: string;
     industryName: string;
     sectorName: string;
     employeeCount?: string;
@@ -265,7 +314,11 @@ export async function importGeneratedCompanies(
         .select({ id: companies.id })
         .from(companies)
         .where(
-          eq(companies.name, company.name)
+          and(
+            eq(companies.name, company.name),
+            eq(companies.industryName, company.industryName),
+            eq(companies.sectorName, company.sectorName)
+          )
         )
         .limit(1);
 
@@ -279,6 +332,7 @@ export async function importGeneratedCompanies(
         .values({
           name: company.name,
           websiteUrl: company.websiteUrl,
+          description: company.description || null,
           industryName: company.industryName,
           sectorName: company.sectorName,
           employeeCount: company.employeeCount || null,
@@ -289,11 +343,12 @@ export async function importGeneratedCompanies(
         .returning();
 
       if (created && company.country) {
+        const normalizedCountry = normalizeCountryName(company.country);
         try {
           const [country] = await db
             .select()
             .from(countries)
-            .where(ilike(countries.name, company.country))
+            .where(ilike(countries.name, normalizedCountry))
             .limit(1);
 
           if (country) {
@@ -304,9 +359,14 @@ export async function importGeneratedCompanies(
               confidence: "medium",
               source: "ai_generated",
             });
+          } else {
+            console.warn(`[AI-Generator] Country not found in database: "${company.country}" (normalized: "${normalizedCountry}") for company "${company.name}"`);
+            errors.push(`Country "${company.country}" not found for "${company.name}" — company imported without location`);
           }
         } catch (locErr) {
-          // non-fatal
+          const locErrMsg = locErr instanceof Error ? locErr.message : String(locErr);
+          console.warn(`[AI-Generator] Location insert failed for "${company.name}": ${locErrMsg}`);
+          errors.push(`Location assignment failed for "${company.name}": ${locErrMsg}`);
         }
       }
 
