@@ -60,9 +60,10 @@ export function DataExpansionPanel() {
   const [generatedResults, setGeneratedResults] = useState<any[]>([]);
   const [wikidataQuery, setWikidataQuery] = useState({ industryName: '', countryCode: '', continentName: '' });
 
-  const { data: gaps } = useQuery<GapInfo[]>({
+  const { data: gapsData } = useQuery<{ totalIndustries: number; industriesWithGaps: number; gaps: GapInfo[] }>({
     queryKey: ['/api/admin/ai-generator/gaps'],
   });
+  const gaps = gapsData?.gaps;
 
   const { data: descStats } = useQuery<DescriptionStats>({
     queryKey: ['/api/admin/descriptions/stats'],
