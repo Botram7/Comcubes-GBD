@@ -114,6 +114,8 @@ export function DataExpansionPanel() {
   const [generatedResults, setGeneratedResults] = useState<any[]>([]);
   const [generationErrors, setGenerationErrors] = useState<string[]>([]);
   const [importErrors, setImportErrors] = useState<string[]>([]);
+  const [isValidatingUrls, setIsValidatingUrls] = useState(false);
+  const [selectedForImport, setSelectedForImport] = useState<Set<number>>(new Set());
   const [wikidataQuery, setWikidataQuery] = useState({ industryName: '', countryCode: '', continentName: '' });
   const [stagedFilter, setStagedFilter] = useState<{ status: string; source: string }>({ status: '', source: '' });
   const [selectedStagedIds, setSelectedStagedIds] = useState<Set<number>>(new Set());
@@ -223,17 +225,45 @@ export function DataExpansionPanel() {
       const response = await apiRequest('POST', '/api/admin/ai-generator/generate', params);
       return response.json();
     },
-    onSuccess: (data) => {
-      setGeneratedResults(data.generated || []);
+    onSuccess: async (data) => {
+      const generated = data.generated || [];
+      setGeneratedResults(generated);
       setGenerationErrors(data.errors || []);
-      const count = data.generated?.length || 0;
+      const count = generated.length;
       toast({
         title: count > 0 ? 'Generation complete' : 'No companies generated',
         description: count > 0
-          ? `Generated ${count} company suggestions for "${data.industryName}"`
+          ? `Generated ${count} company suggestions for "${data.industryName}". Validating URLs...`
           : `${data.errors?.join('; ') || 'No results returned'}`,
         variant: count > 0 ? 'default' : 'destructive',
       });
+      if (count > 0) {
+        setIsValidatingUrls(true);
+        try {
+          const valResponse = await apiRequest('POST', '/api/admin/ai-generator/validate-urls', { companies: generated });
+          const valData = await valResponse.json();
+          const validated = valData.companies || generated;
+          setGeneratedResults(validated);
+          const reachableCount = validated.filter((c: any) => c.urlReachable).length;
+          const deadCount = validated.filter((c: any) => c.urlReachable === false).length;
+          const selected = new Set<number>();
+          validated.forEach((c: any, i: number) => {
+            if (c.urlReachable !== false && !c.isDuplicate) selected.add(i);
+          });
+          setSelectedForImport(selected);
+          toast({
+            title: 'URL validation complete',
+            description: `${reachableCount} reachable, ${deadCount} dead links${deadCount > 0 ? ' (excluded from import)' : ''}`,
+          });
+        } catch (err) {
+          const allSelected = new Set<number>();
+          generated.forEach((_: any, i: number) => allSelected.add(i));
+          setSelectedForImport(allSelected);
+          toast({ title: 'URL validation skipped', description: 'Could not validate URLs. All companies selected for import.', variant: 'destructive' });
+        } finally {
+          setIsValidatingUrls(false);
+        }
+      }
     },
     onError: (error: Error) => {
       setGenerationErrors([error.message]);
@@ -541,37 +571,104 @@ export function DataExpansionPanel() {
         </CardContent>
       </Card>
 
-      {generatedResults.length > 0 && (
+      {isValidatingUrls && (
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex items-center gap-3">
+              <Loader2 className="h-5 w-5 animate-spin text-blue-600" />
+              <p className="text-sm text-gray-600">Validating URLs for {generatedResults.length} companies... This may take a moment.</p>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {generatedResults.length > 0 && !isValidatingUrls && (
         <Card>
           <CardHeader>
             <CardTitle className="text-base flex items-center justify-between">
               <span>Generated Companies ({generatedResults.length})</span>
-              <Button
-                size="sm"
-                onClick={() => {
-                  importMutation.mutate({
-                    companies: generatedResults,
-                    industryName: generatingIndustry,
-                    sectorName: generatingSector,
-                  });
-                }}
-                disabled={importMutation.isPending}
-              >
-                {importMutation.isPending ? (
-                  <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Importing...</>
-                ) : (
-                  <><CheckCircle className="h-4 w-4 mr-2" /> Import All</>
-                )}
-              </Button>
+              <div className="flex gap-2 items-center">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={async () => {
+                    setIsValidatingUrls(true);
+                    try {
+                      const valResponse = await apiRequest('POST', '/api/admin/ai-generator/validate-urls', { companies: generatedResults });
+                      const valData = await valResponse.json();
+                      const validated = valData.companies || generatedResults;
+                      setGeneratedResults(validated);
+                      const reachableCount = validated.filter((c: any) => c.urlReachable).length;
+                      const deadCount = validated.filter((c: any) => c.urlReachable === false).length;
+                      const selected = new Set<number>();
+                      validated.forEach((c: any, i: number) => {
+                        if (c.urlReachable !== false && !c.isDuplicate) selected.add(i);
+                      });
+                      setSelectedForImport(selected);
+                      toast({ title: 'URL validation complete', description: `${reachableCount} reachable, ${deadCount} dead links` });
+                    } catch {
+                      toast({ title: 'Validation failed', variant: 'destructive' });
+                    } finally {
+                      setIsValidatingUrls(false);
+                    }
+                  }}
+                >
+                  Re-validate URLs
+                </Button>
+                <Button
+                  size="sm"
+                  onClick={() => {
+                    const selectedCompanies = generatedResults.filter((_: any, i: number) => selectedForImport.has(i));
+                    if (selectedCompanies.length === 0) {
+                      toast({ title: 'No companies selected', description: 'Select at least one company to import.', variant: 'destructive' });
+                      return;
+                    }
+                    importMutation.mutate({
+                      companies: selectedCompanies,
+                      industryName: generatingIndustry,
+                      sectorName: generatingSector,
+                    });
+                  }}
+                  disabled={importMutation.isPending || selectedForImport.size === 0}
+                >
+                  {importMutation.isPending ? (
+                    <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Importing...</>
+                  ) : (
+                    <><CheckCircle className="h-4 w-4 mr-2" /> Import Selected ({selectedForImport.size})</>
+                  )}
+                </Button>
+              </div>
             </CardTitle>
           </CardHeader>
           <CardContent>
             {importErrors.length > 0 && <WarningBanner messages={importErrors} />}
+
+            {generatedResults.some((c: any) => c.urlReachable === false) && (
+              <div className="mb-3 p-2 bg-red-50 border border-red-200 rounded text-xs text-red-700 flex items-center gap-2">
+                <AlertTriangle className="h-4 w-4 flex-shrink-0" />
+                Companies with dead links are automatically excluded from import. You can manually select them if needed.
+              </div>
+            )}
+
             <Table>
               <TableHeader>
                 <TableRow>
+                  <TableHead className="w-10">
+                    <input
+                      type="checkbox"
+                      checked={selectedForImport.size === generatedResults.length && generatedResults.length > 0}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setSelectedForImport(new Set(generatedResults.map((_: any, i: number) => i)));
+                        } else {
+                          setSelectedForImport(new Set());
+                        }
+                      }}
+                    />
+                  </TableHead>
                   <TableHead>Company</TableHead>
                   <TableHead>Website</TableHead>
+                  <TableHead>URL</TableHead>
                   <TableHead>Country</TableHead>
                   <TableHead>Founded</TableHead>
                   <TableHead>Status</TableHead>
@@ -579,9 +676,34 @@ export function DataExpansionPanel() {
               </TableHeader>
               <TableBody>
                 {generatedResults.map((company: any, i: number) => (
-                  <TableRow key={i} className={company.isDuplicate ? 'opacity-50' : ''}>
+                  <TableRow key={i} className={`${company.isDuplicate ? 'opacity-50' : ''} ${company.urlReachable === false ? 'bg-red-50/50' : ''}`}>
+                    <TableCell>
+                      <input
+                        type="checkbox"
+                        checked={selectedForImport.has(i)}
+                        onChange={(e) => {
+                          const next = new Set(selectedForImport);
+                          if (e.target.checked) next.add(i);
+                          else next.delete(i);
+                          setSelectedForImport(next);
+                        }}
+                      />
+                    </TableCell>
                     <TableCell className="font-medium">{company.name}</TableCell>
-                    <TableCell className="text-sm text-blue-600 max-w-48 truncate">{company.websiteUrl || company.website}</TableCell>
+                    <TableCell className="text-sm text-blue-600 max-w-40 truncate">
+                      <a href={company.websiteUrl || company.website} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                        {company.websiteUrl || company.website}
+                      </a>
+                    </TableCell>
+                    <TableCell>
+                      {company.urlReachable === true ? (
+                        <Badge variant="outline" className="text-xs text-green-700"><CheckCircle className="h-3 w-3 mr-1" />Live</Badge>
+                      ) : company.urlReachable === false ? (
+                        <Badge variant="destructive" className="text-xs"><XCircle className="h-3 w-3 mr-1" />Dead</Badge>
+                      ) : (
+                        <Badge variant="outline" className="text-xs text-gray-500">Unknown</Badge>
+                      )}
+                    </TableCell>
                     <TableCell className="text-sm">{company.country || '-'}</TableCell>
                     <TableCell className="text-sm">{company.foundedYear || '-'}</TableCell>
                     <TableCell>
