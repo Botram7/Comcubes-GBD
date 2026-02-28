@@ -2223,7 +2223,7 @@ Crawl-delay: 1`;
         return res.status(400).json({ error: 'selectedCompanies array is required and must not be empty' });
       }
 
-      const { matchSector, matchIndustry } = await import('./services/categoryMatcher');
+      const { matchCategoryForCompany } = await import('./services/categoryMatcher');
 
       const staged = selectedCompanies.map((c: any) => {
         // Build a rich probe string: company name + description + search term hint
@@ -2234,26 +2234,21 @@ Crawl-delay: 1`;
           c.industryHint || '',
         ].filter(Boolean).join(' ');
 
-        const sectorMatch = matchSector(probe);
-        const industryMatch = matchIndustry(probe, sectorMatch.name);
-
-        // Determine confidence label
-        const avgConfidence = (sectorMatch.confidence + (industryMatch?.confidence || 0)) / 2;
-        const confidence = avgConfidence >= 0.8 ? 'high' : avgConfidence >= 0.5 ? 'medium' : 'low';
+        const { sectorName, industryName, confidence } = matchCategoryForCompany(probe);
 
         return {
           name: c.name,
           websiteUrl: c.websiteUrl || c.website || null,
-          industryName: industryMatch?.name || 'Uncategorized',
-          sectorName: sectorMatch?.name || 'Uncategorized',
+          industryName: industryName || 'Uncategorized',
+          sectorName: sectorName || 'Uncategorized',
           employeeCount: c.employeeCount || null,
           foundedYear: c.foundedYear ? Number(c.foundedYear) : null,
           description: c.description || null,
           country: c.country || null,
           countryCode: c.countryCode || null,
           source: 'wikidata' as const,
-          matchedSector: sectorMatch?.name || null,
-          matchedIndustry: industryMatch?.name || null,
+          matchedSector: sectorName || null,
+          matchedIndustry: industryName || null,
           matchConfidence: confidence,
           status: 'pending' as const,
         };
