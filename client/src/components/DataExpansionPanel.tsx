@@ -119,6 +119,8 @@ export function DataExpansionPanel() {
   const [selectedGapIndustries, setSelectedGapIndustries] = useState<Set<string>>(new Set());
   const [batchProgress, setBatchProgress] = useState<{ current: number; total: number } | null>(null);
   const [wikidataQuery, setWikidataQuery] = useState({ industryName: '', countryCode: '', continentName: '' });
+  const [wikidataAssign, setWikidataAssign] = useState({ sectorName: '', industryName: '' });
+  const [wikidataSelected, setWikidataSelected] = useState<Set<number>>(new Set());
   const [stagedFilter, setStagedFilter] = useState<{ status: string; source: string }>({ status: '', source: '' });
   const [selectedStagedIds, setSelectedStagedIds] = useState<Set<number>>(new Set());
 
@@ -303,6 +305,7 @@ export function DataExpansionPanel() {
     },
     onSuccess: (data) => {
       const count = Array.isArray(data) ? data.length : (data.companies?.length || 0);
+      setWikidataSelected(new Set());
       toast({
         title: count > 0 ? 'Wikidata search complete' : 'No results found',
         description: count > 0
@@ -313,6 +316,29 @@ export function DataExpansionPanel() {
     },
     onError: (error: Error) => {
       toast({ title: 'Wikidata search failed', description: error.message, variant: 'destructive' });
+    },
+  });
+
+  const wikidataImportMutation = useMutation({
+    mutationFn: async (params: { companies: any[]; industryName: string; sectorName: string }) => {
+      const response = await apiRequest('POST', '/api/admin/wikidata/import', {
+        industryName: params.industryName,
+        sectorName: params.sectorName,
+        selectedCompanies: params.companies,
+      });
+      return response.json();
+    },
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/staged-companies'] });
+      queryClient.invalidateQueries({ queryKey: ['/api/admin/staged-companies/stats'] });
+      setWikidataSelected(new Set());
+      toast({
+        title: 'Staged for review',
+        description: `${data.staged || 0} companies added to Staged Imports for review.`,
+      });
+    },
+    onError: (error: Error) => {
+      toast({ title: 'Import failed', description: error.message, variant: 'destructive' });
     },
   });
 
@@ -1087,7 +1113,20 @@ export function DataExpansionPanel() {
     ? (Array.isArray(wikidataMutation.data) ? wikidataMutation.data : (wikidataMutation.data as any).companies || [])
     : [];
 
-  const renderWikidata = () => (
+  const { data: wikidataAssignedSectorIndustries = [] } = useQuery<any[]>({
+    queryKey: ['/api/sectors', wikidataAssign.sectorName, 'industries'],
+    queryFn: async () => {
+      if (!wikidataAssign.sectorName) return [];
+      const res = await fetch(`/api/sectors/${encodeURIComponent(wikidataAssign.sectorName)}/industries`);
+      return res.json();
+    },
+    enabled: !!wikidataAssign.sectorName,
+  });
+
+  const renderWikidata = () => {
+    const allWikidataSelected = wikidataResults.length > 0 && wikidataSelected.size === wikidataResults.length;
+
+    return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold">Wikidata Free Data Import</h3>
@@ -1098,23 +1137,23 @@ export function DataExpansionPanel() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Search Wikidata</CardTitle>
+          <CardTitle className="text-base">Step 1 — Search Wikidata</CardTitle>
         </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <Input
-              placeholder="Industry name"
+              placeholder="Search term (e.g. bank, airline)"
               value={wikidataQuery.industryName}
               onChange={(e) => setWikidataQuery(prev => ({ ...prev, industryName: e.target.value }))}
             />
             <Input
-              placeholder="Country code (e.g., NG, ZA)"
+              placeholder="Country code (e.g. NG, ZA, US)"
               value={wikidataQuery.countryCode}
               onChange={(e) => setWikidataQuery(prev => ({ ...prev, countryCode: e.target.value }))}
             />
             <Select onValueChange={(val) => setWikidataQuery(prev => ({ ...prev, continentName: val }))}>
               <SelectTrigger>
-                <SelectValue placeholder="Continent" />
+                <SelectValue placeholder="Continent (optional)" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Continents</SelectItem>
@@ -1137,13 +1176,13 @@ export function DataExpansionPanel() {
               {wikidataMutation.isPending ? (
                 <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Searching...</>
               ) : (
-                <><Globe className="h-4 w-4 mr-2" /> Search</>
+                <><Globe className="h-4 w-4 mr-2" /> Search Wikidata</>
               )}
             </Button>
           </div>
           <p className="text-xs text-gray-500">
             <MapPin className="h-3 w-3 inline mr-1" />
-            Wikidata is completely free. Queries their open SPARQL endpoint — no API key needed. Supports multilingual results.
+            Free open data from Wikidata's SPARQL endpoint — no API key needed. Tip: use broad terms like "bank", "airline", "hospital".
           </p>
         </CardContent>
       </Card>
@@ -1153,46 +1192,186 @@ export function DataExpansionPanel() {
       )}
 
       {wikidataMutation.isSuccess && wikidataResults.length === 0 && (
-        <InfoBanner message="No companies found matching the search criteria. Try different keywords, a broader industry term, or change the geographic scope." />
+        <InfoBanner message="No companies found. Try a broader search term (e.g. 'bank' instead of 'Commercial Banking'), remove the country code, or try a different continent." />
       )}
 
       {wikidataResults.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">
-              Wikidata Results ({wikidataResults.length})
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="max-h-96 overflow-y-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Company</TableHead>
-                    <TableHead>Website</TableHead>
-                    <TableHead>Country</TableHead>
-                    <TableHead>Founded</TableHead>
-                    <TableHead>Employees</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {wikidataResults.map((company: any, i: number) => (
-                    <TableRow key={i}>
-                      <TableCell className="font-medium">{company.name || company.companyName}</TableCell>
-                      <TableCell className="text-sm text-blue-600 max-w-48 truncate">{company.websiteUrl || company.website || '-'}</TableCell>
-                      <TableCell className="text-sm">{company.country || '-'}</TableCell>
-                      <TableCell className="text-sm">{company.foundedYear || '-'}</TableCell>
-                      <TableCell className="text-sm">{company.employeeCount || '-'}</TableCell>
+        <>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">Step 2 — Assign Category</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-gray-500 mb-3">Select which Sector and Industry these companies belong to before staging them.</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-xs font-medium text-gray-600 mb-1 block">Sector</label>
+                  <Select
+                    value={wikidataAssign.sectorName}
+                    onValueChange={(val) => setWikidataAssign({ sectorName: val, industryName: '' })}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a sector..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {sectors?.map((s: any) => (
+                        <SelectItem key={s.id} value={s.name}>{s.name}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <label className="text-xs font-medium text-gray-600 mb-1 block">Industry</label>
+                  <Select
+                    value={wikidataAssign.industryName}
+                    onValueChange={(val) => setWikidataAssign(prev => ({ ...prev, industryName: val }))}
+                    disabled={!wikidataAssign.sectorName}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder={wikidataAssign.sectorName ? 'Select an industry...' : 'Select a sector first'} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {wikidataAssignedSectorIndustries.map((ind: any) => (
+                        <SelectItem key={ind.id} value={ind.name}>{ind.name}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base flex items-center justify-between flex-wrap gap-2">
+                <span>Step 3 — Select &amp; Stage ({wikidataSelected.size} of {wikidataResults.length} selected)</span>
+                <div className="flex gap-2">
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => {
+                      if (allWikidataSelected) {
+                        setWikidataSelected(new Set());
+                      } else {
+                        setWikidataSelected(new Set(wikidataResults.map((_: any, i: number) => i)));
+                      }
+                    }}
+                  >
+                    {allWikidataSelected ? 'Deselect All' : 'Select All'}
+                  </Button>
+                  <Button
+                    size="sm"
+                    onClick={() => {
+                      if (wikidataSelected.size === 0) {
+                        toast({ title: 'Nothing selected', description: 'Check at least one company to stage.', variant: 'destructive' });
+                        return;
+                      }
+                      if (!wikidataAssign.sectorName || !wikidataAssign.industryName) {
+                        toast({ title: 'Category required', description: 'Select a Sector and Industry in Step 2 before importing.', variant: 'destructive' });
+                        return;
+                      }
+                      const chosen = wikidataResults.filter((_: any, i: number) => wikidataSelected.has(i));
+                      wikidataImportMutation.mutate({
+                        companies: chosen,
+                        industryName: wikidataAssign.industryName,
+                        sectorName: wikidataAssign.sectorName,
+                      });
+                    }}
+                    disabled={wikidataImportMutation.isPending || wikidataSelected.size === 0}
+                  >
+                    {wikidataImportMutation.isPending ? (
+                      <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Staging...</>
+                    ) : (
+                      <><CheckCircle className="h-4 w-4 mr-2" /> Stage Selected ({wikidataSelected.size})</>
+                    )}
+                  </Button>
+                </div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="max-h-[480px] overflow-y-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="w-10">
+                        <input
+                          type="checkbox"
+                          checked={allWikidataSelected}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setWikidataSelected(new Set(wikidataResults.map((_: any, i: number) => i)));
+                            } else {
+                              setWikidataSelected(new Set());
+                            }
+                          }}
+                          className="h-4 w-4"
+                        />
+                      </TableHead>
+                      <TableHead>Company</TableHead>
+                      <TableHead>Website</TableHead>
+                      <TableHead>Country</TableHead>
+                      <TableHead>Founded</TableHead>
+                      <TableHead>Employees</TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-          </CardContent>
-        </Card>
+                  </TableHeader>
+                  <TableBody>
+                    {wikidataResults.map((company: any, i: number) => (
+                      <TableRow
+                        key={i}
+                        className={`cursor-pointer ${wikidataSelected.has(i) ? 'bg-blue-50' : 'hover:bg-gray-50'}`}
+                        onClick={() => {
+                          setWikidataSelected(prev => {
+                            const next = new Set(prev);
+                            if (next.has(i)) next.delete(i); else next.add(i);
+                            return next;
+                          });
+                        }}
+                      >
+                        <TableCell onClick={(e) => e.stopPropagation()}>
+                          <input
+                            type="checkbox"
+                            checked={wikidataSelected.has(i)}
+                            onChange={(e) => {
+                              setWikidataSelected(prev => {
+                                const next = new Set(prev);
+                                if (e.target.checked) next.add(i); else next.delete(i);
+                                return next;
+                              });
+                            }}
+                            className="h-4 w-4"
+                          />
+                        </TableCell>
+                        <TableCell className="font-medium">{company.name || company.companyName}</TableCell>
+                        <TableCell className="text-sm max-w-48">
+                          {company.websiteUrl || company.website ? (
+                            <a
+                              href={company.websiteUrl || company.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline truncate block"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              {(company.websiteUrl || company.website).replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                            </a>
+                          ) : (
+                            <span className="text-gray-400 text-xs">No website</span>
+                          )}
+                        </TableCell>
+                        <TableCell className="text-sm">{company.country || '-'}</TableCell>
+                        <TableCell className="text-sm">{company.foundedYear || '-'}</TableCell>
+                        <TableCell className="text-sm">{company.employeeCount || '-'}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+            </CardContent>
+          </Card>
+        </>
       )}
     </div>
-  );
+    );
+  };
 
   const toggleStagedId = (id: number) => {
     setSelectedStagedIds(prev => {
