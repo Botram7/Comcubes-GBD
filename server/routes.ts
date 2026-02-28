@@ -2217,44 +2217,57 @@ Crawl-delay: 1`;
 
   app.post('/api/admin/wikidata/import', requireAdminAuth, async (req, res) => {
     try {
-      const { industryName, sectorName, selectedCompanies } = req.body;
-
-      if (!industryName || !sectorName) {
-        return res.status(400).json({ error: 'industryName and sectorName are required' });
-      }
+      const { searchTerm, selectedCompanies } = req.body;
 
       if (!selectedCompanies || !Array.isArray(selectedCompanies) || selectedCompanies.length === 0) {
         return res.status(400).json({ error: 'selectedCompanies array is required and must not be empty' });
       }
 
-      const staged = selectedCompanies.map((c: any) => ({
-        name: c.name,
-        websiteUrl: c.websiteUrl || null,
-        industryName,
-        sectorName,
-        employeeCount: c.employeeCount || null,
-        foundedYear: c.foundedYear ? Number(c.foundedYear) : null,
-        description: c.description || null,
-        country: c.country || null,
-        countryCode: c.countryCode || null,
-        source: 'wikidata' as const,
-        matchedSector: sectorName,
-        matchedIndustry: industryName,
-        matchConfidence: 'medium',
-        status: 'pending' as const,
-      }));
+      const { matchSector, matchIndustry } = await import('./services/categoryMatcher');
+
+      const staged = selectedCompanies.map((c: any) => {
+        // Build a rich probe string: company name + description + search term hint
+        const probe = [
+          c.name || '',
+          c.description || '',
+          searchTerm || '',
+          c.industryHint || '',
+        ].filter(Boolean).join(' ');
+
+        const sectorMatch = matchSector(probe);
+        const industryMatch = matchIndustry(probe, sectorMatch.name);
+
+        // Determine confidence label
+        const avgConfidence = (sectorMatch.confidence + (industryMatch?.confidence || 0)) / 2;
+        const confidence = avgConfidence >= 0.8 ? 'high' : avgConfidence >= 0.5 ? 'medium' : 'low';
+
+        return {
+          name: c.name,
+          websiteUrl: c.websiteUrl || c.website || null,
+          industryName: industryMatch?.name || 'Uncategorized',
+          sectorName: sectorMatch?.name || 'Uncategorized',
+          employeeCount: c.employeeCount || null,
+          foundedYear: c.foundedYear ? Number(c.foundedYear) : null,
+          description: c.description || null,
+          country: c.country || null,
+          countryCode: c.countryCode || null,
+          source: 'wikidata' as const,
+          matchedSector: sectorMatch?.name || null,
+          matchedIndustry: industryMatch?.name || null,
+          matchConfidence: confidence,
+          status: 'pending' as const,
+        };
+      });
 
       const created = await storage.createStagedCompanies(staged);
       res.json({
-        industry: industryName,
-        sector: sectorName,
         total: selectedCompanies.length,
         imported: 0,
         staged: created.length,
         skippedDuplicates: 0,
         skippedErrors: 0,
         errors: [],
-        message: `${created.length} companies staged for review`,
+        message: `${created.length} companies staged for review with auto-matched categories`,
       });
     } catch (error) {
       console.error('Error staging from Wikidata:', error);

@@ -119,7 +119,6 @@ export function DataExpansionPanel() {
   const [selectedGapIndustries, setSelectedGapIndustries] = useState<Set<string>>(new Set());
   const [batchProgress, setBatchProgress] = useState<{ current: number; total: number } | null>(null);
   const [wikidataQuery, setWikidataQuery] = useState({ industryName: '', countryCode: '', continentName: '' });
-  const [wikidataAssign, setWikidataAssign] = useState({ sectorName: '', industryName: '' });
   const [wikidataSelected, setWikidataSelected] = useState<Set<number>>(new Set());
   const [wikidataValidated, setWikidataValidated] = useState<any[]>([]);
   const [isValidatingWikidata, setIsValidatingWikidata] = useState(false);
@@ -369,10 +368,9 @@ export function DataExpansionPanel() {
   });
 
   const wikidataImportMutation = useMutation({
-    mutationFn: async (params: { companies: any[]; industryName: string; sectorName: string }) => {
+    mutationFn: async (params: { companies: any[]; searchTerm?: string }) => {
       const response = await apiRequest('POST', '/api/admin/wikidata/import', {
-        industryName: params.industryName,
-        sectorName: params.sectorName,
+        searchTerm: params.searchTerm,
         selectedCompanies: params.companies,
       });
       return response.json();
@@ -1160,15 +1158,6 @@ export function DataExpansionPanel() {
 
   const wikidataResults = wikidataValidated;
 
-  const { data: wikidataAssignedSectorIndustries = [] } = useQuery<any[]>({
-    queryKey: ['/api/sectors', wikidataAssign.sectorName, 'industries'],
-    queryFn: async () => {
-      if (!wikidataAssign.sectorName) return [];
-      const res = await fetch(`/api/sectors/${encodeURIComponent(wikidataAssign.sectorName)}/industries`);
-      return res.json();
-    },
-    enabled: !!wikidataAssign.sectorName,
-  });
 
   const renderWikidata = () => {
     const allWikidataSelected = wikidataResults.length > 0 && wikidataSelected.size === wikidataResults.length;
@@ -1254,46 +1243,14 @@ export function DataExpansionPanel() {
 
       {wikidataResults.length > 0 && !isValidatingWikidata && (
         <>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-base">Step 2 — Assign Category</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-500 mb-3">Select which Sector and Industry these companies belong to before staging them.</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-xs font-medium text-gray-600 mb-1 block">Sector</label>
-                  <Select
-                    value={wikidataAssign.sectorName}
-                    onValueChange={(val) => setWikidataAssign({ sectorName: val, industryName: '' })}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select a sector..." />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {sectors?.map((s: any) => (
-                        <SelectItem key={s.id} value={s.name}>{s.name}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div>
-                  <label className="text-xs font-medium text-gray-600 mb-1 block">Industry</label>
-                  <Select
-                    value={wikidataAssign.industryName}
-                    onValueChange={(val) => setWikidataAssign(prev => ({ ...prev, industryName: val }))}
-                    disabled={!wikidataAssign.sectorName}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder={wikidataAssign.sectorName ? 'Select an industry...' : 'Select a sector first'} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {wikidataAssignedSectorIndustries.map((ind: any) => (
-                        <SelectItem key={ind.id} value={ind.name}>{ind.name}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
+          <Card className="border-blue-200 bg-blue-50/40">
+            <CardContent className="py-4 flex items-start gap-3">
+              <Sparkles className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="text-sm font-medium text-blue-900">Smart Auto-Categorization</p>
+                <p className="text-sm text-blue-700 mt-0.5">
+                  Each company will be automatically assigned to its best-fit Business Sector and Industry using keyword analysis of its name and description — the same smart matching engine used by the AI Generator. No manual selection required.
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -1301,7 +1258,7 @@ export function DataExpansionPanel() {
           <Card>
             <CardHeader>
               <CardTitle className="text-base flex items-center justify-between flex-wrap gap-2">
-                <span>Step 3 — Select &amp; Stage ({wikidataSelected.size} of {wikidataResults.length} selected)</span>
+                <span>Step 2 — Select &amp; Stage ({wikidataSelected.size} of {wikidataResults.length} selected)</span>
                 <div className="flex gap-2">
                   <Button
                     size="sm"
@@ -1323,15 +1280,10 @@ export function DataExpansionPanel() {
                         toast({ title: 'Nothing selected', description: 'Check at least one company to stage.', variant: 'destructive' });
                         return;
                       }
-                      if (!wikidataAssign.sectorName || !wikidataAssign.industryName) {
-                        toast({ title: 'Category required', description: 'Select a Sector and Industry in Step 2 before importing.', variant: 'destructive' });
-                        return;
-                      }
                       const chosen = wikidataResults.filter((_: any, i: number) => wikidataSelected.has(i));
                       wikidataImportMutation.mutate({
                         companies: chosen,
-                        industryName: wikidataAssign.industryName,
-                        sectorName: wikidataAssign.sectorName,
+                        searchTerm: wikidataQuery.industryName,
                       });
                     }}
                     disabled={wikidataImportMutation.isPending || wikidataSelected.size === 0}
