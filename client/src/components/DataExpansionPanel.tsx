@@ -1182,7 +1182,8 @@ export function DataExpansionPanel() {
           </div>
           <p className="text-xs text-gray-500">
             <MapPin className="h-3 w-3 inline mr-1" />
-            Free open data from Wikidata's SPARQL endpoint — no API key needed. Tip: use broad terms like "bank", "airline", "hospital".
+            Free open data from Wikidata. Best results with common terms: "bank", "airline", "hospital", "university", "insurance", "telecom".
+            For continent-wide searches, add a 2-letter country code (e.g. NG, ZA, KE, EG) for faster results.
           </p>
         </CardContent>
       </Card>

@@ -35,170 +35,145 @@ interface WikidataPreviewResult {
 }
 
 const WIKIDATA_SPARQL_ENDPOINT = 'https://query.wikidata.org/sparql';
+const FETCH_TIMEOUT_MS = 25000;
 
-const WIKIDATA_LANG_LIST = '"en","fr","pt","es","ar","de","zh","ja","sw","ha","yo","am","hi","ko","ru","it","nl","tr","pl","id"';
-const WIKIDATA_LABEL_LANGS = 'en,fr,pt,es,ar,de,zh,ja,sw,ha,yo,am,hi,ko,ru,it,nl,tr,pl,id';
-
-const INDUSTRY_TO_WIKIDATA_MAP: Record<string, string[]> = {
-  'Commercial Banking': ['commercial bank', 'bank'],
-  'Investment Banking': ['investment bank'],
-  'Asset Management': ['asset management company', 'investment management'],
-  'Insurance Underwriting': ['insurance company'],
-  'FinTech': ['financial technology company'],
-  'Stock Exchanges': ['stock exchange'],
-  'Cryptocurrency Exchanges': ['cryptocurrency exchange'],
-  'Consumer Finance': ['consumer finance', 'financial services company'],
-  'Credit Cards': ['credit card company'],
-  'Airlines': ['airline'],
-  'Passenger Vehicles': ['automobile manufacturer'],
-  'Electric Vehicles': ['electric vehicle manufacturer'],
-  'Motorcycles': ['motorcycle manufacturer'],
-  'Commercial Trucks': ['truck manufacturer'],
-  'Auto Parts Manufacturing': ['auto parts manufacturer'],
-  'Pharmaceutical Companies': ['pharmaceutical company'],
-  'Hospital Management': ['hospital', 'hospital chain'],
-  'Diagnostic Labs': ['medical laboratory'],
-  'Biopharmaceuticals': ['biopharmaceutical company'],
-  'Generic Drugs': ['generic drug manufacturer'],
-  'Film Production': ['film production company', 'film studio'],
-  'Music Industry': ['record label', 'music company'],
-  'Broadcasting': ['broadcasting company', 'television network'],
-  'Digital Media': ['digital media company'],
-  'Video Games': ['video game company'],
-  'Oil and Gas': ['oil company', 'petroleum company'],
-  'Renewable Energy': ['renewable energy company'],
-  'Solar Energy': ['solar energy company'],
-  'Wind Energy': ['wind energy company'],
-  'Electricity Distribution': ['electric utility', 'electricity company'],
-  'Telecommunications': ['telecommunications company'],
-  'Broadband Providers': ['internet service provider'],
-  'Mobile Networks': ['mobile phone operator'],
-  'Enterprise Software': ['software company'],
-  'Cloud Computing': ['cloud computing company'],
-  'Semiconductor': ['semiconductor company'],
-  'Consumer Electronics': ['consumer electronics company'],
-  'E-commerce': ['e-commerce company', 'online retailer'],
-  'Department Stores': ['department store', 'retail chain'],
-  'Grocery Chains': ['supermarket chain', 'grocery store chain'],
-  'Luxury Fashion': ['luxury fashion house', 'luxury brand'],
-  'Construction Services': ['construction company'],
-  'Civil Engineering': ['civil engineering company'],
-  'Building Materials': ['building materials company'],
-  'Universities': ['university'],
-  'EdTech': ['educational technology company'],
-  'Crop Production': ['agricultural company'],
-  'Food Processing': ['food processing company'],
-  'Beverage Production': ['beverage company'],
-  'Mining': ['mining company'],
-  'Steel Manufacturing': ['steel company'],
-  'Chemical Manufacturing': ['chemical company'],
-  'Shipping': ['shipping company', 'shipping line'],
-  'Rail Transport': ['railway company'],
-  'Hotels and Resorts': ['hotel chain', 'hotel company'],
-  'Real Estate Development': ['real estate company', 'property developer'],
+const CONTINENT_QIDS: Record<string, string> = {
+  'africa': 'Q15',
+  'europe': 'Q46',
+  'asia': 'Q48',
+  'north america': 'Q49',
+  'south america': 'Q18',
+  'oceania': 'Q55643',
 };
 
-function buildIndustrySearchQuery(searchTerms: string[], countryCode?: string, continentName?: string, limit: number = 50): string {
+// Maps search terms to Wikidata QIDs for fast, indexed queries
+// Using direct instance-of QIDs is orders of magnitude faster than label text search
+const TERM_TO_QID_MAP: Record<string, string[]> = {
+  'bank': ['Q22687'],                      // bank
+  'commercial bank': ['Q22687'],
+  'investment bank': ['Q17156070'],        // investment bank
+  'airline': ['Q46970'],                   // airline
+  'hospital': ['Q16917'],                  // hospital
+  'university': ['Q3918'],                 // university
+  'insurance': ['Q43183'],                 // insurance company
+  'hotel': ['Q27686'],                     // hotel
+  'supermarket': ['Q180674'],              // supermarket
+  'pharmaceutical': ['Q507443'],           // pharmaceutical company
+  'mining': ['Q161379'],                   // mining company
+  'oil': ['Q130933', 'Q40185'],            // oil company, oil & gas company
+  'petroleum': ['Q130933'],
+  'gas': ['Q130933'],
+  'software': ['Q6881511'],               // software company
+  'telecom': ['Q622569'],                  // telecommunications company
+  'telecommunications': ['Q622569'],
+  'mobile': ['Q2061309'],                  // mobile network operator
+  'internet': ['Q2349975'],               // internet service provider
+  'semiconductor': ['Q4830453'],
+  'automobile': ['Q786820'],              // automobile manufacturer
+  'automotive': ['Q786820'],
+  'car': ['Q786820'],
+  'shipping': ['Q18388218'],              // shipping company
+  'railway': ['Q201896'],                 // railway company
+  'rail': ['Q201896'],
+  'real estate': ['Q1137012'],            // real estate company
+  'property': ['Q1137012'],
+  'construction': ['Q562966'],            // construction company
+  'food': ['Q1454471'],                   // food company
+  'beverage': ['Q4540',  'Q1454471'],     // brewery / food company
+  'media': ['Q1750916'],                  // media company
+  'broadcast': ['Q41298'],               // broadcasting company
+  'television': ['Q41298'],
+  'film': ['Q18127',  'Q212156'],         // film production / film studio
+  'music': ['Q18127'],
+  'energy': ['Q4830453'],
+  'electric': ['Q1057118'],               // electric utility
+  'power': ['Q1057118'],
+  'retail': ['Q507029'],                  // retailer
+  'department store': ['Q216107'],
+  'chemical': ['Q83588'],                 // chemical company
+  'steel': ['Q83588'],
+  'agriculture': ['Q389970'],             // agricultural company
+  'fertilizer': ['Q167336'],
+  'logistics': ['Q177597'],              // logistics company
+  'transport': ['Q177597'],
+};
+
+function getQidsForTerm(term: string): string[] {
+  const lower = term.toLowerCase().trim();
+  if (TERM_TO_QID_MAP[lower]) return TERM_TO_QID_MAP[lower];
+  // partial match
+  for (const key of Object.keys(TERM_TO_QID_MAP)) {
+    if (lower.includes(key) || key.includes(lower)) {
+      return TERM_TO_QID_MAP[key];
+    }
+  }
+  return [];
+}
+
+function buildQidQuery(qids: string[], countryCode?: string, continentName?: string, limit = 50): string {
+  const typeFilter = qids.map(q => `{ ?company wdt:P31/wdt:P279* wd:${q} }`).join(' UNION\n      ');
+
   const countryFilter = countryCode
     ? `?company wdt:P17 ?countryEntity . ?countryEntity wdt:P297 "${countryCode.toUpperCase()}" .`
     : '';
 
   let continentFilter = '';
   if (continentName && !countryCode) {
-    const continentQids: Record<string, string> = {
-      'africa': 'Q15',
-      'europe': 'Q46',
-      'asia': 'Q48',
-      'north america': 'Q49',
-      'south america': 'Q18',
-      'oceania': 'Q55643',
-      'antarctica': 'Q51',
-    };
-    const qid = continentQids[continentName.toLowerCase()];
+    const qid = CONTINENT_QIDS[continentName.toLowerCase()];
     if (qid) {
       continentFilter = `?company wdt:P17 ?countryEntity . ?countryEntity wdt:P30 wd:${qid} .`;
     }
   }
 
-  const nameFilters = searchTerms
-    .map(term => {
-      const escaped = term.replace(/"/g, '\\"').toLowerCase();
-      return `CONTAINS(LCASE(?companyLabel), "${escaped}")`;
-    });
-
-  const descFilters = searchTerms
-    .map(term => {
-      const escaped = term.replace(/"/g, '\\"').toLowerCase();
-      return `(BOUND(?description) && CONTAINS(LCASE(?description), "${escaped}"))`;
-    });
-
-  const allFilters = [...nameFilters, ...descFilters].join(' || ');
-
   return `
-    SELECT DISTINCT ?company ?companyLabel ?website ?countryLabel ?countryCode ?founded ?employees ?description WHERE {
-      ?company wdt:P31/wdt:P279* wd:Q4830453 .
+    SELECT DISTINCT ?company ?companyLabel ?website ?countryLabel ?countryCode ?founded ?employees WHERE {
+      ${typeFilter}
       ${countryFilter}
       ${continentFilter}
       OPTIONAL { ?company wdt:P856 ?website . }
       OPTIONAL {
         ?company wdt:P17 ?cEntity .
-        ?cEntity rdfs:label ?countryLabel .
-        FILTER(LANG(?countryLabel) IN (${WIKIDATA_LANG_LIST}))
+        ?cEntity rdfs:label ?countryLabel . FILTER(LANG(?countryLabel) = "en")
+        OPTIONAL { ?cEntity wdt:P297 ?countryCode . }
       }
       OPTIONAL { ?company wdt:P571 ?founded . }
       OPTIONAL { ?company wdt:P1128 ?employees . }
-      OPTIONAL {
-        ?company schema:description ?description .
-        FILTER(LANG(?description) IN (${WIKIDATA_LANG_LIST}))
-      }
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "${WIKIDATA_LABEL_LANGS}" . }
-      ${allFilters ? `FILTER(${allFilters})` : ''}
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en,fr,es,pt,ar,sw" . }
     }
     LIMIT ${limit}
   `;
 }
 
-function buildGenericCompanyQuery(countryCode?: string, continentName?: string, limit: number = 100): string {
+function buildLabelSearchQuery(term: string, countryCode?: string, continentName?: string, limit = 30): string {
+  const escaped = term.replace(/"/g, '\\"').toLowerCase();
+
   const countryFilter = countryCode
     ? `?company wdt:P17 ?countryEntity . ?countryEntity wdt:P297 "${countryCode.toUpperCase()}" .`
     : '';
 
   let continentFilter = '';
   if (continentName && !countryCode) {
-    const continentQids: Record<string, string> = {
-      'africa': 'Q15',
-      'europe': 'Q46',
-      'asia': 'Q48',
-      'north america': 'Q49',
-      'south america': 'Q18',
-      'oceania': 'Q55643',
-      'antarctica': 'Q51',
-    };
-    const qid = continentQids[continentName.toLowerCase()];
+    const qid = CONTINENT_QIDS[continentName.toLowerCase()];
     if (qid) {
       continentFilter = `?company wdt:P17 ?countryEntity . ?countryEntity wdt:P30 wd:${qid} .`;
     }
   }
 
   return `
-    SELECT DISTINCT ?company ?companyLabel ?website ?countryLabel ?countryCode ?founded ?employees ?description WHERE {
+    SELECT DISTINCT ?company ?companyLabel ?website ?countryLabel ?countryCode ?founded ?employees WHERE {
       ?company wdt:P31/wdt:P279* wd:Q4830453 .
       ?company wdt:P856 ?website .
       ${countryFilter}
       ${continentFilter}
       OPTIONAL {
         ?company wdt:P17 ?cEntity .
-        ?cEntity rdfs:label ?countryLabel .
-        FILTER(LANG(?countryLabel) IN (${WIKIDATA_LANG_LIST}))
+        ?cEntity rdfs:label ?countryLabel . FILTER(LANG(?countryLabel) = "en")
         OPTIONAL { ?cEntity wdt:P297 ?countryCode . }
       }
       OPTIONAL { ?company wdt:P571 ?founded . }
       OPTIONAL { ?company wdt:P1128 ?employees . }
-      OPTIONAL {
-        ?company schema:description ?description .
-        FILTER(LANG(?description) IN (${WIKIDATA_LANG_LIST}))
-      }
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "${WIKIDATA_LABEL_LANGS}" . }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en,fr,es,pt,ar,sw" . }
+      FILTER(CONTAINS(LCASE(?companyLabel), "${escaped}"))
     }
     LIMIT ${limit}
   `;
@@ -207,20 +182,33 @@ function buildGenericCompanyQuery(countryCode?: string, continentName?: string, 
 async function executeSparqlQuery(query: string): Promise<any[]> {
   const url = `${WIKIDATA_SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`;
 
-  const response = await fetch(url, {
-    headers: {
-      'Accept': 'application/sparql-results+json',
-      'User-Agent': 'COMCUBES-Directory/1.0 (https://comcubes.com; admin@comcubes.com)',
-    },
-  });
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
 
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`Wikidata SPARQL query failed (${response.status}): ${errorText.substring(0, 200)}`);
+  try {
+    const response = await fetch(url, {
+      headers: {
+        'Accept': 'application/sparql-results+json',
+        'User-Agent': 'COMCUBES-Directory/1.0 (https://comcubes.com; admin@comcubes.com)',
+      },
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Wikidata SPARQL query failed (${response.status}): ${errorText.substring(0, 200)}`);
+    }
+
+    const data = await response.json();
+    return data.results?.bindings || [];
+  } catch (err: any) {
+    if (err.name === 'AbortError') {
+      throw new Error('Wikidata query timed out (25s). Try adding a country code like "NG" or "ZA" to narrow results.');
+    }
+    throw err;
+  } finally {
+    clearTimeout(timer);
   }
-
-  const data = await response.json();
-  return data.results?.bindings || [];
 }
 
 function parseWikidataResults(results: any[]): WikidataCompany[] {
@@ -270,7 +258,7 @@ function parseWikidataResults(results: any[]): WikidataCompany[] {
       countryCode: result.countryCode?.value || null,
       foundedYear,
       employeeCount,
-      description: result.description?.value || null,
+      description: null,
       wikidataId,
     });
   }
@@ -288,34 +276,38 @@ export class WikidataService {
   }): Promise<WikidataCompany[]> {
     const { industryName, sectorName, countryCode, continentName, limit = 50 } = options;
 
-    let searchTerms: string[] = [];
+    const searchTerm = industryName || sectorName || '';
 
-    if (industryName) {
-      const mapped = INDUSTRY_TO_WIKIDATA_MAP[industryName];
-      if (mapped) {
-        searchTerms = mapped;
-      } else {
-        searchTerms = industryName.toLowerCase().split(/\s+and\s+|\s+&\s+/).map(t => t.trim());
+    console.log(`[Wikidata] Searching: term="${searchTerm}", country="${countryCode || 'all'}", continent="${continentName || 'all'}"`);
+
+    // First try: QID-based query (fast, indexed)
+    const qids = getQidsForTerm(searchTerm);
+
+    if (qids.length > 0) {
+      console.log(`[Wikidata] Using QID-based query for "${searchTerm}": ${qids.join(', ')}`);
+      try {
+        const results = await executeSparqlQuery(buildQidQuery(qids, countryCode, continentName, limit));
+        const parsed = parseWikidataResults(results);
+        console.log(`[Wikidata] QID query found ${parsed.length} companies`);
+        if (parsed.length > 0) return parsed;
+      } catch (err: any) {
+        console.warn(`[Wikidata] QID query failed: ${err.message} — falling back to label search`);
       }
-    } else if (sectorName) {
-      searchTerms = sectorName.toLowerCase().split(/\s+and\s+|\s+&\s+/).map(t => t.trim());
     }
 
-    let sparqlQuery: string;
-    if (searchTerms.length > 0) {
-      sparqlQuery = buildIndustrySearchQuery(searchTerms, countryCode, continentName, limit);
-    } else {
-      sparqlQuery = buildGenericCompanyQuery(countryCode, continentName, limit);
+    // Fallback: label CONTAINS search — only works well with country code (not continent-wide)
+    console.log(`[Wikidata] Falling back to label search for "${searchTerm}"`);
+    if (!countryCode && continentName) {
+      // Label search + continent without country is too slow — require country code
+      throw new Error(
+        `The search term "${searchTerm}" isn't in our fast-lookup database. For continent-wide searches, please add a Country Code (e.g. "NG" for Nigeria) to keep results fast.`
+      );
     }
 
-    console.log(`[Wikidata] Querying for industry="${industryName || 'all'}", sector="${sectorName || 'all'}", country="${countryCode || 'all'}", continent="${continentName || 'all'}"`);
-
-    const results = await executeSparqlQuery(sparqlQuery);
-    const parsedCompanies = parseWikidataResults(results);
-
-    console.log(`[Wikidata] Found ${parsedCompanies.length} companies from ${results.length} raw results`);
-
-    return parsedCompanies;
+    const results = await executeSparqlQuery(buildLabelSearchQuery(searchTerm, countryCode, continentName, limit));
+    const parsed = parseWikidataResults(results);
+    console.log(`[Wikidata] Label search found ${parsed.length} companies`);
+    return parsed;
   }
 
   async previewImport(options: {
@@ -361,28 +353,12 @@ export class WikidataService {
 
     const sectorMatch = matchSector(sectorName);
     if (sectorMatch.name) {
-      if (sectorMatch.matchType !== "exact") {
-        console.log(`[Wikidata] Sector fuzzy match: "${sectorName}" → "${sectorMatch.name}" (confidence: ${sectorMatch.confidence}, type: ${sectorMatch.matchType})`);
-      }
       resolvedSectorName = sectorMatch.name;
-      if (sectorMatch.needsReview) {
-        console.warn(`[Wikidata] Low confidence sector match: "${sectorName}" → "${sectorMatch.name}" (confidence: ${sectorMatch.confidence}) — flagged for review`);
-      }
-    } else {
-      console.warn(`[Wikidata] No sector match found for "${sectorName}" — using original name`);
     }
 
     const industryMatch = matchIndustry(industryName, resolvedSectorName);
     if (industryMatch.name) {
-      if (industryMatch.matchType !== "exact") {
-        console.log(`[Wikidata] Industry fuzzy match: "${industryName}" → "${industryMatch.name}" (confidence: ${industryMatch.confidence}, type: ${industryMatch.matchType})`);
-      }
       resolvedIndustryName = industryMatch.name;
-      if (industryMatch.needsReview) {
-        console.warn(`[Wikidata] Low confidence industry match: "${industryName}" → "${industryMatch.name}" (confidence: ${industryMatch.confidence}) — flagged for review`);
-      }
-    } else {
-      console.warn(`[Wikidata] No industry match found for "${industryName}" — using original name`);
     }
 
     const existingCompanies = await db.select({ name: companies.name })
@@ -429,13 +405,9 @@ export class WikidataService {
                 confidence: 'medium',
                 source: 'wikidata',
               });
-            } else {
-              console.warn(`[Wikidata] Country code "${wc.countryCode}" not found in database for "${wc.name}"`);
-              errors.push(`Country code "${wc.countryCode}" not found for "${wc.name}" — imported without location`);
             }
           } catch (locErr) {
             const locErrMsg = locErr instanceof Error ? locErr.message : String(locErr);
-            console.warn(`[Wikidata] Location insert failed for ${wc.name}: ${locErrMsg}`);
             errors.push(`Location assignment failed for "${wc.name}": ${locErrMsg}`);
           }
         }
@@ -447,7 +419,6 @@ export class WikidataService {
         if (errMsg.includes('unique') || errMsg.includes('duplicate')) {
           skippedDuplicates++;
         } else {
-          console.warn(`[Wikidata] Error importing ${wc.name}:`, err);
           errors.push(`Failed to import "${wc.name}": ${errMsg}`);
           skippedErrors++;
         }
