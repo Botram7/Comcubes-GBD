@@ -116,6 +116,8 @@ export function DataExpansionPanel() {
   const [importErrors, setImportErrors] = useState<string[]>([]);
   const [isValidatingUrls, setIsValidatingUrls] = useState(false);
   const [selectedForImport, setSelectedForImport] = useState<Set<number>>(new Set());
+  const [selectedGapIndustries, setSelectedGapIndustries] = useState<Set<string>>(new Set());
+  const [batchProgress, setBatchProgress] = useState<{ current: number; total: number } | null>(null);
   const [wikidataQuery, setWikidataQuery] = useState({ industryName: '', countryCode: '', continentName: '' });
   const [stagedFilter, setStagedFilter] = useState<{ status: string; source: string }>({ status: '', source: '' });
   const [selectedStagedIds, setSelectedStagedIds] = useState<Set<number>>(new Set());
@@ -461,7 +463,81 @@ export function DataExpansionPanel() {
     </div>
   );
 
-  const renderAIGenerator = () => (
+  const handleBatchGenerate = async () => {
+    if (selectedGapIndustries.size === 0) return;
+    const filteredGaps = (gaps || []).filter(g => selectedGapIndustries.has(g.industryName));
+    const total = filteredGaps.length;
+    let allGenerated: any[] = [];
+    let allErrors: string[] = [];
+    setBatchProgress({ current: 0, total });
+    setGeneratedResults([]);
+    setGenerationErrors([]);
+
+    for (let i = 0; i < filteredGaps.length; i++) {
+      const gap = filteredGaps[i];
+      setBatchProgress({ current: i + 1, total });
+      try {
+        const response = await apiRequest('POST', '/api/admin/ai-generator/generate', {
+          industryName: gap.industryName,
+          sectorName: gap.sectorName,
+          geographicFocus: geoTarget || undefined,
+          count: 10,
+        });
+        const data = await response.json();
+        const generated = (data.generated || []).map((c: any) => ({
+          ...c,
+          industryName: gap.industryName,
+          sectorName: gap.sectorName,
+        }));
+        allGenerated = [...allGenerated, ...generated];
+        if (data.errors?.length) allErrors = [...allErrors, ...data.errors];
+      } catch (err: any) {
+        allErrors.push(`${gap.industryName}: ${err.message}`);
+      }
+    }
+
+    setBatchProgress(null);
+    setGeneratedResults(allGenerated);
+    setGenerationErrors(allErrors);
+
+    const count = allGenerated.length;
+    toast({
+      title: count > 0 ? `Batch complete — ${count} companies generated` : 'No companies generated',
+      description: count > 0 ? `Validating URLs...` : allErrors.join('; ') || 'No results',
+      variant: count > 0 ? 'default' : 'destructive',
+    });
+
+    if (count > 0) {
+      setIsValidatingUrls(true);
+      try {
+        const valResponse = await apiRequest('POST', '/api/admin/ai-generator/validate-urls', { companies: allGenerated });
+        const valData = await valResponse.json();
+        const validated = valData.companies || allGenerated;
+        setGeneratedResults(validated);
+        const reachableCount = validated.filter((c: any) => c.urlReachable).length;
+        const deadCount = validated.filter((c: any) => c.urlReachable === false).length;
+        const selected = new Set<number>();
+        validated.forEach((c: any, i: number) => {
+          if (c.urlReachable !== false && !c.isDuplicate) selected.add(i);
+        });
+        setSelectedForImport(selected);
+        toast({ title: 'URL validation complete', description: `${reachableCount} reachable, ${deadCount} dead links` });
+      } catch {
+        const allSelected = new Set<number>();
+        allGenerated.forEach((_: any, i: number) => allSelected.add(i));
+        setSelectedForImport(allSelected);
+      } finally {
+        setIsValidatingUrls(false);
+      }
+    }
+  };
+
+  const renderAIGenerator = () => {
+    const filteredGaps = (gaps || []).filter(g => !selectedSector || selectedSector === 'all' || g.sectorName === selectedSector).slice(0, 50);
+    const allFilteredSelected = filteredGaps.length > 0 && filteredGaps.every(g => selectedGapIndustries.has(g.industryName));
+    const isBatchRunning = batchProgress !== null;
+
+    return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold">AI Company Generator</h3>
@@ -472,7 +548,7 @@ export function DataExpansionPanel() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Generate Companies for Industry</CardTitle>
+          <CardTitle className="text-base">Generate Companies for Selected Industries</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
@@ -493,78 +569,91 @@ export function DataExpansionPanel() {
               onChange={(e) => setGeoTarget(e.target.value)}
             />
             <Button
-              onClick={() => {
-                if (generatingIndustry) {
-                  generateMutation.mutate({
-                    industryName: generatingIndustry,
-                    sectorName: generatingSector,
-                    geographicFocus: geoTarget || undefined,
-                    count: 10,
-                  });
-                }
-              }}
-              disabled={!generatingIndustry || generateMutation.isPending}
+              onClick={handleBatchGenerate}
+              disabled={selectedGapIndustries.size === 0 || isBatchRunning || generateMutation.isPending}
             >
-              {generateMutation.isPending ? (
-                <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Generating...</>
+              {isBatchRunning ? (
+                <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Generating {batchProgress?.current}/{batchProgress?.total}...</>
               ) : (
-                <><Sparkles className="h-4 w-4 mr-2" /> Generate</>
+                <><Sparkles className="h-4 w-4 mr-2" /> Generate for {selectedGapIndustries.size} Selected</>
               )}
             </Button>
           </div>
-          {generatingIndustry && (
+          {selectedGapIndustries.size > 0 && (
             <p className="text-sm text-gray-600">
-              Selected: <span className="font-medium">{generatingIndustry}</span> ({generatingSector})
+              <span className="font-medium">{selectedGapIndustries.size}</span> {selectedGapIndustries.size === 1 ? 'industry' : 'industries'} selected for generation
             </p>
           )}
         </CardContent>
       </Card>
 
-      {generateMutation.isError && (
-        <ErrorBanner message={generateMutation.error?.message || 'Generation failed'} />
-      )}
       {generationErrors.length > 0 && <WarningBanner messages={generationErrors} />}
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Industries with Open Slots ({industriesWithGaps})</CardTitle>
+          <CardTitle className="text-base flex items-center justify-between">
+            <span>Industries with Open Slots ({industriesWithGaps})</span>
+            {selectedGapIndustries.size > 0 && (
+              <Badge variant="secondary">{selectedGapIndustries.size} selected</Badge>
+            )}
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="max-h-96 overflow-y-auto">
             <Table>
               <TableHeader>
                 <TableRow>
+                  <TableHead className="w-10">
+                    <input
+                      type="checkbox"
+                      checked={allFilteredSelected}
+                      onChange={(e) => {
+                        const next = new Set(selectedGapIndustries);
+                        if (e.target.checked) {
+                          filteredGaps.forEach(g => next.add(g.industryName));
+                        } else {
+                          filteredGaps.forEach(g => next.delete(g.industryName));
+                        }
+                        setSelectedGapIndustries(next);
+                      }}
+                    />
+                  </TableHead>
                   <TableHead>Industry</TableHead>
                   <TableHead>Sector</TableHead>
                   <TableHead>Current</TableHead>
                   <TableHead>Gap</TableHead>
-                  <TableHead>Action</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {(gaps || [])
-                  .filter(g => !selectedSector || selectedSector === 'all' || g.sectorName === selectedSector)
-                  .slice(0, 50)
-                  .map((gap) => (
-                    <TableRow key={gap.industryName} className={generatingIndustry === gap.industryName ? 'bg-blue-50' : ''}>
-                      <TableCell className="font-medium text-sm">{gap.industryName}</TableCell>
-                      <TableCell className="text-sm text-gray-500">{gap.sectorName}</TableCell>
-                      <TableCell><Badge variant="outline">{gap.currentCount}/{gap.maxSlots}</Badge></TableCell>
-                      <TableCell><Badge variant="secondary">{gap.gap} open</Badge></TableCell>
-                      <TableCell>
-                        <Button
-                          variant={generatingIndustry === gap.industryName ? "default" : "ghost"}
-                          size="sm"
-                          onClick={() => {
-                            setGeneratingIndustry(gap.industryName);
-                            setGeneratingSector(gap.sectorName);
-                          }}
-                        >
-                          {generatingIndustry === gap.industryName ? 'Selected' : 'Select'}
-                        </Button>
-                      </TableCell>
-                    </TableRow>
-                  ))}
+                {filteredGaps.map((gap) => (
+                  <TableRow
+                    key={gap.industryName}
+                    className={`cursor-pointer ${selectedGapIndustries.has(gap.industryName) ? 'bg-blue-50' : 'hover:bg-gray-50'}`}
+                    onClick={() => {
+                      const next = new Set(selectedGapIndustries);
+                      if (next.has(gap.industryName)) next.delete(gap.industryName);
+                      else next.add(gap.industryName);
+                      setSelectedGapIndustries(next);
+                    }}
+                  >
+                    <TableCell onClick={(e) => e.stopPropagation()}>
+                      <input
+                        type="checkbox"
+                        checked={selectedGapIndustries.has(gap.industryName)}
+                        onChange={(e) => {
+                          const next = new Set(selectedGapIndustries);
+                          if (e.target.checked) next.add(gap.industryName);
+                          else next.delete(gap.industryName);
+                          setSelectedGapIndustries(next);
+                        }}
+                      />
+                    </TableCell>
+                    <TableCell className="font-medium text-sm">{gap.industryName}</TableCell>
+                    <TableCell className="text-sm text-gray-500">{gap.sectorName}</TableCell>
+                    <TableCell><Badge variant="outline">{gap.currentCount}/{gap.maxSlots}</Badge></TableCell>
+                    <TableCell><Badge variant="secondary">{gap.gap} open</Badge></TableCell>
+                  </TableRow>
+                ))}
               </TableBody>
             </Table>
           </div>
@@ -722,6 +811,7 @@ export function DataExpansionPanel() {
       )}
     </div>
   );
+  };
 
   const EnrichmentResultsTable = ({ results }: { results: any[] }) => {
     const [expandedIds, setExpandedIds] = useState<Set<number>>(new Set());
@@ -1161,30 +1251,26 @@ export function DataExpansionPanel() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base flex items-center justify-between">
+          <CardTitle className="text-base flex items-center justify-between flex-wrap gap-2">
             <span>Filters & Actions</span>
-            <div className="flex gap-2">
-              {selectedStagedIds.size > 0 && (
-                <>
-                  <Button
-                    size="sm"
-                    onClick={() => bulkApproveMutation.mutate(Array.from(selectedStagedIds))}
-                    disabled={bulkApproveMutation.isPending}
-                  >
-                    {bulkApproveMutation.isPending ? <Loader2 className="h-4 w-4 mr-1 animate-spin" /> : <ThumbsUp className="h-4 w-4 mr-1" />}
-                    Approve {selectedStagedIds.size}
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="destructive"
-                    onClick={() => bulkRejectMutation.mutate(Array.from(selectedStagedIds))}
-                    disabled={bulkRejectMutation.isPending}
-                  >
-                    {bulkRejectMutation.isPending ? <Loader2 className="h-4 w-4 mr-1 animate-spin" /> : <ThumbsDown className="h-4 w-4 mr-1" />}
-                    Reject {selectedStagedIds.size}
-                  </Button>
-                </>
-              )}
+            <div className="flex gap-2 flex-wrap">
+              <Button
+                size="sm"
+                onClick={() => bulkApproveMutation.mutate(Array.from(selectedStagedIds))}
+                disabled={bulkApproveMutation.isPending || selectedStagedIds.size === 0}
+              >
+                {bulkApproveMutation.isPending ? <Loader2 className="h-4 w-4 mr-1 animate-spin" /> : <ThumbsUp className="h-4 w-4 mr-1" />}
+                Approve {selectedStagedIds.size}
+              </Button>
+              <Button
+                size="sm"
+                variant="destructive"
+                onClick={() => bulkRejectMutation.mutate(Array.from(selectedStagedIds))}
+                disabled={bulkRejectMutation.isPending || selectedStagedIds.size === 0}
+              >
+                {bulkRejectMutation.isPending ? <Loader2 className="h-4 w-4 mr-1 animate-spin" /> : <ThumbsDown className="h-4 w-4 mr-1" />}
+                Reject {selectedStagedIds.size}
+              </Button>
               <a href="/api/admin/staged-companies/export-csv" target="_blank" rel="noopener noreferrer">
                 <Button size="sm" variant="outline">
                   <Download className="h-4 w-4 mr-1" /> Export CSV
@@ -1194,7 +1280,7 @@ export function DataExpansionPanel() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex gap-4">
+          <div className="flex gap-3 flex-wrap items-center">
             <Select onValueChange={(val) => setStagedFilter(prev => ({ ...prev, status: val === 'all' ? '' : val }))}>
               <SelectTrigger className="w-40">
                 <SelectValue placeholder="Status" />
@@ -1217,6 +1303,16 @@ export function DataExpansionPanel() {
                 <SelectItem value="csv">CSV Import</SelectItem>
               </SelectContent>
             </Select>
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={toggleAllStaged}
+            >
+              {stagedCompanies && stagedCompanies.filter((s: any) => s.status === 'pending').length > 0 && selectedStagedIds.size === stagedCompanies.filter((s: any) => s.status === 'pending').length
+                ? 'Deselect All'
+                : 'Select All Pending'
+              }
+            </Button>
           </div>
         </CardContent>
       </Card>

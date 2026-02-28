@@ -420,31 +420,14 @@ export default function IndustryPage() {
               showClaimButtons={true}
               currentSector={sectorName}
               currentIndustry={decodedIndustryName}
+              hasMore={hasMore}
+              isLoadingMore={isLoadingMore}
+              onViewMore={handleLoadMore}
+              totalCount={totalCompanies}
             />
 
-            {isLoadingMore && (
-              <BusinessGridSkeleton count={ITEMS_PER_PAGE} />
-            )}
-
-            {hasMore && !isLoadingMore && (
-              <div className="mt-8 flex flex-col items-center gap-3">
-                <p className="text-sm text-gray-500">
-                  Showing {companies.length} of {totalCompanies} companies
-                </p>
-                <Button
-                  onClick={handleLoadMore}
-                  variant="outline"
-                  size="lg"
-                  className="px-8 py-3 text-base font-medium border-green-300 hover:bg-green-50 hover:border-green-400 transition-all"
-                >
-                  <Loader2 className="h-4 w-4 mr-2 hidden" />
-                  Load More Companies
-                </Button>
-              </div>
-            )}
-
             {!hasMore && companies.length > ITEMS_PER_PAGE && (
-              <div className="mt-8 text-center">
+              <div className="mt-6 text-center">
                 <p className="text-sm text-gray-500">
                   All {totalCompanies} companies loaded
                 </p>

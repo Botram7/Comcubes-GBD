@@ -2,10 +2,12 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getImageForEntity } from "@/lib/constants";
 import { useLocation } from "wouter";
-import { Crown, ExternalLink } from "lucide-react";
+import { Crown, ExternalLink, ChevronDown, Loader2 } from "lucide-react";
 import type { Sector, Industry, Company } from "@/lib/types";
 
-export function BusinessGridSkeleton({ count = 20 }: { count?: number }) {
+const PAGE_SIZE = 20;
+
+export function BusinessGridSkeleton({ count = PAGE_SIZE }: { count?: number }) {
   return (
     <div className="grid grid-cols-1 min-[375px]:grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 w-full max-w-4xl mx-auto px-2 sm:px-4 mt-4">
       {Array.from({ length: count }).map((_, index) => (
@@ -35,9 +37,13 @@ interface BusinessGridProps {
   showClaimButtons?: boolean;
   currentSector?: string;
   currentIndustry?: string;
+  hasMore?: boolean;
+  isLoadingMore?: boolean;
+  onViewMore?: () => void;
+  totalCount?: number;
 }
 
-export function BusinessGrid({ items, type, onItemClick, showClaimButtons = false, currentSector, currentIndustry }: BusinessGridProps) {
+export function BusinessGrid({ items, type, onItemClick, showClaimButtons = false, currentSector, currentIndustry, hasMore, isLoadingMore, onViewMore, totalCount }: BusinessGridProps) {
   const [, setLocation] = useLocation();
 
   const handleClaimClick = (e: React.MouseEvent, company: Company) => {
@@ -50,7 +56,7 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
     });
     setLocation(`/claim-company?${searchParams.toString()}`);
   };
-  // Function to get colorful gradient for company cards
+
   const getCompanyCardGradient = (index: number): string => {
     const gradients = [
       'bg-gradient-to-br from-blue-500 to-blue-700',
@@ -74,11 +80,17 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
       'bg-gradient-to-br from-zinc-500 to-zinc-700',
       'bg-gradient-to-br from-stone-500 to-stone-700'
     ];
-    
     return gradients[index % gradients.length];
   };
+
   const validItems = Array.isArray(items) ? items : [];
-  const displayItems = validItems;
+
+  const showViewMoreSlot = hasMore || isLoadingMore;
+  const displayItems = showViewMoreSlot ? validItems.slice(0, PAGE_SIZE - 1) : validItems;
+
+  const remaining = totalCount != null
+    ? totalCount - (validItems.length < PAGE_SIZE - 1 ? validItems.length : validItems.length)
+    : null;
 
   return (
     <div className="grid grid-cols-1 min-[375px]:grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 w-full max-w-4xl mx-auto px-2 sm:px-4">
@@ -88,23 +100,18 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
           className="relative overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl aspect-square group"
           onClick={() => {
             if (item.id === -1) {
-              // Navigate to company listing page for "Available Slot" items
-              // Navigate to list company page with pre-filled sector and industry
               const params = new URLSearchParams();
               if (currentSector) params.set('sector', currentSector);
               if (currentIndustry) params.set('industry', currentIndustry);
               const queryString = params.toString();
               setLocation(`/list-company${queryString ? '?' + queryString : ''}`);
-              console.log('Navigating to list company with params:', { currentSector, currentIndustry });
             } else {
               onItemClick(item);
             }
           }}
         >
           {type === 'company' ? (
-            /* Colorful gradient cards for companies */
             <div className={`absolute inset-0 ${getCompanyCardGradient(index)}`}>
-              {/* Claim button for existing companies */}
               {showClaimButtons && item.id !== -1 && (
                 <Button
                   size="sm"
@@ -117,7 +124,6 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
                 </Button>
               )}
 
-              {/* Website link for companies with URLs */}
               {(item as Company).websiteUrl && item.id !== -1 && (
                 <Button
                   size="sm"
@@ -132,10 +138,8 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
                 </Button>
               )}
 
-              {/* Text positioned at bottom center */}
               <div className="absolute inset-0 flex items-end justify-center">
                 <div className="text-center text-white p-2 sm:p-3 pb-3 sm:pb-4 w-full px-2">
-                  {/* Industry Label - positioned just above company name */}
                   {item.id !== -1 && (item as Company).industryName && (
                     <div className="mb-1">
                       <p className="text-[8px] sm:text-[10px] font-medium opacity-80 truncate px-1">
@@ -143,12 +147,11 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
                       </p>
                     </div>
                   )}
-                  
                   <h3 className="text-xs font-bold mb-1 leading-tight drop-shadow-md truncate px-1">
                     {item.name}
                   </h3>
                   <p className="text-xs opacity-90 font-medium">
-                    {item.id === -1 
+                    {item.id === -1
                       ? 'Get Listed'
                       : showClaimButtons
                       ? 'Click to claim or visit'
@@ -164,26 +167,20 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
               </div>
             </div>
           ) : (
-            /* Image background for sectors and industries */
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: `url('${getImageForEntity(item.name, type)}')`
-              }}
+              style={{ backgroundImage: `url('${getImageForEntity(item.name, type)}')` }}
             >
-              {/* Gradient overlay for better text readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-              
-              {/* Text positioned at center-bottom */}
               <div className="absolute inset-0 flex items-end justify-center">
                 <div className="text-center text-white p-3 pb-4">
                   <h3 className="text-xs font-bold mb-1 leading-tight drop-shadow-lg">
                     {item.name}
                   </h3>
                   <p className="text-xs opacity-90 font-medium">
-                    {item.id === -1 
+                    {item.id === -1
                       ? 'Get Listed'
-                      : type === 'industry' 
+                      : type === 'industry'
                       ? 'View Companies'
                       : 'View Industries'
                     }
@@ -197,6 +194,32 @@ export function BusinessGrid({ items, type, onItemClick, showClaimButtons = fals
           )}
         </Card>
       ))}
+
+      {isLoadingMore && (
+        <Card className="relative overflow-hidden aspect-square bg-gradient-to-br from-gray-600 to-gray-800 animate-pulse">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white gap-2">
+            <Loader2 className="h-6 w-6 animate-spin opacity-70" />
+            <p className="text-xs font-medium opacity-70">Loading...</p>
+          </div>
+        </Card>
+      )}
+
+      {hasMore && !isLoadingMore && onViewMore && (
+        <Card
+          className="relative overflow-hidden cursor-pointer aspect-square bg-gradient-to-br from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-800 transform transition-all duration-300 hover:scale-105 hover:shadow-xl group"
+          onClick={onViewMore}
+        >
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white gap-2 p-3">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+              <ChevronDown className="h-5 w-5" />
+            </div>
+            <p className="text-xs font-bold text-center leading-tight">View More</p>
+            {remaining != null && remaining > 0 && (
+              <p className="text-[10px] opacity-70 text-center">+{remaining} more</p>
+            )}
+          </div>
+        </Card>
+      )}
     </div>
   );
 }

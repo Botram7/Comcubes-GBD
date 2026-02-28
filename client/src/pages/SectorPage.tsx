@@ -19,12 +19,13 @@ export default function SectorPage() {
   const { sectorName } = useParams();
   const [, setLocation] = useLocation();
   const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
+  const [visibleCount, setVisibleCount] = useState(19);
 
   const decodedSectorName = decodeURIComponent(sectorName || "");
 
-  // Scroll to top when component mounts or sector changes
   useEffect(() => {
     window.scrollTo(0, 0);
+    setVisibleCount(19);
   }, [sectorName]);
 
   const { data: industries = [], isLoading, error } = useQuery({
@@ -359,7 +360,15 @@ export default function SectorPage() {
               </div>
             </div>
 
-            <BusinessGrid items={industries} type="industry" onItemClick={handleIndustryClick} currentSector={decodedSectorName} />
+            <BusinessGrid
+              items={(Array.isArray(industries) ? industries : []).slice(0, visibleCount)}
+              type="industry"
+              onItemClick={handleIndustryClick}
+              currentSector={decodedSectorName}
+              hasMore={Array.isArray(industries) && industries.length > visibleCount}
+              onViewMore={() => setVisibleCount(prev => prev + 19)}
+              totalCount={Array.isArray(industries) ? industries.length : 0}
+            />
             
             {/* Related Sectors Navigation */}
             {Array.isArray(industries) && industries.length > 0 && (
