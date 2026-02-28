@@ -35,7 +35,7 @@ interface WikidataPreviewResult {
 }
 
 const WIKIDATA_SPARQL_ENDPOINT = 'https://query.wikidata.org/sparql';
-const FETCH_TIMEOUT_MS = 25000;
+const FETCH_TIMEOUT_MS = 28000;
 
 const CONTINENT_QIDS: Record<string, string> = {
   'africa': 'Q15',
@@ -49,65 +49,200 @@ const CONTINENT_QIDS: Record<string, string> = {
 // Maps search terms to Wikidata QIDs for fast, indexed queries
 // Using direct instance-of QIDs is orders of magnitude faster than label text search
 const TERM_TO_QID_MAP: Record<string, string[]> = {
-  'bank': ['Q22687'],                      // bank
+  // Banking & Financial Services
+  'bank': ['Q22687'],
+  'banking': ['Q22687'],
   'commercial bank': ['Q22687'],
-  'investment bank': ['Q17156070'],        // investment bank
-  'airline': ['Q46970'],                   // airline
-  'hospital': ['Q16917'],                  // hospital
-  'university': ['Q3918'],                 // university
-  'insurance': ['Q43183'],                 // insurance company
-  'hotel': ['Q27686'],                     // hotel
-  'supermarket': ['Q180674'],              // supermarket
-  'pharmaceutical': ['Q507443'],           // pharmaceutical company
-  'mining': ['Q161379'],                   // mining company
-  'oil': ['Q130933', 'Q40185'],            // oil company, oil & gas company
+  'investment bank': ['Q17156070'],
+  'investment banking': ['Q17156070'],
+  'microfinance': ['Q1339811'],
+  'credit union': ['Q745801'],
+  'savings bank': ['Q847017'],
+  'central bank': ['Q1553944'],
+  'insurance': ['Q43183'],
+  'insurance company': ['Q43183'],
+  'reinsurance': ['Q190507'],
+  'fintech': ['Q1655921'],
+  'stock exchange': ['Q11691'],
+  'asset management': ['Q4830453'],
+  'hedge fund': ['Q846982'],
+  'private equity': ['Q1527570'],
+  'venture capital': ['Q162668'],
+  'mortgage': ['Q151794'],
+  'payment': ['Q4830453'],
+
+  // Technology
+  'software': ['Q6881511'],
+  'software company': ['Q6881511'],
+  'technology': ['Q4830453'],
+  'tech': ['Q4830453'],
+  'semiconductor': ['Q327333'],
+  'semiconductor company': ['Q327333'],
+  'internet': ['Q2349975'],
+  'internet company': ['Q2349975'],
+  'e-commerce': ['Q183385'],
+  'ecommerce': ['Q183385'],
+  'artificial intelligence': ['Q4830453'],
+  'cloud computing': ['Q4830453'],
+  'cybersecurity': ['Q4830453'],
+  'data analytics': ['Q4830453'],
+  'robotics': ['Q4830453'],
+
+  // Telecommunications
+  'telecom': ['Q622569'],
+  'telecoms': ['Q622569'],
+  'telecommunications': ['Q622569'],
+  'mobile': ['Q2061309'],
+  'mobile operator': ['Q2061309'],
+  'wireless': ['Q2061309'],
+  'internet service provider': ['Q2349975'],
+  'isp': ['Q2349975'],
+  'broadband': ['Q2349975'],
+  'satellite': ['Q855269'],
+
+  // Energy
+  'energy': ['Q1057118'],
+  'oil': ['Q130933'],
+  'oil company': ['Q130933'],
   'petroleum': ['Q130933'],
   'gas': ['Q130933'],
-  'software': ['Q6881511'],               // software company
-  'telecom': ['Q622569'],                  // telecommunications company
-  'telecommunications': ['Q622569'],
-  'mobile': ['Q2061309'],                  // mobile network operator
-  'internet': ['Q2349975'],               // internet service provider
-  'semiconductor': ['Q4830453'],
-  'automobile': ['Q786820'],              // automobile manufacturer
+  'oil and gas': ['Q130933', 'Q40185'],
+  'renewable energy': ['Q1057118'],
+  'solar': ['Q1057118'],
+  'wind energy': ['Q1057118'],
+  'nuclear': ['Q1057118'],
+  'electricity': ['Q1057118'],
+  'power': ['Q1057118'],
+  'mining': ['Q161379'],
+  'coal': ['Q161379'],
+
+  // Transportation & Logistics
+  'airline': ['Q46970'],
+  'airlines': ['Q46970'],
+  'aviation': ['Q46970'],
+  'airport': ['Q1248784'],
+  'shipping': ['Q18388218'],
+  'maritime': ['Q18388218'],
+  'railway': ['Q201896'],
+  'rail': ['Q201896'],
+  'railroad': ['Q201896'],
+  'logistics': ['Q177597'],
+  'transport': ['Q177597'],
+  'trucking': ['Q177597'],
+  'freight': ['Q177597'],
+  'courier': ['Q177597'],
+  'port': ['Q44782'],
+
+  // Healthcare & Pharmaceuticals
+  'hospital': ['Q16917'],
+  'healthcare': ['Q4916'],
+  'health': ['Q4916'],
+  'pharmaceutical': ['Q507443'],
+  'pharma': ['Q507443'],
+  'drug': ['Q507443'],
+  'biotech': ['Q4830453'],
+  'biotechnology': ['Q4830453'],
+  'medical': ['Q507443'],
+  'clinic': ['Q16917'],
+  'laboratory': ['Q4830453'],
+
+  // Manufacturing
+  'manufacturing': ['Q13235160'],
+  'manufacturer': ['Q13235160'],
+  'factory': ['Q13235160'],
+  'automobile': ['Q786820'],
   'automotive': ['Q786820'],
   'car': ['Q786820'],
-  'shipping': ['Q18388218'],              // shipping company
-  'railway': ['Q201896'],                 // railway company
-  'rail': ['Q201896'],
-  'real estate': ['Q1137012'],            // real estate company
-  'property': ['Q1137012'],
-  'construction': ['Q562966'],            // construction company
-  'food': ['Q1454471'],                   // food company
-  'beverage': ['Q4540',  'Q1454471'],     // brewery / food company
-  'media': ['Q1750916'],                  // media company
-  'broadcast': ['Q41298'],               // broadcasting company
-  'television': ['Q41298'],
-  'film': ['Q18127',  'Q212156'],         // film production / film studio
-  'music': ['Q18127'],
-  'energy': ['Q4830453'],
-  'electric': ['Q1057118'],               // electric utility
-  'power': ['Q1057118'],
-  'retail': ['Q507029'],                  // retailer
-  'department store': ['Q216107'],
-  'chemical': ['Q83588'],                 // chemical company
+  'vehicle': ['Q786820'],
   'steel': ['Q83588'],
-  'agriculture': ['Q389970'],             // agricultural company
+  'chemical': ['Q83588'],
+  'chemicals': ['Q83588'],
+  'cement': ['Q13235160'],
+  'textile': ['Q13235160'],
+  'electronics': ['Q13235160'],
+
+  // Retail
+  'retail': ['Q507029'],
+  'retailer': ['Q507029'],
+  'supermarket': ['Q180674'],
+  'grocery': ['Q180674'],
+  'department store': ['Q216107'],
+  'fashion': ['Q507029'],
+  'clothing': ['Q507029'],
+  'luxury': ['Q507029'],
+
+  // Food & Beverage
+  'food': ['Q1454471'],
+  'food company': ['Q1454471'],
+  'beverage': ['Q4540', 'Q1454471'],
+  'brewery': ['Q4540'],
+  'beer': ['Q4540'],
+  'restaurant': ['Q11707'],
+  'fast food': ['Q11707'],
+  'agriculture': ['Q389970'],
+  'agricultural': ['Q389970'],
+  'agribusiness': ['Q389970'],
+  'farming': ['Q389970'],
+  'farm': ['Q389970'],
   'fertilizer': ['Q167336'],
-  'logistics': ['Q177597'],              // logistics company
-  'transport': ['Q177597'],
+
+  // Real Estate
+  'real estate': ['Q1137012'],
+  'property': ['Q1137012'],
+  'construction': ['Q562966'],
+  'building': ['Q562966'],
+
+  // Media & Entertainment
+  'media': ['Q1750916'],
+  'broadcast': ['Q41298'],
+  'broadcasting': ['Q41298'],
+  'television': ['Q41298'],
+  'tv': ['Q41298'],
+  'film': ['Q18127', 'Q212156'],
+  'movie': ['Q18127'],
+  'music': ['Q18127'],
+  'publishing': ['Q4830453'],
+  'newspaper': ['Q11032'],
+  'news': ['Q11032'],
+  'radio': ['Q41298'],
+  'gaming': ['Q4830453'],
+
+  // Professional Services
+  'consulting': ['Q4830453'],
+  'law firm': ['Q4830453'],
+  'accounting': ['Q4830453'],
+  'audit': ['Q4830453'],
+
+  // Education
+  'university': ['Q3918'],
+  'education': ['Q3914', 'Q3918'],
+  'school': ['Q3914'],
+  'college': ['Q3918'],
+  'training': ['Q4830453'],
+
+  // Travel & Tourism
+  'hotel': ['Q27686'],
+  'hotels': ['Q27686'],
+  'hospitality': ['Q27686'],
+  'tourism': ['Q27686'],
+  'travel': ['Q27686'],
+  'resort': ['Q27686'],
+  'airline': ['Q46970'],
 };
 
 function getQidsForTerm(term: string): string[] {
   const lower = term.toLowerCase().trim();
   if (TERM_TO_QID_MAP[lower]) return TERM_TO_QID_MAP[lower];
-  // partial match
+  // partial match — find the best (longest) matching key
+  let bestMatch: string[] = [];
+  let bestLen = 0;
   for (const key of Object.keys(TERM_TO_QID_MAP)) {
-    if (lower.includes(key) || key.includes(lower)) {
-      return TERM_TO_QID_MAP[key];
+    if ((lower.includes(key) || key.includes(lower)) && key.length > bestLen) {
+      bestMatch = TERM_TO_QID_MAP[key];
+      bestLen = key.length;
     }
   }
-  return [];
+  return bestMatch;
 }
 
 function buildQidQuery(qids: string[], countryCode?: string, continentName?: string, limit = 50): string {
@@ -203,7 +338,7 @@ async function executeSparqlQuery(query: string): Promise<any[]> {
     return data.results?.bindings || [];
   } catch (err: any) {
     if (err.name === 'AbortError') {
-      throw new Error('Wikidata query timed out (25s). Try adding a country code like "NG" or "ZA" to narrow results.');
+      throw new Error('Wikidata query timed out. Try adding a country code (e.g. "NG", "ZA", "US") to narrow results.');
     }
     throw err;
   } finally {
@@ -290,20 +425,16 @@ export class WikidataService {
         const parsed = parseWikidataResults(results);
         console.log(`[Wikidata] QID query found ${parsed.length} companies`);
         if (parsed.length > 0) return parsed;
+        console.log(`[Wikidata] QID query returned 0 results, falling back to label search`);
       } catch (err: any) {
         console.warn(`[Wikidata] QID query failed: ${err.message} — falling back to label search`);
+        // If it timed out, re-throw so user gets a helpful message
+        if (err.message.includes('timed out')) throw err;
       }
     }
 
-    // Fallback: label CONTAINS search — only works well with country code (not continent-wide)
-    console.log(`[Wikidata] Falling back to label search for "${searchTerm}"`);
-    if (!countryCode && continentName) {
-      // Label search + continent without country is too slow — require country code
-      throw new Error(
-        `The search term "${searchTerm}" isn't in our fast-lookup database. For continent-wide searches, please add a Country Code (e.g. "NG" for Nigeria) to keep results fast.`
-      );
-    }
-
+    // Fallback: label CONTAINS search — works for any term
+    console.log(`[Wikidata] Running label search for "${searchTerm}"`);
     const results = await executeSparqlQuery(buildLabelSearchQuery(searchTerm, countryCode, continentName, limit));
     const parsed = parseWikidataResults(results);
     console.log(`[Wikidata] Label search found ${parsed.length} companies`);
