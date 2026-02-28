@@ -121,6 +121,8 @@ export function DataExpansionPanel() {
   const [wikidataQuery, setWikidataQuery] = useState({ industryName: '', countryCode: '', continentName: '' });
   const [wikidataAssign, setWikidataAssign] = useState({ sectorName: '', industryName: '' });
   const [wikidataSelected, setWikidataSelected] = useState<Set<number>>(new Set());
+  const [wikidataValidated, setWikidataValidated] = useState<any[]>([]);
+  const [isValidatingWikidata, setIsValidatingWikidata] = useState(false);
   const [stagedFilter, setStagedFilter] = useState<{ status: string; source: string }>({ status: '', source: '' });
   const [selectedStagedIds, setSelectedStagedIds] = useState<Set<number>>(new Set());
 
@@ -303,16 +305,63 @@ export function DataExpansionPanel() {
       const response = await apiRequest('GET', `/api/admin/wikidata/search?${queryParams}`);
       return response.json();
     },
-    onSuccess: (data) => {
-      const count = Array.isArray(data) ? data.length : (data.companies?.length || 0);
+    onSuccess: async (data) => {
+      const rawResults: any[] = Array.isArray(data) ? data : (data.companies || []);
+      const count = rawResults.length;
       setWikidataSelected(new Set());
+      setWikidataValidated(rawResults);
+
+      if (count === 0) {
+        toast({
+          title: 'No results found',
+          description: 'No companies matched the search criteria. Try different keywords or a broader geographic scope.',
+          variant: 'destructive',
+        });
+        return;
+      }
+
       toast({
-        title: count > 0 ? 'Wikidata search complete' : 'No results found',
-        description: count > 0
-          ? `Found ${count} companies from Wikidata`
-          : 'No companies matched the search criteria. Try different keywords or a broader geographic scope.',
-        variant: count > 0 ? 'default' : 'destructive',
+        title: 'Wikidata search complete',
+        description: `Found ${count} companies. Validating URLs...`,
       });
+
+      // Auto-validate URLs, just like AI Generator does
+      setIsValidatingWikidata(true);
+      try {
+        const valResponse = await apiRequest('POST', '/api/admin/ai-generator/validate-urls', { companies: rawResults });
+        const valData = await valResponse.json();
+        const validated: any[] = valData.companies || rawResults;
+        setWikidataValidated(validated);
+
+        // Auto-select: companies that have a website AND it's reachable (or unknown)
+        // Auto-deselect: no website OR dead link
+        const autoSelected = new Set<number>();
+        validated.forEach((c: any, i: number) => {
+          const hasWebsite = !!(c.websiteUrl || c.website);
+          const isDead = c.urlReachable === false;
+          if (hasWebsite && !isDead) autoSelected.add(i);
+        });
+        setWikidataSelected(autoSelected);
+
+        const reachable = validated.filter((c: any) => c.urlReachable === true).length;
+        const dead = validated.filter((c: any) => c.urlReachable === false).length;
+        const noSite = validated.filter((c: any) => !(c.websiteUrl || c.website)).length;
+
+        toast({
+          title: 'URL validation complete',
+          description: `${autoSelected.size} auto-selected · ${reachable} live · ${dead} dead · ${noSite} no website`,
+        });
+      } catch {
+        // Validation failed — auto-select everything that has a website
+        const autoSelected = new Set<number>();
+        rawResults.forEach((c: any, i: number) => {
+          if (c.websiteUrl || c.website) autoSelected.add(i);
+        });
+        setWikidataSelected(autoSelected);
+        toast({ title: 'URL validation skipped', description: `${autoSelected.size} companies with websites auto-selected.`, variant: 'destructive' });
+      } finally {
+        setIsValidatingWikidata(false);
+      }
     },
     onError: (error: Error) => {
       toast({ title: 'Wikidata search failed', description: error.message, variant: 'destructive' });
@@ -1109,9 +1158,7 @@ export function DataExpansionPanel() {
     );
   };
 
-  const wikidataResults = wikidataMutation.data
-    ? (Array.isArray(wikidataMutation.data) ? wikidataMutation.data : (wikidataMutation.data as any).companies || [])
-    : [];
+  const wikidataResults = wikidataValidated;
 
   const { data: wikidataAssignedSectorIndustries = [] } = useQuery<any[]>({
     queryKey: ['/api/sectors', wikidataAssign.sectorName, 'industries'],
@@ -1192,11 +1239,20 @@ export function DataExpansionPanel() {
         <ErrorBanner message={wikidataMutation.error?.message || 'Wikidata search failed'} />
       )}
 
-      {wikidataMutation.isSuccess && wikidataResults.length === 0 && (
+      {wikidataMutation.isSuccess && !isValidatingWikidata && wikidataResults.length === 0 && (
         <InfoBanner message="No companies found. Try a broader search term (e.g. 'bank' instead of 'Commercial Banking'), remove the country code, or try a different continent." />
       )}
 
-      {wikidataResults.length > 0 && (
+      {isValidatingWikidata && (
+        <Card>
+          <CardContent className="py-8 flex items-center justify-center gap-3 text-gray-500">
+            <Loader2 className="h-5 w-5 animate-spin" />
+            <span>Validating website URLs for {wikidataResults.length} companies — this may take a moment...</span>
+          </CardContent>
+        </Card>
+      )}
+
+      {wikidataResults.length > 0 && !isValidatingWikidata && (
         <>
           <Card>
             <CardHeader>
@@ -1310,16 +1366,31 @@ export function DataExpansionPanel() {
                       </TableHead>
                       <TableHead>Company</TableHead>
                       <TableHead>Website</TableHead>
+                      <TableHead>Status</TableHead>
                       <TableHead>Country</TableHead>
                       <TableHead>Founded</TableHead>
                       <TableHead>Employees</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {wikidataResults.map((company: any, i: number) => (
+                    {wikidataResults.map((company: any, i: number) => {
+                      const hasWebsite = !!(company.websiteUrl || company.website);
+                      const isLive = company.urlReachable === true;
+                      const isDead = company.urlReachable === false;
+                      let rowClass = 'cursor-pointer ';
+                      if (wikidataSelected.has(i)) {
+                        rowClass += 'bg-blue-50';
+                      } else if (isDead) {
+                        rowClass += 'bg-red-50/60';
+                      } else if (!hasWebsite) {
+                        rowClass += 'opacity-60 hover:bg-gray-50';
+                      } else {
+                        rowClass += 'hover:bg-gray-50';
+                      }
+                      return (
                       <TableRow
                         key={i}
-                        className={`cursor-pointer ${wikidataSelected.has(i) ? 'bg-blue-50' : 'hover:bg-gray-50'}`}
+                        className={rowClass}
                         onClick={() => {
                           setWikidataSelected(prev => {
                             const next = new Set(prev);
@@ -1342,9 +1413,9 @@ export function DataExpansionPanel() {
                             className="h-4 w-4"
                           />
                         </TableCell>
-                        <TableCell className="font-medium">{company.name || company.companyName}</TableCell>
-                        <TableCell className="text-sm max-w-48">
-                          {company.websiteUrl || company.website ? (
+                        <TableCell className="font-medium text-sm">{company.name || company.companyName}</TableCell>
+                        <TableCell className="text-sm max-w-44">
+                          {hasWebsite ? (
                             <a
                               href={company.websiteUrl || company.website}
                               target="_blank"
@@ -1355,14 +1426,26 @@ export function DataExpansionPanel() {
                               {(company.websiteUrl || company.website).replace(/^https?:\/\//, '').replace(/\/$/, '')}
                             </a>
                           ) : (
-                            <span className="text-gray-400 text-xs">No website</span>
+                            <span className="text-gray-400 text-xs italic">No website</span>
+                          )}
+                        </TableCell>
+                        <TableCell>
+                          {isLive ? (
+                            <Badge className="text-xs bg-green-100 text-green-800 border-green-200">Live</Badge>
+                          ) : isDead ? (
+                            <Badge variant="destructive" className="text-xs"><XCircle className="h-3 w-3 mr-1" />Dead</Badge>
+                          ) : !hasWebsite ? (
+                            <Badge variant="outline" className="text-xs text-gray-400">No URL</Badge>
+                          ) : (
+                            <Badge variant="outline" className="text-xs text-gray-500">Unknown</Badge>
                           )}
                         </TableCell>
                         <TableCell className="text-sm">{company.country || '-'}</TableCell>
                         <TableCell className="text-sm">{company.foundedYear || '-'}</TableCell>
                         <TableCell className="text-sm">{company.employeeCount || '-'}</TableCell>
                       </TableRow>
-                    ))}
+                      );
+                    })}
                   </TableBody>
                 </Table>
               </div>
