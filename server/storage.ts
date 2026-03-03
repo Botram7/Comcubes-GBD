@@ -148,8 +148,14 @@ export interface IStorage {
   getStagedCompanyById(id: number): Promise<StagedCompany | undefined>;
   updateStagedCompanyStatus(id: number, status: string): Promise<StagedCompany | undefined>;
   updateStagedCompaniesStatus(ids: number[], status: string): Promise<number>;
+  updateStagedCompanyCategories(id: number, matchedSector: string, matchedIndustry: string, matchConfidence: string): Promise<StagedCompany | undefined>;
   deleteStagedCompany(id: number): Promise<boolean>;
   getStagedCompanyStats(): Promise<{ total: number; pending: number; approved: number; rejected: number }>;
+  getAllCompaniesWithCountry(): Promise<Array<{
+    id: number; name: string; websiteUrl: string | null; industryName: string; sectorName: string;
+    employeeCount: string | null; foundedYear: number | null; companySize: string | null;
+    description: string | null; country: string | null;
+  }>>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -1507,6 +1513,14 @@ export class DatabaseStorage implements IStorage {
     return updated.length;
   }
 
+  async updateStagedCompanyCategories(id: number, matchedSector: string, matchedIndustry: string, matchConfidence: string): Promise<StagedCompany | undefined> {
+    const [updated] = await db.update(stagedCompanies)
+      .set({ matchedSector, matchedIndustry, matchConfidence })
+      .where(eq(stagedCompanies.id, id))
+      .returning();
+    return updated || undefined;
+  }
+
   async deleteStagedCompany(id: number): Promise<boolean> {
     const deleted = await db.delete(stagedCompanies).where(eq(stagedCompanies.id, id)).returning();
     return deleted.length > 0;
@@ -1525,6 +1539,30 @@ export class DatabaseStorage implements IStorage {
       console.error('Error getting staged company stats:', error);
       return { total: 0, pending: 0, approved: 0, rejected: 0 };
     }
+  }
+
+  async getAllCompaniesWithCountry(): Promise<Array<{
+    id: number; name: string; websiteUrl: string | null; industryName: string; sectorName: string;
+    employeeCount: string | null; foundedYear: number | null; companySize: string | null;
+    description: string | null; country: string | null;
+  }>> {
+    const rows = await db
+      .select({
+        id: companies.id,
+        name: companies.name,
+        websiteUrl: companies.websiteUrl,
+        industryName: companies.industryName,
+        sectorName: companies.sectorName,
+        employeeCount: companies.employeeCount,
+        foundedYear: companies.foundedYear,
+        companySize: companies.companySize,
+        description: companies.description,
+        country: countries.name,
+      })
+      .from(companies)
+      .leftJoin(companyLocations, and(eq(companyLocations.companyId, companies.id), eq(companyLocations.isPrimary, true)))
+      .leftJoin(countries, eq(countries.id, companyLocations.countryId));
+    return rows;
   }
 }
 

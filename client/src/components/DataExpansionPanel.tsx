@@ -23,6 +23,7 @@ import {
   Pencil,
   Save,
   X,
+  RefreshCw,
 } from 'lucide-react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -222,6 +223,20 @@ export function DataExpansionPanel() {
     },
     onError: (error: Error) => {
       toast({ title: 'Bulk reject failed', description: error.message, variant: 'destructive' });
+    },
+  });
+
+  const recategorizeMutation = useMutation({
+    mutationFn: async () => {
+      const response = await apiRequest('POST', '/api/admin/staged-companies/recategorize');
+      return response.json();
+    },
+    onSuccess: (data) => {
+      refetchStaged();
+      toast({ title: 'Re-categorization complete', description: data.message });
+    },
+    onError: (error: Error) => {
+      toast({ title: 'Re-categorization failed', description: error.message, variant: 'destructive' });
     },
   });
 
@@ -533,6 +548,26 @@ export function DataExpansionPanel() {
           </CardContent>
         </Card>
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-base">
+            <Download className="h-5 w-5 text-green-600" />
+            Export All Companies Data
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-gray-600 mb-4">
+            Download a complete CSV file of all companies in the directory, including their Business Sector, Industry, Country, Website, Employees, and Founded Year. Useful for auditing data quality or offline analysis.
+          </p>
+          <a href="/api/admin/companies/export-csv" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline">
+              <Download className="h-4 w-4 mr-2" />
+              Export All Companies (CSV)
+            </Button>
+          </a>
+        </CardContent>
+      </Card>
     </div>
   );
 
@@ -1485,6 +1520,16 @@ export function DataExpansionPanel() {
               >
                 {bulkRejectMutation.isPending ? <Loader2 className="h-4 w-4 mr-1 animate-spin" /> : <ThumbsDown className="h-4 w-4 mr-1" />}
                 Reject {selectedStagedIds.size}
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => recategorizeMutation.mutate()}
+                disabled={recategorizeMutation.isPending}
+                title="Re-run the category matching engine on all pending staged companies to fix any incorrect sector/industry assignments"
+              >
+                {recategorizeMutation.isPending ? <Loader2 className="h-4 w-4 mr-1 animate-spin" /> : <RefreshCw className="h-4 w-4 mr-1" />}
+                Re-categorize All Pending
               </Button>
               <a href="/api/admin/staged-companies/export-csv" target="_blank" rel="noopener noreferrer">
                 <Button size="sm" variant="outline">
