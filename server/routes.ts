@@ -2343,6 +2343,51 @@ Crawl-delay: 1`;
     }
   });
 
+  app.post('/api/admin/staged-companies/recategorize', requireAdminAuth, async (req, res) => {
+    try {
+      const { matchCategoryForCompany } = await import('./services/categoryMatcher');
+      const pending = await storage.getStagedCompanies({ status: 'pending' });
+      let updated = 0;
+      for (const company of pending) {
+        const probe = [company.name, company.description].filter(Boolean).join(' ');
+        const { sectorName, industryName, confidence } = matchCategoryForCompany(probe);
+        if (sectorName && industryName) {
+          await storage.updateStagedCompanyCategories(company.id, sectorName, industryName, confidence);
+          updated++;
+        }
+      }
+      res.json({ updated, message: `Re-categorized ${updated} pending staged companies` });
+    } catch (error) {
+      console.error('Error recategorizing staged companies:', error);
+      res.status(500).json({ error: 'Failed to recategorize staged companies' });
+    }
+  });
+
+  app.get('/api/admin/companies/export-csv', requireAdminAuth, async (req, res) => {
+    try {
+      const allCompanies = await storage.getAllCompaniesWithCountry();
+      const headers = ['Company Name', 'Website URL', 'Business Sector', 'Industry', 'Country', 'Founded Year', 'Employee Count', 'Company Size', 'Description'];
+      const rows = allCompanies.map(c => [
+        `"${(c.name || '').replace(/"/g, '""')}"`,
+        `"${(c.websiteUrl || '').replace(/"/g, '""')}"`,
+        `"${(c.sectorName || '').replace(/"/g, '""')}"`,
+        `"${(c.industryName || '').replace(/"/g, '""')}"`,
+        `"${(c.country || '').replace(/"/g, '""')}"`,
+        c.foundedYear || '',
+        `"${(c.employeeCount || '').replace(/"/g, '""')}"`,
+        `"${(c.companySize || '').replace(/"/g, '""')}"`,
+        `"${(c.description || '').replace(/"/g, '""').replace(/\n/g, ' ')}"`,
+      ].join(','));
+      const csv = [headers.join(','), ...rows].join('\n');
+      res.setHeader('Content-Type', 'text/csv');
+      res.setHeader('Content-Disposition', 'attachment; filename="comcubes-all-companies.csv"');
+      res.send(csv);
+    } catch (error) {
+      console.error('Error exporting full companies CSV:', error);
+      res.status(500).json({ error: 'Failed to export companies CSV' });
+    }
+  });
+
   app.post('/api/admin/staged-companies/:id/approve', requireAdminAuth, async (req, res) => {
     try {
       const id = parseInt(req.params.id);
