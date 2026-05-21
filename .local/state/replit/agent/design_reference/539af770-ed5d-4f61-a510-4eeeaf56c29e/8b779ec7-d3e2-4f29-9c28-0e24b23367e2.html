@@ -1,0 +1,429 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Grid Portal - Page 1 of 400</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    aspectRatio: {
+                        '2/1': '2 / 1',
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- @COMPONENT: Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-xl font-bold text-gray-900">Industry Portal</h1>
+                    <span class="text-sm text-gray-500">8,000+ Industry Categories</span>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-lg mx-8">
+                    <div class="relative">
+                        <input 
+                            type="text" 
+                            placeholder="Search across 400 pages..." 
+                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            data-implementation="Should search across all 8,000 rectangles"
+                        >
+                        <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm font-medium text-gray-700">Page 1 of 400</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: MainContent -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Page Title Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Primary Industries & Services</h2>
+            <p class="text-gray-600">Explore comprehensive industry categories and business sectors</p>
+        </div>
+
+        <!-- @COMPONENT: GridContainer -->
+        <!-- 5x4 Grid Container with exact specifications -->
+        <div class="grid grid-cols-5 gap-3 mb-12" data-implementation="Exactly 5 columns × 4 rows = 20 rectangles per page">
+            
+            <!-- Row 1 -->
+            <!-- @COMPONENT: GridRectangle Financial Services -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true" data-event="click:navigateToDetail">
+                <!-- Modern office building with financial district skyline -->
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Financial Services" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Financial Services</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Healthcare -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Modern hospital corridor with medical equipment -->
+                <img src="https://pixabay.com/get/g272839997cad80af56f320e755c2750beca3113b9c6392ef1c6dbbd260bda0a55b5c2ad2e99ceece90b6c2911b75cebbc78a1fa55457d0c28417f50cf7b6f870_1280.jpg" alt="Healthcare" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Healthcare</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Technology -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Computer circuit board with microchips and electronic components -->
+                <img src="https://pixabay.com/get/g3d246cdf071fa84c29738c24afee5f73ea83e74fa7ab84d9bc1567c2043bec62d26a8df2c7e92a6185c6f3691a7499d9a4cc9b025f61e3454caeb6745f0dbded_1280.jpg" alt="Technology" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Technology</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Retail -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Modern shopping mall interior with stores and shoppers -->
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Retail" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Retail</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Manufacturing -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Industrial manufacturing facility with assembly line and machinery -->
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Manufacturing" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Manufacturing</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- Row 2 -->
+            <!-- @COMPONENT: GridRectangle Professional Services -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Business professionals in a modern conference room -->
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Professional Services" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Professional Services</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Education -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- University campus with students and academic buildings -->
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Education" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Education</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Hospitality & Tourism -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Luxury resort hotel with pool and tropical setting -->
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Hospitality & Tourism" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Hospitality & Tourism</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Government -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Government building with classical architecture and flags -->
+                <img src="https://pixabay.com/get/gb3ddfecf8ad50abb8ea55890837cdd94e6db8ebf8457756ccc5f74a91537f6fc4e66199b8f91a326654ec8849ce600ba77df59518e6d5a12ed2b52606435aa80_1280.jpg" alt="Government" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Government</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Transportation & Logistics -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Large shipping port with cargo containers and cranes -->
+                <img src="https://pixabay.com/get/g4ff43fcdedb70fc99f3a2824b1074de9ec518c9479e1be56bb609ba4cfa0cae0840d19f8417b17392785abe2c007ee4ad50a57e5a2edcd58dd2070d5cdfead85_1280.jpg" alt="Transportation & Logistics" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Transportation & Logistics</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- Row 3 -->
+            <!-- @COMPONENT: GridRectangle Energy -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Wind turbines generating renewable energy in a field -->
+                <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Energy" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Energy</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Media & Entertainment -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Professional film production studio with cameras and lighting -->
+                <img src="https://pixabay.com/get/gf2274a925fd47360e0a87cc1e48a91f374f16ea989667f42d139d73e188c948dff0a935bb96ba00e20532a7317ec8ddce70796f6b0ff82790c889a2dbc2ee3ad_1280.jpg" alt="Media & Entertainment" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Media & Entertainment</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Construction -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Construction site with tower cranes and building development -->
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Construction" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Construction</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Mining & Resources -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Open pit mining operation with heavy machinery -->
+                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Mining & Resources" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Mining & Resources</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Consumer Goods -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Grocery store aisle with product displays and shoppers -->
+                <img src="https://images.unsplash.com/photo-1601599561213-832382fd07ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Consumer Goods" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Consumer Goods</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- Row 4 -->
+            <!-- @COMPONENT: GridRectangle Chemicals -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Chemical laboratory with scientific equipment and researchers -->
+                <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Chemicals" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Chemicals</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Telecommunications -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Cell tower and telecommunications infrastructure -->
+                <img src="https://pixabay.com/get/gc613430747db665bd11dce53745987dc296f31557ff07ca8cbe1f61afedaa9c7525e753865f42585e5f5a32840071418fd46d768bc7e6a2959a6cebaf1921278_1280.jpg" alt="Telecommunications" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Telecommunications</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Utilities -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Electrical power grid and utility infrastructure -->
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Utilities" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Utilities</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Agriculture -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Agricultural farm field with farming equipment -->
+                <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Agriculture" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Agriculture</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+            <!-- @COMPONENT: GridRectangle Non-Profit Organizations -->
+            <div class="aspect-[2/1] relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl" data-mock="true">
+                <!-- Volunteers helping at a community center -->
+                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Non-Profit Organizations" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-50 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white text-lg font-semibold text-center px-4">Non-Profit Organizations</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridRectangle -->
+
+        </div>
+        <!-- @END_COMPONENT: GridContainer -->
+
+        <!-- Page Statistics -->
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <div class="text-2xl font-bold text-blue-600" data-bind="currentPage">1</div>
+                    <div class="text-sm text-gray-600">Current Page</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-blue-600">400</div>
+                    <div class="text-sm text-gray-600">Total Pages</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-blue-600">20</div>
+                    <div class="text-sm text-gray-600">Items This Page</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-blue-600">8,000</div>
+                    <div class="text-sm text-gray-600">Total Items</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- @END_COMPONENT: MainContent -->
+
+    <!-- @COMPONENT: Navigation -->
+    <nav class="bg-white border-t border-gray-200 px-4 sm:px-6 lg:px-8 py-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-between">
+                
+                <!-- Previous Button -->
+                <button 
+                    class="flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed" 
+                    disabled
+                    data-event="click:navigateToPrevious"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Previous
+                </button>
+
+                <!-- Page Numbers -->
+                <div class="flex items-center space-x-2">
+                    <!-- @MAP: Array.from({length: Math.min(10, totalPages)}).map((_, i) => ( -->
+                    <button class="px-3 py-2 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded-lg" data-mock="true">1</button>
+                    <button class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50" data-mock="true">2</button>
+                    <button class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50" data-mock="true">3</button>
+                    <span class="px-3 py-2 text-sm text-gray-500">...</span>
+                    <button class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50" data-mock="true">398</button>
+                    <button class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50" data-mock="true">399</button>
+                    <button class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50" data-mock="true">400</button>
+                    <!-- @END_MAP )) -->
+                </div>
+
+                <!-- Next Button -->
+                <button 
+                    class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+                    data-event="click:navigateToNext"
+                >
+                    Next
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Page Jump -->
+            <div class="mt-4 flex items-center justify-center space-x-2">
+                <span class="text-sm text-gray-600">Go to page:</span>
+                <input 
+                    type="number" 
+                    min="1" 
+                    max="400" 
+                    value="1" 
+                    class="w-20 px-3 py-1 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    data-event="change:jumpToPage"
+                >
+                <button class="px-4 py-1 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">Go</button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-lg font-semibold mb-4">Industry Portal</h3>
+                    <p class="text-gray-300 mb-4">Comprehensive directory of 8,000+ industry categories across 400 organized pages. Navigate through all major business sectors and services.</p>
+                    <div class="flex space-x-4">
+                        <span class="text-sm text-gray-400">© 2024 Industry Portal. All rights reserved.</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-md font-medium mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">All Categories</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Search</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Browse by Page</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Popular Industries</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-md font-medium mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Submit Category</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // TODO: Implement page navigation, search functionality, and state management
+            // TODO: Add routing system for 400 pages
+            // TODO: Implement search across all 8,000 rectangles
+            // TODO: Add click handlers for grid rectangles
+            // TODO: Implement pagination with proper URL management
+            
+            console.log('Industry Portal initialized - 400 pages ready');
+            console.log('Current page: 1 of 400');
+            console.log('Total rectangles: 8,000 (20 per page)');
+        })();
+    </script>
+
+</body>
+</html>

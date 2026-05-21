@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Grid Portal - Page 1 of 400</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    aspectRatio: {
+                        'custom': '1 / 1.125',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.3s ease-in-out',
+                        'slide-up': 'slideUp 0.4s ease-out',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .grid-item {
+            aspect-ratio: 1 / 1.125;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-xl font-semibold text-gray-900">Industry Grid Portal</h1>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-lg mx-8">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text" 
+                               placeholder="Search across 8,000 industry categories..." 
+                               class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+                               data-mock="true">
+                    </div>
+                </div>
+
+                <!-- Page Counter -->
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Page <span class="font-medium">1</span> of <span class="font-medium">400</span></span>
+                    <button class="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Page Header -->
+        <div class="mb-8 animate-fade-in">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-2">Core Industries & Services</h2>
+            <p class="text-gray-600">Explore 20 industry categories on this page (8,000 total across all pages)</p>
+        </div>
+
+        <!-- 5x4 Grid Container -->
+        <!-- @COMPONENT: IndustryGrid [displays 20 industry categories in 5x4 layout] -->
+        <div class="grid grid-cols-5 gap-2 mb-8 animate-slide-up">
+            <!-- Row 1 -->
+            <!-- @MAP: industries.slice(0,5).map(industry => ( -->
+            
+            <!-- Financial Services -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory" 
+                 data-implementation="Should navigate to detailed Financial Services page">
+                <!-- A stack of golden cryptocurrency coins on a dark surface -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Financial Services</h3>
+                </div>
+            </div>
+
+            <!-- Healthcare -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Medical heartbeat monitor screen showing green vital signs -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Healthcare</h3>
+                </div>
+            </div>
+
+            <!-- Technology -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Close-up of computer circuit board with microprocessors -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://pixabay.com/get/g4a13c445aa458634672946484665c6a102eae67485975616c99f90546840dcb5e8ff2afe68e53d7889e91027b453e01f703b14fa524ae5b5b66ffd63780cc932_1280.jpg');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Technology</h3>
+                </div>
+            </div>
+
+            <!-- Retail -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Modern shopping mall interior with glass ceiling and stores -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Retail</h3>
+                </div>
+            </div>
+
+            <!-- Manufacturing -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Industrial factory floor with blue machinery and equipment -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://pixabay.com/get/gd264b25288df1d1e0f7de7029b9652c813b8a7b4e360d4fceed15a3034c77fc80d15eda43b2b2cb59b01ba91c494c667ea17269c41da5c83539645e69edae479_1280.jpg');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Manufacturing</h3>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            
+            <!-- Professional Services -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Business professional in suit checking mobile phone -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Professional Services</h3>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- University lecture hall with wooden desks and blackboard -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Education</h3>
+                </div>
+            </div>
+
+            <!-- Hospitality & Tourism -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Scenic mountain view from airplane window during flight -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Hospitality & Tourism</h3>
+                </div>
+            </div>
+
+            <!-- Government -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Government building with international flags in foreground -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://pixabay.com/get/ga0c658265fb5b5d4267675a82af4ae94edb10136a3c8120ffbcf2f9733fb0c425ffb9e5761683aa306c7c8ebda8a9e5bdd4829145b4f006b463af26531f3ed20_1280.jpg');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Government</h3>
+                </div>
+            </div>
+
+            <!-- Transportation & Logistics -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Large cargo ship loaded with containers at seaport -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Transportation & Logistics</h3>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            
+            <!-- Energy -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Wind turbines in field generating renewable energy -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Energy</h3>
+                </div>
+            </div>
+
+            <!-- Media & Entertainment -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Professional recording studio with mixing board and monitors -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Media & Entertainment</h3>
+                </div>
+            </div>
+
+            <!-- Construction -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Construction site with tower cranes building skyscrapers -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Construction</h3>
+                </div>
+            </div>
+
+            <!-- Mining & Resources -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Open pit mining operation with heavy machinery -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://pixabay.com/get/gc6e7f2b5eebd891c02e8e332c592596dc158f7a1d16d53e9547eb661bed6e8f1a657e6acf7abb9e28181b5f51d23c14eccd7bc32ae9c9592d8a2e3aafb713314_1280.jpg');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Mining & Resources</h3>
+                </div>
+            </div>
+
+            <!-- Consumer Goods -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Busy marketplace with vendors and customers shopping -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://pixabay.com/get/g7bc4b0e0f84f5fc10b0b860b9f18bbc8302f548549593a1fc9e9f991841b35436594dbe40f15f77db7628570aa41985491c4ce3bafe0cd8817b4ce5c2af0f563_1280.jpg');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Consumer Goods</h3>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            
+            <!-- Chemicals -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Chemical laboratory with glass beakers and equipment -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Chemicals</h3>
+                </div>
+            </div>
+
+            <!-- Telecommunications -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Vintage rotary telephone on wooden desk -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://pixabay.com/get/ge6be166dd9ac63969f5d17c0d57f5da0fc13c570356fd5172a6bd6041fc5906d51dbfbf47d66ff805383d11e2127e37e4e505b0cda1b7cccff9c04e21714256f_1280.jpg');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Telecommunications</h3>
+                </div>
+            </div>
+
+            <!-- Utilities -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Power transmission lines and electrical grid infrastructure -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://pixabay.com/get/gca0f3ec960bea31f66f70ef3de7078750720fcd2bdc21b657b365cc2e8e22205214fce64b2999120fa21da35e61aa786efee195d4982efead62e43f4058e959c_1280.jpg');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Utilities</h3>
+                </div>
+            </div>
+
+            <!-- Agriculture -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Combine harvester working in golden wheat field -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Agriculture</h3>
+                </div>
+            </div>
+
+            <!-- Non-Profit Organizations -->
+            <div class="grid-item bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg group relative"
+                 data-event="click:navigateToCategory">
+                <!-- Volunteers organizing charity donations and supplies -->
+                <div class="absolute inset-0 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900');">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-200"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-sm">Non-Profit Organizations</h3>
+                </div>
+            </div>
+
+            <!-- @END_MAP )) -->
+        </div>
+        <!-- @END_COMPONENT: IndustryGrid -->
+
+        <!-- Pagination & Statistics -->
+        <div class="flex items-center justify-between mt-12 pt-8 border-t border-gray-200">
+            <!-- Statistics -->
+            <div class="flex items-center space-x-6 text-sm text-gray-600">
+                <span>Total Categories: <span class="font-medium text-gray-900">8,000</span></span>
+                <span>Current Page: <span class="font-medium text-gray-900">20 items</span></span>
+                <span>Industries Covered: <span class="font-medium text-gray-900">400+</span></span>
+            </div>
+
+            <!-- Pagination Controls -->
+            <!-- @COMPONENT: PaginationControls [handles navigation between 400 pages] -->
+            <div class="flex items-center space-x-2">
+                <button class="px-3 py-2 text-sm text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50" 
+                        disabled
+                        data-event="click:navigateToPreviousPage">
+                    <i class="fas fa-chevron-left mr-1"></i>
+                    Previous
+                </button>
+
+                <!-- Page Numbers -->
+                <div class="flex items-center space-x-1">
+                    <button class="px-3 py-2 text-sm bg-blue-600 text-white rounded-lg font-medium">1</button>
+                    <button class="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-event="click:navigateToPage">2</button>
+                    <button class="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-event="click:navigateToPage">3</button>
+                    <span class="px-2 text-gray-500">...</span>
+                    <button class="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-event="click:navigateToPage">399</button>
+                    <button class="px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors" data-event="click:navigateToPage">400</button>
+                </div>
+
+                <button class="px-3 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                        data-event="click:navigateToNextPage">
+                    Next
+                    <i class="fas fa-chevron-right ml-1"></i>
+                </button>
+            </div>
+            <!-- @END_COMPONENT: PaginationControls -->
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="mt-8 p-6 bg-white rounded-lg border border-gray-200">
+            <h3 class="text-lg font-medium text-gray-900 mb-4">Quick Navigation</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div>
+                    <h4 class="font-medium text-gray-700 mb-2">Core Industries</h4>
+                    <ul class="space-y-1 text-gray-600">
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Pages 1-50</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Tech & Innovation</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Healthcare & Life Sciences</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium text-gray-700 mb-2">Services</h4>
+                    <ul class="space-y-1 text-gray-600">
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Pages 51-100</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Professional Services</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Financial Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium text-gray-700 mb-2">Manufacturing</h4>
+                    <ul class="space-y-1 text-gray-600">
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Pages 101-200</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Heavy Industry</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Consumer Goods</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium text-gray-700 mb-2">Resources</h4>
+                    <ul class="space-y-1 text-gray-600">
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Pages 201-400</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Energy & Utilities</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors" data-event="click:navigateToPageRange">Natural Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex items-center justify-between">
+                <div class="text-sm text-gray-600">
+                    © 2024 Industry Grid Portal. Organizing the world's industry information.
+                </div>
+                <div class="flex items-center space-x-6">
+                    <button class="text-sm text-gray-600 hover:text-gray-900 transition-colors" data-event="click:showHelp">
+                        <i class="fas fa-question-circle mr-1"></i>
+                        Help
+                    </button>
+                    <button class="text-sm text-gray-600 hover:text-gray-900 transition-colors" data-event="click:exportData">
+                        <i class="fas fa-download mr-1"></i>
+                        Export
+                    </button>
+                    <button class="text-sm text-gray-600 hover:text-gray-900 transition-colors" data-event="click:showSettings">
+                        <i class="fas fa-cog mr-1"></i>
+                        Settings
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- @STATE: currentPage:number = 1 -->
+    <!-- @STATE: searchQuery:string = "" -->
+    <!-- @STATE: selectedCategories:array = [] -->
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        (function() {
+            'use strict';
+            
+            // Mock data for demonstration
+            const pageData = {
+                currentPage: 1,
+                totalPages: 400,
+                itemsPerPage: 20,
+                totalItems: 8000
+            };
+
+            // Search functionality placeholder
+            const searchInput = document.querySelector('input[type="text"]');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    // TODO: Implement real-time search across 8,000 categories
+                    console.log('Searching for:', e.target.value);
+                });
+            }
+
+            // Grid item click handlers
+            const gridItems = document.querySelectorAll('.grid-item');
+            gridItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // TODO: Navigate to detailed category page
+                    console.log('Navigating to category:', this.querySelector('h3').textContent);
+                });
+            });
+
+            // Pagination button handlers
+            const paginationButtons = document.querySelectorAll('[data-event*="navigateTo"]');
+            paginationButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement page navigation
+                    console.log('Navigation action:', this.getAttribute('data-event'));
+                });
+            });
+
+            // Responsive grid adjustment
+            function adjustGridOnResize() {
+                // TODO: Implement responsive grid adjustments while maintaining 5x4 structure
+                const container = document.querySelector('.grid');
+                if (container) {
+                    // Grid maintains 5x4 structure but scales appropriately
+                    console.log('Adjusting grid for viewport:', window.innerWidth);
+                }
+            }
+
+            window.addEventListener('resize', adjustGridOnResize);
+            
+            // Initialize
+            adjustGridOnResize();
+            
+        })();
+    </script>
+</body>
+</html>

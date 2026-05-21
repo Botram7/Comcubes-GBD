@@ -1,0 +1,265 @@
+[1G[0K⠙[1G[0K
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K⠙[1G[0KExtracted search engine ID: c6b6e432c813548bf
+✅ Email service initialized with Namecheap SMTP
+   Host: mail.comcubes.com, Port: 465
+💳 Paystack Mode: ✅ USD-ONLY (Production Mode)
+🚀 Starting database bootstrap initialization...
+✅ appInitMeta table is available
+✅ Core data already seeded, skipping
+✅ Banner ads already seeded, skipping
+✅ Geographic data already seeded, skipping
+✅ Companies already geocoded, skipping
+🎉 Database bootstrap initialization completed successfully!
+2:09:54 PM [express] ✅ Apple Pay domain verification file loaded successfully
+2:09:54 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2:10:10 PM [express] GET /api/industries 200 in 20ms :: {"industries":[{"id":1524,"name":"3D Printin…
+2:10:10 PM [express] GET /api/sectors 200 in 25ms :: [{"id":61,"name":"Aerospace and Defense"},{"id"…
+2:10:10 PM [express] GET /api/companies 200 in 283ms :: {"companies":[{"id":18978,"name":" Americold…
+2:10:10 PM [express] GET /api/geography/top-countries 200 in 246ms :: [{"id":151,"name":"United Stat…
+2:22:05 PM [express] GET /api/admin/waitlist 401 in 1ms :: {"error":"Admin authentication required"}
+2:22:05 PM [express] GET /api/admin/industry-stats 401 in 1ms :: {"error":"Admin authentication requ…
+2:22:05 PM [express] GET /api/admin/company-claims 401 in 1ms :: {"error":"Admin authentication requ…
+2:22:05 PM [express] GET /api/admin/company-listings 401 in 1ms :: {"error":"Admin authentication re…
+2:22:05 PM [express] GET /api/admin/stats 401 in 0ms :: {"error":"Admin authentication required"}
+2:22:05 PM [express] GET /api/admin/stats 401 in 1ms :: {"error":"Admin authentication required"}
+2:22:09 PM [express] GET /api/sectors 200 in 22ms :: [{"id":61,"name":"Aerospace and Defense"},{"id"…
+2:22:10 PM [express] GET /api/sectors/Aerospace%20and%20Defense/industries 200 in 5ms :: [{"id":1199…
+2:22:12 PM [express] GET /api/banner-ads 200 in 48ms :: [{"id":1,"position":"left","images":["/banne…
+2:22:12 PM [express] GET /api/banner-ads 304 in 9ms :: [{"id":1,"position":"left","images":["/banner…
+2:22:14 PM [express] POST /api/analytics/track 200 in 125ms :: {"success":true,"id":45981}
+2:22:14 PM [express] POST /api/analytics/track 200 in 45ms :: {"success":true,"id":45982}
+2:22:15 PM [express] POST /api/analytics/track 200 in 81ms :: {"success":true,"id":45983}
+2:22:15 PM [express] POST /api/analytics/track 200 in 16ms :: {"success":true,"id":45984}
+2:22:24 PM [express] POST /api/analytics/track 200 in 79ms :: {"success":true,"id":45985}
+2:22:24 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":45986}
+2:22:24 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":45987}
+2:22:24 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":45988}
+2:22:26 PM [express] GET /api/admin/company-listings 200 in 12ms :: [{"id":8,"companyName":"Hever Tr…
+2:22:26 PM [express] GET /api/admin/waitlist 200 in 9ms :: [{"id":1,"companyName":"EduMax Solutions"…
+2:22:26 PM [express] GET /api/admin/stats 200 in 86ms :: {"totalCompanies":7563,"pendingListings":40…
+2:22:26 PM [express] GET /api/admin/company-claims 200 in 8ms :: [{"id":1,"companyId":761,"companyNa…
+2:22:26 PM [express] GET /api/admin/industry-stats 200 in 15ms :: [{"industryName":"Commercial Banki…
+2:22:27 PM [express] GET /api/admin/stats 304 in 97ms :: {"totalCompanies":7563,"pendingListings":40…
+2:22:28 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":45989}
+2:22:28 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":45990}
+2:22:30 PM [express] GET /api/config/public 200 in 4ms :: {"turnstileSiteKey":"0x4AAAAAACDX8EY0UMOZs…
+2:22:34 PM [express] POST /api/analytics/track 200 in 15ms :: {"success":true,"id":45991}
+2:22:34 PM [express] POST /api/analytics/track 200 in 15ms :: {"success":true,"id":45992}
+2:22:35 PM [express] POST /api/analytics/track 200 in 15ms :: {"success":true,"id":45993}
+2:22:35 PM [express] POST /api/analytics/track 200 in 15ms :: {"success":true,"id":45994}
+2:22:42 PM [express] POST /api/analytics/track 200 in 16ms :: {"success":true,"id":45995}
+2:22:42 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":45996}
+2:22:44 PM [express] POST /api/analytics/track 200 in 174ms :: {"success":true,"id":45997}
+2:22:44 PM [express] POST /api/analytics/track 200 in 174ms :: {"success":true,"id":45998}
+2:22:49 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":45999}
+2:22:49 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46000}
+2:22:54 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46001}
+2:22:54 PM [express] POST /api/analytics/track 200 in 27ms :: {"success":true,"id":46002}
+2:22:56 PM [express] POST /api/analytics/track 200 in 15ms :: {"success":true,"id":46003}
+2:22:56 PM [express] POST /api/analytics/track 200 in 20ms :: {"success":true,"id":46004}
+2:22:58 PM [express] GET /api/sectors 304 in 37ms :: [{"id":61,"name":"Aerospace and Defense"},{"id"…
+2:22:58 PM [express] GET /api/admin/ai-generator/gaps 200 in 95ms :: {"totalIndustries":397,"industr…
+2:22:58 PM [express] GET /api/admin/search-cache/stats 200 in 14ms :: {"totalEntries":24,"totalHits"…
+2:22:58 PM [express] GET /api/admin/descriptions/stats 200 in 106ms :: {"totalCompanies":7563,"withD…
+2:22:58 PM [express] GET /api/admin/staged-companies/stats 200 in 8ms :: {"total":180,"pending":0,"a…
+2:22:58 PM [express] GET /api/admin/staged-companies 200 in 25ms :: [{"id":162,"name":"Civair","webs…
+2:23:03 PM [express] POST /api/analytics/track 200 in 16ms :: {"success":true,"id":46005}
+2:23:03 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46006}
+2:23:04 PM [express] POST /api/analytics/track 200 in 16ms :: {"success":true,"id":46007}
+2:23:04 PM [express] POST /api/analytics/track 200 in 72ms :: {"success":true,"id":46008}
+2:23:10 PM [express] POST /api/analytics/track 200 in 16ms :: {"success":true,"id":46009}
+2:23:10 PM [express] POST /api/analytics/track 200 in 15ms :: {"success":true,"id":46010}
+2:23:14 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46011}
+2:23:14 PM [express] POST /api/analytics/track 200 in 15ms :: {"success":true,"id":46012}
+2:23:17 PM [express] POST /api/analytics/track 200 in 41ms :: {"success":true,"id":46013}
+2:23:17 PM [express] POST /api/analytics/track 200 in 40ms :: {"success":true,"id":46014}
+2:23:24 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46015}
+2:23:24 PM [express] POST /api/analytics/track 200 in 22ms :: {"success":true,"id":46016}
+2:23:24 PM [express] POST /api/analytics/track 200 in 27ms :: {"success":true,"id":46017}
+2:23:24 PM [express] POST /api/analytics/track 200 in 24ms :: {"success":true,"id":46018}
+2:23:31 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46019}
+2:23:31 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46020}
+2:23:34 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46021}
+2:23:34 PM [express] POST /api/analytics/track 200 in 15ms :: {"success":true,"id":46022}
+2:23:38 PM [express] POST /api/analytics/track 200 in 31ms :: {"success":true,"id":46024}
+2:23:38 PM [express] POST /api/analytics/track 200 in 63ms :: {"success":true,"id":46023}
+2:23:44 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46025}
+2:23:44 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46026}
+2:23:45 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46027}
+2:23:45 PM [express] POST /api/analytics/track 200 in 30ms :: {"success":true,"id":46028}
+2:23:52 PM [express] POST /api/analytics/track 200 in 15ms :: {"success":true,"id":46029}
+2:23:52 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46030}
+2:23:54 PM [express] POST /api/analytics/track 200 in 25ms :: {"success":true,"id":46031}
+2:23:54 PM [express] POST /api/analytics/track 200 in 28ms :: {"success":true,"id":46032}
+2:23:59 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46033}
+2:23:59 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46034}
+2:24:04 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46035}
+2:24:04 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46036}
+2:24:06 PM [express] POST /api/analytics/track 200 in 21ms :: {"success":true,"id":46037}
+2:24:06 PM [express] POST /api/analytics/track 200 in 22ms :: {"success":true,"id":46038}
+2:24:13 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46039}
+2:24:13 PM [express] POST /api/analytics/track 200 in 16ms :: {"success":true,"id":46040}
+2:24:14 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46041}
+2:24:14 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46042}
+2:24:20 PM [express] POST /api/analytics/track 200 in 52ms :: {"success":true,"id":46043}
+2:24:20 PM [express] POST /api/analytics/track 200 in 60ms :: {"success":true,"id":46044}
+2:24:24 PM [express] POST /api/analytics/track 200 in 20ms :: {"success":true,"id":46045}
+2:24:24 PM [express] POST /api/analytics/track 200 in 20ms :: {"success":true,"id":46046}
+2:24:27 PM [express] POST /api/analytics/track 200 in 29ms :: {"success":true,"id":46047}
+2:24:27 PM [express] POST /api/analytics/track 200 in 33ms :: {"success":true,"id":46048}
+2:24:34 PM [express] POST /api/analytics/track 200 in 30ms :: {"success":true,"id":46049}
+2:24:34 PM [express] POST /api/analytics/track 200 in 47ms :: {"success":true,"id":46050}
+2:24:34 PM [express] POST /api/analytics/track 200 in 45ms :: {"success":true,"id":46051}
+2:24:34 PM [express] POST /api/analytics/track 200 in 21ms :: {"success":true,"id":46052}
+2:24:40 PM [express] POST /api/analytics/track 200 in 20ms :: {"success":true,"id":46053}
+2:24:40 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46054}
+2:24:43 PM [express] POST /api/analytics/track 200 in 29ms :: {"success":true,"id":46055}
+2:24:43 PM [express] POST /api/analytics/track 200 in 28ms :: {"success":true,"id":46056}
+2:24:47 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46057}
+2:24:48 PM [express] POST /api/analytics/track 200 in 20ms :: {"success":true,"id":46058}
+2:24:53 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46059}
+2:24:54 PM [express] POST /api/analytics/track 200 in 26ms :: {"success":true,"id":46060}
+2:24:55 PM [express] POST /api/analytics/track 200 in 21ms :: {"success":true,"id":46061}
+2:24:55 PM [express] POST /api/analytics/track 200 in 25ms :: {"success":true,"id":46062}
+2:25:02 PM [express] POST /api/analytics/track 200 in 225ms :: {"success":true,"id":46063}
+2:25:02 PM [express] POST /api/analytics/track 200 in 115ms :: {"success":true,"id":46064}
+2:25:04 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46065}
+2:25:04 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46066}
+2:25:08 PM [express] POST /api/analytics/track 200 in 58ms :: {"success":true,"id":46067}
+2:25:09 PM [express] POST /api/analytics/track 200 in 54ms :: {"success":true,"id":46068}
+2:25:14 PM [express] POST /api/analytics/track 200 in 77ms :: {"success":true,"id":46069}
+2:25:14 PM [express] POST /api/analytics/track 200 in 71ms :: {"success":true,"id":46070}
+2:25:16 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46071}
+2:25:16 PM [express] POST /api/analytics/track 200 in 21ms :: {"success":true,"id":46072}
+2:25:23 PM [express] POST /api/analytics/track 200 in 63ms :: {"success":true,"id":46073}
+2:25:23 PM [express] POST /api/analytics/track 200 in 53ms :: {"success":true,"id":46074}
+2:25:24 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46075}
+2:25:24 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46076}
+2:25:30 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46077}
+2:25:30 PM [express] POST /api/analytics/track 200 in 14ms :: {"success":true,"id":46078}
+2:25:34 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46079}
+2:25:34 PM [express] POST /api/analytics/track 200 in 15ms :: {"success":true,"id":46080}
+2:25:36 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46081}
+2:25:37 PM [express] POST /api/analytics/track 200 in 21ms :: {"success":true,"id":46082}
+2:25:44 PM [express] POST /api/analytics/track 200 in 97ms :: {"success":true,"id":46083}
+2:25:44 PM [express] POST /api/analytics/track 200 in 87ms :: {"success":true,"id":46084}
+2:25:44 PM [express] POST /api/analytics/track 200 in 91ms :: {"success":true,"id":46085}
+2:25:44 PM [express] POST /api/analytics/track 200 in 83ms :: {"success":true,"id":46086}
+2:25:51 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46087}
+2:25:51 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46088}
+2:25:54 PM [express] POST /api/analytics/track 200 in 28ms :: {"success":true,"id":46089}
+2:25:54 PM [express] POST /api/analytics/track 200 in 36ms :: {"success":true,"id":46090}
+2:25:58 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46091}
+2:25:58 PM [express] POST /api/analytics/track 200 in 27ms :: {"success":true,"id":46092}
+2:26:04 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46093}
+2:26:04 PM [express] POST /api/analytics/track 200 in 16ms :: {"success":true,"id":46094}
+2:26:05 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46095}
+2:26:05 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46096}
+2:26:12 PM [express] POST /api/analytics/track 200 in 20ms :: {"success":true,"id":46097}
+2:26:12 PM [express] POST /api/analytics/track 200 in 20ms :: {"success":true,"id":46098}
+2:26:14 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46099}
+2:26:14 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46100}
+2:26:19 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46101}
+2:26:19 PM [express] POST /api/analytics/track 200 in 16ms :: {"success":true,"id":46102}
+2:26:24 PM [express] POST /api/analytics/track 200 in 22ms :: {"success":true,"id":46103}
+2:26:24 PM [express] POST /api/analytics/track 200 in 32ms :: {"success":true,"id":46104}
+2:26:26 PM [express] POST /api/analytics/track 200 in 116ms :: {"success":true,"id":46105}
+2:26:26 PM [express] POST /api/analytics/track 200 in 16ms :: {"success":true,"id":46106}
+2:26:33 PM [express] POST /api/analytics/track 200 in 20ms :: {"success":true,"id":46107}
+2:26:33 PM [express] POST /api/analytics/track 200 in 21ms :: {"success":true,"id":46108}
+2:26:34 PM [express] POST /api/analytics/track 200 in 22ms :: {"success":true,"id":46109}
+2:26:34 PM [express] POST /api/analytics/track 200 in 23ms :: {"success":true,"id":46110}
+2:26:40 PM [express] POST /api/analytics/track 200 in 52ms :: {"success":true,"id":46111}
+2:26:40 PM [express] POST /api/analytics/track 200 in 56ms :: {"success":true,"id":46112}
+2:26:44 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46113}
+2:26:44 PM [express] POST /api/analytics/track 200 in 29ms :: {"success":true,"id":46114}
+2:26:47 PM [express] POST /api/analytics/track 200 in 83ms :: {"success":true,"id":46115}
+2:26:47 PM [express] POST /api/analytics/track 200 in 88ms :: {"success":true,"id":46116}
+2:26:54 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46117}
+2:26:54 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46118}
+2:27:01 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46119}
+2:27:04 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46120}
+2:27:08 PM [express] POST /api/analytics/track 200 in 28ms :: {"success":true,"id":46121}
+2:27:34 PM [express] POST /api/analytics/track 200 in 43ms :: {"success":true,"id":46122}
+2:27:34 PM [express] POST /api/analytics/track 200 in 23ms :: {"success":true,"id":46123}
+2:27:34 PM [express] POST /api/analytics/track 200 in 41ms :: {"success":true,"id":46124}
+2:27:34 PM [express] POST /api/analytics/track 200 in 37ms :: {"success":true,"id":46125}
+2:28:34 PM [express] POST /api/analytics/track 200 in 73ms :: {"success":true,"id":46126}
+2:28:34 PM [express] POST /api/analytics/track 200 in 42ms :: {"success":true,"id":46127}
+2:28:34 PM [express] POST /api/analytics/track 200 in 34ms :: {"success":true,"id":46128}
+2:28:34 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46129}
+2:29:34 PM [express] POST /api/analytics/track 200 in 140ms :: {"success":true,"id":46130}
+2:29:34 PM [express] POST /api/analytics/track 200 in 80ms :: {"success":true,"id":46133}
+2:29:34 PM [express] POST /api/analytics/track 200 in 146ms :: {"success":true,"id":46131}
+2:29:34 PM [express] POST /api/analytics/track 200 in 107ms :: {"success":true,"id":46132}
+2:30:34 PM [express] POST /api/analytics/track 200 in 47ms :: {"success":true,"id":46134}
+2:30:34 PM [express] POST /api/analytics/track 200 in 40ms :: {"success":true,"id":46135}
+2:30:34 PM [express] POST /api/analytics/track 200 in 55ms :: {"success":true,"id":46136}
+2:30:34 PM [express] POST /api/analytics/track 200 in 26ms :: {"success":true,"id":46137}
+2:41:43 PM [express] POST /api/analytics/track 200 in 223ms :: {"success":true,"id":46138}
+2:41:43 PM [express] POST /api/analytics/track 200 in 310ms :: {"success":true,"id":46139}
+2:41:43 PM [express] POST /api/analytics/track 200 in 305ms :: {"success":true,"id":46141}
+2:41:43 PM [express] POST /api/analytics/track 200 in 313ms :: {"success":true,"id":46140}
+2:41:43 PM [express] POST /api/analytics/track 200 in 84ms :: {"success":true,"id":46143}
+2:41:43 PM [express] POST /api/analytics/track 200 in 90ms :: {"success":true,"id":46142}
+2:41:43 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46144}
+2:41:43 PM [express] POST /api/analytics/track 200 in 23ms :: {"success":true,"id":46145}
+2:41:43 PM [express] POST /api/analytics/track 200 in 22ms :: {"success":true,"id":46146}
+2:41:44 PM [express] POST /api/analytics/track 200 in 20ms :: {"success":true,"id":46147}
+2:41:44 PM [express] POST /api/analytics/track 200 in 20ms :: {"success":true,"id":46148}
+2:41:51 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46149}
+2:41:54 PM [express] POST /api/analytics/track 200 in 80ms :: {"success":true,"id":46150}
+2:41:57 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46151}
+2:42:04 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46152}
+2:42:04 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46153}
+2:42:11 PM [express] POST /api/analytics/track 200 in 15ms :: {"success":true,"id":46154}
+2:42:14 PM [express] POST /api/analytics/track 200 in 106ms :: {"success":true,"id":46155}
+2:42:18 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46156}
+2:42:24 PM [express] POST /api/analytics/track 200 in 58ms :: {"success":true,"id":46157}
+2:42:25 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46158}
+2:42:34 PM [express] POST /api/analytics/track 200 in 21ms :: {"success":true,"id":46159}
+2:42:34 PM [express] POST /api/analytics/track 200 in 33ms :: {"success":true,"id":46160}
+2:42:34 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46161}
+2:42:34 PM [express] POST /api/analytics/track 200 in 17ms :: {"success":true,"id":46162}
+2:43:34 PM [express] POST /api/analytics/track 200 in 92ms :: {"success":true,"id":46163}
+2:43:34 PM [express] POST /api/analytics/track 200 in 35ms :: {"success":true,"id":46165}
+2:43:34 PM [express] POST /api/analytics/track 200 in 63ms :: {"success":true,"id":46164}
+2:43:34 PM [express] POST /api/analytics/track 200 in 16ms :: {"success":true,"id":46166}
+2:44:34 PM [express] POST /api/analytics/track 200 in 37ms :: {"success":true,"id":46167}
+2:44:34 PM [express] POST /api/analytics/track 200 in 38ms :: {"success":true,"id":46168}
+2:44:34 PM [express] POST /api/analytics/track 200 in 46ms :: {"success":true,"id":46169}
+2:44:34 PM [express] POST /api/analytics/track 200 in 28ms :: {"success":true,"id":46170}
+2:45:34 PM [express] POST /api/analytics/track 200 in 68ms :: {"success":true,"id":46174}
+2:45:34 PM [express] POST /api/analytics/track 200 in 109ms :: {"success":true,"id":46171}
+2:45:34 PM [express] POST /api/analytics/track 200 in 107ms :: {"success":true,"id":46172}
+2:45:34 PM [express] POST /api/analytics/track 200 in 91ms :: {"success":true,"id":46173}
+2:46:34 PM [express] POST /api/analytics/track 200 in 97ms :: {"success":true,"id":46175}
+2:46:34 PM [express] POST /api/analytics/track 200 in 89ms :: {"success":true,"id":46177}
+2:46:34 PM [express] POST /api/analytics/track 200 in 100ms :: {"success":true,"id":46176}
+2:46:34 PM [express] POST /api/analytics/track 200 in 50ms :: {"success":true,"id":46178}
+2:47:38 PM [express] POST /api/analytics/track 200 in 66ms :: {"success":true,"id":46181}
+2:47:38 PM [express] POST /api/analytics/track 200 in 65ms :: {"success":true,"id":46180}
+2:47:38 PM [express] POST /api/analytics/track 200 in 77ms :: {"success":true,"id":46182}
+2:47:38 PM [express] POST /api/analytics/track 200 in 90ms :: {"success":true,"id":46179}
+2:48:34 PM [express] POST /api/analytics/track 200 in 274ms :: {"success":true,"id":46183}
+2:48:34 PM [express] POST /api/analytics/track 200 in 252ms :: {"success":true,"id":46184}
+2:48:34 PM [express] POST /api/analytics/track 200 in 26ms :: {"success":true,"id":46185}
+2:48:34 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46186}
+2:49:34 PM [express] POST /api/analytics/track 200 in 38ms :: {"success":true,"id":46187}
+2:49:34 PM [express] POST /api/analytics/track 200 in 37ms :: {"success":true,"id":46188}
+2:49:34 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46189}
+2:49:34 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46190}
+2:50:34 PM [express] POST /api/analytics/track 200 in 43ms :: {"success":true,"id":46191}
+2:50:34 PM [express] POST /api/analytics/track 200 in 22ms :: {"success":true,"id":46192}
+2:50:34 PM [express] POST /api/analytics/track 200 in 32ms :: {"success":true,"id":46193}
+2:50:34 PM [express] POST /api/analytics/track 200 in 16ms :: {"success":true,"id":46194}
+2:51:34 PM [express] POST /api/analytics/track 200 in 92ms :: {"success":true,"id":46195}
+2:51:34 PM [express] POST /api/analytics/track 200 in 100ms :: {"success":true,"id":46196}
+2:51:34 PM [express] POST /api/analytics/track 200 in 19ms :: {"success":true,"id":46197}
+2:51:34 PM [express] POST /api/analytics/track 200 in 18ms :: {"success":true,"id":46198}

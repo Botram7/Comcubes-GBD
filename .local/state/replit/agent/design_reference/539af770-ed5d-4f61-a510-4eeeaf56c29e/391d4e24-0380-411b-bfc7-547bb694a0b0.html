@@ -1,0 +1,473 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Grid Portal - Page 1 of 400</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    aspectRatio: {
+                        '2/1': '2 / 1',
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-gray-900">IndustryGrid</h1>
+                    <nav class="hidden md:ml-8 md:flex space-x-8">
+                        <a href="#" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Browse</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Categories</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">About</a>
+                    </nav>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-lg mx-8">
+                    <div class="relative">
+                        <input type="text" 
+                               placeholder="Search across 400 pages..." 
+                               class="w-full px-4 py-2 pl-10 pr-4 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page Counter -->
+                <div class="text-sm text-gray-500">
+                    Page <span class="font-semibold text-gray-900">1</span> of <span class="font-semibold text-gray-900">400</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-full mx-auto py-8 px-4">
+        <div class="flex gap-4 max-w-screen-2xl mx-auto">
+            
+            <!-- Left Banner Ad Space -->
+            <aside class="hidden xl:block w-48 flex-shrink-0">
+                <div class="sticky top-8">
+                    <!-- @COMPONENT: BannerAd [position: left, size: 160x600] -->
+                    <div class="w-full h-96 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center">
+                        <div class="text-center text-gray-500">
+                            <div class="text-sm font-medium">Banner Ad</div>
+                            <div class="text-xs">160×600</div>
+                        </div>
+                    </div>
+                    <!-- @END_COMPONENT: BannerAd -->
+                    
+                    <!-- Second ad slot -->
+                    <div class="w-full h-64 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center mt-4">
+                        <div class="text-center text-gray-500">
+                            <div class="text-sm font-medium">Banner Ad</div>
+                            <div class="text-xs">160×400</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Grid Content -->
+            <section class="flex-1 max-w-5xl mx-auto">
+                <!-- @COMPONENT: GridContainer [pages: 400, current: 1] -->
+                <div class="grid grid-cols-5 gap-2 mb-8">
+                    
+                    <!-- Grid Item 1: Financial Services -->
+                    <!-- A stack of golden coins and financial documents on dark surface -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Financial Services</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 2: Healthcare -->
+                    <!-- Medical heartbeat monitor display with green pulse lines -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Healthcare</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 3: Technology -->
+                    <!-- Close-up of computer circuit board with microchips -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Technology</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 4: Retail -->
+                    <!-- Modern shopping mall interior with glass ceiling and crowds -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Retail</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 5: Manufacturing -->
+                    <!-- Industrial factory floor with machinery and workers -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Manufacturing</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 6: Professional Services -->
+                    <!-- Business professional in suit checking time on watch -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Professional Services</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 7: Education -->
+                    <!-- Student studying with books and laptop on wooden desk -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Education</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 8: Hospitality & Tourism -->
+                    <!-- Scenic mountain lake view with clear blue skies -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Hospitality & Tourism</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 9: Government -->
+                    <!-- Government building with flags and formal architecture -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Government</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 10: Transportation & Logistics -->
+                    <!-- Large cargo ship loaded with containers at port -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1494412651409-8963ce7935a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Transportation & Logistics</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 11: Energy -->
+                    <!-- Wind turbines on rolling hills against cloudy sky -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Energy</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 12: Media & Entertainment -->
+                    <!-- Professional recording studio with mixing board and monitors -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Media & Entertainment</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 13: Construction -->
+                    <!-- Construction site with tower cranes against blue sky -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Construction</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 14: Mining & Resources -->
+                    <!-- Large mining truck in open pit quarry operation -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Mining & Resources</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 15: Consumer Goods -->
+                    <!-- Busy marketplace with vendors and shoppers -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Consumer Goods</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 16: Chemicals -->
+                    <!-- Modern laboratory with scientific equipment and beakers -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Chemicals</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 17: Telecommunications -->
+                    <!-- Vintage rotary telephone on wooden surface -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Telecommunications</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 18: Utilities -->
+                    <!-- Power transmission lines and electrical grid infrastructure -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Utilities</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 19: Agriculture -->
+                    <!-- Combine harvester working in golden wheat field -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Agriculture</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Item 20: Non-Profit Organizations -->
+                    <!-- Volunteers working together sorting donations and supplies -->
+                    <div class="relative group cursor-pointer transform transition-all duration-200 hover:scale-105" data-mock="true">
+                        <div class="aspect-[2/1] w-full bg-cover bg-center rounded-lg overflow-hidden relative" 
+                             style="background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200');">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end">
+                                <div class="p-3 w-full">
+                                    <h3 class="text-white font-semibold text-sm uppercase tracking-wide">Non-Profit Organizations</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- @END_COMPONENT: GridContainer -->
+
+                <!-- Pagination Controls -->
+                <div class="flex justify-between items-center mt-8 bg-white p-4 rounded-lg shadow-sm">
+                    <button class="flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg hover:bg-gray-200 disabled:opacity-50" disabled>
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                        Previous
+                    </button>
+                    
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-2 text-sm font-medium text-white bg-red-600 rounded-lg">1</button>
+                        <button class="px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200">2</button>
+                        <button class="px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200">3</button>
+                        <span class="px-3 py-2 text-sm text-gray-500">...</span>
+                        <button class="px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200">400</button>
+                    </div>
+                    
+                    <button class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200">
+                        Next
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Banner Ad Space -->
+            <aside class="hidden xl:block w-48 flex-shrink-0">
+                <div class="sticky top-8">
+                    <!-- @COMPONENT: BannerAd [position: right, size: 160x600] -->
+                    <div class="w-full h-96 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center">
+                        <div class="text-center text-gray-500">
+                            <div class="text-sm font-medium">Banner Ad</div>
+                            <div class="text-xs">160×600</div>
+                        </div>
+                    </div>
+                    <!-- @END_COMPONENT: BannerAd -->
+                    
+                    <!-- Second ad slot -->
+                    <div class="w-full h-64 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center mt-4">
+                        <div class="text-center text-gray-500">
+                            <div class="text-sm font-medium">Banner Ad</div>
+                            <div class="text-xs">160×400</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">IndustryGrid</h3>
+                    <p class="text-gray-400 text-sm">Comprehensive industry categorization across 400 pages of content.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Browse All Pages</a></li>
+                        <li><a href="#" class="hover:text-white">Search</a></li>
+                        <li><a href="#" class="hover:text-white">Categories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white">Feedback</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">About</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Our Mission</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 IndustryGrid. All rights reserved. | Page 1 of 400</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // TODO: Implement search functionality across 400 pages
+            // TODO: Implement page navigation and routing
+            // TODO: Implement grid item click handlers
+            // TODO: Implement responsive grid adjustments for mobile
+            
+            // Basic interaction enhancements
+            document.addEventListener('DOMContentLoaded', function() {
+                // Add click analytics for grid items
+                const gridItems = document.querySelectorAll('[data-mock="true"]');
+                gridItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        console.log('Grid item clicked:', this.querySelector('h3').textContent);
+                        // TODO: Navigate to specific content page
+                    });
+                });
+
+                // Search input enhancements
+                const searchInput = document.querySelector('input[type="text"]');
+                if (searchInput) {
+                    searchInput.addEventListener('input', function() {
+                        // TODO: Implement live search across 400 pages
+                        console.log('Search query:', this.value);
+                    });
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

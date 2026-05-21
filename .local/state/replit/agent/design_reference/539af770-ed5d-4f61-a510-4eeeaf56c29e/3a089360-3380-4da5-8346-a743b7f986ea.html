@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Business Directory - Sectors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    aspectRatio: {
+                        'custom': '1.125',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- @COMPONENT: Header [logo, search, navigation] -->
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-xl font-bold text-gray-900">GlobalBiz Directory</h1>
+                    </div>
+                    <!-- @FUNCTIONALITY: Logo should link to homepage -->
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-lg mx-8">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text" 
+                               class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                               placeholder="Search sectors, industries, or companies..."
+                               data-implementation="Should implement real-time search across all levels">
+                        <!-- @FUNCTIONALITY: Search should work across sectors, industries, and companies -->
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+                        <i class="fas fa-bookmark mr-2"></i>Favorites
+                    </button>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                        <i class="fas fa-building mr-2"></i>Add Company
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Breadcrumb [navigation path] -->
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+            <li>
+                <a href="#" class="hover:text-gray-700 font-medium">Home</a>
+            </li>
+            <li>
+                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+            </li>
+            <li class="text-gray-900 font-medium" aria-current="page">Business Sectors</li>
+        </ol>
+        <!-- @STATE: breadcrumb should update based on current page level -->
+    </nav>
+    <!-- @END_COMPONENT: Breadcrumb -->
+
+    <!-- @COMPONENT: PageHeader [title, stats, filters] -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Global Business Sectors</h1>
+                    <p class="text-gray-600 text-lg">Explore 20 major business sectors containing 400 industries and 8,000 companies worldwide</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right">
+                        <div class="text-2xl font-bold text-blue-600">421</div>
+                        <div class="text-sm text-gray-500">Total Pages</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-2xl font-bold text-green-600">8,000</div>
+                        <div class="text-sm text-gray-500">Companies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: PageHeader -->
+
+    <!-- @COMPONENT: GridContainer [main content area] -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <!-- @COMPONENT: SectorGrid [5x4 grid of business sectors] -->
+        <div class="grid grid-cols-5 gap-3 auto-rows-fr">
+            <!-- @MAP: sectors.map(sector => ( -->
+            
+            <!-- Row 1 -->
+            <!-- @COMPONENT: SectorCard [Financial Services] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888"
+                 data-event="click:navigateToSector" 
+                 data-implementation="Should navigate to Financial Services industries page">
+                <!-- Professional financial imagery with gold coins and charts -->
+                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Financial services with gold coins and charts" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Financial Services</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Healthcare] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Medical technology and healthcare imagery -->
+                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Healthcare technology with medical charts and stethoscope" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Healthcare</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Technology] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Modern computer circuit board and technology -->
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Computer circuit board with blue lighting technology" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Technology</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Retail] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Modern shopping mall interior with customers -->
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Modern shopping mall interior with bright lighting and shoppers" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Retail</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Manufacturing] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Industrial manufacturing facility with machinery -->
+                <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Industrial manufacturing facility with blue machinery and equipment" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Manufacturing</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- Row 2 -->
+            <!-- @COMPONENT: SectorCard [Professional Services] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Professional business meeting with consultants -->
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Professional business meeting with suited professionals" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Professional Services</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Education] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Modern university lecture hall with students -->
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Modern university lecture hall with wooden seats and students" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Education</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Hospitality & Tourism] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Luxury resort with mountain views -->
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Luxury resort hotel with mountain backdrop and outdoor seating" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Hospitality & Tourism</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Government] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Government building with international flags -->
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Government building with rows of international flags" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Government</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Transportation & Logistics] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Cargo shipping port with containers -->
+                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Shipping port with colorful cargo containers and cranes" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Transportation & Logistics</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- Row 3 -->
+            <!-- @COMPONENT: SectorCard [Energy] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Wind turbines renewable energy -->
+                <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="White wind turbines in field under cloudy sky" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Energy</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Media & Entertainment] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Modern entertainment venue with stage lighting -->
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Concert venue with dramatic blue stage lighting and audience" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Media & Entertainment</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Construction] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Construction site with cranes and buildings -->
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Construction site with multiple cranes and building development" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Construction</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Mining & Resources] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Mining operation with heavy machinery -->
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Large mining excavator in open pit mine with terraced levels" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Mining & Resources</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Consumer Goods] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Busy marketplace with consumers shopping -->
+                <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Busy outdoor marketplace with vendors and shoppers" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Consumer Goods</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- Row 4 -->
+            <!-- @COMPONENT: SectorCard [Chemicals] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Chemical laboratory with modern equipment -->
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Modern chemical laboratory with glass equipment and blue lighting" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Chemicals</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Telecommunications] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Communication towers and satellite equipment -->
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Radio communication towers against blue sky with clouds" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Telecommunications</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Utilities] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Power plant infrastructure with cooling towers -->
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Industrial power plant with large cooling towers and steam" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Utilities</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Agriculture] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Agricultural field with combine harvester -->
+                <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Combine harvester working in golden wheat field under blue sky" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Agriculture</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @COMPONENT: SectorCard [Non-Profit Organizations] -->
+            <div class="relative group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105" 
+                 style="aspect-ratio: 0.888">
+                <!-- Volunteers helping in community service -->
+                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" 
+                     alt="Diverse group of volunteers working together on community project" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <h3 class="text-white font-semibold text-center px-4 text-lg">Non-Profit Organizations</h3>
+                </div>
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <i class="fas fa-external-link-alt text-white text-sm"></i>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: SectorCard -->
+
+            <!-- @END_MAP )) -->
+        </div>
+        <!-- @END_COMPONENT: SectorGrid -->
+    </main>
+    <!-- @END_COMPONENT: GridContainer -->
+
+    <!-- @COMPONENT: Footer [navigation, links, pagination] -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <div class="text-sm text-gray-500">
+                        Page 1 of 421 | Showing 20 sectors
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 bg-gray-100 text-gray-400 rounded cursor-not-allowed" disabled>
+                            <i class="fas fa-chevron-left mr-1"></i>Previous
+                        </button>
+                        <button class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700" 
+                                data-event="click:navigateToIndustries" 
+                                data-implementation="Should navigate to industries overview page">
+                            Next<i class="fas fa-chevron-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4 text-sm text-gray-600">
+                    <span>Directory Structure:</span>
+                    <div class="flex items-center space-x-2 text-xs">
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded">Sectors (20)</span>
+                        <i class="fas fa-arrow-right text-gray-400"></i>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded">Industries (400)</span>
+                        <i class="fas fa-arrow-right text-gray-400"></i>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded">Companies (8,000)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- @COMPONENT: LoadingOverlay [shown during navigation] -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 flex items-center space-x-4">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+            <span class="text-gray-700 font-medium">Loading directory...</span>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: LoadingOverlay -->
+
+    <script>
+        (function() {
+            // TODO: Implement business logic, API calls, or state management
+
+            // Navigation handling
+            const sectorCards = document.querySelectorAll('[data-event="click:navigateToSector"]');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+
+            sectorCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const sectorName = this.querySelector('h3').textContent;
+                    
+                    // Show loading state
+                    loadingOverlay.classList.remove('hidden');
+                    
+                    // TODO: Navigate to sector-specific industries page
+                    setTimeout(() => {
+                        console.log(`Navigating to ${sectorName} industries page`);
+                        loadingOverlay.classList.add('hidden');
+                        // window.location.href = `sectors/${sectorName.toLowerCase().replace(/ /g, '-')}/industries.html`;
+                    }, 1000);
+                });
+            });
+
+            // Search functionality
+            const searchInput = document.querySelector('input[type="text"]');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const query = this.value.toLowerCase();
+                    // TODO: Implement real-time search across all directory levels
+                    console.log('Search query:', query);
+                });
+            }
+
+            // Responsive grid adjustments
+            function adjustGridForMobile() {
+                const grid = document.querySelector('.grid-cols-5');
+                if (window.innerWidth < 768) {
+                    grid.classList.remove('grid-cols-5');
+                    grid.classList.add('grid-cols-2');
+                } else if (window.innerWidth < 1024) {
+                    grid.classList.remove('grid-cols-5', 'grid-cols-2');
+                    grid.classList.add('grid-cols-3');
+                } else {
+                    grid.classList.remove('grid-cols-2', 'grid-cols-3');
+                    grid.classList.add('grid-cols-5');
+                }
+            }
+
+            window.addEventListener('resize', adjustGridForMobile);
+            adjustGridForMobile(); // Initial call
+
+        })();
+    </script>
+</body>
+</html>

@@ -11,24 +11,18 @@ import { initDatabaseOnce } from "./init";
 
 const app = express();
 
-// Configure trust proxy specifically for Replit's infrastructure
-app.set('trust proxy', 1); // Trust only the first proxy (more secure than 'true')
+// Railway sits behind a proxy - trust it
+app.set('trust proxy', 1);
 
-// Compression middleware for better Core Web Vitals and page speed
 app.use(compression({
   filter: (req: Request, res: Response) => {
-    // Compress all responses except images that are already compressed
-    if (req.headers['x-no-compression']) {
-      return false;
-    }
-    // Fall back to standard filter function
+    if (req.headers['x-no-compression']) return false;
     return compression.filter(req, res);
   },
-  threshold: 1024, // Only compress responses above 1KB
-  level: 6, // Good balance between compression speed and ratio
+  threshold: 1024,
+  level: 6,
 }));
 
-// Security Headers - Implement essential security headers with Google AdSense support
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
@@ -36,15 +30,10 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://pagead2.googlesyndication.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
       imgSrc: ["'self'", "data:", "https:", "blob:"],
-      // Allow Google AdSense and Google Analytics scripts - comprehensive list
       scriptSrc: [
-        "'self'", 
-        "'unsafe-inline'", 
-        "'unsafe-eval'", 
-        "https://*.replit.dev", 
-        "https://*.replit.com",
-        "https://replit.com",
-        // Google AdSense
+        "'self'",
+        "'unsafe-inline'",
+        "'unsafe-eval'",
         "https://pagead2.googlesyndication.com",
         "https://*.googlesyndication.com",
         "https://adservice.google.com",
@@ -54,7 +43,6 @@ app.use(helmet({
         "https://partner.googleadservices.com",
         "https://www.googleadservices.com",
         "https://tpc.googlesyndication.com",
-        // Google Analytics 4 / Tag Manager - comprehensive list
         "https://www.googletagmanager.com",
         "https://*.googletagmanager.com",
         "https://www.google-analytics.com",
@@ -62,21 +50,16 @@ app.use(helmet({
         "https://*.google-analytics.com",
         "https://analytics.google.com",
         "https://*.analytics.google.com",
-        // Microsoft Clarity
         "https://www.clarity.ms",
         "https://*.clarity.ms",
-        // Cloudflare Turnstile
         "https://challenges.cloudflare.com",
         "https://*.cloudflare.com"
       ],
-      // Allow AdSense, Analytics, and Cloudflare Turnstile connections
       connectSrc: [
-        "'self'", 
-        "https://api.paystack.co", 
-        "https://www.googleapis.com", 
-        "wss://*.replit.dev", 
+        "'self'",
+        "https://api.paystack.co",
+        "https://www.googleapis.com",
         "ws://localhost:*",
-        // Google AdSense
         "https://pagead2.googlesyndication.com",
         "https://*.googlesyndication.com",
         "https://adservice.google.com",
@@ -84,7 +67,6 @@ app.use(helmet({
         "https://googleads.g.doubleclick.net",
         "https://*.doubleclick.net",
         "https://partner.googleadservices.com",
-        // Google Analytics 4 - comprehensive list for all regional endpoints
         "https://www.google-analytics.com",
         "https://*.google-analytics.com",
         "https://analytics.google.com",
@@ -93,14 +75,11 @@ app.use(helmet({
         "https://*.g.doubleclick.net",
         "https://www.googletagmanager.com",
         "https://*.googletagmanager.com",
-        // Microsoft Clarity
         "https://www.clarity.ms",
         "https://*.clarity.ms",
-        // Cloudflare Turnstile
         "https://challenges.cloudflare.com",
         "https://*.cloudflare.com"
       ],
-      // Allow AdSense iframes and Cloudflare Turnstile
       frameSrc: [
         "'self'",
         "https://pagead2.googlesyndication.com",
@@ -119,59 +98,49 @@ app.use(helmet({
       workerSrc: ["'self'", "blob:"]
     }
   },
-  hsts: {
-    maxAge: 31536000, // 1 year
-    includeSubDomains: true,
-    preload: true
-  },
-  frameguard: false, // Allow AdSense to frame content when needed
+  hsts: { maxAge: 31536000, includeSubDomains: true, preload: true },
+  frameguard: false,
   noSniff: true,
   xssFilter: true,
   referrerPolicy: { policy: 'strict-origin-when-cross-origin' }
 }));
 
-// Rate limiting for DDoS protection with proper trust proxy configuration
 const generalLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 2000, // Much higher limit for normal browsing with analytics tracking
+  windowMs: 15 * 60 * 1000,
+  max: 2000,
   message: 'Too many requests from this IP, please try again later.',
   standardHeaders: true,
   legacyHeaders: false,
 });
 
 const adminLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 1000, // High limit for admin routes to prevent lockout
+  windowMs: 15 * 60 * 1000,
+  max: 1000,
   message: 'Too many admin requests from this IP, please try again later.',
   standardHeaders: true,
   legacyHeaders: false,
-  skip: (req) => req.session?.isAdminAuthenticated === true, // Skip rate limiting for authenticated admin
+  skip: (req) => req.session?.isAdminAuthenticated === true,
 });
 
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 10, // Reasonable limit for authentication attempts
+  windowMs: 15 * 60 * 1000,
+  max: 10,
   message: 'Too many authentication attempts, please try again later.',
   standardHeaders: true,
   legacyHeaders: false,
 });
 
-// Apply rate limiting with admin dashboard exclusion
 app.use('/api/admin', adminLimiter);
 app.use(['/admin/login', '/api/auth'], authLimiter);
-// Exclude admin dashboard from general rate limiting
 app.use((req, res, next) => {
   if (req.path === '/admin' || (req.path.startsWith('/admin/') && !req.path.startsWith('/admin/login'))) {
-    // Skip general rate limiting for admin dashboard pages
     return next();
   }
   return generalLimiter(req, res, next);
 });
 
-app.use(express.json({ limit: '10mb' })); // Limit request body size
+app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
-
-// Add session middleware for admin authentication
 app.use(adminSessionConfig);
 
 app.use((req, res, next) => {
@@ -192,60 +161,30 @@ app.use((req, res, next) => {
       if (capturedJsonResponse) {
         logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
       }
-
-      if (logLine.length > 80) {
-        logLine = logLine.slice(0, 79) + "…";
-      }
-
+      if (logLine.length > 80) logLine = logLine.slice(0, 79) + "…";
       log(logLine);
     }
   });
-
   next();
 });
 
-// Static asset caching optimization for Core Web Vitals and Page Speed
 app.use((req: Request, res: Response, next: NextFunction) => {
-  // Only apply caching in production for optimal performance
   if (process.env.NODE_ENV === 'production') {
-    const originalSetHeader = res.setHeader;
-    res.setHeader = function(name: string, value: string | string[] | number) {
-      if (name.toLowerCase() === 'cache-control') {
-        // Don't override existing cache-control headers (for sitemap, banner images, etc.)
-        return originalSetHeader.call(this, name, value);
-      }
-      return originalSetHeader.call(this, name, value);
-    };
-
-    // Set cache headers based on file extension
     const path = req.path;
-    
-    // Long-term caching for hashed static assets (Vite includes content hash)
     if (path.match(/\.(css|js|mjs|woff2?|ttf|otf)$/)) {
       res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-      res.setHeader('Expires', new Date(Date.now() + 31536000000).toUTCString());
-    }
-    // Moderate caching for images and media
-    else if (path.match(/\.(png|jpg|jpeg|gif|svg|webp|ico|pdf)$/)) {
-      res.setHeader('Cache-Control', 'public, max-age=86400'); // 1 day
-      res.setHeader('Expires', new Date(Date.now() + 86400000).toUTCString());
-    }
-    // No aggressive caching for HTML to prevent stale shells
-    else if (path.match(/\.(html?)$/) || path === '/' || !path.includes('.')) {
+    } else if (path.match(/\.(png|jpg|jpeg|gif|svg|webp|ico|pdf)$/)) {
+      res.setHeader('Cache-Control', 'public, max-age=86400');
+    } else if (path.match(/\.(html?)$/) || path === '/' || !path.includes('.')) {
       res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
     }
   }
-  
   next();
 });
 
 (async () => {
-  // Admin authentication routes
   app.get('/admin/login', (req, res) => {
-    if (req.session?.isAdminAuthenticated) {
-      return res.redirect('/admin');
-    }
-    
+    if (req.session?.isAdminAuthenticated) return res.redirect('/admin');
     res.send(`
       <!DOCTYPE html>
       <html lang="en">
@@ -254,102 +193,26 @@ app.use((req: Request, res: Response, next: NextFunction) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin Login - COMCUBES</title>
         <style>
-          body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          .login-container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-          }
-          .logo {
-            text-align: center;
-            margin-bottom: 30px;
-          }
-          .logo h1 {
-            color: #333;
-            margin: 0;
-            font-size: 28px;
-            font-weight: 600;
-          }
-          .logo p {
-            color: #666;
-            margin: 5px 0 0 0;
-            font-size: 14px;
-          }
-          .form-group {
-            margin-bottom: 20px;
-          }
-          label {
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-            font-weight: 500;
-          }
-          input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e1e5e9;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-            box-sizing: border-box;
-          }
-          input[type="text"]:focus, input[type="password"]:focus {
-            outline: none;
-            border-color: #667eea;
-          }
-          .login-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            transition: transform 0.2s;
-          }
-          .login-btn:hover {
-            transform: translateY(-1px);
-          }
-          .error {
-            background: #fee;
-            color: #c33;
-            padding: 10px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            border: 1px solid #fcc;
-          }
+          body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+          .login-container { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+          .logo { text-align: center; margin-bottom: 30px; }
+          .logo h1 { color: #333; margin: 0; font-size: 28px; font-weight: 600; }
+          .logo p { color: #666; margin: 5px 0 0; font-size: 14px; }
+          .form-group { margin-bottom: 20px; }
+          label { display: block; margin-bottom: 5px; color: #333; font-weight: 500; }
+          input[type="text"], input[type="password"] { width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 6px; font-size: 16px; box-sizing: border-box; transition: border-color 0.3s; }
+          input:focus { outline: none; border-color: #667eea; }
+          .login-btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 24px; border: none; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; }
+          .error { background: #fee; color: #c33; padding: 10px; border-radius: 6px; margin-bottom: 20px; border: 1px solid #fcc; }
         </style>
       </head>
       <body>
         <div class="login-container">
-          <div class="logo">
-            <h1>COMCUBES</h1>
-            <p>Admin Dashboard Login</p>
-          </div>
+          <div class="logo"><h1>COMCUBES</h1><p>Admin Dashboard Login</p></div>
           ${req.query.error ? '<div class="error">Invalid username or password</div>' : ''}
           <form method="POST" action="/admin/login" enctype="application/x-www-form-urlencoded">
-            <div class="form-group">
-              <label for="username">Username:</label>
-              <input type="text" id="username" name="username" value="" autocomplete="username" required>
-            </div>
-            <div class="form-group">
-              <label for="password">Password:</label>
-              <input type="password" id="password" name="password" value="" autocomplete="current-password" required>
-            </div>
+            <div class="form-group"><label for="username">Username:</label><input type="text" id="username" name="username" autocomplete="username" required></div>
+            <div class="form-group"><label for="password">Password:</label><input type="password" id="password" name="password" autocomplete="current-password" required></div>
             <button type="submit" class="login-btn">Login</button>
           </form>
         </div>
@@ -360,7 +223,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
   app.post('/admin/login', async (req, res) => {
     const { username, password } = req.body;
-    
     try {
       if (await validateAdminCredentials(username, password)) {
         req.session!.isAdminAuthenticated = true;
@@ -376,17 +238,11 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
   app.get('/admin/logout', (req, res) => {
     req.session?.destroy((err) => {
-      if (err) {
-        console.error('Error destroying session:', err);
-      }
+      if (err) console.error('Error destroying session:', err);
       res.redirect('/admin/login');
     });
   });
 
-  // Admin dashboard is now handled by React at /admin route
-
-  // Initialize database once at server startup
-  // Wrapped in try-catch to allow app to start even if database is temporarily unavailable
   try {
     await initDatabaseOnce();
   } catch (dbError) {
@@ -395,8 +251,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
   const server = await registerRoutes(app);
 
-  // Apple Pay domain verification - preload file at startup
-  // CRITICAL: Must serve with content-type: text/plain per Apple's production requirements
+  // Apple Pay domain verification
   let applePayVerificationFile: Buffer | null = null;
   try {
     const filePath = path.join(process.cwd(), 'public', '.well-known', 'apple-developer-merchantid-domain-association');
@@ -408,43 +263,30 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
   app.get('/.well-known/apple-developer-merchantid-domain-association', (req, res) => {
     if (!applePayVerificationFile) {
-      log('❌ Apple Pay verification file requested but not available');
       return res.status(404).send('Apple Pay verification file not found');
     }
-    
-    // Serve cached file with correct headers per Apple's requirements
     res.setHeader('Content-Type', 'text/plain');
     res.setHeader('Content-Length', applePayVerificationFile.length.toString());
-    res.setHeader('Cache-Control', 'public, max-age=3600'); // Cache for 1 hour
+    res.setHeader('Cache-Control', 'public, max-age=3600');
     res.send(applePayVerificationFile);
   });
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
-
     res.status(status).json({ message });
     throw err;
   });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = 5000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
+  // Railway assigns PORT dynamically - respect it
+  const port = parseInt(process.env.PORT || '5000', 10);
+  server.listen({ port, host: "0.0.0.0" }, () => {
     log(`serving on port ${port}`);
   });
 })();

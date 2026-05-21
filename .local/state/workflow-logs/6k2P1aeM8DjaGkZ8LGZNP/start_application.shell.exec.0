@@ -1,0 +1,17 @@
+[1G[0K⠙[1G[0K⠹[1G[0K⠸[1G[0K⠼[1G[0K⠴[1G[0K
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K⠴[1G[0KExtracted search engine ID: c6b6e432c813548bf
+✅ Email service initialized with Namecheap SMTP
+   Host: mail.comcubes.com, Port: 465
+💳 Paystack Mode: ✅ USD-ONLY (Production Mode)
+🚀 Starting database bootstrap initialization...
+✅ appInitMeta table is available
+✅ Core data already seeded, skipping
+✅ Banner ads already seeded, skipping
+✅ Geographic data already seeded, skipping
+✅ Companies already geocoded, skipping
+🎉 Database bootstrap initialization completed successfully!
+3:58:22 AM [express] ✅ Apple Pay domain verification file loaded successfully
+3:58:22 AM [express] serving on port 5000

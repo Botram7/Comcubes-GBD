@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "comcubes-gbd"
+  },
+  "targets": {
+    "comcubes-gbd": {
+      "hosting": {
+        "comcubes": [
+          "comcubes-gbd"
+        ]
+      }
+    }
+  }
+}

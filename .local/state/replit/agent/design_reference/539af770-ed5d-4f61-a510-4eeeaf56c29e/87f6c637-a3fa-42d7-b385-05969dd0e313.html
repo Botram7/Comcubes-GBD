@@ -1,0 +1,439 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Business Directory - 400+ Pages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        'primary': '#1a365d',
+                        'secondary': '#2d3748',
+                        'accent': '#3182ce'
+                    },
+                    aspectRatio: {
+                        'grid': '1 / 1.125'
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .grid-item {
+            aspect-ratio: 1 / 1.125;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 16px;
+        }
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(10, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(20, 1fr);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- @COMPONENT: NavigationHeader -->
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-primary">Global Business Directory</h1>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-lg mx-8">
+                    <div class="relative">
+                        <input 
+                            type="text" 
+                            id="searchInput"
+                            placeholder="Search sectors, industries, or companies..." 
+                            class="w-full px-4 py-2 pl-10 pr-4 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                        >
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600" id="pageCounter">Page 1 of 421</span>
+                    <button onclick="toggleView()" class="px-4 py-2 text-sm bg-accent text-white rounded-lg hover:bg-blue-600 transition-colors">
+                        Switch View
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: NavigationHeader -->
+
+    <!-- @COMPONENT: BreadcrumbNavigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm" id="breadcrumb">
+                <li><a href="#" onclick="showSectors()" class="text-accent hover:text-blue-600">Home</a></li>
+                <li class="text-gray-400">/</li>
+                <li class="text-gray-600" id="currentLevel">Business Sectors</li>
+            </ol>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: BreadcrumbNavigation -->
+
+    <!-- @COMPONENT: MainContent -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-6">
+            <h2 class="text-3xl font-bold text-gray-900" id="pageTitle">Business Sectors</h2>
+            <p class="text-gray-600 mt-2" id="pageDescription">Explore 22 major business sectors across global industries</p>
+        </div>
+
+        <!-- Grid Container -->
+        <div class="grid-container" id="gridContainer">
+            <!-- Grid items will be dynamically populated -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-12 flex justify-between items-center">
+            <button 
+                id="prevBtn" 
+                onclick="previousPage()" 
+                class="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled
+            >
+                Previous
+            </button>
+            
+            <div class="flex space-x-2" id="paginationNumbers">
+                <!-- Dynamic pagination numbers -->
+            </div>
+            
+            <button 
+                id="nextBtn" 
+                onclick="nextPage()" 
+                class="px-6 py-2 bg-accent text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+                Next
+            </button>
+        </div>
+    </main>
+    <!-- @END_COMPONENT: MainContent -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-gray-600">
+                <p>&copy; 2024 Global Business Directory. Professional business data across 421 pages.</p>
+                <p class="mt-2 text-sm">Featuring 22 sectors, 398 industries, and 7,400+ companies worldwide.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Business Data Structure
+        const businessData = {
+            sectors: [
+                { name: "Banking and Financial Services", image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "157 Industries" },
+                { name: "Technology", image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "45 Industries" },
+                { name: "Healthcare and Pharmaceuticals", image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "38 Industries" },
+                { name: "Manufacturing", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "32 Industries" },
+                { name: "Energy and Utilities", image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "28 Industries" },
+                { name: "Transportation and Logistics", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "25 Industries" },
+                { name: "Retail", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "22 Industries" },
+                { name: "Real Estate", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "20 Industries" },
+                { name: "Media and Entertainment", image: "https://images.unsplash.com/photo-1489599316482-e2bb412924ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "19 Industries" },
+                { name: "Construction and Engineering", image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "18 Industries" },
+                { name: "Food and Beverage", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "17 Industries" },
+                { name: "Telecommunications and ICT", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "16 Industries" },
+                { name: "Automobile", image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "15 Industries" },
+                { name: "Insurance", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "14 Industries" },
+                { name: "Education", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "13 Industries" },
+                { name: "Travel and Tourism", image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "12 Industries" },
+                { name: "Agriculture", image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "11 Industries" },
+                { name: "Chemicals", image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "10 Industries" },
+                { name: "Aerospace and Defense", image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "9 Industries" },
+                { name: "Professional Services", image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900", count: "8 Industries" }
+            ],
+            
+            industries: {
+                "Banking and Financial Services": [
+                    { name: "Commercial Banking", companies: 21, image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Investment Banking", companies: 19, image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Asset Management", companies: 19, image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Insurance Underwriting", companies: 18, image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "FinTech", companies: 18, image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Stock Exchanges", companies: 18, image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Private Equity", companies: 19, image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Hedge Funds", companies: 18, image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Consumer Finance", companies: 20, image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Credit Cards", companies: 20, image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Microfinance", companies: 20, image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Cryptocurrency Exchanges", companies: 20, image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Venture Capital", companies: 20, image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Wealth Management", companies: 20, image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Mortgage Lending", companies: 20, image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Payment Processing", companies: 20, image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Trade Finance", companies: 20, image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Forex Services", companies: 20, image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Pension Funds", companies: 20, image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Credit Rating Agencies", companies: 20, image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" }
+                ],
+                "Technology": [
+                    { name: "Operating Systems", companies: 20, image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Enterprise Software", companies: 20, image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Semiconductors", companies: 20, image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Gaming Consoles", companies: 20, image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Computer Peripherals", companies: 20, image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Data Analytics", companies: 20, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Quantum Computing", companies: 20, image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Robotics", companies: 20, image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "AR/VR Hardware", companies: 20, image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Open-Source Platforms", companies: 20, image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" }
+                ]
+            },
+
+            companies: {
+                "Commercial Banking": [
+                    { name: "JPMorgan Chase & Co.", website: "https://www.jpmorganchase.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Bank of America", website: "https://www.bankofamerica.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Wells Fargo", website: "https://www.wellsfargo.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Citigroup", website: "https://www.citigroup.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "HSBC Holdings", website: "https://www.hsbc.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "BNP Paribas", website: "https://www.bnpparibas.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Barclays", website: "https://www.barclays.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Deutsche Bank", website: "https://www.db.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "UBS Group", website: "https://www.ubs.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Santander Group", website: "https://www.santander.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "TD Bank Group", website: "https://www.td.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Commonwealth Bank", website: "https://www.commbank.com.au", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Crédit Agricole", website: "https://www.credit-agricole.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "ING Group", website: "https://www.ing.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Société Générale", website: "https://www.societegenerale.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Standard Chartered", website: "https://www.sc.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "UniCredit", website: "https://www.unicreditgroup.eu", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Scotiabank", website: "https://www.scotiabank.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Industrial and Commercial Bank of China", website: "https://www.icbc-ltd.com", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" },
+                    { name: "Mitsubishi UFJ Financial Group", website: "https://www.mufg.jp", logo: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900" }
+                ]
+            }
+        };
+
+        // Application State
+        let currentView = 'sectors'; // sectors, industries, companies
+        let currentSector = null;
+        let currentIndustry = null;
+        let currentPage = 1;
+        let totalPages = 421;
+
+        // Initialize Application
+        (function init() {
+            showSectors();
+            updatePageCounter();
+            // TODO: Implement search functionality, load more data from CSV files
+        })();
+
+        function showSectors() {
+            currentView = 'sectors';
+            currentSector = null;
+            currentIndustry = null;
+            currentPage = 1;
+            
+            updateBreadcrumb('Business Sectors');
+            updatePageTitle('Business Sectors', 'Explore 22 major business sectors across global industries');
+            renderGrid(businessData.sectors);
+            updatePagination();
+        }
+
+        function showIndustries(sectorName) {
+            currentView = 'industries';
+            currentSector = sectorName;
+            currentIndustry = null;
+            currentPage = Math.ceil(Object.keys(businessData.industries).indexOf(sectorName) / 20) + 2; // Approximate page calculation
+            
+            updateBreadcrumb(`${sectorName} Industries`);
+            updatePageTitle(`${sectorName}`, `Industries within ${sectorName} sector`);
+            
+            const industries = businessData.industries[sectorName] || [];
+            renderGrid(industries);
+            updatePagination();
+        }
+
+        function showCompanies(industryName) {
+            currentView = 'companies';
+            currentIndustry = industryName;
+            currentPage = 22; // Companies start from page 22
+            
+            updateBreadcrumb(`${industryName} Companies`);
+            updatePageTitle(`${industryName}`, `Companies in ${industryName} industry`);
+            
+            const companies = businessData.companies[industryName] || [];
+            renderGrid(companies);
+            updatePagination();
+        }
+
+        function renderGrid(items) {
+            const container = document.getElementById('gridContainer');
+            container.innerHTML = '';
+
+            // Ensure we show exactly 20 items (5x4 grid)
+            const gridItems = items.slice(0, 20);
+            
+            // Fill remaining slots if less than 20 items
+            while (gridItems.length < 20) {
+                gridItems.push({
+                    name: 'Coming Soon',
+                    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=900',
+                    count: 'More data',
+                    companies: 'Loading',
+                    website: '#'
+                });
+            }
+
+            gridItems.forEach((item, index) => {
+                const gridItem = createGridItem(item, index);
+                container.appendChild(gridItem);
+            });
+        }
+
+        function createGridItem(item, index) {
+            const div = document.createElement('div');
+            div.className = 'grid-item relative overflow-hidden rounded-lg shadow-md cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl';
+            
+            // Different click handlers based on current view
+            let clickHandler = '';
+            if (currentView === 'sectors') {
+                clickHandler = `onclick="showIndustries('${item.name}')"`;
+            } else if (currentView === 'industries') {
+                clickHandler = `onclick="showCompanies('${item.name}')"`;
+            } else if (currentView === 'companies' && item.website && item.website !== '#') {
+                clickHandler = `onclick="window.open('${item.website}', '_blank')"`;
+            }
+
+            <!-- Business category image with consistent aspect ratio -->
+            div.innerHTML = `
+                <div class="relative w-full h-full bg-cover bg-center" style="background-image: url('${item.image || item.logo}');" ${clickHandler}>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
+                        <div class="text-center text-white p-4">
+                            <h3 class="text-lg font-semibold mb-2 leading-tight" data-mock="true">${item.name}</h3>
+                            <p class="text-sm opacity-90" data-mock="true">
+                                ${item.count || item.companies ? `${item.companies || item.count}` : 'Learn More'}
+                            </p>
+                            ${currentView === 'companies' && item.website && item.website !== '#' ? 
+                                '<div class="mt-2 text-xs opacity-75">External Link</div>' : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            return div;
+        }
+
+        function updateBreadcrumb(currentLevel) {
+            const breadcrumb = document.getElementById('breadcrumb');
+            const currentLevelSpan = document.getElementById('currentLevel');
+            
+            let breadcrumbHTML = '<li><a href="#" onclick="showSectors()" class="text-accent hover:text-blue-600">Home</a></li>';
+            
+            if (currentSector && currentView !== 'sectors') {
+                breadcrumbHTML += `
+                    <li class="text-gray-400">/</li>
+                    <li><a href="#" onclick="showIndustries('${currentSector}')" class="text-accent hover:text-blue-600">${currentSector}</a></li>
+                `;
+            }
+            
+            if (currentIndustry && currentView === 'companies') {
+                breadcrumbHTML += `
+                    <li class="text-gray-400">/</li>
+                    <li><a href="#" onclick="showCompanies('${currentIndustry}')" class="text-accent hover:text-blue-600">${currentIndustry}</a></li>
+                `;
+            }
+            
+            breadcrumbHTML += `
+                <li class="text-gray-400">/</li>
+                <li class="text-gray-600">${currentLevel}</li>
+            `;
+            
+            breadcrumb.innerHTML = breadcrumbHTML;
+        }
+
+        function updatePageTitle(title, description) {
+            document.getElementById('pageTitle').textContent = title;
+            document.getElementById('pageDescription').textContent = description;
+        }
+
+        function updatePageCounter() {
+            document.getElementById('pageCounter').textContent = `Page ${currentPage} of ${totalPages}`;
+        }
+
+        function updatePagination() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage === totalPages;
+            
+            updatePageCounter();
+        }
+
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                // TODO: Implement actual page navigation logic
+                updatePagination();
+            }
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                // TODO: Implement actual page navigation logic
+                updatePagination();
+            }
+        }
+
+        function toggleView() {
+            // TODO: Implement alternative view modes (list view, detailed cards, etc.)
+            alert('Alternative view modes: List View, Detailed Cards, Search Results');
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            // TODO: Implement search across all sectors, industries, and companies
+            if (searchTerm.length > 2) {
+                console.log('Searching for:', searchTerm);
+                // Filter and display search results
+            }
+        });
+
+        // Responsive grid adjustments
+        window.addEventListener('resize', function() {
+            // Grid automatically adjusts via CSS Grid and media queries
+            // Additional responsive logic can be added here if needed
+        });
+    </script>
+</body>
+</html>

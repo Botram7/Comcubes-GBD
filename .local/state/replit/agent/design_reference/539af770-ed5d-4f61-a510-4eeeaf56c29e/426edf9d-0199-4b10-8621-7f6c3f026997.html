@@ -1,0 +1,448 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Grid Navigation - Page 1 of 400</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    'inter': ['Inter', 'sans-serif'],
+                },
+                colors: {
+                    'custom-dark': '#1F2937',
+                    'custom-medium': '#374151',
+                    'custom-light': '#F9FAFB',
+                    'custom-border': '#E5E7EB',
+                }
+            }
+        }
+    };
+    </script>
+    <style>
+        .grid-card {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .grid-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+            transition: all 0.3s ease;
+        }
+        .grid-card:hover::before {
+            background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.1));
+        }
+        .search-input:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-custom-light font-inter">
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-sm border-b border-custom-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-semibold text-custom-dark">Industry Navigator</h1>
+                    <span class="ml-3 px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full">400 Pages</span>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-lg mx-8">
+                    <div class="relative">
+                        <input 
+                            type="text" 
+                            placeholder="Search industries, services, or content..."
+                            class="search-input w-full px-4 py-2 pl-10 pr-4 text-sm border border-custom-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200"
+                            data-functionality="Implement real-time search across all 400 pages"
+                        >
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page Navigation -->
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Page 1 of 400</span>
+                    <button class="p-2 text-gray-400 hover:text-gray-600 transition-colors" data-event="click:prevPage">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button class="p-2 text-gray-400 hover:text-gray-600 transition-colors" data-event="click:nextPage">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Page Title -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-custom-dark mb-2">Industry Categories</h2>
+            <p class="text-gray-600">Explore comprehensive solutions across all major industry sectors</p>
+        </div>
+
+        <!-- 5x4 Grid Layout -->
+        <!-- @COMPONENT: IndustryGrid [industries: Array<Industry>] -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+            <!-- Row 1 -->
+            <!-- A stack of golden credit cards on dark background representing financial services -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" 
+                 style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="financial-services">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Financial Services</h3>
+                </div>
+            </div>
+
+            <!-- A medical heartbeat monitor display with vital signs in green -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="healthcare">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Healthcare</h3>
+                </div>
+            </div>
+
+            <!-- Close-up of computer circuit board with microchips and electronic components -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="technology">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Technology</h3>
+                </div>
+            </div>
+
+            <!-- Modern shopping mall interior with glass ceiling and multiple levels -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="retail">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Retail</h3>
+                </div>
+            </div>
+
+            <!-- Industrial manufacturing facility with assembly line and machinery -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="manufacturing">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Manufacturing</h3>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <!-- Business professional in suit checking time on watch -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="professional-services">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Professional Services</h3>
+                </div>
+            </div>
+
+            <!-- Student studying with books and laptop in library setting -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="education">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Education</h3>
+                </div>
+            </div>
+
+            <!-- Luxury resort with mountain view and outdoor seating area -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="hospitality-tourism">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Hospitality & Tourism</h3>
+                </div>
+            </div>
+
+            <!-- Government building with flags of different nations -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://pixabay.com/get/gb5297c4c028131041f7a766ddc38821b84eed08633e53fcf007a7491cb3bcffd28926064b708d9a0370d26e0eebc5660822eaffe2f0e6e5d5e85c2d673b5d55b_1280.jpg');"
+                 data-event="click:navigateToCategory" data-category="government">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Government</h3>
+                </div>
+            </div>
+
+            <!-- Large cargo ship loaded with shipping containers at port -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="transportation-logistics">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Transportation & Logistics</h3>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <!-- Wind turbines generating renewable energy in open field -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="energy">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Energy</h3>
+                </div>
+            </div>
+
+            <!-- Professional video production setup with cameras and lighting equipment -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="media-entertainment">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Media & Entertainment</h3>
+                </div>
+            </div>
+
+            <!-- Construction site with tower cranes building new structures -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="construction">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Construction</h3>
+                </div>
+            </div>
+
+            <!-- Mining operation with heavy machinery in quarry -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="mining-resources">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Mining & Resources</h3>
+                </div>
+            </div>
+
+            <!-- Busy marketplace with people shopping for consumer goods -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="consumer-goods">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Consumer Goods</h3>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <!-- Chemical laboratory with research equipment and testing apparatus -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="chemicals">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Chemicals</h3>
+                </div>
+            </div>
+
+            <!-- Vintage telephone switchboard representing telecommunications history -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="telecommunications">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Telecommunications</h3>
+                </div>
+            </div>
+
+            <!-- Solar panel installation on industrial building rooftop -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="utilities">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Utilities</h3>
+                </div>
+            </div>
+
+            <!-- Combine harvester working in golden wheat field -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="agriculture">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Agriculture</h3>
+                </div>
+            </div>
+
+            <!-- Community volunteers helping with disaster relief efforts -->
+            <div class="grid-card relative h-32 lg:h-40 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                 style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600');"
+                 data-event="click:navigateToCategory" data-category="non-profit">
+                <div class="relative z-10 p-4 h-full flex items-end">
+                    <h3 class="text-white font-semibold text-sm lg:text-base" data-bind="category.title">Non-Profit Organizations</h3>
+                </div>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: IndustryGrid -->
+
+        <!-- Bottom Navigation -->
+        <div class="flex justify-between items-center pt-8 border-t border-custom-border">
+            <div class="flex items-center space-x-4">
+                <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-custom-border rounded-md hover:bg-gray-50 transition-colors" data-event="click:goToFirstPage">
+                    First
+                </button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-custom-border rounded-md hover:bg-gray-50 transition-colors" data-event="click:prevPage">
+                    Previous
+                </button>
+            </div>
+
+            <!-- Page Number Display -->
+            <div class="flex items-center space-x-2">
+                <span class="text-sm text-gray-600">Page</span>
+                <input type="number" value="1" min="1" max="400" class="w-16 px-2 py-1 text-sm text-center border border-custom-border rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" data-event="change:goToPage">
+                <span class="text-sm text-gray-600">of 400</span>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-custom-border rounded-md hover:bg-gray-50 transition-colors" data-event="click:nextPage">
+                    Next
+                </button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-custom-border rounded-md hover:bg-gray-50 transition-colors" data-event="click:goToLastPage">
+                    Last
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-lg border border-custom-border">
+                <div class="text-2xl font-bold text-custom-dark" data-bind="stats.totalPages">400</div>
+                <div class="text-sm text-gray-600">Total Pages</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-custom-border">
+                <div class="text-2xl font-bold text-custom-dark" data-bind="stats.totalCategories">20</div>
+                <div class="text-sm text-gray-600">Categories</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-custom-border">
+                <div class="text-2xl font-bold text-custom-dark" data-bind="stats.itemsPerPage">20</div>
+                <div class="text-sm text-gray-600">Items per Page</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-custom-border">
+                <div class="text-2xl font-bold text-custom-dark" data-bind="stats.totalItems">8,000</div>
+                <div class="text-sm text-gray-600">Total Items</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 bg-white border-t border-custom-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-sm text-gray-600">
+                <p>Industry Navigator - Comprehensive Grid-Based Navigation System</p>
+                <p class="mt-2">© 2024 - Designed for scalability across 400 unique pages</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // TODO: Implement navigation logic for 400 pages
+        // TODO: Add search functionality across all pages
+        // TODO: Implement dynamic content loading
+        // TODO: Add analytics tracking for page visits
+        
+        (function() {
+            // Page navigation state
+            let currentPage = 1;
+            const totalPages = 400;
+            
+            // Search functionality placeholder
+            const searchInput = document.querySelector('.search-input');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const query = e.target.value.toLowerCase();
+                    // TODO: Implement search filtering across grid items
+                    console.log('Search query:', query);
+                });
+            }
+            
+            // Grid card interactions
+            const gridCards = document.querySelectorAll('.grid-card');
+            gridCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    // TODO: Navigate to specific category page
+                    console.log('Navigate to category:', category);
+                });
+            });
+            
+            // Page navigation
+            function updatePageDisplay() {
+                const pageNumberInput = document.querySelector('input[type="number"]');
+                if (pageNumberInput) {
+                    pageNumberInput.value = currentPage;
+                }
+                
+                const pageDisplays = document.querySelectorAll('[data-page-display]');
+                pageDisplays.forEach(display => {
+                    display.textContent = `Page ${currentPage} of ${totalPages}`;
+                });
+            }
+            
+            // Event listeners for navigation buttons
+            document.addEventListener('click', function(e) {
+                const action = e.target.dataset.event;
+                
+                switch(action) {
+                    case 'click:nextPage':
+                        if (currentPage < totalPages) {
+                            currentPage++;
+                            updatePageDisplay();
+                            // TODO: Load next page content
+                        }
+                        break;
+                    case 'click:prevPage':
+                        if (currentPage > 1) {
+                            currentPage--;
+                            updatePageDisplay();
+                            // TODO: Load previous page content
+                        }
+                        break;
+                    case 'click:goToFirstPage':
+                        currentPage = 1;
+                        updatePageDisplay();
+                        // TODO: Load first page content
+                        break;
+                    case 'click:goToLastPage':
+                        currentPage = totalPages;
+                        updatePageDisplay();
+                        // TODO: Load last page content
+                        break;
+                }
+            });
+            
+            // Page number input handler
+            const pageInput = document.querySelector('input[type="number"]');
+            if (pageInput) {
+                pageInput.addEventListener('change', function(e) {
+                    const newPage = parseInt(e.target.value);
+                    if (newPage >= 1 && newPage <= totalPages) {
+                        currentPage = newPage;
+                        updatePageDisplay();
+                        // TODO: Load specific page content
+                    } else {
+                        e.target.value = currentPage;
+                    }
+                });
+            }
+            
+            // Initialize
+            updatePageDisplay();
+        })();
+    </script>
+</body>
+</html>

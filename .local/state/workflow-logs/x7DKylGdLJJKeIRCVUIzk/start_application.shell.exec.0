@@ -1,0 +1,28 @@
+[1G[0K⠙[1G[0K⠹[1G[0K
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K⠹[1G[0KExtracted search engine ID: c6b6e432c813548bf
+✅ Email service initialized with Namecheap SMTP
+   Host: mail.comcubes.com, Port: 465
+💳 Paystack Mode: ✅ USD-ONLY (Production Mode)
+🚀 Starting database bootstrap initialization...
+✅ appInitMeta table is available
+✅ Core data already seeded, skipping
+✅ Banner ads already seeded, skipping
+✅ Geographic data already seeded, skipping
+✅ Companies already geocoded, skipping
+🎉 Database bootstrap initialization completed successfully!
+2:56:48 PM [express] ✅ Apple Pay domain verification file loaded successfully
+2:56:48 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2:57:11 PM [express] GET /api/companies 304 in 199ms :: {"companies":[{"id":18978,"name":" Americold…
+2:57:11 PM [express] GET /api/industries 304 in 19ms :: {"industries":[{"id":1524,"name":"3D Printin…
+2:57:11 PM [express] GET /api/sectors 304 in 38ms :: [{"id":61,"name":"Aerospace and Defense"},{"id"…
+2:57:11 PM [express] GET /api/geography/top-countries 304 in 51ms :: [{"id":151,"name":"United State…
+2:57:34 PM [express] POST /api/analytics/track 200 in 33ms :: {"success":true,"id":46220}
+2:57:34 PM [express] POST /api/analytics/track 200 in 34ms :: {"success":true,"id":46221}
+2:57:34 PM [express] POST /api/analytics/track 200 in 44ms :: {"success":true,"id":46222}
+2:57:34 PM [express] POST /api/analytics/track 200 in 44ms :: {"success":true,"id":46223}

@@ -1,0 +1,467 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comcubes - Industry Grid Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    aspectRatio: {
+                        '2/1': '2 / 1',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 0.75rem;
+            aspect-ratio: 5 / 4;
+        }
+        
+        .grid-item {
+            aspect-ratio: 2 / 1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .grid-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .grid-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+            z-index: 1;
+        }
+        
+        .grid-item-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            color: white;
+            z-index: 2;
+        }
+        
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(7, 1fr);
+                aspect-ratio: 3 / 7;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(10, 1fr);
+                aspect-ratio: 2 / 10;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-gray-900">Comcubes</h1>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-lg mx-8">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text" id="searchInput" placeholder="Search across all pages..." 
+                               class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                </div>
+                
+                <!-- Page Navigation -->
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Page</span>
+                    <select id="pageSelector" class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:ring-2 focus:ring-blue-500">
+                        <!-- Pages 1-400 will be populated by JavaScript -->
+                    </select>
+                    <span class="text-sm text-gray-600">of 400</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Page Title -->
+        <div class="mb-8">
+            <h2 id="pageTitle" class="text-3xl font-bold text-gray-900 mb-2">Industry Sectors - Page 1</h2>
+            <p class="text-gray-600">Explore comprehensive solutions across various industry verticals</p>
+        </div>
+
+        <!-- 5x4 Grid Container -->
+        <div class="grid-container mb-8">
+            <!-- @COMPONENT: GridItem [imageUrl, title, description] -->
+            
+            <!-- Row 1 -->
+            <!-- A modern financial trading floor with multiple monitors displaying stock charts -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Financial Services</h3>
+                    <p class="text-sm opacity-90">Banking, Investment, Insurance</p>
+                </div>
+            </div>
+            
+            <!-- A medical professional using advanced healthcare technology -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Healthcare</h3>
+                    <p class="text-sm opacity-90">Medical Technology, Diagnostics</p>
+                </div>
+            </div>
+            
+            <!-- Close-up of advanced computer processors and circuit boards -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Technology</h3>
+                    <p class="text-sm opacity-90">Software, Hardware, AI Solutions</p>
+                </div>
+            </div>
+            
+            <!-- Modern retail shopping mall with elegant architecture -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Retail</h3>
+                    <p class="text-sm opacity-90">E-commerce, Physical Stores</p>
+                </div>
+            </div>
+            
+            <!-- High-tech manufacturing facility with robotic assembly lines -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1565191999001-551c187427bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Manufacturing</h3>
+                    <p class="text-sm opacity-90">Automation, Quality Control</p>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <!-- Professional business meeting in modern office environment -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Professional Services</h3>
+                    <p class="text-sm opacity-90">Consulting, Legal, Accounting</p>
+                </div>
+            </div>
+            
+            <!-- Students using digital learning tools in modern classroom -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Education</h3>
+                    <p class="text-sm opacity-90">E-learning, Digital Platforms</p>
+                </div>
+            </div>
+            
+            <!-- Luxury hotel lobby with elegant design and hospitality service -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Hospitality & Tourism</h3>
+                    <p class="text-sm opacity-90">Hotels, Travel, Entertainment</p>
+                </div>
+            </div>
+            
+            <!-- Government building with flags representing public sector -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Government</h3>
+                    <p class="text-sm opacity-90">Public Services, Administration</p>
+                </div>
+            </div>
+            
+            <!-- Large cargo ships and containers at busy port -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Transportation & Logistics</h3>
+                    <p class="text-sm opacity-90">Shipping, Supply Chain</p>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <!-- Wind turbines generating renewable energy in scenic landscape -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Energy</h3>
+                    <p class="text-sm opacity-90">Renewable, Traditional Power</p>
+                </div>
+            </div>
+            
+            <!-- Film production set with professional equipment and crew -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Media & Entertainment</h3>
+                    <p class="text-sm opacity-90">Broadcasting, Content Creation</p>
+                </div>
+            </div>
+            
+            <!-- Construction site with cranes building modern skyscrapers -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Construction</h3>
+                    <p class="text-sm opacity-90">Infrastructure, Real Estate</p>
+                </div>
+            </div>
+            
+            <!-- Heavy mining equipment extracting natural resources -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://pixabay.com/get/gc5510ef2dc45e1a25d01c1eb4c1558e60157b5e8501f4142b34a5699c92fb55e3cf5987a4fa6655f1af8455b293cfb0d1c61d5fccb86de09651e346ea37744ab_1280.jpg');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Mining & Resources</h3>
+                    <p class="text-sm opacity-90">Extraction, Processing</p>
+                </div>
+            </div>
+            
+            <!-- Busy marketplace with diverse consumer products and shoppers -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Consumer Goods</h3>
+                    <p class="text-sm opacity-90">Products, Retail Distribution</p>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <!-- Modern chemical laboratory with scientific equipment -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Chemicals</h3>
+                    <p class="text-sm opacity-90">Research, Production</p>
+                </div>
+            </div>
+            
+            <!-- Vintage telecommunications equipment and modern networking -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1512317049220-d3c6fcaf6681?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Telecommunications</h3>
+                    <p class="text-sm opacity-90">Networks, Communication</p>
+                </div>
+            </div>
+            
+            <!-- Solar panels and power transmission infrastructure -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Utilities</h3>
+                    <p class="text-sm opacity-90">Power, Water, Gas Distribution</p>
+                </div>
+            </div>
+            
+            <!-- Modern farming equipment harvesting crops in vast fields -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Agriculture</h3>
+                    <p class="text-sm opacity-90">Farming, Food Production</p>
+                </div>
+            </div>
+            
+            <!-- Volunteers working together at community service event -->
+            <div class="grid-item cursor-pointer" style="background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400');">
+                <div class="grid-item-content">
+                    <h3 class="font-semibold text-lg mb-1">Non-Profit Organizations</h3>
+                    <p class="text-sm opacity-90">Social Impact, Community</p>
+                </div>
+            </div>
+            
+            <!-- @END_COMPONENT: GridItem -->
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="flex justify-between items-center mt-12">
+            <button id="prevPage" class="flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                <i class="fas fa-chevron-left mr-2"></i>
+                Previous
+            </button>
+            
+            <div class="flex items-center space-x-2">
+                <span class="text-sm text-gray-700">Showing page</span>
+                <span id="currentPage" class="px-3 py-1 text-sm font-medium text-blue-600 bg-blue-100 rounded-md">1</span>
+                <span class="text-sm text-gray-700">of 400 pages</span>
+                <span class="text-sm text-gray-500 ml-4">(8,000 total items)</span>
+            </div>
+            
+            <button id="nextPage" class="flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50">
+                Next
+                <i class="fas fa-chevron-right ml-2"></i>
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Comcubes</h3>
+                    <p class="text-gray-400 text-sm">Comprehensive industry solutions across 400+ specialized pages.</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">All Industries</a></li>
+                        <li><a href="#" class="hover:text-white">Search Portal</a></li>
+                        <li><a href="#" class="hover:text-white">Advanced Filters</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white">API Reference</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Comcubes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // Sample data structure for 400 pages
+            const pagesData = {
+                1: {
+                    title: "Industry Sectors - Page 1",
+                    description: "Explore comprehensive solutions across various industry verticals"
+                },
+                2: {
+                    title: "Technology Solutions - Page 2", 
+                    description: "Advanced technological solutions for modern businesses"
+                },
+                3: {
+                    title: "Healthcare Innovations - Page 3",
+                    description: "Cutting-edge healthcare technology and medical solutions"
+                }
+                // TODO: Generate data for remaining 397 pages
+            };
+
+            let currentPageNum = 1;
+
+            // Initialize page selector
+            function initializePageSelector() {
+                const pageSelector = document.getElementById('pageSelector');
+                for (let i = 1; i <= 400; i++) {
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.textContent = i;
+                    pageSelector.appendChild(option);
+                }
+            }
+
+            // Update page content
+            function updatePage(pageNum) {
+                currentPageNum = pageNum;
+                const pageData = pagesData[pageNum] || {
+                    title: `Industry Solutions - Page ${pageNum}`,
+                    description: "Specialized solutions and services for your industry needs"
+                };
+
+                document.getElementById('pageTitle').textContent = pageData.title;
+                document.getElementById('currentPage').textContent = pageNum;
+                document.getElementById('pageSelector').value = pageNum;
+
+                // TODO: Update grid content based on page data
+                // This would typically load new grid items via API
+
+                // Update navigation buttons
+                document.getElementById('prevPage').disabled = pageNum === 1;
+                document.getElementById('nextPage').disabled = pageNum === 400;
+
+                // Update URL without page reload
+                window.history.pushState({page: pageNum}, '', `?page=${pageNum}`);
+            }
+
+            // Navigation event handlers
+            document.getElementById('prevPage').addEventListener('click', () => {
+                if (currentPageNum > 1) {
+                    updatePage(currentPageNum - 1);
+                }
+            });
+
+            document.getElementById('nextPage').addEventListener('click', () => {
+                if (currentPageNum < 400) {
+                    updatePage(currentPageNum + 1);
+                }
+            });
+
+            document.getElementById('pageSelector').addEventListener('change', (e) => {
+                updatePage(parseInt(e.target.value));
+            });
+
+            // Search functionality
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                // TODO: Implement search across all 400 pages
+                // This would typically filter grid items or redirect to search results
+                console.log('Searching for:', searchTerm);
+            });
+
+            // Grid item click handlers
+            document.querySelectorAll('.grid-item').forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    // TODO: Navigate to detailed view or external link
+                    console.log(`Clicked grid item ${index + 1}`);
+                });
+            });
+
+            // Handle browser back/forward
+            window.addEventListener('popstate', (e) => {
+                const pageNum = e.state?.page || 1;
+                updatePage(pageNum);
+            });
+
+            // Initialize on page load
+            initializePageSelector();
+            
+            // Check URL for initial page
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialPage = parseInt(urlParams.get('page')) || 1;
+            updatePage(initialPage);
+
+            // TODO: Implement lazy loading for better performance with 400 pages
+            // TODO: Add loading states and error handling
+            // TODO: Implement responsive grid reordering for mobile devices
+            // TODO: Add filtering and sorting capabilities
+            // TODO: Implement bookmarking and sharing functionality
+        })();
+    </script>
+</body>
+</html>

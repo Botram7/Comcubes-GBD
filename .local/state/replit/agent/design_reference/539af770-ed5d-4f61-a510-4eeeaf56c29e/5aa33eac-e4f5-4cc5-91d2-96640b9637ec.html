@@ -1,0 +1,391 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Portal - Page 1 of 400</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    gridTemplateColumns: {
+                        '5': 'repeat(5, 1fr)',
+                    },
+                    gridTemplateRows: {
+                        '4': 'repeat(4, 1fr)',
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-inter">
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-xl font-semibold text-gray-900">Grid Portal</h1>
+                    <span class="text-sm text-gray-500">Page 1 of 400</span>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-md mx-8">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text" placeholder="Search across 8,000 items..." 
+                               class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="flex items-center space-x-4">
+                    <button class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors" disabled>
+                        <i class="fas fa-chevron-left mr-1"></i> Previous
+                    </button>
+                    <button class="px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
+                        Next <i class="fas fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- @COMPONENT: GridContainer -->
+        <div class="grid grid-cols-5 grid-rows-4 gap-3 h-[calc(100vh-12rem)]" data-implementation="5x4 grid with exactly 20 rectangles">
+            
+            <!-- Row 1 -->
+            <!-- @COMPONENT: GridCard [image, title, category] -->
+            <!-- A gleaming gold bar on a dark surface representing precious metals trading -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true" data-event="click:navigateToItem" data-bind="items[0]">
+                <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Gold bars representing financial services" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Financial Services</h3>
+                </div>
+            </div>
+            
+            <!-- A medical heart rate monitor displaying vital signs in green -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Medical heart rate monitor" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Healthcare</h3>
+                </div>
+            </div>
+
+            <!-- Modern computer circuit board with intricate electronic components -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Computer circuit board technology" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Technology</h3>
+                </div>
+            </div>
+
+            <!-- Modern shopping mall interior with elegant architecture and shoppers -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Shopping mall retail environment" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Retail</h3>
+                </div>
+            </div>
+
+            <!-- Industrial manufacturing facility with modern machinery and automation -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Manufacturing facility with modern equipment" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Manufacturing</h3>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <!-- Professional businessman in suit using smartphone in office environment -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Professional businessman with smartphone" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Professional Services</h3>
+                </div>
+            </div>
+
+            <!-- Modern classroom or lecture hall with students and educational setup -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Modern classroom education environment" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Education</h3>
+                </div>
+            </div>
+
+            <!-- Beautiful mountain resort or hotel with scenic landscape views -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Mountain resort hospitality and tourism" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Hospitality & Tourism</h3>
+                </div>
+            </div>
+
+            <!-- Government building or capitol with flags representing public sector -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://pixabay.com/get/g79038667a95cea33773db940f67133754b25dba42e10777a9f05d28eccae08fedc166e5fd2e56bd5467620001c0fadfae260db711149775c252c8620e2f96277_1280.jpg" 
+                     alt="Government building with flags" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Government</h3>
+                </div>
+            </div>
+
+            <!-- Large cargo ships in port representing transportation and logistics -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Cargo ships in port for transportation logistics" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Transportation & Logistics</h3>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <!-- Wind turbines generating renewable energy in a field -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Wind turbines renewable energy" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Energy</h3>
+                </div>
+            </div>
+
+            <!-- Television studio or media production environment with cameras and lights -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Television studio media production" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Media & Entertainment</h3>
+                </div>
+            </div>
+
+            <!-- Construction site with cranes and building development -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Construction site with cranes" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Construction</h3>
+                </div>
+            </div>
+
+            <!-- Mining operation with heavy machinery extracting resources -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Mining operation with heavy machinery" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Mining & Resources</h3>
+                </div>
+            </div>
+
+            <!-- Busy marketplace or consumer goods shopping environment -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Busy marketplace consumer goods" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Consumer Goods</h3>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <!-- Chemical laboratory with equipment and scientific instruments -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Chemical laboratory with scientific equipment" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Chemicals</h3>
+                </div>
+            </div>
+
+            <!-- Vintage rotary telephone representing telecommunications history -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Vintage rotary telephone telecommunications" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Telecommunications</h3>
+                </div>
+            </div>
+
+            <!-- Power lines and electrical infrastructure representing utilities -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Power lines electrical infrastructure utilities" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Utilities</h3>
+                </div>
+            </div>
+
+            <!-- Modern combine harvester working in agricultural fields -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Combine harvester in agricultural field" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Agriculture</h3>
+                </div>
+            </div>
+
+            <!-- Volunteers working together representing non-profit organizations -->
+            <div class="relative bg-gray-900 rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg group" 
+                 data-mock="true">
+                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                     alt="Volunteers working together non-profit" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-white font-medium text-lg">Non-Profit Organizations</h3>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: GridCard -->
+        </div>
+        <!-- @END_COMPONENT: GridContainer -->
+    </main>
+
+    <!-- Footer with Pagination -->
+    <footer class="bg-white border-t border-gray-200 mt-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex items-center justify-between">
+                <div class="text-sm text-gray-500">
+                    Showing page 1 of 400 (20 items of 8,000 total)
+                </div>
+                
+                <!-- Pagination Controls -->
+                <div class="flex items-center space-x-2">
+                    <button class="px-3 py-2 text-sm bg-gray-100 text-gray-400 rounded cursor-not-allowed" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <!-- Page Numbers -->
+                    <div class="flex space-x-1">
+                        <button class="px-3 py-2 text-sm bg-blue-600 text-white rounded">1</button>
+                        <button class="px-3 py-2 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200">2</button>
+                        <button class="px-3 py-2 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200">3</button>
+                        <span class="px-3 py-2 text-sm text-gray-500">...</span>
+                        <button class="px-3 py-2 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200">400</button>
+                    </div>
+                    
+                    <button class="px-3 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Items per Page (Always 20 for this design) -->
+                <div class="text-sm text-gray-500">
+                    20 items per page
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            // TODO: Implement navigation between 400 pages
+            // TODO: Implement search functionality across 8,000 items
+            // TODO: Implement routing system for page management
+            // TODO: Add loading states for page transitions
+            
+            // Basic interaction setup for demonstration
+            const cards = document.querySelectorAll('[data-event="click:navigateToItem"]');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // TODO: Navigate to specific item detail page
+                    console.log('Navigate to:', this.querySelector('h3').textContent);
+                });
+            });
+
+            // Search input handling
+            const searchInput = document.querySelector('input[type="text"]');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    // TODO: Implement real-time search across all 400 pages
+                    console.log('Search query:', e.target.value);
+                });
+            }
+
+            // Pagination button handlers
+            const paginationButtons = document.querySelectorAll('button');
+            paginationButtons.forEach(button => {
+                if (button.textContent.includes('Next') || button.textContent.includes('Previous')) {
+                    button.addEventListener('click', function() {
+                        // TODO: Implement page navigation logic
+                        console.log('Navigate to page:', this.textContent);
+                    });
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
