@@ -36,6 +36,38 @@ The application is built with a modern full-stack architecture, separating front
 - **GDPR Cookie Consent**: Custom cookie consent banner with Accept All/Reject/Preferences options. Analytics (GA4, Clarity) and Marketing (AdSense) cookies only load after explicit user consent. Consent preferences stored in localStorage. Revoking consent after scripts are loaded prompts page reload for full compliance. Use `?resetCookies=true` URL parameter to reset consent and show banner again for testing.
 - **Anti-Spam Protection**: Cloudflare Turnstile integration on contact form for bot protection. Privacy-friendly CAPTCHA alternative that verifies human users without tracking. Server-side token verification before processing form submissions. CSP headers configured to allow Cloudflare domains. Turnstile widget configured in Cloudflare Dashboard must include the app's domains (both .replit.dev for development and production domain).
 
+## Admin Navigation Guide
+
+The admin area is accessible at `/admin` (requires admin login). It has several tabs:
+
+| Tab | What it does |
+|-----|-------------|
+| **Overview** | Site statistics, active companies, slot usage |
+| **Waitlist** | Companies waiting for an industry slot to open |
+| **Industries** | Manage industry slot limits and availability |
+| **Analytics** | Search queries, page views, top sectors |
+| **Email** | Send notifications, manage templates |
+| **Data Expansion** | AI generation, Wikidata import, staged review, CSV export |
+
+### Data Expansion Tab — Sub-sections
+
+When you click **Data Expansion**, you land on an Overview screen showing four cards. Click any card (or use the internal navigation) to go deeper:
+
+| Card / Section | What it does |
+|----------------|-------------|
+| **AI Company Generator** | Generate new companies with OpenAI for industries that have open slots. Supports geographic targeting (continent / country). |
+| **Description Enricher** | Batch-enrich companies that have no description using AI. |
+| **Wikidata Import** | Search for real companies from the free Wikidata database (100+ search terms, 20 languages). Results go to Staged Imports for review. |
+| **Staged Imports** | Review, approve, reject, or export companies that came from AI or Wikidata before they go live. Includes "Re-categorize All Pending" button. |
+| **Export All Companies (CSV)** | Download a full CSV of every live company in the directory (sector, industry, country, website, employees, founded year). Found at the bottom of the Data Expansion Overview page. |
+
+### How to reach the Re-categorize button specifically:
+1. Log into the admin area at `/admin`
+2. Click the **"Data Expansion"** tab in the top navigation bar
+3. On the overview, click the **"Staged Imports"** card
+4. In the Staged Imports view, look at the filter/action bar above the company list
+5. The **"Re-categorize All Pending"** button sits in that bar alongside Approve All, Reject All, and Export CSV
+
 ## Feature Flags
 
 ### PAYSTACK_ENABLE_NGN_FALLBACK (Emergency-Only NGN Fallback System)
@@ -173,11 +205,60 @@ The application is built with a modern full-stack architecture, separating front
 **API Endpoints Added**:
 - `GET /api/admin/staged-companies` — List staged companies with optional filters (status, source, sector)
 - `GET /api/admin/staged-companies/stats` — Staging stats by status
-- `GET /api/admin/staged-companies/export-csv` — CSV export of staged companies
+- `GET /api/admin/staged-companies/export-csv` — CSV export of staged companies only
 - `POST /api/admin/staged-companies/:id/approve` — Approve single staged company to live
 - `POST /api/admin/staged-companies/:id/reject` — Reject single staged company
 - `POST /api/admin/staged-companies/approve-bulk` — Bulk approve
 - `POST /api/admin/staged-companies/reject-bulk` — Bulk reject
+
+## Phase 4: Category Accuracy & Data Export (Completed)
+
+**Goal**: Fix sector/industry mismatch bugs in the auto-categorization engine, allow admins to repair existing wrongly-categorized staged companies in one click, and provide a full data export of the live company directory.
+
+### Problem Fixed — Sector/Industry Mismatch
+The original `categoryMatcher.ts` matched sector and industry independently. This caused absurd assignments (e.g., "EgyptAir" landed in "Banking and Financial Services" because the word "air" matched no industry strongly, so the sector was guessed separately). The fix derives the sector *from* the industry match, not independently.
+
+**Solution** (`server/services/categoryMatcher.ts`):
+- Added `INDUSTRY_TO_SECTOR` lookup map covering all ~150 industry names — maps each industry to its correct parent sector.
+- Added new exported function `matchCategoryForCompany(probe)`:
+  1. Run `matchIndustry(probe)` first.
+  2. If industry confidence ≥ 0.5, look up the correct sector from `INDUSTRY_TO_SECTOR`.
+  3. Only fall back to independent `matchSector` if industry confidence < 0.5.
+- Both Wikidata import and AI generator staging endpoints now call `matchCategoryForCompany` instead of running sector/industry matching separately.
+
+### Wikidata Search Reliability Fix
+The Wikidata service previously failed with 500 errors on many legitimate search terms because the internal `TERM_TO_QID_MAP` only had a small number of entries.
+
+**Solution** (`server/services/wikidataService.ts`):
+- Massively expanded `TERM_TO_QID_MAP` to 100+ terms covering all 20 business sectors (e.g., "airlines", "banking", "pharmaceuticals", "retail", "construction", "agriculture", etc.).
+- Removed hard-coded block that prevented continent+label searches — any search term now works correctly.
+
+### Re-categorize All Pending (Admin Tool)
+Admins can now fix all existing wrongly-categorized staged companies in one click, without having to re-import them.
+
+**How to use**:
+1. Admin → Data Expansion tab → click **Staged Imports** card
+2. In the filter/action bar, click **"Re-categorize All Pending"**
+3. The engine re-runs `matchCategoryForCompany` on every pending record and updates their sector, industry, and confidence score in place
+4. The table refreshes automatically showing the corrected assignments
+
+**API Endpoint**: `POST /api/admin/staged-companies/recategorize` — re-categorizes all pending staged companies and returns `{ updated: N }`.
+
+### Export All Companies (Admin Tool)
+Admins can download a complete CSV snapshot of every live company in the directory for offline audit or analysis.
+
+**How to use**:
+1. Admin → Data Expansion tab → Overview (the default landing screen)
+2. Scroll to the bottom — click **"Export All Companies (CSV)"** button
+3. Browser downloads `comcubes-companies.csv` immediately
+
+**CSV columns**: Company Name, Website URL, Business Sector, Industry, Country, Founded Year, Employee Count, Company Size, Description
+
+**API Endpoint**: `GET /api/admin/companies/export-csv` — streams a CSV of all 7,500+ live companies with sector, industry, and geographic data.
+
+**API Endpoints Added**:
+- `POST /api/admin/staged-companies/recategorize` — Re-categorize all pending staged companies using the corrected matching engine
+- `GET /api/admin/companies/export-csv` — Full CSV export of all live companies
 
 ## External Dependencies
 - **Frontend Frameworks**: `react`, `react-dom`, `@vitejs/plugin-react`
