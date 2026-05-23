@@ -53,7 +53,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
   // Serve generated images from Object Storage
-  app.get('/generated_images/:filename', async (req, res) => {
+  app.get('https://cdn.jsdelivr.net/gh/Botram7/Comcubes-GBD@main/client/public/generated_images/:filename', async (req, res) => {
     const { filename } = req.params;
     await objectStorageService.streamFile(filename, res);
   });
