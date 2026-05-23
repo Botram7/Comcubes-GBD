@@ -6,3 +6,11 @@ vite.config.ts.*
 *.tar.gz
 .env
 .env.*
+fix-industries.mjs
+import-all-data.mjs
+migrate-data.mjs
+security-scan.mjs
+update-image-urls.mjs
+compress-images.mjs
+compress-images-aggressive.mjs
+*.mjs.backup
